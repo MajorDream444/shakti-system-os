@@ -1,0 +1,8 @@
+{
+  "name": "Start Your Shakti Path",
+  "description": "A premium, cinematic sanctuary-like discernment experience for the Shakti System OS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
