@@ -77,7 +77,7 @@ export default function SanctuaryAudio() {
 
       gain1.gain.setValueAtTime(0.45, ctx.currentTime);
       gain2.gain.setValueAtTime(0.22, ctx.currentTime);
-      gain3.gain.gain.setValueAtTime(0.18, ctx.currentTime);
+      gain3.gain.setValueAtTime(0.18, ctx.currentTime);
 
       osc1.connect(gain1);
       osc2.connect(gain2);
