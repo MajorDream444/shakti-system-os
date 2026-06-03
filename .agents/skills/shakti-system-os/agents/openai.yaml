@@ -1,0 +1,6 @@
+interface:
+  display_name: "Shakti System Os"
+  short_description: "Repo-specific patterns and workflows for shakti-system-os"
+  default_prompt: "Use the shakti-system-os repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
