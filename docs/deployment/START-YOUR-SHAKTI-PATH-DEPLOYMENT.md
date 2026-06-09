@@ -17,24 +17,36 @@ The first public-access prototype of the Shakti System OS front-door experience.
 
 ## Vercel Setup
 
-### First Deploy
+### Active Configuration
 
-1. Go to [vercel.com](https://vercel.com) and connect the GitHub repository.
-2. During project setup, set **Root Directory** to:
-   ```
-   apps/start-your-shakti-path
-   ```
-3. Vercel will detect Vite automatically. Confirm:
-   - Framework: **Vite**
-   - Build command: `npm run build`
-   - Output directory: `dist`
-   - Install command: `npm install`
+Deployment is controlled by the root-level `vercel.json` in the repository root. Vercel is connected to the repository root — no subdirectory override is needed.
 
-The `vercel.json` inside `apps/start-your-shakti-path/` encodes these settings and will be applied automatically.
+**Root `vercel.json` settings:**
+```json
+{
+  "buildCommand": "cd apps/start-your-shakti-path && npm install && npm run build",
+  "outputDirectory": "apps/start-your-shakti-path/dist",
+  "installCommand": "echo 'install handled in buildCommand'",
+  "framework": null
+}
+```
+
+Vercel reads this file automatically on every push to `main` and deploys the built output to the production domain.
 
 ### Subsequent Deploys
 
-Push to `main` (or the designated production branch). Vercel will redeploy automatically.
+Push to `main`. Vercel redeploys automatically.
+
+### Alternate Setup (not currently active)
+
+If the root `vercel.json` is ever removed, the project can alternatively be configured in Vercel's dashboard with:
+- **Root Directory:** `apps/start-your-shakti-path`
+- **Framework:** Vite
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+- **Install command:** `npm install`
+
+The `vercel.json` inside `apps/start-your-shakti-path/` supports this mode. The root-level config takes precedence while it exists.
 
 ---
 
@@ -112,5 +124,5 @@ This app is structure around the medicine. It is not the medicine itself.
 
 ---
 
-*Last updated: 2026-06-03*
-*Deployment branch: `claude/epic-cray-ICKrI` → merge to `main` when Sheetal approves*
+*Last updated: 2026-06-09*
+*Deployment branch: `main`*
