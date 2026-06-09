@@ -38,7 +38,7 @@ export const PATH_RESULTS: Record<PathType, {
   CONTAINER: {
     headline: "Your clearest doorway may be structured depth.",
     reflection: "You may be ready for a more committed container where shadow, somatics, and Shakti practice can unfold with steadiness.",
-    nextStep: "6-Week Shakti Shadow & Somatics Container",
+    nextStep: "9-Session Shakti Shadow & Somatics Container",
     primaryCTA: "Learn About the Container",
     secondaryCTA: "Begin with the Self-Audit"
   },

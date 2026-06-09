@@ -125,14 +125,23 @@ export default function Handoff({ onReset }: { onReset: () => void }) {
               Thank you, <span className="text-red-400 font-medium">{name}</span>. We have recorded your alignment and will gently transmit these focus areas to <span className="text-stone-200 font-normal">{email}</span>.
             </p>
 
-            <p className="text-sm text-ash/45 font-light italic mb-12">
+            <p className="text-sm text-ash/45 font-light italic mb-10">
               Carry this quiet flame with you. We will speak again soon.
             </p>
 
+            <a
+              href="https://calendly.com/sheetalkandola/discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full mb-4 block text-center py-4 bg-red-950/20 border border-red-800/50 hover:border-red-700 text-red-400 hover:text-red-300 font-medium tracking-[0.2em] uppercase text-xs transition-all duration-700 rounded-sm shadow-[0_4px_20px_rgba(157,23,29,0.1)]"
+            >
+              Book a Discovery Call with Sheetal
+            </a>
+
             <motion.button
               onClick={onReset}
-              whileHover={{ 
-                scale: 1.01, 
+              whileHover={{
+                scale: 1.01,
                 transition: { duration: 1, ease: [0.25, 1, 0.5, 1] }
               }}
               className="w-full py-4.5 bg-stone-900/[0.2] border border-ash/10 hover:border-red-800/40 text-ash/60 hover:text-red-400 font-medium tracking-[0.2em] uppercase text-xs transition-all duration-700 rounded-sm cursor-pointer"

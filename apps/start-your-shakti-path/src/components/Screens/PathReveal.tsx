@@ -97,7 +97,7 @@ export default function PathReveal({ result, onNext }: Props) {
 
         <motion.button
           onClick={onNext}
-          whileHover={{ 
+          whileHover={{
             scale: 1.02,
             transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] }
           }}
@@ -108,6 +108,23 @@ export default function PathReveal({ result, onNext }: Props) {
           </span>
           <div className="w-8 h-[0.5px] bg-ash/20 group-hover:w-16 group-hover:bg-ash/40 transition-all duration-700" />
         </motion.button>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.4, duration: 1.5 }}
+        className="mt-12 flex flex-col items-center gap-3"
+      >
+        <p className="text-[9px] uppercase tracking-[0.3em] text-ash/25">or speak directly with Sheetal</p>
+        <a
+          href="https://calendly.com/sheetalkandola/discovery-call"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[10px] uppercase tracking-[0.2em] text-ash/35 hover:text-ember transition-colors duration-700 border-b border-ash/10 hover:border-ember/40 pb-[1px]"
+        >
+          Book a Discovery Call
+        </a>
       </motion.div>
     </div>
   );
