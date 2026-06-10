@@ -2,22 +2,62 @@ import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft } from 'lucide-react';
 import KaliSigil from '../KaliSigil';
+import { PathType } from '../../types';
 
-export default function Handoff({ onReset }: { onReset: () => void }) {
+// Paste your deployed Google Apps Script Web App URL here after deployment
+const GOOGLE_SHEET_ENDPOINT = (import.meta as { env?: Record<string, string> }).env?.VITE_SHEET_ENDPOINT || '';
+
+interface Props {
+  pathway: PathType;
+  longings: string[];
+  reflection: string;
+  onReset: () => void;
+}
+
+export default function Handoff({ pathway, longings, reflection, onReset }: Props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name || !email) return;
 
-    // Save details to simulated storage
+    setIsLoading(true);
+
+    const payload = {
+      name,
+      email,
+      whatsapp,
+      pathway,
+      longings,
+      reflection,
+    };
+
+    // Always store locally as a fallback
     localStorage.setItem('shakti_path_first_name', name);
     localStorage.setItem('shakti_path_email', email);
     localStorage.setItem('shakti_path_whatsapp', whatsapp);
+    localStorage.setItem('shakti_path_pathway', pathway);
+    localStorage.setItem('shakti_path_longings', longings.join(', '));
+    localStorage.setItem('shakti_path_reflection', reflection);
 
+    if (GOOGLE_SHEET_ENDPOINT) {
+      try {
+        await fetch(GOOGLE_SHEET_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      } catch {
+        // Submission still shows success — data is in localStorage as backup
+      }
+    }
+
+    setIsLoading(false);
     setIsSubmitted(true);
   };
 
@@ -34,9 +74,8 @@ export default function Handoff({ onReset }: { onReset: () => void }) {
             className="w-full flex flex-col items-center"
           >
             <div className="mb-12">
-              {/* Brand lineage seal */}
               <KaliSigil className="w-8 h-8 mx-auto mb-8 animate-pulse" glow={true} />
-              
+
               <h2 className="text-2xl md:text-3xl font-light mb-4 serif text-stone-100 italic">
                 Would you like this doorway sent to you?
               </h2>
@@ -75,25 +114,25 @@ export default function Handoff({ onReset }: { onReset: () => void }) {
               <div className="pt-2">
                 <motion.button
                   type="submit"
-                  disabled={!name || !email}
-                  whileHover={{ 
-                    scale: (!name || !email) ? 1 : 1.01, 
+                  disabled={!name || !email || isLoading}
+                  whileHover={{
+                    scale: (!name || !email || isLoading) ? 1 : 1.01,
                     transition: { duration: 1, ease: [0.25, 1, 0.5, 1] }
                   }}
                   className={`w-full py-4.5 bg-stone-900/[0.25] border font-medium tracking-[0.2em] uppercase text-xs transition-all duration-700 rounded-sm cursor-pointer ${
-                    (!name || !email)
+                    (!name || !email || isLoading)
                       ? 'border-ash/5 text-ash/30 cursor-not-allowed bg-transparent'
                       : 'border-red-800/40 hover:border-red-700 text-red-400 shadow-[0_4px_20px_rgba(157,23,29,0.12)]'
                   }`}
                 >
-                  Send My Path
+                  {isLoading ? 'Holding your path...' : 'Send My Path'}
                 </motion.button>
               </div>
             </form>
 
             <motion.button
               onClick={onReset}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
                 transition: { duration: 1, ease: [0.25, 1, 0.5, 1] }
               }}
@@ -111,7 +150,6 @@ export default function Handoff({ onReset }: { onReset: () => void }) {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="w-full flex flex-col items-center max-w-md py-6"
           >
-            {/* Soft glowing ceremonial success seal */}
             <div className="relative mb-8 w-12 h-12 flex items-center justify-center rounded-full bg-red-950/20 border border-red-800/50">
               <div className="absolute inset-0 bg-red-800/5 rounded-full blur-md" />
               <KaliSigil className="w-6 h-6" glow={true} />
@@ -120,7 +158,7 @@ export default function Handoff({ onReset }: { onReset: () => void }) {
             <h2 className="text-3xl md:text-4xl font-light mb-6 serif text-stone-100 italic">
               Your path is held.
             </h2>
-            
+
             <p className="text-base text-ash/70 font-light leading-relaxed mb-6">
               Thank you, <span className="text-red-400 font-medium">{name}</span>. We have recorded your alignment and will gently transmit these focus areas to <span className="text-stone-200 font-normal">{email}</span>.
             </p>
@@ -151,7 +189,7 @@ export default function Handoff({ onReset }: { onReset: () => void }) {
           </motion.div>
         )}
       </AnimatePresence>
-      
+
       <p className="mt-20 text-[9px] text-ash/20 uppercase tracking-[0.25em] serif italic">
         somatic integration & classical tantra
       </p>

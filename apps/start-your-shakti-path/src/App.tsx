@@ -110,7 +110,14 @@ export default function App() {
       case 7:
         return <PathReveal result={PATH_RESULTS[calculatedPath]} onNext={nextScreen} />;
       case 8:
-        return <Handoff onReset={() => setState(INITIAL_STATE)} />;
+        return (
+          <Handoff
+            pathway={calculatedPath}
+            longings={state.longings}
+            reflection={state.reflection}
+            onReset={() => setState(INITIAL_STATE)}
+          />
+        );
       default:
         return <Threshold onNext={nextScreen} />;
     }
