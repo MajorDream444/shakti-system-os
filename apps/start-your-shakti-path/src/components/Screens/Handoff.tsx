@@ -2,7 +2,7 @@ import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft } from 'lucide-react';
 import KaliSigil from '../KaliSigil';
-import { PathType } from '../../types';
+import { PathType, PATH_RESULTS } from '../../types';
 
 // Paste your deployed Google Apps Script Web App URL here after deployment
 const GOOGLE_SHEET_ENDPOINT = (import.meta as { env?: Record<string, string> }).env?.VITE_SHEET_ENDPOINT || '';
@@ -27,16 +27,24 @@ export default function Handoff({ pathway, longings, reflection, onReset }: Prop
 
     setIsLoading(true);
 
+    const params = new URLSearchParams(window.location.search);
     const payload = {
+      type: 'site_handoff',
       name,
       email,
       whatsapp,
-      pathway,
+      pathwayKey: pathway,
+      recommendedPathway: PATH_RESULTS[pathway].nextStep,
       longings,
       reflection,
+      source: 'Start Your Shakti Path',
+      pageUrl: window.location.href,
+      userAgent: navigator.userAgent,
+      utmSource: params.get('utm_source') || '',
+      utmMedium: params.get('utm_medium') || '',
+      utmCampaign: params.get('utm_campaign') || '',
     };
 
-    // Always store locally as a fallback
     localStorage.setItem('shakti_path_first_name', name);
     localStorage.setItem('shakti_path_email', email);
     localStorage.setItem('shakti_path_whatsapp', whatsapp);
