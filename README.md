@@ -2,7 +2,7 @@
 
 **Repository status:** Main build source of truth for the Sheetal Kandola — Shakti System Foundation project.
 
-This repository holds the implementation-facing architecture for Sheetal Kandola’s **Shakti Shadow & Somatics** ecosystem: the front-door experience, digital self-audit, community onboarding, readiness tracking, retreat pathway, internal agent specifications, and long-term operational handoff.
+This repository holds the implementation-facing architecture for Sheetal Kandola’s **Shakti Shadow & Somatics** ecosystem: the front-door experience, digital self-audit, community onboarding, readiness tracking, retreat pathway, Temple Library / Vault architecture, internal agent specifications, and long-term operational handoff.
 
 This is not a generic wellness funnel, a tantra influencer brand, or a conversion-first marketing experiment. The work is already real. The medicine is already there. This system exists to build the structure around the medicine so aligned women know where to begin, Sheetal carries less manually, and the work can deepen without being diluted.
 
@@ -23,6 +23,7 @@ Doctrine
 → Community Rhythm
 → Container Pathway
 → Retreat Pipeline
+→ Temple Library / Vault
 → Sanctuary / Shakti Fest Vision
 ```
 
@@ -40,7 +41,8 @@ The active first build layer includes:
 8. Weekly / lunar rhythm definition
 9. Retreat pipeline and de-risking logic
 10. Content and presentation positioning
-11. Operations playbook for eventual team handoff
+11. Shakti Shala Vault / Temple Library architecture
+12. Operations playbook for eventual team handoff
 
 ## Google AI Studio Role
 
@@ -54,6 +56,35 @@ That prototype exists to test the emotional field, screen flow, conversational t
 
 **AI Studio = one-shot prototype**  
 **GitHub = implementation source of truth**
+
+## Shakti Shala Vault Role
+
+The Vault is not the public front door and it is not a content dump.
+
+```text
+Start Your Shakti Path = threshold
+Shakti Shala Vault = ongoing sanctuary for practice
+Shakti System OS = hidden operational structure beneath both
+```
+
+The Vault should eventually hold:
+
+- Temple Library
+- Goddess Pathways
+- Daily Practice
+- Moon Rhythm
+- Audio Reflections
+- Sacred Journal
+- Retreat Readiness
+- Community / ceremony rhythm
+- Personal Journey
+
+The Vault principle:
+
+```text
+Shakti Shala is not a content platform.
+It is a sanctuary for practice.
+```
 
 ## Current Experience Standard
 
@@ -103,6 +134,9 @@ Public-facing language should favor:
 - initiation
 - readiness
 - sovereignty
+- sanctuary
+- practice
+- integration
 
 Avoid flattening the work into:
 - funnel language
@@ -128,11 +162,13 @@ Recommended language posture:
 
 - **Notion** = human dashboard / client-facing clarity
 - **Airtable** = operational backend / structured data
+- **Google Drive** = working asset vault / collaborative production layer
 - **GitHub** = build source of truth
 - **Graphify** = persistent context graph across files, doctrine, transcripts, repo, and playbooks
 - **Codex** = implementation builder
 - **ChatGPT** = strategist / architect / synthesizer
 - **Google AI Studio** = one-shot MVP prototyping environment only
+- **Claude / Claude Design** = long-form design synthesis, experience architecture, and design brief generation
 
 ## Repo Should Eventually Contain
 
@@ -140,8 +176,11 @@ Recommended language posture:
 - Google AI Studio prompt pack and implementation notes
 - Experience design specs
 - Design system / `DESIGN.md` once finalized
+- Shakti Shala Vault / Temple Library architecture
+- Claude Design prompt packs
 - Self-audit logic and routing schema
 - Airtable CRM schema docs
+- Google Drive routing maps
 - Notion workspace mapping
 - Telegram / WhatsApp onboarding architecture if implemented
 - Agent prompt and config library
@@ -160,9 +199,12 @@ ONE clean front door
 ONE clear entry pathway
 ONE functioning community rhythm
 ONE repeatable retreat pipeline
+ONE mapped Temple Library / Vault architecture
 ```
 
-before expanding into heavier automation, voice layers, advanced media, or broader sanctuary / festival architecture.
+before expanding into heavier automation, voice layers, advanced media, or full sanctuary / festival architecture.
+
+The Vault has now been documented as a future app and design layer, but the immediate build priority remains pathway clarity before full application development.
 
 ## Voice and Sensitivity Guardrails
 
