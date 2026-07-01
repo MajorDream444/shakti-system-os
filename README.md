@@ -42,7 +42,28 @@ The active first build layer includes:
 9. Retreat pipeline and de-risking logic
 10. Content and presentation positioning
 11. Shakti Shala Vault / Temple Library architecture
-12. Operations playbook for eventual team handoff
+12. Shakti Design Constitution
+13. Operations playbook for eventual team handoff
+
+## Design Constitution
+
+The master design reference is now:
+
+```text
+docs/design/SHAKTI-DESIGN-CONSTITUTION.md
+```
+
+Every future design prompt, Google AI Studio pass, Claude Design pass, Figma direction, Codex implementation, and Shakti Shala Vault screen should read this constitution before making design decisions.
+
+It protects:
+
+- the Himalayan mythic grounding
+- the sanctuary-first posture
+- the progressive simplification rule
+- the initiation / key-based access model
+- the Google Drive-backed content library model
+- the no-prompt-text-in-interface rule
+- Sheetal’s voice, doctrine, and lineage sensitivity
 
 ## Google AI Studio Role
 
@@ -56,6 +77,13 @@ That prototype exists to test the emotional field, screen flow, conversational t
 
 **AI Studio = one-shot prototype**  
 **GitHub = implementation source of truth**
+
+For the current Shakti Shala OS V2 pass, use:
+
+```text
+docs/prompts/GOOGLE-AI-STUDIO-SHAKTI-SHALA-OS-V2-ONE-SHOT.md
+docs/handoff/SHAKTI-SHALA-OS-V2-AI-STUDIO-HANDOFF.md
+```
 
 ## Shakti Shala Vault Role
 
@@ -176,6 +204,7 @@ Recommended language posture:
 - Google AI Studio prompt pack and implementation notes
 - Experience design specs
 - Design system / `DESIGN.md` once finalized
+- Shakti Design Constitution
 - Shakti Shala Vault / Temple Library architecture
 - Claude Design prompt packs
 - Self-audit logic and routing schema
@@ -200,6 +229,7 @@ ONE clear entry pathway
 ONE functioning community rhythm
 ONE repeatable retreat pipeline
 ONE mapped Temple Library / Vault architecture
+ONE durable design constitution
 ```
 
 before expanding into heavier automation, voice layers, advanced media, or full sanctuary / festival architecture.
