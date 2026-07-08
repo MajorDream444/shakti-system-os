@@ -6,6 +6,23 @@ This repository holds the implementation-facing architecture for Sheetal Kandola
 
 This is not a generic wellness funnel, a tantra influencer brand, or a conversion-first marketing experiment. The work is already real. The medicine is already there. This system exists to build the structure around the medicine so aligned women know where to begin, Sheetal carries less manually, and the work can deepen without being diluted.
 
+## Release Status
+
+| Release | Milestone | Status |
+| --- | --- | --- |
+| `0.1` | AI Studio MVP | Complete |
+| `0.2` | Living Vault Foundation | Complete |
+| `0.3` | First Living Knowledge | In progress |
+| `0.4` | Private Beta | Planned |
+| `0.5` | Retreat Ready | Planned |
+| `1.0` | Public Sanctuary | Planned |
+
+The canonical release map and completion gates live in:
+
+```text
+docs/roadmap/RELEASES.md
+```
+
 ## Core Thesis
 
 ```text
