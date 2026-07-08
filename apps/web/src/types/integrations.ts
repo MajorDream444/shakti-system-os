@@ -1,3 +1,5 @@
+import type { VaultMediaType } from "./vault";
+
 export type AirtableTableConfig = {
   readonly name: string;
   readonly purpose: string;
@@ -15,7 +17,7 @@ export type DriveFileReference = {
   name: string;
   url?: string;
   sourceFolder?: string;
-  mediaType?: string;
+  mediaType?: VaultMediaType;
 };
 
 export type DriveIntegrationStatus = {
