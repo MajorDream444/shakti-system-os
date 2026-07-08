@@ -4,9 +4,10 @@ All notable changes to Shakti System OS are documented in this file.
 
 ## [Unreleased]
 
-### Planned
+### In Progress
 
-- First Living Knowledge milestone.
+- First Living Knowledge milestone, beginning with a human-approved teaching
+  flowing from the Living Vault through `BackendRepository`.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 

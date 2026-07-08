@@ -4,6 +4,7 @@ import {
 } from "../constants/liveAirtable";
 import { mockLibraryAssets } from "../data/mockBackend";
 import { AirtableReadOnlyClient } from "./AirtableReadOnlyClient";
+import { ContentApprovalService } from "./ContentApprovalService";
 import {
   multiSelectNames,
   selectName,
@@ -48,6 +49,7 @@ export const LibraryAssetReadAdapter = {
       libraryAssetFieldIds,
     );
 
-    return records ? records.map(mapLibraryAsset) : mockLibraryAssets;
+    const mappedRecords = records ? records.map(mapLibraryAsset) : mockLibraryAssets;
+    return ContentApprovalService.filterLibraryAssets(mappedRecords);
   },
 };

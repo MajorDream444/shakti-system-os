@@ -4,6 +4,7 @@ import {
 } from "../constants/liveAirtable";
 import { mockPractices } from "../data/mockBackend";
 import { AirtableReadOnlyClient } from "./AirtableReadOnlyClient";
+import { ContentApprovalService } from "./ContentApprovalService";
 import { selectName, textValue } from "./AirtableValueService";
 import type { AirtableApiRecord, PracticeRecord } from "../types/backend";
 
@@ -38,6 +39,7 @@ export const PracticeReadAdapter = {
       practiceFieldIds,
     );
 
-    return records ? records.map(mapPractice) : mockPractices;
+    const mappedRecords = records ? records.map(mapPractice) : mockPractices;
+    return ContentApprovalService.filterPractices(mappedRecords);
   },
 };

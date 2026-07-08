@@ -2,6 +2,8 @@ import { mockInitiationKeys, mockLibraryAssets, mockPractices } from "../data/mo
 import { BackendErrorLogger } from "../services/BackendErrorLogger";
 import { BackendReadCache } from "../services/BackendReadCache";
 import { BackendRepository } from "../services/BackendRepository";
+import { ContentApprovalService } from "../services/ContentApprovalService";
+import type { LibraryAssetRecord, PracticeRecord } from "../types/backend";
 
 function assert(condition: boolean, message: string): asserts condition {
   if (!condition) {
@@ -58,9 +60,38 @@ function checkCacheTtlBehavior() {
   BackendReadCache.clear(key);
 }
 
+function checkContentApprovalGate() {
+  const reviewAsset: LibraryAssetRecord = {
+    ...mockLibraryAssets[0],
+    id: "review-library-asset",
+    publishingStatus: "Needs Review",
+  };
+  const reviewPractice: PracticeRecord = {
+    ...mockPractices[0],
+    id: "review-practice",
+    status: "Needs Review",
+  };
+
+  assert(
+    ContentApprovalService.filterLibraryAssets([
+      mockLibraryAssets[0],
+      reviewAsset,
+    ]).length === 1,
+    "Expected review-stage Library Assets to remain outside app consumption.",
+  );
+  assert(
+    ContentApprovalService.filterPractices([
+      mockPractices[0],
+      reviewPractice,
+    ]).length === 1,
+    "Expected review-stage Practices to remain outside app consumption.",
+  );
+}
+
 async function main() {
   await checkRepositoryFallbacks();
   checkCacheTtlBehavior();
+  checkContentApprovalGate();
 
   console.log("Backend read checks passed.");
 }

@@ -20,9 +20,9 @@ export const mockLibraryAssets: LibraryAssetRecord[] = [
     moonPhase: "",
     practiceType: "Integration",
     accessLevel: "Seeker",
-    publishingStatus: "Needs Review",
+    publishingStatus: "Approved",
     confidentiality: "Internal",
-    notes: "Mock fallback. Replace with approved Airtable record reads.",
+    notes: "Approved mock fallback. Replace with approved Airtable record reads.",
   },
 ];
 
