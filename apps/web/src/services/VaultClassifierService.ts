@@ -32,10 +32,11 @@ export const VaultClassifierService = {
       mediaType,
       fileType,
       publishingStatus:
-        mediaType === "Audio" || mediaType === "Video"
+        file.publishingStatus ??
+        (mediaType === "Audio" || mediaType === "Video"
           ? "Needs Transcript"
-          : VAULT_DEFAULT_PUBLISHING_STATUS,
-      accessLevel: VAULT_DEFAULT_ACCESS_LEVEL,
+          : VAULT_DEFAULT_PUBLISHING_STATUS),
+      accessLevel: file.accessLevel ?? VAULT_DEFAULT_ACCESS_LEVEL,
       sourceFolder: file.sourceFolder,
     };
   },

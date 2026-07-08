@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "check:backend": "tsx src/checks/backendReadChecks.ts",
+    "check:vault": "tsx src/checks/vaultSyncChecks.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },

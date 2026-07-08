@@ -25,6 +25,7 @@ export type VaultPublishingStatus =
   | "Archived";
 
 export type VaultAccessLevel =
+  | "Internal"
   | "Visitor"
   | "Seeker"
   | "Practitioner"

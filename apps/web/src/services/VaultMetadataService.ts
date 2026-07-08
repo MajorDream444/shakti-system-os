@@ -41,7 +41,7 @@ export const VaultMetadataService = {
 
     return {
       title,
-      description: "",
+      description: file.description ?? "",
       driveUrl: file.url ?? "",
       sourceFolder: classification.sourceFolder ?? "",
       mediaType: classification.mediaType,
@@ -54,8 +54,10 @@ export const VaultMetadataService = {
       accessLevel: classification.accessLevel,
       readinessLevel: "",
       publishingStatus: classification.publishingStatus,
-      confidentiality: "Needs Review",
-      notes: "Generated as a local metadata draft. Requires human review.",
+      confidentiality: file.confidentiality ?? "Needs Review",
+      notes:
+        file.notes ??
+        "Generated as a local metadata draft. Requires human review.",
     };
   },
 };
