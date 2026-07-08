@@ -3,6 +3,7 @@ import {
   AIRTABLE_TABLES,
 } from "../constants/airtableSchema";
 import { env } from "../config/env";
+import { AirtableReadOnlyClient } from "./AirtableReadOnlyClient";
 import type {
   AirtableIntegrationStatus,
   AirtableRecordDraft,
@@ -15,8 +16,11 @@ function normalizeTableName(tableName: string) {
 
 export const AirtableService = {
   getStatus(): AirtableIntegrationStatus {
+    const readOnlyState = AirtableReadOnlyClient.getState();
+
     return {
-      configured: env.airtableBase.length > 0,
+      configured:
+        env.airtableBase.length > 0 && readOnlyState.source === "airtable",
       base: env.airtableBase,
     };
   },

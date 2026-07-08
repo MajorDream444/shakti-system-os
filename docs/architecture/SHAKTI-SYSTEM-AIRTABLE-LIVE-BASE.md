@@ -129,6 +129,19 @@ Tasks:
 5. Do not expose Airtable token client-side in production without a secure server/proxy decision.
 6. Document deployment security risk before live token use.
 
+Implemented Sprint 6 boundary:
+
+```text
+apps/web/src/constants/liveAirtable.ts
+apps/web/src/services/AirtableReadOnlyClient.ts
+apps/web/src/services/PracticeReadAdapter.ts
+apps/web/src/services/InitiationKeyReadAdapter.ts
+apps/web/src/data/mockBackend.ts
+docs/architecture/ENV_CONFIG.md
+```
+
+The app still does not consume Airtable data in the UI. The adapters are available for the next integration sprint.
+
 ---
 
 # Security Note

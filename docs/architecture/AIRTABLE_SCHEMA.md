@@ -50,3 +50,11 @@ Content Queue
 ## Current Boundary
 
 `AirtableService` exposes placeholder methods for status checks, schema lookup, initial table order, draft creation, and future approved-record reads. It does not make live network calls yet.
+
+Sprint 6 adds read-only adapter structure for `Practices` and `Initiation Keys`. The adapters use mock fallback data unless local Airtable env values are present and the app is not running as production.
+
+Security details:
+
+```text
+docs/architecture/ENV_CONFIG.md
+```
