@@ -48,5 +48,9 @@ All notable changes to Shakti System OS are documented in this file.
 - Sanctuary visuals, language, environmental memory, room architecture, and
   existing interactions remain unchanged.
 
+### Notes
+
+Living Vault Foundation is complete. First Living Knowledge is now in progress.
+
 [Unreleased]: https://github.com/MajorDream444/shakti-system-os/compare/v0.2-living-vault-foundation...HEAD
 [v0.2-living-vault-foundation]: https://github.com/MajorDream444/shakti-system-os/releases/tag/v0.2-living-vault-foundation
