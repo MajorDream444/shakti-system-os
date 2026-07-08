@@ -1,0 +1,6 @@
+{
+  "name": "Shakti Shala",
+  "description": "The Vault: A sacred sanctuary for practice, study, and the long inner ascent.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
