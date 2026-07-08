@@ -2,19 +2,18 @@ import {
   AIRTABLE_INITIAL_BUILD_PRIORITY,
   AIRTABLE_TABLES,
 } from "../constants/airtableSchema";
+import { env } from "../config/env";
 import type {
   AirtableIntegrationStatus,
   AirtableRecordDraft,
   AirtableTableConfig,
 } from "../types/integrations";
 
-const airtableBase = import.meta.env.VITE_AIRTABLE_BASE ?? "";
-
 export const AirtableService = {
   getStatus(): AirtableIntegrationStatus {
     return {
-      configured: airtableBase.length > 0,
-      base: airtableBase,
+      configured: env.airtableBase.length > 0,
+      base: env.airtableBase,
     };
   },
 

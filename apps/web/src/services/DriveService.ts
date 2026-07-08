@@ -1,26 +1,25 @@
+import { env } from "../config/env";
 import type {
   DriveFileReference,
   DriveIntegrationStatus,
 } from "../types/integrations";
 
-const driveRoot = import.meta.env.VITE_GOOGLE_DRIVE_ROOT ?? "";
-
 export const DriveService = {
   getStatus(): DriveIntegrationStatus {
     return {
-      configured: driveRoot.length > 0,
-      root: driveRoot,
+      configured: env.googleDriveRoot.length > 0,
+      root: env.googleDriveRoot,
     };
   },
 
   getRootFolder() {
-    return driveRoot;
+    return env.googleDriveRoot;
   },
 
   createFileReference(file: DriveFileReference): DriveFileReference {
     return {
       ...file,
-      sourceFolder: file.sourceFolder ?? driveRoot,
+      sourceFolder: file.sourceFolder ?? env.googleDriveRoot,
     };
   },
 

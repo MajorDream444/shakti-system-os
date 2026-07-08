@@ -4,4 +4,48 @@ dist/
 *.js
 *.d.ts
 .DS_Store
-graphify-out/.rebuild.lock
+
+# Local/generated context maps
+graphify-out/
+.graphifyignore
+
+# Local Codex/operator state
+.codex/hooks.json
+
+# Local media and export artifacts belong in Google Drive unless intentionally promoted.
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.mp4
+*.mov
+*.m4a
+*.mp3
+*.wav
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.csv
+*.zip
+*.txt
+
+# Loose workspace artifacts kept outside the tracked app/docs contract.
+architecture.md
+brand-positioning.md
+codex-build-brief.md
+offer-ladder.md
+retreat-pipeline.md
+shakti-doctrine.md
+website-clone-research.md
+/*.html
+/Sheetal*.md
+/sheetal*.md
+community/
+crm/
+routing/
+social/
+"Shakti Shala Library/"
+"THE VAULT _SHAKTI SHALA/"
+"THE VAULT _SHAKTI SHALA copy/"
