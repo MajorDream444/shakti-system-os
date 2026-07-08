@@ -4,38 +4,19 @@ import {
 } from "../constants/liveAirtable";
 import { mockInitiationKeys } from "../data/mockBackend";
 import { AirtableReadOnlyClient } from "./AirtableReadOnlyClient";
+import {
+  booleanValue,
+  numberValue,
+  selectName,
+  textValue,
+} from "./AirtableValueService";
 import type {
   AirtableApiRecord,
-  AirtableCellValue,
   InitiationKeyRecord,
 } from "../types/backend";
 
 const fields = LIVE_AIRTABLE_FIELDS.initiationKeys;
 const keyFieldIds = Object.values(fields);
-
-function selectName(value: AirtableCellValue | undefined) {
-  if (!value) {
-    return "";
-  }
-
-  if (typeof value === "object" && !Array.isArray(value) && "name" in value) {
-    return value.name;
-  }
-
-  return String(value);
-}
-
-function textValue(value: AirtableCellValue | undefined) {
-  return typeof value === "string" ? value : selectName(value);
-}
-
-function numberValue(value: AirtableCellValue | undefined) {
-  return typeof value === "number" ? value : 0;
-}
-
-function booleanValue(value: AirtableCellValue | undefined) {
-  return typeof value === "boolean" ? value : false;
-}
 
 function mapInitiationKey(record: AirtableApiRecord): InitiationKeyRecord {
   const values = record.fields ?? {};

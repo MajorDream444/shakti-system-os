@@ -20,6 +20,23 @@ apps/web
 - `src/types`: shared contracts.
 - `src/config/env.ts`: typed environment boundary.
 
+## Backend Read Boundary
+
+`src/services/BackendRepository.ts` is the app-facing read boundary for live backend data. React should call the repository rather than Airtable adapters directly.
+
+Current read path:
+
+```text
+React App
+  -> BackendRepository
+  -> read cache
+  -> PracticeReadAdapter / InitiationKeyReadAdapter / LibraryAssetReadAdapter
+  -> AirtableReadOnlyClient
+  -> Airtable or mock fallback
+```
+
+This keeps Airtable replaceable. A future Supabase, Firestore, Postgres, or API-backed implementation should be introduced behind `BackendRepository` without changing sanctuary components.
+
 ## Invariants
 
 - Do not change visuals during backend prep.
@@ -32,6 +49,7 @@ apps/web
 Run from `apps/web`:
 
 ```bash
+npm run check:backend
 npm run lint
 npx tsc -b
 npm run build

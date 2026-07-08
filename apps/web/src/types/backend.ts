@@ -28,6 +28,47 @@ export type ReadOnlyBackendState = {
   reason?: string;
 };
 
+export type BackendErrorCode =
+  | "backend_unavailable"
+  | "invalid_schema"
+  | "missing_env"
+  | "missing_field"
+  | "network_timeout"
+  | "request_failed";
+
+export type BackendErrorLog = {
+  code: BackendErrorCode;
+  message: string;
+  context?: Record<string, string | number | boolean | undefined>;
+};
+
+export type CacheStatus = "hit" | "miss";
+
+export type CachedRead<T> = {
+  value: T;
+  status: CacheStatus;
+};
+
+export type LibraryAssetRecord = {
+  id: string;
+  assetId: string;
+  title: string;
+  description: string;
+  driveUrl: string;
+  sourceFolder: string;
+  mediaType: string;
+  fileType: string;
+  theme: string[];
+  keywords: string;
+  goddessArchetype: string;
+  moonPhase: string;
+  practiceType: string;
+  accessLevel: string;
+  publishingStatus: string;
+  confidentiality: string;
+  notes: string;
+};
+
 export type PracticeRecord = {
   id: string;
   practiceId: string;

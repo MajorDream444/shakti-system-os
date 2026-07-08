@@ -51,7 +51,22 @@ Content Queue
 
 `AirtableService` exposes placeholder methods for status checks, schema lookup, initial table order, draft creation, and future approved-record reads. It does not make live network calls yet.
 
-Sprint 6 adds read-only adapter structure for `Practices` and `Initiation Keys`. The adapters use mock fallback data unless local Airtable env values are present and the app is not running as production.
+Sprint 6 added read-only adapter structure for `Practices` and `Initiation Keys`.
+
+Sprint 7 adds `BackendRepository` as the only app-facing read boundary and adds `LibraryAssetReadAdapter` for the Temple Library / Vault layer. The repository owns cache behavior and keeps React from depending on Airtable adapter details.
+
+Current read-only flow:
+
+```text
+BackendRepository
+  -> PracticeReadAdapter
+  -> InitiationKeyReadAdapter
+  -> LibraryAssetReadAdapter
+  -> AirtableReadOnlyClient
+  -> Airtable or mock fallback
+```
+
+The adapters use mock fallback data unless local Airtable env values are present and the app is not running as production.
 
 Security details:
 

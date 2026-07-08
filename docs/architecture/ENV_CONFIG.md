@@ -26,16 +26,25 @@ Do not put a private Airtable token into production Vite variables.
 
 Vite exposes `VITE_*` values to browser code. That means a production `VITE_AIRTABLE_TOKEN` would be visible to users.
 
-## Current Sprint 6 Boundary
+## Current Sprint 7 Boundary
 
-The app has read-only adapter structure for:
+The app has one app-facing read boundary:
+
+```text
+BackendRepository
+```
+
+The repository owns read cache behavior and routes current backend reads for:
 
 ```text
 Practices
 Initiation Keys
+Library Assets
 ```
 
-If `VITE_AIRTABLE_BASE` or `VITE_AIRTABLE_TOKEN` is missing, or if `VITE_APP_ENV=production`, the read adapters return mock fallback records.
+If `VITE_AIRTABLE_BASE` or `VITE_AIRTABLE_TOKEN` is missing, or if `VITE_APP_ENV=production`, the read adapters return mock fallback records through `BackendRepository`.
+
+React components should not call Airtable adapters directly. Keeping Airtable behind the repository protects the sanctuary UI from future backend migrations.
 
 ## Before Live Production Reads
 

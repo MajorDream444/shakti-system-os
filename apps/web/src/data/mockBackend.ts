@@ -1,7 +1,30 @@
 import type {
   InitiationKeyRecord,
+  LibraryAssetRecord,
   PracticeRecord,
 } from "../types/backend";
+
+export const mockLibraryAssets: LibraryAssetRecord[] = [
+  {
+    id: "mock-library-asset",
+    assetId: "ASSET-TEST-001",
+    title: "Test Vault Asset",
+    description: "Mock library asset for read-only fallback.",
+    driveUrl: "",
+    sourceFolder: "04_TEMPLE_LIBRARY/01_PRACTICES",
+    mediaType: "Document",
+    fileType: "md",
+    theme: ["test", "vault", "sample"],
+    keywords: "test, vault, sample",
+    goddessArchetype: "",
+    moonPhase: "",
+    practiceType: "Integration",
+    accessLevel: "Seeker",
+    publishingStatus: "Needs Review",
+    confidentiality: "Internal",
+    notes: "Mock fallback. Replace with approved Airtable record reads.",
+  },
+];
 
 export const mockPractices: PracticeRecord[] = [
   {

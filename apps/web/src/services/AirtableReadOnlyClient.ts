@@ -1,5 +1,6 @@
 import { env } from "../config/env";
 import { LIVE_AIRTABLE_BASE_ID } from "../constants/liveAirtable";
+import { BackendErrorLogger } from "./BackendErrorLogger";
 import type {
   AirtableApiListResponse,
   AirtableApiRecord,
@@ -10,6 +11,11 @@ const AIRTABLE_API_ROOT = "https://api.airtable.com/v0";
 
 function getReadOnlyState(): ReadOnlyBackendState {
   if (!env.airtableBase) {
+    BackendErrorLogger.log({
+      code: "missing_env",
+      message: "Missing VITE_AIRTABLE_BASE. Using mock backend fallback.",
+    });
+
     return {
       source: "mock",
       reason: "Missing VITE_AIRTABLE_BASE.",
@@ -17,6 +23,11 @@ function getReadOnlyState(): ReadOnlyBackendState {
   }
 
   if (!env.airtableToken) {
+    BackendErrorLogger.log({
+      code: "missing_env",
+      message: "Missing VITE_AIRTABLE_TOKEN. Using mock backend fallback.",
+    });
+
     return {
       source: "mock",
       reason: "Missing VITE_AIRTABLE_TOKEN.",
@@ -24,6 +35,13 @@ function getReadOnlyState(): ReadOnlyBackendState {
   }
 
   if (env.appEnv === "production") {
+    BackendErrorLogger.log({
+      code: "backend_unavailable",
+      message:
+        "Direct Airtable browser reads are disabled in production. Using mock fallback.",
+      context: { appEnv: env.appEnv },
+    });
+
     return {
       source: "mock",
       reason: "Browser-exposed Airtable tokens are disabled in production.",
@@ -60,6 +78,11 @@ export const AirtableReadOnlyClient = {
     });
 
     if (!response.ok) {
+      BackendErrorLogger.log({
+        code: "request_failed",
+        message: "Airtable read request failed. Using mock fallback.",
+        context: { tableId, status: response.status },
+      });
       return null;
     }
 

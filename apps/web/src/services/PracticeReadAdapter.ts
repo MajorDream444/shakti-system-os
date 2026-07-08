@@ -1,26 +1,14 @@
-import { LIVE_AIRTABLE_FIELDS, LIVE_AIRTABLE_TABLE_IDS } from "../constants/liveAirtable";
+import {
+  LIVE_AIRTABLE_FIELDS,
+  LIVE_AIRTABLE_TABLE_IDS,
+} from "../constants/liveAirtable";
 import { mockPractices } from "../data/mockBackend";
 import { AirtableReadOnlyClient } from "./AirtableReadOnlyClient";
-import type { AirtableApiRecord, AirtableCellValue, PracticeRecord } from "../types/backend";
+import { selectName, textValue } from "./AirtableValueService";
+import type { AirtableApiRecord, PracticeRecord } from "../types/backend";
 
 const fields = LIVE_AIRTABLE_FIELDS.practices;
 const practiceFieldIds = Object.values(fields);
-
-function selectName(value: AirtableCellValue | undefined) {
-  if (!value) {
-    return "";
-  }
-
-  if (typeof value === "object" && !Array.isArray(value) && "name" in value) {
-    return value.name;
-  }
-
-  return String(value);
-}
-
-function textValue(value: AirtableCellValue | undefined) {
-  return typeof value === "string" ? value : selectName(value);
-}
 
 function mapPractice(record: AirtableApiRecord): PracticeRecord {
   const values = record.fields ?? {};
