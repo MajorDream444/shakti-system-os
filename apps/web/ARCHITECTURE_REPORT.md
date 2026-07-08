@@ -61,3 +61,14 @@ Converted the current Shakti Portal web prototype into a production-ready applic
 3. Add focused unit tests for `PersistenceService`, `RitualService`, and `AccessService`.
 4. Review and apply dependency security updates in a controlled package-maintenance pass.
 5. Consider moving production imagery into a managed asset strategy if this app is heading toward live deployment.
+
+## Sprint 2 Integration Boundary
+
+Added after the initial architecture hardening:
+
+- `src/constants/airtableSchema.ts`: typed constants matching `docs/architecture/SHAKTI-SHALA-AIRTABLE-SCHEMA-DRAFT.md`.
+- `src/services/DriveService.ts`: placeholder Google Drive boundary for root folder status, file references, and future library asset listing.
+- `src/services/AirtableService.ts`: placeholder Airtable boundary for schema lookup, initial build tables, record draft shaping, and future approved-record reads.
+- `src/types/integrations.ts`: shared integration contracts.
+
+No live secrets were added. No live Airtable or Google Drive network calls were introduced. Visuals remain unchanged.
