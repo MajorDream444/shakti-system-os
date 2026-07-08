@@ -5,7 +5,14 @@
 Operational Airtable home:
 
 ```text
-AMA MOB OS V2
+Workspace: AMA MOB OS V2
+Base: Shakti System OS
+```
+
+Live base reference:
+
+```text
+docs/architecture/SHAKTI-SYSTEM-AIRTABLE-LIVE-BASE.md
 ```
 
 Canonical draft:
