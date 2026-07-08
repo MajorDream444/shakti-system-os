@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.js
+*.d.ts
+.DS_Store
+graphify-out/.rebuild.lock

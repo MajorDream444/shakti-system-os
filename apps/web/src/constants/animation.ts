@@ -1,0 +1,7 @@
+export const SCROLLED_NAV_THRESHOLD = 48;
+export const HERO_PARALLAX_LIMIT_MULTIPLIER = 1.2;
+export const HERO_PARALLAX_OFFSET_MULTIPLIER = 0.18;
+export const HERO_PARALLAX_SCALE = 1.04;
+export const WORD_REVEAL_INITIAL_DELAY_MS = 120;
+export const WORD_REVEAL_STAGGER_MS = 74;
+export const EMBER_COUNT = 72;
