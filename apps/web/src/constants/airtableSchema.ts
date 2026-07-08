@@ -1,6 +1,7 @@
 import type { AirtableTableConfig } from "../types/integrations";
 
 export const AIRTABLE_BASE_NAMES = [
+  "AMA MOB OS V2",
   "Shakti System OS",
   "Shakti Shala Vault",
 ] as const;

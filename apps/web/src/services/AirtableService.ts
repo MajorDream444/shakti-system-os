@@ -9,6 +9,10 @@ import type {
   AirtableTableConfig,
 } from "../types/integrations";
 
+function normalizeTableName(tableName: string) {
+  return tableName.trim().toLowerCase();
+}
+
 export const AirtableService = {
   getStatus(): AirtableIntegrationStatus {
     return {
@@ -18,8 +22,10 @@ export const AirtableService = {
   },
 
   getTableSchema(tableName: string): AirtableTableConfig | undefined {
+    const normalizedName = normalizeTableName(tableName);
+
     return Object.values(AIRTABLE_TABLES).find(
-      (table) => table.name === tableName,
+      (table) => normalizeTableName(table.name) === normalizedName,
     );
   },
 

@@ -2,6 +2,12 @@
 
 ## Source
 
+Operational Airtable home:
+
+```text
+AMA MOB OS V2
+```
+
 Canonical draft:
 
 ```text
