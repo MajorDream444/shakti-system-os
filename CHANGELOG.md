@@ -13,6 +13,8 @@ All notable changes to Shakti System OS are documented in this file.
 - Created the Airtable `Library Assets` review record for "The Vow Beneath the
   Path" and wired the Temple Library to consume approved Library Assets through
   `BackendRepository` once a Drive URL and human approval are present.
+- Added Sprint 10 MAIM Living Intelligence OS foundation docs to separate
+  reusable OS standards from Shakti-specific implementation decisions.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 

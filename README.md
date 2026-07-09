@@ -215,6 +215,20 @@ Recommended language posture:
 - **Google AI Studio** = one-shot MVP prototyping environment only
 - **Claude / Claude Design** = long-form design synthesis, experience architecture, and design brief generation
 
+## MAIM OS Foundation
+
+Shakti System OS is the reference implementation for the larger MAIM Living
+Intelligence OS pattern.
+
+Canonical Sprint 10 foundation docs:
+
+```text
+docs/architecture/LIVING-INTELLIGENCE-OS.md
+docs/architecture/CLIENT-INSTANCE-STANDARD.md
+docs/architecture/SYSTEM-LAYER-MAP.md
+docs/architecture/SHAKTI-IMPLEMENTATION-MAP.md
+```
+
 ## Repo Should Eventually Contain
 
 - Front-door app build
