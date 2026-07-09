@@ -3,6 +3,7 @@ import { BackendErrorLogger } from "../services/BackendErrorLogger";
 import { BackendReadCache } from "../services/BackendReadCache";
 import { BackendRepository } from "../services/BackendRepository";
 import { ContentApprovalService } from "../services/ContentApprovalService";
+import { buildLibraryCollections } from "../shala/libraryCollections";
 import type { LibraryAssetRecord, PracticeRecord } from "../types/backend";
 
 function assert(condition: boolean, message: string): asserts condition {
@@ -88,10 +89,41 @@ function checkContentApprovalGate() {
   );
 }
 
+function checkLibraryCollectionMapping() {
+  const reviewAsset: LibraryAssetRecord = {
+    ...mockLibraryAssets[0],
+    id: "review-library-asset",
+    assetId: "ASSET-VOW-BENEATH-PATH-001",
+    title: "The Vow Beneath the Path",
+    description: "Review-stage first living knowledge candidate.",
+    driveUrl: "",
+    publishingStatus: "Needs Review",
+  };
+  const approvedDriveAsset: LibraryAssetRecord = {
+    ...reviewAsset,
+    id: "approved-library-asset",
+    driveUrl: "https://drive.google.com/file/d/example/view",
+    publishingStatus: "Approved",
+  };
+
+  assert(
+    buildLibraryCollections([reviewAsset], []).every(
+      (collection) => collection.id !== "living-knowledge",
+    ),
+    "Expected review-stage or missing-Drive Library Assets to remain hidden.",
+  );
+  assert(
+    buildLibraryCollections([approvedDriveAsset], [])[0]?.practices[0]?.title ===
+      "The Vow Beneath the Path",
+    "Expected approved Drive-backed Library Assets to map into the Temple Library.",
+  );
+}
+
 async function main() {
   await checkRepositoryFallbacks();
   checkCacheTtlBehavior();
   checkContentApprovalGate();
+  checkLibraryCollectionMapping();
 
   console.log("Backend read checks passed.");
 }

@@ -58,10 +58,26 @@ Sprint status: In Progress
 Candidate identified: Complete
 Human approval: Pending
 Drive source: Pending
-Airtable record: Pending
+Airtable record: Created as Needs Review
 Backend publication gate: Complete
-Sanctuary consumption proof: Pending
+Sanctuary consumption path: Wired, hidden until approved Drive asset exists
 ```
+
+## Current Airtable Candidate
+
+```text
+Base: Shakti System OS
+Table: Library Assets
+Record ID: reckBd6wnBYL09jsZ
+Asset ID: ASSET-VOW-BENEATH-PATH-001
+Publishing Status: Needs Review
+Access Level: Internal
+Confidentiality: Internal
+```
+
+The Shakti Shala Temple Library now reads approved Library Assets through
+`BackendRepository`. This candidate will not render until it has a real Drive URL
+and its publishing status is changed to `Approved` or `Published`.
 
 ## Guardrails
 

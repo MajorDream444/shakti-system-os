@@ -15,6 +15,7 @@ import { AnimatePresence } from 'motion/react';
 import { STORAGE_KEYS } from '../constants/storage';
 import { PersistenceService } from '../services/PersistenceService';
 import { RitualService } from '../services/RitualService';
+import { useLibraryCollections } from '../hooks/useLibraryCollections';
 import { ALL_PRACTICES } from './data';
 import './shala.css';
 
@@ -59,6 +60,7 @@ export default function ShalaApp() {
   const [currentRoom, setCurrentRoom] = useState<RoomType>('GATES');
   const [isThresholdOpen, setIsThresholdOpen] = useState<boolean>(false);
   const [activePractice, setActivePractice] = useState<Practice | null>(null);
+  const libraryCollections = useLibraryCollections();
 
   // Global Mountain environmental state
   const [timeOfDay, setTimeOfDay] = useState<TimeOfDay>('MORNING');
@@ -146,6 +148,7 @@ export default function ShalaApp() {
             key="library"
             onNavigate={handleNavigate}
             onSelectPractice={handleSelectPractice}
+            collections={libraryCollections}
             seekerState={seekerState}
             onToggleLamp={handleToggleLamp}
           />

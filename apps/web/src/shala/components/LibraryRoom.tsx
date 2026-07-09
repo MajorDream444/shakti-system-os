@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { RoomType, Practice, SeekerState } from '../types';
+import { RoomType, Practice, SeekerState, Collection } from '../types';
 import { COLLECTIONS, SANCTUARY_LANDMARKS } from '../data';
 import { BookOpen, ArrowLeft, Play } from 'lucide-react';
 import { PrayerLamp } from './PrayerLamp';
@@ -8,6 +8,7 @@ import { PrayerLamp } from './PrayerLamp';
 interface LibraryRoomProps {
   onNavigate: (room: RoomType) => void;
   onSelectPractice: (practice: Practice) => void;
+  collections?: Collection[];
   seekerState?: SeekerState;
   onToggleLamp?: (roomId: string) => void;
 }
@@ -15,6 +16,7 @@ interface LibraryRoomProps {
 export const LibraryRoom: React.FC<LibraryRoomProps> = ({
   onNavigate,
   onSelectPractice,
+  collections = COLLECTIONS,
   seekerState,
   onToggleLamp,
 }) => {
@@ -80,7 +82,7 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
 
         {/* Collections Stack */}
         <div className="flex flex-col gap-8">
-          {COLLECTIONS.map((collection) => (
+          {collections.map((collection) => (
             <div
               key={collection.id}
               className="border-t border-[#D8C5B0]/10 pt-6 flex flex-col md:flex-row gap-6 items-start"

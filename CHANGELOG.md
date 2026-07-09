@@ -10,6 +10,9 @@ All notable changes to Shakti System OS are documented in this file.
   flowing from the Living Vault through `BackendRepository`.
 - Connected the public Shakti Portal at `/` to the preserved intake at `/begin`
   and Shakti Shala sanctuary experience at `/shala`.
+- Created the Airtable `Library Assets` review record for "The Vow Beneath the
+  Path" and wired the Temple Library to consume approved Library Assets through
+  `BackendRepository` once a Drive URL and human approval are present.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 
