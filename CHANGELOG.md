@@ -15,6 +15,8 @@ All notable changes to Shakti System OS are documented in this file.
   `BackendRepository` once a Drive URL and human approval are present.
 - Added Sprint 10 MAIM Living Intelligence OS foundation docs to separate
   reusable OS standards from Shakti-specific implementation decisions.
+- Added Sprint 11 Living Knowledge Pipeline docs for turning "The Vow Beneath
+  the Path" into approved ecosystem outputs.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 

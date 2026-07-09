@@ -229,6 +229,20 @@ docs/architecture/SYSTEM-LAYER-MAP.md
 docs/architecture/SHAKTI-IMPLEMENTATION-MAP.md
 ```
 
+## Living Content Pipeline
+
+Sprint 11 defines the production manual for turning one approved teaching into
+the wider Living Knowledge ecosystem.
+
+Canonical Sprint 11 pipeline docs:
+
+```text
+docs/pipeline/LIVING-KNOWLEDGE-PIPELINE.md
+docs/pipeline/CONTENT-TRANSFORMATION-STAGES.md
+docs/pipeline/TEMPLE-LIBRARY-PUBLISHING-STANDARD.md
+docs/pipeline/DOCTRINE-EXTRACTION-CHECKLIST.md
+```
+
 ## Repo Should Eventually Contain
 
 - Front-door app build
