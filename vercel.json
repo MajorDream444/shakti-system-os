@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd apps/start-your-shakti-path && npm install && npm run build",
-  "outputDirectory": "apps/start-your-shakti-path/dist",
+  "buildCommand": "cd apps/web && npm install && npm run build",
+  "outputDirectory": "apps/web/dist",
   "installCommand": "echo 'install handled in buildCommand'",
   "framework": null
 }
