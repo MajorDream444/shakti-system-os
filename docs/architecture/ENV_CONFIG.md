@@ -15,10 +15,21 @@ VITE_AIRTABLE_BASE=appj3hDhI0HoulNrf
 VITE_AIRTABLE_TOKEN=
 VITE_STRIPE_PUBLIC_KEY=
 VITE_GOOGLE_DRIVE_ROOT=
+VITE_SHEET_ENDPOINT=
 VITE_APP_ENV=development
 ```
 
 `.env` must remain local and ignored by Git.
+
+## Intake Endpoint
+
+`VITE_SHEET_ENDPOINT` may point to the approved Google Apps Script web app used
+by the `/begin` handoff screen. It is an optional browser-facing submission
+endpoint, not a private credential.
+
+When it is missing, the intake experience remains functional and stores the
+handoff locally through `PersistenceService`. No live Google Sheet submission
+is attempted.
 
 ## Airtable Token Security
 

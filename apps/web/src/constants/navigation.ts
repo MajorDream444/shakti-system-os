@@ -9,6 +9,7 @@ export const SECTION_ANCHORS = {
   begin: "#begin",
 } as const;
 
+export const BEGIN_PATH = "/begin";
 export const SHALA_PATH = "/shala";
 
 export const NAV_ITEMS: NavItem[] = [
@@ -24,5 +25,5 @@ export const NAV_TARGETS: Record<NavItem, string> = {
   Shadow: SECTION_ANCHORS.shadow,
   Pathway: SECTION_ANCHORS.pathway,
   Retreat: SECTION_ANCHORS.retreat,
-  Begin: SHALA_PATH,
+  Begin: BEGIN_PATH,
 };

@@ -8,8 +8,8 @@ All notable changes to Shakti System OS are documented in this file.
 
 - First Living Knowledge milestone, beginning with a human-approved teaching
   flowing from the Living Vault through `BackendRepository`.
-- Connected the public Shakti Portal at `/` to the preserved Shakti Shala
-  sanctuary experience at `/shala`.
+- Connected the public Shakti Portal at `/` to the preserved intake at `/begin`
+  and Shakti Shala sanctuary experience at `/shala`.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 

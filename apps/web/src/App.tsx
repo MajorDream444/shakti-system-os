@@ -11,6 +11,7 @@ import { ReadinessMap } from "./components/ReadinessMap";
 import { RetreatVision } from "./components/RetreatVision";
 import { TransitionQuote } from "./components/TransitionQuote";
 
+const BeginApp = lazy(() => import("./begin/BeginApp"));
 const ShalaApp = lazy(() => import("./shala/ShalaApp"));
 
 function PortalApp() {
@@ -34,9 +35,22 @@ function PortalApp() {
 }
 
 function App() {
+  const isBeginRoute =
+    window.location.pathname === "/begin" ||
+    window.location.pathname.startsWith("/begin/");
   const isShalaRoute =
     window.location.pathname === "/shala" ||
     window.location.pathname.startsWith("/shala/");
+
+  if (isBeginRoute) {
+    return (
+      <Suspense
+        fallback={<div style={{ minHeight: "100vh", background: "#0a0a0a" }} />}
+      >
+        <BeginApp />
+      </Suspense>
+    );
+  }
 
   if (isShalaRoute) {
     return (

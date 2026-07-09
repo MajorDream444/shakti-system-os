@@ -1,8 +1,8 @@
 import { useState } from "react";
 import {
+  BEGIN_PATH,
   NAV_TARGETS,
   SECTION_ANCHORS,
-  SHALA_PATH,
 } from "../constants/navigation";
 import { SCROLLED_NAV_THRESHOLD } from "../constants/animation";
 import { portalCopy } from "../data/portalCopy";
@@ -34,7 +34,7 @@ export function Nav() {
             </a>
           ))}
         </div>
-        <a className="nav-start" href={SHALA_PATH}>
+        <a className="nav-start" href={BEGIN_PATH}>
           Start
         </a>
         <button

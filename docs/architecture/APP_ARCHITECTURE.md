@@ -13,12 +13,36 @@ apps/web
 ## Runtime Shape
 
 - `src/components`: visual sections and interaction surfaces.
+- `src/begin`: pathway discernment, intake, and optional Google Sheet handoff.
+- `src/shala`: mountain sanctuary rooms, rituals, and environmental memory.
 - `src/data`: copy and content collections.
 - `src/services`: persistence, access, ritual state, Drive, Airtable, and Vault boundaries.
 - `src/hooks`: browser and animation side effects.
 - `src/constants`: navigation, animation, storage, and schema constants.
 - `src/types`: shared contracts.
 - `src/config/env.ts`: typed environment boundary.
+
+## Experience Routes
+
+```text
+/       -> Shakti Portal public front door
+/begin  -> Start Your Shakti Path discernment and intake
+/shala  -> Shakti Shala mountain sanctuary
+/vault  -> reserved future Temple Library and operating intelligence layer
+```
+
+The public front door introduces the universe. The intake helps the seeker
+discern a pathway and may submit an approved handoff to Google Sheets. The
+sanctuary remains a separate room-based experience.
+
+Current route flow:
+
+```text
+Shakti Portal
+  -> Start Your Shakti Path
+  -> optional Google Sheet handoff
+  -> Enter Shala
+```
 
 ## Backend Read Boundary
 

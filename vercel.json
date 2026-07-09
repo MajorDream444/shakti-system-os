@@ -5,6 +5,10 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/begin",
+      "destination": "/index.html"
+    },
+    {
       "source": "/shala",
       "destination": "/index.html"
     }
