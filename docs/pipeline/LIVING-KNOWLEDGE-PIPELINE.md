@@ -49,6 +49,24 @@ Recording
 Once this works once, it becomes the repeatable Living Knowledge factory for
 future teachings.
 
+## Knowledge Maturity Lifecycle
+
+Every `Library Assets` record should carry a `Knowledge Maturity` value. This
+tracks production lifecycle. It is separate from `Publishing Status`, which
+controls visibility and approval.
+
+```text
+Raw Recording
+  -> Transcript Generated
+  -> Transcript Reviewed
+  -> Doctrine Extracted
+  -> Media Tagged
+  -> Library Ready
+  -> Sheetal Approved
+  -> Published
+  -> Repurposed Complete
+```
+
 ## Required Inputs
 
 Each pipeline run needs:
@@ -96,6 +114,7 @@ Airtable:
   Asset ID: ASSET-VOW-BENEATH-PATH-001
   Record ID: reckBd6wnBYL09jsZ
   Status: Needs Review
+  Knowledge Maturity: Transcript Generated
 ```
 
 ## Publication Rule

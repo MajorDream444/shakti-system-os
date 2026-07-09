@@ -22,6 +22,12 @@ Channel formatting third.
 Purpose:
 Capture the original teaching, conversation, class, or reflection.
 
+Knowledge Maturity:
+
+```text
+Raw Recording
+```
+
 Required metadata:
 
 - title
@@ -40,6 +46,12 @@ Do not publish from this stage.
 Purpose:
 Create a raw text record of the teaching.
 
+Knowledge Maturity:
+
+```text
+Transcript Generated
+```
+
 Allowed actions:
 
 - transcribe audio or video
@@ -53,6 +65,12 @@ Do not correct doctrine silently.
 
 Purpose:
 Create a readable version that keeps the teaching intact.
+
+Knowledge Maturity:
+
+```text
+Transcript Reviewed
+```
 
 Allowed cleanup:
 
@@ -76,6 +94,12 @@ Required flags:
 Purpose:
 Extract the underlying teaching architecture.
 
+Knowledge Maturity:
+
+```text
+Doctrine Extracted
+```
+
 Doctrine notes should identify:
 
 - central thesis
@@ -93,6 +117,13 @@ Doctrine notes should identify:
 Purpose:
 Create the structured metadata record that lets the teaching enter the Living
 Vault.
+
+Knowledge Maturity:
+
+```text
+Media Tagged
+Library Ready
+```
 
 Minimum fields:
 
@@ -181,6 +212,12 @@ Do not create prompts that pressure disclosure of private trauma.
 
 Purpose:
 Create a visual teaching sequence for social platforms.
+
+Knowledge Maturity:
+
+```text
+Repurposed Complete
+```
 
 Carousel should include:
 

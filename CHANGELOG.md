@@ -17,6 +17,7 @@ All notable changes to Shakti System OS are documented in this file.
   reusable OS standards from Shakti-specific implementation decisions.
 - Added Sprint 11 Living Knowledge Pipeline docs for turning "The Vow Beneath
   the Path" into approved ecosystem outputs.
+- Added `Knowledge Maturity` lifecycle tracking for Library Assets.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 

@@ -27,6 +27,7 @@ Approved Temple Library Record
 - Access Level
 - Readiness Level
 - Publishing Status
+- Knowledge Maturity
 - Confidentiality
 
 ## Current Implementation

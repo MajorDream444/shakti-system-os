@@ -62,6 +62,7 @@ File Type
 Media Type
 Access Level
 Publishing Status
+Knowledge Maturity
 Confidentiality
 Notes
 ```
@@ -94,6 +95,7 @@ Moon Phase
 Practice Type
 Access Level
 Publishing Status
+Knowledge Maturity
 Confidentiality
 Notes
 ```

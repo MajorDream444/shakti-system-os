@@ -21,6 +21,7 @@ export const mockLibraryAssets: LibraryAssetRecord[] = [
     practiceType: "Integration",
     accessLevel: "Seeker",
     publishingStatus: "Approved",
+    knowledgeMaturity: "Library Ready",
     confidentiality: "Internal",
     notes: "Approved mock fallback. Replace with approved Airtable record reads.",
   },

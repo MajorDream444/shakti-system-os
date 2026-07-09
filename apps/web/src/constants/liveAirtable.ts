@@ -41,6 +41,7 @@ export const LIVE_AIRTABLE_FIELDS = {
     practiceType: "fld32h7Oqx6dujU3x",
     accessLevel: "fld72MGSTrESFr6zv",
     publishingStatus: "fldGZsqAtaQdk7dU3",
+    knowledgeMaturity: "fldfsRCPBUCSbChoF",
     confidentiality: "fldB3rDoc2Mg7UJX5",
     notes: "fldsDkBNOzjOlZFso",
   },

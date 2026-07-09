@@ -21,6 +21,7 @@ export const VaultRecordBuilderService = {
         "Access Level": metadata.accessLevel,
         "Readiness Level": metadata.readinessLevel,
         "Publishing Status": metadata.publishingStatus,
+        "Knowledge Maturity": metadata.knowledgeMaturity,
         Confidentiality: metadata.confidentiality,
         Notes: metadata.notes,
       },

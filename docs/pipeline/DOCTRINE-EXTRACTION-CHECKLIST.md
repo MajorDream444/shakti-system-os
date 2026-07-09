@@ -103,6 +103,28 @@ Archived
 Doctrine notes should not be treated as final while the source is below
 `Approved`.
 
+## Knowledge Maturity
+
+Update `Knowledge Maturity` as the source moves through production:
+
+```text
+Raw Recording
+Transcript Generated
+Transcript Reviewed
+Doctrine Extracted
+Media Tagged
+Library Ready
+Sheetal Approved
+Published
+Repurposed Complete
+```
+
+For doctrine extraction work, the key maturity transition is:
+
+```text
+Transcript Reviewed -> Doctrine Extracted
+```
+
 ## First Teaching Checklist
 
 For `The Vow Beneath the Path`, confirm:

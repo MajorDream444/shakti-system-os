@@ -1,4 +1,7 @@
-import { VAULT_FOLDER_HINTS } from "../constants/vault";
+import {
+  VAULT_DEFAULT_KNOWLEDGE_MATURITY,
+  VAULT_FOLDER_HINTS,
+} from "../constants/vault";
 import type { DriveFileReference } from "../types/integrations";
 import type {
   VaultAssetClassification,
@@ -54,6 +57,7 @@ export const VaultMetadataService = {
       accessLevel: classification.accessLevel,
       readinessLevel: "",
       publishingStatus: classification.publishingStatus,
+      knowledgeMaturity: VAULT_DEFAULT_KNOWLEDGE_MATURITY,
       confidentiality: file.confidentiality ?? "Needs Review",
       notes:
         file.notes ??

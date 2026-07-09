@@ -65,6 +65,7 @@ export type LibraryAssetRecord = {
   practiceType: string;
   accessLevel: string;
   publishingStatus: string;
+  knowledgeMaturity: string;
   confidentiality: string;
   notes: string;
 };

@@ -71,6 +71,7 @@ Table: Library Assets
 Record ID: reckBd6wnBYL09jsZ
 Asset ID: ASSET-VOW-BENEATH-PATH-001
 Publishing Status: Needs Review
+Knowledge Maturity: Transcript Generated
 Access Level: Internal
 Confidentiality: Internal
 ```

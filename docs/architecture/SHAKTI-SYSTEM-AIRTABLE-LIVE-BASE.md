@@ -51,6 +51,35 @@ Environmental Memory: tblPSReXWjSawoiW1
 
 ---
 
+# Library Assets Lifecycle Field
+
+`Library Assets` includes a production lifecycle field:
+
+```text
+Field: Knowledge Maturity
+Field ID: fldfsRCPBUCSbChoF
+Type: single select
+```
+
+Options:
+
+```text
+Raw Recording
+Transcript Generated
+Transcript Reviewed
+Doctrine Extracted
+Media Tagged
+Library Ready
+Sheetal Approved
+Published
+Repurposed Complete
+```
+
+This field tracks content maturity. It does not replace `Publishing Status`,
+which remains the app visibility and approval gate.
+
+---
+
 # Seeded Records
 
 ## Initiation Keys

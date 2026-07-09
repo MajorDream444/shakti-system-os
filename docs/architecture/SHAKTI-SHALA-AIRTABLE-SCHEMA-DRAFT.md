@@ -115,6 +115,7 @@ Retreat Relevance
 Transcript Status
 AI Summary Status
 Publishing Status
+Knowledge Maturity
 Confidentiality
 Usage Rights
 Related Assets
@@ -152,6 +153,20 @@ Ready To Tag
 Approved
 Published
 Archived
+```
+
+Knowledge Maturity options:
+
+```text
+Raw Recording
+Transcript Generated
+Transcript Reviewed
+Doctrine Extracted
+Media Tagged
+Library Ready
+Sheetal Approved
+Published
+Repurposed Complete
 ```
 
 ---

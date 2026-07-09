@@ -37,6 +37,7 @@ function mapLibraryAsset(record: AirtableApiRecord): LibraryAssetRecord {
     practiceType: selectName(values[fields.practiceType]),
     accessLevel: selectName(values[fields.accessLevel]),
     publishingStatus: selectName(values[fields.publishingStatus]),
+    knowledgeMaturity: selectName(values[fields.knowledgeMaturity]),
     confidentiality: selectName(values[fields.confidentiality]),
     notes: textValue(values[fields.notes]),
   };

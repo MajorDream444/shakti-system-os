@@ -41,6 +41,10 @@ for (const draft of result.drafts) {
     "Expected VaultSyncService metadata publishing status to stay Needs Review.",
   );
   assert(
+    draft.metadata.knowledgeMaturity === "Raw Recording",
+    "Expected VaultSyncService metadata knowledge maturity to start as Raw Recording.",
+  );
+  assert(
     draft.metadata.confidentiality === "Internal",
     "Expected VaultSyncService metadata confidentiality to stay Internal.",
   );
@@ -55,6 +59,10 @@ for (const draft of result.drafts) {
   assert(
     draft.airtableRecord.fields["Publishing Status"] === "Needs Review",
     "Expected Airtable fixture Publishing Status to stay Needs Review.",
+  );
+  assert(
+    draft.airtableRecord.fields["Knowledge Maturity"] === "Raw Recording",
+    "Expected Airtable fixture Knowledge Maturity to start as Raw Recording.",
   );
   assert(
     draft.airtableRecord.fields.Confidentiality === "Internal",

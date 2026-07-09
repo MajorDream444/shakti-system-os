@@ -24,6 +24,17 @@ export type VaultPublishingStatus =
   | "Published"
   | "Archived";
 
+export type VaultKnowledgeMaturity =
+  | "Raw Recording"
+  | "Transcript Generated"
+  | "Transcript Reviewed"
+  | "Doctrine Extracted"
+  | "Media Tagged"
+  | "Library Ready"
+  | "Sheetal Approved"
+  | "Published"
+  | "Repurposed Complete";
+
 export type VaultAccessLevel =
   | "Internal"
   | "Visitor"
@@ -57,6 +68,7 @@ export type VaultMetadataDraft = {
   accessLevel: VaultAccessLevel;
   readinessLevel: string;
   publishingStatus: VaultPublishingStatus;
+  knowledgeMaturity: VaultKnowledgeMaturity;
   confidentiality: string;
   notes: string;
 };

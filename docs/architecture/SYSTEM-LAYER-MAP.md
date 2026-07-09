@@ -57,6 +57,11 @@ Publishing Status
   enforced by BackendRepository / adapters
   summarized in Notion
 
+Knowledge Maturity
+  owned by Airtable
+  tracks Living Knowledge production lifecycle
+  does not grant app visibility by itself
+
 Architecture Decision
   owned by GitHub docs
   discussed in Notion

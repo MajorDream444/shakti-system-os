@@ -34,6 +34,28 @@ Every record must protect:
 | Published | approved and live in a public or member surface | eligible |
 | Archived | no longer active | hidden |
 
+## Knowledge Maturity
+
+`Knowledge Maturity` tracks how far the asset has moved through the Living
+Knowledge production pipeline. It does not replace `Publishing Status`.
+
+```text
+Raw Recording
+  -> Transcript Generated
+  -> Transcript Reviewed
+  -> Doctrine Extracted
+  -> Media Tagged
+  -> Library Ready
+  -> Sheetal Approved
+  -> Published
+  -> Repurposed Complete
+```
+
+Use this field to see the asset lifecycle at a glance.
+
+Use `Publishing Status` to decide whether the asset can be consumed by the app
+or public channels.
+
 ## Minimum Record Standard
 
 No teaching should be marked `Approved` until the Airtable `Library Assets`
@@ -50,6 +72,7 @@ record includes:
 - Keywords
 - Access Level
 - Publishing Status
+- Knowledge Maturity
 - Confidentiality
 - Notes
 
@@ -101,6 +124,14 @@ Airtable owns structured publishing status.
 Library Assets.Publishing Status
   -> Approved or Published
   -> BackendRepository may return the record
+```
+
+Airtable also owns production lifecycle:
+
+```text
+Library Assets.Knowledge Maturity
+  -> shows where the asset is in the Living Knowledge pipeline
+  -> does not grant app visibility by itself
 ```
 
 Records marked `Raw`, `Needs Review`, `Needs Transcript`, `Needs Summary`,
