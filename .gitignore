@@ -34,6 +34,9 @@ graphify-out/
 *.zip
 *.txt
 
+# Production sanctuary imagery is part of the deployed application bundle.
+!apps/web/src/shala/assets/images/*.jpg
+
 # Loose workspace artifacts kept outside the tracked app/docs contract.
 architecture.md
 brand-positioning.md

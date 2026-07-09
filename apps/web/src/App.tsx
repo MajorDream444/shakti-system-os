@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { AuthorityStrip } from "./components/AuthorityStrip";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
@@ -10,7 +11,9 @@ import { ReadinessMap } from "./components/ReadinessMap";
 import { RetreatVision } from "./components/RetreatVision";
 import { TransitionQuote } from "./components/TransitionQuote";
 
-function App() {
+const ShalaApp = lazy(() => import("./shala/ShalaApp"));
+
+function PortalApp() {
   return (
     <>
       <Nav />
@@ -28,6 +31,24 @@ function App() {
       <Footer />
     </>
   );
+}
+
+function App() {
+  const isShalaRoute =
+    window.location.pathname === "/shala" ||
+    window.location.pathname.startsWith("/shala/");
+
+  if (isShalaRoute) {
+    return (
+      <Suspense
+        fallback={<div style={{ minHeight: "100vh", background: "#090707" }} />}
+      >
+        <ShalaApp />
+      </Suspense>
+    );
+  }
+
+  return <PortalApp />;
 }
 
 export default App;

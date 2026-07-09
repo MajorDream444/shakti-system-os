@@ -1,4 +1,4 @@
-import { CONTACT_HREF, SECTION_ANCHORS } from "../constants/navigation";
+import { SECTION_ANCHORS, SHALA_PATH } from "../constants/navigation";
 import { portalCopy } from "../data/portalCopy";
 
 export function FinalCTA() {
@@ -10,7 +10,7 @@ export function FinalCTA() {
         <h2>{portalCopy.finalCta.headline}</h2>
         <p>{portalCopy.finalCta.body}</p>
         <div className="hero-actions">
-          <a className="button button-primary" href={CONTACT_HREF}>
+          <a className="button button-primary" href={SHALA_PATH}>
             {portalCopy.hero.primaryCta}
           </a>
           <a className="button button-secondary" href={SECTION_ANCHORS.method}>

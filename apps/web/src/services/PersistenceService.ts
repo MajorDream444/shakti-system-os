@@ -1,8 +1,3 @@
-type PersistableValue = string | number | boolean | null | PersistableObject;
-type PersistableObject =
-  | PersistableValue[]
-  | { [key: string]: PersistableValue | undefined };
-
 function canUseStorage() {
   return typeof window !== "undefined" && Boolean(window.localStorage);
 }
@@ -21,7 +16,7 @@ export const PersistenceService = {
     }
   },
 
-  write<T extends PersistableValue>(key: string, value: T) {
+  write(key: string, value: unknown) {
     if (!canUseStorage()) {
       return;
     }
