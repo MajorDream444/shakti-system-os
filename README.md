@@ -241,6 +241,7 @@ docs/pipeline/LIVING-KNOWLEDGE-PIPELINE.md
 docs/pipeline/CONTENT-TRANSFORMATION-STAGES.md
 docs/pipeline/TEMPLE-LIBRARY-PUBLISHING-STANDARD.md
 docs/pipeline/DOCTRINE-EXTRACTION-CHECKLIST.md
+docs/pipeline/AI-ORCHESTRATION-ROLES.md
 ```
 
 ## Repo Should Eventually Contain

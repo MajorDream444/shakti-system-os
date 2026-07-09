@@ -100,6 +100,30 @@ Each pipeline run needs:
 | Newsletter Layer | Content | email / Substack draft |
 | Knowledge Graph | Repo / Graphify | committed docs and refreshed graph |
 
+## Future AI Orchestration
+
+The pipeline should eventually be supported by specialized agents with narrow
+responsibilities:
+
+```text
+Archivist
+  -> Transcriber
+  -> Doctrine Extractor
+  -> Librarian
+  -> Publisher
+  -> Social Storyteller
+  -> Community Guide
+```
+
+These agents may prepare, classify, draft, and hand off work. They may not
+publish or approve doctrine.
+
+Canonical role standard:
+
+```text
+docs/pipeline/AI-ORCHESTRATION-ROLES.md
+```
+
 ## Canonical Shakti Run
 
 ```text
@@ -168,3 +192,4 @@ The first full content run is complete only when at least one source has:
 - Do not let social outputs outrun the Temple Library record.
 - Do not treat AI-generated drafts as approved content.
 - Do not connect app rendering before Airtable approval and Drive URL are ready.
+- Do not automate publishing before human approval and audit boundaries exist.
