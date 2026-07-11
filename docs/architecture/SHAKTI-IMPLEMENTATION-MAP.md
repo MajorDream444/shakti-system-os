@@ -121,6 +121,31 @@ Examples:
 | Client-instance standard | Universal MAIM OS |
 | Retreat readiness schema | Both |
 
+## Shakti As Proving Ground
+
+Shakti is no longer only the product being built. It is the proving ground for
+the MAIM Operating System.
+
+Before any Shakti code sprint begins, answer:
+
+```text
+Does this strengthen the MAIM OS?
+Does this preserve Sheetal's doctrine and sanctuary experience?
+```
+
+If the answer to both is yes, the sprint is likely aligned.
+
+Every Shakti sprint should keep the same engineering order:
+
+```text
+1. Repository Hygiene
+2. Architecture
+3. Feature
+4. Verification
+5. Documentation
+6. Release
+```
+
 ## Guardrails
 
 - Preserve Shakti visuals, sanctuary language, room architecture, and current

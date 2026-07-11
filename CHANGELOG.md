@@ -29,6 +29,8 @@ All notable changes to Shakti System OS are documented in this file.
   AI prepares. Humans steward. The system remembers. The seeker receives."
 - Completed Sprint 11 opening housekeeping by verifying and removing local
   duplicate Library collection implementation files.
+- Added MAIM OS sprint order discipline: repository hygiene, architecture,
+  feature, verification, documentation, and release.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 

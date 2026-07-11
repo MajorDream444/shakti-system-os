@@ -184,6 +184,8 @@ MAIM OS
 Before adding work to a sprint, answer:
 
 ```text
+Does this strengthen the MAIM OS?
+Does this preserve the practitioner's doctrine and experience?
 Does this improve MAIM OS?
 Does this only improve this client instance?
 Does it need to become a reusable standard?
@@ -192,6 +194,44 @@ Does it affect Drive, Airtable, Notion, GitHub, Graphify, or handoff?
 ```
 
 If the answer is unclear, document the decision before building the feature.
+
+## Sprint Order
+
+Every MAIM OS sprint should move in this order:
+
+```text
+1. Repository Hygiene
+   - duplicates
+   - dead code
+   - imports
+   - dependency health
+
+2. Architecture
+   - boundaries
+   - documentation
+   - interfaces
+
+3. Feature
+   - one meaningful capability
+
+4. Verification
+   - lint
+   - build
+   - tests
+   - Graphify
+
+5. Documentation
+   - README
+   - CHANGELOG
+   - playbooks
+   - handoff
+
+6. Release
+```
+
+This keeps MAIM OS operating like a software studio: release discipline,
+architecture discipline, documentation discipline, and doctrine preservation
+before feature expansion.
 
 ## Guardrails
 

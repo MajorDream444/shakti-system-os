@@ -119,9 +119,28 @@ client's implementation map.
 Before any future sprint starts, answer:
 
 ```text
+Does this strengthen the MAIM OS?
+Does this preserve the practitioner's doctrine and experience?
 Which MAIM OS layer is this improving?
 Which client-specific surface will inherit it?
 What source of truth changes?
 What approval is required?
 What must not change?
 ```
+
+## Sprint Order
+
+Every client-instance sprint should follow the MAIM OS sprint sequence:
+
+```text
+1. Repository Hygiene
+2. Architecture
+3. Feature
+4. Verification
+5. Documentation
+6. Release
+```
+
+The feature should be one meaningful capability. If hygiene, architecture,
+verification, or documentation expose a risk, resolve that before expanding the
+client-facing surface.
