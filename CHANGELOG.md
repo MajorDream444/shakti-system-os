@@ -16,9 +16,11 @@ All notable changes to Shakti System OS are documented in this file.
 - Added Sprint 10 MAIM Living Intelligence OS foundation docs to separate
   reusable OS standards from Shakti-specific implementation decisions.
 - Added Sprint 11 Living Doctrine Pipeline docs for turning "The Vow Beneath
-  the Path" into approved ecosystem outputs.
+  the Path" into approved derivative experiences.
 - Added `Knowledge Maturity` lifecycle tracking for Library Assets.
 - Added future AI orchestration role standard with human approval boundaries.
+- Clarified Release 0.3 as a First Living Doctrine proof of derivative
+  experiences, not generic content output.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 

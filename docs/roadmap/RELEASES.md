@@ -9,7 +9,7 @@ used to reach each release.
 | --- | --- | --- | --- |
 | `0.1` | AI Studio MVP | Complete | Sanctuary prototype preserves the approved experience, language, rooms, and interactions. |
 | `0.2` | Living Vault Foundation | Complete | Typed architecture, read-only backend boundaries, Vault intake pipeline, and team handoff are established. |
-| `0.3` | First Living Doctrine | In progress | One real, human-approved teaching flows from Drive through Airtable and `BackendRepository` into the sanctuary. |
+| `0.3` | First Living Doctrine | In progress | One authentic teaching moves through the full Living Intelligence OS without losing its meaning. |
 | `0.4` | Private Beta | Planned | An invited cohort can use the approved sanctuary path with operational support and monitored feedback. |
 | `0.5` | Retreat Ready | Planned | Retreat readiness, application, review, and handoff pathways are operationally proven. |
 | `1.0` | Public Sanctuary | Planned | The sanctuary is approved, secure, supported, and ready for public access. |
@@ -26,6 +26,26 @@ Current execution record:
 
 ```text
 docs/roadmap/SPRINT_09_FIRST_LIVING_DOCTRINE.md
+```
+
+Mission:
+
+```text
+Prove that one authentic teaching can move through the entire Living
+Intelligence OS without losing its meaning.
+```
+
+Release success path:
+
+```text
+Raw Source
+  -> Voice Recording
+  -> Transcript
+  -> Doctrine Review
+  -> Human Approval
+  -> Living Library Asset
+  -> Temple Library
+  -> Derivative Experiences
 ```
 
 ## Release Rules
@@ -49,7 +69,7 @@ v0.1-sanctuary-mvp
         |
 v0.2-living-vault-foundation
         |
-v0.3-first-living-knowledge
+v0.3-first-living-doctrine
         |
 v0.4-private-beta
         |

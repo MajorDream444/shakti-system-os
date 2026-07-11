@@ -5,12 +5,12 @@
 Sprint 11 production manual.
 
 This document defines the repeatable path for turning one approved teaching into
-a full Shakti content ecosystem.
+a full Shakti experience ecosystem.
 
 ## Objective
 
-Prove that one source teaching can become many approved outputs without
-breaking the sanctuary container, diluting doctrine, or bypassing human review.
+Prove that one authentic teaching can move through the entire Living
+Intelligence OS without losing its meaning.
 
 First asset:
 
@@ -21,33 +21,53 @@ The Vow Beneath the Path
 ## Core Thesis
 
 ```text
-One source becomes many outputs.
+One source becomes many derivative experiences.
 ```
 
 The pipeline does not create random content from a prompt. It preserves a source
-teaching, extracts doctrine, creates approved derivatives, and routes each
-output to the right operational layer.
+teaching, extracts doctrine, creates approved derivative experiences, and routes
+each experience to the right operational layer.
 
-## Source-To-Ecosystem Flow
+## Release 0.3 Success Path
 
 ```text
-Recording
+Raw Source
+  -> Voice Recording
   -> Transcript
-  -> Clean Transcript
-  -> Doctrine Notes
-  -> Temple Library Record
-  -> Podcast Episode
-  -> E-book Chapter
-  -> Website Teaching
-  -> Reflection Questions
-  -> Social Carousel
-  -> Instagram Reel
-  -> Newsletter
-  -> Graphify Node
+  -> Doctrine Review
+  -> Human Approval
+  -> Living Library Asset
+  -> Temple Library
+  -> Derivative Experiences
 ```
 
 Once this works once, it becomes the repeatable Living Doctrine factory for
 future teachings.
+
+Not content. Experiences.
+
+Every derivative experience should point back to the same source doctrine. That
+prevents drift.
+
+## Derivative Experiences
+
+For `The Vow Beneath the Path`, the factory output is:
+
+```text
+1 Source Recording
+  -> 1 Clean Transcript
+  -> 1 Doctrine Summary
+  -> 1 Temple Library Record
+  -> 1 Podcast Episode
+  -> 1 Temple Guide (ebook)
+  -> 1 Reflection Practice
+  -> 1 Journal Prompt Set
+  -> 1 Moon Rhythm Connection
+  -> 1 Social Carousel
+  -> 1 Short-form Video
+  -> 1 Newsletter
+  -> 1 Graphify Knowledge Node
+```
 
 ## Knowledge Maturity Lifecycle
 
@@ -80,7 +100,7 @@ Each pipeline run needs:
 - intended Temple Library lane
 - confidentiality level
 - publishing status
-- target outputs
+- target derivative experiences
 - review notes
 
 ## Pipeline Stages
@@ -93,9 +113,10 @@ Each pipeline run needs:
 | Doctrine Extraction | Strategy / AI-assisted | doctrine notes and review flags |
 | Human Approval | Sheetal/team | approved source and doctrine gate |
 | Library Metadata | Operations | Airtable `Library Assets` record |
-| Longform Development | Editorial | podcast and e-book chapter |
+| Longform Development | Editorial | podcast and Temple Guide / e-book chapter |
 | Web Teaching | Editorial / Web | website-ready teaching page draft |
-| Reflection Layer | Editorial | questions and prompts |
+| Reflection Layer | Editorial | reflection practice and journal prompt set |
+| Moon Rhythm Layer | Editorial / practice | moon rhythm connection |
 | Social Layer | Content | carousel, reel brief, caption |
 | Newsletter Layer | Content | email / Substack draft |
 | Knowledge Graph | Repo / Graphify | committed docs and refreshed graph |
@@ -162,18 +183,20 @@ No output becomes public until:
 | Doctrine Notes | GitHub docs |
 | Temple Library Record | Airtable |
 | Podcast Episode | GitHub docs / production workspace |
-| E-book Chapter | GitHub docs / manuscript folder |
+| Temple Guide / E-book Chapter | GitHub docs / manuscript folder |
 | Website Teaching | GitHub docs before app implementation |
-| Reflection Questions | GitHub docs |
+| Reflection Practice | GitHub docs |
+| Journal Prompt Set | GitHub docs |
+| Moon Rhythm Connection | GitHub docs |
 | Social Carousel | content production workspace |
-| Instagram Reel | content production workspace |
+| Short-form Video | content production workspace |
 | Newsletter | draft platform / GitHub planning doc |
 | Graphify Node | Graphify output after commit/update |
 
 ## Completion Standard
 
 Sprint 11 is complete when the pipeline manual exists and the first teaching has
-a documented path from source to ecosystem outputs.
+a documented path from source to derivative experiences.
 
 The first full content run is complete only when at least one source has:
 
@@ -181,7 +204,7 @@ The first full content run is complete only when at least one source has:
 - clean transcript
 - doctrine notes
 - Airtable `Library Assets` record
-- at least three approved derivative outputs
+- at least three approved derivative experiences
 - Graphify refreshed after the docs are committed
 
 ## Guardrails
@@ -189,7 +212,7 @@ The first full content run is complete only when at least one source has:
 - Do not publish raw transcripts.
 - Do not clean doctrine into generic wellness language.
 - Do not create public claims from unapproved teaching notes.
-- Do not let social outputs outrun the Temple Library record.
+- Do not let social experiences outrun the Temple Library record.
 - Do not treat AI-generated drafts as approved content.
 - Do not connect app rendering before Airtable approval and Drive URL are ready.
 - Do not automate publishing before human approval and audit boundaries exist.

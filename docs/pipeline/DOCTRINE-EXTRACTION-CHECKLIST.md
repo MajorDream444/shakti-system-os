@@ -12,7 +12,7 @@ downstream content.
 Doctrine extraction identifies the teaching beneath the content.
 
 It prevents the system from producing generic summaries, flattening sacred
-language, or creating derivative outputs that drift away from the source.
+language, or creating derivative experiences that drift away from the source.
 
 ## Source Identity
 
@@ -162,7 +162,7 @@ Pathway relevance:
 
 Practice / reflection doorway:
 
-Approved derivative outputs:
+Approved derivative experiences:
 
 Do not publish:
 ```
@@ -174,5 +174,5 @@ Doctrine extraction is complete only when:
 - review flags are resolved or explicitly carried forward
 - source status is updated
 - approved language is documented
-- derivative outputs cite the doctrine notes
+- derivative experiences cite the doctrine notes
 - the Temple Library record reflects the final metadata

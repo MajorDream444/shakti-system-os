@@ -153,7 +153,7 @@ AirtableReadOnlyClient
 
 ## Public Output Rule
 
-Derivative outputs may not outrun the source approval.
+Derivative experiences may not outrun the source approval.
 
 Before publishing a podcast, newsletter, web teaching, social carousel, or reel:
 
@@ -185,5 +185,5 @@ A Temple Library teaching is publish-ready when:
 - publishing status is `Approved` or `Published`
 - confidentiality matches the intended surface
 - doctrine extraction has been reviewed
-- derivative outputs have channel-specific approval
+- derivative experiences have channel-specific approval
 - Graphify has been refreshed after docs are committed

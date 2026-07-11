@@ -2,11 +2,18 @@
 
 ## Mission
 
-Prove one real, human-approved teaching can move through the Living Vault into
-the existing sanctuary without hardcoding content into React.
+Prove that one authentic teaching can move through the entire Living
+Intelligence OS without losing its meaning.
 
 ```text
-Google Drive → Vault Metadata → Airtable → BackendRepository → Shakti Shala
+Raw Source
+  -> Voice Recording
+  -> Transcript
+  -> Doctrine Review
+  -> Human Approval
+  -> Living Library Asset
+  -> Temple Library
+  -> Derivative Experiences
 ```
 
 ## First Candidate
@@ -49,7 +56,28 @@ Sprint 09 is complete when:
 5. A matching `Library Assets` record exists in Airtable.
 6. `BackendRepository.listLibraryAssets()` returns the approved record.
 7. The existing sanctuary consumes it without direct Airtable access.
-8. The path is verified and documented without changing the visual design.
+8. Derivative experiences point back to the same source doctrine.
+9. The path is verified and documented without changing the visual design.
+
+## Derivative Experiences
+
+For `The Vow Beneath the Path`, the target factory output is:
+
+```text
+1 Source Recording
+  -> 1 Clean Transcript
+  -> 1 Doctrine Summary
+  -> 1 Temple Library Record
+  -> 1 Podcast Episode
+  -> 1 Temple Guide (ebook)
+  -> 1 Reflection Practice
+  -> 1 Journal Prompt Set
+  -> 1 Moon Rhythm Connection
+  -> 1 Social Carousel
+  -> 1 Short-form Video
+  -> 1 Newsletter
+  -> 1 Graphify Knowledge Node
+```
 
 ## Current State
 
