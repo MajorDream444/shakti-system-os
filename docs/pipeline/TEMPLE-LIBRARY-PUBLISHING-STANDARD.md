@@ -18,6 +18,7 @@ Every record must protect:
 - lineage-sensitive language
 - seeker safety
 - source traceability
+- doctrine provenance
 - human approval
 - future app integrity
 
@@ -94,6 +95,7 @@ record includes:
 - Asset ID
 - Title
 - Description
+- Doctrine Passport or provenance reference
 - Drive URL
 - Source Folder
 - Media Type
@@ -213,6 +215,7 @@ A Temple Library teaching is publish-ready when:
 
 - Drive source is approved and correctly placed
 - Airtable record is complete
+- Doctrine Passport is complete enough to trace provenance
 - publishing status is `Approved` or `Published`
 - confidentiality matches the intended surface
 - doctrine extraction has been reviewed

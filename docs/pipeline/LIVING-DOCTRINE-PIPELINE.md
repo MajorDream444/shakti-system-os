@@ -49,6 +49,10 @@ Not content. Experiences.
 Every derivative experience should point back to the same source doctrine. That
 prevents drift.
 
+Every teaching should also carry a Doctrine Passport: a provenance record that
+keeps the source, practitioner, approval state, derivative experiences, graph
+nodes, restrictions, and version history connected.
+
 ## Derivative Experiences
 
 For `The Vow Beneath the Path`, the factory output is:
@@ -97,6 +101,7 @@ Each pipeline run needs:
 - original recording or source document
 - raw transcript if available
 - approval owner
+- Doctrine Passport
 - intended Temple Library lane
 - confidentiality level
 - publishing status
@@ -112,6 +117,7 @@ Each pipeline run needs:
 | Transcript Cleanup | Editorial | clean transcript |
 | Doctrine Extraction | Strategy / AI-assisted | doctrine notes and review flags |
 | Human Approval | Sheetal/team | approved source and doctrine gate |
+| Doctrine Passport | Operations / Strategy | provenance record |
 | Library Metadata | Operations | Airtable `Library Assets` record |
 | Longform Development | Editorial | podcast and Temple Guide / e-book chapter |
 | Web Teaching | Editorial / Web | website-ready teaching page draft |
@@ -180,6 +186,12 @@ Canonical approval gate:
 docs/pipeline/TEMPLE-LIBRARY-PUBLISHING-STANDARD.md
 ```
 
+Canonical provenance artifact:
+
+```text
+docs/pipeline/DOCTRINE-PASSPORT-STANDARD.md
+```
+
 ## Output Ownership
 
 | Output | Source Of Truth |
@@ -188,6 +200,7 @@ docs/pipeline/TEMPLE-LIBRARY-PUBLISHING-STANDARD.md
 | Transcript | Google Drive / GitHub docs if approved for repo |
 | Clean Transcript | GitHub docs and/or Drive |
 | Doctrine Notes | GitHub docs |
+| Doctrine Passport | GitHub docs and/or Airtable metadata |
 | Temple Library Record | Airtable |
 | Podcast Episode | GitHub docs / production workspace |
 | Temple Guide / E-book Chapter | GitHub docs / manuscript folder |
@@ -210,6 +223,7 @@ The first full content run is complete only when at least one source has:
 - approved Drive source
 - clean transcript
 - doctrine notes
+- Doctrine Passport
 - Airtable `Library Assets` record
 - at least three approved derivative experiences
 - Graphify refreshed after the docs are committed

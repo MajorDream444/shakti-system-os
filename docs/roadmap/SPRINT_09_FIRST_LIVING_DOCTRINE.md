@@ -10,6 +10,7 @@ Raw Source
   -> Voice Recording
   -> Transcript
   -> Doctrine Review
+  -> Doctrine Passport
   -> Human Approval
   -> Living Library Asset
   -> Temple Library
@@ -64,6 +65,36 @@ Gate 4 — Publication Integrity
 Is this appropriate for Public, Community, Temple Library, or Retreat Only?
 ```
 
+## Doctrine Passport
+
+Every teaching needs a Doctrine Passport before it becomes a publishable Temple
+Library asset. The passport preserves provenance:
+
+```text
+Teaching ID
+Source
+Practitioner
+Date
+Primary Theme
+Secondary Themes
+Journey Stage
+Audience
+Emotional Tone
+Lineage Notes
+Approval Status
+Derivative Assets
+Graph Nodes
+Related Teachings
+Restrictions
+Version History
+```
+
+Canonical standard:
+
+```text
+docs/pipeline/DOCTRINE-PASSPORT-STANDARD.md
+```
+
 ## End-to-End Proof
 
 Sprint 09 is complete when:
@@ -73,11 +104,12 @@ Sprint 09 is complete when:
 3. The file is routed into `04_TEMPLE_LIBRARY/00_FOUNDATIONS`.
 4. Its Vault metadata is reviewed.
 5. A matching `Library Assets` record exists in Airtable.
-6. All four Human Approval Gates are complete.
-7. `BackendRepository.listLibraryAssets()` returns the approved record.
-8. The existing sanctuary consumes it without direct Airtable access.
-9. Derivative experiences point back to the same source doctrine.
-10. The path is verified and documented without changing the visual design.
+6. A Doctrine Passport exists for the teaching.
+7. All four Human Approval Gates are complete.
+8. `BackendRepository.listLibraryAssets()` returns the approved record.
+9. The existing sanctuary consumes it without direct Airtable access.
+10. Derivative experiences point back to the same source doctrine.
+11. The path is verified and documented without changing the visual design.
 
 ## Derivative Experiences
 

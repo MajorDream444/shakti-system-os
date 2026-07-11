@@ -44,6 +44,16 @@ Do not mark this record `Approved` or `Published` until Sheetal/team confirms:
 - alignment with Sheetal's teaching field
 - approved Drive file URL
 
+## Doctrine Passport
+
+```text
+docs/pipeline/passports/THE-VOW-BENEATH-THE-PATH.md
+```
+
+This passport is currently draft-only. It preserves provenance for the source,
+themes, lineage notes, restrictions, derivative assets, graph nodes, and version
+history. It does not grant publication approval.
+
 ## App Consumption Path
 
 ```text

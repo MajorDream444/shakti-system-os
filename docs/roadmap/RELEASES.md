@@ -42,6 +42,7 @@ Raw Source
   -> Voice Recording
   -> Transcript
   -> Doctrine Review
+  -> Doctrine Passport
   -> Human Approval
   -> Living Library Asset
   -> Temple Library
@@ -69,6 +70,8 @@ Only after all four gates may a Release 0.3 derivative experience be published.
 - Release 0.3 derivative experiences require all four Human Approval Gates:
   Source Integrity, Doctrine Integrity, Lineage Integrity, and Publication
   Integrity.
+- Release 0.3 teachings require a Doctrine Passport so derivative experiences
+  preserve provenance and point back to the same source doctrine.
 - Phase 2 remains on `MajorDream444-patch-1` until one real teaching is proven
   end to end.
 - Merge into `main` only after the `0.3` completion gate is satisfied.

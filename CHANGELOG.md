@@ -23,6 +23,8 @@ All notable changes to Shakti System OS are documented in this file.
   experiences, not generic content output.
 - Added four Human Approval Gates for source, doctrine, lineage, and publication
   integrity.
+- Added Doctrine Passport provenance standard for preserving source lineage
+  across derivative experiences.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 
