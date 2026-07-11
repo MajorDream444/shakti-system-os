@@ -6,6 +6,14 @@ Prove that one authentic teaching can move through the entire Living
 Intelligence OS without losing its meaning.
 
 ```text
+The practitioner teaches.
+AI prepares.
+Humans steward.
+The system remembers.
+The seeker receives.
+```
+
+```text
 Raw Source
   -> Voice Recording
   -> Transcript
@@ -22,6 +30,10 @@ Raw Source
 ```text
 The Vow Beneath the Path
 ```
+
+This is the Hello, World teaching for the Living Intelligence OS: the first
+teaching intended to prove the full pipeline from source to seeker without
+compromising the practitioner's voice.
 
 Current source:
 

@@ -25,6 +25,21 @@ between source material, knowledge, team coordination, structured records,
 implementation, experience, intelligence, and the human being receiving the
 system.
 
+## Doctrine Preservation Flow
+
+```text
+The practitioner teaches.
+AI prepares.
+Humans steward.
+The system remembers.
+The seeker receives.
+```
+
+This is the human operating contract beneath the tool stack. AI may prepare,
+classify, transcribe, extract, and draft. Humans preserve discernment. The
+system keeps provenance so the seeker receives approved wisdom rather than
+untraceable generated content.
+
 ## Responsibility Map
 
 | Layer | Responsibility | Should Not Become |

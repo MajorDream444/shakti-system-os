@@ -10,6 +10,14 @@ Doctrine Preservation is a core MAIM OS principle.
 
 Most AI systems optimize for speed. MAIM OS optimizes for faithfulness.
 
+```text
+The practitioner teaches.
+AI prepares.
+Humans steward.
+The system remembers.
+The seeker receives.
+```
+
 The Doctrine Passport is the provenance record for a teaching. It makes sure
 every transcript, doctrine note, Temple Library record, and derivative
 experience can be traced back to the same approved source.

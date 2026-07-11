@@ -46,6 +46,27 @@ Living Intelligence OS =
   and improves through approved knowledge over time.
 ```
 
+## Core Principle
+
+```text
+AI prepares. Humans approve. The system remembers.
+```
+
+Expanded operating sequence:
+
+```text
+The practitioner teaches.
+AI prepares.
+Humans steward.
+The system remembers.
+The seeker receives.
+```
+
+This is the difference between a content engine and a Living Intelligence OS.
+The system does not optimize for speed alone. It optimizes for faithfulness:
+preserving and transmitting a practitioner's lifetime of wisdom without
+flattening their voice, lineage, or discernment.
+
 ## Two-Layer Rule
 
 Every future decision must be classified before it becomes a build task.

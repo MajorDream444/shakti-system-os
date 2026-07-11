@@ -35,6 +35,16 @@ Prove that one authentic teaching can move through the entire Living
 Intelligence OS without losing its meaning.
 ```
 
+Release principle:
+
+```text
+The practitioner teaches.
+AI prepares.
+Humans steward.
+The system remembers.
+The seeker receives.
+```
+
 Release success path:
 
 ```text
@@ -59,6 +69,14 @@ Gate 4 — Publication Integrity
 ```
 
 Only after all four gates may a Release 0.3 derivative experience be published.
+
+Milestone meaning:
+
+```text
+The Vow Beneath the Path is the Hello, World proof for the Living Intelligence
+OS: the first teaching that proves the pipeline can move from source to seeker
+without compromising the practitioner's voice.
+```
 
 ## Release Rules
 

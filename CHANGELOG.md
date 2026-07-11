@@ -25,6 +25,8 @@ All notable changes to Shakti System OS are documented in this file.
   integrity.
 - Added Doctrine Passport provenance standard for preserving source lineage
   across derivative experiences.
+- Preserved the Living Intelligence OS principle: "The practitioner teaches.
+  AI prepares. Humans steward. The system remembers. The seeker receives."
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 
