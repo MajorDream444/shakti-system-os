@@ -2,7 +2,7 @@
 
 ## Status
 
-Future Living Knowledge orchestration standard.
+Future Living Doctrine orchestration standard.
 
 This document defines the specialized agent roles that may support the Living
 Knowledge Pipeline over time. These roles are intentionally narrow. They should

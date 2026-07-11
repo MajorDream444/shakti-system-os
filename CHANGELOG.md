@@ -6,7 +6,7 @@ All notable changes to Shakti System OS are documented in this file.
 
 ### In Progress
 
-- First Living Knowledge milestone, beginning with a human-approved teaching
+- First Living Doctrine milestone, beginning with a human-approved teaching
   flowing from the Living Vault through `BackendRepository`.
 - Connected the public Shakti Portal at `/` to the preserved intake at `/begin`
   and Shakti Shala sanctuary experience at `/shala`.
@@ -15,7 +15,7 @@ All notable changes to Shakti System OS are documented in this file.
   `BackendRepository` once a Drive URL and human approval are present.
 - Added Sprint 10 MAIM Living Intelligence OS foundation docs to separate
   reusable OS standards from Shakti-specific implementation decisions.
-- Added Sprint 11 Living Knowledge Pipeline docs for turning "The Vow Beneath
+- Added Sprint 11 Living Doctrine Pipeline docs for turning "The Vow Beneath
   the Path" into approved ecosystem outputs.
 - Added `Knowledge Maturity` lifecycle tracking for Library Assets.
 - Added future AI orchestration role standard with human approval boundaries.
@@ -61,7 +61,7 @@ All notable changes to Shakti System OS are documented in this file.
 
 ### Notes
 
-Living Vault Foundation is complete. First Living Knowledge is now in progress.
+Living Vault Foundation is complete. First Living Doctrine is now in progress.
 
 [Unreleased]: https://github.com/MajorDream444/shakti-system-os/compare/v0.2-living-vault-foundation...HEAD
 [v0.2-living-vault-foundation]: https://github.com/MajorDream444/shakti-system-os/releases/tag/v0.2-living-vault-foundation

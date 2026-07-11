@@ -130,7 +130,7 @@ Airtable also owns production lifecycle:
 
 ```text
 Library Assets.Knowledge Maturity
-  -> shows where the asset is in the Living Knowledge pipeline
+  -> shows where the asset is in the Living Doctrine pipeline
   -> does not grant app visibility by itself
 ```
 

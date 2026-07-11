@@ -1,4 +1,4 @@
-# Sprint 09 — First Living Knowledge
+# Sprint 09 — First Living Doctrine
 
 ## Mission
 

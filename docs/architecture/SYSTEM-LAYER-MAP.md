@@ -59,7 +59,7 @@ Publishing Status
 
 Knowledge Maturity
   owned by Airtable
-  tracks Living Knowledge production lifecycle
+  tracks Living Doctrine production lifecycle
   does not grant app visibility by itself
 
 Architecture Decision

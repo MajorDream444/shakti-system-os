@@ -1,4 +1,4 @@
-# Living Knowledge Pipeline
+# Living Doctrine Pipeline
 
 ## Status
 
@@ -46,7 +46,7 @@ Recording
   -> Graphify Node
 ```
 
-Once this works once, it becomes the repeatable Living Knowledge factory for
+Once this works once, it becomes the repeatable Living Doctrine factory for
 future teachings.
 
 ## Knowledge Maturity Lifecycle

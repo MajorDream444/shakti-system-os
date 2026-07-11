@@ -9,7 +9,7 @@ used to reach each release.
 | --- | --- | --- | --- |
 | `0.1` | AI Studio MVP | Complete | Sanctuary prototype preserves the approved experience, language, rooms, and interactions. |
 | `0.2` | Living Vault Foundation | Complete | Typed architecture, read-only backend boundaries, Vault intake pipeline, and team handoff are established. |
-| `0.3` | First Living Knowledge | In progress | One real, human-approved teaching flows from Drive through Airtable and `BackendRepository` into the sanctuary. |
+| `0.3` | First Living Doctrine | In progress | One real, human-approved teaching flows from Drive through Airtable and `BackendRepository` into the sanctuary. |
 | `0.4` | Private Beta | Planned | An invited cohort can use the approved sanctuary path with operational support and monitored feedback. |
 | `0.5` | Retreat Ready | Planned | Retreat readiness, application, review, and handoff pathways are operationally proven. |
 | `1.0` | Public Sanctuary | Planned | The sanctuary is approved, secure, supported, and ready for public access. |
@@ -17,7 +17,7 @@ used to reach each release.
 ## Current Release
 
 ```text
-Release: 0.3 — First Living Knowledge
+Release: 0.3 — First Living Doctrine
 Status: In progress
 Branch: MajorDream444-patch-1
 ```
@@ -25,7 +25,7 @@ Branch: MajorDream444-patch-1
 Current execution record:
 
 ```text
-docs/roadmap/SPRINT_09_FIRST_LIVING_KNOWLEDGE.md
+docs/roadmap/SPRINT_09_FIRST_LIVING_DOCTRINE.md
 ```
 
 ## Release Rules

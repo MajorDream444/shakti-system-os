@@ -95,7 +95,7 @@ function checkLibraryCollectionMapping() {
     id: "review-library-asset",
     assetId: "ASSET-VOW-BENEATH-PATH-001",
     title: "The Vow Beneath the Path",
-    description: "Review-stage first living knowledge candidate.",
+    description: "Review-stage first living doctrine candidate.",
     driveUrl: "",
     publishingStatus: "Needs Review",
   };

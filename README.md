@@ -12,7 +12,7 @@ This is not a generic wellness funnel, a tantra influencer brand, or a conversio
 | --- | --- | --- |
 | `0.1` | AI Studio MVP | Complete |
 | `0.2` | Living Vault Foundation | Complete |
-| `0.3` | First Living Knowledge | In progress |
+| `0.3` | First Living Doctrine | In progress |
 | `0.4` | Private Beta | Planned |
 | `0.5` | Retreat Ready | Planned |
 | `1.0` | Public Sanctuary | Planned |
@@ -232,12 +232,12 @@ docs/architecture/SHAKTI-IMPLEMENTATION-MAP.md
 ## Living Content Pipeline
 
 Sprint 11 defines the production manual for turning one approved teaching into
-the wider Living Knowledge ecosystem.
+the wider Living Doctrine ecosystem.
 
 Canonical Sprint 11 pipeline docs:
 
 ```text
-docs/pipeline/LIVING-KNOWLEDGE-PIPELINE.md
+docs/pipeline/LIVING-DOCTRINE-PIPELINE.md
 docs/pipeline/CONTENT-TRANSFORMATION-STAGES.md
 docs/pipeline/TEMPLE-LIBRARY-PUBLISHING-STANDARD.md
 docs/pipeline/DOCTRINE-EXTRACTION-CHECKLIST.md

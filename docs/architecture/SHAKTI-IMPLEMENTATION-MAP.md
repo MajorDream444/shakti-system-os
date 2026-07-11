@@ -96,7 +96,7 @@ v0.1 AI Studio MVP
 v0.2 Living Vault Foundation
   -> MAIM-reusable backend and Vault pattern
 
-v0.3 First Living Knowledge
+v0.3 First Living Doctrine
   -> first approved Shakti teaching through the reusable pattern
 ```
 
