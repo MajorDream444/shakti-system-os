@@ -166,12 +166,19 @@ Airtable:
 
 No output becomes public until:
 
+- all four Human Approval Gates are complete
 - the source is reviewed
 - doctrine notes are approved
 - Sanskrit / lineage-sensitive language is confirmed
 - the Airtable record is marked `Approved` or `Published`
 - the Drive URL is present
 - the output has a clear channel owner
+
+Canonical approval gate:
+
+```text
+docs/pipeline/TEMPLE-LIBRARY-PUBLISHING-STANDARD.md
+```
 
 ## Output Ownership
 

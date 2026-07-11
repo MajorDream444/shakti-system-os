@@ -45,6 +45,25 @@ Published
 Records marked `Raw`, `Needs Review`, `Needs Transcript`, `Needs Summary`,
 `Ready To Tag`, or `Archived` remain outside sanctuary consumption.
 
+## Human Approval Gates
+
+Before any asset or derivative experience is published, all four gates must be
+complete:
+
+```text
+Gate 1 — Source Integrity
+Did transcription preserve the teaching?
+
+Gate 2 — Doctrine Integrity
+Did extraction preserve meaning?
+
+Gate 3 — Lineage Integrity
+Does Sheetal approve this representation?
+
+Gate 4 — Publication Integrity
+Is this appropriate for Public, Community, Temple Library, or Retreat Only?
+```
+
 ## End-to-End Proof
 
 Sprint 09 is complete when:
@@ -54,10 +73,11 @@ Sprint 09 is complete when:
 3. The file is routed into `04_TEMPLE_LIBRARY/00_FOUNDATIONS`.
 4. Its Vault metadata is reviewed.
 5. A matching `Library Assets` record exists in Airtable.
-6. `BackendRepository.listLibraryAssets()` returns the approved record.
-7. The existing sanctuary consumes it without direct Airtable access.
-8. Derivative experiences point back to the same source doctrine.
-9. The path is verified and documented without changing the visual design.
+6. All four Human Approval Gates are complete.
+7. `BackendRepository.listLibraryAssets()` returns the approved record.
+8. The existing sanctuary consumes it without direct Airtable access.
+9. Derivative experiences point back to the same source doctrine.
+10. The path is verified and documented without changing the visual design.
 
 ## Derivative Experiences
 

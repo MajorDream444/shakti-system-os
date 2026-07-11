@@ -21,6 +21,8 @@ All notable changes to Shakti System OS are documented in this file.
 - Added future AI orchestration role standard with human approval boundaries.
 - Clarified Release 0.3 as a First Living Doctrine proof of derivative
   experiences, not generic content output.
+- Added four Human Approval Gates for source, doctrine, lineage, and publication
+  integrity.
 
 ## [v0.2-living-vault-foundation] - 2026-07-09
 

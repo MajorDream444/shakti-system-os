@@ -48,6 +48,17 @@ Raw Source
   -> Derivative Experiences
 ```
 
+Human approval gates:
+
+```text
+Gate 1 — Source Integrity
+Gate 2 — Doctrine Integrity
+Gate 3 — Lineage Integrity
+Gate 4 — Publication Integrity
+```
+
+Only after all four gates may a Release 0.3 derivative experience be published.
+
 ## Release Rules
 
 - A release is complete only when its completion gate is proven.
@@ -55,6 +66,9 @@ Raw Source
 - Sprints may advance work without advancing the release number.
 - Human approval remains required before teaching content becomes available to
   the sanctuary.
+- Release 0.3 derivative experiences require all four Human Approval Gates:
+  Source Integrity, Doctrine Integrity, Lineage Integrity, and Publication
+  Integrity.
 - Phase 2 remains on `MajorDream444-patch-1` until one real teaching is proven
   end to end.
 - Merge into `main` only after the `0.3` completion gate is satisfied.

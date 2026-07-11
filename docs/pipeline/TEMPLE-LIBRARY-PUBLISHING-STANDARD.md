@@ -56,6 +56,36 @@ Use this field to see the asset lifecycle at a glance.
 Use `Publishing Status` to decide whether the asset can be consumed by the app
 or public channels.
 
+## Human Approval Gates
+
+Publication requires four explicit human approval gates.
+
+```text
+Gate 1 — Source Integrity
+Did transcription preserve the teaching?
+
+Gate 2 — Doctrine Integrity
+Did extraction preserve meaning?
+
+Gate 3 — Lineage Integrity
+Does Sheetal approve this representation?
+
+Gate 4 — Publication Integrity
+Is this appropriate for the intended surface?
+```
+
+Approved surfaces:
+
+```text
+Public
+Community
+Temple Library
+Retreat Only
+```
+
+Only after all four gates are complete may an asset or derivative experience be
+published.
+
 ## Minimum Record Standard
 
 No teaching should be marked `Approved` until the Airtable `Library Assets`
@@ -157,6 +187,7 @@ Derivative experiences may not outrun the source approval.
 
 Before publishing a podcast, newsletter, web teaching, social carousel, or reel:
 
+- all four Human Approval Gates must be complete
 - source record must be approved for that channel
 - claims must match the approved doctrine notes
 - private or internal content must be removed
@@ -185,5 +216,6 @@ A Temple Library teaching is publish-ready when:
 - publishing status is `Approved` or `Published`
 - confidentiality matches the intended surface
 - doctrine extraction has been reviewed
+- all four Human Approval Gates are complete
 - derivative experiences have channel-specific approval
 - Graphify has been refreshed after docs are committed

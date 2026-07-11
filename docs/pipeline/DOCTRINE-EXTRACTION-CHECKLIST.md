@@ -176,3 +176,21 @@ Doctrine extraction is complete only when:
 - approved language is documented
 - derivative experiences cite the doctrine notes
 - the Temple Library record reflects the final metadata
+
+## Human Approval Gate Alignment
+
+Doctrine extraction supports:
+
+```text
+Gate 2 — Doctrine Integrity
+Did extraction preserve meaning?
+```
+
+It does not complete:
+
+```text
+Gate 3 — Lineage Integrity
+Gate 4 — Publication Integrity
+```
+
+Those remain human approval gates before publication.
