@@ -2,208 +2,171 @@ import { motion } from 'motion/react';
 
 export default function Threshold({ onNext }: { onNext: () => void }) {
   return (
-    <div className="flex flex-col items-center max-w-xl mt-[-2vh]">
-      {/* Sacred Sanctuary Devotional Temple Entrance */}
-      <div className="relative mb-14 px-4 select-none">
-        {/* Heavy Sanctuary Stone Archways Stack - Peering Into a Heated Devotional Chamber */}
-        <div className="relative w-52 h-80 md:w-60 md:h-96 flex items-center justify-center">
-          
-          {/* Deep Ambient Room Red Silk / Burgundy Aura Spillover */}
-          <div className="absolute inset-[-50px] bg-gradient-to-t from-burgundy/15 via-ember/[0.08] to-transparent rounded-t-full blur-3xl pointer-events-none" />
-          <div className="absolute inset-[-20px] bg-gradient-to-r from-crimson/5 via-transparent to-burgundy/5 rounded-t-full blur-2xl pointer-events-none" />
+    <div className="flex flex-col items-center max-w-lg w-full px-4 text-center">
 
-          {/* Layer 1: Ancient Foundation Outer Masonry Arch */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 2.8, ease: "easeOut" }}
-            className="absolute inset-[-18px] border-t-[2px] border-x-[1px] border-burgundy/20 rounded-t-full shadow-[inset_0_4px_30px_rgba(0,0,0,0.9)] bg-[#0c0505]/40 pointer-events-none"
-          />
+      {/* ── Sigil ── */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2.4, ease: [0.16, 1, 0.3, 1] }}
+        className="relative mb-16 w-48 h-48 flex items-center justify-center select-none"
+      >
+        {/* Outermost ambient halo */}
+        <motion.div
+          animate={{ opacity: [0.3, 0.55, 0.3], scale: [1, 1.06, 1] }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute inset-[-32px] rounded-full bg-radial-[at_50%_50%] from-burgundy/30 via-ember/10 to-transparent blur-3xl pointer-events-none"
+        />
 
-          {/* Layer 2: Main Outer Stone Arch with Gold Line Accent */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 2.4, ease: "easeOut" }}
-            className="absolute inset-0 border-t-[3px] border-x-[1px] border-ash/15 rounded-t-full shadow-[0_10px_60px_rgba(0,0,0,0.95),_0_-20px_80px_-10px_rgba(180,20,30,0.22)] bg-[#120707]"
-          />
-          
-          {/* Layer 3: Deep Interior Bevel Recess (Crimson Silk & Hearth Shadows) */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.93 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 2 }}
-            className="absolute inset-6 border border-burgundy/25 rounded-t-full bg-black/80 shadow-[inset_0_12px_45px_rgba(0,0,0,0.98)]"
-          />
+        {/* Pulsing inner glow pool */}
+        <motion.div
+          animate={{ opacity: [0.5, 0.85, 0.5], scale: [0.9, 1.08, 0.9] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+          className="absolute inset-4 rounded-full bg-radial-[at_50%_60%] from-ember/20 via-burgundy/10 to-transparent blur-2xl pointer-events-none"
+        />
 
-          {/* Layer 4: Deep Cavern Flame Chamber (The Internal Shrine Chamber) */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 1.8 }}
-            className="absolute inset-10 rounded-t-full overflow-hidden bg-black border border-burgundy/10 shadow-[inset_0_15px_60px_rgba(0,0,0,1)]"
-          >
-            {/* The Heart of the Flame - Vertical Heat Diffusion and Living Embers */}
-            <motion.div 
-              animate={{ 
-                opacity: [0.6, 0.95, 0.6],
-                scale: [0.97, 1.04, 0.97],
-                y: [-4, 4, -4]
-              }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-x-3 bottom-0 top-[10%] bg-gradient-to-t from-ember/85 via-burgundy/65 to-transparent blur-xl"
-            />
-
-            {/* Glowing Golden Lamp point at the bottom center of the altar */}
-            <motion.div 
-              animate={{ 
-                scale: [0.85, 1.2, 0.85],
-                opacity: [0.7, 1, 0.7]
-              }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-3 left-1/2 -translate-x-1/2 w-14 h-14 bg-amber-500/40 rounded-full blur-md"
-            />
-            
-            {/* Soft dust/smoke texture */}
-            <div className="absolute inset-0 bg-noise opacity-[0.12] pointer-events-none mix-blend-overlay" />
-          </motion.div>
-
-          {/* The Sacred Shakti Sigil: Sheetal Kandola Brand-Energy Signature (Fierce circular mandala with blood-red outer lotus, white sacred linework, downward Kali Devi triangle, vertical third-eye flame, and crimson bindi) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.1, duration: 2.2, ease: "easeOut" }}
-            className="absolute z-20 w-36 h-36 flex items-center justify-center pointer-events-none select-none"
-          >
-            <svg viewBox="0 0 120 120" className="w-full h-full text-stone-100 filter drop-shadow-[0_0_15px_rgba(122,12,12,0.7)]">
-              {/* Rotated 8-petal ceremonial blood-red outer lotus form */}
-              <g transform="translate(60,60)">
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
-                  <g key={angle} transform={`rotate(${angle})`}>
-                    <path 
-                      d="M 0 -44 C 11 -35 14 -15 0 0 C -14 -15 -11 -35 0 -44 Z" 
-                      fill="#7a0c0c" 
-                      stroke="#a61313" 
-                      strokeWidth="0.75" 
-                      strokeOpacity="0.5" 
-                    />
-                  </g>
-                ))}
+        {/* Main Sigil SVG */}
+        <svg
+          viewBox="0 0 120 120"
+          className="relative z-10 w-40 h-40 filter drop-shadow-[0_0_20px_rgba(122,12,12,0.6)]"
+        >
+          {/* 8-petal blood lotus */}
+          <g transform="translate(60,60)">
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
+              <g key={angle} transform={`rotate(${angle})`}>
+                <path
+                  d="M 0 -46 C 10 -36 13 -16 0 0 C -13 -16 -10 -36 0 -46 Z"
+                  fill="#7a0c0c"
+                  stroke="#a61313"
+                  strokeWidth="0.5"
+                  strokeOpacity="0.6"
+                />
               </g>
+            ))}
+          </g>
 
-              {/* Black field inner core background */}
-              <circle cx="60" cy="60" r="32" fill="#030303" stroke="#ffffff" strokeWidth="0.75" strokeOpacity="0.9" />
+          {/* Inner black field */}
+          <circle cx="60" cy="60" r="32" fill="#050303" stroke="#ffffff" strokeWidth="0.6" strokeOpacity="0.85" />
 
-              {/* Concentric rings of white sacred linework and ornamental micro-dots */}
-              <circle cx="60" cy="60" r="29" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeDasharray="1.5 2.5" strokeOpacity="0.8" />
-              <circle cx="60" cy="60" r="26" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.25" />
+          {/* Fine dashed ring */}
+          <circle cx="60" cy="60" r="28.5" fill="none" stroke="#ffffff" strokeWidth="0.4" strokeDasharray="1.2 2.8" strokeOpacity="0.6" />
 
-              {/* Downward pointing Devi/Shakti Yoni Triangle (Sacred Geometry) */}
-              <motion.polygon 
-                points="42,47 78,47 60,76" 
-                fill="none" 
-                stroke="#ffffff" 
-                strokeWidth="1.25"
-                strokeOpacity="0.95"
-                animate={{ 
-                  strokeWidth: [1.25, 1.75, 1.25],
-                  opacity: [0.85, 1, 0.85]
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-
-              {/* Third-Eye Flame of Kali (Vertical eye/flame loop) */}
-              <motion.path 
-                d="M 60,39 C 63,44 63,51 60,56 C 57,51 57,44 60,39 Z" 
-                fill="none" 
-                stroke="#e2b13c" 
-                strokeWidth="1"
-                animate={{
-                  opacity: [0.8, 1, 0.8],
-                  scale: [0.98, 1.04, 0.98]
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              />
-
-              {/* Innermost Bindu of Infinite Creation */}
-              <circle cx="60" cy="48" r="1.5" fill="#e2b13c" />
-
-              {/* Crescent Moon pointing upward inside the forehead loop */}
-              <path d="M 57,45 A 3,3 0 0,0 63,45 A 2.2,2.2 0 0,1 57,45" fill="#ffffff" opacity="0.85" />
-
-              {/* Sacred Blood-Red/Crimson Bindu point placed centered lower inside the triangle */}
-              <circle cx="60" cy="59" r="2.5" fill="#9d171d" stroke="#ffffff" strokeWidth="0.4" strokeOpacity="0.95" />
-            </svg>
-          </motion.div>
-
-          {/* Silt Dust/Ember spill reflection crossing the stone floor threshold */}
-          <motion.div 
-            animate={{ opacity: [0.55, 0.8, 0.55] }}
-            transition={{ duration: 6, repeat: Infinity }}
-            className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[160%] h-24 bg-radial-gradient from-burgundy/40 via-ember/25 to-transparent blur-3xl pointer-events-none"
+          {/* Downward Shakti triangle */}
+          <motion.polygon
+            points="43,47 77,47 60,74"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="1.1"
+            strokeOpacity="0.9"
+            animate={{ strokeOpacity: [0.7, 1, 0.7] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
           />
-        </div>
 
-        {/* Quiet, Cinematic Floating Sparks Rising From Behind */}
-        {[...Array(5)].map((_, i) => (
+          {/* Third-eye flame */}
+          <motion.path
+            d="M 60,40 C 63.5,45 63.5,52 60,57 C 56.5,52 56.5,45 60,40 Z"
+            fill="none"
+            stroke="#e2b13c"
+            strokeWidth="0.9"
+            animate={{ opacity: [0.7, 1, 0.7] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+          />
+
+          {/* Golden bindu */}
+          <circle cx="60" cy="48.5" r="1.4" fill="#e2b13c" opacity="0.9" />
+
+          {/* Crescent */}
+          <path d="M 57.5,45.5 A 2.5,2.5 0 0,0 62.5,45.5 A 1.8,1.8 0 0,1 57.5,45.5" fill="#ffffff" opacity="0.8" />
+
+          {/* Crimson bindu — center of the triangle */}
+          <circle cx="60" cy="59" r="2.2" fill="#9d171d" stroke="#ffffff" strokeWidth="0.35" strokeOpacity="0.9" />
+        </svg>
+
+        {/* Rising sparks */}
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
+            initial={false}
             animate={{
-              y: [15, -130],
-              x: [0, (i - 2) * 18],
-              opacity: [0, 0.8, 0],
-              scale: [0.4, 1.1, 0]
+              y: [0, -110 - i * 12],
+              x: [(i - 2.5) * 6, (i - 2.5) * 22],
+              opacity: [0, 0.7, 0],
+              scale: [0.3, 1, 0],
             }}
             transition={{
-              duration: 7 + i * 2,
+              duration: 6 + i * 1.4,
               repeat: Infinity,
-              delay: i * 1.8,
-              ease: "linear"
+              delay: i * 1.6 + 1,
+              ease: 'easeOut',
             }}
-            className="absolute bottom-8 left-1/2 w-1.5 h-1.5 bg-ember/80 rounded-full blur-[0.4px] pointer-events-none"
+            className="absolute bottom-6 left-1/2 w-[3px] h-[3px] rounded-full bg-ember pointer-events-none"
+            style={{ marginLeft: '-1.5px' }}
           />
         ))}
-      </div>
+      </motion.div>
 
-      <motion.h1 
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 1.2 }}
-        className="text-3xl md:text-4xl font-light tracking-tight leading-relaxed mb-6 text-glow text-stone-100 serif"
+      {/* ── Wordmark ── */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 1.5 }}
+        className="text-[10px] uppercase tracking-[0.45em] text-ash/30 mb-8 serif italic"
       >
-        Begin your Shakti path with structure your body can trust.
+        Sheetal Kandola Somatics
+      </motion.p>
+
+      {/* ── Headline ── */}
+      <motion.h1
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        className="text-[2.15rem] md:text-5xl font-light leading-[1.25] tracking-tight mb-7 text-stone-100 serif italic text-glow"
+      >
+        Find the doorway<br className="hidden md:block" /> your body already knows.
       </motion.h1>
 
-      <motion.p 
+      {/* ── Sub-copy ── */}
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.1, duration: 1.5 }}
-        className="text-base text-ash/80 mb-5 font-light leading-relaxed px-4 md:px-8"
+        transition={{ delay: 1.35, duration: 1.5 }}
+        className="text-[0.9375rem] text-ash/65 font-light leading-relaxed max-w-sm mb-4"
       >
-        A calm first step into Sheetal Kandola’s work — rooted in Shakta Tantra, sensual somatics, shadow integration, and nervous-system literacy.
+        A quiet discernment experience rooted in Shakta Tantra, somatic shadow work, and nervous-system care.
       </motion.p>
 
-      <motion.p 
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 1.5 }}
-        className="text-xs text-ash/40 mb-11 italic"
+        transition={{ delay: 1.65, duration: 1.5 }}
+        className="text-xs text-ash/35 italic mb-12"
       >
-        You do not need to know exactly where to begin. We will move slowly.
+        You do not need to know where to begin.
       </motion.p>
 
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
-        onClick={onNext}
-        className="relative group px-14 py-4 bg-transparent border border-burgundy/30 hover:border-ember/50 transition-colors duration-700 overflow-hidden rounded-sm cursor-pointer shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
+      {/* ── CTA ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.0, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="flex flex-col items-center gap-5"
       >
-        <span className="relative z-10 text-ash/80 group-hover:text-ember transition-colors duration-500 tracking-[0.25em] font-medium text-xs uppercase">
-          Enter the Threshold
-        </span>
-        <div className="absolute inset-0 bg-ember/0 group-hover:bg-ember/[0.04] transition-colors duration-700" />
-      </motion.button>
+        <motion.button
+          onClick={onNext}
+          whileHover={{ scale: 1.015, transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } }}
+          className="relative group px-16 py-4 bg-transparent border border-burgundy/35 hover:border-ember/55 transition-all duration-700 rounded-sm cursor-pointer overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
+        >
+          <span className="relative z-10 text-ash/75 group-hover:text-ember transition-colors duration-500 tracking-[0.28em] font-medium text-[11px] uppercase">
+            Enter the Threshold
+          </span>
+          <div className="absolute inset-0 bg-ember/0 group-hover:bg-ember/[0.04] transition-colors duration-700" />
+        </motion.button>
+
+        <p className="text-[9px] uppercase tracking-[0.3em] text-ash/20 serif">
+          eight screens · no login · no paywall
+        </p>
+      </motion.div>
+
     </div>
   );
 }
