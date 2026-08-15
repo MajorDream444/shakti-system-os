@@ -14,6 +14,8 @@ graphify-out/
 
 # Local Codex/operator state
 .codex/hooks.json
+.agents/skills/
+skills-lock.json
 
 # Local media and export artifacts belong in Google Drive unless intentionally promoted.
 *.jpg

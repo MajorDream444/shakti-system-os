@@ -25,6 +25,10 @@ Skills installed/read during the final pass:
 - `ui-ux-pro-max` from `nextlevelbuilder/ui-ux-pro-max-skill`
   - Applied through `SKILL.md`, `references/pro-rules.md`, and `references/quick-reference.md`.
   - Decision domain: accessibility, touch target behavior, responsive layout, navigation clarity, icon semantics, and React test/query discipline.
+- `awesome-codex-skills` from `MajorDream444/awesome-codex-skills`
+  - Used as discovery only from a temporary clone.
+  - Decision domain: identify whether a narrower supporting skill should be added.
+  - Result: no additional skill was installed. The relevant candidates found (`theme-factory`, `canvas-design`) were broader artifact/theme helpers and would have introduced overlapping or non-app-specific direction for this sprint.
 - Existing local `frontend-app-builder` / React implementation guidance
   - Decision domain: implementation fidelity, browser QA, responsive screenshots, and production-quality front-end checks.
 
@@ -34,6 +38,13 @@ Focused UI/UX Pro Max searches run:
 mobile touch accessible navigation --domain ux
 orphan heading line balance --domain ux
 accessible components --stack react
+```
+
+Skill artifact hygiene:
+
+```text
+.agents/skills/ and skills-lock.json are local operator artifacts.
+They are ignored and are not part of the application release candidate.
 ```
 
 Taste Gate review:
