@@ -47,11 +47,32 @@ Skill artifact hygiene:
 They are ignored and are not part of the application release candidate.
 ```
 
-Taste Gate review:
+### Taste Gate Checklist
+
+This gate is intentionally stricter than compile, route, or wireframe matching. It is a visual-authorship review for `/`, `/begin`, and `/shala`.
+
+| # | Gate Question | Sprint 12A Assessment |
+|---|---|---|
+| 1 | Does this feel authored for Sheetal, or could it belong to any wellness brand? | `PARTIAL PASS` - The Shakti/Shala world, threshold language, pathway ascent, and sanctuary architecture are stronger. Final approved Sheetal photography is still required before this can be fully authored. |
+| 2 | Is there a clear visual hierarchy within 3 seconds? | `PASS` - Portal hero, Begin arrival, and Shala entry all now present a primary action or orientation point immediately. |
+| 3 | Does the eye know where to go next? | `PASS` - Portal prioritizes `Start Your Shakti Path`; Begin exposes the ascent rail and primary action; Shala exposes current room plus Sanctuary Map. |
+| 4 | Are we using space intentionally rather than filling space? | `PASS` - Begin uses quieter spacing and fewer controls per station; Portal imagery is grouped as orientation rather than filler; Shala keeps room options focused. |
+| 5 | Is the typography doing real compositional work? | `PASS` - Large serif headings now carry the emotional architecture; mono labels support ritual/navigation hierarchy without becoming dashboard chrome. |
+| 6 | Does imagery feel integral rather than decorative? | `PARTIAL PASS` - Image slots now define world, water, library, and threshold. Final provenance-approved Sheetal/goddess photography remains a dependency. |
+| 7 | Does devotional red function as punctuation rather than flooding the interface? | `PASS` - Red/orange is used for CTAs, active doorway accents, and small emphasis points instead of continuous fields. |
+| 8 | Are pink, muted gold, green, stone, water, flora, and photography integrated with restraint? | `PASS WITH WATCH` - Pink/gold/green/water cues are integrated in Begin and Portal. Flora is present mostly as atmosphere and asset intent; richer approved flora imagery remains future asset work. |
+| 9 | Does the experience become progressively more luminous through `/begin`? | `PASS` - Station backgrounds and the ascent treatment gradually move from dark arrival toward warmer pink/gold/green luminosity while preserving sanctuary depth. |
+| 10 | Does `/shala` feel like a place to inhabit rather than a menu of features? | `PASS` - Current-room state, Sanctuary Map, room labels, environmental backgrounds, and route states make it feel more spatial and inhabitable. |
+| 11 | Does mobile feel designed, not merely collapsed? | `PASS` - Mobile Portal stacks image zones and CTAs cleanly; Begin has a thumb-friendly rail/action system; Shala keeps orientation and map access reachable. |
+| 12 | Are motion and transitions quiet, purposeful, and embodied rather than flashy? | `PASS` - Existing motion remains slow/atmospheric; no flashy GSAP or attention-seeking animation was added. |
+| 13 | Have we avoided generic gradients, random glassmorphism, excessive rounded cards, dashboard chrome, bento-grid-for-everything, generic sacred geometry wallpaper, fake luxury, AI-generated goddess cliches, meaningless animation, and overuse of badges/pills/chips/status UI? | `PASS WITH WATCH` - The implemented surfaces avoid those patterns. Some older prototype rooms still contain legacy decorative/system motifs and should be addressed in a later visual polish sweep. |
+| 14 | Would Sheetal plausibly recognize her own world in this? | `PARTIAL PASS` - The direction is closer: Himalayan sanctuary, Shakti threshold, reflective water, practice/library/pathway architecture. Full recognition depends on approved Sheetal photography, final goddess/environment assets, and human visual review. |
+
+Surface summary:
 
 ```text
 / Portal
-PASS - The first viewport now has immediate Shakti Portal signal, a clear primary Begin doorway, real image zones, and restrained secondary Shala orientation.
+PASS - Immediate Shakti Portal signal, clear primary Begin doorway, real image zones, and restrained secondary Shala orientation.
 WATCH - Final Sheetal photography is still required before this can be considered fully authored.
 
 /begin
