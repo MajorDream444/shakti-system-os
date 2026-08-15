@@ -55,3 +55,8 @@ social/
 "Shakti Shala Library/"
 "THE VAULT _SHAKTI SHALA/"
 "THE VAULT _SHAKTI SHALA copy/"
+.vercel
+.env*
+apps/web/qa-artifacts/
+apps/web/test-results/
+apps/web/playwright-report/

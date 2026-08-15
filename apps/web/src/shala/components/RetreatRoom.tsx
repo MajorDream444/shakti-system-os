@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { RoomType, SeekerState } from '../types';
-import { ShieldCheck, ArrowLeft, Calendar, MapPin, DollarSign, Award } from 'lucide-react';
+import { ShieldCheck, ArrowLeft, Calendar, MapPin, Award } from 'lucide-react';
 import { SANCTUARY_LANDMARKS } from '../data';
 import { PrayerLamp } from './PrayerLamp';
 
@@ -190,7 +190,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
               {bookingStep === 1 ? (
                 <form onSubmit={handleConfirmBooking} className="flex flex-col gap-5">
                   <div className="text-center">
-                    <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#E27A3F]">High-Ticket Pilgrimage</span>
+                    <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#E27A3F]">Retreat Discernment</span>
                     <h3 className="font-serif text-3xl text-[#F6EFE7] mt-1.5">Request Sacred Passage</h3>
                     <p className="font-serif italic text-sm text-[#8a7c6d] mt-1">
                       Himalayan Sanctuary container — October 14 to 28, 2026.
@@ -209,9 +209,9 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                       <span className="font-serif text-sm text-[#F6EFE7]">Kedar Valley</span>
                     </div>
                     <div className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-white/[0.01]">
-                      <DollarSign className="w-5 h-5 text-[#E27A3F]" />
-                      <span className="font-sans text-[10px] text-[#8a7c6d] uppercase">Milestone Offering</span>
-                      <span className="font-serif text-sm text-[#F6EFE7]">$2,500 deposit</span>
+                      <ShieldCheck className="w-5 h-5 text-[#E27A3F]" />
+                      <span className="font-sans text-[10px] text-[#8a7c6d] uppercase">Access State</span>
+                      <span className="font-serif text-sm text-[#F6EFE7]">Available to Request</span>
                     </div>
                   </div>
 
@@ -263,10 +263,10 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                       type="submit"
                       className="w-full py-3 bg-gradient-to-r from-[#C35A2E] to-[#E27A3F] text-white font-sans font-semibold text-xs tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(226,122,63,0.3)] transition-all hover:scale-[1.02]"
                     >
-                      Complete Your Offering ($2,500)
+                      Request Human Review
                     </button>
                     <span className="text-center font-sans text-[9px] text-[#6b5f52] uppercase tracking-wider block">
-                      Stewardship offering reserve, managed securely via Stripe
+                      Retreat interest does not equal retreat readiness
                     </span>
                   </div>
                 </form>
@@ -282,7 +282,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                   </div>
                   <h3 className="font-serif text-3xl text-[#F6EFE7] mt-4">Passage Requested</h3>
                   <p className="font-sans text-xs text-[#8a7c6d] max-w-sm">
-                    Namaste, <strong className="text-[#F6EFE7]">{formData.name}</strong>. Your physical retreat container deposit has been logged into the temple ledger.
+                    Namaste, <strong className="text-[#F6EFE7]">{formData.name}</strong>. This prototype has noted your retreat interest locally; no application or approval has been created.
                   </p>
                   <div className="border border-white/5 rounded-2xl p-4 bg-white/[0.01] max-w-sm w-full text-left mt-2">
                     <span className="font-sans text-[9px] tracking-widest text-[#E27A3F] block uppercase mb-1">Next Step</span>

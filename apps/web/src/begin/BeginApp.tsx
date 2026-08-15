@@ -1,5 +1,6 @@
-import { useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { ArrowLeft, Home } from 'lucide-react';
 import { AppState, PathType, PATH_RESULTS } from './types';
 import Threshold from './components/Screens/Threshold';
 import Orientation from './components/Screens/Orientation';
@@ -12,25 +13,69 @@ import AmberSanctuaryCanvas from './components/AmberSanctuaryCanvas';
 import KaliSigil from './components/KaliSigil';
 import SanctuaryAudio from './components/SanctuaryAudio';
 import { SHALA_PATH } from '../constants/navigation';
+import { STORAGE_KEYS } from '../constants/storage';
+import { PersistenceService } from '../services/PersistenceService';
 import './begin.css';
 
-const INITIAL_STATE: AppState = {
-  currentScreen: 1,
-  scores: {
-    CIRCLE: 0,
-    ONE_ON_ONE: 0,
-    CONTAINER: 0,
-    RETREAT: 0,
-  },
-  selections: {},
-  longings: [],
-  reflection: '',
-};
+function createBeginSessionId() {
+  return `begin_${globalThis.crypto?.randomUUID?.() ?? Date.now().toString(36)}`;
+}
+
+function createInitialState(): AppState {
+  return {
+    beginSessionId: createBeginSessionId(),
+    currentScreen: 1,
+    scores: {
+      CIRCLE: 0,
+      ONE_ON_ONE: 0,
+      CONTAINER: 0,
+      RETREAT: 0,
+    },
+    selections: {},
+    longings: [],
+    reflection: '',
+  };
+}
+
+const STATIONS = [
+  'Threshold',
+  'Listening',
+  'Pace',
+  'Support',
+  'Longing',
+  'Discernment',
+  'Doorway',
+  'Shala Ahead',
+] as const;
 
 export default function BeginApp() {
-  const [state, setState] = useState<AppState>(INITIAL_STATE);
+  const [state, setState] = useState<AppState>(() => {
+    const saved = PersistenceService.read<Partial<AppState> | null>(
+      STORAGE_KEYS.beginJourneyState,
+      null,
+    );
+
+    return {
+      ...createInitialState(),
+      ...saved,
+      scores: { ...createInitialState().scores, ...saved?.scores },
+      selections: saved?.selections ?? {},
+      longings: saved?.longings ?? [],
+      reflection: saved?.reflection ?? '',
+      beginSessionId: saved?.beginSessionId ?? createBeginSessionId(),
+    };
+  });
+
+  useEffect(() => {
+    PersistenceService.write(STORAGE_KEYS.beginJourneyState, state);
+  }, [state]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [state.currentScreen]);
 
   const nextScreen = () => setState(prev => ({ ...prev, currentScreen: prev.currentScreen + 1 }));
+  const previousScreen = () => setState(prev => ({ ...prev, currentScreen: Math.max(1, prev.currentScreen - 1) }));
 
   const handleChoice = (screenId: number, scores: Partial<Record<PathType, number>>, choiceId: string) => {
     setState(prev => {
@@ -56,6 +101,50 @@ export default function BeginApp() {
     return Object.entries(state.scores).reduce((a, b) => (a[1] >= b[1] ? a : b))[0] as PathType;
   }, [state.scores]);
 
+  const intakeResponses = useMemo(() => {
+    const responseLabels: Record<number, Record<string, string>> = {
+      3: {
+        carry: "I need rhythm, grounding, and a place to return.",
+        focus: "I am moving through something specific and want personal support.",
+        depth: "I feel ready to meet deeper shadow and embodied transformation.",
+        retreat: "I feel called toward retreat or immersion, but want to discern it carefully.",
+      },
+      4: {
+        gentle: "Gentle and consistent",
+        personal: "Personal and focused",
+        structured: "Structured and committed",
+        immersive: "Immersive, but only with real readiness",
+      },
+      5: {
+        light: "Circle, rhythm, and community",
+        dedicated: "Private guidance and reflection",
+        transformational: "A deeper container with structure",
+        "retreat-level": "Retreat-level immersion and preparation",
+      },
+    };
+
+    return [
+      {
+        stationKey: "Listening",
+        questionKey: "current_state" as const,
+        responseValue: state.selections[3] ?? "",
+        responseLabel: responseLabels[3][state.selections[3]] ?? "",
+      },
+      {
+        stationKey: "Pace",
+        questionKey: "trusted_pace" as const,
+        responseValue: state.selections[4] ?? "",
+        responseLabel: responseLabels[4][state.selections[4]] ?? "",
+      },
+      {
+        stationKey: "Support",
+        questionKey: "support_capacity" as const,
+        responseValue: state.selections[5] ?? "",
+        responseLabel: responseLabels[5][state.selections[5]] ?? "",
+      },
+    ];
+  }, [state.selections]);
+
   const renderScreen = () => {
     switch (state.currentScreen) {
       case 1:
@@ -73,6 +162,7 @@ export default function BeginApp() {
               { id: 'depth', text: "I feel ready to meet deeper shadow and embodied transformation.", scores: { CONTAINER: 2, CIRCLE: 1, ONE_ON_ONE: 1, RETREAT: 1 } },
               { id: 'retreat', text: "I feel called toward retreat or immersion, but want to discern it carefully.", scores: { RETREAT: 2, CONTAINER: 1 } },
             ]}
+            selectedChoiceId={state.selections[3]}
             onSelect={handleChoice}
           />
         );
@@ -88,6 +178,7 @@ export default function BeginApp() {
               { id: 'structured', text: "Structured and committed", scores: { CONTAINER: 2 } },
               { id: 'immersive', text: "Immersive, but only with real readiness", scores: { RETREAT: 2 } },
             ]}
+            selectedChoiceId={state.selections[4]}
             onSelect={handleChoice}
           />
         );
@@ -103,6 +194,7 @@ export default function BeginApp() {
               { id: 'transformational', text: "A deeper container with structure", scores: { CONTAINER: 2, RETREAT: 1 } },
               { id: 'retreat-level', text: "Retreat-level immersion and preparation", scores: { RETREAT: 2, CONTAINER: 1 } },
             ]}
+            selectedChoiceId={state.selections[5]}
             onSelect={handleChoice}
           />
         );
@@ -113,10 +205,14 @@ export default function BeginApp() {
       case 8:
         return (
           <Handoff
+            beginSessionId={state.beginSessionId}
             pathway={calculatedPath}
-            longings={state.longings}
-            reflection={state.reflection}
-            onReset={() => setState(INITIAL_STATE)}
+            responses={intakeResponses}
+            onReset={() => {
+              const nextState = createInitialState();
+              PersistenceService.remove(STORAGE_KEYS.beginJourneyState);
+              setState(nextState);
+            }}
             onEnterShala={() => window.location.assign(SHALA_PATH)}
           />
         );
@@ -126,7 +222,7 @@ export default function BeginApp() {
   };
 
   return (
-    <div className="relative min-h-screen bg-obsidian text-ash overflow-hidden flex flex-col selection:bg-ember/30">
+    <div className={`begin-station begin-station-${state.currentScreen} relative min-h-[100svh] bg-obsidian text-ash overflow-x-hidden overflow-y-auto flex flex-col selection:bg-ember/30`}>
       <CustomCursor />
       <AmberSanctuaryCanvas />
 
@@ -139,21 +235,36 @@ export default function BeginApp() {
       <div className="absolute top-[30%] left-[-15%] w-[70vw] h-[70vh] bg-clay/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
       {/* Main Sanctuary Area */}
-      <div className="relative flex-1 flex flex-col items-center justify-center p-6 md:p-12 lg:p-16 z-10 w-full min-h-screen">
-        <div className="relative w-full max-w-4xl mx-auto flex-grow flex flex-col overflow-hidden min-h-[80vh] py-16 px-4 sm:px-8 md:px-12 justify-center">
+      <div className="relative flex-1 flex flex-col items-center justify-center p-3 sm:p-6 md:p-12 lg:p-16 z-10 w-full min-h-[100svh]">
+        <div className="relative w-full max-w-4xl mx-auto flex-grow flex flex-col min-h-[calc(100svh-1.5rem)] md:min-h-[80vh] py-28 md:py-24 px-2 sm:px-8 md:px-12 justify-center">
 
           {/* Symmetrical Atmospheric Header */}
-          <header className="absolute top-6 left-6 right-6 flex justify-between items-center text-[10px] tracking-[0.25em] text-ash/30 lowercase font-light pointer-events-none select-none serif">
-            <div className="flex items-center gap-2 pointer-events-none select-none">
+          <header className="absolute top-4 md:top-6 left-3 right-3 md:left-6 md:right-6 flex justify-between items-center text-[10px] tracking-[0.18em] md:tracking-[0.25em] text-ash/60 lowercase font-light serif z-30">
+            <a href="/" className="flex min-h-11 items-center gap-2 text-ash/65 hover:text-ash transition-colors" aria-label="Return to Shakti Portal home">
+              <Home className="w-4 h-4" />
               <KaliSigil className="w-5 h-5 flex-shrink-0" glow={true} />
-              <span className="translate-y-[0.5px]">the path of Shakti</span>
-            </div>
-            <div className="italic">
-              threshold {state.currentScreen}
+              <span className="hidden sm:inline translate-y-[0.5px]">the path of Shakti</span>
+            </a>
+            <div className="italic text-right">
+              {STATIONS[state.currentScreen - 1]}
             </div>
           </header>
 
-          <main className="relative z-10 flex-1 flex flex-col items-center justify-center w-full my-auto py-8">
+          <nav className="begin-ascent" aria-label="Your path toward Shakti Shala">
+            <div className="begin-ascent-line" aria-hidden="true" />
+            {STATIONS.map((station, index) => {
+              const stationNumber = index + 1;
+              const stateName = stationNumber === state.currentScreen ? 'current' : stationNumber < state.currentScreen ? 'complete' : 'ahead';
+              return (
+                <div className={`begin-ascent-station ${stateName}`} key={station} aria-current={stateName === 'current' ? 'step' : undefined}>
+                  <i aria-hidden="true" />
+                  <span>{station}</span>
+                </div>
+              );
+            })}
+          </nav>
+
+          <main className="relative z-10 flex-1 flex flex-col items-center justify-start md:justify-center w-full my-auto py-5 md:py-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={state.currentScreen}
@@ -168,31 +279,32 @@ export default function BeginApp() {
             </AnimatePresence>
           </main>
 
+          {state.currentScreen > 1 && (
+            <button
+              type="button"
+              onClick={previousScreen}
+              className="begin-back"
+              aria-label={`Return to ${STATIONS[state.currentScreen - 2]}`}
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>Back</span>
+            </button>
+          )}
+
           {/* Symmetrical Minimalist Footer */}
-          <footer className="absolute bottom-6 left-6 right-6 flex justify-between items-center text-[9px] tracking-[0.2em] text-ash/20 lowercase font-light serif italic">
+          <footer className="absolute bottom-4 md:bottom-6 left-3 right-3 md:left-6 md:right-6 flex justify-between items-center text-[9px] tracking-[0.14em] md:tracking-[0.2em] text-ash/40 lowercase font-light serif italic">
             <div className="flex items-center gap-2 pointer-events-none select-none">
               <KaliSigil className="w-4 h-4 flex-shrink-0" glow={false} />
               <span className="translate-y-[0.5px]">sheetal kandola somatics</span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="pointer-events-none select-none">embodied discernment</span>
+              <span className="hidden sm:inline pointer-events-none select-none">embodied discernment</span>
               <SanctuaryAudio />
             </div>
           </footer>
         </div>
       </div>
 
-      {/* Subtle Progress - Bottom floating dots */}
-      {state.currentScreen > 1 && state.currentScreen < 7 && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-30">
-          {[2, 3, 4, 5, 6].map(s => (
-            <div
-              key={s}
-              className={`h-[1.5px] w-6 transition-all duration-700 ${state.currentScreen >= s ? 'bg-ember/60' : 'bg-charcoal/55'}`}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 }

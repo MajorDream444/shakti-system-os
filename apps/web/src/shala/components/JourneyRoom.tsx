@@ -27,8 +27,8 @@ const TEMPLE_KEYS: KeyTier[] = [
     id: 'visitor',
     level: 'Visitor',
     desc: 'The Threshold',
-    price: 'Free',
-    tribute: 'Pledge of Silence',
+    price: 'Open',
+    tribute: 'Available now',
     unlocks: ['First Chamber entry', 'Basic stillness timer', 'Threshold Courtyard access'],
     exclusive: 'Standard visitor container',
     color: '#8a7c6d'
@@ -37,40 +37,40 @@ const TEMPLE_KEYS: KeyTier[] = [
     id: 'seeker',
     level: 'Seeker',
     desc: 'The Search',
-    price: '$21',
-    tribute: 'One-time Offering',
-    unlocks: ['Unlimited Practice Room entry', 'Remove all telemetry and distractions', 'Personal stillness tracking'],
-    exclusive: 'Eternal seeker crest',
+    price: 'Available to Request',
+    tribute: 'Human reviewed',
+    unlocks: ['Practice Room rhythm', 'Quiet interface', 'Personal continuity'],
+    exclusive: 'Future credential concept',
     color: '#D8C5B0'
   },
   {
     id: 'practitioner',
     level: 'Practitioner',
     desc: 'The Work',
-    price: '$108',
-    tribute: 'Altar Contribution',
+    price: 'Requires Preparation',
+    tribute: 'Human reviewed',
     unlocks: ['Complete digital library archive', 'Himalayan lineage direct audio files', 'Private practitioner journal'],
-    exclusive: 'Cast-brass physical token mailed home',
+    exclusive: 'Future credential concept',
     color: '#cdbfa8'
   },
   {
     id: 'initiate',
     level: 'Initiate',
     desc: 'The Fire',
-    price: '$365',
-    tribute: 'Sacred Devotion',
+    price: 'By Invitation',
+    tribute: 'Human discernment',
     unlocks: ['Direct feedback on lineage journals', 'Himalayan pre-retreat preparation container', 'Access to direct mentorship streams'],
-    exclusive: 'Engraved teak storage capsule with incense',
+    exclusive: 'Future credential concept',
     color: '#E27A3F'
   },
   {
     id: 'temple_circle',
     level: 'Temple Circle',
     desc: 'The Council',
-    price: '$1,008',
-    tribute: 'Pillar Patronage',
+    price: 'By Invitation',
+    tribute: 'Human discernment',
     unlocks: ['Lifetime Himalayan retreat pre-booking priority', '1-on-1 direct guidance with master guides', 'Access to closed circle gatherings'],
-    exclusive: 'Hand-crafted physical iron and bronze temple key',
+    exclusive: 'Future credential concept',
     color: '#E9915A'
   }
 ];
@@ -212,28 +212,28 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
           <div className="p-6 text-center border border-[#E27A3F]/20 rounded-2xl bg-[#4A1F24]/10 flex flex-col justify-center items-center relative group overflow-hidden">
             <div className="font-serif text-xl text-[#F6EFE7] flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#E27A3F] animate-ping" />
-              Active Initiation Key
+              Current Pathway State
             </div>
             <div className="font-serif italic text-2xl text-[#E27A3F] mt-1.5">
-              Temple Key ({currentActiveLevel})
+              {currentActiveLevel}
             </div>
             <div className="font-sans text-[10px] text-[#8a7c6d] mt-1 tracking-wider uppercase">
-              Lineage-sensitive containers unlocked
+              Open access only in this release
             </div>
             <button
               id="journey-ascend-initiation"
               onClick={() => setIsAscending(true)}
               className="mt-4 px-5 py-2 bg-[#E27A3F] hover:bg-[#C35A2E] text-white font-sans font-semibold text-[10px] tracking-widest text-transform: uppercase rounded-full transition-all duration-300 shadow-[0_0_12px_rgba(226,122,63,0.3)] hover:scale-105 cursor-pointer animate-[pulse_4s_infinite]"
             >
-              Request Passage &amp; Keys
+              Request Human Guidance
             </button>
           </div>
         </div>
 
-        {/* Initiation Access Level progression */}
+        {/* Access state progression */}
         <div className="border-t border-[#D8C5B0]/10 pt-6">
           <div className="font-sans font-semibold text-[10px] tracking-[0.2em] uppercase text-[#6b5f52] mb-4">
-            Ascent Stages &amp; Initiation Levels
+            Pathway States
           </div>
           <div className="flex flex-wrap gap-2">
             {[
@@ -300,7 +300,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
         </div>
       </div>
 
-      {/* ASCENSION RITUAL MODAL (MONETIZATION HIGH FIDELITY FLOW) */}
+      {/* Human-guidance request modal. No payment, initiation, or access grant is created here. */}
       <AnimatePresence>
         {isAscending && (
           <div className="fixed inset-0 bg-[#090707]/95 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
@@ -319,10 +319,10 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
               </button>
 
               <div className="text-center">
-                <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#E27A3F]">Sacred Ascension</span>
-                <h3 className="font-serif text-3xl md:text-4xl text-[#F6EFE7] mt-2">Claim Your Initiation Key</h3>
+                <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#E27A3F]">Human Review</span>
+                <h3 className="font-serif text-3xl md:text-4xl text-[#F6EFE7] mt-2">Request a Protected Doorway</h3>
                 <p className="font-serif italic text-sm text-[#8a7c6d] mt-1">
-                  Each Key is a tangible token of commitment, unlocking appropriate layers of lineage, study and retreat passage.
+                  A human guide must steward any protected container, invitation, or retreat discernment.
                 </p>
               </div>
 
@@ -340,20 +340,20 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                     <div className="absolute inset-0 rounded-full bg-[#E27A3F]/30 filter blur-xl scale-125" />
                     <Key className="w-16 h-16 text-[#E27A3F] relative z-10" />
                   </motion.div>
-                  <h4 className="font-serif text-2xl text-[#F6EFE7] mt-4">Key Forged Successfully</h4>
+                  <h4 className="font-serif text-2xl text-[#F6EFE7] mt-4">Request Noted Locally</h4>
                   <p className="font-sans text-xs text-[#8a7c6d] max-w-sm">
-                    The lineage container has calibrated to your new frequency. Your active initiation tier is now <strong className="text-[#F6EFE7]">{selectedKey.level}</strong>.
+                    This visual prototype does not grant access or begin a formal review. Use the Begin pathway to share a request.
                   </p>
                 </motion.div>
               ) : isProcessing ? (
                 <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
                   <div className="w-12 h-12 rounded-full border-2 border-t-[#E27A3F] border-r-transparent border-b-transparent border-l-transparent animate-spin" />
-                  <h4 className="font-serif text-xl text-[#F6EFE7]">Forging Temple Key...</h4>
-                  <p className="font-sans text-xs text-[#8a7c6d]">Aligning access tokens and shipping instructions on the mountain grid.</p>
+                  <h4 className="font-serif text-xl text-[#F6EFE7]">Holding Request...</h4>
+                  <p className="font-sans text-xs text-[#8a7c6d]">No credential or access grant is created from this room.</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
-                  {/* Left Column: Tiers Selection */}
+                  {/* Left Column: State selection */}
                   <div className="flex flex-col gap-2 max-h-[360px] overflow-y-auto pr-2">
                     {TEMPLE_KEYS.map((key) => (
                       <button
@@ -377,12 +377,12 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                     ))}
                   </div>
 
-                  {/* Right Column: Key details, unlocks and Claim action */}
+                  {/* Right Column: details and request action */}
                   <div className="border border-[#D8C5B0]/10 rounded-3xl p-5 bg-white/[0.005] flex flex-col justify-between">
                     <div>
                       <div className="flex justify-between items-start">
                         <div>
-                          <h4 className="font-serif text-2xl text-[#F6EFE7]">{selectedKey.level} Key</h4>
+                          <h4 className="font-serif text-2xl text-[#F6EFE7]">{selectedKey.level}</h4>
                           <span className="font-sans text-[10px] tracking-widest uppercase text-[#8a7c6d]">{selectedKey.desc}</span>
                         </div>
                         <div className="text-right">
@@ -404,21 +404,20 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                       </div>
 
                       <div className="mt-4 border-t border-white/5 pt-3">
-                        <span className="font-sans text-[9px] tracking-widest uppercase text-[#6b5f52] block">Physical Keepsake Sent</span>
+                        <span className="font-sans text-[9px] tracking-widest uppercase text-[#6b5f52] block">Credential Status</span>
                         <span className="font-serif italic text-xs text-[#D8C5B0] mt-1 block">{selectedKey.exclusive}</span>
                       </div>
                     </div>
 
                     <div className="mt-6 pt-4 border-t border-white/5 flex flex-col gap-3">
-                      {/* Interactive Simulated Sacred Pilgrimage checkout */}
                       <button
                         onClick={handleAscend}
                         className="w-full py-3 bg-gradient-to-r from-[#C35A2E] to-[#E27A3F] text-white font-sans font-semibold text-xs tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(226,122,63,0.3)] transition-all hover:scale-[1.02] cursor-pointer"
                       >
-                        Confirm Your Pilgrimage &amp; Offering ({selectedKey.price})
+                        Hold This Request ({selectedKey.price})
                       </button>
                       <span className="text-center font-sans text-[9px] text-[#6b5f52] uppercase tracking-wider block">
-                        Enter Stewardship · Silent backing supported by Stripe
+                        Human approval required before any protected access
                       </span>
                     </div>
                   </div>

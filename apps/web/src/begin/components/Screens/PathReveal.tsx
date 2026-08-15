@@ -30,10 +30,10 @@ export default function PathReveal({ result, onNext }: Props) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
-        className="mb-10 relative w-full"
+        className="mb-6 md:mb-8 relative w-full"
       >
         {/* Illuminated Symmetrical Current Beacon */}
-        <div className="relative h-28 md:h-36 w-px mx-auto mb-10 overflow-hidden">
+        <div className="relative h-16 md:h-24 w-px mx-auto mb-6 overflow-hidden">
           <motion.div
             initial={{ y: "-100%" }}
             animate={{ y: "100%" }}
@@ -43,7 +43,7 @@ export default function PathReveal({ result, onNext }: Props) {
           <div className="absolute inset-0 bg-ash/10" />
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-8 text-glow serif text-stone-100 italic">
+        <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-4 text-glow serif text-stone-100 italic">
           {result.headline}
         </h2>
       </motion.div>
@@ -53,7 +53,7 @@ export default function PathReveal({ result, onNext }: Props) {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 2, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-stone-950/70 border border-red-950/30 p-10 md:p-14 rounded-sm mb-14 backdrop-blur-md relative overflow-hidden group shadow-[inset_0_4px_35px_rgba(0,0,0,0.95),_0_25px_50px_-15px_rgba(0,0,0,0.95)] max-w-xl mx-auto"
+        className="bg-stone-950/70 border border-red-950/30 p-6 md:p-8 rounded-sm mb-8 backdrop-blur-md relative overflow-hidden group shadow-[inset_0_4px_35px_rgba(0,0,0,0.95),_0_25px_50px_-15px_rgba(0,0,0,0.95)] max-w-xl mx-auto"
       >
         {/* Warm deep red drapery background glow inside niche */}
         <div className="absolute inset-0 bg-gradient-to-t from-burgundy/15 via-transparent to-transparent opacity-80" />
@@ -61,11 +61,11 @@ export default function PathReveal({ result, onNext }: Props) {
         {/* Glowing Hearth Fire Spillover */}
         <div className="absolute inset-x-0 bottom-0 h-[1.5px] bg-gradient-to-r from-transparent via-red-800/40 to-transparent shadow-[0_0_25px_rgba(157,23,29,0.45)]" />
 
-        <p className="relative z-10 text-lg md:text-xl text-ash/80 font-light leading-relaxed mb-10 italic serif">
+        <p className="relative z-10 text-lg md:text-xl text-ash/80 font-light leading-relaxed mb-6 italic serif">
           {result.reflection}
         </p>
 
-        <div className="flex flex-col items-center relative py-6 border-t border-ash/5">
+        <div className="flex flex-col items-center relative py-4 border-t border-ash/5">
           <div className="absolute inset-0 bg-burgundy/[0.015] blur-3xl rounded-full" />
           <span className="relative z-10 text-[9px] uppercase tracking-[0.4em] text-ash/30 mb-5 font-medium">Your Next Threshold</span>
           <h3 className="relative z-10 text-2xl md:text-3xl text-red-400 font-light tracking-wide text-glow">
@@ -78,7 +78,7 @@ export default function PathReveal({ result, onNext }: Props) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6, duration: 1.5 }}
-        className="flex flex-col sm:flex-row gap-8 items-center"
+        className="flex flex-col sm:flex-row gap-5 items-center"
       >
         <motion.button
           onClick={onNext}
@@ -114,7 +114,7 @@ export default function PathReveal({ result, onNext }: Props) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.4, duration: 1.5 }}
-        className="mt-12 flex flex-col items-center gap-3"
+        className="mt-7 flex flex-col items-center gap-3"
       >
         <p className="text-[9px] uppercase tracking-[0.3em] text-ash/25">or speak directly with Sheetal</p>
         <a

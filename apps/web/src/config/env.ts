@@ -7,6 +7,7 @@ export const env = {
   googleDriveRoot: viteEnv.VITE_GOOGLE_DRIVE_ROOT ?? "",
   sheetEndpoint: viteEnv.VITE_SHEET_ENDPOINT ?? "",
   appEnv: viteEnv.VITE_APP_ENV ?? "development",
+  beginWritesEnabled: viteEnv.VITE_BEGIN_WRITES_ENABLED ?? "false",
 } as const;
 
 export type AppEnv = typeof env;

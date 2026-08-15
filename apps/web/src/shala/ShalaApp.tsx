@@ -12,6 +12,7 @@ import { PracticeRoom } from './components/PracticeRoom';
 import { ThresholdDrawer } from './components/ThresholdDrawer';
 import { EnvironmentalCanopy, TimeOfDay, WeatherCondition, MountainSeason } from './components/EnvironmentalCanopy';
 import { AnimatePresence } from 'motion/react';
+import { Home, Map } from 'lucide-react';
 import { STORAGE_KEYS } from '../constants/storage';
 import { PersistenceService } from '../services/PersistenceService';
 import { RitualService } from '../services/RitualService';
@@ -202,6 +203,25 @@ export default function ShalaApp() {
       <AnimatePresence mode="wait">
         {renderActiveRoom()}
       </AnimatePresence>
+
+      {!activePractice && (
+        <nav className="sanctuary-utility" aria-label="Sanctuary navigation">
+          <a href="/" className="sanctuary-utility-action" aria-label="Return to Shakti Portal home">
+            <Home className="w-4 h-4" />
+            <span>Home</span>
+          </a>
+          <button
+            type="button"
+            className="sanctuary-utility-action sanctuary-utility-map"
+            onClick={() => setIsThresholdOpen(true)}
+            aria-expanded={isThresholdOpen}
+            aria-controls="threshold-drawer"
+          >
+            <Map className="w-4 h-4" />
+            <span>Sanctuary Map</span>
+          </button>
+        </nav>
+      )}
 
       {/* Global Interactive Environmental Canopy */}
       <EnvironmentalCanopy

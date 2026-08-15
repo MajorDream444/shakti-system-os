@@ -8,14 +8,20 @@ interface Props {
   prompt: string;
   supportLine?: string;
   choices: Choice[];
+  selectedChoiceId?: string;
   onSelect: (screenId: number, scores: Partial<Record<PathType, number>>, choiceId: string) => void;
 }
 
-export default function ChoiceScreen({ id, prompt, supportLine, choices, onSelect }: Props) {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+export default function ChoiceScreen({ id, prompt, supportLine, choices, selectedChoiceId, onSelect }: Props) {
+  const [selectedId, setSelectedId] = useState<string | null>(selectedChoiceId ?? null);
 
   const handleSelection = (choiceId: string, scores: Partial<Record<PathType, number>>) => {
-    if (selectedId) return;
+    if (selectedId) {
+      if (selectedChoiceId === choiceId) {
+        onSelect(id, {}, choiceId);
+      }
+      return;
+    }
     setSelectedId(choiceId);
 
     // Devotional pause - let the lamp light and warm up
@@ -42,7 +48,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, onSelec
         )}
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full lg:px-12">
         {choices.map((choice, i) => {
           const isSelected = selectedId === choice.id;
           const isAnySelected = selectedId !== null;
@@ -51,7 +57,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, onSelec
           return (
             <motion.button
               key={choice.id}
-              disabled={isAnySelected}
+              disabled={isAnySelected && choice.id !== selectedId}
               initial={{ opacity: 0, y: 15 }}
               animate={{
                 opacity: isDimmed ? 0.25 : 1,
@@ -64,10 +70,11 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, onSelec
                 scale: { duration: 0.8 }
               }}
               onClick={() => handleSelection(choice.id, choice.scores)}
-              className={`group relative h-64 p-9 border transition-all duration-1000 text-left flex flex-col justify-end overflow-hidden backdrop-blur-[2px] rounded-t-[50%] md:rounded-t-[40%] cursor-pointer ${
+              aria-pressed={isSelected}
+              className={`group relative min-h-44 md:h-64 p-6 md:p-9 border transition-all duration-1000 text-left flex flex-col justify-end overflow-hidden backdrop-blur-[2px] rounded-t-[42%] md:rounded-t-[40%] cursor-pointer ${
                 isSelected
                   ? 'border-amber-500/40 bg-stone-950 shadow-[inset_0_4px_40px_rgba(0,0,0,0.95),_0_20px_50px_rgba(217,85,6,0.18)]'
-                  : 'border-ash/10 hover:border-amber-500/25 bg-stone-900/[0.12] hover:bg-stone-950/90 shadow-[inset_0_4px_30px_rgba(0,0,0,0.85),_0_10px_30px_-10px_rgba(0,0,0,0.9)]'
+                  : 'border-ash/20 hover:border-amber-500/25 bg-stone-900/[0.2] hover:bg-stone-950/90 shadow-[inset_0_4px_30px_rgba(0,0,0,0.85),_0_10px_30px_-10px_rgba(0,0,0,0.9)]'
               }`}
             >
               {/* Layer 1: Stone shadow recess */}
@@ -106,7 +113,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, onSelec
               <p className={`relative z-10 text-center w-full px-5 mb-2 font-sans tracking-wide transition-all duration-1000 ${
                 isSelected
                   ? 'text-amber-500 font-medium scale-[1.01] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
-                  : 'text-ash/75 group-hover:text-stone-100 font-light'
+                  : 'text-ash/90 group-hover:text-stone-100 font-light'
               }`}>
                 {choice.text}
               </p>
