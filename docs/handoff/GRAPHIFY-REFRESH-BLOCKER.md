@@ -6,6 +6,7 @@ Prepared: 2026-08-15
 
 Sprint 11D attempted one bounded Graphify diagnostic as requested.
 Sprint 11E attempted one additional bounded refresh after the documentation-only addendum and stopped it cleanly after 30 seconds with no stdout.
+Sprint 11F attempted one additional bounded release-candidate refresh and stopped it cleanly after 30 seconds with no stdout.
 
 Command:
 
@@ -16,13 +17,14 @@ graphify update .
 Execution wrapper:
 
 ```text
-Python subprocess timeout: 25 seconds
+Sprint 11D: Python subprocess timeout: 25 seconds
+Sprint 11F: shell process stopped after 30 seconds
 ```
 
 Result:
 
 ```text
-Timed out after 25 seconds.
+Timed out after the bounded execution window.
 No stdout was emitted before timeout.
 ```
 
@@ -45,7 +47,7 @@ graphify-out/GRAPH_REPORT.md
 Built from commit: 49ebd475
 ```
 
-The report is stale relative to current Sprint 11C/11D changes.
+The report is stale relative to current Sprint 11C-11F changes.
 
 ## Recommended Follow-Up
 
