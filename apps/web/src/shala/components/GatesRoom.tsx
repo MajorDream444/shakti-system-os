@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { ChevronRight, Flag } from 'lucide-react';
 import { RoomType, SeekerState } from '../types';
 import { SANCTUARY_LANDMARKS } from '../data';
 import { PrayerLamp } from './PrayerLamp';
@@ -101,13 +102,13 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
             className="flex items-center justify-between p-5 rounded-2xl border border-[#D8C5B0]/14 bg-white/[0.02] hover:bg-white/[0.05] hover:border-[#D8C5B0]/30 transition-all text-left"
           >
             <div className="flex items-center gap-4">
-              <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#cdbfa8] to-[#9c9080] shadow-[0_0_12px_rgba(205,191,168,0.6)]" />
+              <div aria-hidden="true" className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#cdbfa8] to-[#9c9080] shadow-[0_0_12px_rgba(205,191,168,0.6)]" />
               <div>
                 <div className="font-serif text-xl text-[#F6EFE7]">Continue Daily Practice</div>
                 <div className="font-sans text-xs text-[#8a7c6d] mt-1">Grounding · 12 min</div>
               </div>
             </div>
-            <span className="text-[#8a7c6d] text-lg font-serif">›</span>
+            <ChevronRight aria-hidden="true" className="w-4 h-4 text-[#8a7c6d]" />
           </button>
 
           {/* Enter Vault / Library */}
@@ -117,13 +118,13 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
             className="flex items-center justify-between p-5 rounded-2xl border border-[#E27A3F]/20 bg-gradient-to-r from-[#741f24]/30 to-transparent hover:border-[#E27A3F]/40 transition-all text-left"
           >
             <div className="flex items-center gap-4">
-              <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#E27A3F] to-[#C35A2E] shadow-[0_0_12px_rgba(226,122,63,0.7)] animate-[flicker_5s_ease-in-out_infinite]" />
+              <div aria-hidden="true" className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#E27A3F] to-[#C35A2E] shadow-[0_0_12px_rgba(226,122,63,0.7)] animate-[flicker_5s_ease-in-out_infinite]" />
               <div>
                 <div className="font-serif text-xl text-[#F6EFE7]">Enter the Temple Library</div>
                 <div className="font-sans text-xs text-[#8a7c6d] mt-1">The Vault of Teachings</div>
               </div>
             </div>
-            <span className="text-[#E27A3F] text-lg font-serif">›</span>
+            <ChevronRight aria-hidden="true" className="w-4 h-4 text-[#E27A3F]" />
           </button>
 
           {/* Walk the Goddess Pathways */}
@@ -133,13 +134,13 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
             className="flex items-center justify-between p-5 rounded-2xl border border-[#D8C5B0]/14 bg-white/[0.02] hover:bg-white/[0.05] hover:border-[#D8C5B0]/30 transition-all text-left"
           >
             <div className="flex items-center gap-4">
-              <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#B65A3C] to-[#7a3a20] shadow-[0_0_12px_rgba(182,90,60,0.6)]" />
+              <div aria-hidden="true" className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#B65A3C] to-[#7a3a20] shadow-[0_0_12px_rgba(182,90,60,0.6)]" />
               <div>
                 <div className="font-serif text-xl text-[#F6EFE7]">Walk the Goddess Pathways</div>
                 <div className="font-sans text-xs text-[#8a7c6d] mt-1">The Eight Chambers</div>
               </div>
             </div>
-            <span className="text-[#8a7c6d] text-lg font-serif">›</span>
+            <ChevronRight aria-hidden="true" className="w-4 h-4 text-[#8a7c6d]" />
           </button>
         </div>
 
@@ -165,8 +166,9 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
               }}
               className="w-11 h-11 rounded-full border border-white/10 hover:border-[#E27A3F]/40 hover:bg-white/[0.03] bg-white/[0.01] flex items-center justify-center text-lg cursor-pointer transition-all duration-300 active:scale-95"
               title="Hang a prayer flag to carry your intention on the mountain winds."
+              aria-label="Hang a prayer flag"
             >
-              🎏
+              <Flag aria-hidden="true" className="w-5 h-5 text-[#D8C5B0]" />
             </button>
             <span className="text-[8px] font-serif italic text-[#6b5f52] truncate max-w-full">
               {seekerState?.prayerFlagsCount || 0} Fluttering

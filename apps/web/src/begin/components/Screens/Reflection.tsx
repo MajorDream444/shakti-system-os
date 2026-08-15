@@ -21,13 +21,13 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
   };
 
   return (
-    <div className="flex flex-col items-center w-full max-w-2xl px-4">
+    <div className="begin-screen flex flex-col items-start w-full max-w-2xl px-0">
       {/* Brand Devotional Anchor */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
-        className="mb-6"
+        className="mb-6 begin-small-seal"
       >
         <KaliSigil className="w-8 h-8" glow={true} />
       </motion.div>
@@ -35,14 +35,14 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-10"
+        className="text-left mb-10"
       >
-        <h2 className="text-2xl md:text-3xl font-light mb-4 serif text-stone-100 italic">
+        <h2 className="begin-heading text-3xl md:text-5xl font-light mb-4 serif text-stone-100 italic">
           What are you longing to return to?
         </h2>
       </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-3.5 mb-14 max-w-xl">
+      <div className="begin-longing-grid flex flex-wrap justify-start gap-3.5 mb-14 max-w-xl">
         {LONGINGS.map((longing, i) => (
           <motion.button
             key={longing}
@@ -50,7 +50,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.04, duration: 0.8 }}
             onClick={() => toggleLonging(longing)}
-            className={`px-5 py-2.5 rounded-full border transition-all duration-700 text-xs tracking-[0.1em] lowercase cursor-pointer ${
+            className={`px-5 py-3 rounded-full border transition-all duration-700 text-xs tracking-[0.1em] lowercase cursor-pointer ${
               selectedLongings.includes(longing)
                 ? 'bg-red-950/30 border-red-800 text-red-200 shadow-[0_0_15px_rgba(157,23,29,0.3)]'
                 : 'bg-stone-900/10 border-ash/5 text-ash/50 hover:border-ash/20 hover:text-stone-300'
@@ -65,9 +65,9 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="w-full mb-12 max-w-lg"
+        className="w-full mb-12 max-w-xl"
       >
-        <p className="text-center text-ash/40 mb-6 font-light italic text-sm serif">
+        <p className="text-left text-ash/48 mb-6 font-light italic text-sm serif">
           In a few words, what has brought you here?
         </p>
         <div className="relative group">
@@ -85,7 +85,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7 }}
         onClick={() => onNext(selectedLongings, text)}
-        className="px-14 py-4 bg-transparent border border-burgundy/30 hover:border-red-800 hover:bg-red-950/[0.03] transition-all duration-700 tracking-[0.2em] uppercase text-xs font-semibold rounded-sm text-ash/90 hover:text-red-200 cursor-pointer"
+        className="begin-primary-action px-14 py-4 bg-transparent border border-burgundy/30 hover:border-red-800 hover:bg-red-950/[0.03] transition-all duration-700 tracking-[0.2em] uppercase text-xs font-semibold rounded-sm text-ash/90 hover:text-red-200 cursor-pointer"
       >
         Continue
       </motion.button>

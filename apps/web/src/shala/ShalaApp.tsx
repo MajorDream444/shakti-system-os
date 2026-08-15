@@ -48,6 +48,18 @@ const DEFAULT_SEEKER_STATE: SeekerState = {
   ritualGrowthLevel: 1
 };
 
+const ROOM_LABELS: Record<RoomType, string> = {
+  GATES: 'Temple Gates',
+  COURTYARD: 'Courtyard',
+  PRACTICE_ROOM: 'Practice',
+  FIRE_CIRCLE: 'Practice',
+  LIBRARY: 'Temple Library',
+  GODDESS_CHAMBERS: 'Goddess Pathways',
+  REFLECTION_POOL: 'Reflection Pool',
+  JOURNEY: 'Personal Journey',
+  RETREAT: 'Retreat Threshold',
+};
+
 export default function ShalaApp() {
   const [seekerState, setSeekerState] = useState<SeekerState>(() => {
     const saved = PersistenceService.read<Partial<SeekerState> | null>(
@@ -82,6 +94,15 @@ export default function ShalaApp() {
     setActivePractice(practice);
   };
 
+  const handleQuickStartPractice = () => {
+    const groundingPractice = ALL_PRACTICES.find(
+      (practice) => practice.id === 'grounding',
+    );
+    if (groundingPractice) {
+      handleSelectPractice(groundingPractice);
+    }
+  };
+
   const handleCompletePractice = (practiceId: string) => {
     setSeekerState((prev) => RitualService.completePractice(prev, practiceId));
     setActivePractice(null);
@@ -110,14 +131,7 @@ export default function ShalaApp() {
             seekerState={seekerState}
             onToggleLamp={handleToggleLamp}
             onIncrementFlags={handleIncrementPrayerFlags}
-            onQuickStart={() => {
-              const groundingPractice = ALL_PRACTICES.find(
-                (practice) => practice.id === 'grounding',
-              );
-              if (groundingPractice) {
-                handleSelectPractice(groundingPractice);
-              }
-            }}
+            onQuickStart={handleQuickStartPractice}
           />
         );
       case 'COURTYARD':
@@ -206,6 +220,10 @@ export default function ShalaApp() {
 
       {!activePractice && (
         <nav className="sanctuary-utility" aria-label="Sanctuary navigation">
+          <div className="sanctuary-utility-current" aria-live="polite">
+            <span>Current room</span>
+            <strong>{ROOM_LABELS[currentRoom]}</strong>
+          </div>
           <a href="/" className="sanctuary-utility-action" aria-label="Return to Shakti Portal home">
             <Home className="w-4 h-4" />
             <span>Home</span>
@@ -214,6 +232,7 @@ export default function ShalaApp() {
             type="button"
             className="sanctuary-utility-action sanctuary-utility-map"
             onClick={() => setIsThresholdOpen(true)}
+            aria-label="Open Sanctuary Map"
             aria-expanded={isThresholdOpen}
             aria-controls="threshold-drawer"
           >
@@ -253,6 +272,7 @@ export default function ShalaApp() {
         onClose={() => setIsThresholdOpen(false)}
         currentRoom={currentRoom}
         onNavigate={handleNavigate}
+        onBeginPractice={handleQuickStartPractice}
       />
     </div>
   );

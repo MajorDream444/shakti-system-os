@@ -38,14 +38,25 @@ function createInitialState(): AppState {
 }
 
 const STATIONS = [
-  'Threshold',
+  'Arrival',
   'Listening',
+  'Current State',
   'Pace',
   'Support',
   'Longing',
-  'Discernment',
-  'Doorway',
-  'Shala Ahead',
+  'Discernment / Reveal',
+  'Enter',
+] as const;
+
+const STATION_SUMMARIES = [
+  'Simply arrive at the foot of the mountain.',
+  'Orient toward the sanctuary before anything is asked.',
+  'Name what feels most alive without diagnosis.',
+  'Choose the pace your body can trust.',
+  'Listen for the support that feels sustainable.',
+  'Let the deeper longing surface gently.',
+  'Receive a doorway, never a score.',
+  'Carry the thread into Shakti Shala.',
 ] as const;
 
 export default function BeginApp() {
@@ -225,6 +236,11 @@ export default function BeginApp() {
     <div className={`begin-station begin-station-${state.currentScreen} relative min-h-[100svh] bg-obsidian text-ash overflow-x-hidden overflow-y-auto flex flex-col selection:bg-ember/30`}>
       <CustomCursor />
       <AmberSanctuaryCanvas />
+      <div className="begin-luminous-field" aria-hidden="true">
+        <span className="begin-flora begin-flora-a" />
+        <span className="begin-flora begin-flora-b" />
+        <span className="begin-waterline" />
+      </div>
 
       {/* 1. Base Atmospheric Layer */}
       <div className="absolute inset-0 bg-noise opacity-[0.02] pointer-events-none mix-blend-overlay" />
@@ -236,7 +252,7 @@ export default function BeginApp() {
 
       {/* Main Sanctuary Area */}
       <div className="relative flex-1 flex flex-col items-center justify-center p-3 sm:p-6 md:p-12 lg:p-16 z-10 w-full min-h-[100svh]">
-        <div className="relative w-full max-w-4xl mx-auto flex-grow flex flex-col min-h-[calc(100svh-1.5rem)] md:min-h-[80vh] py-28 md:py-24 px-2 sm:px-8 md:px-12 justify-center">
+        <div className="begin-shell relative w-full max-w-6xl mx-auto flex-grow min-h-[calc(100svh-1.5rem)] md:min-h-[80vh]">
 
           {/* Symmetrical Atmospheric Header */}
           <header className="absolute top-4 md:top-6 left-3 right-3 md:left-6 md:right-6 flex justify-between items-center text-[10px] tracking-[0.18em] md:tracking-[0.25em] text-ash/60 lowercase font-light serif z-30">
@@ -251,6 +267,7 @@ export default function BeginApp() {
           </header>
 
           <nav className="begin-ascent" aria-label="Your path toward Shakti Shala">
+            <div className="begin-ascent-title">Ascent</div>
             <div className="begin-ascent-line" aria-hidden="true" />
             {STATIONS.map((station, index) => {
               const stationNumber = index + 1;
@@ -259,12 +276,13 @@ export default function BeginApp() {
                 <div className={`begin-ascent-station ${stateName}`} key={station} aria-current={stateName === 'current' ? 'step' : undefined}>
                   <i aria-hidden="true" />
                   <span>{station}</span>
+                  <small>{STATION_SUMMARIES[index]}</small>
                 </div>
               );
             })}
           </nav>
 
-          <main className="relative z-10 flex-1 flex flex-col items-center justify-start md:justify-center w-full my-auto py-5 md:py-8">
+          <main className="begin-stage relative z-10 flex flex-col items-start justify-center w-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={state.currentScreen}
@@ -272,7 +290,7 @@ export default function BeginApp() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full flex flex-col items-center text-center"
+                className="begin-stage-inner w-full flex flex-col items-start text-left"
               >
                 {renderScreen()}
               </motion.div>

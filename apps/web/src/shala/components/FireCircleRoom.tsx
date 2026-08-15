@@ -85,7 +85,7 @@ export const FireCircleRoom: React.FC<FireCircleRoomProps> = ({
 
         {/* Collection Toggles */}
         <div className="flex gap-2.5 mt-8 border-b border-white/5 pb-4 w-full justify-center">
-          {['Foundations', 'Breathwork', 'Somatics'].map((cat) => (
+          {['Foundations', 'Pranayama', 'Embodiment'].map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}

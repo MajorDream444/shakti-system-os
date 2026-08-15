@@ -7,6 +7,7 @@ Prepared: 2026-08-15
 Sprint 11D attempted one bounded Graphify diagnostic as requested.
 Sprint 11E attempted one additional bounded refresh after the documentation-only addendum and stopped it cleanly after 30 seconds with no stdout.
 Sprint 11F attempted one additional bounded release-candidate refresh and stopped it cleanly after 30 seconds with no stdout.
+Sprint 12A attempted one bounded refresh after frozen experience implementation and stopped it cleanly after 30 seconds.
 
 Command:
 
@@ -19,6 +20,7 @@ Execution wrapper:
 ```text
 Sprint 11D: Python subprocess timeout: 25 seconds
 Sprint 11F: shell process stopped after 30 seconds
+Sprint 12A: shell process stopped after 30 seconds
 ```
 
 Result:
@@ -29,6 +31,7 @@ No stdout was emitted before timeout.
 ```
 
 Prior Sprint 11C attempts reached code re-extraction/cache reading and then remained silent for several minutes before clean interruption.
+Sprint 12A emitted `Re-extracting code files in . (no LLM needed)...` and stalled while reading a cached JSON entry in `graphify/cache.py::load_cached`.
 
 ## Classification
 

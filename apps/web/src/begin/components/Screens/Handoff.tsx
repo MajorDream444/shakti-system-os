@@ -145,7 +145,7 @@ export default function Handoff({
   };
 
   return (
-    <div className="flex flex-col items-center max-w-lg w-full px-4 text-center">
+    <div className="begin-screen begin-enter-screen flex flex-col items-start max-w-2xl w-full px-0 text-left">
       <AnimatePresence mode="wait">
         {!isSubmitted ? (
           <motion.div
@@ -154,15 +154,16 @@ export default function Handoff({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 1.0 }}
-            className="w-full flex flex-col items-center"
+            className="w-full flex flex-col items-start"
           >
-            <div className="mb-12">
-              <KaliSigil className="w-8 h-8 mx-auto mb-8 animate-pulse" glow={true} />
+            <div className="mb-10">
+              <KaliSigil className="w-8 h-8 mb-8 animate-pulse" glow={true} />
 
-              <h2 className="text-2xl md:text-3xl font-light mb-4 serif text-stone-100 italic">
+              <p className="begin-kicker mb-4">Enter</p>
+              <h2 className="begin-heading text-3xl md:text-5xl font-light mb-4 serif text-stone-100 italic">
                 Would you like this doorway sent to you?
               </h2>
-              <p className="text-base text-ash/60 font-light max-w-sm mx-auto leading-relaxed">
+              <p className="begin-body text-base text-ash/64 font-light max-w-lg leading-relaxed">
                 Receive your next step, or continue privately into Shakti Shala.
               </p>
             </div>
@@ -259,14 +260,14 @@ export default function Handoff({
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full flex flex-col items-center max-w-md py-6"
+            className="w-full flex flex-col items-start max-w-lg py-6"
           >
             <div className="relative mb-8 w-12 h-12 flex items-center justify-center rounded-full bg-red-950/20 border border-red-800/50">
               <div className="absolute inset-0 bg-red-800/5 rounded-full blur-md" />
               <KaliSigil className="w-6 h-6" glow={true} />
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-light mb-6 serif text-stone-100 italic">
+            <h2 className="begin-heading text-3xl md:text-5xl font-light mb-6 serif text-stone-100 italic">
               Your path is held.
             </h2>
 
@@ -313,7 +314,7 @@ export default function Handoff({
         )}
       </AnimatePresence>
 
-      <p className="mt-20 text-[9px] text-ash/20 uppercase tracking-[0.25em] serif italic">
+      <p className="mt-14 text-[9px] text-ash/26 uppercase tracking-[0.25em] serif italic">
         somatic integration & classical tantra
       </p>
     </div>

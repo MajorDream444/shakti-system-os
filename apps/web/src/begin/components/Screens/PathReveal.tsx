@@ -15,13 +15,13 @@ interface Props {
 
 export default function PathReveal({ result, onNext }: Props) {
   return (
-    <div className="flex flex-col items-center max-w-2xl px-4 text-center">
+    <div className="begin-screen flex flex-col items-start max-w-3xl px-0 text-left">
       {/* Devotional Lineage Seal */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
-        className="mb-6"
+        className="mb-6 begin-small-seal"
       >
         <KaliSigil className="w-8 h-8" glow={true} />
       </motion.div>
@@ -33,7 +33,7 @@ export default function PathReveal({ result, onNext }: Props) {
         className="mb-6 md:mb-8 relative w-full"
       >
         {/* Illuminated Symmetrical Current Beacon */}
-        <div className="relative h-16 md:h-24 w-px mx-auto mb-6 overflow-hidden">
+        <div className="relative h-16 md:h-24 w-px mb-6 overflow-hidden">
           <motion.div
             initial={{ y: "-100%" }}
             animate={{ y: "100%" }}
@@ -43,7 +43,8 @@ export default function PathReveal({ result, onNext }: Props) {
           <div className="absolute inset-0 bg-ash/10" />
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-4 text-glow serif text-stone-100 italic">
+        <p className="begin-kicker mb-4">Discernment</p>
+        <h2 className="begin-heading text-3xl md:text-6xl font-light tracking-tight mb-4 text-glow serif text-stone-100 italic">
           {result.headline}
         </h2>
       </motion.div>
@@ -53,7 +54,7 @@ export default function PathReveal({ result, onNext }: Props) {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 2, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-stone-950/70 border border-red-950/30 p-6 md:p-8 rounded-sm mb-8 backdrop-blur-md relative overflow-hidden group shadow-[inset_0_4px_35px_rgba(0,0,0,0.95),_0_25px_50px_-15px_rgba(0,0,0,0.95)] max-w-xl mx-auto"
+        className="begin-reveal-card bg-stone-950/70 border border-red-950/30 p-6 md:p-8 rounded-sm mb-8 backdrop-blur-md relative overflow-hidden group shadow-[inset_0_4px_35px_rgba(0,0,0,0.95),_0_25px_50px_-15px_rgba(0,0,0,0.95)] max-w-2xl"
       >
         {/* Warm deep red drapery background glow inside niche */}
         <div className="absolute inset-0 bg-gradient-to-t from-burgundy/15 via-transparent to-transparent opacity-80" />
@@ -65,9 +66,9 @@ export default function PathReveal({ result, onNext }: Props) {
           {result.reflection}
         </p>
 
-        <div className="flex flex-col items-center relative py-4 border-t border-ash/5">
+        <div className="flex flex-col items-start relative py-4 border-t border-ash/5">
           <div className="absolute inset-0 bg-burgundy/[0.015] blur-3xl rounded-full" />
-          <span className="relative z-10 text-[9px] uppercase tracking-[0.4em] text-ash/30 mb-5 font-medium">Your Next Threshold</span>
+          <span className="relative z-10 text-[9px] uppercase tracking-[0.4em] text-ash/38 mb-5 font-medium">Your doorway</span>
           <h3 className="relative z-10 text-2xl md:text-3xl text-red-400 font-light tracking-wide text-glow">
             {result.nextStep}
           </h3>
@@ -78,7 +79,7 @@ export default function PathReveal({ result, onNext }: Props) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6, duration: 1.5 }}
-        className="flex flex-col sm:flex-row gap-5 items-center"
+        className="flex flex-col sm:flex-row gap-5 items-start"
       >
         <motion.button
           onClick={onNext}

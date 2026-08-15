@@ -1,8 +1,8 @@
-import { useRef } from "react";
-import { BEGIN_PATH, SECTION_ANCHORS } from "../constants/navigation";
+import { useRef, type CSSProperties } from "react";
+import { BEGIN_PATH, SECTION_ANCHORS, SHALA_PATH } from "../constants/navigation";
 import { portalCopy } from "../data/portalCopy";
 import { useHeroParallax } from "../hooks/useHeroParallax";
-import { MaskedHeadline } from "./MaskedHeadline";
+import { PortalImageGallery, portalImages } from "./PortalImageSlots";
 
 export function Hero() {
   const visualRef = useRef<HTMLDivElement>(null);
@@ -10,19 +10,28 @@ export function Hero() {
 
   return (
     <section className="hero" id="hero">
-      <div className="hero-visual" ref={visualRef} aria-hidden="true" />
+      <div
+        className="hero-visual"
+        ref={visualRef}
+        aria-hidden="true"
+        style={{ "--hero-image": `url(${portalImages.hero})` } as CSSProperties}
+      />
       <div className="hero-veils" aria-hidden="true" />
       <div className="hero-content">
         <p className="label ember-label">{portalCopy.hero.eyebrow}</p>
-        <MaskedHeadline text={portalCopy.hero.headline} />
+        <h1 className="hero-title">{portalCopy.hero.headline}</h1>
         <p className="hero-subheadline">{portalCopy.hero.subheadline}</p>
         <p className="hero-body">{portalCopy.hero.body}</p>
+        <PortalImageGallery />
         <div className="hero-actions" aria-label="Primary actions">
           <a className="button button-primary" href={BEGIN_PATH}>
             {portalCopy.hero.primaryCta}
           </a>
           <a className="button button-secondary" href={SECTION_ANCHORS.method}>
             {portalCopy.hero.secondaryCta}
+          </a>
+          <a className="button button-tertiary" href={SHALA_PATH}>
+            Enter Shakti Shala
           </a>
         </div>
       </div>

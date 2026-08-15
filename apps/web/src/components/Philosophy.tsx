@@ -1,4 +1,6 @@
+import type { CSSProperties } from "react";
 import { portalCopy } from "../data/portalCopy";
+import { portalImages } from "./PortalImageSlots";
 
 export function Philosophy() {
   return (
@@ -11,7 +13,10 @@ export function Philosophy() {
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
-        <div className="ritual-card gradient-shell reveal">
+        <div
+          className="ritual-card gradient-shell reveal"
+          style={{ "--ritual-image": `url(${portalImages.library})` } as CSSProperties}
+        >
           <div className="ritual-orb" />
           <p className="ritual-kicker">{portalCopy.ritualCard.kicker}</p>
           <h3>{portalCopy.ritualCard.headline}</h3>

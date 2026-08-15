@@ -113,43 +113,43 @@ export const COLLECTIONS: Collection[] = [
     ]
   },
   {
-    id: 'breath_bandha_coll',
-    title: 'Breath & Bandha',
-    description: 'Advanced breath control and energetic locks to direct internal medicine.',
+    id: 'pranayama_bandha_coll',
+    title: 'Pranayama & Bandha',
+    description: 'Yogic breath practice and energetic locks to direct internal medicine.',
     practices: [
       {
         id: 'pranayama_intro',
         title: 'Nadi Shodhana',
         duration: '15 min',
-        category: 'Breathwork',
+        category: 'Pranayama',
         description: 'Channel purification through alternate nostrils, clearing the path of central wisdom.'
       },
       {
         id: 'uddiyana',
         title: 'Uddiyana Bandha Prep',
         duration: '8 min',
-        category: 'Breathwork',
+        category: 'Pranayama',
         description: 'The upward abdominal lock to draw energy from the earth up to the solar plexus.'
       }
     ]
   },
   {
-    id: 'shadow_somatics',
-    title: 'Shadow & Somatics',
+    id: 'shadow_embodiment',
+    title: 'Shadow & Embodiment',
     description: 'Tending to the dense emotional storehouses of the body with gentle awareness.',
     practices: [
       {
         id: 'emotional_release',
-        title: 'Somatic Release',
+        title: 'Embodied Release',
         duration: '20 min',
-        category: 'Somatics',
+        category: 'Embodiment',
         description: 'Letting tension leave the jaw, shoulders, and hips. Moving the held trauma through low sound.'
       },
       {
         id: 'shadow_integration',
         title: 'Welcoming the Darkness',
         duration: '18 min',
-        category: 'Meditation',
+        category: 'Embodiment',
         description: 'Chamber of Kali integration. Welcoming the aspects of self we have cast out into the cold.'
       }
     ]
