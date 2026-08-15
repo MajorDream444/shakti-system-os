@@ -5,3 +5,49 @@
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
 }
+
+.sanctuary-utility {
+  position: fixed;
+  left: max(1rem, env(safe-area-inset-left));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 39;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  border: 1px solid rgba(216, 197, 176, 0.16);
+  border-radius: 9999px;
+  background: rgba(9, 7, 7, 0.8);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.36);
+}
+
+.sanctuary-utility-action {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0 0.85rem;
+  border-radius: 9999px;
+  color: rgba(216, 197, 176, 0.78);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transition: color 240ms ease, background 240ms ease;
+}
+
+.sanctuary-utility-action:hover,
+.sanctuary-utility-action:focus-visible {
+  color: #f6efe7;
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+
+.sanctuary-utility-map { color: #e8a065; }
+
+@media (max-width: 430px) {
+  .sanctuary-utility-action span { display: none; }
+  .sanctuary-utility-action { width: 2.75rem; padding: 0; }
+}

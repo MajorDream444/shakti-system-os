@@ -70,3 +70,129 @@
 .markdown-body {
   @apply font-sans leading-relaxed;
 }
+
+.begin-station::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  transition: background 1.2s ease, opacity 1.2s ease;
+  opacity: 0.76;
+}
+
+.begin-station-1::before,
+.begin-station-2::before {
+  background: radial-gradient(circle at 50% 72%, rgba(217, 119, 6, 0.13), transparent 40%), linear-gradient(180deg, rgba(34, 24, 20, 0.26), transparent 55%);
+}
+
+.begin-station-3::before {
+  background: radial-gradient(circle at 18% 72%, rgba(35, 75, 83, 0.16), transparent 42%), linear-gradient(180deg, rgba(10, 20, 27, 0.3), transparent 62%);
+}
+
+.begin-station-4::before {
+  background: radial-gradient(circle at 75% 22%, rgba(204, 175, 119, 0.15), transparent 38%), linear-gradient(180deg, rgba(75, 69, 57, 0.22), transparent 62%);
+}
+
+.begin-station-5::before {
+  background: radial-gradient(circle at 26% 72%, rgba(225, 175, 91, 0.14), transparent 38%), linear-gradient(180deg, rgba(68, 42, 28, 0.25), transparent 62%);
+}
+
+.begin-station-6::before {
+  background: radial-gradient(circle at 70% 30%, rgba(179, 73, 105, 0.15), transparent 42%), radial-gradient(circle at 25% 78%, rgba(32, 92, 74, 0.12), transparent 42%);
+}
+
+.begin-station-7::before {
+  background: radial-gradient(circle at 50% 18%, rgba(238, 196, 116, 0.18), transparent 38%), linear-gradient(180deg, rgba(38, 60, 71, 0.2), transparent 66%);
+}
+
+.begin-station-8::before {
+  background: radial-gradient(circle at 50% 16%, rgba(244, 205, 132, 0.22), transparent 36%), linear-gradient(180deg, rgba(53, 85, 83, 0.2), rgba(45, 11, 11, 0.06) 70%);
+}
+
+.begin-ascent {
+  position: absolute;
+  top: 4.6rem;
+  left: 1rem;
+  right: 1rem;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 0;
+  z-index: 24;
+}
+
+.begin-ascent-line {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 0.3rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0.5), rgba(177, 181, 187, 0.14));
+}
+
+.begin-ascent-station {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(177, 181, 187, 0.28);
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.begin-ascent-station i {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(177, 181, 187, 0.3);
+  background: #0a0a0a;
+  z-index: 1;
+}
+
+.begin-ascent-station.complete,
+.begin-ascent-station.current { color: rgba(229, 231, 235, 0.72); }
+.begin-ascent-station.complete i { background: rgba(217, 119, 6, 0.7); border-color: rgba(217, 119, 6, 0.9); }
+.begin-ascent-station.current i { background: #e7b35d; border-color: #f4d49b; box-shadow: 0 0 16px rgba(217, 119, 6, 0.65); transform: scale(1.25); }
+
+.begin-back {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 3.6rem;
+  z-index: 30;
+  min-width: 4.75rem;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: rgba(229, 231, 235, 0.68);
+  border: 1px solid rgba(229, 231, 235, 0.14);
+  background: rgba(10, 10, 10, 0.72);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 639px) {
+  .begin-ascent-station span { display: none; }
+  .begin-ascent-station.current span {
+    display: block;
+    position: absolute;
+    top: 1.25rem;
+    left: 0;
+    right: 0;
+    font-size: 0.63rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .begin-ascent { top: 4.25rem; }
+  .begin-back { bottom: 3.2rem; }
+  .custom-cursor { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .begin-station::before,
+  .begin-ascent-station i { transition: none; }
+}

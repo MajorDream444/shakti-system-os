@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "check:backend": "tsx src/checks/backendReadChecks.ts",
+    "check:begin-write": "tsx src/checks/beginWriteChecks.ts",
     "check:vault": "tsx src/checks/vaultSyncChecks.ts",
+    "test:begin-browser": "playwright test e2e/begin-qa.spec.ts --reporter=line",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.62.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.1",

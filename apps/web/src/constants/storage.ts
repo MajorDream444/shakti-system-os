@@ -8,4 +8,7 @@ export const STORAGE_KEYS = {
   pathPathway: "shakti_path_pathway",
   pathLongings: "shakti_path_longings",
   pathReflection: "shakti_path_reflection",
+  beginJourneyState: "shakti_path_journey_state",
+  beginPendingWrite: "shakti_path_pending_write",
+  beginLocalStatus: "shakti_path_local_status",
 } as const;

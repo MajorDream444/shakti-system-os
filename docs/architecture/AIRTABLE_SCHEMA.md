@@ -33,18 +33,24 @@ apps/web/src/constants/airtableSchema.ts
 Seekers
 Library Assets
 Practices
-Initiation Keys
-Retreats
 Retreat Applications
-Environmental Memory
+Intake Responses
+Requests & Signals
+Progress
+Access Grants
 ```
 
-## Secondary Build Priority
+## Deferred Or Quarantined
 
 ```text
+Reflections
+Events
 Goddess Pathways
 Offerings
 Content Queue
+Initiation Keys
+Retreats
+Environmental Memory
 ```
 
 ## Current Boundary
@@ -54,6 +60,35 @@ Content Queue
 Sprint 6 added read-only adapter structure for `Practices` and `Initiation Keys`.
 
 Sprint 7 adds `BackendRepository` as the only app-facing read boundary and adds `LibraryAssetReadAdapter` for the Temple Library / Vault layer. The repository owns cache behavior and keeps React from depending on Airtable adapter details.
+
+Sprint 11C adds the first approved server-side write boundary for `/begin`. The browser does not write directly to Airtable with privileged credentials. Production writes are controlled by `BEGIN_WRITES_ENABLED`, which defaults to `false`.
+
+Sprint 11C operational tables:
+
+```text
+Seekers: tblKLBelhnhTaoS6o
+Intake Responses: tblfGqSLi8NLBpSVv
+Requests & Signals: tblcKmCTyPhk68jLU
+Progress: tblR04jj5MNMXJ69N
+Access Grants: tblTQ0jfG1pftUKxS
+```
+
+Write rules:
+
+```text
+/api/begin/complete may write Seekers, Intake Responses, and Progress.
+/api/request-signal may write Requests & Signals after explicit action and usable contact.
+Neither endpoint writes Access Grants in Sprint 11C.
+Neither endpoint writes Initiation Keys, Environmental Memory, Retreat Applications, Reflections, Events, payments, deposits, or private reflections.
+Server-side pathway rules own persisted pathway assignment.
+Anonymous or no-contact Begin journeys remain local-only.
+```
+
+Typed app constants:
+
+```text
+apps/web/src/constants/liveAirtable.ts
+```
 
 Current read-only flow:
 

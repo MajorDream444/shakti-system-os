@@ -7,6 +7,7 @@ export interface Choice {
 }
 
 export interface AppState {
+  beginSessionId: string;
   currentScreen: number;
   scores: Record<PathType, number>;
   selections: Record<number, string>;

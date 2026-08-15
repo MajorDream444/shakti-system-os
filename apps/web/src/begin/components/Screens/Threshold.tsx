@@ -4,9 +4,9 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
   return (
     <div className="flex flex-col items-center max-w-xl mt-[-2vh]">
       {/* Sacred Sanctuary Devotional Temple Entrance */}
-      <div className="relative mb-14 px-4 select-none">
+      <div className="relative mb-6 md:mb-14 px-4 select-none">
         {/* Heavy Sanctuary Stone Archways Stack - Peering Into a Heated Devotional Chamber */}
-        <div className="relative w-52 h-80 md:w-60 md:h-96 flex items-center justify-center">
+        <div className="relative w-36 h-56 sm:w-44 sm:h-68 md:w-60 md:h-96 flex items-center justify-center">
 
           {/* Deep Ambient Room Red Silk / Burgundy Aura Spillover */}
           <div className="absolute inset-[-50px] bg-gradient-to-t from-burgundy/15 via-ember/[0.08] to-transparent rounded-t-full blur-3xl pointer-events-none" />
@@ -73,7 +73,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.1, duration: 2.2, ease: "easeOut" }}
-            className="absolute z-20 w-36 h-36 flex items-center justify-center pointer-events-none select-none"
+            className="absolute z-20 w-24 h-24 md:w-36 md:h-36 flex items-center justify-center pointer-events-none select-none"
           >
             <svg viewBox="0 0 120 120" className="w-full h-full text-stone-100 filter drop-shadow-[0_0_15px_rgba(122,12,12,0.7)]">
               {/* Rotated 8-petal ceremonial blood-red outer lotus form */}
@@ -169,7 +169,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 1.2 }}
-        className="text-3xl md:text-4xl font-light tracking-tight leading-relaxed mb-6 text-glow text-stone-100 serif"
+        className="text-2xl md:text-4xl font-light tracking-tight leading-relaxed mb-3 md:mb-6 text-glow text-stone-100 serif"
       >
         Begin your Shakti path with structure your body can trust.
       </motion.h1>
@@ -178,7 +178,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 1.5 }}
-        className="text-base text-ash/80 mb-5 font-light leading-relaxed px-4 md:px-8"
+        className="text-sm md:text-base text-ash/80 mb-3 md:mb-5 font-light leading-relaxed px-4 md:px-8"
       >
         A calm first step into Sheetal Kandola’s work — rooted in Shakta Tantra, sensual somatics, shadow integration, and nervous-system literacy.
       </motion.p>
@@ -187,7 +187,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1.5 }}
-        className="text-xs text-ash/40 mb-11 italic"
+        className="text-xs text-ash/55 mb-5 md:mb-11 italic"
       >
         You do not need to know exactly where to begin. We will move slowly.
       </motion.p>
