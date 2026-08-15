@@ -1,10 +1,16 @@
+import type { CSSProperties } from "react";
 import { BEGIN_PATH, SECTION_ANCHORS } from "../constants/navigation";
 import { portalCopy } from "../data/portalCopy";
+import { portalImages } from "./PortalImageSlots";
 
 export function FinalCTA() {
   return (
     <section className="final-cta" id="begin">
-      <div className="final-bg" aria-hidden="true" />
+      <div
+        className="final-bg"
+        aria-hidden="true"
+        style={{ "--final-image": `url(${portalImages.water})` } as CSSProperties}
+      />
       <div className="final-content">
         <p className="label">{portalCopy.finalCta.label}</p>
         <h2>{portalCopy.finalCta.headline}</h2>

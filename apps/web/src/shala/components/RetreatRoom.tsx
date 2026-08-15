@@ -29,9 +29,9 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
     { id: 'logistics', label: 'Logistics — travel and rest arrangements finalized', checked: false },
   ]);
 
-  const [bookingActive, setBookingActive] = useState(false);
-  const [bookingStep, setBookingStep] = useState(1); // 1 = Info/Form, 2 = Completed
-  const [formData, setBookingData] = useState({ name: '', diet: 'organic_veg', experience: 'intermediate' });
+  const [requestActive, setRequestActive] = useState(false);
+  const [requestStep, setRequestStep] = useState(1);
+  const [formData, setRequestData] = useState({ name: '', diet: 'organic_veg', experience: 'intermediate' });
 
   const handleToggle = (id: string) => {
     setItems((prev) =>
@@ -41,11 +41,11 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
 
   const doneCount = items.filter((item) => item.checked).length;
   const progressPercent = (doneCount / items.length) * 100;
-  const isReadyForBooking = progressPercent >= 50;
+  const isReadyToRequest = progressPercent >= 50;
 
-  const handleConfirmBooking = (e: React.FormEvent) => {
+  const handleConfirmRequest = (e: React.FormEvent) => {
     e.preventDefault();
-    setBookingStep(2);
+    setRequestStep(2);
   };
 
   return (
@@ -125,20 +125,20 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
           <div className="border border-[#E27A3F]/20 rounded-2xl bg-[#4A1F24]/10 p-6 flex flex-col justify-center items-center text-center">
             <h4 className="font-serif text-lg text-[#F6EFE7]">October Pilgrimage</h4>
             <p className="font-sans text-[11px] text-[#8a7c6d] mt-1">
-              {isReadyForBooking
+              {isReadyToRequest
                 ? 'Your container is stable. You can now request passage.'
-                : 'Complete at least 50% of the milestones to unlock booking.'}
+                : 'Complete at least 50% of the milestones to prepare a request.'}
             </p>
             <button
-              onClick={() => setBookingActive(true)}
-              disabled={!isReadyForBooking}
+              onClick={() => setRequestActive(true)}
+              disabled={!isReadyToRequest}
               className={`mt-4 px-6 py-2 rounded-full font-sans font-semibold text-[11px] tracking-widest uppercase transition-all duration-300 ${
-                isReadyForBooking
+                isReadyToRequest
                   ? 'bg-[#E27A3F] hover:bg-[#C35A2E] text-white shadow-[0_0_15px_rgba(226,122,63,0.3)] hover:scale-105 cursor-pointer'
                   : 'bg-white/5 text-white/30 border border-white/5 cursor-not-allowed'
               }`}
             >
-              Secure My Passage
+              Request Retreat Conversation
             </button>
           </div>
         </div>
@@ -169,9 +169,9 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
         </div>
       </div>
 
-      {/* RITUAL RETREAT BOOKING OVERLAY (HIGH-TICKET MONETIZATION CONVERSION) */}
+      {/* Retreat interest stays local in this room; no application or approval is created here. */}
       <AnimatePresence>
-        {bookingActive && (
+        {requestActive && (
           <div className="fixed inset-0 bg-[#090707]/95 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -181,14 +181,14 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
             >
               {/* Close button */}
               <button
-                onClick={() => { setBookingActive(false); setBookingStep(1); }}
+                onClick={() => { setRequestActive(false); setRequestStep(1); }}
                 className="absolute top-6 right-6 text-[#8a7c6d] hover:text-[#F6EFE7] font-sans text-xs tracking-widest uppercase cursor-pointer"
               >
                 Close
               </button>
 
-              {bookingStep === 1 ? (
-                <form onSubmit={handleConfirmBooking} className="flex flex-col gap-5">
+              {requestStep === 1 ? (
+                <form onSubmit={handleConfirmRequest} className="flex flex-col gap-5">
                   <div className="text-center">
                     <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#E27A3F]">Retreat Discernment</span>
                     <h3 className="font-serif text-3xl text-[#F6EFE7] mt-1.5">Request Sacred Passage</h3>
@@ -223,7 +223,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                         type="text"
                         required
                         value={formData.name}
-                        onChange={(e) => setBookingData({...formData, name: e.target.value})}
+                        onChange={(e) => setRequestData({...formData, name: e.target.value})}
                         placeholder="e.g. Seeker Ishan"
                         className="w-full bg-white/[0.02] border border-white/10 focus:border-[#E27A3F] rounded-xl px-4 py-3 font-serif text-lg text-[#F6EFE7] outline-none"
                       />
@@ -234,7 +234,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                         <label className="font-sans text-[11px] tracking-wide uppercase text-[#8a7c6d]">Nourishment Preference</label>
                         <select
                           value={formData.diet}
-                          onChange={(e) => setBookingData({...formData, diet: e.target.value})}
+                          onChange={(e) => setRequestData({...formData, diet: e.target.value})}
                           className="w-full bg-[#120E0F] border border-white/10 focus:border-[#E27A3F] rounded-xl px-4 py-3 font-serif text-md text-[#F6EFE7] outline-none"
                         >
                           <option value="organic_veg">Organic Ayurvedic Vegetarian</option>
@@ -247,7 +247,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                         <label className="font-sans text-[11px] tracking-wide uppercase text-[#8a7c6d]">Prior Stillness Experience</label>
                         <select
                           value={formData.experience}
-                          onChange={(e) => setBookingData({...formData, experience: e.target.value})}
+                          onChange={(e) => setRequestData({...formData, experience: e.target.value})}
                           className="w-full bg-[#120E0F] border border-white/10 focus:border-[#E27A3F] rounded-xl px-4 py-3 font-serif text-md text-[#F6EFE7] outline-none"
                         >
                           <option value="beginner">Entering first Year of Stillness</option>
@@ -287,11 +287,11 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                   <div className="border border-white/5 rounded-2xl p-4 bg-white/[0.01] max-w-sm w-full text-left mt-2">
                     <span className="font-sans text-[9px] tracking-widest text-[#E27A3F] block uppercase mb-1">Next Step</span>
                     <span className="font-sans text-xs text-[#C8B7A5]">
-                      A master guide will summon you for a direct dialogue to align your body-mind readiness before confirming the Himalayan gate pass.
+                      A human conversation is required before any retreat doorway can be considered.
                     </span>
                   </div>
                   <button
-                    onClick={() => { setBookingActive(false); setBookingStep(1); }}
+                    onClick={() => { setRequestActive(false); setRequestStep(1); }}
                     className="mt-6 px-6 py-2 bg-white/5 hover:bg-white/10 text-white font-sans font-semibold text-[10px] tracking-widest uppercase rounded-full transition-all"
                   >
                     Return to Shala

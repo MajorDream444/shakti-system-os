@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 export default function Threshold({ onNext }: { onNext: () => void }) {
   return (
-    <div className="flex flex-col items-center max-w-xl mt-[-2vh]">
+    <div className="begin-screen begin-arrival flex flex-col items-start max-w-2xl mt-[-2vh]">
       {/* Sacred Sanctuary Devotional Temple Entrance */}
       <div className="relative mb-6 md:mb-14 px-4 select-none">
         {/* Heavy Sanctuary Stone Archways Stack - Peering Into a Heated Devotional Chamber */}
@@ -165,31 +165,40 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         ))}
       </div>
 
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.55, duration: 1.1 }}
+        className="begin-kicker"
+      >
+        The threshold
+      </motion.p>
+
       <motion.h1
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 1.2 }}
-        className="text-2xl md:text-4xl font-light tracking-tight leading-relaxed mb-3 md:mb-6 text-glow text-stone-100 serif"
+        className="begin-heading text-3xl md:text-6xl font-light tracking-tight leading-tight mb-4 md:mb-7 text-glow text-stone-100 serif"
       >
-        Begin your Shakti path with structure your body can trust.
+        You have arrived at the foot of the mountain.
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 1.5 }}
-        className="text-sm md:text-base text-ash/80 mb-3 md:mb-5 font-light leading-relaxed px-4 md:px-8"
+        className="begin-body text-base md:text-lg text-ash/80 mb-3 md:mb-5 font-light leading-relaxed"
       >
-        A calm first step into Sheetal Kandola’s work — rooted in Shakta Tantra, sensual somatics, shadow integration, and nervous-system literacy.
+        Before anything is asked of you, simply arrive. Let your breath find the ground beneath you. There is nowhere to rush toward.
       </motion.p>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1.5 }}
-        className="text-xs text-ash/55 mb-5 md:mb-11 italic"
+        className="text-xs md:text-sm text-ash/55 mb-6 md:mb-12 italic"
       >
-        You do not need to know exactly where to begin. We will move slowly.
+        Shakti Shala opens through attention, not performance.
       </motion.p>
 
       <motion.button
@@ -197,10 +206,10 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1 }}
         onClick={onNext}
-        className="relative group px-14 py-4 bg-transparent border border-burgundy/30 hover:border-ember/50 transition-colors duration-700 overflow-hidden rounded-sm cursor-pointer shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
+        className="begin-primary-action relative group px-14 py-4 bg-transparent border border-burgundy/30 hover:border-ember/50 transition-colors duration-700 overflow-hidden rounded-sm cursor-pointer shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
       >
         <span className="relative z-10 text-ash/80 group-hover:text-ember transition-colors duration-500 tracking-[0.25em] font-medium text-xs uppercase">
-          Enter the Threshold
+          Begin the Ascent
         </span>
         <div className="absolute inset-0 bg-ember/0 group-hover:bg-ember/[0.04] transition-colors duration-700" />
       </motion.button>

@@ -3,24 +3,24 @@ import KaliSigil from '../KaliSigil';
 
 export default function Orientation({ onNext }: { onNext: () => void }) {
   return (
-    <div className="flex flex-col items-center max-w-xl">
+    <div className="begin-screen flex flex-col items-start max-w-2xl">
       {/* Devotional Lineage Seal */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
-        className="mb-6"
+        className="mb-6 begin-small-seal"
       >
         <KaliSigil className="w-8 h-8" glow={true} />
       </motion.div>
 
       <motion.h2
-        className="text-2xl md:text-3xl font-light mb-12 italic text-glow serif text-stone-100"
+        className="begin-heading text-3xl md:text-5xl font-light mb-10 italic text-glow serif text-stone-100"
       >
         Not every woman enters through the same doorway.
       </motion.h2>
 
-      <div className="space-y-6 mb-12 text-left max-w-lg">
+      <div className="space-y-5 mb-12 text-left max-w-xl">
         {[
           "Some women need rhythm.",
           "Some need personal support.",
@@ -32,7 +32,7 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
             initial={{ opacity: 0, x: -6 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 + (i * 0.2), duration: 1, ease: 'easeOut' }}
-            className="text-base text-ash/85 font-light pl-4 border-l-2 border-red-800"
+            className="begin-listening-line text-base md:text-lg text-ash/85 font-light pl-4 border-l-2 border-red-800"
           >
             {text}
           </motion.p>
@@ -43,7 +43,7 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1.2 }}
-        className="text-base text-ash/70 mb-4 text-center leading-relaxed max-w-md"
+        className="begin-body text-base text-ash/70 mb-4 text-left leading-relaxed max-w-xl"
       >
         This experience helps you sense what kind of support may fit your current season — emotionally, practically, and energetically.
       </motion.p>
@@ -52,7 +52,7 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1.2 }}
-        className="text-xs text-ash/40 mb-12 italic text-center"
+        className="text-xs text-ash/45 mb-12 italic text-left"
       >
         There are no right answers. Only a clearer doorway.
       </motion.p>
@@ -62,7 +62,7 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 2.1, duration: 1 }}
         onClick={onNext}
-        className="px-12 py-4 border border-burgundy/30 hover:border-ember/40 hover:bg-ember/[0.02] transition-all duration-700 tracking-[0.25em] uppercase text-xs font-semibold rounded-sm cursor-pointer"
+        className="begin-primary-action px-12 py-4 border border-burgundy/30 hover:border-ember/40 hover:bg-ember/[0.02] transition-all duration-700 tracking-[0.25em] uppercase text-xs font-semibold rounded-sm cursor-pointer"
       >
         Continue
       </motion.button>

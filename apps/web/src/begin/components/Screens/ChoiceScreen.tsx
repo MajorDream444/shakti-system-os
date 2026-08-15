@@ -32,23 +32,23 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
   };
 
   return (
-    <div className="flex flex-col items-center w-full max-w-4xl px-4">
+    <div className="begin-screen begin-choice-screen flex flex-col items-start w-full max-w-4xl px-0">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-10 text-center"
+        className="mb-10 text-left"
       >
-        <h2 className="text-2xl md:text-3xl font-light mb-4 leading-relaxed text-glow serif text-stone-100 italic">
+        <h2 className="begin-heading text-3xl md:text-5xl font-light mb-4 leading-tight text-glow serif text-stone-100 italic">
           {prompt}
         </h2>
         {supportLine && (
-          <p className="text-ash/40 italic text-sm md:text-base font-light font-sans tracking-wide">
+          <p className="begin-body text-ash/58 italic text-sm md:text-base font-light font-sans tracking-wide max-w-xl">
             {supportLine}
           </p>
         )}
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full lg:px-12">
+      <div className="begin-choice-grid grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 w-full">
         {choices.map((choice, i) => {
           const isSelected = selectedId === choice.id;
           const isAnySelected = selectedId !== null;
@@ -71,7 +71,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
               }}
               onClick={() => handleSelection(choice.id, choice.scores)}
               aria-pressed={isSelected}
-              className={`group relative min-h-44 md:h-64 p-6 md:p-9 border transition-all duration-1000 text-left flex flex-col justify-end overflow-hidden backdrop-blur-[2px] rounded-t-[42%] md:rounded-t-[40%] cursor-pointer ${
+              className={`begin-choice group relative min-h-28 md:min-h-40 p-6 md:p-7 border transition-all duration-1000 text-left flex flex-col justify-end overflow-hidden backdrop-blur-[2px] cursor-pointer ${
                 isSelected
                   ? 'border-amber-500/40 bg-stone-950 shadow-[inset_0_4px_40px_rgba(0,0,0,0.95),_0_20px_50px_rgba(217,85,6,0.18)]'
                   : 'border-ash/20 hover:border-amber-500/25 bg-stone-900/[0.2] hover:bg-stone-950/90 shadow-[inset_0_4px_30px_rgba(0,0,0,0.85),_0_10px_30px_-10px_rgba(0,0,0,0.9)]'
@@ -91,15 +91,15 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
               }`} />
 
               {/* Unique Flame Altar rising point */}
-              <div className="absolute top-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 transition-all duration-1000">
+              <div className="begin-choice-orb absolute top-6 right-6 flex flex-col items-center gap-1.5 transition-all duration-1000">
                 {/* Hearth string / candlewick thread line */}
-                <div className={`w-[0.5px] h-12 bg-gradient-to-b from-transparent transition-all duration-1000 ${
+                <div className={`w-[0.5px] h-8 bg-gradient-to-b from-transparent transition-all duration-1000 ${
                   isSelected ? 'via-amber-500/40 to-ember' : 'via-ash/10 to-ash/30 group-hover:to-amber-500/40'
                 }`} />
 
                 {/* Derived Kali Sigil at the heart of the threshold portal */}
                 <KaliSigil
-                  className={`w-6 h-6 transition-all duration-1000 ${
+                  className={`w-5 h-5 transition-all duration-1000 ${
                     isSelected ? 'opacity-100 scale-110' : 'opacity-40 group-hover:opacity-90'
                   }`}
                   glow={isSelected}
@@ -110,7 +110,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
               <div className="absolute inset-0 bg-noise opacity-[0.06] pointer-events-none mix-blend-overlay" />
 
               {/* Interactive doorway text */}
-              <p className={`relative z-10 text-center w-full px-5 mb-2 font-sans tracking-wide transition-all duration-1000 ${
+              <p className={`relative z-10 text-left w-full pr-10 mb-0 font-sans text-base md:text-lg leading-relaxed tracking-wide transition-all duration-1000 ${
                 isSelected
                   ? 'text-amber-500 font-medium scale-[1.01] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
                   : 'text-ash/90 group-hover:text-stone-100 font-light'
@@ -119,7 +119,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
               </p>
 
               {/* Symmetrical framing geometry - bevel arches */}
-              <div className={`absolute inset-0 border transition-all duration-1000 rounded-t-[50%] md:rounded-t-[40%] ${
+              <div className={`absolute inset-0 border transition-all duration-1000 ${
                 isSelected
                   ? 'border-amber-500/25'
                   : 'border-white/[0.015] group-hover:border-white/[0.04]'

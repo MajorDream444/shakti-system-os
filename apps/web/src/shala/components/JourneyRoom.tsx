@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Key, Mountain, ArrowLeft } from 'lucide-react';
+import { Mountain, ArrowLeft, ShieldCheck } from 'lucide-react';
 import { RoomType, SeekerState } from '../types';
 import { SANCTUARY_LANDMARKS } from '../data';
 import { PrayerLamp } from './PrayerLamp';
@@ -11,68 +11,11 @@ interface JourneyRoomProps {
   onToggleLamp?: (roomId: string) => void;
 }
 
-interface KeyTier {
-  id: string;
-  level: string;
-  desc: string;
-  price: string;
-  tribute: string;
-  unlocks: string[];
-  exclusive: string;
-  color: string;
-}
-
-const TEMPLE_KEYS: KeyTier[] = [
-  {
-    id: 'visitor',
-    level: 'Visitor',
-    desc: 'The Threshold',
-    price: 'Open',
-    tribute: 'Available now',
-    unlocks: ['First Chamber entry', 'Basic stillness timer', 'Threshold Courtyard access'],
-    exclusive: 'Standard visitor container',
-    color: '#8a7c6d'
-  },
-  {
-    id: 'seeker',
-    level: 'Seeker',
-    desc: 'The Search',
-    price: 'Available to Request',
-    tribute: 'Human reviewed',
-    unlocks: ['Practice Room rhythm', 'Quiet interface', 'Personal continuity'],
-    exclusive: 'Future credential concept',
-    color: '#D8C5B0'
-  },
-  {
-    id: 'practitioner',
-    level: 'Practitioner',
-    desc: 'The Work',
-    price: 'Requires Preparation',
-    tribute: 'Human reviewed',
-    unlocks: ['Complete digital library archive', 'Himalayan lineage direct audio files', 'Private practitioner journal'],
-    exclusive: 'Future credential concept',
-    color: '#cdbfa8'
-  },
-  {
-    id: 'initiate',
-    level: 'Initiate',
-    desc: 'The Fire',
-    price: 'By Invitation',
-    tribute: 'Human discernment',
-    unlocks: ['Direct feedback on lineage journals', 'Himalayan pre-retreat preparation container', 'Access to direct mentorship streams'],
-    exclusive: 'Future credential concept',
-    color: '#E27A3F'
-  },
-  {
-    id: 'temple_circle',
-    level: 'Temple Circle',
-    desc: 'The Council',
-    price: 'By Invitation',
-    tribute: 'Human discernment',
-    unlocks: ['Lifetime Himalayan retreat pre-booking priority', '1-on-1 direct guidance with master guides', 'Access to closed circle gatherings'],
-    exclusive: 'Future credential concept',
-    color: '#E9915A'
-  }
+const PATHWAY_STATES = [
+  { state: 'Open', desc: 'available now' },
+  { state: 'Available to Request', desc: 'shared with a human when you ask' },
+  { state: 'Requires Preparation', desc: 'entered after steadier practice' },
+  { state: 'By Invitation', desc: 'held through human discernment' },
 ];
 
 export const JourneyRoom: React.FC<JourneyRoomProps> = ({
@@ -81,8 +24,6 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
   onToggleLamp,
 }) => {
   const [isAscending, setIsAscending] = useState(false);
-  const [selectedKey, setSelectedKey] = useState<KeyTier>(TEMPLE_KEYS[2]); // Default Practitioner
-  const [currentActiveLevel, setCurrentActiveLevel] = useState<string>('Initiate');
   const [isProcessing, setIsProcessing] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -92,7 +33,6 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
       setIsProcessing(false);
       setIsSuccess(true);
       setTimeout(() => {
-        setCurrentActiveLevel(selectedKey.level);
         setIsSuccess(false);
         setIsAscending(false);
       }, 2500);
@@ -215,10 +155,10 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
               Current Pathway State
             </div>
             <div className="font-serif italic text-2xl text-[#E27A3F] mt-1.5">
-              {currentActiveLevel}
+              {seekerState.currentPathway}
             </div>
             <div className="font-sans text-[10px] text-[#8a7c6d] mt-1 tracking-wider uppercase">
-              Open access only in this release
+              Open sanctuary continuity in this release
             </div>
             <button
               id="journey-ascend-initiation"
@@ -233,29 +173,21 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
         {/* Access state progression */}
         <div className="border-t border-[#D8C5B0]/10 pt-6">
           <div className="font-sans font-semibold text-[10px] tracking-[0.2em] uppercase text-[#6b5f52] mb-4">
-            Pathway States
+            Doorway States
           </div>
           <div className="flex flex-wrap gap-2">
-            {[
-              { level: 'Visitor', desc: 'The Threshold' },
-              { level: 'Seeker', desc: 'The Search' },
-              { level: 'Practitioner', desc: 'The Work' },
-              { level: 'Initiate', desc: 'The Fire' },
-              { level: 'Temple Circle', desc: 'The Council' },
-              { level: 'Guide', desc: 'The Bridge' },
-              { level: 'Teacher', desc: 'The Keep' },
-            ].map((stage) => {
-              const active = stage.level === currentActiveLevel;
+            {PATHWAY_STATES.map((stage) => {
+              const active = stage.state === 'Open';
               return (
                 <div
-                  key={stage.level}
+                  key={stage.state}
                   className={`px-4 py-3 rounded-xl border flex flex-col gap-0.5 min-w-[120px] transition-all ${
                     active
                       ? 'border-[#E27A3F] bg-[#4A1F24]/20 text-[#F6EFE7] shadow-[0_0_15px_rgba(226,122,63,0.15)]'
                       : 'border-white/5 bg-white/[0.005] text-[#8a7c6d] opacity-50'
                   }`}
                 >
-                  <span className="font-serif text-md">{stage.level}</span>
+                  <span className="font-serif text-md">{stage.state}</span>
                   <span className="font-sans text-[9px] tracking-wide uppercase opacity-80">{stage.desc}</span>
                 </div>
               );
@@ -322,7 +254,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                 <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#E27A3F]">Human Review</span>
                 <h3 className="font-serif text-3xl md:text-4xl text-[#F6EFE7] mt-2">Request a Protected Doorway</h3>
                 <p className="font-serif italic text-sm text-[#8a7c6d] mt-1">
-                  A human guide must steward any protected container, invitation, or retreat discernment.
+                  A human guide stewards protected containers, invitations, and retreat discernment.
                 </p>
               </div>
 
@@ -338,7 +270,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                     className="relative"
                   >
                     <div className="absolute inset-0 rounded-full bg-[#E27A3F]/30 filter blur-xl scale-125" />
-                    <Key className="w-16 h-16 text-[#E27A3F] relative z-10" />
+                    <ShieldCheck className="w-16 h-16 text-[#E27A3F] relative z-10" />
                   </motion.div>
                   <h4 className="font-serif text-2xl text-[#F6EFE7] mt-4">Request Noted Locally</h4>
                   <p className="font-sans text-xs text-[#8a7c6d] max-w-sm">
@@ -352,60 +284,38 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                   <p className="font-sans text-xs text-[#8a7c6d]">No credential or access grant is created from this room.</p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
-                  {/* Left Column: State selection */}
-                  <div className="flex flex-col gap-2 max-h-[360px] overflow-y-auto pr-2">
-                    {TEMPLE_KEYS.map((key) => (
-                      <button
-                        key={key.id}
-                        onClick={() => setSelectedKey(key)}
-                        className={`p-3 rounded-2xl border text-left flex flex-col gap-1 transition-all cursor-pointer ${
-                          selectedKey.id === key.id
-                            ? 'border-[#E27A3F] bg-[#4A1F24]/15'
-                            : 'border-white/5 bg-white/[0.005] hover:border-white/10'
-                        }`}
+                <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-6 mt-2">
+                  <div className="flex flex-col gap-2">
+                    {PATHWAY_STATES.map((stage) => (
+                      <div
+                        key={stage.state}
+                        className="p-3 rounded-2xl border border-white/5 bg-white/[0.005] text-left"
                       >
-                        <div className="flex justify-between items-center w-full">
-                          <span className="font-serif text-lg text-[#F6EFE7] flex items-center gap-2">
-                            <Key className="w-4 h-4" style={{ color: key.color }} />
-                            {key.level}
-                          </span>
-                          <span className="font-sans text-xs font-semibold text-[#E27A3F]">{key.price}</span>
-                        </div>
-                        <span className="font-sans text-[10px] tracking-wide uppercase text-[#8a7c6d]">{key.desc}</span>
-                      </button>
+                        <span className="font-serif text-lg text-[#F6EFE7]">{stage.state}</span>
+                        <span className="font-sans text-[10px] tracking-wide uppercase text-[#8a7c6d] block mt-1">
+                          {stage.desc}
+                        </span>
+                      </div>
                     ))}
                   </div>
 
-                  {/* Right Column: details and request action */}
                   <div className="border border-[#D8C5B0]/10 rounded-3xl p-5 bg-white/[0.005] flex flex-col justify-between">
                     <div>
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h4 className="font-serif text-2xl text-[#F6EFE7]">{selectedKey.level}</h4>
-                          <span className="font-sans text-[10px] tracking-widest uppercase text-[#8a7c6d]">{selectedKey.desc}</span>
-                        </div>
-                        <div className="text-right">
-                          <div className="font-serif text-2xl text-[#E27A3F]">{selectedKey.price}</div>
-                          <span className="font-sans text-[8px] tracking-wide uppercase text-[#6b5f52]">{selectedKey.tribute}</span>
-                        </div>
-                      </div>
+                      <h4 className="font-serif text-2xl text-[#F6EFE7]">Ask for a Guide</h4>
+                      <p className="font-sans text-xs text-[#8a7c6d] mt-2 leading-relaxed">
+                        This room can remember your orientation locally, but it cannot approve a doorway or create access. For this release, requests that need a person are made through the Begin pathway.
+                      </p>
 
-                      <div className="mt-4 border-t border-white/5 pt-4">
-                        <span className="font-sans text-[9px] tracking-widest uppercase text-[#6b5f52] block mb-2">Unlocks &amp; Provisions</span>
+                      <div className="mt-5 border-t border-white/5 pt-4">
+                        <span className="font-sans text-[9px] tracking-widest uppercase text-[#6b5f52] block mb-2">What stays protected</span>
                         <ul className="flex flex-col gap-1.5">
-                          {selectedKey.unlocks.map((u, i) => (
-                            <li key={i} className="font-sans text-[11px] text-[#C8B7A5] flex items-start gap-2">
+                          {['No access is granted here', 'No retreat readiness is decided here', 'No initiation is automated'].map((item) => (
+                            <li key={item} className="font-sans text-[11px] text-[#C8B7A5] flex items-start gap-2">
                               <span className="text-[#E27A3F] mt-0.5">•</span>
-                              {u}
+                              {item}
                             </li>
                           ))}
                         </ul>
-                      </div>
-
-                      <div className="mt-4 border-t border-white/5 pt-3">
-                        <span className="font-sans text-[9px] tracking-widest uppercase text-[#6b5f52] block">Credential Status</span>
-                        <span className="font-serif italic text-xs text-[#D8C5B0] mt-1 block">{selectedKey.exclusive}</span>
                       </div>
                     </div>
 
@@ -414,10 +324,10 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                         onClick={handleAscend}
                         className="w-full py-3 bg-gradient-to-r from-[#C35A2E] to-[#E27A3F] text-white font-sans font-semibold text-xs tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(226,122,63,0.3)] transition-all hover:scale-[1.02] cursor-pointer"
                       >
-                        Hold This Request ({selectedKey.price})
+                        Hold This Request Locally
                       </button>
                       <span className="text-center font-sans text-[9px] text-[#6b5f52] uppercase tracking-wider block">
-                        Human approval required before any protected access
+                        Human discernment remains human
                       </span>
                     </div>
                   </div>
