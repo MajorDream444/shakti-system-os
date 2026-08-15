@@ -85,15 +85,51 @@ PASS - Open/request/preparation/invitation language is seeker-facing and avoids 
 WATCH - Some older prototype rooms outside the primary Sprint 12A wayfinding surface still contain decorative emoji-like markers. The Shala entry surface was refined to vector controls; a broader icon cleanup should be a separate visual polish task.
 ```
 
-Two-pass discipline:
+### Two-Pass Implementation Discipline
 
-```text
-Pass 1 - Structural UX:
-Implemented orientation, hierarchy, route clarity, current-room state, responsive Begin progress, and large response controls.
+Sprint 12A was not treated as one uncontrolled styling pass. The implementation was reviewed in two ordered passes:
 
-Pass 2 - Taste + Art Direction:
-Refined portal imagery, headline stability, luminous accent palette, Begin atmosphere, Shala doorway language, and vector/icon semantics on the primary Shala entry surface.
-```
+#### Pass 1 - Structural UX
+
+Objective: make orientation, hierarchy, navigation, responsive behavior, progression, and room relationships excellent before taste refinement.
+
+Evidence:
+
+- `/` Portal
+  - Primary doorway is clearly `Start Your Shakti Path`.
+  - Secondary Shala entry is present but visually subordinate.
+  - Public front door hierarchy reads before secondary sections.
+- `/begin`
+  - Eight-station ascent is explicit and sequential.
+  - Desktop and mobile progress treatments are visible without "Step X of 8" language.
+  - Large response controls reduce questionnaire/form feeling.
+  - Existing consent, local fallback, and persistence flow remain intact.
+- `/shala`
+  - Persistent current-room state was added.
+  - Sanctuary Map is summonable and accessible.
+  - Open rooms and protected doorways are visually differentiated with seeker-facing language.
+  - Important rooms no longer require memorized URLs.
+
+#### Pass 2 - Taste + Art Direction
+
+Objective: refine typography, spacing, image crops, atmosphere, surface treatment, contrast, restraint, motion, and emotional progression after structure was stable.
+
+Evidence:
+
+- Typography
+  - Portal hero headline was stabilized as a semantic `h1`.
+  - Begin headings and labels support ritual pacing instead of dashboard/task UI.
+- Spacing and surface treatment
+  - Begin stations use generous quiet space and fewer visible controls per screen.
+  - Shala route cards remain legible without becoming generic product cards.
+- Imagery and atmosphere
+  - Local image slots now carry world, water, library, and threshold atmosphere.
+  - Devotional red is used as punctuation through CTAs and active states.
+  - Pink, muted gold, green, stone, water, and photography cues are introduced with restraint.
+- Motion and emotional progression
+  - Existing transitions stay slow and atmospheric.
+  - `/begin` becomes more luminous through the journey while preserving sanctuary depth.
+  - No flashy GSAP, random glassmorphism, bento-for-everything, fake luxury, or generic sacred wallpaper was added.
 
 ## Frozen Design Artifacts Reviewed
 
