@@ -12,6 +12,57 @@ Sprint 12A implements the approved frozen Claude Design experience direction acr
 
 Production writes remain disabled by configuration. No backend write architecture, Airtable write repository, API route, server validation, or live Airtable ID constants were modified.
 
+## Skill Application and Taste Gate
+
+Sprint 12A was reviewed as a skill-driven UI/UX implementation pass.
+
+Skills installed/read during the final pass:
+
+- `taste-skill` from `Leonxlnx/taste-skill`
+  - Applied through the focused `gpt-taste` and `high-end-visual-design` skill files.
+  - Decision domain: anti-generic critique, hierarchy, spacing, visual authorship, typography, and avoiding templated AI-site patterns.
+  - Constraint: its Awwwards/GSAP/bento defaults were not allowed to override the frozen Shakti experience, canonical vocabulary, or sanctuary restraint.
+- `ui-ux-pro-max` from `nextlevelbuilder/ui-ux-pro-max-skill`
+  - Applied through `SKILL.md`, `references/pro-rules.md`, and `references/quick-reference.md`.
+  - Decision domain: accessibility, touch target behavior, responsive layout, navigation clarity, icon semantics, and React test/query discipline.
+- Existing local `frontend-app-builder` / React implementation guidance
+  - Decision domain: implementation fidelity, browser QA, responsive screenshots, and production-quality front-end checks.
+
+Focused UI/UX Pro Max searches run:
+
+```text
+mobile touch accessible navigation --domain ux
+orphan heading line balance --domain ux
+accessible components --stack react
+```
+
+Taste Gate review:
+
+```text
+/ Portal
+PASS - The first viewport now has immediate Shakti Portal signal, a clear primary Begin doorway, real image zones, and restrained secondary Shala orientation.
+WATCH - Final Sheetal photography is still required before this can be considered fully authored.
+
+/begin
+PASS - The flow reads as an ascent rather than a numbered questionnaire. Desktop and mobile progress treatments are visible without "Step X of 8" language.
+PASS - The visual environment grows warmer and more luminous while preserving sanctuary depth.
+
+/shala
+PASS - Shala now reads as a place with current-room orientation and a summonable Sanctuary Map rather than a set of memorized URLs.
+PASS - Open/request/preparation/invitation language is seeker-facing and avoids internal access terminology.
+WATCH - Some older prototype rooms outside the primary Sprint 12A wayfinding surface still contain decorative emoji-like markers. The Shala entry surface was refined to vector controls; a broader icon cleanup should be a separate visual polish task.
+```
+
+Two-pass discipline:
+
+```text
+Pass 1 - Structural UX:
+Implemented orientation, hierarchy, route clarity, current-room state, responsive Begin progress, and large response controls.
+
+Pass 2 - Taste + Art Direction:
+Refined portal imagery, headline stability, luminous accent palette, Begin atmosphere, Shala doorway language, and vector/icon semantics on the primary Shala entry surface.
+```
+
 ## Frozen Design Artifacts Reviewed
 
 - `/Users/majordreamwilliams/Downloads/Shakti System OS - Experience-to-Intelligence Map (FROZEN v1).html`
@@ -68,6 +119,7 @@ Production writes remain disabled by configuration. No backend write architectur
   - Public labels: `Open`, `Available to Request`, `Requires Preparation`, `By Invitation`
 - Removed old seeker-facing credential/key/pricing/booking language from Personal Journey and Retreat threshold surfaces.
 - Added accessible label for the Sanctuary Map control.
+- Replaced primary Shala entry emoji control with a vector icon and explicit accessible label.
 
 ## Backend Behaviors Preserved
 
@@ -143,6 +195,7 @@ Implementation files:
 - `apps/web/src/begin/components/Screens/Handoff.tsx`
 - `apps/web/src/shala/ShalaApp.tsx`
 - `apps/web/src/shala/shala.css`
+- `apps/web/src/shala/components/GatesRoom.tsx`
 - `apps/web/src/shala/components/ThresholdDrawer.tsx`
 - `apps/web/src/shala/components/JourneyRoom.tsx`
 - `apps/web/src/shala/components/RetreatRoom.tsx`
