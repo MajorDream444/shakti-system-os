@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { AuthorityStrip } from "./components/AuthorityStrip";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
+import { FounderPresence } from "./components/FounderPresence";
 import { GodRays } from "./components/GodRays";
 import { Hero } from "./components/Hero";
 import { Nav } from "./components/Nav";
@@ -21,6 +22,7 @@ function PortalApp() {
       <main className="app-shell">
         <GodRays />
         <Hero />
+        <FounderPresence />
         <Philosophy />
         <AuthorityStrip />
         <TransitionQuote />

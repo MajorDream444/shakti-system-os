@@ -1,6 +1,7 @@
 # Sprint 12A Frozen Experience Implementation Report
 
 Prepared: 2026-08-15
+Updated: 2026-08-16
 
 Branch: `codex/sprint-12a-frozen-experience`
 
@@ -31,6 +32,9 @@ Skills installed/read during the final pass:
   - Result: no additional skill was installed. The relevant candidates found (`theme-factory`, `canvas-design`) were broader artifact/theme helpers and would have introduced overlapping or non-app-specific direction for this sprint.
 - Existing local `frontend-app-builder` / React implementation guidance
   - Decision domain: implementation fidelity, browser QA, responsive screenshots, and production-quality front-end checks.
+- `frontend-testing-debugging`
+  - Decision domain: Playwright-driven visual QA, rendered interaction proof, screenshot evidence, and local/Preview boundary reporting.
+  - Browser plugin status: Browser control skill was read; the protected PR Preview still rendered Vercel Authentication from a clean context, so repeatable local Playwright evidence was used until Preview protection is opened or a share URL is available.
 
 Focused UI/UX Pro Max searches run:
 
@@ -72,8 +76,8 @@ Surface summary:
 
 ```text
 / Portal
-PASS - Immediate Shakti Portal signal, clear primary Begin doorway, real image zones, and restrained secondary Shala orientation.
-WATCH - Final Sheetal photography is still required before this can be considered fully authored.
+PASS - Immediate Shakti Portal signal, clear primary Begin doorway, real image zones, restrained secondary Shala orientation, and visible founder presence near the top of the page.
+WATCH - A tracked Sheetal portrait is now installed for founder presence. Final provenance review and any preferred face-forward/retreat gallery assets remain a human art-direction dependency.
 
 /begin
 PASS - The flow reads as an ascent rather than a numbered questionnaire. Desktop and mobile progress treatments are visible without "Step X of 8" language.
@@ -150,6 +154,12 @@ Evidence:
 - Preserved clean public front door and primary `Start Your Shakti Path` doorway.
 - Replaced external reference imagery with application-safe local image slots.
 - Added reusable portal imagery component for Sheetal/world, Reflection Pool, and Himalayan threshold asset slots.
+- Added a substantial founder introduction near the top of the page:
+  - `Sheetal Kandola`
+  - editorial portrait treatment using a tracked app asset
+  - concise human biography and lineage context
+  - connection to Shakti Shadow & Somatics and Shakti Shala
+  - restrained credential grid without startup/team-card treatment
 - Added direct Shala orientation as a secondary doorway without making the page feel like a SaaS marketing page.
 - Stabilized the hero headline as a semantic `h1` so the first viewport is immediately legible.
 - Expanded visual atmosphere with water/reflection, warm interior light, pink/gold/green accents, and photographic sections.
@@ -237,6 +247,21 @@ After screenshots:
 - `apps/web/qa-artifacts/sprint-12a/after/desktop-shala-map-open.png`
 - `apps/web/qa-artifacts/sprint-12a/after/mobile-shala-map-open.png`
 
+Playwright visual-review evidence from local production preview:
+
+- `apps/web/test-results/e2e-sprint12a-visual-revie-51a85-thored-orientation-surfaces/desktop-01-portal-above-fold.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-51a85-thored-orientation-surfaces/desktop-02-founder-presence.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-51a85-thored-orientation-surfaces/desktop-03-begin-arrival.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-51a85-thored-orientation-surfaces/desktop-04-begin-mid-journey.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-51a85-thored-orientation-surfaces/desktop-05-begin-reveal.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-51a85-thored-orientation-surfaces/desktop-06-shala-arrival.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-51a85-thored-orientation-surfaces/desktop-07-shala-map-open.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-51a85-thored-orientation-surfaces/desktop-08-shala-room.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-ca1fd-under-and-pathway-hierarchy/mobile-01-portal-above-fold.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-ca1fd-under-and-pathway-hierarchy/mobile-02-founder-presence.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-ca1fd-under-and-pathway-hierarchy/mobile-03-begin-arrival.png`
+- `apps/web/test-results/e2e-sprint12a-visual-revie-ca1fd-under-and-pathway-hierarchy/mobile-04-shala-map-open.png`
+
 Reference captures:
 
 - `apps/web/qa-artifacts/sprint-12a/before/reference-frozen-begin-threshold.png`
@@ -249,10 +274,14 @@ Reference captures:
 Implementation files:
 
 - `apps/web/src/components/PortalImageSlots.tsx`
+- `apps/web/src/components/FounderPresence.tsx`
 - `apps/web/src/components/Hero.tsx`
 - `apps/web/src/components/Philosophy.tsx`
 - `apps/web/src/components/FinalCTA.tsx`
 - `apps/web/src/styles/globals.css`
+- `apps/web/src/data/portalCopy.ts`
+- `apps/web/src/App.tsx`
+- `apps/web/src/shala/assets/images/sheetal_founder_presence_2026-08.jpg`
 - `apps/web/src/begin/BeginApp.tsx`
 - `apps/web/src/begin/begin.css`
 - `apps/web/src/begin/components/Screens/Threshold.tsx`
@@ -274,6 +303,11 @@ Documentation:
 
 - `docs/handoff/GRAPHIFY-REFRESH-BLOCKER.md`
 - `docs/handoff/SPRINT-12A-FROZEN-EXPERIENCE-IMPLEMENTATION-REPORT.md`
+
+Verification/test harness:
+
+- `apps/web/e2e/sprint12a-visual-review.spec.ts`
+- `apps/web/package.json`
 
 ## Verification Results
 
@@ -301,6 +335,9 @@ PASS - found 0 vulnerabilities.
 
 npm run test:begin-browser
 PASS - 2 passed.
+
+npm run test:visual-review
+PASS - 2 passed. Captured desktop and mobile viewport screenshots for Portal, founder presence, Begin arrival/mid/reveal, Shala arrival, Sanctuary Map, and Temple Library room.
 ```
 
 Browser QA:
@@ -321,6 +358,9 @@ PASS - no matches in dist.
 Source and dist scan for banned/protected seeker-facing strings:
 PASS for touched seeker surfaces.
 Remaining "access rules" hit is internal schema metadata in apps/web/src/constants/airtableSchema.ts.
+
+Source scan for deprecated `somatic breathwork`:
+PASS - only canonical-vocabulary prohibition/examples remain.
 ```
 
 ## Graphify Status
@@ -342,11 +382,24 @@ Re-extracting code files in . (no LLM needed)...
 Stall point: graphify/cache.py::load_cached while reading a cached JSON entry.
 ```
 
+After the founder presence and Playwright visual-review addendum, Sprint 12A attempted one more bounded refresh:
+
+```text
+graphify update .
+```
+
+Result:
+
+```text
+Stopped cleanly after 30 seconds.
+No stdout was emitted before timeout.
+```
+
 This is recorded in `docs/handoff/GRAPHIFY-REFRESH-BLOCKER.md` as maintenance debt. Graphify remains context infrastructure, not a seeker-app runtime dependency.
 
 ## Not Yet Implemented From Claude
 
-- Final approved Sheetal portrait and real production photography are not yet installed; this sprint created safe image slots using existing local Shala environment assets.
+- A tracked Sheetal founder-presence portrait is installed. Final founder/retreat/goddess/environment asset provenance and any preferred replacement crops remain human art-direction dependencies.
 - Future URL-addressable Shala rooms are still deferred until the data/write spine remains stable through review.
 - Moon Rhythm, Fire Circle membership, private Reflection syncing, initiation approval, retreat approval, payment/deposit, and Temple Key credential concepts remain out of scope.
 

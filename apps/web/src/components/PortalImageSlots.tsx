@@ -3,10 +3,12 @@ import valleyImage from "../shala/assets/images/stillness_valley_1783418518708.j
 import libraryImage from "../shala/assets/images/temple_library_1783418534244.jpg";
 import poolImage from "../shala/assets/images/reflection_pool_1783418551833.jpg";
 import retreatImage from "../shala/assets/images/pilgrims_hall_1783418591416.jpg";
+import founderImage from "../shala/assets/images/sheetal_founder_presence_2026-08.jpg";
 
 export const portalImages = {
   hero: gatesImage,
-  founder: valleyImage,
+  founder: founderImage,
+  founderContext: valleyImage,
   library: libraryImage,
   water: poolImage,
   retreat: retreatImage,

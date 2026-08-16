@@ -16,6 +16,21 @@ export const portalCopy = {
     secondaryCta: "Explore the Method",
   },
   philosophy,
+  founder: {
+    label: "MEET THE FOUNDER",
+    name: "Sheetal Kandola",
+    headline: "The sanctuary begins with the woman holding it.",
+    body:
+      "Sheetal Kandola is an Indian woman raised in the Deep South whose work braids lived cultural context with anthropology, neurobiology, global mental health, sexual health, addiction science, somatic therapy, shadow work, and classical Shakti Tantra.",
+    continuation:
+      "Shakti Shala is the living doorway for this work: a place where nervous-system literacy, devotional practice, and truthful self-encounter can move together without rushing a seeker past her own readiness.",
+    credentials: [
+      "Shakti Shadow & Somatics",
+      "Nervous-system literacy",
+      "Shadow integration",
+      "Classical Shakti Tantra",
+    ],
+  },
   ritualCard,
   pillars: practicePillars,
   transitionQuote,
