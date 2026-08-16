@@ -10,6 +10,7 @@
     "check:begin-write": "tsx src/checks/beginWriteChecks.ts",
     "check:vault": "tsx src/checks/vaultSyncChecks.ts",
     "test:begin-browser": "playwright test e2e/begin-qa.spec.ts --reporter=line",
+    "test:visual-review": "playwright test e2e/sprint12a-visual-review.spec.ts --reporter=line",
     "lint": "eslint .",
     "preview": "vite preview"
   },
