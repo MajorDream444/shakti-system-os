@@ -1,18 +1,34 @@
 :root {
   color-scheme: dark;
-  --bg: #050505;
-  --surface: #18181b;
-  --surface-glass: rgba(24, 24, 27, 0.6);
+  /* Guna colour system — see docs/doctrine/SHAKTI-COLOR-DOCTRINE.md
+     tamas = black (ground) · rajas = red (activity) · sattva = white (clarity)
+     Rajas is punctuation, never flood. */
+  --bg: #0a0505;
+  --surface: #2a1216;
+  --surface-glass: rgba(42, 18, 22, 0.72);
   --text: #f4efe6;
   --muted: #a1a1aa;
   --accent: #ff5a1f;
-  --gold: #c4a15a;
+
+  /* rajas */
+  --maroon-deep: #2a1216;
+  --maroon-lit: #4a1c22;
+  --rajas-red: #9d171d;
+  --ember: #ff5a1f;
+
+  /* rajas → sattva (light feminine / Lakshmi register) */
   --shakti-pink: #d99aad;
+  --pink-soft: #f0c4d0;
+  --gold: #c4a15a;
+  --gold-lit: #e2b13c;
+
   --leaf: #6f8f68;
   --maroon: #4a1118;
   --rose: #b06a5b;
-  --line: rgba(244, 239, 230, 0.12);
-  --serif: Georgia, "Times New Roman", serif;
+  --line: rgba(244, 239, 230, 0.14);
+  --card-bg: rgba(42, 18, 22, 0.72);
+  --radius-card: 22px;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -36,9 +52,10 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 18% 12%, rgba(74, 17, 24, 0.34), transparent 32%),
-    radial-gradient(circle at 82% 34%, rgba(255, 90, 31, 0.12), transparent 30%),
-    #050505;
+    radial-gradient(circle at 18% 12%, rgba(74, 28, 34, 0.42), transparent 34%),
+    radial-gradient(circle at 82% 34%, rgba(255, 90, 31, 0.13), transparent 30%),
+    radial-gradient(circle at 62% 82%, rgba(217, 154, 173, 0.10), transparent 32%),
+    #0a0505;
   overflow-x: hidden;
 }
 

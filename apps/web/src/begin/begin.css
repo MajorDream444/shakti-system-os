@@ -419,3 +419,71 @@
   .begin-station::before,
   .begin-ascent-station i { transition: none; }
 }
+
+/* ============================================================
+   Guna colour system — docs/doctrine/SHAKTI-COLOR-DOCTRINE.md
+   Rajas (red/pink/gold) is punctuation, never flood.
+   ============================================================ */
+
+/* --- Choice cards: contrast floor (doctrine §5) ---------------
+   Decision surfaces must read as cards against their field.
+   Previously bg-stone-900/[0.2] under a black overlay, which
+   rendered them darker than the background. */
+
+.begin-choice--idle {
+  border-color: rgba(244, 239, 230, 0.18);
+  background:
+    linear-gradient(165deg, rgba(74, 28, 34, 0.62), rgba(42, 18, 22, 0.78));
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 230, 0.06),
+    0 10px 30px -10px rgba(0, 0, 0, 0.9);
+}
+
+.begin-choice--idle:hover {
+  border-color: rgba(226, 177, 60, 0.42);
+  background:
+    linear-gradient(165deg, rgba(93, 36, 44, 0.72), rgba(52, 22, 27, 0.86));
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 230, 0.09),
+    0 16px 40px -12px rgba(157, 23, 29, 0.35);
+}
+
+.begin-choice--selected {
+  border-color: rgba(226, 177, 60, 0.62);
+  background:
+    linear-gradient(165deg, rgba(110, 42, 50, 0.82), rgba(58, 24, 30, 0.92));
+  box-shadow:
+    inset 0 1px 0 rgba(240, 196, 208, 0.14),
+    0 20px 50px rgba(157, 23, 29, 0.3);
+}
+
+/* Card text must clear 4.5:1 */
+.begin-choice {
+  color: rgba(248, 244, 238, 0.94);
+}
+
+/* --- Luminosity progression (doctrine §4) ---------------------
+   The interface becomes more alive as the seeker moves inward.
+   --station-luminosity is set per station by BeginApp (0 → 1). */
+
+.begin-shell {
+  --station-luminosity: 0;
+}
+
+.begin-shell::after {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  pointer-events: none;
+  opacity: var(--station-luminosity);
+  transition: opacity 2.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(217, 154, 173, 0.16), transparent 55%),
+    radial-gradient(ellipse at 22% 18%, rgba(226, 177, 60, 0.10), transparent 48%),
+    radial-gradient(ellipse at 78% 42%, rgba(157, 23, 29, 0.12), transparent 50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .begin-shell::after { transition: none; }
+}
