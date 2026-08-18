@@ -73,12 +73,13 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
               aria-pressed={isSelected}
               className={`begin-choice group relative min-h-28 md:min-h-40 p-6 md:p-7 border transition-all duration-1000 text-left flex flex-col justify-end overflow-hidden backdrop-blur-[2px] cursor-pointer ${
                 isSelected
-                  ? 'border-amber-500/40 bg-stone-950 shadow-[inset_0_4px_40px_rgba(0,0,0,0.95),_0_20px_50px_rgba(217,85,6,0.18)]'
-                  : 'border-ash/20 hover:border-amber-500/25 bg-stone-900/[0.2] hover:bg-stone-950/90 shadow-[inset_0_4px_30px_rgba(0,0,0,0.85),_0_10px_30px_-10px_rgba(0,0,0,0.9)]'
+                  ? 'begin-choice--selected'
+                  : 'begin-choice--idle'
               }`}
             >
-              {/* Layer 1: Stone shadow recess */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent opacity-90" />
+              {/* Layer 1: Stone shadow recess — kept below the contrast floor so the
+                  card stays visibly a card. See SHAKTI-COLOR-DOCTRINE.md §5. */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent opacity-70" />
 
               {/* Layer 2: Warm burgundy/magenta drapery backdrop silk glow */}
               <div className={`absolute inset-0 bg-gradient-to-t from-burgundy/25 via-transparent to-transparent transition-all duration-1000 ${

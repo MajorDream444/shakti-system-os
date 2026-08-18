@@ -198,3 +198,64 @@ When a term touches:
 and the source is ambiguous, mark it for human review rather than guessing.
 
 > AI prepares. Humans steward.
+
+---
+
+# Devotional Vocabulary — ADDED 2026-08-18
+
+Source: S-002, 102 Sheetal-controlled records (`sheetalkandola` 84 + `srishaktishala` 18),
+2024-09-17 → 2026-08-12. Tier 5 — high confidence for frequency.
+
+These are among Sheetal's **highest-frequency terms** and were absent from this
+registry entirely. Scope note: the earlier Instagram audit counted 84 records; this
+pass counts 102 across both her accounts, so absolute counts differ. Rankings agree.
+
+| Term | Uses | Status | Rule |
+|---|---|---|---|
+| Shakti | 175 | APPROVED | Her single most-used term. |
+| Tantra | 132 | APPROVED | Always classical/traditional Tantra. Never "generic Tantra." |
+| Feminine | 118 | APPROVED | Both dark and light feminine — never only one. |
+| Ritual | 102 | APPROVED | Strong founder language. |
+| **Maa** | 87 | **APPROVED — NEW** | Her natural address for the goddess. Prefer over always writing "the goddess." |
+| Kali / Ma Kali | 76 | APPROVED | Fierce/dark feminine. Pair with Lakshmi where integration is the point. |
+| Healing | 76 | APPROVED | |
+| Retreat | 65 | APPROVED | |
+| Embodiment / embodied | 64 | APPROVED | Already registered above. |
+| **Devi** | 61 | **APPROVED — NEW** | Goddess. Natural in her voice. |
+| Goddess | 59 | APPROVED | |
+| Somatic | 51 | APPROVED | Per breath/somatics rules above. |
+| **Sadhana** | 45 | **APPROVED — NEW** | Committed ongoing practice. **Use in place of generic "practice"** where the meaning is disciplined, chosen and sustained. Highest-value recovery in this pass. |
+| Devotion | 37 | APPROVED | |
+| Shadow | 28 | APPROVED / DO NOT OVER-INDEX | Real but well below shakti/tantra/feminine. The brand name "Shakti Shadow & Somatics" must not cause shadow language to dominate beyond its actual weight. |
+| Nervous system | 25 | APPROVED | Bridge language. See Ida/Pingala below. |
+
+## Named specifics she uses and translates
+
+She names a Sanskrit term, then translates it plainly. This pattern is approved and
+characteristic — see `SHAKTI-VOICE-AND-LANGUAGE.md` §3.
+
+| Term | Gloss she uses | Source |
+|---|---|---|
+| Ojas | "the deep reserve of vitality… the glow that isn't skincare" | 2026-07-28 |
+| Rasa | essence / juice / feeling-tone | 2026-08-12 |
+| Ida & Pingala | mapped to parasympathetic & sympathetic | 2026-07-24 |
+| Sattva / Rajas / Tamas | the three gunas — white / red / black | S-001, 2026-08-13 |
+
+## CORRECTION — "Sovereignty" is over-weighted
+
+`sovereign` appears **once** in 102 records across two years.
+
+Prior doctrine treats sovereignty as a core axis. It is **our** word, not hers.
+
+- KEEP the concept: the seeker retains authority over her own experience.
+- STOP using the word as though it were founder language.
+- PREFER: "your own authority," "trust your own power," "her own readiness."
+
+Supporting founder language, 2026-08-03:
+> *"Not, How do I become more powerful? But, Can I trust my own power?"*
+
+## Colour vocabulary
+
+The three gunas are also the colour system. See `SHAKTI-COLOR-DOCTRINE.md` — white is
+sattva, red is rajas, black is tamas, and red is doctrinally required rather than
+decorative.
