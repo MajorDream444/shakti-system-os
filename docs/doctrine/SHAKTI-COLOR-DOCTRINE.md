@@ -103,12 +103,30 @@ eight separately hand-styled screens.
 Founder feedback ("too dark") coincided with a measured defect: the `/begin` choice
 cards were near-illegible against their field.
 
-| Element | Requirement |
-|---|---|
-| Body text on any surface | ≥ 4.5:1 |
-| Choice / decision cards | ≥ 3:1 card vs. field — the card must be **visibly a card** |
-| Active vs. inactive station | Unambiguous at a glance |
-| Interactive labels | ≥ 4.5:1 |
+| Element | Requirement | Standard |
+|---|---|---|
+| Body text on any surface | ≥ 4.5:1 | WCAG 1.4.3 |
+| Choice / decision card **boundary** | ≥ 3:1 vs. field, satisfied by **border or fill** | WCAG 1.4.11 |
+| Active vs. inactive station | Unambiguous at a glance | — |
+| Interactive labels | ≥ 4.5:1 | WCAG 1.4.3 |
+
+**Border or fill — not both.** This matters because of §3's restraint clause. Lifting
+the *fill* to 3:1 requires a surface around `rgb(130, 82, 88)`, which floods the
+interface with light and reads as the "overly" Sheetal warned against. Carrying the
+boundary on the **border** instead keeps rajas at the edge, where it belongs as
+punctuation, while the surface stays deep.
+
+Measured on the 2026-08-18 build (station 3, 1440px):
+
+| Sample | Value | Ratio vs field |
+|---|---|---|
+| Field | `rgb(18, 9, 5)` | — |
+| Card border | `rgb(147, 106, 115)` | **4.26:1** ✅ |
+| Card fill | `rgb(82, 38, 44)` | 1.57:1 (intentional) |
+
+Decision surfaces are where legibility matters most. Atmosphere never outranks the
+seeker's ability to read her options — but the boundary, not the fill, is what the
+standard actually requires.
 
 Decision surfaces are where legibility matters most. Atmosphere never outranks the
 seeker's ability to read her options.

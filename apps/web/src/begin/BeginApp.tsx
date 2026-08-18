@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, type CSSProperties } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, Home } from 'lucide-react';
 import { AppState, PathType, PATH_RESULTS } from './types';
@@ -252,17 +252,7 @@ export default function BeginApp() {
 
       {/* Main Sanctuary Area */}
       <div className="relative flex-1 flex flex-col items-center justify-center p-3 sm:p-6 md:p-12 lg:p-16 z-10 w-full min-h-[100svh]">
-        <div
-          className="begin-shell relative w-full max-w-6xl mx-auto flex-grow min-h-[calc(100svh-1.5rem)] md:min-h-[80vh]"
-          style={{
-            // Luminosity progression — SHAKTI-COLOR-DOCTRINE.md §4.
-            // The interface becomes more alive as the seeker moves inward.
-            '--station-luminosity': Math.min(
-              1,
-              Math.max(0, (state.currentScreen - 1) / (STATIONS.length - 1)),
-            ).toFixed(3),
-          } as CSSProperties}
-        >
+        <div className="begin-shell relative w-full max-w-6xl mx-auto flex-grow min-h-[calc(100svh-1.5rem)] md:min-h-[80vh]">
 
           {/* Symmetrical Atmospheric Header */}
           <header className="absolute top-4 md:top-6 left-3 right-3 md:left-6 md:right-6 flex justify-between items-center text-[10px] tracking-[0.18em] md:tracking-[0.25em] text-ash/60 lowercase font-light serif z-30">
