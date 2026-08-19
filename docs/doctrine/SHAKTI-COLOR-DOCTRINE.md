@@ -144,9 +144,35 @@ seeker's ability to read her options.
 > *"having the Shri Yantra, which is a very well-known symbol… when you see the
 > triangle in the middle, down, with the dot in the middle."*
 
-The existing Threshold sigil **already carries this geometry** — downward triangle with
-a central bindu. It satisfies the request and should be treated as the anchor form
-rather than replaced.
+### CORRECTION — 2026-08-19
+
+An earlier revision of this file claimed the existing Threshold sigil "already carries
+this geometry" and "satisfies the request." **That was wrong**, and it was repeated in
+conversation before being caught against Sheetal's own mockup.
+
+A Shri Yantra is a specific construction:
+
+- **nine interlocking triangles** — four upward (Shiva), five downward (Shakti) —
+  intersecting to form 43 smaller triangles
+- **bindu** at the centre
+- ringed by an **8-petal** and a **16-petal lotus**
+- enclosed by the **bhupura**: nested squares with four T-shaped gates
+
+The Threshold sigil has **one** downward triangle inside an 8-petal lotus. That is a
+yoni triangle — a legitimate form, but not the Shri Yantra she asked for by name as the
+thing that anchors the site "in genuine Shakta Tantra."
+
+Standing rules for any implementation:
+
+1. The enclosure order runs inward: gates → 16 petals → 8 petals → triangles → bindu.
+   The triangle field nests **inside** the lotus rings, never overflowing them.
+2. **The bhupura never rotates.** It is the temple enclosure. Only the petals may turn
+   within it.
+3. The proportions must be verified by Sheetal before shipping. In a true Shri Yantra
+   every triangle vertex meets its neighbours at exact triple-points; that solution is
+   iterative and a near-miss is visible to anyone who knows the figure. She will know.
+
+Working implementation with all three rules applied: `docs/design/motion-study.html`.
 
 Restraint clause applies: symbols are accents, never wallpaper. No generic sacred-
 geometry background patterns.
@@ -159,6 +185,26 @@ Requested, tier 1: a **gallery** of Sheetal — *"put a gallery on there… this
 here, this is me here"* — plus classical Indian devotional imagery, *"not overusing."*
 
 Reference direction she named: soft pink, aged/vintage imagery, temple-like, inviting.
+
+### Victorian devotional prints — CONFIRMED 2026-08-19
+
+The transcript's garbled *"these like Vic Indian… pictures"* is **Victorian-era Indian
+devotional prints, in the Raja Ravi Varma lineage** — confirmed with Sheetal.
+
+This is now a specific, sourceable art-historical category rather than a vague register,
+and it governs the whole imagery pass: colonial-period oleograph printing, soft rose and
+gold palettes, aged paper, framed as objects.
+
+Applies to the **framing** as much as the images. Sheetal's own mockup shows the
+treatment used correctly — a cream-bordered vintage-print card holding the portrait,
+set against the dark ground rather than replacing it.
+
+**Important distinction:** that mockup places an *illustrated* goddess inside the frame.
+Her actual request was photographs of herself — *"this is me here"* — for human
+recognition and safety at the front door. Keep the vintage-print frame; put **her
+photograph** in it. Substituting a decorative illustration for the founder inverts the
+purpose of the section and lands near the AI-generated-goddess cliché the taste gate
+prohibits.
 
 **Current state:** much of the site's "flora" and "water" atmosphere is CSS
 abstraction — radial gradients and rounded botanical shapes — rather than approved

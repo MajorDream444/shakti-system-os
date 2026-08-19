@@ -1,0 +1,347 @@
+<title>Shri Yantra Motion Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap">
+
+<style>
+  /* Deliberately single-theme: a devotional surface that must hold the same
+     dark ground the site uses. Every colour painted explicitly. */
+  :root {
+    --tamas:#0a0505; --panel:#150b0d; --panel-lit:#241316;
+    --rajas:#9d171d; --gold:#c9a227; --gold-lit:#e8c05a;
+    --pink:#e6b3c0; --ivory:#f2ece1; --muted:#9a8279;
+    --line:rgba(242,236,225,.14);
+    --display:"Cormorant Garamond",Georgia,serif;
+    --ui:"Inter",ui-sans-serif,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at 50% 0%,rgba(74,28,34,.55),transparent 55%),
+      radial-gradient(ellipse at 50% 100%,rgba(157,23,29,.12),transparent 50%),
+      var(--tamas);
+    color:var(--ivory);font-family:var(--ui);-webkit-font-smoothing:antialiased;
+  }
+  .wrap{width:min(1180px,calc(100% - 48px));margin:0 auto;padding:72px 0 96px}
+  header{display:flex;flex-direction:column;gap:18px;max-width:60ch}
+  .eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0}
+  h1{font-family:var(--display);font-weight:300;font-size:clamp(2.6rem,5.5vw,4.2rem);line-height:1.04;margin:0;text-wrap:balance}
+  .lede{font-size:1.02rem;line-height:1.7;color:#cdbdb2;margin:0;max-width:62ch}
+  .lede em{color:var(--pink);font-style:italic}
+
+  .clock{display:flex;align-items:center;gap:14px;margin:40px 0 8px;padding:14px 18px;
+    border:1px solid var(--line);border-radius:22px;background:rgba(36,19,22,.5);width:fit-content}
+  .clock-dot{width:11px;height:11px;border-radius:50%;background:var(--gold-lit);
+    box-shadow:0 0 14px var(--gold);animation:breathe 5500ms ease-in-out infinite}
+  .clock-label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .clock-phase{font-family:var(--display);font-size:1.1rem;font-style:italic;color:var(--pink);min-width:6ch}
+  @keyframes breathe{0%,100%{transform:scale(.72);opacity:.45}45%,55%{transform:scale(1.25);opacity:1}}
+
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .panel{border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    background:linear-gradient(168deg,var(--panel-lit),var(--panel));display:flex;flex-direction:column}
+  .panel.is-pick{border-color:rgba(232,192,90,.5);
+    box-shadow:0 0 0 1px rgba(232,192,90,.14),0 22px 60px -20px rgba(157,23,29,.5)}
+  .panel-stage{position:relative;aspect-ratio:1;display:grid;place-items:center;
+    background:radial-gradient(circle at 50% 50%,rgba(74,28,34,.6),transparent 62%)}
+  .panel-stage svg{width:88%;height:88%;overflow:visible}
+  .panel-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line)}
+  .panel-name{font-family:var(--display);font-size:1.55rem;font-weight:400;margin:0}
+  .panel-meta{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0}
+  .panel-note{font-size:.88rem;line-height:1.62;color:#bfada2;margin:0}
+  .tag{align-self:flex-start;margin-top:4px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+    padding:5px 11px;border-radius:999px;border:1px solid rgba(232,192,90,.42);
+    color:var(--gold-lit);background:rgba(232,192,90,.08)}
+
+  h2{font-family:var(--display);font-weight:300;font-size:2.2rem;margin:80px 0 6px}
+  .sub{color:var(--muted);font-size:.94rem;margin:0 0 26px;max-width:60ch;line-height:1.6}
+  .touches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  @media(max-width:900px){.touches{grid-template-columns:1fr}}
+  .touch{border:1px solid var(--line);border-radius:22px;padding:0 0 20px;
+    background:linear-gradient(168deg,var(--panel-lit),var(--panel));overflow:hidden}
+  .touch-stage{aspect-ratio:1.5;display:grid;place-items:center;
+    background:radial-gradient(circle at 50% 70%,rgba(157,23,29,.16),transparent 60%)}
+  .touch-stage svg{width:70%;height:82%;overflow:visible}
+  .touch p{margin:0;padding:0 20px}
+  .touch .panel-meta{padding:16px 20px 0}
+
+  footer{margin-top:80px;padding-top:28px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.86rem;line-height:1.7;max-width:70ch}
+  footer strong{color:var(--pink);font-weight:500}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Shakti Shala · Motion Study</p>
+    <h1>How much should the yantra move?</h1>
+    <p class="lede">
+      Three intensities of the same Shri Yantra — nine interlocking triangles, bindu at centre,
+      lotus rings inside the bhupura gates. All three share one clock set to a
+      <em>5.5&nbsp;second breath</em>, the pace used for coherent breathing. Watch each for
+      fifteen seconds; the difference is cumulative, not instant.
+    </p>
+  </header>
+
+  <div class="clock">
+    <span class="clock-dot" aria-hidden="true"></span>
+    <span class="clock-label">Shared clock</span>
+    <span class="clock-phase" id="phase">inhale</span>
+  </div>
+
+  <div class="grid">
+    <article class="panel">
+      <div class="panel-stage"><svg id="y-breath" viewBox="0 0 200 200" role="img" aria-label="Shri Yantra with breath-paced motion"></svg></div>
+      <div class="panel-body">
+        <p class="panel-meta">Intensity 01</p>
+        <h3 class="panel-name">Breath</h3>
+        <p class="panel-note">Scale shifts by 1.2%. The bindu brightens at the top of the inhale. Nothing rotates. You feel it before you notice it — which is the point.</p>
+      </div>
+    </article>
+
+    <article class="panel is-pick">
+      <div class="panel-stage"><svg id="y-devotional" viewBox="0 0 200 200" role="img" aria-label="Shri Yantra with devotional motion"></svg></div>
+      <div class="panel-body">
+        <p class="panel-meta">Intensity 02</p>
+        <h3 class="panel-name">Devotional</h3>
+        <p class="panel-note">Breath, plus the lotus rings turning once every ninety seconds inside a fixed enclosure. The figure holds still; the light moves across it.</p>
+        <span class="tag">Recommended</span>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="panel-stage"><svg id="y-overt" viewBox="0 0 200 200" role="img" aria-label="Shri Yantra with overt motion"></svg></div>
+      <div class="panel-body">
+        <p class="panel-meta">Intensity 03</p>
+        <h3 class="panel-name">Overt</h3>
+        <p class="panel-note">The triangle field rotates, lines draw themselves in sequence, the bindu pulses on a faster beat, sparks rise. Legible as animation — closer to a title sequence.</p>
+      </div>
+    </article>
+  </div>
+
+  <h2>The soft touches</h2>
+  <p class="sub">
+    Temple, bell and incense as gold line on dark, in the Victorian devotional-print register.
+    Each keeps its own rhythm rather than sharing one loop, so the page reads as a room rather
+    than a slideshow.
+  </p>
+
+  <div class="touches">
+    <article class="touch">
+      <div class="touch-stage"><svg id="t-diya" viewBox="0 0 120 90" role="img" aria-label="Diya lamp with flame"></svg></div>
+      <p class="panel-meta">Diya</p>
+      <p class="panel-note">Irregular flicker on its own seed, so it reads as fire, not a loop.</p>
+    </article>
+    <article class="touch">
+      <div class="touch-stage"><svg id="t-bells" viewBox="0 0 120 90" role="img" aria-label="Hanging temple bells"></svg></div>
+      <p class="panel-meta">Bells</p>
+      <p class="panel-note">Two bells swaying on offset periods, as if air moved through the room.</p>
+    </article>
+    <article class="touch">
+      <div class="touch-stage"><svg id="t-incense" viewBox="0 0 120 90" role="img" aria-label="Incense with rising smoke"></svg></div>
+      <p class="panel-meta">Incense</p>
+      <p class="panel-note">Smoke drifting upward, dispersing near the top. The slowest element here.</p>
+    </article>
+  </div>
+
+  <footer>
+    <strong>On the geometry:</strong> nine triangles generated parametrically — five downward
+    (Shakti), four upward (Shiva) — around the bindu, ringed by eight- and sixteen-petal lotuses
+    inside the bhupura's four gates. The enclosure order is correct and the bhupura never rotates,
+    because a temple does not turn. But the proportions are a faithful approximation, not a
+    temple-grade construction: in a true Shri Yantra every triangle vertex meets its neighbours at
+    exact triple-points, and that solution is iterative. Sheetal will know the difference. Treat
+    this as the motion decision; let her eye confirm the geometry before it ships.
+  </footer>
+</div>
+
+<script>
+(function () {
+  const NS = "http://www.w3.org/2000/svg";
+  // Triangle field circumscribed at R=50 so it nests inside the lotus rings
+  // (58 / 70), which sit inside the bhupura (82–96).
+  const R = 50, CX = 100, CY = 100;
+  const el = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const hw = y => { const d = R * R - (y - CY) * (y - CY); return d > 0 ? Math.sqrt(d) : 0; };
+
+  const DOWN = [[58,132],[66,142],[74,150],[82,124],[90,138]];
+  const UP   = [[142,68],[134,58],[126,50],[118,76]];
+
+  function triangles(stroke, w) {
+    const g = el("g", {});
+    const add = (by, ay) => {
+      const x = hw(by);
+      g.appendChild(el("polygon", { points: `${CX-x},${by} ${CX+x},${by} ${CX},${ay}`,
+        fill: "none", stroke, "stroke-width": w, "stroke-linejoin": "round" }));
+    };
+    DOWN.forEach(([b, a]) => add(b, a));
+    UP.forEach(([b, a]) => add(b, a));
+    return g;
+  }
+
+  function lotus(radius, petals, stroke, w) {
+    const g = el("g", {}), step = 360 / petals, p = radius * 0.30;
+    for (let i = 0; i < petals; i++) {
+      const a = (i * step - 90) * Math.PI / 180;
+      const x = CX + Math.cos(a) * radius, y = CY + Math.sin(a) * radius;
+      const path = el("path", {
+        d: `M ${x-p} ${y} Q ${x} ${y-p*1.7} ${x+p} ${y} Q ${x} ${y+p*0.55} ${x-p} ${y} Z`,
+        fill: "none", stroke, "stroke-width": w });
+      path.setAttribute("transform", `rotate(${i*step} ${x} ${y})`);
+      g.appendChild(path);
+    }
+    return g;
+  }
+
+  function bhupura(stroke, w) {
+    const g = el("g", {});
+    [96, 89, 82].forEach((s, i) => g.appendChild(el("rect", {
+      x: CX-s, y: CY-s, width: s*2, height: s*2, fill: "none", stroke,
+      "stroke-width": i === 0 ? w*1.25 : w*0.7, "stroke-opacity": i === 0 ? .95 : .55 })));
+    const s = 96, gt = 20, dp = 14;
+    [`M ${CX-gt} ${CY-s} L ${CX-gt} ${CY-s-dp} L ${CX+gt} ${CY-s-dp} L ${CX+gt} ${CY-s}`,
+     `M ${CX-gt} ${CY+s} L ${CX-gt} ${CY+s+dp} L ${CX+gt} ${CY+s+dp} L ${CX+gt} ${CY+s}`,
+     `M ${CX-s} ${CY-gt} L ${CX-s-dp} ${CY-gt} L ${CX-s-dp} ${CY+gt} L ${CX-s} ${CY+gt}`,
+     `M ${CX+s} ${CY-gt} L ${CX+s+dp} ${CY-gt} L ${CX+s+dp} ${CY+gt} L ${CX+s} ${CY+gt}`
+    ].forEach(d => g.appendChild(el("path", { d, fill: "none", stroke, "stroke-width": w })));
+    return g;
+  }
+
+  function build(id) {
+    const svg = document.getElementById(id), gold = "#c9a227", lit = "#e8c05a";
+    const defs = el("defs", {});
+    const f = el("filter", { id: id+"-glow", x: "-60%", y: "-60%", width: "220%", height: "220%" });
+    f.appendChild(el("feGaussianBlur", { stdDeviation: "2.2", result: "b" }));
+    const m = el("feMerge", {});
+    m.appendChild(el("feMergeNode", { in: "b" }));
+    m.appendChild(el("feMergeNode", { in: "SourceGraphic" }));
+    f.appendChild(m); defs.appendChild(f); svg.appendChild(defs);
+
+    svg.appendChild(el("circle", { cx: CX, cy: CY, r: 99, fill: "#2a1216", "fill-opacity": ".55" }));
+    // The bhupura is the temple enclosure — it never moves.
+    svg.appendChild(bhupura(gold, 1.1));
+
+    const outer = el("g", {});
+    outer.appendChild(lotus(70, 16, gold, .7));
+    outer.appendChild(lotus(58, 8, gold, .85));
+    [74, 62].forEach(r => outer.appendChild(el("circle", { cx: CX, cy: CY, r, fill: "none", stroke: gold, "stroke-width": .6, "stroke-opacity": .6 })));
+    svg.appendChild(outer);
+
+    const field = el("g", {});
+    field.appendChild(triangles(lit, .85));
+    field.setAttribute("filter", `url(#${id}-glow)`);
+    svg.appendChild(field);
+
+    const bindu = el("circle", { cx: CX, cy: CY, r: 3, fill: lit });
+    bindu.setAttribute("filter", `url(#${id}-glow)`);
+    svg.appendChild(bindu);
+    return { svg, outer, field, bindu };
+  }
+
+  const B = build("y-breath"), D = build("y-devotional"), O = build("y-overt");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const sparks = [];
+  for (let i = 0; i < 7; i++) {
+    const s = el("circle", { cx: 0, cy: 0, r: .9, fill: "#ff9a4a", "fill-opacity": "0" });
+    O.svg.appendChild(s);
+    sparks.push({ node: s, seed: i * 487, x: 62 + i * 12 });
+  }
+
+  const st = document.createElement("style");
+  st.textContent = "@keyframes draw{0%{stroke-dashoffset:520}40%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:.4}}";
+  document.head.appendChild(st);
+  O.field.querySelectorAll("polygon").forEach((p, i) => {
+    p.style.strokeDasharray = 520; p.style.strokeDashoffset = 520;
+    p.style.animation = `draw 2600ms ${i*260}ms cubic-bezier(.16,1,.3,1) infinite`;
+  });
+
+  const PERIOD = 5500, phaseEl = document.getElementById("phase");
+  let last = "";
+  function frame(t) {
+    const p = (t % PERIOD) / PERIOD;
+    const breath = (1 - Math.cos(p * Math.PI * 2)) / 2;
+    const word = p < .5 ? "inhale" : "exhale";
+    if (word !== last) { phaseEl.textContent = word; last = word; }
+
+    B.field.setAttribute("transform", `translate(${CX} ${CY}) scale(${1+breath*.012}) translate(${-CX} ${-CY})`);
+    B.bindu.setAttribute("r", (2.7+breath*.7).toFixed(2));
+    B.bindu.setAttribute("fill-opacity", (.72+breath*.28).toFixed(2));
+
+    D.field.setAttribute("transform", `translate(${CX} ${CY}) scale(${1+breath*.014}) translate(${-CX} ${-CY})`);
+    D.outer.setAttribute("transform", `rotate(${(t/90000)*360} ${CX} ${CY})`);
+    D.bindu.setAttribute("r", (2.7+breath*.9).toFixed(2));
+    D.field.setAttribute("stroke-opacity", (.72+breath*.28).toFixed(2));
+
+    const fast = (t % 1500) / 1500, pulse = (1 - Math.cos(fast*Math.PI*2)) / 2;
+    O.field.setAttribute("transform", `rotate(${(t/22000)*360} ${CX} ${CY}) translate(${CX} ${CY}) scale(${1+pulse*.05}) translate(${-CX} ${-CY})`);
+    O.outer.setAttribute("transform", `rotate(${-(t/30000)*360} ${CX} ${CY})`);
+    O.bindu.setAttribute("r", (2.6+pulse*2.6).toFixed(2));
+    sparks.forEach(s => {
+      const q = ((t + s.seed) % 3400) / 3400;
+      s.node.setAttribute("cx", (s.x + Math.sin(q*6 + s.seed) * 7).toFixed(1));
+      s.node.setAttribute("cy", (178 - q*156).toFixed(1));
+      s.node.setAttribute("fill-opacity", (Math.sin(q*Math.PI)*.85).toFixed(2));
+    });
+    requestAnimationFrame(frame);
+  }
+  if (!reduced) requestAnimationFrame(frame);
+
+  /* soft touches */
+  const gold = "#c9a227";
+  (function diya() {
+    const svg = document.getElementById("t-diya");
+    const d = el("defs", {}), f = el("filter", { id: "fg", x: "-100%", y: "-100%", width: "300%", height: "300%" });
+    f.appendChild(el("feGaussianBlur", { stdDeviation: "3" })); d.appendChild(f); svg.appendChild(d);
+    const halo = el("circle", { cx: 60, cy: 48, r: 13, fill: "#ff9a4a", "fill-opacity": .3, filter: "url(#fg)" });
+    svg.appendChild(halo);
+    svg.appendChild(el("path", { d: "M 34 62 Q 60 78 86 62 Q 60 68 34 62 Z", fill: "none", stroke: gold, "stroke-width": 1.2 }));
+    svg.appendChild(el("path", { d: "M 40 62 Q 60 70 80 62", fill: "none", stroke: gold, "stroke-width": .7, "stroke-opacity": .6 }));
+    const flame = el("path", { d: "M 60 34 Q 66 44 60 56 Q 54 44 60 34 Z", fill: "#e8c05a" });
+    svg.appendChild(flame);
+    if (reduced) return;
+    (function tick(t) {
+      const n = Math.sin(t/190)*.5 + Math.sin(t/97)*.3 + Math.sin(t/53)*.2;
+      flame.setAttribute("transform", `translate(60 52) scale(${(1+n*.09).toFixed(3)} ${(1+n*.16).toFixed(3)}) rotate(${(n*3.5).toFixed(2)}) translate(-60 -52)`);
+      halo.setAttribute("r", (12+n*2.2).toFixed(2));
+      requestAnimationFrame(tick);
+    })(0);
+  })();
+
+  (function bells() {
+    const svg = document.getElementById("t-bells");
+    [[42,0],[76,1]].forEach(([x,i]) => {
+      const g = el("g", {});
+      g.appendChild(el("line", { x1: x, y1: 4, x2: x, y2: 26, stroke: gold, "stroke-width": .7, "stroke-opacity": .7 }));
+      g.appendChild(el("path", { d: `M ${x-13} 58 Q ${x-13} 30 ${x} 26 Q ${x+13} 30 ${x+13} 58 Z`, fill: "none", stroke: gold, "stroke-width": 1.1 }));
+      g.appendChild(el("path", { d: `M ${x-15} 58 L ${x+15} 58`, stroke: gold, "stroke-width": 1.1 }));
+      g.appendChild(el("circle", { cx: x, cy: 64, r: 2.6, fill: "none", stroke: gold, "stroke-width": 1 }));
+      svg.appendChild(g);
+      if (reduced) return;
+      const per = 4200 + i*1300, off = i*900;
+      (function tick(t) {
+        g.setAttribute("transform", `rotate(${(Math.sin((t+off)/per*Math.PI*2)*2.6).toFixed(2)} ${x} 6)`);
+        requestAnimationFrame(tick);
+      })(0);
+    });
+  })();
+
+  (function incense() {
+    const svg = document.getElementById("t-incense");
+    svg.appendChild(el("path", { d: "M 46 74 L 74 74 L 71 79 L 49 79 Z", fill: "none", stroke: gold, "stroke-width": 1.1 }));
+    svg.appendChild(el("line", { x1: 60, y1: 74, x2: 60, y2: 54, stroke: gold, "stroke-width": .8 }));
+    svg.appendChild(el("circle", { cx: 60, cy: 53, r: 1.5, fill: "#ff9a4a" }));
+    const smoke = el("path", { d: "", fill: "none", stroke: "#e6b3c0", "stroke-width": .9, "stroke-opacity": .5, "stroke-linecap": "round" });
+    svg.appendChild(smoke);
+    if (reduced) { smoke.setAttribute("d", "M 60 52 C 64 40 56 30 60 18"); return; }
+    (function tick(t) {
+      let d = "M 60 52";
+      for (let y = 50; y > 8; y -= 4) d += ` L ${(60 + Math.sin(y*.16 + t/900) * ((52-y)*.17)).toFixed(1)} ${y}`;
+      smoke.setAttribute("d", d);
+      requestAnimationFrame(tick);
+    })(0);
+  })();
+})();
+</script>
