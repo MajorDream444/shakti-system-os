@@ -16,6 +16,9 @@ graphify-out/
 .codex/hooks.json
 .agents/skills/
 skills-lock.json
+# Per-session agent tooling installed via `npx skills add` (Higgsfield etc.).
+# Scoped to the vendor prefix so the tracked shakti-system-os skill is unaffected.
+.claude/skills/higgsfield-*
 
 # Local media and export artifacts belong in Google Drive unless intentionally promoted.
 *.jpg
