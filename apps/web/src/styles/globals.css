@@ -1,33 +1,52 @@
 :root {
   color-scheme: dark;
-  /* Guna colour system — see docs/doctrine/SHAKTI-COLOR-DOCTRINE.md
-     tamas = black (ground) · rajas = red (activity) · sattva = white (clarity)
-     Rajas is punctuation, never flood. */
-  --bg: #0a0505;
-  --surface: #2a1216;
-  --surface-glass: rgba(42, 18, 22, 0.72);
-  --text: #f4efe6;
-  --muted: #a1a1aa;
-  --accent: #ff5a1f;
+  /* Canonical tokens — Vault 7 "Ember Light on Old Stone" + Team Rules,
+     read directly from the design canvas 2026-08-21.
+     See docs/doctrine/TOKEN-AUDIT-CANVAS-VS-BUILD.md.
+     Guna reading: tamas = ground · rajas = ember/red · sattva = warm stone/ivory.
+     Team Rules #2 — heat is punctuation: one glow per composition. */
+  --obsidian: #090707;
+  --temple-charcoal: #120e0f;
+  --clay-surface: #241515;
+  --deep-burgundy: #4a1f24;
+  --warm-stone: #d8c5b0;
+  --ash-ivory: #f3ebdd;
 
-  /* rajas */
-  --maroon-deep: #2a1216;
-  --maroon-lit: #4a1c22;
-  --rajas-red: #9d171d;
-  --ember: #ff5a1f;
+  --bg: var(--obsidian);
+  --surface: var(--clay-surface);
+  --surface-glass: rgba(36, 21, 21, 0.78);
+  --text: var(--ash-ivory);
+  --muted: #8a7c6d;
 
-  /* rajas → sattva (light feminine / Lakshmi register) */
-  --shakti-pink: #d99aad;
+  /* Ember → Fire. Was #ff5a1f — the "Halloween orange" Team Rules #10 prohibits. */
+  --ember: #c35a2e;
+  --fire: #e27a3f;
+  --accent: var(--ember);
+
+  --rajas-red: #b01e28;
+  --maroon-deep: var(--clay-surface);
+  --maroon-lit: var(--deep-burgundy);
+
+  --shakti-pink: #e5849b;
   --pink-soft: #f0c4d0;
   --gold: #c4a15a;
-  --gold-lit: #e2b13c;
+  --gold-lit: #e9c77e;
 
   --leaf: #6f8f68;
-  --maroon: #4a1118;
-  --rose: #b06a5b;
-  --line: rgba(244, 239, 230, 0.14);
-  --card-bg: rgba(42, 18, 22, 0.72);
+  --maroon: var(--deep-burgundy);
+  --rose: #b27a52;
+  --line: rgba(216, 197, 176, 0.18);
+  --card-bg: rgba(36, 21, 21, 0.78);
+  --glow: 0.34;
   --radius-card: 22px;
+  --radius-choice: 19px;
+
+  /* Motion — Vault 7 "Breath, Water, Candlelight" */
+  --entrance: 900ms;
+  --page-transition: 780ms;
+  --hover: 220ms;
+  --orb-cycle: 9s;
+  --ease: ease-in-out;
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -53,9 +72,9 @@ body {
   margin: 0;
   background:
     radial-gradient(circle at 18% 12%, rgba(74, 28, 34, 0.42), transparent 34%),
-    radial-gradient(circle at 82% 34%, rgba(255, 90, 31, 0.13), transparent 30%),
+    radial-gradient(circle at 82% 34%, rgba(195, 90, 46, 0.13), transparent 30%),
     radial-gradient(circle at 62% 82%, rgba(217, 154, 173, 0.10), transparent 32%),
-    #0a0505;
+    var(--obsidian);
   overflow-x: hidden;
 }
 
@@ -212,7 +231,7 @@ button {
   place-content: center;
   gap: 24px;
   background:
-    radial-gradient(circle at 50% 30%, rgba(255, 90, 31, 0.16), transparent 30%),
+    radial-gradient(circle at 50% 30%, rgba(195, 90, 46, 0.16), transparent 30%),
     rgba(5, 5, 5, 0.94);
   opacity: 0;
   pointer-events: none;
@@ -244,7 +263,7 @@ button {
   min-width: 340px;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: rgba(255, 90, 31, 0.18);
+  background: rgba(195, 90, 46, 0.18);
   filter: blur(130px);
   mix-blend-mode: screen;
   opacity: 0.42;
@@ -463,13 +482,13 @@ button {
 .button:focus-visible {
   box-shadow:
     0 0 0 3px rgba(5, 5, 5, 0.9),
-    0 0 0 5px rgba(255, 90, 31, 0.75);
+    0 0 0 5px rgba(195, 90, 46, 0.75);
 }
 
 .button-primary {
   background: var(--accent);
   color: #110704;
-  box-shadow: rgba(255, 90, 31, 0.34) 0 0 34px;
+  box-shadow: rgba(195, 90, 46, 0.34) 0 0 34px;
 }
 
 .button-secondary {
@@ -749,7 +768,7 @@ button {
   width: 360px;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: rgba(255, 90, 31, 0.18);
+  background: rgba(195, 90, 46, 0.18);
   filter: blur(70px);
 }
 
@@ -793,7 +812,7 @@ button {
   padding: 120px 24px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 50%, rgba(255, 90, 31, 0.14), transparent 32%),
+    radial-gradient(circle at 50% 50%, rgba(195, 90, 46, 0.14), transparent 32%),
     linear-gradient(180deg, rgba(19, 8, 8, 0.92), #050505 35%, #050505);
 }
 
@@ -807,7 +826,7 @@ button {
   position: absolute;
   border-radius: 999px;
   background: rgba(255, 135, 74, 0.78);
-  box-shadow: rgba(255, 90, 31, 0.75) 0 0 14px;
+  box-shadow: rgba(195, 90, 46, 0.75) 0 0 14px;
   opacity: 0;
   animation: ember-rise linear infinite;
 }
@@ -840,7 +859,7 @@ button {
 
 .readiness-section {
   background:
-    radial-gradient(circle at 78% 8%, rgba(255, 90, 31, 0.13), transparent 30%),
+    radial-gradient(circle at 78% 8%, rgba(195, 90, 46, 0.13), transparent 30%),
     #050505;
 }
 
@@ -872,7 +891,7 @@ button {
     linear-gradient(145deg, rgba(24, 24, 27, 0.82), rgba(5, 5, 5, 0.72)),
     rgba(24, 24, 27, 0.6);
   box-shadow:
-    rgba(255, 90, 31, 0.3) 0 0 30px,
+    rgba(195, 90, 46, 0.3) 0 0 30px,
     rgba(0, 0, 0, 0.5) 0 40px 110px;
   transform:
     rotateX(calc(38deg * (1 - var(--plane-progress))))
@@ -893,7 +912,7 @@ button {
   content: "";
   background: linear-gradient(
     135deg,
-    rgba(255, 90, 31, 0.74),
+    rgba(195, 90, 46, 0.74),
     rgba(244, 239, 230, 0.14) 36%,
     rgba(196, 161, 90, 0.18) 74%,
     rgba(244, 239, 230, 0.22)
@@ -927,7 +946,7 @@ button {
   height: 10px;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: rgba(255, 90, 31, 0.8) 0 0 18px;
+  box-shadow: rgba(195, 90, 46, 0.8) 0 0 18px;
 }
 
 .dashboard-grid {
@@ -943,7 +962,7 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   background: rgba(24, 24, 27, 0.6);
-  box-shadow: rgba(255, 90, 31, 0.18) 0 0 30px;
+  box-shadow: rgba(195, 90, 46, 0.18) 0 0 30px;
   transform: translateZ(34px);
   backdrop-filter: blur(12px);
   transition:
@@ -953,8 +972,8 @@ button {
 }
 
 .dashboard-card:hover {
-  border-color: rgba(255, 90, 31, 0.36);
-  box-shadow: rgba(255, 90, 31, 0.3) 0 0 30px;
+  border-color: rgba(195, 90, 46, 0.36);
+  box-shadow: rgba(195, 90, 46, 0.3) 0 0 30px;
   transform: translateZ(46px) translateY(-3px);
 }
 
@@ -970,7 +989,7 @@ button {
 
 .cta-card {
   background:
-    radial-gradient(circle at 100% 0%, rgba(255, 90, 31, 0.22), transparent 34%),
+    radial-gradient(circle at 100% 0%, rgba(195, 90, 46, 0.22), transparent 34%),
     rgba(24, 24, 27, 0.7);
 }
 
