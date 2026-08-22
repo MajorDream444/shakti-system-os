@@ -69,14 +69,14 @@
   gap: 0.1rem;
   padding: 0 0.95rem;
   border-right: 1px solid rgba(216, 197, 176, 0.12);
-  color: rgba(216, 197, 176, 0.72);
+  color: rgba(216, 197, 176, 0.86);
   font-family: var(--font-sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .sanctuary-utility-current span {
-  font-size: 0.48rem;
+  font-size: 0.58rem;
   font-weight: 700;
 }
 
@@ -98,11 +98,11 @@
   gap: 0.45rem;
   padding: 0 0.85rem;
   border-radius: 9999px;
-  color: rgba(216, 197, 176, 0.78);
+  color: rgba(216, 197, 176, 0.9);
   font-family: var(--font-sans);
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color 240ms ease, background 240ms ease;
 }
@@ -194,6 +194,16 @@
 
 .sanctuary-utility-map {
   color: #e9c77e;
+}
+
+.threshold-map-seal {
+  width: 54px;
+  margin: 0 0 1rem;
+  color: #e9c77e;
+  opacity: 0.86;
+  filter:
+    drop-shadow(0 0 18px rgba(233, 199, 126, 0.28))
+    drop-shadow(0 0 26px rgba(229, 132, 155, 0.12));
 }
 
 @media (max-width: 760px) {
