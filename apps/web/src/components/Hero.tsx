@@ -23,11 +23,21 @@ export function Hero() {
         <p className="hero-subheadline">{portalCopy.hero.subheadline}</p>
         <p className="hero-body">{portalCopy.hero.body}</p>
         <PortalImageGallery />
+        <div className="hero-invitation-fork" aria-label="Two ways to enter the work">
+          <a className="invitation-door" href={SECTION_ANCHORS.explore}>
+            <span>Explore This Work</span>
+            <small>Understand Sheetal's world before beginning.</small>
+          </a>
+          <a className="invitation-door" href={BEGIN_PATH}>
+            <span>Start Your Shakti Path</span>
+            <small>Enter the eight-station threshold privately.</small>
+          </a>
+        </div>
         <div className="hero-actions" aria-label="Primary actions">
           <a className="button button-primary" href={BEGIN_PATH}>
             {portalCopy.hero.primaryCta}
           </a>
-          <a className="button button-secondary" href={SECTION_ANCHORS.method}>
+          <a className="button button-secondary" href={SECTION_ANCHORS.explore}>
             {portalCopy.hero.secondaryCta}
           </a>
           <a className="button button-tertiary" href={SHALA_PATH}>

@@ -8,21 +8,23 @@
   --surface-glass: rgba(42, 18, 22, 0.72);
   --text: #f4efe6;
   --muted: #a1a1aa;
-  --accent: #ff5a1f;
+  --accent: #c35a2e;
+  --breath-paced: 5500ms;
+  --breath-ambient: 9000ms;
 
   /* rajas */
   --maroon-deep: #2a1216;
   --maroon-lit: #4a1c22;
   --rajas-red: #9d171d;
-  --ember: #ff5a1f;
+  --ember: #c35a2e;
 
   /* rajas → sattva (light feminine / Lakshmi register) */
-  --shakti-pink: #d99aad;
+  --shakti-pink: #e5849b;
   --pink-soft: #f0c4d0;
   --gold: #c4a15a;
-  --gold-lit: #e2b13c;
+  --gold-lit: #e9c77e;
 
-  --leaf: #6f8f68;
+  --leaf: #8fb27a;
   --maroon: #4a1118;
   --rose: #b06a5b;
   --line: rgba(244, 239, 230, 0.14);
@@ -30,7 +32,7 @@
   --radius-card: 22px;
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-family: var(--sans);
@@ -53,8 +55,8 @@ body {
   margin: 0;
   background:
     radial-gradient(circle at 18% 12%, rgba(74, 28, 34, 0.42), transparent 34%),
-    radial-gradient(circle at 82% 34%, rgba(255, 90, 31, 0.13), transparent 30%),
-    radial-gradient(circle at 62% 82%, rgba(217, 154, 173, 0.10), transparent 32%),
+    radial-gradient(circle at 82% 34%, rgba(195, 90, 46, 0.13), transparent 30%),
+    radial-gradient(circle at 62% 82%, rgba(229, 132, 155, 0.10), transparent 32%),
     #0a0505;
   overflow-x: hidden;
 }
@@ -132,9 +134,9 @@ button {
 .label,
 .nav-links,
 .nav-start,
-.dashboard-header,
+.readiness-map-header,
 .authority-pillar span,
-.dashboard-card span,
+.readiness-map-card span,
 .pathway-card span {
   font-family: var(--mono);
   font-size: 0.74rem;
@@ -212,7 +214,7 @@ button {
   place-content: center;
   gap: 24px;
   background:
-    radial-gradient(circle at 50% 30%, rgba(255, 90, 31, 0.16), transparent 30%),
+    radial-gradient(circle at 50% 30%, rgba(195, 90, 46, 0.16), transparent 30%),
     rgba(5, 5, 5, 0.94);
   opacity: 0;
   pointer-events: none;
@@ -244,11 +246,11 @@ button {
   min-width: 340px;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: rgba(255, 90, 31, 0.18);
+  background: rgba(195, 90, 46, 0.18);
   filter: blur(130px);
   mix-blend-mode: screen;
   opacity: 0.42;
-  animation: ambient-drift 16s ease-in-out infinite alternate;
+  animation: ambient-drift var(--breath-ambient) ease-in-out infinite alternate;
 }
 
 .ray-one {
@@ -299,8 +301,8 @@ button {
   z-index: -3;
   background:
     radial-gradient(circle at 52% 46%, transparent 0 18%, rgba(5, 5, 5, 0.38) 44%, rgba(5, 5, 5, 0.9) 100%),
-    radial-gradient(circle at 50% 96%, rgba(217, 154, 173, 0.2), transparent 28%),
-    radial-gradient(circle at 78% 30%, rgba(111, 143, 104, 0.12), transparent 28%),
+    radial-gradient(circle at 50% 96%, rgba(229, 132, 155, 0.2), transparent 28%),
+    radial-gradient(circle at 78% 30%, rgba(143, 178, 122, 0.12), transparent 28%),
     linear-gradient(90deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.14), rgba(5, 5, 5, 0.78));
 }
 
@@ -346,7 +348,7 @@ button {
   content: "";
   background:
     linear-gradient(180deg, transparent 38%, rgba(5, 5, 5, 0.86)),
-    radial-gradient(circle at 78% 10%, rgba(217, 154, 173, 0.2), transparent 34%);
+    radial-gradient(circle at 78% 10%, rgba(229, 132, 155, 0.2), transparent 34%);
 }
 
 .portal-gallery-frame figcaption {
@@ -370,6 +372,54 @@ button {
   color: rgba(244, 239, 230, 0.62);
   font-size: 0.66rem;
   line-height: 1.3;
+}
+
+.hero-invitation-fork {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: min(640px, 100%);
+  margin: 26px auto 0;
+}
+
+.invitation-door {
+  display: grid;
+  min-height: 96px;
+  padding: 18px 20px;
+  border: 1px solid rgba(244, 239, 230, 0.16);
+  border-radius: 14px;
+  background:
+    linear-gradient(140deg, rgba(10, 5, 5, 0.82), rgba(42, 18, 22, 0.58)),
+    rgba(10, 5, 5, 0.6);
+  text-align: left;
+  transition:
+    transform 550ms ease,
+    border-color 550ms ease,
+    background 550ms ease;
+}
+
+.invitation-door:hover,
+.invitation-door:focus-visible {
+  border-color: rgba(233, 199, 126, 0.54);
+  background:
+    linear-gradient(140deg, rgba(42, 18, 22, 0.74), rgba(12, 18, 10, 0.56)),
+    rgba(10, 5, 5, 0.7);
+  transform: translateY(-2px);
+}
+
+.invitation-door span {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.32rem;
+  line-height: 1.05;
+}
+
+.invitation-door small {
+  max-width: 25ch;
+  margin-top: 8px;
+  color: rgba(244, 239, 230, 0.62);
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 
 .ember-label {
@@ -463,13 +513,13 @@ button {
 .button:focus-visible {
   box-shadow:
     0 0 0 3px rgba(5, 5, 5, 0.9),
-    0 0 0 5px rgba(255, 90, 31, 0.75);
+    0 0 0 5px rgba(195, 90, 46, 0.75);
 }
 
 .button-primary {
   background: var(--accent);
   color: #110704;
-  box-shadow: rgba(255, 90, 31, 0.34) 0 0 34px;
+  box-shadow: rgba(195, 90, 46, 0.34) 0 0 34px;
 }
 
 .button-secondary {
@@ -480,8 +530,8 @@ button {
 }
 
 .button-tertiary {
-  border-color: rgba(217, 154, 173, 0.22);
-  background: rgba(217, 154, 173, 0.08);
+  border-color: rgba(229, 132, 155, 0.22);
+  background: rgba(229, 132, 155, 0.08);
   color: rgba(244, 239, 230, 0.82);
   backdrop-filter: blur(18px);
 }
@@ -541,8 +591,8 @@ button {
 .founder-presence {
   overflow: hidden;
   background:
-    radial-gradient(circle at 76% 18%, rgba(217, 154, 173, 0.17), transparent 30%),
-    radial-gradient(circle at 18% 72%, rgba(111, 143, 104, 0.18), transparent 34%),
+    radial-gradient(circle at 76% 18%, rgba(229, 132, 155, 0.17), transparent 30%),
+    radial-gradient(circle at 18% 72%, rgba(143, 178, 122, 0.18), transparent 34%),
     linear-gradient(180deg, rgba(5, 5, 5, 0.98), rgba(28, 12, 13, 0.94) 52%, rgba(34, 25, 18, 0.9));
 }
 
@@ -636,7 +686,7 @@ button {
   inset: 0;
   content: "";
   background:
-    radial-gradient(circle at 72% 20%, rgba(217, 154, 173, 0.18), transparent 34%),
+    radial-gradient(circle at 72% 20%, rgba(229, 132, 155, 0.18), transparent 34%),
     linear-gradient(90deg, rgba(5, 5, 5, 0.28), transparent);
 }
 
@@ -749,7 +799,7 @@ button {
   width: 360px;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: rgba(255, 90, 31, 0.18);
+  background: rgba(195, 90, 46, 0.18);
   filter: blur(70px);
 }
 
@@ -766,11 +816,33 @@ button {
 }
 
 .authority-pillar {
+  appearance: none;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
   min-height: 190px;
   padding: 24px;
   border-right: 1px solid var(--line);
+  border-top: 0;
+  border-left: 0;
   border-bottom: 1px solid var(--line);
+  border-radius: 0;
   background: rgba(24, 24, 27, 0.28);
+  transition:
+    background 550ms ease,
+    border-color 550ms ease,
+    transform 550ms ease;
+}
+
+.authority-pillar:hover,
+.authority-pillar:focus-visible {
+  border-color: rgba(143, 178, 122, 0.42);
+  background:
+    radial-gradient(circle at 86% 12%, rgba(143, 178, 122, 0.12), transparent 34%),
+    rgba(24, 24, 27, 0.38);
+  transform: translateY(-2px);
+  outline: none;
 }
 
 .authority-pillar span {
@@ -785,6 +857,13 @@ button {
   line-height: 1.12;
 }
 
+.authority-pillar p {
+  margin: 16px 0 0;
+  color: rgba(244, 239, 230, 0.58);
+  font-size: 0.83rem;
+  line-height: 1.55;
+}
+
 .transition-quote {
   position: relative;
   display: grid;
@@ -793,23 +872,18 @@ button {
   padding: 120px 24px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 50%, rgba(255, 90, 31, 0.14), transparent 32%),
+    radial-gradient(circle at 50% 50%, rgba(195, 90, 46, 0.14), transparent 32%),
     linear-gradient(180deg, rgba(19, 8, 8, 0.92), #050505 35%, #050505);
 }
 
-.embers {
+.candlelight-field {
   position: absolute;
   inset: 0;
   pointer-events: none;
-}
-
-.ember {
-  position: absolute;
-  border-radius: 999px;
-  background: rgba(255, 135, 74, 0.78);
-  box-shadow: rgba(255, 90, 31, 0.75) 0 0 14px;
-  opacity: 0;
-  animation: ember-rise linear infinite;
+  background:
+    radial-gradient(circle at 48% 52%, rgba(233, 199, 126, 0.14), transparent 16%),
+    radial-gradient(circle at 50% 54%, rgba(195, 90, 46, 0.11), transparent 34%);
+  animation: ambient-drift var(--breath-ambient) ease-in-out infinite alternate;
 }
 
 .quote-frame {
@@ -840,7 +914,7 @@ button {
 
 .readiness-section {
   background:
-    radial-gradient(circle at 78% 8%, rgba(255, 90, 31, 0.13), transparent 30%),
+    radial-gradient(circle at 78% 8%, rgba(195, 90, 46, 0.13), transparent 30%),
     #050505;
 }
 
@@ -862,17 +936,17 @@ button {
   perspective-origin: 50% 42%;
 }
 
-.plane {
+.readiness-plane {
   position: relative;
   min-height: 620px;
   padding: 24px;
   border: 1px solid rgba(244, 239, 230, 0.1);
   border-radius: 24px;
   background:
-    linear-gradient(145deg, rgba(24, 24, 27, 0.82), rgba(5, 5, 5, 0.72)),
-    rgba(24, 24, 27, 0.6);
+    linear-gradient(145deg, rgba(10, 5, 5, 0.82), rgba(5, 5, 5, 0.72)),
+    rgba(24, 24, 27, 0.42);
   box-shadow:
-    rgba(255, 90, 31, 0.3) 0 0 30px,
+    rgba(195, 90, 46, 0.22) 0 0 30px,
     rgba(0, 0, 0, 0.5) 0 40px 110px;
   transform:
     rotateX(calc(38deg * (1 - var(--plane-progress))))
@@ -885,7 +959,7 @@ button {
 }
 
 .gradient-shell::before,
-.plane::before {
+.readiness-plane::before {
   position: absolute;
   inset: 1px;
   padding: 1px;
@@ -893,7 +967,7 @@ button {
   content: "";
   background: linear-gradient(
     135deg,
-    rgba(255, 90, 31, 0.74),
+    rgba(195, 90, 46, 0.54),
     rgba(244, 239, 230, 0.14) 36%,
     rgba(196, 161, 90, 0.18) 74%,
     rgba(244, 239, 230, 0.22)
@@ -905,7 +979,7 @@ button {
   pointer-events: none;
 }
 
-.dashboard-header {
+.readiness-map-header {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 14px;
@@ -914,7 +988,7 @@ button {
   color: rgba(244, 239, 230, 0.62);
 }
 
-.dashboard-header h3 {
+.readiness-map-header h3 {
   margin: 0;
   color: var(--text);
   font-size: 1rem;
@@ -922,28 +996,36 @@ button {
   text-transform: none;
 }
 
-.interface-dot {
+.readiness-map-dot {
   width: 10px;
   height: 10px;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: rgba(255, 90, 31, 0.8) 0 0 18px;
+  box-shadow: rgba(195, 90, 46, 0.8) 0 0 18px;
 }
 
-.dashboard-grid {
+.readiness-map-note {
+  margin: 0 8px 22px;
+  color: rgba(244, 239, 230, 0.66);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.readiness-map-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
-.dashboard-card {
+.readiness-map-card {
   position: relative;
   min-height: 150px;
   padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px dashed rgba(244, 239, 230, 0.18);
   border-radius: 12px;
-  background: rgba(24, 24, 27, 0.6);
-  box-shadow: rgba(255, 90, 31, 0.18) 0 0 30px;
+  background: rgba(5, 5, 5, 0.28);
   transform: translateZ(34px);
   backdrop-filter: blur(12px);
   transition:
@@ -952,26 +1034,25 @@ button {
     box-shadow 220ms ease;
 }
 
-.dashboard-card:hover {
-  border-color: rgba(255, 90, 31, 0.36);
-  box-shadow: rgba(255, 90, 31, 0.3) 0 0 30px;
+.readiness-map-card:hover {
+  border-color: rgba(233, 199, 126, 0.36);
   transform: translateZ(46px) translateY(-3px);
 }
 
-.dashboard-card span {
+.readiness-map-card span {
   color: var(--accent);
 }
 
-.dashboard-card p {
+.readiness-map-card p {
   margin: 18px 0 0;
   color: rgba(244, 239, 230, 0.84);
   line-height: 1.55;
 }
 
-.cta-card {
+.readiness-map-card-cta {
   background:
-    radial-gradient(circle at 100% 0%, rgba(255, 90, 31, 0.22), transparent 34%),
-    rgba(24, 24, 27, 0.7);
+    radial-gradient(circle at 100% 0%, rgba(143, 178, 122, 0.16), transparent 34%),
+    rgba(24, 24, 27, 0.45);
 }
 
 .pathway {
@@ -992,9 +1073,27 @@ button {
 }
 
 .pathway-card {
+  appearance: none;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
   min-height: 320px;
   padding: 28px;
+  border: 0;
   background: rgba(5, 5, 5, 0.78);
+  transition:
+    background 550ms ease,
+    transform 550ms ease;
+}
+
+.pathway-card:hover,
+.pathway-card:focus-visible {
+  background:
+    radial-gradient(circle at 82% 14%, rgba(229, 132, 155, 0.12), transparent 34%),
+    rgba(5, 5, 5, 0.86);
+  transform: translateY(-2px);
+  outline: none;
 }
 
 .pathway-card span {
@@ -1011,6 +1110,160 @@ button {
 .pathway-card p {
   color: rgba(244, 239, 230, 0.66);
   line-height: 1.7;
+}
+
+.knowledge-chamber-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 44px);
+  background-color: #050505;
+  background:
+    radial-gradient(circle at 22% 16%, rgba(233, 199, 126, 0.08), transparent 26%),
+    #050505;
+  animation: chamber-fade 260ms ease both;
+}
+
+.knowledge-chamber {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 68px);
+  width: min(1120px, 100%);
+  max-height: min(760px, calc(100svh - 48px));
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid rgba(244, 239, 230, 0.14);
+  border-radius: 20px;
+  overflow: auto;
+  background-color: #0b0506;
+  background:
+    radial-gradient(circle at 88% 12%, var(--chamber-glow), transparent 28%),
+    linear-gradient(145deg, #2a1216, #050505);
+  box-shadow: rgba(0, 0, 0, 0.65) 0 36px 120px;
+  outline: none;
+}
+
+.knowledge-chamber-leaf {
+  --chamber-glow: rgba(143, 178, 122, 0.16);
+}
+
+.knowledge-chamber-gold {
+  --chamber-glow: rgba(233, 199, 126, 0.18);
+}
+
+.knowledge-chamber-pink {
+  --chamber-glow: rgba(229, 132, 155, 0.18);
+}
+
+.knowledge-chamber-water {
+  --chamber-glow: rgba(95, 163, 160, 0.16);
+}
+
+.knowledge-chamber-rajas {
+  --chamber-glow: rgba(157, 23, 29, 0.2);
+}
+
+.chamber-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(244, 239, 230, 0.16);
+  border-radius: 999px;
+  background: rgba(5, 5, 5, 0.46);
+  color: rgba(244, 239, 230, 0.78);
+  cursor: pointer;
+}
+
+.chamber-hero h2 {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 6.2rem);
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.chamber-hero p:not(.label) {
+  margin: 24px 0 0;
+  color: rgba(244, 239, 230, 0.72);
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.chamber-sections {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.chamber-sections section {
+  padding: 18px 0;
+  border-top: 1px solid rgba(244, 239, 230, 0.1);
+}
+
+.chamber-sections span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold-lit);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.chamber-sections p {
+  margin: 0;
+  color: rgba(244, 239, 230, 0.78);
+  line-height: 1.72;
+}
+
+.chamber-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chamber-links i {
+  padding: 7px 10px;
+  border: 1px solid rgba(244, 239, 230, 0.12);
+  border-radius: 999px;
+  color: rgba(244, 239, 230, 0.72);
+  font-style: normal;
+  font-size: 0.8rem;
+}
+
+.chamber-actions {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-self: end;
+}
+
+.chamber-actions button,
+.text-doorway {
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid rgba(233, 199, 126, 0.34);
+  border-radius: 999px;
+  background: rgba(233, 199, 126, 0.08);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.text-doorway {
+  position: relative;
+  margin-top: 22px;
 }
 
 .retreat {
@@ -1103,7 +1356,7 @@ button {
   z-index: 0;
   background:
     linear-gradient(rgba(5, 5, 5, 0.48), rgba(5, 5, 5, 0.82)),
-    var(--final-image, radial-gradient(circle at 50% 35%, rgba(111, 143, 104, 0.18), rgba(5, 5, 5, 0.84)))
+    var(--final-image, radial-gradient(circle at 50% 35%, rgba(143, 178, 122, 0.18), rgba(5, 5, 5, 0.84)))
       center / cover;
   filter: saturate(0.6) brightness(0.58);
 }
@@ -1159,18 +1412,12 @@ button {
   }
 }
 
-@keyframes ember-rise {
-  0% {
+@keyframes chamber-fade {
+  from {
     opacity: 0;
-    transform: translateY(20px) scale(0.6);
   }
-  20%,
-  70% {
-    opacity: 0.85;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-70px) scale(1);
+  to {
+    opacity: 1;
   }
 }
 
@@ -1281,6 +1528,10 @@ button {
     width: 100%;
   }
 
+  .hero-invitation-fork {
+    grid-template-columns: 1fr;
+  }
+
   .portal-gallery {
     grid-template-columns: 1fr;
     margin-top: 22px;
@@ -1367,7 +1618,7 @@ button {
 
   .authority-grid,
   .pathway-grid,
-  .dashboard-grid,
+  .readiness-map-grid,
   .retreat-bento {
     grid-template-columns: 1fr;
   }
@@ -1388,27 +1639,48 @@ button {
     gap: 42px;
   }
 
-  .plane {
+  .readiness-plane {
     min-height: auto;
     padding: 16px;
     transform: rotateX(10deg) rotateY(-4deg) rotateZ(3deg) scale(0.98);
   }
 
-  .dashboard-header {
+  .readiness-map-header {
     grid-template-columns: auto 1fr;
   }
 
-  .dashboard-header span:last-child {
+  .readiness-map-header span:last-child {
     grid-column: 1 / -1;
   }
 
-  .dashboard-card {
+  .readiness-map-card {
     min-height: 132px;
     transform: none;
   }
 
-  .dashboard-card:hover {
+  .readiness-map-card:hover {
     transform: translateY(-2px);
+  }
+
+  .knowledge-chamber-shell {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .knowledge-chamber {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-height: 100svh;
+    min-height: 100svh;
+    border-radius: 0;
+    padding: 74px 22px 30px;
+    background:
+      radial-gradient(circle at 88% 8%, var(--chamber-glow), transparent 26%),
+      #0b0506;
+  }
+
+  .chamber-actions {
+    grid-column: 1;
   }
 
   .pathway-card {
@@ -1444,8 +1716,13 @@ button {
     transition-duration: 1ms !important;
   }
 
-  .plane,
+  .readiness-plane,
   .hero-visual {
     transform: none !important;
+  }
+
+  .candlelight-field,
+  .ray {
+    animation: none !important;
   }
 }
