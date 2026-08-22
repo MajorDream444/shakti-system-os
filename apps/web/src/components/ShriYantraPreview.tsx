@@ -1,6 +1,8 @@
 type ShriYantraPreviewProps = {
   className?: string;
   title?: string;
+  variant?: "seal" | "threshold" | "atmosphere" | "orientation" | "devotional";
+  decorative?: boolean;
 };
 
 const upwardTriangles = [
@@ -37,15 +39,18 @@ function lotusRing(count: number, radius: number, petalWidth: number, petalHeigh
 export function ShriYantraPreview({
   className = "",
   title = "Shri Yantra geometry",
+  variant = "devotional",
+  decorative = false,
 }: ShriYantraPreviewProps) {
   return (
     <svg
-      className={`shri-yantra-preview ${className}`}
+      className={`shri-yantra-preview shri-yantra-${variant} ${className}`}
       viewBox="0 0 400 400"
-      role="img"
-      aria-label={title}
+      role={decorative ? undefined : "img"}
+      aria-hidden={decorative ? "true" : undefined}
+      aria-label={decorative ? undefined : title}
     >
-      <title>{title}</title>
+      {!decorative && <title>{title}</title>}
       <g className="yantra-bhupura">
         <path d="M76 76H324V324H76V76Z" />
         <path d="M186 76H214V46H186V76Z" />

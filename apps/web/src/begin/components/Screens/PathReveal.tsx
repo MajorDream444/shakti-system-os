@@ -62,13 +62,13 @@ export default function PathReveal({ result, onNext }: Props) {
         {/* Glowing Hearth Fire Spillover */}
         <div className="absolute inset-x-0 bottom-0 h-[1.5px] bg-gradient-to-r from-transparent via-red-800/40 to-transparent shadow-[0_0_25px_rgba(157,23,29,0.45)]" />
 
-        <p className="relative z-10 text-lg md:text-xl text-ash/80 font-light leading-relaxed mb-6 italic serif">
+        <p className="relative z-10 text-lg md:text-xl text-ash/[0.88] font-normal leading-relaxed mb-6 italic serif">
           {result.reflection}
         </p>
 
         <div className="flex flex-col items-start relative py-4 border-t border-ash/5">
           <div className="absolute inset-0 bg-burgundy/[0.015] blur-3xl rounded-full" />
-          <span className="relative z-10 text-[9px] uppercase tracking-[0.4em] text-ash/38 mb-5 font-medium">Your doorway</span>
+          <span className="relative z-10 text-[11px] uppercase tracking-[0.16em] text-[#E9C77E] mb-5 font-bold">Your doorway</span>
           <h3 className="relative z-10 text-2xl md:text-3xl text-red-400 font-light tracking-wide text-glow">
             {result.nextStep}
           </h3>
@@ -87,10 +87,10 @@ export default function PathReveal({ result, onNext }: Props) {
             scale: 1.01,
             transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] }
           }}
-          className="group relative flex items-center gap-4 px-12 py-5 bg-stone-900/[0.2] border border-red-950/40 hover:border-red-800 text-red-400 hover:text-stone transition-all duration-700 rounded-sm overflow-hidden cursor-pointer"
+          className="group relative flex items-center gap-4 px-12 py-5 bg-[#4A1C22]/64 border border-[#E9C77E]/42 hover:border-[#E9C77E] text-[#F6EFE7] hover:text-white transition-all duration-500 rounded-sm overflow-hidden cursor-pointer"
         >
           <div className="absolute inset-0 bg-red-950 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-700" />
-          <span className="relative z-10 tracking-[0.2em] uppercase text-xs font-semibold">
+          <span className="relative z-10 tracking-[0.12em] uppercase text-sm font-bold">
             {result.primaryCTA}
           </span>
           <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-2 transition-transform duration-700" />
@@ -102,9 +102,9 @@ export default function PathReveal({ result, onNext }: Props) {
             scale: 1.02,
             transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] }
           }}
-          className="group flex flex-col items-center gap-2 cursor-pointer"
+          className="group flex flex-col items-center gap-2 cursor-pointer rounded-sm px-4 py-3 border border-ash/[0.18] hover:border-[#E5849B]/50 transition-colors"
         >
-          <span className="text-ash/40 group-hover:text-ash/60 text-[10px] uppercase tracking-[0.2em] transition-colors duration-500">
+          <span className="text-ash/[0.82] group-hover:text-[#F0C4D0] text-sm uppercase tracking-[0.1em] font-bold transition-colors duration-500">
             {result.secondaryCTA}
           </span>
           <div className="w-8 h-[0.5px] bg-ash/20 group-hover:w-16 group-hover:bg-ash/40 transition-all duration-700" />
@@ -117,12 +117,12 @@ export default function PathReveal({ result, onNext }: Props) {
         transition={{ delay: 2.4, duration: 1.5 }}
         className="mt-7 flex flex-col items-center gap-3"
       >
-        <p className="text-[9px] uppercase tracking-[0.3em] text-ash/25">or speak directly with Sheetal</p>
+        <p className="text-[11px] uppercase tracking-[0.14em] text-ash/[0.64] font-semibold">or speak directly with Sheetal</p>
         <a
           href="https://calendly.com/sheetalkandola/discovery-call"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[10px] uppercase tracking-[0.2em] text-ash/35 hover:text-ember transition-colors duration-700 border-b border-ash/10 hover:border-ember/40 pb-[1px]"
+          className="text-sm uppercase tracking-[0.1em] text-[#F6EFE7] hover:text-[#F0C4D0] transition-colors duration-500 border-b border-[#E9C77E]/30 hover:border-[#E5849B]/60 pb-[2px] font-bold"
         >
           Book a Discovery Call
         </a>

@@ -15,6 +15,7 @@ import {
   Sparkles,
   CircleDot,
 } from 'lucide-react';
+import { ShriYantraPreview } from '../../components/ShriYantraPreview';
 
 interface ThresholdDrawerProps {
   isOpen: boolean;
@@ -70,29 +71,32 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 26, stiffness: 200 }}
-            className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-gradient-to-b from-[#141011] to-[#090707] border-l border-[#D8C5B0]/15 p-6 md:p-8 z-50 flex flex-col justify-between overflow-y-auto"
+            className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-gradient-to-b from-[#181012] to-[#090707] border-l border-[#D8C5B0]/24 p-6 md:p-8 z-50 flex flex-col justify-between overflow-y-auto"
           >
             <div>
               {/* Header */}
               <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/5">
                 <div className="flex items-center gap-2">
                   <Compass className="w-4 h-4 text-[#D8B45E]" />
-                  <span className="font-sans font-bold text-xs tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
+                  <span className="font-sans font-bold text-xs tracking-[0.16em] text-transform: uppercase text-[#E9C77E]">
                     Sanctuary Map
                   </span>
                 </div>
                 <button
                   id="close-threshold-btn"
                   onClick={onClose}
-                  className="p-1 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white"
+                  className="min-h-11 min-w-11 rounded-full bg-white/[0.08] border border-white/[0.18] hover:bg-white/[0.12] transition-colors text-white"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
 
               <div className="mb-6">
-                <h3 className="font-serif text-2xl text-[#F6EFE7]">Where are you in the sanctuary?</h3>
-                <p className="font-serif italic text-sm text-[#8b949e] mt-1.5 leading-relaxed">
+                <div className="threshold-map-seal" aria-hidden="true">
+                  <ShriYantraPreview variant="orientation" decorative />
+                </div>
+                <h3 className="font-serif text-3xl text-[#F6EFE7]">Where are you in the sanctuary?</h3>
+                <p className="font-sans text-sm text-[#C8B7A5] mt-2 leading-relaxed">
                   See what is open now, what can be requested, and what opens with preparation or invitation.
                 </p>
               </div>
@@ -133,20 +137,20 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
                             onClose();
                           }
                         }}
-                        className={`flex-1 p-3.5 rounded-xl border text-left transition-all relative flex justify-between items-center ${
+                        className={`flex-1 p-4 rounded-xl border text-left transition-all relative flex justify-between items-center ${
                           isActive
-                            ? 'border-[#E27A3F] bg-[#4a1f24]/10 text-[#F6EFE7] shadow-[0_0_15px_rgba(226,122,63,0.05)]'
+                            ? 'border-[#E9C77E] bg-[#4a1f24]/26 text-[#F6EFE7] shadow-[0_0_18px_rgba(233,199,126,0.1)]'
                             : !isOpen
-                            ? 'border-white/5 bg-black/40 text-[#8a7c6d] opacity-85 cursor-default'
-                            : 'border-[#D8C5B0]/5 hover:border-[#D8C5B0]/20 bg-white/[0.01] hover:bg-white/[0.03]'
+                            ? 'border-white/10 bg-black/44 text-[#AFA194] opacity-95 cursor-default'
+                            : 'border-[#D8C5B0]/14 hover:border-[#D8C5B0]/36 bg-white/[0.025] hover:bg-white/[0.05]'
                         }`}
                       >
                         <div className="flex items-center gap-3">
                           <Icon className={`w-4 h-4 ${isActive ? 'text-[#E27A3F]' : isOpen ? 'text-[#D8C5B0]' : 'text-[#8a7c6d]'}`} />
                           <div>
                             <div className="flex items-center gap-1.5">
-                              <span className="font-serif text-md text-[#F6EFE7]">{node.label}</span>
-                              <span className={`font-sans text-[8px] tracking-wider px-1.5 py-0.5 rounded ${
+                              <span className="font-serif text-lg text-[#F6EFE7]">{node.label}</span>
+                              <span className={`font-sans text-[10px] font-bold tracking-[0.04em] px-2 py-0.5 rounded ${
                                 node.state === 'Open'
                                   ? 'text-[#8FB98A] bg-[#8FB98A]/10'
                                   : node.state === 'Available to Request'
@@ -158,7 +162,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
                                 {node.state}
                               </span>
                             </div>
-                            <span className="font-sans text-[10px] text-[#8b949e] mt-1 block">
+                            <span className="font-sans text-xs text-[#C8B7A5] mt-1 block">
                               {node.desc}
                             </span>
                           </div>
@@ -178,7 +182,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
 
             {/* Footer message */}
             <div className="mt-8 pt-4 border-t border-[#D8C5B0]/5 text-center">
-              <span className="font-sans font-semibold text-[8px] tracking-[0.24em] text-[#6b5f52] uppercase block">
+              <span className="font-sans font-semibold text-[10px] tracking-[0.12em] text-[#C8B7A5] uppercase block leading-relaxed">
                 Open rooms can be entered now. Other doorways are held with preparation or invitation.
               </span>
             </div>
