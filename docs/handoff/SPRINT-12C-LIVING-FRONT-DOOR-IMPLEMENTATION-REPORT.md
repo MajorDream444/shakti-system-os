@@ -3,7 +3,7 @@
 Date: 2026-08-22
 Branch: `codex/sprint-12c-living-front-door-implementation`
 Base: `origin/main` at `018151d`
-Status: Implementation complete on branch; VERCEL PREVIEW pending in final section.
+Status: Implementation complete on branch; VERCEL PREVIEW deployed and awaiting protected-access visual review.
 
 ## Scope
 
@@ -231,10 +231,22 @@ Graphify:
 
 VERCEL PREVIEW:
 
-- URL: Pending deploy.
-- Deployment ID: Pending deploy.
+- URL: `https://shakti-system-b5gyca60y-major-hanzoais-projects.vercel.app`
+- Deployment ID: `dpl_ECVVbnjvJ3sCqpfKC7EDR1Duz9WD`
 - Source branch: `codex/sprint-12c-living-front-door-implementation`
-- Source commit: Pending commit.
+- Source commit: `25ebf4f`
+- Target: `preview`
+- Status: `READY`
+- API functions included:
+  - `api/begin/complete`
+  - `api/request-signal`
+
+Preview access note:
+
+- The deployment is behind Vercel Deployment Protection.
+- Unauthenticated browser/API smoke checks returned the protected access surface (`401` for API routes).
+- The Vercel share-link tool could not mint a temporary bypass URL for this deployment.
+- Local rebuilt-preview Playwright QA is therefore the complete browser evidence for this branch until a human opens the protected VERCEL PREVIEW or provides a temporary bypass.
 
 VERCEL PRODUCTION:
 
