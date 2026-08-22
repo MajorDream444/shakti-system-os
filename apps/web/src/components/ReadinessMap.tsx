@@ -15,16 +15,19 @@ export function ReadinessMap() {
           <p>{portalCopy.readiness.copy}</p>
         </div>
         <div className="perspective-root" ref={rootRef}>
-          <div className="plane">
-            <div className="dashboard-header">
-              <span className="interface-dot" />
+          <div className="readiness-plane">
+            <div className="readiness-map-header">
+              <span className="readiness-map-dot" />
               <h3>{portalCopy.readiness.dashboardTitle}</h3>
               <span>{portalCopy.readiness.dashboardField}</span>
             </div>
-            <div className="dashboard-grid">
+            <p className="readiness-map-note">
+              This is an illustration, not you. It does not score, rank, or diagnose a seeker.
+            </p>
+            <div className="readiness-map-grid">
               {portalCopy.readiness.cards.map((card) => (
                 <article
-                  className={`dashboard-card gradient-shell ${card.cta ? "cta-card" : ""}`}
+                  className={`readiness-map-card ${card.cta ? "readiness-map-card-cta" : ""}`}
                   key={card.title}
                 >
                   <span>{card.title}</span>

@@ -36,7 +36,7 @@ export default function KaliSigil({ className = "w-6 h-6", glow = true }: Props)
         {/* Third Eye Flame inside Yoni */}
         <motion.path
           d="M 20,13 C 21.5,15.5 21.5,19 20,21.5 C 18.5,19 18.5,15.5 20,13 Z"
-          fill="#e2b13c"
+          fill="#e9c77e"
           animate={{
             scaleY: [1, 1.15, 1],
             opacity: [0.8, 1, 0.8]

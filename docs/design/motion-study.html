@@ -1,7 +1,7 @@
 <title>Shri Yantra Motion Study</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap">
 
 <style>
   /* Deliberately single-theme: a devotional surface that must hold the same
@@ -12,7 +12,7 @@
     --pink:#e6b3c0; --ivory:#f2ece1; --muted:#9a8279;
     --line:rgba(242,236,225,.14);
     --display:"Cormorant Garamond",Georgia,serif;
-    --ui:"Inter",ui-sans-serif,system-ui,sans-serif;
+    --ui:"Manrope",ui-sans-serif,system-ui,sans-serif;
   }
   *{box-sizing:border-box}
   body{
@@ -116,7 +116,7 @@
       <div class="panel-body">
         <p class="panel-meta">Intensity 03</p>
         <h3 class="panel-name">Overt</h3>
-        <p class="panel-note">The triangle field rotates, lines draw themselves in sequence, the bindu pulses on a faster beat, sparks rise. Legible as animation — closer to a title sequence.</p>
+        <p class="panel-note">The triangle field rotates and lines draw themselves in sequence. Legible as animation — closer to a title sequence, and intentionally not used as the production cadence.</p>
       </div>
     </article>
   </div>
@@ -243,13 +243,6 @@
   const B = build("y-breath"), D = build("y-devotional"), O = build("y-overt");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const sparks = [];
-  for (let i = 0; i < 7; i++) {
-    const s = el("circle", { cx: 0, cy: 0, r: .9, fill: "#ff9a4a", "fill-opacity": "0" });
-    O.svg.appendChild(s);
-    sparks.push({ node: s, seed: i * 487, x: 62 + i * 12 });
-  }
-
   const st = document.createElement("style");
   st.textContent = "@keyframes draw{0%{stroke-dashoffset:520}40%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:.4}}";
   document.head.appendChild(st);
@@ -279,12 +272,6 @@
     O.field.setAttribute("transform", `rotate(${(t/22000)*360} ${CX} ${CY}) translate(${CX} ${CY}) scale(${1+pulse*.05}) translate(${-CX} ${-CY})`);
     O.outer.setAttribute("transform", `rotate(${-(t/30000)*360} ${CX} ${CY})`);
     O.bindu.setAttribute("r", (2.6+pulse*2.6).toFixed(2));
-    sparks.forEach(s => {
-      const q = ((t + s.seed) % 3400) / 3400;
-      s.node.setAttribute("cx", (s.x + Math.sin(q*6 + s.seed) * 7).toFixed(1));
-      s.node.setAttribute("cy", (178 - q*156).toFixed(1));
-      s.node.setAttribute("fill-opacity", (Math.sin(q*Math.PI)*.85).toFixed(2));
-    });
     requestAnimationFrame(frame);
   }
   if (!reduced) requestAnimationFrame(frame);

@@ -59,11 +59,12 @@ Founder-requested additions, tier 1: deep burgundy (retain) · **a second maroon
 | `--maroon-deep` | `#2a1216` | tamas→rajas | Deep burgundy. Retained — she likes it. |
 | `--maroon-lit` | `#4a1c22` | rajas | **NEW** second maroon she asked for. |
 | `--rajas-red` | `#9d171d` | rajas | Sacred red. Bindu, active states. |
-| `--ember` | `#ff5a1f` | rajas | Existing accent. Punctuation only. |
-| `--shakti-pink` | `#d99aad` | rajas/sattva | **Promoted.** Lakshmi register. |
+| `--ember` | `#C35A2E` | rajas | Vault 7 ember. Punctuation only. |
+| `--shakti-pink` | `#E5849B` | rajas/sattva | **Promoted.** Lakshmi register. |
 | `--pink-soft` | `#f0c4d0` | sattva | **NEW** light feminine, high-contrast text on dark. |
+| `--leaf` | `#8FB27A` | sattva | Lush green. Flora, renewal, living place. |
 | `--gold` | `#c4a15a` | rajas/sattva | Lamp, threshold, ornament. |
-| `--gold-lit` | `#e2b13c` | sattva | **NEW** flame, bindu highlight. |
+| `--gold-lit` | `#E9C77E` | sattva | **NEW** flame, bindu highlight. |
 | `--text` | `#f4efe6` | sattva | Body text. |
 
 ### Restraint clause — also tier 1

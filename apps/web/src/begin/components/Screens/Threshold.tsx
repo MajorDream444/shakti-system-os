@@ -68,7 +68,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
             <div className="absolute inset-0 bg-noise opacity-[0.12] pointer-events-none mix-blend-overlay" />
           </motion.div>
 
-          {/* The Sacred Shakti Sigil: Sheetal Kandola Brand-Energy Signature (Fierce circular mandala with blood-red outer lotus, white sacred linework, downward Kali Devi triangle, vertical third-eye flame, and crimson bindi) */}
+          {/* The Sacred Shakti Sigil: yoni triangle threshold, not a Shri Yantra. */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -116,7 +116,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
               <motion.path
                 d="M 60,39 C 63,44 63,51 60,56 C 57,51 57,44 60,39 Z"
                 fill="none"
-                stroke="#e2b13c"
+                stroke="#e9c77e"
                 strokeWidth="1"
                 animate={{
                   opacity: [0.8, 1, 0.8],
@@ -126,7 +126,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
               />
 
               {/* Innermost Bindu of Infinite Creation */}
-              <circle cx="60" cy="48" r="1.5" fill="#e2b13c" />
+              <circle cx="60" cy="48" r="1.5" fill="#e9c77e" />
 
               {/* Crescent Moon pointing upward inside the forehead loop */}
               <path d="M 57,45 A 3,3 0 0,0 63,45 A 2.2,2.2 0 0,1 57,45" fill="#ffffff" opacity="0.85" />
@@ -136,7 +136,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
             </svg>
           </motion.div>
 
-          {/* Silt Dust/Ember spill reflection crossing the stone floor threshold */}
+          {/* Slow candlelight reflection crossing the stone floor threshold */}
           <motion.div
             animate={{ opacity: [0.55, 0.8, 0.55] }}
             transition={{ duration: 6, repeat: Infinity }}
@@ -144,25 +144,6 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
           />
         </div>
 
-        {/* Quiet, Cinematic Floating Sparks Rising From Behind */}
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              y: [15, -130],
-              x: [0, (i - 2) * 18],
-              opacity: [0, 0.8, 0],
-              scale: [0.4, 1.1, 0]
-            }}
-            transition={{
-              duration: 7 + i * 2,
-              repeat: Infinity,
-              delay: i * 1.8,
-              ease: "linear"
-            }}
-            className="absolute bottom-8 left-1/2 w-1.5 h-1.5 bg-ember/80 rounded-full blur-[0.4px] pointer-events-none"
-          />
-        ))}
       </div>
 
       <motion.p

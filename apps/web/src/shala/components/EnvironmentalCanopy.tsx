@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sun, Moon, Wind, CloudSnow, Flame, Sparkles, Volume2, VolumeX } from 'lucide-react';
 import { startSanctuaryAudio, stopSanctuaryAudio, setSanctuaryAcoustics, playResonantBell } from '../lib/audio';
@@ -30,7 +30,6 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
   onSeasonChange,
   onSoundToggle,
 }) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   // Sound Engine synchronization
@@ -42,184 +41,6 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
       stopSanctuaryAudio();
     }
   }, [soundActive, activeRoom, weather]);
-
-  // Handle high-performance dynamic weather particles on Canvas
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationId: number;
-    let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
-    let height = (canvas.height = canvas.parentElement?.clientHeight || window.innerHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = canvas.parentElement?.clientWidth || window.innerWidth;
-      height = canvas.height = canvas.parentElement?.clientHeight || window.innerHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Particle class representing atmospheric elements
-    class Particle {
-      x: number = Math.random() * width;
-      y: number = Math.random() * height;
-      size: number = 0;
-      speedX: number = 0;
-      speedY: number = 0;
-      alpha: number = Math.random() * 0.5 + 0.1;
-      rotation: number = Math.random() * Math.PI * 2;
-      rotationSpeed: number = (Math.random() - 0.5) * 0.02;
-      type: 'snow' | 'rain' | 'petal' | 'leaf' | 'mist_puff' = 'snow';
-
-      constructor() {
-        this.reset(true);
-      }
-
-      reset(init = false) {
-        this.x = Math.random() * width;
-        this.y = init ? Math.random() * height : -20;
-        this.alpha = Math.random() * 0.5 + 0.25;
-        this.rotation = Math.random() * Math.PI * 2;
-        this.rotationSpeed = (Math.random() - 0.5) * 0.02;
-
-        if (weather === 'LIGHT_SNOW') {
-          this.type = 'snow';
-          this.size = Math.random() * 2.2 + 0.8;
-          this.speedY = Math.random() * 0.6 + 0.3;
-          this.speedX = Math.random() * 0.4 - 0.2;
-        } else if (weather === 'RAIN') {
-          this.type = 'rain';
-          this.size = Math.random() * 1.5 + 0.5;
-          this.speedY = Math.random() * 6 + 4;
-          this.speedX = -1.2; // slanted mountain downpour
-        } else if (season === 'SPRING' && weather === 'CLEAR') {
-          // Elegant soft pink cherry/rhododendron petals drifting
-          this.type = 'petal';
-          this.size = Math.random() * 4 + 3;
-          this.speedY = Math.random() * 0.5 + 0.4;
-          this.speedX = Math.random() * 0.6 + 0.1;
-        } else if (season === 'AUTUMN' && weather === 'CLEAR') {
-          // Warm golden-copper oak leaves gliding slowly
-          this.type = 'leaf';
-          this.size = Math.random() * 4 + 4;
-          this.speedY = Math.random() * 0.6 + 0.3;
-          this.speedX = Math.random() * 0.4 + 0.1;
-        } else if (weather === 'MIST' || weather === 'CLOUDS') {
-          this.type = 'mist_puff';
-          this.size = Math.random() * 80 + 40;
-          this.speedY = (Math.random() - 0.5) * 0.05;
-          this.speedX = Math.random() * 0.15 + 0.05;
-          this.alpha = Math.random() * 0.08 + 0.02;
-        } else {
-          // Minimal high-altitude dust motes floating in clear light
-          this.type = 'snow';
-          this.size = Math.random() * 1.0 + 0.3;
-          this.speedY = (Math.random() - 0.5) * 0.1;
-          this.speedX = (Math.random() - 0.5) * 0.1;
-          this.alpha = Math.random() * 0.2;
-        }
-      }
-
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.rotation += this.rotationSpeed;
-
-        // Reset if drifted off-canvas
-        if (this.y > height + 20 || this.x > width + 20 || this.x < -20) {
-          this.reset(false);
-        }
-      }
-
-      draw(c: CanvasRenderingContext2D) {
-        c.save();
-        c.globalAlpha = this.alpha;
-
-        if (this.type === 'snow') {
-          c.fillStyle = '#FFFFFF';
-          c.beginPath();
-          c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          c.fill();
-        } else if (this.type === 'rain') {
-          c.strokeStyle = '#9ca3af';
-          c.lineWidth = 1;
-          c.beginPath();
-          c.moveTo(this.x, this.y);
-          c.lineTo(this.x + this.speedX * 1.5, this.y + this.speedY * 1.5);
-          c.stroke();
-        } else if (this.type === 'petal') {
-          // Draw soft pink mountain petals
-          c.translate(this.x, this.y);
-          c.rotate(this.rotation);
-          c.fillStyle = '#fbcfe8'; // delicate pink
-          c.beginPath();
-          c.ellipse(0, 0, this.size, this.size * 0.6, 0, 0, Math.PI * 2);
-          c.fill();
-        } else if (this.type === 'leaf') {
-          // Draw rich golden leaves
-          c.translate(this.x, this.y);
-          c.rotate(this.rotation);
-          c.fillStyle = '#ca8a04'; // warm gold/amber
-          c.beginPath();
-          c.ellipse(0, 0, this.size, this.size * 0.5, Math.PI / 4, 0, Math.PI * 2);
-          c.fill();
-        } else if (this.type === 'mist_puff') {
-          // Draw slow moving ambient vapor
-          c.fillStyle = '#e2e8f0';
-          const grad = c.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
-          grad.addColorStop(0, `rgba(226, 232, 240, ${this.alpha})`);
-          grad.addColorStop(1, 'rgba(226, 232, 240, 0)');
-          c.fillStyle = grad;
-          c.beginPath();
-          c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          c.fill();
-        }
-        c.restore();
-      }
-    }
-
-    const maxParticles = weather === 'RAIN' ? 95 : weather === 'MIST' ? 12 : 55;
-    const particlesArray: Particle[] = [];
-    for (let i = 0; i < maxParticles; i++) {
-      particlesArray.push(new Particle());
-    }
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Render atmosphere tint layer depending on Time of Day
-      if (timeOfDay === 'MORNING') {
-        // Soft pink/peach sunrise mist underlay
-        ctx.fillStyle = 'rgba(244, 63, 94, 0.02)';
-        ctx.fillRect(0, 0, width, height);
-      } else if (timeOfDay === 'SUNSET') {
-        // Deep warm amber and terracotta tint
-        ctx.fillStyle = 'rgba(245, 158, 11, 0.03)';
-        ctx.fillRect(0, 0, width, height);
-      } else if (timeOfDay === 'NIGHT') {
-        // Celestial dark cobalt dust underlay
-        ctx.fillStyle = 'rgba(30, 41, 59, 0.02)';
-        ctx.fillRect(0, 0, width, height);
-      }
-
-      particlesArray.forEach((p) => {
-        p.update();
-        p.draw(ctx);
-      });
-
-      animationId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [weather, season, timeOfDay]);
 
   // Handle bell strike feedback
   const handleBellStrike = () => {
@@ -250,10 +71,9 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
 
   return (
     <>
-      {/* High-Performance Canvas Particles overlaying the architecture */}
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 z-10 pointer-events-none select-none"
+      <div
+        className={`sanctuary-ambient-field sanctuary-${timeOfDay.toLowerCase()} sanctuary-${weather.toLowerCase()} sanctuary-${season.toLowerCase()}`}
+        aria-hidden="true"
       />
 
       {/* Floating Sound Toggle - Bottom Left */}
