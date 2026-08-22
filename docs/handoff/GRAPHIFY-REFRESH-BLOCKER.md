@@ -9,6 +9,7 @@ Sprint 11E attempted one additional bounded refresh after the documentation-only
 Sprint 11F attempted one additional bounded release-candidate refresh and stopped it cleanly after 30 seconds with no stdout.
 Sprint 12A attempted one bounded refresh after frozen experience implementation and stopped it cleanly after 30 seconds.
 Sprint 12A attempted one additional bounded refresh after the founder presence and Playwright visual-review additions and stopped it cleanly after 30 seconds with no stdout.
+Sprint 12D attempted one bounded refresh after the luminous art-direction pass and stopped cleanly after 60 seconds with no stdout.
 
 Command:
 
@@ -23,6 +24,7 @@ Sprint 11D: Python subprocess timeout: 25 seconds
 Sprint 11F: shell process stopped after 30 seconds
 Sprint 12A: shell process stopped after 30 seconds
 Sprint 12A founder/Playwright addendum: shell process stopped after 30 seconds
+Sprint 12D: Python subprocess timeout: 60 seconds
 ```
 
 Result:

@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
 import type { LivingDoorway } from "../data/livingDoorways";
+import { ShriYantraPreview } from "./ShriYantraPreview";
 
 type KnowledgeChamberProps = {
   chamber: LivingDoorway | null;
@@ -75,14 +76,14 @@ export function KnowledgeChamber({
 
   return createPortal(
     <div
-      className="knowledge-chamber-shell"
+      className={`knowledge-chamber-shell knowledge-chamber-shell-${chamber.id}`}
       role="presentation"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
     >
       <div
-        className={`knowledge-chamber knowledge-chamber-${chamber.accent}`}
+        className={`knowledge-chamber knowledge-chamber-${chamber.accent} knowledge-chamber-${chamber.id}`}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
@@ -102,6 +103,17 @@ export function KnowledgeChamber({
           <p className="label">{chamber.symbol}</p>
           <h2 id={titleId}>{chamber.title}</h2>
           <p>{chamber.summary}</p>
+        </div>
+
+        <div className="chamber-visual" aria-hidden={chamber.id !== "classical-shakti-tantra"}>
+          {chamber.id === "classical-shakti-tantra" ? (
+            <ShriYantraPreview className="chamber-yantra" title="Shri Yantra geometry" />
+          ) : (
+            <>
+              <span className="chamber-symbol chamber-symbol-main" />
+              <span className="chamber-symbol chamber-symbol-secondary" />
+            </>
+          )}
         </div>
 
         <div className="chamber-sections">

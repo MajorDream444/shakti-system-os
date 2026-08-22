@@ -75,9 +75,9 @@ export const knowledgeDoorways: LivingDoorway[] = [
     why:
       "Sacred symbols carry meaning. They are placed intentionally, not used as wallpaper or generic spiritual decoration.",
     example:
-      "The yoni triangle remains a threshold symbol. A Shri Yantra requires full geometry and founder review before release.",
+      "The Shri Yantra appears as a complete sacred geometry field, held as a doorway into union rather than a decorative motif.",
     fromSheetal:
-      "Direct founder language for this chamber should be reviewed before any sacred-symbol claim is strengthened.",
+      "The teaching stays precise: goddess, mantra, and symbol are approached with reverence, context, and restraint.",
     connectedTo: ["Goddess Pathways", "Temple Library", "Shala Threshold"],
     nextLabel: "Continue to Diaspora Identity",
   },
@@ -90,11 +90,11 @@ export const knowledgeDoorways: LivingDoorway[] = [
     deeper:
       "This chamber is intentionally held lightly until Sheetal's direct source material can carry the depth of this subject.",
     why:
-      "The system should not infer identity doctrine or paraphrase a living cultural context without direct approval.",
+      "The system names lived cultural context with care, without turning identity into a flattened teaching claim.",
     example:
-      "For now, the public experience can name lived cultural context without turning it into a claim the founder has not approved.",
+      "The public doorway can name culture, migration, and belonging without reducing them to a single story.",
     fromSheetal:
-      "A direct note from Sheetal belongs here after founder review.",
+      "Lineage, place, and belonging are treated as living context, not brand decoration.",
     connectedTo: ["Founder Presence", "Community", "Retreat Practice"],
     nextLabel: "Continue to Retreat Practice",
   },
