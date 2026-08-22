@@ -6,6 +6,8 @@ Branch: `codex/sprint-12e-legibility-sacred-presence`
 
 Base: Sprint 12D branch `codex/sprint-12d-luminous-shakti-art-direction` at `f53d9c51f85c099fccd8d55c7a3cc9156f893046`
 
+Implementation commit: `e82d8fe6e088cf2e4eb147aa9fa6fb2c1b899e70`
+
 Status: HUMAN VISUAL REVIEW REQUIRED
 
 ## Scope
@@ -187,6 +189,14 @@ Results:
 - Sprint 12D luminous art direction: 2 passed
 - Sprint 12E legibility/sacred presence: 2 passed
 
+Security scan:
+
+```bash
+rg -n "AIRTABLE_PERSONAL_ACCESS_TOKEN|BEGIN_WRITES_ENABLED|AIRTABLE_BASE_ID|VITE_AIRTABLE_TOKEN|pat[0-9A-Za-z]{20,}" apps/web/dist || true
+```
+
+Result: no matches in the built browser/static output.
+
 ## Graphify
 
 Graphify refresh: attempted and blocked.
@@ -213,7 +223,20 @@ Updated: `docs/handoff/GRAPHIFY-REFRESH-BLOCKER.md`
 
 ## Vercel Preview
 
-Preview deployment: pending.
+Preview deployment:
+
+- URL: `https://shakti-system-ns1146lk5-major-hanzoais-projects.vercel.app`
+- Deployment ID: `dpl_BjzfEHLurZ8VXE3QBRBeCDoJLWjV`
+- Target: `preview`
+- Status: `Ready`
+- Created: `Sat Aug 22 2026 20:46:39 GMT+0800`
+- Source state: deployed from local HEAD `e82d8fe6e088cf2e4eb147aa9fa6fb2c1b899e70`, pushed to PR #18
+- API functions included: `api/begin/complete`, `api/request-signal`
+
+Bounded smoke result:
+
+- unauthenticated route checks redirected to Vercel SSO/login because Deployment Protection is enabled
+- local Playwright evidence remains the visual QA source for `/`, `/begin`, `/shala`, chamber, and retreat surfaces
 
 Production deployment: not touched.
 
