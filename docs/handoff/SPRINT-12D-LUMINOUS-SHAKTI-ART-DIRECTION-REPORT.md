@@ -184,6 +184,14 @@ Preview label:
 Sprint 12D - Luminous Shakti Art Direction
 Status: HUMAN VISUAL REVIEW REQUIRED
 
-Preview URL: pending deployment.
+Preview URL: `https://shakti-system-dka0jcwto-major-hanzoais-projects.vercel.app`
 
-Exact commit: pending commit.
+Deployment ID: `dpl_CCY5xZHg6LCns8UDqMv5EkJ2MCDA`
+
+Deployment target: Vercel Preview only.
+
+Deployed implementation commit: `59b93c3`
+
+Smoke note:
+
+Unauthenticated smoke checks for `/`, `/begin`, `/shala`, `/api/begin/complete`, and `/api/request-signal` returned Vercel SSO `302` responses because deployment protection is enabled. `vercel inspect` confirmed the deployment is Ready and includes both API functions.
