@@ -231,10 +231,10 @@ Graphify:
 
 VERCEL PREVIEW:
 
-- URL: `https://shakti-system-b5gyca60y-major-hanzoais-projects.vercel.app`
-- Deployment ID: `dpl_ECVVbnjvJ3sCqpfKC7EDR1Duz9WD`
+- URL: `https://shakti-system-f37i46lzi-major-hanzoais-projects.vercel.app`
+- Deployment ID: `dpl_yL5b96KnfVXeKzmGyB5bX8qutQwY`
 - Source branch: `codex/sprint-12c-living-front-door-implementation`
-- Source commit: `25ebf4f`
+- Source commit: `21f6efd`
 - Target: `preview`
 - Status: `READY`
 - API functions included:
