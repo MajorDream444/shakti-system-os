@@ -8,6 +8,8 @@ Base: Sprint 12D branch `codex/sprint-12d-luminous-shakti-art-direction` at `f53
 
 Implementation commit: `e82d8fe6e088cf2e4eb147aa9fa6fb2c1b899e70`
 
+Report/Preview commit: PR #18 head
+
 Status: HUMAN VISUAL REVIEW REQUIRED
 
 ## Scope
@@ -225,12 +227,13 @@ Updated: `docs/handoff/GRAPHIFY-REFRESH-BLOCKER.md`
 
 Preview deployment:
 
-- URL: `https://shakti-system-ns1146lk5-major-hanzoais-projects.vercel.app`
-- Deployment ID: `dpl_BjzfEHLurZ8VXE3QBRBeCDoJLWjV`
+- Human-review URL: `https://shakti-system-os-git-codex-sprin-fab1b8-major-hanzoais-projects.vercel.app`
+- Last inspected deployment URL: `https://shakti-system-eqfou0k3w-major-hanzoais-projects.vercel.app`
+- Last inspected deployment ID: `dpl_9tcBt6LoyX5BJVqD12kxENJwYQuu`
 - Target: `preview`
 - Status: `Ready`
-- Created: `Sat Aug 22 2026 20:46:39 GMT+0800`
-- Source state: deployed from local HEAD `e82d8fe6e088cf2e4eb147aa9fa6fb2c1b899e70`, pushed to PR #18
+- Created: `Sat Aug 22 2026 20:52:43 GMT+0800`
+- Source state: auto Preview deployment from pushed PR #18 head
 - API functions included: `api/begin/complete`, `api/request-signal`
 
 Bounded smoke result:
