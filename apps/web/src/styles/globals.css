@@ -1421,6 +1421,613 @@ button {
   }
 }
 
+/* Sprint 12D — Luminous Shakti Art Direction */
+.shri-yantra-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  color: var(--gold-lit);
+}
+
+.yantra-bhupura path,
+.yantra-circle,
+.yantra-triangles polygon,
+.yantra-lotus ellipse {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.yantra-bhupura path {
+  stroke: rgba(233, 199, 126, 0.58);
+  stroke-width: 2.8;
+}
+
+.yantra-circle {
+  stroke: rgba(240, 196, 208, 0.36);
+  stroke-width: 1.5;
+}
+
+.yantra-lotus ellipse {
+  fill: rgba(229, 132, 155, 0.045);
+  stroke: rgba(229, 132, 155, 0.46);
+  stroke-width: 1.35;
+}
+
+.yantra-triangles polygon {
+  stroke-width: 2.2;
+}
+
+.yantra-up polygon {
+  stroke: rgba(233, 199, 126, 0.72);
+}
+
+.yantra-down polygon {
+  stroke: rgba(229, 132, 155, 0.68);
+}
+
+.yantra-bindu {
+  fill: #f4efe6;
+  filter: drop-shadow(0 0 12px rgba(233, 199, 126, 0.75));
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(95, 163, 160, 0.12), transparent 26%),
+    radial-gradient(circle at 86% 12%, rgba(229, 132, 155, 0.14), transparent 28%),
+    radial-gradient(circle at 52% 84%, rgba(143, 178, 122, 0.1), transparent 32%),
+    linear-gradient(180deg, #0a0505, #16090b 46%, #0a0505);
+}
+
+.hero {
+  min-height: 100svh;
+  align-items: stretch;
+  padding: 0;
+}
+
+.hero-visual {
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.82) 0%, rgba(5, 5, 5, 0.38) 42%, rgba(5, 5, 5, 0.12) 72%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.18), rgba(5, 5, 5, 0.78)),
+    var(--hero-image) center / cover;
+  filter: saturate(1.08) brightness(0.86) contrast(1.04);
+  transform: none;
+}
+
+.hero-veils {
+  background:
+    radial-gradient(circle at 72% 58%, rgba(229, 132, 155, 0.34), transparent 20%),
+    radial-gradient(circle at 80% 28%, rgba(233, 199, 126, 0.18), transparent 22%),
+    radial-gradient(circle at 24% 74%, rgba(143, 178, 122, 0.14), transparent 28%),
+    linear-gradient(180deg, transparent 48%, rgba(5, 5, 5, 0.92));
+}
+
+.hero-content {
+  width: min(1260px, calc(100% - 48px));
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.55fr);
+  gap: clamp(30px, 5vw, 82px);
+  align-items: end;
+  padding: 124px 0 56px;
+  text-align: left;
+}
+
+.hero-content > .label,
+.hero-title,
+.hero-subheadline,
+.hero-body,
+.hero-invitation-fork,
+.hero-actions {
+  grid-column: 1;
+}
+
+.hero-title,
+.hero-subheadline,
+.hero-body {
+  margin-left: 0;
+}
+
+.hero-title {
+  max-width: 720px;
+  font-size: clamp(4.4rem, 8.4vw, 9.4rem);
+  text-wrap: balance;
+}
+
+.hero-subheadline {
+  max-width: 620px;
+  color: rgba(244, 239, 230, 0.86);
+}
+
+.hero-body {
+  max-width: 520px;
+  color: rgba(244, 239, 230, 0.74);
+}
+
+.portal-gallery {
+  grid-column: 2;
+  grid-row: 1 / span 6;
+  align-self: center;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: 0;
+}
+
+.portal-gallery-frame {
+  min-height: 138px;
+  border-radius: 999px 999px 18px 18px;
+  border-color: rgba(240, 196, 208, 0.24);
+  background: rgba(240, 196, 208, 0.07);
+}
+
+.portal-gallery-frame:first-child {
+  min-height: 250px;
+}
+
+.portal-gallery-frame:nth-child(2) {
+  transform: translateX(-42px);
+  border-radius: 22px 999px 999px 22px;
+}
+
+.portal-gallery-frame:nth-child(3) {
+  transform: translateX(24px);
+  border-radius: 999px 22px 22px 999px;
+}
+
+.portal-gallery-frame:nth-child(4) {
+  transform: translateX(-12px);
+  border-radius: 22px;
+}
+
+.portal-gallery-frame img {
+  filter: saturate(0.96) brightness(0.86);
+}
+
+.hero-invitation-fork {
+  width: min(680px, 100%);
+  margin: 34px 0 0;
+}
+
+.invitation-door {
+  min-height: 112px;
+  border-color: rgba(240, 196, 208, 0.24);
+  background:
+    radial-gradient(circle at 92% 14%, rgba(229, 132, 155, 0.2), transparent 36%),
+    linear-gradient(150deg, rgba(42, 18, 22, 0.76), rgba(5, 5, 5, 0.68));
+}
+
+.invitation-door:nth-child(1) {
+  border-color: rgba(233, 199, 126, 0.28);
+  background:
+    radial-gradient(circle at 92% 14%, rgba(233, 199, 126, 0.2), transparent 36%),
+    linear-gradient(150deg, rgba(42, 18, 22, 0.78), rgba(14, 24, 18, 0.56));
+}
+
+.invitation-door:nth-child(2) {
+  border-color: rgba(240, 196, 208, 0.24);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--gold-lit), var(--shakti-pink));
+  color: #1b080a;
+  box-shadow:
+    rgba(229, 132, 155, 0.3) 0 0 36px,
+    rgba(233, 199, 126, 0.18) 0 18px 48px;
+}
+
+.button-secondary {
+  border-color: rgba(143, 178, 122, 0.3);
+  background: rgba(11, 25, 20, 0.48);
+}
+
+.button-tertiary {
+  border-color: rgba(95, 163, 160, 0.28);
+  background: rgba(95, 163, 160, 0.1);
+}
+
+.founder-presence {
+  background:
+    radial-gradient(circle at 70% 18%, rgba(229, 132, 155, 0.24), transparent 30%),
+    radial-gradient(circle at 20% 76%, rgba(143, 178, 122, 0.2), transparent 36%),
+    linear-gradient(180deg, #120707, rgba(36, 18, 20, 0.96) 52%, rgba(14, 24, 18, 0.92));
+}
+
+.founder-portrait figure {
+  border-radius: 52% 52% 10px 10px;
+  border-color: rgba(240, 196, 208, 0.24);
+}
+
+.founder-portrait img {
+  filter: saturate(1.02) contrast(1.02) brightness(0.96);
+}
+
+.founder-context-image {
+  border-color: rgba(143, 178, 122, 0.28);
+  border-radius: 999px 999px 12px 12px;
+}
+
+.philosophy {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(233, 199, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #14080a, #0b0506 48%, #111b14);
+}
+
+.ritual-card {
+  min-height: 600px;
+  border-radius: 999px 999px 24px 24px;
+  border-color: rgba(233, 199, 126, 0.24);
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.04), rgba(5, 5, 5, 0.76)),
+    radial-gradient(circle at 72% 18%, rgba(233, 199, 126, 0.16), transparent 34%),
+    var(--ritual-image, radial-gradient(circle at 50% 30%, rgba(196, 161, 90, 0.18), rgba(5, 5, 5, 0.8))) center / cover;
+}
+
+.ritual-card h3 {
+  margin-top: 330px;
+}
+
+.authority-section {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.94) 0 28%, rgba(21, 38, 29, 0.78) 28% 52%, rgba(44, 20, 28, 0.8) 52% 76%, rgba(37, 30, 18, 0.84)),
+    #0a0505;
+}
+
+.authority-grid {
+  border-color: rgba(244, 239, 230, 0.08);
+}
+
+.authority-pillar {
+  min-height: 245px;
+  background:
+    linear-gradient(180deg, rgba(244, 239, 230, 0.03), rgba(5, 5, 5, 0.18)),
+    rgba(5, 5, 5, 0.24);
+}
+
+.authority-pillar:nth-child(1) {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(121, 167, 186, 0.18), transparent 36%),
+    rgba(5, 5, 5, 0.26);
+}
+
+.authority-pillar:nth-child(2) {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(229, 132, 155, 0.18), transparent 34%),
+    rgba(42, 18, 22, 0.28);
+}
+
+.authority-pillar:nth-child(3) {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(195, 90, 46, 0.18), transparent 34%),
+    rgba(5, 5, 5, 0.34);
+}
+
+.authority-pillar:nth-child(4) {
+  background:
+    radial-gradient(circle at 74% 20%, rgba(233, 199, 126, 0.22), transparent 34%),
+    radial-gradient(circle at 18% 86%, rgba(229, 132, 155, 0.16), transparent 34%),
+    rgba(42, 18, 22, 0.32);
+}
+
+.authority-pillar:nth-child(5) {
+  background:
+    radial-gradient(circle at 80% 18%, rgba(143, 178, 122, 0.2), transparent 34%),
+    rgba(11, 25, 20, 0.34);
+}
+
+.authority-pillar:nth-child(6) {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(95, 163, 160, 0.18), transparent 34%),
+    rgba(20, 24, 28, 0.34);
+}
+
+.readiness-section {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(95, 163, 160, 0.14), transparent 28%),
+    radial-gradient(circle at 82% 76%, rgba(229, 132, 155, 0.12), transparent 30%),
+    linear-gradient(180deg, #050505, #0f1a14 48%, #130709);
+}
+
+.readiness-plane {
+  border-color: rgba(143, 178, 122, 0.24);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(143, 178, 122, 0.14), transparent 26%),
+    radial-gradient(circle at 82% 12%, rgba(233, 199, 126, 0.14), transparent 30%),
+    linear-gradient(145deg, rgba(13, 30, 24, 0.78), rgba(42, 18, 22, 0.72));
+}
+
+.readiness-map-dot {
+  background: var(--leaf);
+  box-shadow: rgba(143, 178, 122, 0.72) 0 0 18px;
+}
+
+.pathway {
+  background:
+    radial-gradient(circle at 20% 16%, rgba(229, 132, 155, 0.13), transparent 28%),
+    radial-gradient(circle at 82% 74%, rgba(233, 199, 126, 0.12), transparent 28%),
+    linear-gradient(180deg, #130709, rgba(18, 28, 20, 0.92));
+}
+
+.pathway-grid {
+  gap: 14px;
+  border: 0;
+  background: transparent;
+}
+
+.pathway-card {
+  border: 1px solid rgba(244, 239, 230, 0.12);
+  border-radius: 999px 999px 18px 18px;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.2), rgba(5, 5, 5, 0.68)),
+    rgba(42, 18, 22, 0.36);
+}
+
+.pathway-card:nth-child(1) {
+  border-color: rgba(95, 163, 160, 0.24);
+}
+
+.pathway-card:nth-child(2) {
+  border-color: rgba(143, 178, 122, 0.26);
+}
+
+.pathway-card:nth-child(3) {
+  border-color: rgba(229, 132, 155, 0.3);
+}
+
+.pathway-card:nth-child(4) {
+  border-color: rgba(233, 199, 126, 0.3);
+}
+
+.knowledge-chamber-shell {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(95, 163, 160, 0.12), transparent 24%),
+    radial-gradient(circle at 84% 14%, rgba(229, 132, 155, 0.14), transparent 24%),
+    #050505;
+}
+
+.knowledge-chamber {
+  grid-template-columns: minmax(220px, 0.62fr) minmax(260px, 0.48fr) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 48px);
+  width: min(1220px, 100%);
+  isolation: isolate;
+  background: #130709;
+}
+
+.knowledge-chamber::before,
+.knowledge-chamber::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+
+.knowledge-chamber::before {
+  z-index: -2;
+  background: #130709;
+}
+
+.knowledge-chamber::after {
+  z-index: -1;
+  background:
+    radial-gradient(circle at 42% 36%, var(--chamber-glow), transparent 34%),
+    radial-gradient(circle at 78% 20%, rgba(233, 199, 126, 0.1), transparent 28%),
+    linear-gradient(145deg, rgba(42, 18, 22, 0.7), rgba(5, 5, 5, 0.86));
+}
+
+.chamber-visual {
+  position: relative;
+  min-height: 420px;
+  align-self: stretch;
+  border: 1px solid rgba(244, 239, 230, 0.1);
+  border-radius: 999px 999px 22px 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 38%, var(--chamber-glow), transparent 38%),
+    linear-gradient(180deg, rgba(244, 239, 230, 0.05), rgba(5, 5, 5, 0.5));
+}
+
+.chamber-symbol {
+  position: absolute;
+  display: block;
+  inset: 18%;
+  border: 1px solid rgba(244, 239, 230, 0.18);
+}
+
+.chamber-symbol-main {
+  border-radius: 999px 999px 18px 18px;
+  background:
+    radial-gradient(circle at 48% 50%, rgba(244, 239, 230, 0.12), transparent 18%),
+    radial-gradient(circle at 50% 54%, var(--chamber-glow), transparent 48%);
+}
+
+.chamber-symbol-secondary {
+  inset: auto 16% 18% 16%;
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg, transparent, rgba(244, 239, 230, 0.36), transparent);
+  box-shadow: 0 24px 90px rgba(95, 163, 160, 0.18);
+}
+
+.knowledge-chamber-neuroscience .chamber-visual {
+  --chamber-glow: rgba(121, 167, 186, 0.24);
+  background:
+    linear-gradient(90deg, rgba(244, 239, 230, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(244, 239, 230, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 54% 32%, rgba(233, 199, 126, 0.16), transparent 34%),
+    rgba(12, 18, 21, 0.82);
+  background-size: 44px 44px, 44px 44px, auto, auto;
+}
+
+.knowledge-chamber-somatics .chamber-visual {
+  --chamber-glow: rgba(229, 132, 155, 0.22);
+}
+
+.knowledge-chamber-shadow-work .chamber-visual {
+  --chamber-glow: rgba(195, 90, 46, 0.24);
+  border-radius: 24px;
+}
+
+.knowledge-chamber-classical-shakti-tantra .chamber-visual {
+  display: grid;
+  place-items: center;
+  border-color: rgba(233, 199, 126, 0.26);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(229, 132, 155, 0.18), transparent 38%),
+    radial-gradient(circle at 50% 50%, rgba(233, 199, 126, 0.12), transparent 58%),
+    rgba(42, 18, 22, 0.52);
+}
+
+.chamber-yantra {
+  width: min(100%, 360px);
+  padding: 26px;
+  filter: drop-shadow(0 0 42px rgba(229, 132, 155, 0.22));
+}
+
+.knowledge-chamber-diaspora-identity .chamber-visual {
+  --chamber-glow: rgba(143, 178, 122, 0.24);
+  background:
+    radial-gradient(circle at 50% 40%, rgba(143, 178, 122, 0.18), transparent 42%),
+    linear-gradient(180deg, rgba(244, 239, 230, 0.04), rgba(5, 5, 5, 0.58));
+}
+
+.knowledge-chamber-retreat-practice .chamber-visual {
+  --chamber-glow: rgba(95, 163, 160, 0.22);
+  border-radius: 24px 999px 999px 24px;
+}
+
+.chamber-actions {
+  grid-column: 3;
+}
+
+@media (max-width: 980px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    align-items: end;
+    padding-top: 112px;
+  }
+
+  .portal-gallery {
+    grid-column: 1;
+    grid-row: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 26px;
+  }
+
+  .portal-gallery-frame,
+  .portal-gallery-frame:first-child,
+  .portal-gallery-frame:nth-child(2),
+  .portal-gallery-frame:nth-child(3),
+  .portal-gallery-frame:nth-child(4) {
+    min-height: 132px;
+    transform: none;
+    border-radius: 18px;
+  }
+
+  .knowledge-chamber {
+    grid-template-columns: 1fr;
+  }
+
+  .chamber-visual {
+    min-height: 300px;
+    order: -1;
+  }
+
+  .chamber-actions {
+    grid-column: 1;
+  }
+}
+
+@media (min-width: 981px) {
+  .hero-title {
+    font-size: clamp(3.6rem, 6vw, 6.7rem);
+  }
+
+  .hero-subheadline,
+  .hero-body {
+    margin-top: 14px;
+  }
+
+  .hero-invitation-fork {
+    margin-top: 18px;
+  }
+
+  .invitation-door {
+    min-height: 94px;
+    padding: 16px 18px;
+  }
+
+  .hero-actions {
+    margin-top: 16px;
+  }
+
+  .portal-gallery-frame:first-child {
+    min-height: 188px;
+  }
+
+  .portal-gallery-frame {
+    min-height: 126px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-content {
+    width: min(100% - 32px, 100%);
+    padding: 108px 0 34px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.05rem, 14.5vw, 4.7rem);
+  }
+
+  .hero-invitation-fork {
+    grid-template-columns: 1fr;
+    order: 4;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .invitation-door {
+    min-height: 78px;
+  }
+
+  .hero-body {
+    order: 5;
+  }
+
+  .hero-actions {
+    order: 7;
+    justify-content: stretch;
+    margin-top: 14px;
+  }
+
+  .portal-gallery {
+    order: 8;
+    margin-top: 18px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .portal-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-gallery-frame:nth-child(n + 3) {
+    display: none;
+  }
+
+  .knowledge-chamber {
+    padding-top: 82px;
+  }
+
+  .chamber-visual {
+    min-height: 260px;
+  }
+}
+
 @media (max-width: 1040px) {
   .nav-links,
   .nav-start {
