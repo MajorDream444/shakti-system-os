@@ -3,7 +3,7 @@
 Status: LOCAL IMPLEMENTATION VERIFIED, PREVIEW DEPLOYMENT PENDING  
 Branch: `codex/sprint-12f-sheetal-offer-path`  
 Base: current `origin/main` at `94718de` after PR #16 merged the stacked Sprint 12C-12E work.  
-Local commit at report time: `c898c50`
+Implementation commit before report finalization: `670bb52532698f923b4a1c004544569f003044bb`. Final branch head is recorded in PR metadata and the Codex handoff.
 
 ## Scope
 
