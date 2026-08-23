@@ -1,6 +1,7 @@
 # Graphify Refresh Blocker
 
-Prepared: 2026-08-15
+Prepared: 2026-08-15  
+Updated: 2026-08-23
 
 ## Status
 
@@ -11,6 +12,7 @@ Sprint 12A attempted one bounded refresh after frozen experience implementation 
 Sprint 12A attempted one additional bounded refresh after the founder presence and Playwright visual-review additions and stopped it cleanly after 30 seconds with no stdout.
 Sprint 12D attempted one bounded refresh after the luminous art-direction pass and stopped cleanly after 60 seconds with no stdout.
 Sprint 12E attempted one bounded refresh after the legibility/sacred-presence pass and stopped it cleanly after two 30-second silent windows.
+Sprint 12F attempted one bounded refresh after the Sheetal acceptance/offer-path pass and stopped it cleanly after one 30-second silent window plus one 10-second silent poll.
 
 Command:
 
@@ -27,18 +29,26 @@ Sprint 12A: shell process stopped after 30 seconds
 Sprint 12A founder/Playwright addendum: shell process stopped after 30 seconds
 Sprint 12D: Python subprocess timeout: 60 seconds
 Sprint 12E: shell process interrupted after 60 seconds
+Sprint 12F: shell process interrupted after 40 seconds
 ```
 
 Result:
 
 ```text
 Timed out after the bounded execution window.
-No stdout was emitted before timeout.
+No stdout was emitted before timeout in most runs.
 ```
 
 Prior Sprint 11C attempts reached code re-extraction/cache reading and then remained silent for several minutes before clean interruption.
 Sprint 12A emitted `Re-extracting code files in . (no LLM needed)...` and stalled while reading a cached JSON entry in `graphify/cache.py::load_cached`.
 Sprint 12E emitted `Re-extracting code files in . (no LLM needed)...` only after interruption and again showed the stall inside `graphify/cache.py::load_cached`, reading a cached JSON entry.
+Sprint 12F emitted `Re-extracting code files in . (no LLM needed)...` after interruption and again showed the stall inside `graphify/cache.py::load_cached`, reading cached extraction data:
+
+```text
+graphify/cache.py load_cached
+json.loads(entry.read_text(encoding="utf-8"))
+KeyboardInterrupt
+```
 
 ## Classification
 
@@ -57,7 +67,7 @@ graphify-out/GRAPH_REPORT.md
 Built from commit: 49ebd475
 ```
 
-The report is stale relative to current Sprint 11C-11F changes.
+The report is stale relative to current Sprint 11C-12F changes.
 
 ## Recommended Follow-Up
 

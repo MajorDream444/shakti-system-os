@@ -15,7 +15,6 @@ import {
   Sparkles,
   CircleDot,
 } from 'lucide-react';
-import { ShriYantraPreview } from '../../components/ShriYantraPreview';
 
 interface ThresholdDrawerProps {
   isOpen: boolean;
@@ -93,7 +92,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
 
               <div className="mb-6">
                 <div className="threshold-map-seal" aria-hidden="true">
-                  <ShriYantraPreview variant="orientation" decorative />
+                  <span className="threshold-map-lotus" />
                 </div>
                 <h3 className="font-serif text-3xl text-[#F6EFE7]">Where are you in the sanctuary?</h3>
                 <p className="font-sans text-sm text-[#C8B7A5] mt-2 leading-relaxed">

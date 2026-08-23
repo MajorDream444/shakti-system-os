@@ -4,7 +4,6 @@ import { ChevronRight, Flag } from 'lucide-react';
 import { RoomType, SeekerState } from '../types';
 import { SANCTUARY_LANDMARKS } from '../data';
 import { PrayerLamp } from './PrayerLamp';
-import { ShriYantraPreview } from '../../components/ShriYantraPreview';
 
 interface GatesRoomProps {
   onNavigate: (room: RoomType) => void;
@@ -50,9 +49,7 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
 
       {/* Background Breathing Glow */}
       <div className="absolute left-1/2 top-[-90px] -translate-x-1/2 w-[340px] h-[340px] rounded-full bg-gradient-to-b from-[#E27A3F]/15 to-transparent pointer-events-none filter blur-3xl opacity-60 z-0 animate-[glowpulse_12s_ease-in-out_infinite]" />
-      <div className="shala-threshold-yantra" aria-hidden="true">
-        <ShriYantraPreview title="Shri Yantra geometry" />
-      </div>
+      <div className="shala-threshold-seal" aria-hidden="true" />
 
       {/* Header */}
       <div className="w-full flex justify-between items-center z-10">

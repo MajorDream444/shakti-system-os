@@ -290,6 +290,19 @@
   opacity: 0.9;
 }
 
+.begin-ascent-seal {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid rgba(233, 199, 126, 0.48);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(233, 199, 126, 0.85) 0 2px, transparent 3px),
+    radial-gradient(ellipse at 50% 28%, rgba(240, 196, 208, 0.5) 0 24%, transparent 26%),
+    radial-gradient(ellipse at 30% 58%, rgba(143, 178, 122, 0.32) 0 24%, transparent 26%),
+    radial-gradient(ellipse at 70% 58%, rgba(143, 178, 122, 0.32) 0 24%, transparent 26%);
+  transform: rotate(90deg);
+}
+
 .begin-ascent-line {
   position: absolute;
   right: 0.43rem;
@@ -630,11 +643,13 @@
   background: linear-gradient(90deg, transparent, rgba(95, 163, 160, 0.58), rgba(229, 132, 155, 0.28), rgba(233, 199, 126, 0.22), transparent);
 }
 
-.begin-yantra-threshold {
+.begin-yantra-threshold,
+.begin-lotus-threshold {
   position: absolute;
   right: clamp(1.5rem, 8vw, 8rem);
   bottom: clamp(5rem, 13vh, 9rem);
   width: min(28vw, 320px);
+  aspect-ratio: 1;
   min-width: 190px;
   opacity: 0.08;
   pointer-events: none;
@@ -642,16 +657,30 @@
   filter:
     drop-shadow(0 0 36px rgba(233, 199, 126, 0.2))
     drop-shadow(0 0 64px rgba(229, 132, 155, 0.13));
+  border: 1px solid rgba(233, 199, 126, 0.18);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(233, 199, 126, 0.72) 0 4px, transparent 5px),
+    radial-gradient(ellipse at 50% 18%, rgba(240, 196, 208, 0.36) 0 15%, transparent 17%),
+    radial-gradient(ellipse at 28% 42%, rgba(229, 132, 155, 0.28) 0 18%, transparent 20%),
+    radial-gradient(ellipse at 72% 42%, rgba(229, 132, 155, 0.28) 0 18%, transparent 20%),
+    radial-gradient(ellipse at 36% 72%, rgba(143, 178, 122, 0.22) 0 19%, transparent 21%),
+    radial-gradient(ellipse at 64% 72%, rgba(143, 178, 122, 0.22) 0 19%, transparent 21%);
 }
 
 .begin-station-4 .begin-yantra-threshold,
-.begin-station-5 .begin-yantra-threshold {
+.begin-station-5 .begin-yantra-threshold,
+.begin-station-4 .begin-lotus-threshold,
+.begin-station-5 .begin-lotus-threshold {
   opacity: 0.13;
 }
 
 .begin-station-6 .begin-yantra-threshold,
 .begin-station-7 .begin-yantra-threshold,
-.begin-station-8 .begin-yantra-threshold {
+.begin-station-8 .begin-yantra-threshold,
+.begin-station-6 .begin-lotus-threshold,
+.begin-station-7 .begin-lotus-threshold,
+.begin-station-8 .begin-lotus-threshold {
   opacity: 0.18;
 }
 
@@ -687,7 +716,8 @@
     border-radius: 20px;
   }
 
-  .begin-yantra-threshold {
+  .begin-yantra-threshold,
+  .begin-lotus-threshold {
     right: -4rem;
     bottom: 7rem;
     width: 62vw;

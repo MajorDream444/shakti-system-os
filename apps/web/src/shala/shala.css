@@ -134,12 +134,14 @@
 }
 
 /* Sprint 12D — Shala luminous threshold art direction */
-.shala-threshold-yantra {
+.shala-threshold-yantra,
+.shala-threshold-seal {
   position: absolute;
   right: clamp(1rem, 7vw, 7rem);
   top: clamp(6rem, 17vh, 10rem);
   z-index: 1;
   width: min(34vw, 430px);
+  aspect-ratio: 1;
   min-width: 260px;
   pointer-events: none;
   opacity: 0.74;
@@ -147,6 +149,14 @@
   filter:
     drop-shadow(0 0 34px rgba(233, 199, 126, 0.22))
     drop-shadow(0 0 58px rgba(229, 132, 155, 0.14));
+  border: 1px solid rgba(233, 199, 126, 0.18);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(233, 199, 126, 0.55) 0 4px, transparent 5px),
+    radial-gradient(ellipse at 50% 18%, rgba(240, 196, 208, 0.36) 0 14%, transparent 16%),
+    radial-gradient(ellipse at 26% 44%, rgba(229, 132, 155, 0.28) 0 18%, transparent 20%),
+    radial-gradient(ellipse at 74% 44%, rgba(229, 132, 155, 0.28) 0 18%, transparent 20%),
+    radial-gradient(ellipse at 50% 76%, rgba(143, 178, 122, 0.22) 0 20%, transparent 22%);
 }
 
 .shala-threshold-yantra .shri-yantra-preview {
@@ -206,8 +216,22 @@
     drop-shadow(0 0 26px rgba(229, 132, 155, 0.12));
 }
 
+.threshold-map-lotus {
+  display: block;
+  width: 54px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(233, 199, 126, 0.28);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(233, 199, 126, 0.75) 0 3px, transparent 4px),
+    radial-gradient(ellipse at 50% 24%, rgba(240, 196, 208, 0.42) 0 18%, transparent 20%),
+    radial-gradient(ellipse at 30% 58%, rgba(143, 178, 122, 0.34) 0 20%, transparent 22%),
+    radial-gradient(ellipse at 70% 58%, rgba(143, 178, 122, 0.34) 0 20%, transparent 22%);
+}
+
 @media (max-width: 760px) {
-  .shala-threshold-yantra {
+  .shala-threshold-yantra,
+  .shala-threshold-seal {
     top: 5.4rem;
     right: -5rem;
     width: 72vw;

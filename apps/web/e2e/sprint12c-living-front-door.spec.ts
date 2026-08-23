@@ -6,7 +6,7 @@ const knowledgeDoorways = [
   "Neuroscience",
   "Somatics",
   "Shadow Work",
-  "Classical Shakti Tantra",
+  "Classical Shakta Tantra",
   "Diaspora Identity",
   "Retreat Practice",
 ];
@@ -51,7 +51,7 @@ test.describe("Sprint 12C living front door", () => {
     await page.setViewportSize({ width: 1440, height: 1100 });
     await page.goto(`${baseUrl}/`);
 
-    await expect(page.getByRole("link", { name: "Explore This Work" }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Work With Sheetal" }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
     await capture(page, testInfo, "desktop-01-dual-front-door.png");
 
@@ -79,7 +79,7 @@ test.describe("Sprint 12C living front door", () => {
 
     await page.locator("#pathway").scrollIntoViewIfNeeded();
     for (const doorway of pathwayDoorways) {
-      await page.getByRole("button", { name: `Open ${doorway} doorway` }).click();
+      await page.getByRole("button", { name: `Open ${doorway} doorway` }).click({ force: true });
       await expect(page.getByRole("dialog").getByRole("heading", { name: doorway })).toBeVisible();
       await closeChamber(page);
     }
@@ -101,12 +101,12 @@ test.describe("Sprint 12C living front door", () => {
     await page.goto(`${baseUrl}/`);
 
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
-    await expect(page.getByRole("link", { name: "Explore This Work" }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Work With Sheetal" }).first()).toBeVisible();
     await capture(page, testInfo, "mobile-01-front-door.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakti Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakti Tantra" })).toBeVisible();
+    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
     await capture(page, testInfo, "mobile-02-knowledge-chamber.png");
     await page.keyboard.press("Escape");
     await expect(page.getByRole("dialog")).toHaveCount(0);

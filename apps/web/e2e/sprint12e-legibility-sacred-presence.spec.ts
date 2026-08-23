@@ -43,7 +43,7 @@ async function attachRubric(testInfo: TestInfo, title: string, answers: RubricAn
 async function beginToMid(page: Page, testInfo: TestInfo, prefix: string) {
   await page.goto(`${baseUrl}/begin`);
   await expect(page.getByText("Arrival").first()).toBeVisible();
-  await expect(page.locator(".begin-yantra-threshold .shri-yantra-preview")).toHaveCount(1);
+  await expect(page.locator(".begin-lotus-threshold")).toHaveCount(1);
   await capture(page, testInfo, `${prefix}-begin-arrival.png`);
 
   await page.locator("button").filter({ hasText: /begin|enter|continue/i }).first().click();
@@ -70,23 +70,22 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await page.goto(`${baseUrl}/`);
 
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
-    await expect(page.locator(".hero-yantra-atmosphere .shri-yantra-atmosphere")).toHaveCount(1);
-    await expect(page.locator(".hero-yantra-seal .shri-yantra-seal")).toHaveCount(1);
+    await expect(page.locator(".hero-lotus-seal")).toHaveCount(1);
     await capture(page, testInfo, "desktop-home-legibility.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakti Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").locator(".shri-yantra-devotional")).toBeVisible();
-    await expect(page.getByRole("dialog").locator(".yantra-triangles polygon")).toHaveCount(9);
+    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
+    await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toHaveCount(0);
     await capture(page, testInfo, "desktop-knowledge-chamber-yantra.png");
 
     await beginToReveal(page, testInfo, "desktop");
 
     await page.goto(`${baseUrl}/shala`);
-    await expect(page.locator("#gates-room .shala-threshold-yantra .shri-yantra-preview")).toHaveCount(1);
+    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(1);
     await capture(page, testInfo, "desktop-shala-arrival.png");
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
-    await expect(page.locator(".threshold-map-seal .shri-yantra-orientation")).toHaveCount(1);
+    await expect(page.locator(".threshold-map-seal .threshold-map-lotus")).toHaveCount(1);
     await capture(page, testInfo, "desktop-shala-map.png");
 
     await page.locator("#nav-room-retreat").click();
@@ -120,14 +119,14 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
         evidence: "Home and Shala screenshots keep foreground text separated from photography with controlled overlays.",
       },
       {
-        question: "Is Shri Yantra visibly part of the system across multiple surfaces?",
+        question: "Is sacred-symbol usage visibly present without claiming an approved Shri Yantra?",
         status: "YES",
-        evidence: "Home atmosphere/seal, Begin threshold, chamber devotional, Shala threshold, and map orientation roles are present.",
+        evidence: "Home seal, Begin threshold, chamber approval boundary, Shala threshold, and map orientation roles are present.",
       },
       {
-        question: "Does Yantra usage vary rather than appearing copy-pasted?",
+        question: "Does symbolic usage vary rather than appearing copy-pasted?",
         status: "YES",
-        evidence: "Different role classes are present: atmosphere, seal, threshold, devotional, and orientation.",
+        evidence: "Different role classes are present: home seal, threshold, approval boundary, and orientation.",
       },
       {
         question: "Does the experience feel more like a place than a slide deck?",
@@ -172,12 +171,13 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await page.goto(`${baseUrl}/`);
 
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
-    await expect(page.locator(".hero-yantra-atmosphere .shri-yantra-atmosphere")).toHaveCount(1);
+    await expect(page.locator(".hero-lotus-seal")).toHaveCount(1);
     await capture(page, testInfo, "mobile-home-legibility.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakti Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").locator(".shri-yantra-devotional")).toBeVisible();
+    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
+    await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toHaveCount(0);
     await capture(page, testInfo, "mobile-knowledge-chamber-yantra.png");
 
     await beginToReveal(page, testInfo, "mobile");
@@ -185,7 +185,7 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await page.goto(`${baseUrl}/shala`);
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
     await expect(page.locator("#threshold-drawer")).toBeVisible();
-    await expect(page.locator(".threshold-map-seal .shri-yantra-orientation")).toHaveCount(1);
+    await expect(page.locator(".threshold-map-seal .threshold-map-lotus")).toHaveCount(1);
     await capture(page, testInfo, "mobile-shala-map.png");
 
     await page.locator("#nav-room-retreat").click();
@@ -219,14 +219,14 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
         evidence: "Mobile home keeps the Start doorway and text readable over the photographic field.",
       },
       {
-        question: "Is Shri Yantra visibly part of the system across multiple surfaces?",
+        question: "Is sacred-symbol usage visibly present without claiming an approved Shri Yantra?",
         status: "YES",
-        evidence: "Home, Begin, chamber, and Shala map surfaces expose different Yantra roles.",
+        evidence: "Home, Begin, chamber boundary, and Shala map surfaces expose different symbolic roles.",
       },
       {
-        question: "Does Yantra usage vary rather than appearing copy-pasted?",
+        question: "Does symbolic usage vary rather than appearing copy-pasted?",
         status: "YES",
-        evidence: "Mobile uses atmospheric, threshold, devotional, and orientation roles at different scale and placement.",
+        evidence: "Mobile uses home, threshold, chamber boundary, and orientation roles at different scale and placement.",
       },
       {
         question: "Does the experience feel more like a place than a slide deck?",

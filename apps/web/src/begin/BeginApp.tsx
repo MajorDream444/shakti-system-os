@@ -17,7 +17,6 @@ import { STORAGE_KEYS } from '../constants/storage';
 import { PersistenceService } from '../services/PersistenceService';
 import './begin.css';
 import { portalImages } from '../components/PortalImageSlots';
-import { ShriYantraPreview } from '../components/ShriYantraPreview';
 
 function createBeginSessionId() {
   return `begin_${globalThis.crypto?.randomUUID?.() ?? Date.now().toString(36)}`;
@@ -247,9 +246,7 @@ export default function BeginApp() {
         <span className="begin-flora begin-flora-a" />
         <span className="begin-flora begin-flora-b" />
         <span className="begin-waterline" />
-        <span className="begin-yantra-threshold">
-          <ShriYantraPreview variant="threshold" decorative />
-        </span>
+        <span className="begin-lotus-threshold" />
       </div>
 
       {/* 1. Base Atmospheric Layer */}
@@ -278,7 +275,7 @@ export default function BeginApp() {
 
           <nav className="begin-ascent" aria-label="Your path toward Shakti Shala">
             <div className="begin-ascent-title">
-              <ShriYantraPreview variant="seal" decorative />
+              <span className="begin-ascent-seal" aria-hidden="true" />
               <span>Ascent</span>
             </div>
             <div className="begin-ascent-line" aria-hidden="true" />

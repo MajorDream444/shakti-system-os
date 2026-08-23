@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  BEGIN_PATH,
-  NAV_TARGETS,
-  SECTION_ANCHORS,
-} from "../constants/navigation";
+import { BEGIN_PATH, NAV_TARGETS } from "../constants/navigation";
 import { SCROLLED_NAV_THRESHOLD } from "../constants/animation";
 import { portalCopy } from "../data/portalCopy";
 import { useBodyScrollLock } from "../hooks/useBodyScrollLock";
@@ -24,7 +20,7 @@ export function Nav() {
   return (
     <>
       <nav className={`site-nav ${isScrolled ? "scrolled" : ""}`}>
-        <a className="nav-logo" href={SECTION_ANCHORS.hero} onClick={closeMenu}>
+        <a className="nav-logo" href="/" onClick={closeMenu}>
           SHAKTI PORTAL
         </a>
         <div className="nav-links" aria-label="Primary navigation">
@@ -35,7 +31,7 @@ export function Nav() {
           ))}
         </div>
         <a className="nav-start" href={BEGIN_PATH}>
-          Start
+          Start Path
         </a>
         <button
           className={`menu-button ${isMenuOpen ? "active" : ""}`}

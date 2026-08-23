@@ -1,7 +1,6 @@
 import { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
 import type { LivingDoorway } from "../data/livingDoorways";
-import { ShriYantraPreview } from "./ShriYantraPreview";
 
 type KnowledgeChamberProps = {
   chamber: LivingDoorway | null;
@@ -105,15 +104,11 @@ export function KnowledgeChamber({
           <p>{chamber.summary}</p>
         </div>
 
-        <div className="chamber-visual" aria-hidden={chamber.id !== "classical-shakti-tantra"}>
-          {chamber.id === "classical-shakti-tantra" ? (
-            <ShriYantraPreview className="chamber-yantra" title="Shri Yantra geometry" />
-          ) : (
-            <>
-              <span className="chamber-symbol chamber-symbol-main" />
-              <span className="chamber-symbol chamber-symbol-secondary" />
-            </>
-          )}
+        <div className="chamber-visual" aria-hidden="true">
+          <>
+            <span className="chamber-symbol chamber-symbol-main" />
+            <span className="chamber-symbol chamber-symbol-secondary" />
+          </>
         </div>
 
         <div className="chamber-sections">
