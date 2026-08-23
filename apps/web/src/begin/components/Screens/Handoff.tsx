@@ -163,7 +163,7 @@ export default function Handoff({
               <h2 className="begin-heading text-3xl md:text-5xl font-light mb-4 serif text-stone-100 italic">
                 Would you like this doorway sent to you?
               </h2>
-              <p className="begin-body text-base text-ash/64 font-light max-w-lg leading-relaxed">
+              <p className="begin-body text-base text-ash/[0.85] font-normal max-w-lg leading-relaxed">
                 Receive your next step, or continue privately into Shakti Shala.
               </p>
             </div>
@@ -176,25 +176,25 @@ export default function Handoff({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="First name"
-                  className="w-full bg-stone-950/45 border border-ash/10 hover:border-ash/15 focus:border-red-800 p-4.5 text-sm text-ash placeholder:text-ash/25 outline-none transition-all duration-700 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.85)] font-light"
+                  className="w-full bg-stone-950/60 border border-ash/[0.25] hover:border-ash/40 focus:border-[#E9C77E] p-4.5 text-base text-ash placeholder:text-ash/[0.52] outline-none transition-all duration-500 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.72)] font-normal"
                 />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email address (optional)"
-                  className="w-full bg-stone-950/45 border border-ash/10 hover:border-ash/15 focus:border-red-800 p-4.5 text-sm text-ash placeholder:text-ash/25 outline-none transition-all duration-700 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.85)] font-light"
+                  className="w-full bg-stone-950/60 border border-ash/[0.25] hover:border-ash/40 focus:border-[#E9C77E] p-4.5 text-base text-ash placeholder:text-ash/[0.52] outline-none transition-all duration-500 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.72)] font-normal"
                 />
                 <input
                   type="tel"
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(e.target.value)}
                   placeholder="WhatsApp (Optional)"
-                  className="w-full bg-stone-950/45 border border-ash/10 hover:border-ash/15 focus:border-red-800 p-4.5 text-sm text-ash placeholder:text-ash/25 outline-none transition-all duration-700 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.85)] font-light"
+                  className="w-full bg-stone-950/60 border border-ash/[0.25] hover:border-ash/40 focus:border-[#E9C77E] p-4.5 text-base text-ash placeholder:text-ash/[0.52] outline-none transition-all duration-500 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.72)] font-normal"
                 />
               </div>
 
-              <label className="flex items-start gap-3 text-left text-xs leading-relaxed text-ash/55">
+              <label className="flex items-start gap-3 text-left text-sm leading-relaxed text-ash/[0.82]">
                 <input
                   type="checkbox"
                   checked={consentAccepted}
@@ -204,7 +204,7 @@ export default function Handoff({
                 <span>I consent to share my Begin choices and contact details so the team can remember this doorway with care.</span>
               </label>
 
-              <label className="flex items-start gap-3 text-left text-xs leading-relaxed text-ash/55">
+              <label className="flex items-start gap-3 text-left text-sm leading-relaxed text-ash/[0.82]">
                 <input
                   type="checkbox"
                   checked={requestGuidance}
@@ -219,7 +219,7 @@ export default function Handoff({
                   value={requestMessage}
                   onChange={(e) => setRequestMessage(e.target.value)}
                   placeholder="Optional note for the team"
-                  className="w-full h-24 bg-stone-950/45 border border-ash/10 hover:border-ash/15 focus:border-red-800 p-4 text-sm text-ash placeholder:text-ash/25 outline-none transition-all duration-700 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.85)] font-light resize-none"
+                  className="w-full h-24 bg-stone-950/60 border border-ash/[0.25] hover:border-ash/40 focus:border-[#E9C77E] p-4 text-base text-ash placeholder:text-ash/[0.52] outline-none transition-all duration-500 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.72)] font-normal resize-none"
                 />
               )}
 
@@ -231,10 +231,10 @@ export default function Handoff({
                     scale: (!name || isLoading) ? 1 : 1.01,
                     transition: { duration: 1, ease: [0.25, 1, 0.5, 1] }
                   }}
-                  className={`w-full py-4.5 bg-stone-900/[0.25] border font-medium tracking-[0.2em] uppercase text-xs transition-all duration-700 rounded-sm cursor-pointer ${
+                  className={`w-full py-4.5 border font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm cursor-pointer ${
                     (!name || isLoading)
-                      ? 'border-ash/5 text-ash/30 cursor-not-allowed bg-transparent'
-                      : 'border-red-800/40 hover:border-red-700 text-red-400 shadow-[0_4px_20px_rgba(157,23,29,0.12)]'
+                      ? 'border-ash/[0.12] text-ash/45 cursor-not-allowed bg-stone-950/25'
+                      : 'border-[#E9C77E]/55 bg-[#4A1C22]/65 hover:border-[#E9C77E] text-[#F6EFE7] shadow-[0_4px_24px_rgba(233,199,126,0.16)]'
                   }`}
                 >
                   {isLoading ? 'Holding your path...' : consentAccepted && hasContact ? 'Save My Path' : 'Hold Privately'}
@@ -248,10 +248,10 @@ export default function Handoff({
                 scale: 1.02,
                 transition: { duration: 1, ease: [0.25, 1, 0.5, 1] }
               }}
-              className="w-full min-h-12 justify-center flex items-center gap-2 border border-ember/40 bg-ember/10 text-ash hover:text-white hover:border-ember/70 transition-colors px-5 py-3 cursor-pointer rounded-sm"
+              className="w-full min-h-12 justify-center flex items-center gap-2 border border-[#8FB27A]/45 bg-[#0E1A13]/58 text-[#F6EFE7] hover:text-white hover:border-[#8FB27A]/80 transition-colors px-5 py-3 cursor-pointer rounded-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="text-[11px] uppercase tracking-[0.18em]">Continue Without Sharing · Enter Shakti Shala</span>
+              <span className="text-sm uppercase tracking-[0.1em] font-bold">Continue Without Sharing · Enter Shakti Shala</span>
             </motion.button>
           </motion.div>
         ) : (
@@ -271,11 +271,11 @@ export default function Handoff({
               Your path is held.
             </h2>
 
-            <p className="text-base text-ash/70 font-light leading-relaxed mb-6">
+            <p className="text-base text-ash/[0.86] font-normal leading-relaxed mb-6">
               Thank you, <span className="text-red-400 font-medium">{name}</span>. {saveMessage || SAVE_COPY[saveTone]}
             </p>
 
-            <p className="text-sm text-ash/45 font-light italic mb-10">
+            <p className="text-sm text-ash/72 font-normal italic mb-10">
               {requestGuidance && requestSaved
                 ? 'Your request has been shared for human review.'
                 : 'Carry this quiet flame with you.'}
@@ -283,7 +283,7 @@ export default function Handoff({
 
             <a
               href={SHALA_PATH}
-              className="w-full mb-4 block text-center py-4 bg-red-950/20 border border-red-800/50 hover:border-red-700 text-red-400 hover:text-red-300 font-medium tracking-[0.2em] uppercase text-xs transition-all duration-700 rounded-sm shadow-[0_4px_20px_rgba(157,23,29,0.1)]"
+              className="w-full mb-4 block text-center py-4 bg-[#4A1C22]/70 border border-[#E9C77E]/45 hover:border-[#E9C77E] text-[#F6EFE7] hover:text-white font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm shadow-[0_4px_24px_rgba(233,199,126,0.16)]"
             >
               Enter Shakti Shala
             </a>
@@ -292,7 +292,7 @@ export default function Handoff({
               href="https://calendly.com/sheetalkandola/discovery-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full mb-4 block text-center py-4 bg-stone-900/[0.2] border border-ash/10 hover:border-red-800/40 text-ash/60 hover:text-red-400 font-medium tracking-[0.2em] uppercase text-xs transition-all duration-700 rounded-sm"
+              className="w-full mb-4 block text-center py-4 bg-stone-950/45 border border-ash/[0.28] hover:border-[#E5849B]/55 text-ash/[0.88] hover:text-[#F0C4D0] font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm"
             >
               Book a Discovery Call with Sheetal
             </a>
@@ -306,7 +306,7 @@ export default function Handoff({
                 scale: 1.01,
                 transition: { duration: 1, ease: [0.25, 1, 0.5, 1] }
               }}
-              className="w-full py-4.5 bg-stone-900/[0.2] border border-ash/10 hover:border-red-800/40 text-ash/60 hover:text-red-400 font-medium tracking-[0.2em] uppercase text-xs transition-all duration-700 rounded-sm cursor-pointer"
+              className="w-full py-4.5 bg-stone-950/40 border border-ash/[0.24] hover:border-[#E5849B]/45 text-ash/[0.82] hover:text-[#F0C4D0] font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm cursor-pointer"
             >
               Delete local journey
             </motion.button>

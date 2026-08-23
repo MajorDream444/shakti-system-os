@@ -3,6 +3,7 @@ import { BEGIN_PATH, SECTION_ANCHORS, SHALA_PATH } from "../constants/navigation
 import { portalCopy } from "../data/portalCopy";
 import { useHeroParallax } from "../hooks/useHeroParallax";
 import { PortalImageGallery, portalImages } from "./PortalImageSlots";
+import { ShriYantraPreview } from "./ShriYantraPreview";
 
 export function Hero() {
   const visualRef = useRef<HTMLDivElement>(null);
@@ -17,22 +18,28 @@ export function Hero() {
         style={{ "--hero-image": `url(${portalImages.hero})` } as CSSProperties}
       />
       <div className="hero-veils" aria-hidden="true" />
+      <div className="hero-yantra-atmosphere" aria-hidden="true">
+        <ShriYantraPreview variant="atmosphere" decorative />
+      </div>
       <div className="hero-content">
         <p className="label ember-label">{portalCopy.hero.eyebrow}</p>
+        <div className="hero-yantra-seal" aria-hidden="true">
+          <ShriYantraPreview variant="seal" decorative />
+        </div>
         <h1 className="hero-title">{portalCopy.hero.headline}</h1>
         <p className="hero-subheadline">{portalCopy.hero.subheadline}</p>
-        <p className="hero-body">{portalCopy.hero.body}</p>
         <PortalImageGallery />
         <div className="hero-invitation-fork" aria-label="Two ways to enter the work">
-          <a className="invitation-door" href={SECTION_ANCHORS.explore}>
-            <span>Explore This Work</span>
-            <small>Understand Sheetal's world before beginning.</small>
-          </a>
           <a className="invitation-door" href={BEGIN_PATH}>
             <span>Start Your Shakti Path</span>
             <small>Enter the eight-station threshold privately.</small>
           </a>
+          <a className="invitation-door" href={SECTION_ANCHORS.explore}>
+            <span>Explore This Work</span>
+            <small>Understand Sheetal's world before beginning.</small>
+          </a>
         </div>
+        <p className="hero-body">{portalCopy.hero.body}</p>
         <div className="hero-actions" aria-label="Primary actions">
           <a className="button button-primary" href={BEGIN_PATH}>
             {portalCopy.hero.primaryCta}

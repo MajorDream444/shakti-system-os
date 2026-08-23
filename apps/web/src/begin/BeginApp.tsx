@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, type CSSProperties } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, Home } from 'lucide-react';
 import { AppState, PathType, PATH_RESULTS } from './types';
@@ -16,6 +16,8 @@ import { SHALA_PATH } from '../constants/navigation';
 import { STORAGE_KEYS } from '../constants/storage';
 import { PersistenceService } from '../services/PersistenceService';
 import './begin.css';
+import { portalImages } from '../components/PortalImageSlots';
+import { ShriYantraPreview } from '../components/ShriYantraPreview';
 
 function createBeginSessionId() {
   return `begin_${globalThis.crypto?.randomUUID?.() ?? Date.now().toString(36)}`;
@@ -236,10 +238,18 @@ export default function BeginApp() {
     <div className={`begin-station begin-station-${state.currentScreen} relative min-h-[100svh] bg-obsidian text-ash overflow-x-hidden overflow-y-auto flex flex-col selection:bg-ember/30`}>
       <CustomCursor />
       <AmberSanctuaryCanvas />
+      <div
+        className="begin-ascent-image"
+        style={{ "--begin-ascent-image": `url(${portalImages.ascent})` } as CSSProperties}
+        aria-hidden="true"
+      />
       <div className="begin-luminous-field" aria-hidden="true">
         <span className="begin-flora begin-flora-a" />
         <span className="begin-flora begin-flora-b" />
         <span className="begin-waterline" />
+        <span className="begin-yantra-threshold">
+          <ShriYantraPreview variant="threshold" decorative />
+        </span>
       </div>
 
       {/* 1. Base Atmospheric Layer */}
@@ -267,7 +277,10 @@ export default function BeginApp() {
           </header>
 
           <nav className="begin-ascent" aria-label="Your path toward Shakti Shala">
-            <div className="begin-ascent-title">Ascent</div>
+            <div className="begin-ascent-title">
+              <ShriYantraPreview variant="seal" decorative />
+              <span>Ascent</span>
+            </div>
             <div className="begin-ascent-line" aria-hidden="true" />
             {STATIONS.map((station, index) => {
               const stationNumber = index + 1;

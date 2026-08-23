@@ -69,14 +69,14 @@
   gap: 0.1rem;
   padding: 0 0.95rem;
   border-right: 1px solid rgba(216, 197, 176, 0.12);
-  color: rgba(216, 197, 176, 0.72);
+  color: rgba(216, 197, 176, 0.86);
   font-family: var(--font-sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .sanctuary-utility-current span {
-  font-size: 0.48rem;
+  font-size: 0.58rem;
   font-weight: 700;
 }
 
@@ -98,11 +98,11 @@
   gap: 0.45rem;
   padding: 0 0.85rem;
   border-radius: 9999px;
-  color: rgba(216, 197, 176, 0.78);
+  color: rgba(216, 197, 176, 0.9);
   font-family: var(--font-sans);
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color 240ms ease, background 240ms ease;
 }
@@ -130,5 +130,88 @@
 @media (prefers-reduced-motion: reduce) {
   .sanctuary-ambient-field {
     animation: none;
+  }
+}
+
+/* Sprint 12D — Shala luminous threshold art direction */
+.shala-threshold-yantra {
+  position: absolute;
+  right: clamp(1rem, 7vw, 7rem);
+  top: clamp(6rem, 17vh, 10rem);
+  z-index: 1;
+  width: min(34vw, 430px);
+  min-width: 260px;
+  pointer-events: none;
+  opacity: 0.74;
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 0 34px rgba(233, 199, 126, 0.22))
+    drop-shadow(0 0 58px rgba(229, 132, 155, 0.14));
+}
+
+.shala-threshold-yantra .shri-yantra-preview {
+  color: #e9c77e;
+}
+
+#gates-room::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 78% 34%, rgba(229, 132, 155, 0.2), transparent 26%),
+    radial-gradient(circle at 24% 76%, rgba(143, 178, 122, 0.13), transparent 26%),
+    radial-gradient(circle at 54% 18%, rgba(233, 199, 126, 0.1), transparent 30%);
+}
+
+#gates-room::after {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 36vh;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(180deg, transparent, rgba(9, 7, 7, 0.94)),
+    radial-gradient(circle at 50% 84%, rgba(95, 163, 160, 0.16), transparent 32%);
+}
+
+.sanctuary-ambient-field {
+  background:
+    radial-gradient(circle at 20% 12%, rgba(233, 199, 126, 0.08), transparent 24%),
+    radial-gradient(circle at 74% 18%, rgba(229, 132, 155, 0.09), transparent 28%),
+    radial-gradient(circle at 48% 82%, rgba(95, 163, 160, 0.08), transparent 30%),
+    radial-gradient(circle at 10% 70%, rgba(143, 178, 122, 0.07), transparent 26%);
+}
+
+.sanctuary-utility {
+  border-color: rgba(240, 196, 208, 0.18);
+  background:
+    linear-gradient(90deg, rgba(42, 18, 22, 0.58), rgba(9, 7, 7, 0.78)),
+    rgba(9, 7, 7, 0.78);
+}
+
+.sanctuary-utility-map {
+  color: #e9c77e;
+}
+
+.threshold-map-seal {
+  width: 54px;
+  margin: 0 0 1rem;
+  color: #e9c77e;
+  opacity: 0.86;
+  filter:
+    drop-shadow(0 0 18px rgba(233, 199, 126, 0.28))
+    drop-shadow(0 0 26px rgba(229, 132, 155, 0.12));
+}
+
+@media (max-width: 760px) {
+  .shala-threshold-yantra {
+    top: 5.4rem;
+    right: -5rem;
+    width: 72vw;
+    min-width: 0;
+    opacity: 0.34;
   }
 }
