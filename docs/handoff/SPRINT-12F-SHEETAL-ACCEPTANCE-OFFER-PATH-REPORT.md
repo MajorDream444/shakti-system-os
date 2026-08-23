@@ -1,6 +1,6 @@
 # Sprint 12F - Sheetal Acceptance + Offer Path Clarity Report
 
-Status: LOCAL IMPLEMENTATION VERIFIED, PREVIEW DEPLOYMENT PENDING  
+Status: LOCAL IMPLEMENTATION VERIFIED, VERCEL PREVIEW DEPLOYED, HUMAN VISUAL REVIEW REQUIRED  
 Branch: `codex/sprint-12f-sheetal-offer-path`  
 Base: current `origin/main` at `94718de` after PR #16 merged the stacked Sprint 12C-12E work.  
 Implementation commit before report finalization: `670bb52532698f923b4a1c004544569f003044bb`. Final branch head is recorded in PR metadata and the Codex handoff.
@@ -85,6 +85,7 @@ Blocker:
 - `apps/web/e2e/sprint12d-luminous-art-direction.spec.ts`
 - `apps/web/e2e/sprint12e-legibility-sacred-presence.spec.ts`
 - `apps/web/e2e/sprint12f-founder-acceptance.spec.ts`
+- `vercel.json`
 - `docs/handoff/SHEETAL-ACCEPTANCE-REVIEW-2026-08-22.md`
 - `docs/handoff/SPRINT-12F-SHEETAL-ACCEPTANCE-OFFER-PATH-REPORT.md`
 
@@ -156,19 +157,39 @@ Captured surfaces include:
 
 ## Preview Deployment
 
-Pending.
+Preview deployment created with Vercel CLI `59.4.0` using the prebuilt Preview path.
 
-Required Preview label:
+Initial successful Preview:
 
-`VERCEL PREVIEW - Sprint 12F Sheetal Acceptance + Offer Path Clarity - HUMAN VISUAL REVIEW REQUIRED`
+- Deployment ID: `dpl_AFqV2haLe79UEH69psTVS2FL7xrk`
+- URL: `https://shakti-system-4sim129o0-major-hanzoais-projects.vercel.app`
+- Source commit in deployment metadata: `727087cd174cacd97bd0c401375522e6489980ae`
+- Target: Preview
+- Status: READY
+- API functions included:
+  - `api/begin/complete`
+  - `api/request-signal`
 
-Production must remain unchanged and Begin writes must remain disabled unless separately approved.
+Deployment notes:
+
+- The first raw `vercel deploy --yes` attempt stalled silently and was interrupted.
+- `vercel build --yes --debug` succeeded.
+- First `vercel deploy --prebuilt --yes --debug` failed with `403 Not authorized`, then CLI refreshed tokens.
+- Second `vercel deploy --prebuilt --yes --debug` succeeded.
+- Vercel CLI remains outdated at `59.4.0`; upgrade to latest is recommended before the next deployment sprint.
+
+Preview smoke:
+
+- `vercel curl` confirmed the app shell is returned for `/`, `/offerings`, `/about-sheetal`, `/testimonials`, `/begin`, and `/shala`.
+- Plain Playwright browser access was redirected to Vercel login because Deployment Protection is enabled, so rendered remote browser QA is blocked unless the reviewer is logged in or a bypass/share flow is provided.
+
+Production was not deployed or promoted. Production Begin writes remain outside this sprint.
 
 ## Release Recommendation
 
 Technical recommendation after local verification:
 
-`READY FOR VERCEL PREVIEW DEPLOYMENT`
+`READY FOR HUMAN VISUAL REVIEW ON VERCEL PREVIEW`
 
 Release recommendation:
 
