@@ -6,25 +6,32 @@ import retreatImage from "../shala/assets/images/pilgrims_hall_1783418591416.jpg
 import founderImage from "../shala/assets/images/sheetal_founder_presence_2026-08.jpg";
 
 export const portalImages = {
-  hero: gatesImage,
+  hero: poolImage,
   founder: founderImage,
   founderContext: valleyImage,
+  gates: gatesImage,
   library: libraryImage,
   water: poolImage,
+  ascent: valleyImage,
   retreat: retreatImage,
 } as const;
 
 export function PortalImageGallery() {
   const images = [
     {
+      src: portalImages.gates,
+      label: "Temple threshold",
+      caption: "preparation before access",
+    },
+    {
       src: portalImages.founder,
       label: "Sheetal's world",
       caption: "practice, lineage, and lived place",
     },
     {
-      src: portalImages.water,
-      label: "Reflection Pool",
-      caption: "water, stillness, integration",
+      src: portalImages.ascent,
+      label: "Mountain ascent",
+      caption: "stone, mountain, and ascent",
     },
     {
       src: portalImages.retreat,

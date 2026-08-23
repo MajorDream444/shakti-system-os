@@ -9,6 +9,8 @@ Sprint 11E attempted one additional bounded refresh after the documentation-only
 Sprint 11F attempted one additional bounded release-candidate refresh and stopped it cleanly after 30 seconds with no stdout.
 Sprint 12A attempted one bounded refresh after frozen experience implementation and stopped it cleanly after 30 seconds.
 Sprint 12A attempted one additional bounded refresh after the founder presence and Playwright visual-review additions and stopped it cleanly after 30 seconds with no stdout.
+Sprint 12D attempted one bounded refresh after the luminous art-direction pass and stopped cleanly after 60 seconds with no stdout.
+Sprint 12E attempted one bounded refresh after the legibility/sacred-presence pass and stopped it cleanly after two 30-second silent windows.
 
 Command:
 
@@ -23,6 +25,8 @@ Sprint 11D: Python subprocess timeout: 25 seconds
 Sprint 11F: shell process stopped after 30 seconds
 Sprint 12A: shell process stopped after 30 seconds
 Sprint 12A founder/Playwright addendum: shell process stopped after 30 seconds
+Sprint 12D: Python subprocess timeout: 60 seconds
+Sprint 12E: shell process interrupted after 60 seconds
 ```
 
 Result:
@@ -34,6 +38,7 @@ No stdout was emitted before timeout.
 
 Prior Sprint 11C attempts reached code re-extraction/cache reading and then remained silent for several minutes before clean interruption.
 Sprint 12A emitted `Re-extracting code files in . (no LLM needed)...` and stalled while reading a cached JSON entry in `graphify/cache.py::load_cached`.
+Sprint 12E emitted `Re-extracting code files in . (no LLM needed)...` only after interruption and again showed the stall inside `graphify/cache.py::load_cached`, reading a cached JSON entry.
 
 ## Classification
 

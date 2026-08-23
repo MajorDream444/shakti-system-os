@@ -8,7 +8,7 @@ export const practicePillars = [
   "Neuroscience",
   "Somatics",
   "Shadow Work",
-  "Classical Tantra",
+  "Classical Shakti Tantra",
   "Diaspora Identity",
   "Retreat Practice",
 ];
@@ -18,8 +18,8 @@ export const readiness: ReadinessCopy = {
   headline: "A path before the retreat.",
   copy:
     "The retreat should not be the first commitment. It should be the deeper initiation inside a relationship that has already begun.",
-  dashboardTitle: "Readiness Map",
-  dashboardField: "Private Field",
+  dashboardTitle: "Public Readiness Map",
+  dashboardField: "Illustrative only",
   cards: [
     {
       title: "Body Signal",
@@ -39,11 +39,11 @@ export const readiness: ReadinessCopy = {
     },
     {
       title: "Retreat Readiness",
-      body: "Warm · Aligned · Prepared",
+      body: "Interest · Preparation · Human discernment",
     },
     {
       title: "Next Threshold",
-      body: "Start Your Shakti Path",
+      body: "Begin privately when you are ready",
       cta: true,
     },
   ],
