@@ -754,6 +754,39 @@ button {
   align-items: center;
 }
 
+.method-rhythm {
+  display: grid;
+  gap: 12px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: method-step;
+}
+
+.method-rhythm li {
+  counter-increment: method-step;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  min-height: 58px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(244, 239, 230, 0.1);
+  color: rgba(244, 239, 230, 0.86);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.18;
+}
+
+.method-rhythm li::before {
+  content: counter(method-step, decimal-leading-zero);
+  color: var(--gold-lit);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
 .ritual-card {
   position: relative;
   min-height: 520px;
@@ -2585,6 +2618,42 @@ body {
   margin-top: 34px;
 }
 
+.receiving-ladder {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.receiving-ladder div {
+  padding: 18px;
+  border-top: 1px solid rgba(233, 199, 126, 0.32);
+  background: rgba(244, 239, 230, 0.035);
+}
+
+.receiving-ladder span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--gold-lit);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.receiving-ladder p {
+  margin: 0;
+  color: rgba(244, 239, 230, 0.78);
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+.offerings-ladder {
+  margin: 32px auto 0;
+  max-width: 980px;
+}
+
 .offer-category-rail {
   display: grid;
   gap: 10px;
@@ -2888,6 +2957,7 @@ body {
 
   .public-choice-panel,
   .offer-gateway-actions,
+  .receiving-ladder,
   .testimonial-field-card {
     grid-template-columns: 1fr;
   }

@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { BEGIN_PATH } from "../constants/navigation";
-import { offerCategories, offerPathways } from "../data/offerings";
+import { offerCategories, offerPathways, receivingLadder } from "../data/offerings";
 import { PageShell } from "./PageShell";
 import { portalImages } from "./PortalImageSlots";
 
@@ -18,8 +18,8 @@ export function OfferingsPage() {
             <p className="label">Offerings</p>
             <h1>Work With Sheetal</h1>
             <p>
-              Choose a doorway directly, or begin with discernment if you are
-              not sure which container is right.
+              One body of work. Different ways to enter through proximity,
+              rhythm, depth, and readiness.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href={BEGIN_PATH}>
@@ -54,6 +54,14 @@ export function OfferingsPage() {
               Private work is container-based: 6, 9, or 12 sessions, with 3
               sessions only by exception.
             </p>
+            <div className="receiving-ladder offerings-ladder" aria-label="Offerings by depth and proximity">
+              {receivingLadder.map((item) => (
+                <div key={item.level}>
+                  <span>{item.level}</span>
+                  <p>{item.doorway}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="offering-cards">
             {offerCategories.map((category) => (

@@ -7,11 +7,11 @@ export const portalCopy = {
   nav: NAV_ITEMS,
   hero: {
     eyebrow: "SHAKTI PORTAL / PRIVATE ENTRY",
-    headline: "Enter the pathway beneath the surface.",
+    headline: "Shakti Shadow & Somatics",
     subheadline:
-      "A living entry into Shakti Shadow & Somatics - where body, shadow, lineage, and neuroscience meet.",
+      "Sheetal Kandola's body of work for women seeking a deeper relationship with their body, shadow, practice, and inner life.",
     body:
-      "For women and diaspora seekers ready to move beyond surface wellness into real integration.",
+      "Rooted in somatics, nervous-system literacy, shadow integration, and classical Shakta Tantra, the work helps women move with more awareness, capacity, and discernment rather than forcing transformation.",
     primaryCta: "Start Your Shakti Path",
     secondaryCta: "Work With Sheetal",
   },
@@ -23,7 +23,7 @@ export const portalCopy = {
     body:
       "Sheetal Kandola is an Indian woman raised in the Deep South whose work braids lived cultural context with nervous-system literacy, Somatic Experiencing-informed practice, shadow work, psychology, sensuality, and classical Shakta Tantra.",
     continuation:
-      "Shakti Shala is the living doorway for this work: a place where nervous-system literacy, devotional practice, and truthful self-encounter can move together without rushing a seeker past her own readiness.",
+      "Her work comes from living between worlds: Indian spiritual and devotional traditions, modern somatic and nervous-system practice, shadow work, and a life shaped by both Western and Indian contexts. It does not ask women to rise above grief, anger, fear, desire, or the body. It asks them to meet what is actually there.",
     credentials: [
       "Shakti Shadow & Somatics",
       "Nervous-system literacy",

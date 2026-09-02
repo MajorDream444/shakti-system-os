@@ -26,9 +26,9 @@ function PortalApp() {
       <main className="app-shell">
         <GodRays />
         <Hero />
+        <Philosophy />
         <OfferPathGateway />
         <FounderPresence />
-        <Philosophy />
         <AuthorityStrip />
         <TransitionQuote />
         <ReadinessMap />

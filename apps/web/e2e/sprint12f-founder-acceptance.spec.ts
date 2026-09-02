@@ -195,7 +195,7 @@ test.describe("Sprint 12F Sheetal acceptance and offer path clarity", () => {
       {
         item: "Does mobile preserve narrative order?",
         status: "YES",
-        evidence: "Home moves from hero actions to offer path, founder trust, method, pathway, retreat, and final action.",
+        evidence: "Home moves from hero actions to method, offer path, founder trust, pathway, retreat, and final action.",
         objective: true,
       },
       {
