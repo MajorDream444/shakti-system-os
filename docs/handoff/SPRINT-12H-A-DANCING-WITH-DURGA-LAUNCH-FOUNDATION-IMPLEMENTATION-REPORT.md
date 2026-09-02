@@ -220,3 +220,32 @@ Create a Vercel Preview from the committed branch state only. Do not deploy Prod
 Preview deployment note:
 
 An initial CLI deployment from `apps/web` auto-created a separate Vercel project named `web` and treated its first deployment as that project's production. That deployment did not target the established `shakti-system-os` project. Corrective action: relink deployment work to `major-hanzoais-projects/shakti-system-os` and deploy from the repository root so the canonical `vercel.json` routing config is applied.
+
+Final Preview:
+
+- URL: `https://shakti-system-fl641wlrh-major-hanzoais-projects.vercel.app`
+- Deployment ID: `dpl_J3hPmvDhWPX8cCXA68N5XPoJVggW`
+- Vercel project: `major-hanzoais-projects/shakti-system-os`
+- Target: `preview`
+- Branch/source state before deployment: `a303d102d322c6df24790b38c0c368dca27bc780`
+- Vercel inspect status: `Ready`
+- Vercel inspect commit metadata: not emitted for this CLI-uploaded deployment
+- API functions included: `api/begin/complete`, `api/request-signal`
+
+Protected Preview smoke:
+
+- `/`: app content returned through `vercel curl`
+- `/dancing-with-durga`: app content returned through `vercel curl`
+- `/begin`: app content returned through `vercel curl`
+- `/shala`: app content returned through `vercel curl`
+
+Deployment protection:
+
+Normal unauthenticated browser Playwright is redirected to Vercel login. Human visual review should use an authenticated/protection-authorized browser session.
+
+Remote bundle scan:
+
+- Airtable PAT shape: not found
+- `AIRTABLE_PERSONAL_ACCESS_TOKEN`: not found
+- `BEGIN_WRITES_ENABLED=true`: not found
+- OpenAI key shape: not found
