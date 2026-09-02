@@ -201,6 +201,7 @@ Implemented corrections:
 - Boundary copy now reads: `Details are being held for founder review. Registration and payment are not open yet.`
 - Mobile Durga headline scale and line-height were reduced through a route-specific CSS override.
 - Playwright now asserts that `Enter Shakti Shala` is not present as a public hero link.
+- Vercel SPA rewrite coverage now includes `/dancing-with-durga` so the review URL can be opened directly.
 
 Verification after correction:
 
@@ -215,3 +216,7 @@ Verification after correction:
 Preview requirement:
 
 Create a Vercel Preview from the committed branch state only. Do not deploy Production.
+
+Preview deployment note:
+
+An initial CLI deployment from `apps/web` auto-created a separate Vercel project named `web` and treated its first deployment as that project's production. That deployment did not target the established `shakti-system-os` project. Corrective action: relink deployment work to `major-hanzoais-projects/shakti-system-os` and deploy from the repository root so the canonical `vercel.json` routing config is applied.

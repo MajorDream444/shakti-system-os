@@ -25,6 +25,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/dancing-with-durga",
+      "destination": "/index.html"
+    },
+    {
       "source": "/shala",
       "destination": "/index.html"
     }
