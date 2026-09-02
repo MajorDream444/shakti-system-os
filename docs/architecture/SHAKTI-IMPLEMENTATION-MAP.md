@@ -33,7 +33,7 @@ MAIM OS
 | Vault | Shakti Legacy Vault and Temple Library |
 | Identity Engine | Readiness assessment and pathway discernment |
 | Readiness Engine | Retreat readiness, pathway fit, and human review |
-| Pathway Routing | Weekly Circle, 1:1 support, containers, retreat readiness |
+| Pathway Routing | Weekly Circle, private container support, containers, retreat readiness |
 | Temple / Library Pattern | Shakti Shala Temple Library |
 | Doctrine Extraction | Shakti Sankalpa, transcripts, podcasts, source reviews |
 | Podcast Continuity | Shakti Shala Temple Library podcast workflow |

@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { BEGIN_PATH, SECTION_ANCHORS } from "../constants/navigation";
+import { BEGIN_PATH, OFFERINGS_PATH } from "../constants/navigation";
 import { portalCopy } from "../data/portalCopy";
 import { portalImages } from "./PortalImageSlots";
 
@@ -19,7 +19,7 @@ export function FinalCTA() {
           <a className="button button-primary" href={BEGIN_PATH}>
             {portalCopy.hero.primaryCta}
           </a>
-          <a className="button button-secondary" href={SECTION_ANCHORS.method}>
+          <a className="button button-secondary" href={OFFERINGS_PATH}>
             {portalCopy.hero.secondaryCta}
           </a>
         </div>

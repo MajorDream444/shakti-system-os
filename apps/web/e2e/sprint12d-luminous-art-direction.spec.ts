@@ -31,7 +31,7 @@ async function moveBeginToReveal(page: Page, testInfo: TestInfo, prefix: string)
 }
 
 test.describe("Sprint 12D luminous Shakti art direction", () => {
-  test("desktop exposes the luminous palette, photography, and Shri Yantra review geometry", async ({
+  test("desktop exposes the luminous palette, photography, and sacred-geometry approval boundary", async ({
     page,
   }, testInfo) => {
     await page.setViewportSize({ width: 1440, height: 1100 });
@@ -43,17 +43,16 @@ test.describe("Sprint 12D luminous Shakti art direction", () => {
     await capture(page, testInfo, "desktop-home-luminous-front-door.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakti Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakti Tantra" })).toBeVisible();
-    await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toBeVisible();
-    await expect(page.getByRole("dialog").locator(".yantra-triangles polygon")).toHaveCount(9);
-    await expect(page.getByRole("dialog").locator(".yantra-bindu")).toHaveCount(1);
-    await capture(page, testInfo, "desktop-classical-shakti-tantra-yantra.png");
+    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
+    await expect(page.getByRole("dialog")).toContainText("Approved sacred geometry will appear only after source and founder review");
+    await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toHaveCount(0);
+    await capture(page, testInfo, "desktop-classical-shakta-tantra-boundary.png");
 
     await moveBeginToReveal(page, testInfo, "desktop");
 
     await page.goto(`${baseUrl}/shala`);
-    await expect(page.locator("#gates-room .shala-threshold-yantra")).toHaveCount(1);
+    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(1);
     await expect(page.locator("body")).toContainText(/Shakti Shala|Courtyard|Sanctuary/i);
     await capture(page, testInfo, "desktop-shala-threshold.png");
   });
@@ -69,18 +68,17 @@ test.describe("Sprint 12D luminous Shakti art direction", () => {
     await capture(page, testInfo, "mobile-home-luminous-front-door.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakti Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakti Tantra" })).toBeVisible();
-    await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toBeVisible();
-    await expect(page.getByRole("dialog").locator(".yantra-triangles polygon")).toHaveCount(9);
-    await capture(page, testInfo, "mobile-classical-shakti-tantra-yantra.png");
+    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
+    await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toHaveCount(0);
+    await capture(page, testInfo, "mobile-classical-shakta-tantra-boundary.png");
 
     await moveBeginToReveal(page, testInfo, "mobile");
 
     await page.goto(`${baseUrl}/shala`);
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
     await expect(page.locator("#threshold-drawer")).toBeVisible();
-    await expect(page.locator("#gates-room .shala-threshold-yantra")).toHaveCount(1);
+    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(1);
     await capture(page, testInfo, "mobile-shala-map-threshold.png");
   });
 });

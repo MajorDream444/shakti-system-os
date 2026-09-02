@@ -4,7 +4,7 @@ export const philosophy: PhilosophyCopy = {
   label: "The Method",
   headline: "This is not surface wellness.",
   paragraphs: [
-    "Shakti Shadow & Somatics bridges Western neuroscience, somatic practice, shadow integration, and classical Shakti Tantra.",
+    "Shakti Shadow & Somatics bridges Western neuroscience, somatic practice, shadow integration, and classical Shakta Tantra.",
     "The work begins where performance ends - in the body, in the shadow, in the places we have been taught to hide.",
   ],
 };

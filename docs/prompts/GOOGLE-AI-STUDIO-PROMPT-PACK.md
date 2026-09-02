@@ -87,7 +87,7 @@ This IS:
 - a guided first step
 - a sanctuary-like discernment experience
 - a structured but emotionally spacious pathfinding moment
-- the first doorway into a deeper ecosystem of circles, 1:1 support, containers, and retreat readiness
+- the first doorway into a deeper ecosystem of circles, private container support, containers, and retreat readiness
 
 The emotional goal:
 A woman arrives uncertain or curious. The experience does not sell to her. It steadies her. It gives language to what she may be carrying. It helps her discern the doorway that may fit. It leaves her with one clear next step.
@@ -241,8 +241,8 @@ This should be optional, not required.
 SCREEN 7 — THE THRESHOLD REVEAL
 Route to one of four recommended pathways based on the selected cards:
 - Weekly Shakti Circle
-- 1:1 Somatic / Shadow Support
-- 6-Week Shakti Shadow & Somatics Container
+- Private Work With Sheetal
+- Structured Shakti Shadow & Somatics Container
 - Retreat Readiness Pathway
 
 Use a simple local scoring logic in the prototype. Each selected answer should contribute to one or more pathway scores. The open reflection may inform the generated reflection text if AI is used, but it should not override the chosen pathway in the MVP.
@@ -259,10 +259,10 @@ Use these exact result headlines:
 Weekly Circle:
 “Your clearest doorway may be rhythm.”
 
-1:1:
+Private container support:
 “Your clearest doorway may be focused support.”
 
-6-Week Container:
+Structured container:
 “Your clearest doorway may be structured depth.”
 
 Retreat:
@@ -290,16 +290,16 @@ Secondary CTA:
 1:1 reflection:
 “What you selected suggests that a more personal, held space may be the most appropriate first step — especially if what you are carrying feels specific, layered, or difficult to translate in group space.”
 Recommended next step:
-“1:1 Somatic / Shadow Support”
+“Private Work With Sheetal”
 CTA:
-“Explore 1:1 Support”
+“Request a Private Container”
 Secondary CTA:
 “Take the Deeper Self-Audit”
 
 Container reflection:
 “What you selected suggests readiness for more sustained work — not rushed, but held within a container that allows pattern, body, and shadow to be met over time.”
 Recommended next step:
-“6-Week Shakti Shadow & Somatics Container”
+“Structured Shakti Shadow & Somatics Container”
 CTA:
 “Learn About the Container”
 Secondary CTA:

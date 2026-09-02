@@ -31,8 +31,8 @@ export const PATH_RESULTS: Record<PathType, {
   ONE_ON_ONE: {
     headline: "Your clearest doorway may be focused support.",
     reflection: "You may be moving through something specific that wants personal attention, reflection, and a space where your body can be met with care.",
-    nextStep: "1:1 Somatic / Shadow Support",
-    primaryCTA: "Explore 1:1 Support",
+    nextStep: "Private Work With Sheetal",
+    primaryCTA: "Request a Private Container",
     secondaryCTA: "Begin with the Self-Audit"
   },
   CONTAINER: {

@@ -9,6 +9,22 @@
       "destination": "/index.html"
     },
     {
+      "source": "/offerings",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/work-with-sheetal",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/about-sheetal",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/index.html"
+    },
+    {
       "source": "/shala",
       "destination": "/index.html"
     }

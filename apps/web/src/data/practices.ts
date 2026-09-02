@@ -8,7 +8,7 @@ export const practicePillars = [
   "Neuroscience",
   "Somatics",
   "Shadow Work",
-  "Classical Shakti Tantra",
+  "Classical Shakta Tantra",
   "Diaspora Identity",
   "Retreat Practice",
 ];
@@ -31,7 +31,7 @@ export const readiness: ReadinessCopy = {
     },
     {
       title: "Lineage Thread",
-      body: "Mantra · Yantra · Classical Shakti Tantra",
+      body: "Mantra · Yantra · Classical Shakta Tantra",
     },
     {
       title: "Community Field",

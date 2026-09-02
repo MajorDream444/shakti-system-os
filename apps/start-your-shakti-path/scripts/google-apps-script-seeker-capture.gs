@@ -274,7 +274,7 @@ function detectPayloadType_(payload) {
 
 function mapContainerToPathway_(value) {
   var v = String(value || '').toLowerCase();
-  if (v.includes('1:1') || v.includes('sheetal'))                              return '1:1 Somatic / Shadow Support';
+  if (v.includes('1:1') || v.includes('sheetal'))                              return 'Private Work With Sheetal';
   if (v.includes('circle') || v.includes('group'))                             return 'Weekly Shakti Circle';
   if (v.includes('retreat') || v.includes('bali') || v.includes('immersion')) return 'Retreat Readiness Pathway';
   if (v.includes('container') || v.includes('program') || v.includes('course')) return '9-Session Shakti Shadow & Somatics Container';

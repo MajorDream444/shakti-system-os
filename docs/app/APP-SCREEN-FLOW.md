@@ -188,8 +188,8 @@ Recommend one aligned next doorway.
 - Open Gate
 - Moon Rhythm
 - Weekly Circle
-- 1:1 Support
-- 6-Week Container
+- Private container support
+- Structured container
 - Retreat Readiness
 - Temple Library
 

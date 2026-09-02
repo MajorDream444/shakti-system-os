@@ -11,6 +11,9 @@ export function Footer() {
         <div>
           <p>{portalCopy.footer.method}</p>
           <p>{portalCopy.footer.pathway}</p>
+          <p>
+            <a href="/offerings">Offerings</a> · <a href="/about-sheetal">About Sheetal</a>
+          </p>
         </div>
       </div>
     </footer>

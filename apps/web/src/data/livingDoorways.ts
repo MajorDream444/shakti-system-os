@@ -62,12 +62,12 @@ export const knowledgeDoorways: LivingDoorway[] = [
     fromSheetal:
       "The public language remains restrained: truthful self-encounter, not performance or spiritual urgency.",
     connectedTo: ["Somatics", "Container", "Community"],
-    nextLabel: "Continue to Classical Shakti Tantra",
+    nextLabel: "Continue to Classical Shakta Tantra",
   },
   {
     id: "classical-shakti-tantra",
-    title: "Classical Shakti Tantra",
-    symbol: "Shri Yantra",
+    title: "Classical Shakta Tantra",
+    symbol: "Sacred Geometry",
     accent: "pink",
     summary: "Lineage is treated with precision and restraint.",
     deeper:
@@ -75,7 +75,7 @@ export const knowledgeDoorways: LivingDoorway[] = [
     why:
       "Sacred symbols carry meaning. They are placed intentionally, not used as wallpaper or generic spiritual decoration.",
     example:
-      "The Shri Yantra appears as a complete sacred geometry field, held as a doorway into union rather than a decorative motif.",
+      "Approved sacred geometry will appear only after source and founder review, held as a doorway into union rather than a decorative motif.",
     fromSheetal:
       "The teaching stays precise: goddess, mantra, and symbol are approached with reverence, context, and restraint.",
     connectedTo: ["Goddess Pathways", "Temple Library", "Shala Threshold"],
@@ -131,7 +131,7 @@ export const methodDoorway: LivingDoorway = {
     "A seeker may begin with reflection, meet a body signal, notice a shadow pattern, and be returned to a doorway that matches capacity.",
   fromSheetal:
     "This work begins beneath surface wellness and returns the seeker to truth in the body.",
-  connectedTo: ["Neuroscience", "Somatics", "Shadow Work", "Classical Shakti Tantra"],
+    connectedTo: ["Neuroscience", "Somatics", "Shadow Work", "Classical Shakta Tantra"],
   nextLabel: "Explore the six doorways",
 };
 

@@ -178,7 +178,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
             {currentConfig.label} · {currentConfig.desc}
           </span>
           <h1 className="font-serif text-3xl md:text-5xl leading-tight text-[#F6EFE7] mt-3">
-            Welcome home, <span className="italic">{seekerName}</span>.
+            Welcome to Shakti Shala, <span className="italic">{seekerName}</span>.
           </h1>
           <p className="font-serif italic text-lg text-[#C8B7A5] mt-2">
             The vault is open. The mountain stands steady beneath your feet.

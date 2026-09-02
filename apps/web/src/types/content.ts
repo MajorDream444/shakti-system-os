@@ -1,10 +1,10 @@
 export type NavItem =
-  | "Explore"
-  | "Method"
-  | "Shadow"
+  | "Offerings"
+  | "About"
   | "Pathway"
   | "Retreat"
-  | "Begin";
+  | "Begin"
+  | "Shala";
 
 export type CtaCopy = {
   label: string;

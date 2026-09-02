@@ -166,8 +166,8 @@ Possible recommendations:
 - Open Gate
 - Moon Rhythm
 - Weekly Circle
-- 1:1 Support
-- 6-Week Container
+- Private container support
+- Structured container
 - Retreat Readiness
 - Temple Library
 
@@ -203,7 +203,7 @@ Recommend Moon Rhythm or Weekly Circle.
 If shadow interest and grounded capacity:
 
 ```text
-Unlock Kali Gate and suggest 1:1 Support or the 6-Week Container.
+Unlock Kali Gate and suggest private container support or the appropriate structured container.
 ```
 
 If community need and low-pressure support are present:
