@@ -11,8 +11,8 @@ This is not a quiz. It is not a funnel. It is a calm first step — an eight-scr
 This app is the front-door prototype of the Shakti System OS. It guides a seeker through a reflective pathway and surfaces one of four aligned next steps:
 
 - **Weekly Shakti Circle** — rhythm, grounding, community
-- **1:1 Somatic / Shadow Support** — personal, focused, private
-- **6-Week Shakti Shadow & Somatics Container** — structured depth
+- **Private Work With Sheetal** — personal, focused, container-based
+- **Structured Shakti Shadow & Somatics Container** — structured depth
 - **Retreat Readiness Pathway** — immersion with discernment
 
 The result appears before any contact is captured. Contact capture is a continuation, not a gate.

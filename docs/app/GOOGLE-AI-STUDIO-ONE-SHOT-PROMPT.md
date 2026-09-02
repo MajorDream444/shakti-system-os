@@ -153,7 +153,7 @@ Ask these questions one at a time:
    Options:
    - Short practices
    - Weekly circle
-   - 1:1 support
+   - private container support
    - A deeper container
    - Retreat readiness
 
@@ -259,8 +259,8 @@ Possible pathways:
 - Open Gate
 - Moon Rhythm
 - Weekly Circle
-- 1:1 Support
-- 6-Week Container
+- Private container support
+- Structured container
 - Retreat Readiness
 - Temple Library
 

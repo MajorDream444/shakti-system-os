@@ -79,11 +79,13 @@ export const offerCategories: OfferCategory[] = [
   {
     id: "private-work",
     label: "Work With Sheetal",
-    title: "Private support and deeper container",
+    title: "Private work in 6-, 9-, or 12-session containers",
     summary:
-      "For women ready for closer guidance with Sheetal inside Shakti Shadow & Somatics.",
+      "For women ready for closer guidance with Sheetal inside Shakti Shadow & Somatics. Private work begins with a container and continuity over time.",
     includes: [
       "Fit conversation before commitment",
+      "6-, 9-, or 12-session private pathways",
+      "A shorter 3-session container only by exception when appropriate",
       "Pacing around nervous-system capacity",
       "Human discernment before any deeper doorway",
     ],

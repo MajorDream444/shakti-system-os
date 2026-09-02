@@ -51,6 +51,8 @@ export function OfferingsPage() {
               Pricing and payment are shown only when Sheetal's team has approved
               the exact offer. Until then, the next step is clearly marked as
               open, request-based, preparation-based, or invitation-based.
+              Private work is container-based: 6, 9, or 12 sessions, with 3
+              sessions only by exception.
             </p>
           </div>
           <div className="offering-cards">

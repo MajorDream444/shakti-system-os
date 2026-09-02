@@ -45,7 +45,7 @@ test("Begin network failure is safe to continue privately", async ({ page }) => 
   await page.getByText("Private guidance and reflection").click();
   await page.getByRole("button", { name: "Continue" }).click();
   await expect(page.getByText("Your clearest doorway may be focused support.")).toBeVisible();
-  await page.getByText("Explore 1:1 Support").click({ force: true });
+  await page.getByText("Request a Private Container").click({ force: true });
 
   await page.getByPlaceholder("First name").fill("Test");
   await page.getByPlaceholder("Email address (optional)").fill("test@example.com");

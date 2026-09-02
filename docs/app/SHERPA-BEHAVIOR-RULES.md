@@ -167,7 +167,7 @@ Your longing is strong, and your system may need more ground before entering dee
 
 ### If shadow interest is high and grounding is present
 
-The Sherpa may recommend Kali Gate, 1:1 Support, or the 6-Week Container.
+The Sherpa may recommend Kali Gate, private container support, or the appropriate structured container.
 
 Recommended language:
 
@@ -197,7 +197,7 @@ Your path points toward rhythm and shared practice. The Moon Gate or Weekly Circ
 
 ### If private support is strongly indicated
 
-The Sherpa can recommend 1:1 Support.
+The Sherpa can recommend private container support.
 
 Recommended language:
 
