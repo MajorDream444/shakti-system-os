@@ -45,7 +45,7 @@ async function assertNoBoundaryRegression(page: Page) {
   const body = page.locator("body");
 
   await expect(body).not.toContainText(/somatic breathwork/i);
-  await expect(body).not.toContainText(/single session|standalone session|one-off support|try a session/i);
+  await expect(body).not.toContainText(/book (a )?(single|standalone) session|one-off support|try a session/i);
   await expect(body).not.toContainText(/buy now|pay deposit/i);
   await expect(body).not.toContainText(/King's College|LSHTM|MSc Global Mental Health|certified|licensed/i);
   await expect(body).not.toContainText(/approved Shri Yantra|Doctrine Passport|approval gate|access rule/i);

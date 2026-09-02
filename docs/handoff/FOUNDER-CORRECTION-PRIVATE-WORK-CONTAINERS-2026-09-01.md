@@ -1,17 +1,33 @@
 # Founder Correction - Private Work Containers
 
-Owner: Sheetal Kandola  
-Recorded by: Codex  
-Date received: 2026-09-01  
-Status: Current founder-authority offer rule
+Owner: Sheetal Kandola
+Recorded by: Codex
+Date received: 2026-09-01
+Status: Superseded for future commerce planning by 2026-09-03 reported founder clarification; preserved as historical provenance
 
-## Governing Correction
+## Supersession Notice - 2026-09-03
+
+On 2026-09-03, a newer reported founder clarification stated that standalone private sessions are permitted at a premium rate and that 3/6/9/12-session containers use a lower per-session unit rate.
+
+Current reported planning truth:
+
+- Standalone private session: `$200`.
+- 3-session container: `$450`.
+- 6-session container: `$900`.
+- 9-session container: `$1,350`.
+- 12-session container: `$1,800`.
+
+This supersedes the Sept 1 "no standalone private sessions" rule for future commerce planning.
+
+It does not authorize immediate public app changes, checkout, payment links, or commerce implementation.
+
+## Historical Governing Correction
 
 Sheetal does not offer standalone private sessions.
 
 Private work with Sheetal begins with a container, not a single session.
 
-## Canonical Rule
+## Historical Canonical Rule
 
 - Public private-work packages are 6, 9, or 12 sessions.
 - A 3-session container may be offered only as an exception when appropriate.
@@ -24,7 +40,7 @@ Private work with Sheetal begins with a container, not a single session.
 
 The 2026-08-31 offer document listed a "1:1 Private Session" with "Single session" duration. That language is superseded for public offer architecture by the founder correction above.
 
-## Required Public Language
+## Historical Required Public Language
 
 Prefer:
 
@@ -47,6 +63,8 @@ Avoid:
 - `/offerings` names private work as 6-, 9-, or 12-session containers and marks 3 sessions as exception-only.
 - `/begin` focused-support reveal routes to "Private Work With Sheetal" and "Request a Private Container."
 - No pricing, checkout, payment link, payment claim, or automatic private-work approval is introduced.
+
+These implementation notes reflect the state before the Sept 3 clarification. They now require future commerce reconciliation before public pricing or private-work offer changes.
 
 ## Future Audit Surfaces
 

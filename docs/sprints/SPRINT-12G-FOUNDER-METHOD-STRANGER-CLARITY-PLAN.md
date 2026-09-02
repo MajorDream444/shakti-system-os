@@ -1,9 +1,9 @@
 # Sprint 12G - Founder Method + Stranger Clarity Plan
 
-Owner: Codex  
-Mode: Pre-implementation plan for human review  
-Created: 2026-09-02  
-Branch: `codex/sprint-12g-founder-method-stranger-clarity`  
+Owner: Codex
+Mode: Pre-implementation plan for human review
+Created: 2026-09-02
+Branch: `codex/sprint-12g-founder-method-stranger-clarity`
 Base: `origin/main` after PR #19 merge, `3b2401f39d079c32d0888b9e9ff91c87b37ae7a4`
 
 ## Scope Boundary
@@ -57,7 +57,7 @@ Tester signal already recorded in reconciliation:
 |---|---|
 | `docs/reconciliation/SHEETAL-31-AUG-FOUNDER-FEEDBACK-RECONCILIATION-v1.md` | Governs 12G as a clarity/positioning sprint, not commerce or backend. |
 | `docs/reconciliation/SHAKTI-SOURCE-CONFLICT-REGISTER.md` | Applies newer founder authority over older source material while preserving provenance. |
-| `docs/handoff/FOUNDER-CORRECTION-PRIVATE-WORK-CONTAINERS-2026-09-01.md` | Precedence test: no standalone private sessions; 6/9/12 private containers; 3 sessions exception-only. |
+| `docs/handoff/FOUNDER-CORRECTION-PRIVATE-WORK-CONTAINERS-2026-09-01.md` | Historical precedence test for Sprint 12G. Superseded for future commerce planning by the Sept 3 clarification, while current 12G still avoids checkout/pricing. |
 | `docs/handoff/SHEETAL-ACCEPTANCE-REVIEW-2026-08-22.md` | Confirms offer-path clarity and founder trust requirements already handled in 12F. |
 | `docs/doctrine/SHEETAL-FOUNDER-PROFILE.md` | Supplies approved-for-build founder claims and blocks unverified credentials. |
 | `docs/doctrine/SHAKTI-CANONICAL-VOCABULARY.md` | Governs language, especially no `somatic breathwork`, no generic Tantra, and careful use of Sanskrit/source-sensitive terms. |
@@ -76,10 +76,10 @@ Tester signal already recorded in reconciliation:
 | G12-005 | COPY | Method section | Add a four-part method explanation: listen to the body, meet the shadow, return to practice, choose the next doorway. | Gives a stranger a concrete sense of what happens. | Do not invent a clinical protocol or promise outcomes. |
 | G12-006 | CONTENT STRUCTURE | Offer gateway | Add a short "What you can receive" ladder before offer categories: free orientation, Shala practice, circles, private containers, retreats. | Keeps offers as one ecosystem of depth/proximity, not a product catalogue. | Must preserve no-pricing/no-checkout and private-container correction. |
 | G12-007 | COPY | `/offerings` intro | Clarify that offerings are expressions of one body of work. Proposed direction: "Everything here begins from Shakti Shadow & Somatics; the difference is proximity, depth, rhythm, and readiness." | Answers receiving and reduces catalogue feel. | No commerce activation. |
-| G12-008 | COPY | Private work card | Preserve current 6/9/12 language; strengthen "container, not single session" only if it can be stated without sounding defensive. | Founder correction is canonical. | Do not market 3 sessions as standard. |
+| G12-008 | COPY | Private work card | Preserve the current no-checkout/no-pricing public behavior for 12G. Future commerce copy must follow the Sept 3 pricing clarification instead of this older Sept 1 rule. | Founder source precedence has changed after 12G planning. | Do not update public commerce language inside 12G. |
 | G12-009 | SOURCE / GOVERNANCE | Docs | Add a note to the 12G report after implementation that newer founder corrections must be linked to the conflict register when they supersede public copy. | Makes the memory-preserving change protocol reusable inside Shakti. | No app behavior change. |
 | G12-010 | TEST | Playwright | Add a `sprint12g-stranger-clarity.spec.ts` rubric that records YES/WATCH/NO for the five questions on desktop and mobile. | Turns deterministic clarity checks into review evidence. | WATCH items do not auto-fix; P0/P1 objective failures block. |
-| G12-011 | TEST | Playwright/prohibited language | Extend regression guards for: no standalone private sessions, no unsupported credentials, no `somatic breathwork`, no instant checkout, no fabricated testimonials, no approved Shri Yantra claim without asset. | Protects current governance. | Do not weaken existing tests. |
+| G12-011 | TEST | Playwright/prohibited language | Extend regression guards for: no unsupported private-session booking/checkout language, no unsupported credentials, no `somatic breathwork`, no instant checkout, no fabricated testimonials, no approved Shri Yantra claim without asset. | Protects current public release boundaries without freezing superseded private-work doctrine. | Do not weaken existing tests. |
 
 ## Exact Proposed Copy Directions
 

@@ -7,6 +7,7 @@ import { FounderPresence } from "./components/FounderPresence";
 import { GodRays } from "./components/GodRays";
 import { Hero } from "./components/Hero";
 import { Nav } from "./components/Nav";
+import { DancingWithDurgaPage } from "./components/DancingWithDurgaPage";
 import { OfferingsPage } from "./components/OfferingsPage";
 import { OfferPathGateway } from "./components/OfferPathGateway";
 import { Pathway } from "./components/Pathway";
@@ -53,6 +54,8 @@ function App() {
     window.location.pathname === "/work-with-sheetal";
   const isAboutRoute = window.location.pathname === "/about-sheetal";
   const isTestimonialsRoute = window.location.pathname === "/testimonials";
+  const isDancingWithDurgaRoute =
+    window.location.pathname === "/dancing-with-durga";
 
   if (isBeginRoute) {
     return (
@@ -84,6 +87,10 @@ function App() {
 
   if (isTestimonialsRoute) {
     return <TestimonialsPage />;
+  }
+
+  if (isDancingWithDurgaRoute) {
+    return <DancingWithDurgaPage />;
   }
 
   return <PortalApp />;
