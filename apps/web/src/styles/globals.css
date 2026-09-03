@@ -754,6 +754,39 @@ button {
   align-items: center;
 }
 
+.method-rhythm {
+  display: grid;
+  gap: 12px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: method-step;
+}
+
+.method-rhythm li {
+  counter-increment: method-step;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  min-height: 58px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(244, 239, 230, 0.1);
+  color: rgba(244, 239, 230, 0.86);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.18;
+}
+
+.method-rhythm li::before {
+  content: counter(method-step, decimal-leading-zero);
+  color: var(--gold-lit);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
 .ritual-card {
   position: relative;
   min-height: 520px;
@@ -2585,6 +2618,42 @@ body {
   margin-top: 34px;
 }
 
+.receiving-ladder {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.receiving-ladder div {
+  padding: 18px;
+  border-top: 1px solid rgba(233, 199, 126, 0.32);
+  background: rgba(244, 239, 230, 0.035);
+}
+
+.receiving-ladder span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--gold-lit);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.receiving-ladder p {
+  margin: 0;
+  color: rgba(244, 239, 230, 0.78);
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+.offerings-ladder {
+  margin: 32px auto 0;
+  max-width: 980px;
+}
+
 .offer-category-rail {
   display: grid;
   gap: 10px;
@@ -2858,11 +2927,307 @@ body {
     0 0 46px rgba(229, 132, 155, 0.12);
 }
 
+/* Sprint 12H-A - Dancing with Durga launch foundation */
+.durga-page {
+  --durga-sindoor: #b11217;
+  --durga-blood: #7a0d0d;
+  --durga-oxblood: #3b0b0f;
+  --durga-antique-gold: #d6b15c;
+  --durga-black: #080b0d;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(177, 18, 23, 0.34), transparent 30%),
+    radial-gradient(circle at 84% 38%, rgba(214, 177, 92, 0.16), transparent 28%),
+    linear-gradient(180deg, #090506, #130506 44%, #080b0d);
+}
+
+.durga-hero {
+  position: relative;
+  min-height: 94vh;
+  padding: 138px 0 96px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(214, 177, 92, 0.2);
+}
+
+.durga-hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    radial-gradient(ellipse at 22% 42%, rgba(177, 18, 23, 0.46), transparent 34%),
+    radial-gradient(ellipse at 78% 12%, rgba(214, 177, 92, 0.2), transparent 24%),
+    linear-gradient(110deg, rgba(8, 11, 13, 0.82), rgba(59, 11, 15, 0.74) 48%, rgba(8, 11, 13, 0.96));
+}
+
+.durga-hero::after {
+  position: absolute;
+  right: min(8vw, 90px);
+  bottom: 8%;
+  z-index: -1;
+  width: min(36vw, 420px);
+  aspect-ratio: 0.7;
+  border: 1px solid rgba(214, 177, 92, 0.34);
+  border-radius: 999px 999px 18px 18px;
+  content: "";
+  background:
+    radial-gradient(circle at 50% 32%, rgba(214, 177, 92, 0.32), transparent 10%),
+    radial-gradient(ellipse at 50% 52%, rgba(177, 18, 23, 0.35), transparent 32%),
+    linear-gradient(180deg, rgba(214, 177, 92, 0.11), rgba(8, 11, 13, 0.08));
+  box-shadow: inset 0 0 80px rgba(8, 11, 13, 0.78);
+  opacity: 0.78;
+}
+
+.durga-hero-flame {
+  position: absolute;
+  top: 15%;
+  left: 7%;
+  z-index: -1;
+  width: 120px;
+  height: 180px;
+  border-radius: 70% 30% 70% 30%;
+  background:
+    radial-gradient(circle at 54% 30%, rgba(214, 177, 92, 0.55), transparent 14%),
+    linear-gradient(155deg, rgba(177, 18, 23, 0.7), rgba(122, 13, 13, 0.14));
+  filter: blur(2px);
+  opacity: 0.5;
+  transform: rotate(18deg);
+}
+
+.durga-hero-grid,
+.durga-message-grid,
+.durga-investment-grid,
+.durga-visual-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.58fr);
+  gap: clamp(36px, 7vw, 92px);
+  align-items: center;
+}
+
+.durga-hero-copy h1 {
+  max-width: 830px;
+  margin: 0;
+  color: #fff4e0;
+  font-family: var(--serif);
+  font-size: clamp(4rem, 8vw, 8.7rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.92;
+  text-shadow: 0 18px 80px rgba(0, 0, 0, 0.78);
+}
+
+.durga-subtitle {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: var(--durga-antique-gold);
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.4vw, 2.4rem);
+  line-height: 1.18;
+}
+
+.durga-hero-copy > p:not(.label):not(.durga-subtitle):not(.durga-boundary) {
+  max-width: 690px;
+  color: rgba(255, 244, 224, 0.78);
+  font-size: 1.12rem;
+  line-height: 1.8;
+}
+
+.durga-boundary {
+  max-width: 560px;
+  margin-top: 18px;
+  color: rgba(255, 244, 224, 0.62);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.durga-experience-panel,
+.durga-price-panel article,
+.durga-gate-card {
+  border: 1px solid rgba(214, 177, 92, 0.26);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(177, 18, 23, 0.2), transparent 36%),
+    linear-gradient(145deg, rgba(8, 11, 13, 0.88), rgba(59, 11, 15, 0.54));
+  box-shadow: rgba(0, 0, 0, 0.34) 0 28px 74px;
+}
+
+.durga-experience-panel {
+  display: grid;
+  gap: 24px;
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.durga-experience-panel span {
+  color: var(--durga-antique-gold);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  line-height: 1.02;
+}
+
+.durga-experience-panel ul,
+.durga-gate-card p {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  color: rgba(255, 244, 224, 0.72);
+  line-height: 1.65;
+  list-style: none;
+}
+
+.durga-experience-panel li {
+  padding-top: 14px;
+  border-top: 1px solid rgba(214, 177, 92, 0.18);
+}
+
+.durga-message {
+  background:
+    radial-gradient(circle at 82% 42%, rgba(177, 18, 23, 0.2), transparent 30%),
+    rgba(8, 11, 13, 0.98);
+}
+
+.durga-message h2,
+.durga-gates h2,
+.durga-investment h2,
+.durga-visual-world h2 {
+  color: #fff4e0;
+}
+
+.durga-essence-list {
+  display: grid;
+  gap: 10px;
+}
+
+.durga-essence-list p {
+  margin: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(214, 177, 92, 0.18);
+  color: var(--durga-antique-gold);
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.4vw, 2.45rem);
+  line-height: 1.08;
+}
+
+.durga-gates {
+  background:
+    linear-gradient(180deg, rgba(19, 5, 6, 0.98), rgba(8, 11, 13, 0.98));
+}
+
+.durga-gate-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 46px;
+}
+
+.durga-gate-card {
+  display: grid;
+  align-content: start;
+  min-height: 340px;
+  padding: 24px;
+}
+
+.durga-gate-card span {
+  color: var(--durga-antique-gold);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.durga-gate-card h3 {
+  margin: 20px 0 10px;
+  color: #fff4e0;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 2.5vw, 2.75rem);
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.durga-gate-card strong {
+  margin-bottom: 18px;
+  color: #ff5a3e;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.durga-investment,
+.durga-visual-world {
+  background: #080b0d;
+}
+
+.durga-price-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.durga-price-panel article {
+  padding: 26px;
+}
+
+.durga-price-panel span {
+  color: rgba(255, 244, 224, 0.64);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.durga-price-panel strong {
+  display: block;
+  margin-top: 14px;
+  color: #ff4d36;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 500;
+}
+
+.durga-price-panel p {
+  margin: 8px 0 0;
+  color: var(--durga-antique-gold);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+
+.durga-access-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 38px;
+}
+
+.durga-access-list p,
+.durga-rule-grid span {
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(214, 177, 92, 0.18);
+  color: rgba(255, 244, 224, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.durga-rule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.durga-rule-grid span:last-child {
+  grid-column: 1 / -1;
+  color: #ffb7a8;
+}
+
 @media (max-width: 1040px) {
   .public-hero-grid,
   .offer-gateway-layout,
   .payment-state-grid,
-  .testimonial-layout {
+  .testimonial-layout,
+  .durga-hero-grid,
+  .durga-message-grid,
+  .durga-investment-grid,
+  .durga-visual-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2878,6 +3243,14 @@ body {
   .offering-card:nth-child(even) figure {
     order: 0;
   }
+
+  .durga-gate-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .durga-access-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 680px) {
@@ -2888,6 +3261,7 @@ body {
 
   .public-choice-panel,
   .offer-gateway-actions,
+  .receiving-ladder,
   .testimonial-field-card {
     grid-template-columns: 1fr;
   }
@@ -2896,6 +3270,16 @@ body {
   .about-hero-intro h1,
   .testimonial-layout h1 {
     font-size: clamp(3.2rem, 18vw, 5rem);
+  }
+
+  .durga-hero-copy h1 {
+    font-size: clamp(2.95rem, 14.5vw, 4.35rem);
+    line-height: 0.98;
+  }
+
+  .durga-subtitle {
+    margin-top: 16px;
+    font-size: clamp(1.2rem, 6vw, 1.55rem);
   }
 
   .offer-gateway-copy h2,
@@ -2910,5 +3294,28 @@ body {
 
   .offering-card-copy {
     padding: 28px 22px 34px;
+  }
+
+  .durga-hero {
+    min-height: auto;
+    padding: 116px 0 68px;
+  }
+
+  .durga-hero::after {
+    right: -18vw;
+    bottom: auto;
+    top: 86px;
+    width: 58vw;
+    opacity: 0.38;
+  }
+
+  .durga-gate-list,
+  .durga-access-list,
+  .durga-rule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .durga-gate-card {
+    min-height: auto;
   }
 }

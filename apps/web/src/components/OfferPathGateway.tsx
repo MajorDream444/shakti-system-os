@@ -1,4 +1,4 @@
-import { offerCategories, offerPathways, trustLinks } from "../data/offerings";
+import { offerCategories, offerPathways, receivingLadder, trustLinks } from "../data/offerings";
 
 export function OfferPathGateway() {
   return (
@@ -8,10 +8,19 @@ export function OfferPathGateway() {
           <p className="label">Work With Sheetal</p>
           <h2 id="offer-gateway-title">Two clear ways into the work.</h2>
           <p>
-            If you already know what you are seeking, go directly to the public
-            offerings. If you need discernment, begin privately and let the
-            pathway reveal the next doorway.
+            One body of work. Different ways to enter. If you already know what
+            you are seeking, go directly to the public offerings. If you need
+            discernment, begin privately and let the pathway reveal the next
+            doorway.
           </p>
+          <div className="receiving-ladder" aria-label="What you can receive">
+            {receivingLadder.map((item) => (
+              <div key={item.level}>
+                <span>{item.level}</span>
+                <p>{item.doorway}</p>
+              </div>
+            ))}
+          </div>
           <div className="offer-gateway-actions" aria-label="Offer path choices">
             {offerPathways.map((pathway) => (
               <a className="offer-path-card" href={pathway.href} key={pathway.title}>

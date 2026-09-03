@@ -15,6 +15,7 @@ export const SHALA_PATH = "/shala";
 export const OFFERINGS_PATH = "/offerings";
 export const ABOUT_SHEETAL_PATH = "/about-sheetal";
 export const TESTIMONIALS_PATH = "/testimonials";
+export const DANCING_WITH_DURGA_PATH = "/dancing-with-durga";
 
 export const NAV_ITEMS: NavItem[] = [
   "Offerings",

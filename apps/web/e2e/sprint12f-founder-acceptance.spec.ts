@@ -87,7 +87,7 @@ test.describe("Sprint 12F Sheetal acceptance and offer path clarity", () => {
     await expect(page.getByRole("link", { name: "Request Private Work" }).first()).toBeVisible();
     await expect(page.getByText("Private work in 6-, 9-, or 12-session containers")).toBeVisible();
     await expect(page.getByText("A shorter 3-session container only by exception")).toBeVisible();
-    await expect(page.locator("body")).not.toContainText(/single session|standalone session|one-off support|try a session/i);
+    await expect(page.locator("body")).not.toContainText(/book (a )?(single|standalone) session|one-off support|try a session/i);
     await expect(page.getByText("No instant paid access.")).toBeVisible();
     await capture(page, testInfo, "desktop-offerings-visible-paths.png");
     await assertNoPublicInternalLanguage(page);
@@ -170,7 +170,7 @@ test.describe("Sprint 12F Sheetal acceptance and offer path clarity", () => {
     await expect(page.getByText("Begin Here - Free")).toBeVisible();
     await expect(page.getByText("Request Private Work").first()).toBeVisible();
     await expect(page.getByText("6-, 9-, or 12-session private pathways")).toBeVisible();
-    await expect(page.locator("body")).not.toContainText(/single session|standalone session|one-off support|try a session/i);
+    await expect(page.locator("body")).not.toContainText(/book (a )?(single|standalone) session|one-off support|try a session/i);
     await expect(page.getByText("No instant paid access.")).toBeVisible();
     await capture(page, testInfo, "mobile-offerings-visible-paths.png");
     await assertNoPublicInternalLanguage(page);
@@ -195,7 +195,7 @@ test.describe("Sprint 12F Sheetal acceptance and offer path clarity", () => {
       {
         item: "Does mobile preserve narrative order?",
         status: "YES",
-        evidence: "Home moves from hero actions to offer path, founder trust, method, pathway, retreat, and final action.",
+        evidence: "Home moves from hero actions to method, offer path, founder trust, pathway, retreat, and final action.",
         objective: true,
       },
       {

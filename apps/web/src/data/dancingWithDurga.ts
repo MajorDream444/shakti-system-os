@@ -1,0 +1,88 @@
+export const dancingWithDurga = {
+  path: "/dancing-with-durga",
+  title: "Dancing with Durga: Devotion with a Spine",
+  titleStatus: "FOUNDER CONFIRMED - Sept. 3",
+  campaignLine: "Durga. Devotion. Dharma.",
+  subtitle: "A Nine-Night Navratri Sadhana Through the Navadurgas",
+  audience: "Women-only",
+  format: "Five live online gatherings plus four non-live practices",
+  timing: "7:30-9:00 PM IST",
+  cta: "Request details",
+  boundary:
+    "Details are being held for founder review. Registration and payment are not open yet.",
+  essence: [
+    "Feel fear and stay.",
+    "Trust the body.",
+    "Say no without apologizing.",
+    "Feel anger without being consumed.",
+    "Protect what is sacred.",
+    "Stand in power without abandoning tenderness.",
+  ],
+  practices: [
+    "myth",
+    "mantra",
+    "devotion",
+    "movement",
+    "dance",
+    "somatic embodiment",
+  ],
+  liveGates: [
+    {
+      date: "October 11",
+      goddess: "Shailaputri",
+      gate: "Earth: I Am Here",
+      themes: "Grounding, safety, trust, fear, belonging, the root, and opening sankalpa.",
+    },
+    {
+      date: "October 13",
+      goddess: "Brahmacharini and Chandraghanta",
+      gate: "Devotion with a Spine",
+      themes: "Tapas, courage, inner authority, voice, boundaries, and the sacred no.",
+    },
+    {
+      date: "October 15",
+      goddess: "Kushmanda and Skandamata",
+      gate: "Yoni: My Body Is Mine",
+      themes:
+        "Water, flow, sensuality, creative life force, bodily sovereignty, fierce inner mother, and trauma-aware yoni sthana exploration.",
+    },
+    {
+      date: "October 17",
+      goddess: "Katyayani and Kalaratri",
+      gate: "Fire: My No Is Sacred",
+      themes: "Warrior power, sacred rage, protection, boundaries, the Kali current, sound, movement, and warrior dance.",
+    },
+    {
+      date: "October 19",
+      goddess: "Mahagauri and Siddhidatri",
+      gate: "Unity: My Power Serves Life",
+      themes: "Purification, love, sisterhood, integration, wholeness, dharma, and closing blessing.",
+    },
+  ],
+  investment: [
+    {
+      region: "Global",
+      early: "$111 Early Devotion",
+      standard: "$222 Standard",
+    },
+    {
+      region: "India-resident",
+      early: "₹6,666 Early Devotion",
+      standard: "₹9,999 Standard",
+    },
+  ],
+  access: [
+    "One fully gifted scholarship",
+    "Two supported-price places",
+    "Temporary community / Shala space during the journey",
+    "Two months of recording and material access for non-members after the container",
+    "Shakti Shala continuation through invitation, simple application, human discernment, and paid membership",
+  ],
+  visualRules: [
+    "Sindoor red, blood red, deep oxblood",
+    "Black and antique gold",
+    "Maa Durga, her eyes, lion, trishul, sword, and red hibiscus",
+    "Powerful, earthy, visceral, devotional",
+    "No soft pastel or generic divine feminine aesthetic",
+  ],
+};

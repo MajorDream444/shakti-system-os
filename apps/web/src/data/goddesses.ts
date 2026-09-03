@@ -2,18 +2,18 @@ import type { PhilosophyCopy, RitualCardCopy } from "../types/content";
 
 export const philosophy: PhilosophyCopy = {
   label: "The Method",
-  headline: "This is not surface wellness.",
+  headline: "A bridge between nervous-system care and classical Shakta practice.",
   paragraphs: [
-    "Shakti Shadow & Somatics bridges Western neuroscience, somatic practice, shadow integration, and classical Shakta Tantra.",
-    "The work begins where performance ends - in the body, in the shadow, in the places we have been taught to hide.",
+    "Sheetal works where somatic therapy, nervous-system literacy, shadow integration, devotional practice, and classical Shakta Tantra can stay in relationship.",
+    "The work begins where performance ends - with the body, the shadow, practice, and the next doorway a seeker is actually ready to meet.",
   ],
 };
 
 export const ritualCard: RitualCardCopy = {
   kicker: "Body · Shadow · Lineage",
-  headline: "Ancient practice, held with clinical clarity.",
+  headline: "Listen, meet, return, choose.",
   body:
-    "A private threshold for the women who can feel that the next layer is not more performance. It is truth in the nervous system.",
+    "The public rhythm is simple: listen to the body, meet the shadow, return to sadhana, then choose the next doorway with discernment.",
 };
 
 export const transitionQuote =

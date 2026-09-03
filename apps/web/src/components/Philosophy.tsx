@@ -4,6 +4,13 @@ import { methodDoorway, type LivingDoorway } from "../data/livingDoorways";
 import { KnowledgeChamber } from "./KnowledgeChamber";
 import { portalImages } from "./PortalImageSlots";
 
+const methodRhythm = [
+  "Listen to the body",
+  "Meet the shadow",
+  "Return to practice",
+  "Choose the next doorway",
+];
+
 export function Philosophy() {
   const [activeChamber, setActiveChamber] = useState<LivingDoorway | null>(null);
 
@@ -16,6 +23,11 @@ export function Philosophy() {
           {portalCopy.philosophy.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          <ol className="method-rhythm" aria-label="How Sheetal works">
+            {methodRhythm.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ol>
         </div>
         <div
           className="ritual-card gradient-shell reveal"

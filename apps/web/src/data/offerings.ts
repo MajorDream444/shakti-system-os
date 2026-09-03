@@ -116,6 +116,25 @@ export const offerCategories: OfferCategory[] = [
   },
 ];
 
+export const receivingLadder = [
+  {
+    level: "Free orientation",
+    doorway: "Begin privately and receive an honest first reflection.",
+  },
+  {
+    level: "Practice and belonging",
+    doorway: "Enter Shakti Shala for open teachings, practices, and sanctuary rhythm.",
+  },
+  {
+    level: "Held support",
+    doorway: "Request circles, community rhythm, or a private container when readiness is present.",
+  },
+  {
+    level: "Deeper immersion",
+    doorway: "Prepare for retreats and in-person work through human discernment.",
+  },
+];
+
 export const offerPathways = [
   {
     title: "I know the doorway I want",
