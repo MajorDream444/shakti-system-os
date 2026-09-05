@@ -1,6 +1,6 @@
 # Sprint 12H-A.2 - Emotional Visual Integration + Living Rhythm Report
 
-Status: LOCAL QA PASSED / PREVIEW PENDING / HUMAN VISUAL REVIEW REQUIRED
+Status: PREVIEW READY / HUMAN VISUAL REVIEW REQUIRED
 Owner: Codex
 Date: 2026-09-05
 Branch: `codex/sprint-12g-founder-method-stranger-clarity`
@@ -99,13 +99,33 @@ Classification: known non-blocking maintenance debt. Graphify remains context in
 
 ## Preview
 
-To be filled after Vercel Preview deployment.
+Vercel Preview deployment completed.
 
-Preview URL: TBD
-Deployment ID: TBD
-Commit: TBD
+Preview URL: `https://shakti-system-aug0mgbm2-major-hanzoais-projects.vercel.app`
+Deployment ID: `dpl_942nC4XnFeqscQNv1Sr4D5AREXaH`
+Commit: `08fed61a142894a2ae336927519c4e60aafdb874`
 Vercel CLI before upgrade: `59.11.2`
 Vercel CLI after upgrade: `59.11.7`
+
+Deployment log evidence:
+
+- Project: `major-hanzoais-projects/shakti-system-os`
+- Target: Preview
+- Branch: `codex/sprint-12g-founder-method-stranger-clarity`
+- Commit: `08fed61`
+- API functions included: `api/begin/complete`, `api/request-signal`
+- Build output included `sheetal_durga_field_2026-08-31-BPTyXLZE.jpeg`
+
+Environment scope check:
+
+- `AIRTABLE_BASE_ID`: Preview
+- `BEGIN_WRITES_ENABLED`: Preview
+- `AIRTABLE_PERSONAL_ACCESS_TOKEN`: Preview
+- Production Begin writes remain disabled.
+
+Remote smoke note:
+
+The Preview is protected. `vercel curl` successfully bypassed protection and returned the Vite app shell. Because the app is a client-rendered SPA, rendered copy was verified through local Playwright screenshots rather than raw HTML grep.
 
 ## Human Review Questions
 
