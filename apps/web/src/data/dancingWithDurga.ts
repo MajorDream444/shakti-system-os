@@ -8,8 +8,9 @@ export const dancingWithDurga = {
   format: "Five live online gatherings plus four non-live practices",
   timing: "7:30-9:00 PM IST",
   cta: "Request details",
-  boundary:
-    "Details are being held for founder review. Registration and payment are not open yet.",
+  boundary: "Registration and payment are not open yet.",
+  founderRole:
+    "Sheetal Kandola holds this container as practitioner and facilitator. Maa Durga remains the devotional center.",
   essence: [
     "Feel fear and stay.",
     "Trust the body.",
@@ -85,4 +86,12 @@ export const dancingWithDurga = {
     "Powerful, earthy, visceral, devotional",
     "No soft pastel or generic divine feminine aesthetic",
   ],
+  motifs: [
+    "hibiscus",
+    "lion courage",
+    "trishul clarity",
+    "sword discernment",
+    "devotional fire",
+  ],
+  gateElements: ["earth", "flame", "water", "fire", "gold"] as const,
 };

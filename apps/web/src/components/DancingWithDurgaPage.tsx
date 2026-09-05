@@ -1,6 +1,7 @@
 import { BEGIN_PATH } from "../constants/navigation";
 import { dancingWithDurga } from "../data/dancingWithDurga";
 import { PageShell } from "./PageShell";
+import { portalImages } from "./PortalImageSlots";
 
 export function DancingWithDurgaPage() {
   return (
@@ -26,6 +27,13 @@ export function DancingWithDurgaPage() {
           </div>
 
           <aside className="durga-experience-panel" aria-label="Dancing with Durga experience">
+            <div className="durga-sacred-slot" aria-hidden="true">
+              <span className="durga-trident-mark" aria-hidden="true" />
+            </div>
+            <div className="durga-panel-altar" aria-hidden="true">
+              <span />
+              <i />
+            </div>
             <span>{dancingWithDurga.campaignLine}</span>
             <ul>
               <li>{dancingWithDurga.audience}</li>
@@ -34,6 +42,28 @@ export function DancingWithDurgaPage() {
               <li>{dancingWithDurga.practices.join(" · ")}</li>
             </ul>
           </aside>
+        </div>
+      </section>
+
+      <section className="section durga-founder-field" aria-labelledby="durga-founder-title">
+        <div className="container durga-founder-grid">
+          <figure className="durga-founder-portrait">
+            <img
+              src={portalImages.durgaFounder}
+              alt="Sheetal Kandola in a green field"
+              loading="lazy"
+            />
+          </figure>
+          <div className="durga-founder-copy">
+            <p className="label">Practitioner Presence</p>
+            <h2 id="durga-founder-title">Held by Sheetal. Centered on Maa Durga.</h2>
+            <p>{dancingWithDurga.founderRole}</p>
+            <div className="durga-motif-line" aria-label="Campaign motifs">
+              {dancingWithDurga.motifs.map((motif) => (
+                <span key={motif}>{motif}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -64,8 +94,13 @@ export function DancingWithDurgaPage() {
             </p>
           </div>
           <div className="durga-gate-list">
-            {dancingWithDurga.liveGates.map((gate) => (
-              <article className="durga-gate-card" key={`${gate.date}-${gate.goddess}`}>
+            {dancingWithDurga.liveGates.map((gate, index) => (
+              <article
+                className="durga-gate-card"
+                data-element={dancingWithDurga.gateElements[index]}
+                key={`${gate.date}-${gate.goddess}`}
+              >
+                <i aria-hidden="true" />
                 <span>{gate.date}</span>
                 <h3>{gate.gate}</h3>
                 <strong>{gate.goddess}</strong>
@@ -82,9 +117,8 @@ export function DancingWithDurgaPage() {
             <p className="label">Investment / Access</p>
             <h2 id="durga-investment-title">Accessible entry, held carefully.</h2>
             <p>
-              The offer has founder-supplied pricing for launch planning. Payment,
-              registration, scholarship review, and Shakti Shala access are still
-              gated by human review and an approved commerce sprint.
+              Early Devotion is available for the first nine women in each region.
+              Registration and payment are not open yet.
             </p>
           </div>
           <div className="durga-price-panel">
@@ -101,6 +135,24 @@ export function DancingWithDurgaPage() {
           {dancingWithDurga.access.map((item) => (
             <p key={item}>{item}</p>
           ))}
+        </div>
+      </section>
+
+      <section className="section durga-shala-doorway" aria-labelledby="durga-doorway-title">
+        <div className="container durga-doorway-grid">
+          <div className="durga-doorway-visual" aria-hidden="true">
+            <span />
+          </div>
+          <div className="section-copy">
+            <p className="label">Shakti Shala Doorway</p>
+            <h2 id="durga-doorway-title">Experience first. Discern what continues.</h2>
+            <p>
+              Dancing with Durga opens temporary community and Shala space during
+              the journey. Continuing into Shakti Shala remains a separate
+              invitation, simple application, human discernment, and paid
+              membership.
+            </p>
+          </div>
         </div>
       </section>
 

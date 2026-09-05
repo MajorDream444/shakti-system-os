@@ -4,10 +4,12 @@ import libraryImage from "../shala/assets/images/temple_library_1783418534244.jp
 import poolImage from "../shala/assets/images/reflection_pool_1783418551833.jpg";
 import retreatImage from "../shala/assets/images/pilgrims_hall_1783418591416.jpg";
 import founderImage from "../shala/assets/images/sheetal_founder_presence_2026-08.jpg";
+import durgaFounderImage from "../shala/assets/images/sheetal_durga_field_2026-08-31.jpeg";
 
 export const portalImages = {
   hero: poolImage,
   founder: founderImage,
+  durgaFounder: durgaFounderImage,
   founderContext: valleyImage,
   gates: gatesImage,
   library: libraryImage,
