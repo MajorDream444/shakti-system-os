@@ -2934,12 +2934,19 @@ body {
   --durga-oxblood: #3b0b0f;
   --durga-antique-gold: #d6b15c;
   --durga-black: #080b0d;
+  --durga-ash-ivory: #f3ebdd;
+  --durga-warm-stone: #d8c8ac;
+  --durga-clay: #241515;
+  --durga-burgundy: #4a1f24;
+  --durga-leaf: #8fb27a;
+  --durga-water: #6f8f95;
+  --durga-dawn: #d99aaa;
   color: #fff4e0;
   background:
-    radial-gradient(circle at 18% 14%, rgba(177, 18, 23, 0.42), transparent 30%),
-    radial-gradient(circle at 84% 38%, rgba(214, 177, 92, 0.2), transparent 28%),
-    radial-gradient(circle at 50% 70%, rgba(122, 13, 13, 0.42), transparent 38%),
-    linear-gradient(180deg, #090506, #130506 44%, #080b0d);
+    radial-gradient(circle at 18% 14%, rgba(177, 18, 23, 0.28), transparent 30%),
+    radial-gradient(circle at 84% 38%, rgba(214, 177, 92, 0.18), transparent 28%),
+    radial-gradient(circle at 50% 70%, rgba(143, 178, 122, 0.1), transparent 38%),
+    linear-gradient(180deg, #090707, #241515 42%, #080b0d);
 }
 
 .durga-hero {
@@ -2956,10 +2963,11 @@ body {
   z-index: -2;
   content: "";
   background:
-    radial-gradient(ellipse at 22% 42%, rgba(177, 18, 23, 0.54), transparent 34%),
-    radial-gradient(ellipse at 78% 12%, rgba(214, 177, 92, 0.26), transparent 24%),
-    radial-gradient(ellipse at 82% 64%, rgba(255, 77, 54, 0.22), transparent 30%),
-    linear-gradient(110deg, rgba(8, 11, 13, 0.82), rgba(59, 11, 15, 0.74) 48%, rgba(8, 11, 13, 0.96));
+    radial-gradient(ellipse at 22% 42%, rgba(177, 18, 23, 0.38), transparent 34%),
+    radial-gradient(ellipse at 76% 10%, rgba(216, 200, 172, 0.18), transparent 24%),
+    radial-gradient(ellipse at 82% 64%, rgba(217, 154, 170, 0.14), transparent 30%),
+    radial-gradient(ellipse at 52% 100%, rgba(143, 178, 122, 0.1), transparent 38%),
+    linear-gradient(110deg, rgba(8, 11, 13, 0.78), rgba(74, 31, 36, 0.64) 48%, rgba(8, 11, 13, 0.92));
 }
 
 .durga-hero::after {
@@ -2986,8 +2994,9 @@ body {
   z-index: 0;
   content: "";
   background:
-    radial-gradient(circle at 14% 22%, rgba(255, 77, 54, 0.1), transparent 20%),
-    radial-gradient(circle at 78% 18%, rgba(214, 177, 92, 0.12), transparent 22%),
+    radial-gradient(circle at 14% 22%, rgba(226, 122, 63, 0.08), transparent 20%),
+    radial-gradient(circle at 78% 18%, rgba(214, 177, 92, 0.1), transparent 22%),
+    radial-gradient(circle at 88% 74%, rgba(111, 143, 149, 0.08), transparent 24%),
     linear-gradient(rgba(255, 244, 224, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 244, 224, 0.02) 1px, transparent 1px);
   background-size: auto, auto, 72px 72px, 72px 72px;
@@ -3244,9 +3253,10 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 18% 64%, rgba(177, 18, 23, 0.22), transparent 30%),
+    radial-gradient(circle at 18% 64%, rgba(111, 143, 149, 0.13), transparent 30%),
     radial-gradient(ellipse at 80% 46%, rgba(214, 177, 92, 0.14), transparent 32%),
-    rgba(8, 11, 13, 0.98);
+    radial-gradient(ellipse at 44% 100%, rgba(177, 18, 23, 0.18), transparent 34%),
+    #090707;
 }
 
 .durga-message::before {
@@ -3272,9 +3282,10 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 12% 34%, rgba(214, 177, 92, 0.14), transparent 28%),
-    radial-gradient(circle at 88% 62%, rgba(177, 18, 23, 0.24), transparent 30%),
-    linear-gradient(180deg, rgba(8, 11, 13, 0.98), rgba(19, 5, 6, 0.96));
+    radial-gradient(circle at 12% 34%, rgba(143, 178, 122, 0.24), transparent 28%),
+    radial-gradient(circle at 88% 62%, rgba(217, 154, 170, 0.14), transparent 30%),
+    radial-gradient(ellipse at 52% 100%, rgba(214, 177, 92, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(9, 7, 7, 0.98), rgba(31, 36, 24, 0.94));
 }
 
 .durga-founder-portrait {
@@ -3339,9 +3350,9 @@ body {
 
 .durga-motif-line span {
   padding: 10px 14px;
-  border: 1px solid rgba(214, 177, 92, 0.22);
+  border: 1px solid rgba(214, 177, 92, 0.26);
   border-radius: 999px;
-  background: rgba(177, 18, 23, 0.12);
+  background: rgba(143, 178, 122, 0.1);
   color: rgba(255, 244, 224, 0.76);
   font-size: 0.8rem;
   font-weight: 800;
@@ -3371,7 +3382,9 @@ body {
 
 .durga-gates {
   background:
-    linear-gradient(180deg, rgba(19, 5, 6, 0.98), rgba(8, 11, 13, 0.98));
+    radial-gradient(circle at 14% 20%, rgba(143, 178, 122, 0.1), transparent 26%),
+    radial-gradient(circle at 82% 72%, rgba(111, 143, 149, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(36, 21, 21, 0.98), rgba(8, 11, 13, 0.96));
 }
 
 .durga-gate-list {
@@ -3417,26 +3430,41 @@ body {
 .durga-gate-card[data-element="earth"] {
   --gate-glow: rgba(119, 74, 40, 0.34);
   --gate-symbol: linear-gradient(180deg, rgba(143, 178, 122, 0.38), rgba(72, 42, 22, 0.52));
+  background:
+    radial-gradient(circle at 20% 14%, rgba(143, 178, 122, 0.2), transparent 34%),
+    linear-gradient(155deg, rgba(36, 21, 21, 0.9), rgba(31, 45, 28, 0.72));
 }
 
 .durga-gate-card[data-element="flame"] {
   --gate-glow: rgba(214, 177, 92, 0.24);
   --gate-symbol: linear-gradient(150deg, rgba(214, 177, 92, 0.48), rgba(177, 18, 23, 0.58));
+  background:
+    radial-gradient(circle at 20% 14%, rgba(214, 177, 92, 0.16), transparent 34%),
+    linear-gradient(155deg, rgba(36, 21, 21, 0.92), rgba(74, 31, 36, 0.72));
 }
 
 .durga-gate-card[data-element="water"] {
   --gate-glow: rgba(113, 58, 78, 0.36);
   --gate-symbol: radial-gradient(ellipse at 50% 72%, rgba(113, 133, 142, 0.34), transparent 44%), linear-gradient(150deg, rgba(177, 18, 23, 0.6), rgba(8, 11, 13, 0.12));
+  background:
+    radial-gradient(circle at 18% 14%, rgba(111, 143, 149, 0.24), transparent 34%),
+    linear-gradient(155deg, rgba(36, 21, 21, 0.9), rgba(24, 39, 42, 0.7));
 }
 
 .durga-gate-card[data-element="fire"] {
   --gate-glow: rgba(255, 77, 54, 0.28);
   --gate-symbol: linear-gradient(160deg, rgba(255, 77, 54, 0.66), rgba(122, 13, 13, 0.42));
+  background:
+    radial-gradient(circle at 20% 14%, rgba(226, 122, 63, 0.2), transparent 34%),
+    linear-gradient(155deg, rgba(36, 21, 21, 0.94), rgba(122, 13, 13, 0.58));
 }
 
 .durga-gate-card[data-element="gold"] {
   --gate-glow: rgba(214, 177, 92, 0.28);
   --gate-symbol: radial-gradient(circle at 50% 50%, rgba(214, 177, 92, 0.48), transparent 42%), linear-gradient(180deg, rgba(255, 244, 224, 0.16), rgba(59, 11, 15, 0.2));
+  background:
+    radial-gradient(circle at 20% 14%, rgba(214, 177, 92, 0.2), transparent 34%),
+    linear-gradient(155deg, rgba(36, 21, 21, 0.9), rgba(90, 70, 35, 0.4));
 }
 
 .durga-gate-card span {
@@ -3476,6 +3504,43 @@ body {
 .durga-visual-world,
 .durga-shala-doorway {
   background: #080b0d;
+}
+
+.durga-investment {
+  color: var(--durga-clay);
+  background:
+    radial-gradient(circle at 12% 28%, rgba(143, 178, 122, 0.22), transparent 28%),
+    radial-gradient(circle at 78% 18%, rgba(217, 154, 170, 0.18), transparent 26%),
+    linear-gradient(180deg, var(--durga-ash-ivory), var(--durga-warm-stone) 64%, rgba(216, 200, 172, 0.92));
+}
+
+.durga-investment .label,
+.durga-investment .durga-price-panel span {
+  color: rgba(122, 13, 13, 0.78);
+}
+
+.durga-investment h2 {
+  color: var(--durga-clay);
+}
+
+.durga-investment .section-copy p {
+  color: rgba(36, 21, 21, 0.72);
+}
+
+.durga-investment .durga-price-panel article {
+  border-color: rgba(74, 31, 36, 0.22);
+  background:
+    radial-gradient(circle at 12% 14%, rgba(177, 18, 23, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(255, 251, 242, 0.74), rgba(216, 200, 172, 0.32));
+  box-shadow: rgba(36, 21, 21, 0.14) 0 22px 60px;
+}
+
+.durga-investment .durga-price-panel strong {
+  color: var(--durga-sindoor);
+}
+
+.durga-investment .durga-price-panel p {
+  color: #755923;
 }
 
 .durga-price-panel {
@@ -3529,6 +3594,12 @@ body {
   line-height: 1.55;
 }
 
+.durga-investment .durga-access-list p {
+  border-color: rgba(74, 31, 36, 0.18);
+  background: rgba(36, 21, 21, 0.88);
+  color: rgba(243, 235, 221, 0.78);
+}
+
 .durga-rule-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3544,9 +3615,10 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 28% 44%, rgba(177, 18, 23, 0.2), transparent 30%),
-    radial-gradient(ellipse at 74% 40%, rgba(214, 177, 92, 0.14), transparent 28%),
-    linear-gradient(180deg, rgba(8, 11, 13, 0.98), rgba(19, 5, 6, 0.96));
+    radial-gradient(ellipse at 28% 44%, rgba(111, 143, 149, 0.14), transparent 30%),
+    radial-gradient(ellipse at 74% 40%, rgba(214, 177, 92, 0.16), transparent 28%),
+    radial-gradient(ellipse at 50% 90%, rgba(177, 18, 23, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(8, 11, 13, 0.98), rgba(36, 21, 21, 0.96));
 }
 
 .durga-doorway-grid {
@@ -3566,8 +3638,8 @@ body {
   border-radius: 999px 999px 22px 22px;
   background:
     radial-gradient(ellipse at 50% 58%, rgba(214, 177, 92, 0.36), transparent 18%),
-    radial-gradient(ellipse at 50% 88%, rgba(255, 77, 54, 0.24), transparent 30%),
-    linear-gradient(90deg, rgba(8, 11, 13, 0.94), rgba(59, 11, 15, 0.28), rgba(8, 11, 13, 0.94));
+    radial-gradient(ellipse at 50% 88%, rgba(143, 178, 122, 0.16), transparent 30%),
+    linear-gradient(90deg, rgba(8, 11, 13, 0.94), rgba(74, 31, 36, 0.28), rgba(8, 11, 13, 0.94));
   box-shadow:
     inset 0 0 92px rgba(0, 0, 0, 0.82),
     0 42px 120px rgba(0, 0, 0, 0.4);
@@ -3592,7 +3664,7 @@ body {
   border-bottom: 0;
   border-radius: 999px 999px 0 0;
   content: "";
-  background: linear-gradient(180deg, rgba(214, 177, 92, 0.18), rgba(255, 77, 54, 0.08));
+  background: linear-gradient(180deg, rgba(214, 177, 92, 0.18), rgba(111, 143, 149, 0.08));
   box-shadow: 0 0 80px rgba(214, 177, 92, 0.16);
 }
 
