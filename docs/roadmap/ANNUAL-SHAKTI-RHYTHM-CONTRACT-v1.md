@@ -4,6 +4,8 @@ Owner: Codex
 Created: 2026-09-08
 Status: PLANNING CONTRACT / NO RUNTIME IMPLEMENTATION
 
+Primary source strengthened: 2026-09-08 from Sept 5 primary transcript through approximately `1:18:58`.
+
 ## Principle
 
 ```text
@@ -23,17 +25,20 @@ Inspiration enters a decision process. It does not immediately become infrastruc
 |---|---|---|
 | Navratri 2026 / Dancing with Durga | CONFIRMED FOR LAUNCH FOUNDATION | Sept 3 founder source and subsequent campaign work. |
 | Public teaching -> seasonal container -> Shala continuation | CONFIRMED FOR PLANNING | Sept 2 and Sept 3 founder sources. |
-| Recordings/practices/materials as memory after a container | CONFIRMED FOR PLANNING | Sept 3 commerce/access refinement. |
+| Recordings/practices/materials as memory after a container | PRIMARY-SUPPORTED FOR PLANNING | Sept 3 commerce/access refinement plus Sept 5 transcript discussion of recording reuse and Vault access. |
+| Four Navratri markers as recurring sacred anchors | PRIMARY-SUPPORTED STRUCTURE | Sept 5 transcript; exact dates and yearly commitments remain founder-filled. |
+| Two retreats as recurring annual anchor concept | PARTIAL PRIMARY SUPPORT | Sept 5 transcript strengthens Himalayas; Bali remains desired but carries founder uncertainty. |
+| New Moon / Full Moon rhythm | PRIMARY-SUPPORTED DIRECTION | Sept 5 transcript; operational cadence remains unimplemented. |
 
 ## Founder-Pending Dates / Programming
 
 | Item | Status | Why pending |
 |---|---|---|
-| 2027 annual programming calendar | FOUNDER-PENDING | Do not fabricate a year calendar. |
-| New Moon / Full Moon public openings | FOUNDER-PENDING | Prior source supports direction, not operational dates. |
+| 2027 annual programming calendar | FOUNDER-PENDING | Transcript supports the need for a calendar, not exact dates. |
+| New Moon / Full Moon public openings | FOUNDER-PENDING | Primary source supports direction, not operational dates or ownership. |
 | Ongoing Shala rhythm | FOUNDER-PENDING | Needs cadence, owner, and community process. |
-| Bali retreat / April 2027 | EXPLORATORY | Requires confirmation, venue, operations, legal/payment readiness. |
-| Dharamsala / Himalayas / Navratri 2027 retreat | EXPLORATORY | Requires confirmation, dates, readiness path, and retreat ops. |
+| Bali retreat / April 2027 | EXPLORATORY | Transcript names desire and strategy around Bali Spirit Fest, but Sheetal also says she feels uncertainty. |
+| Dharamsala / Himalayas / Navratri 2027 retreat | PRIMARY-SUPPORTED PLANNING DIRECTION | Transcript says a Himalayas retreat with Hansika is something to count on; exact dates, terms, readiness path, and retreat ops remain pending. |
 
 ## Annual Anchors
 
@@ -44,6 +49,7 @@ Approved structure can hold:
 - founder-approved seasonal containers
 - public teaching runways
 - Shala openings or community rhythms
+- Vault releases from previously recorded containers
 
 This does not mean every anchor is confirmed every year.
 

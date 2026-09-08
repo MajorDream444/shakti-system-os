@@ -2,13 +2,23 @@
 
 Owner: Codex
 Created: 2026-09-08
-Status: HUMAN REVIEW REQUIRED
+Status: PRIMARY-SOURCE STRENGTHENED / HUMAN REVIEW REQUIRED
 
 ## Executive Recommendation
 
-Do not begin another visual or commerce build from the Sept 5 meeting-summary claims alone.
+Do not begin another visual or commerce build merely because the Sept 5 primary transcript is now available.
 
-The next useful move is a short founder-truth canonicalization gate that verifies the missing primary Sept 5 source, confirms brand architecture, and decides what public name and method structure can govern the next implementation pass.
+The next useful move is a bounded founder-truth acceptance gate that uses the Sept 5 primary source to decide what public name, method structure, and visual direction govern the next implementation pass.
+
+Primary transcript result:
+
+- `Shri Shakti Shala` is source-supported as the future page/space name.
+- Five pillars are source-supported as doctrine capture.
+- Sovereignty is source-supported as pillar/outcome/directional principle.
+- Waterfall/flow/leakage/direction/nourishment is source-supported as doctrine.
+- Dance/movement is source-supported as part of the work.
+- Annual rhythm is source-supported as structure, but exact dates remain founder-filled.
+- DWD four-live-plus-bonus remains exploratory and does not supersede the five-live structure.
 
 ## What Should Not Happen Next
 
@@ -24,22 +34,23 @@ The next useful move is a short founder-truth canonicalization gate that verifie
 
 ## Proposed Sprint Sequence
 
-### 12I - Founder Truth / Brand Canonicalization
+### 12I - Founder Truth / Brand Acceptance
 
 Purpose:
 
-Verify the Sept 5 primary source and approve or reject the candidate brand architecture.
+Approve or reject the public implications of the Sept 5 primary source.
 
 Dependencies:
 
-- Sept 5 transcript/audio or clean meeting notes through approximately `1:18:58`.
-- Founder decision on `SHRI SHAKTI SHALA` vs `Shakti Shala`.
-- Founder review of five pillars and sovereignty role.
+- Founder decision on `Shri Shakti Shala` exact spelling, capitalization, metadata, route/nav rollout, and domain plan.
+- Founder review of five pillars and public definitions.
+- Founder decision on how visibly sovereignty appears in first-touch public copy.
+- Founder approval of Waterfall doctrine placement, if any public copy is proposed.
 
 Boundary:
 
-- Documentation, public naming decision, and source register only.
-- No runtime rename unless separately approved.
+- Documentation, public naming decision, implementation plan, and source register only unless explicitly authorized.
+- No runtime rename, public five-pillar copy, or visual overhaul unless separately approved.
 
 Human gate:
 
@@ -165,4 +176,4 @@ Recommended next sprint:
 
 Reason:
 
-The Sept 5 review introduces architecture-level naming and doctrine questions. Those should be settled before another implementation sprint depends on them.
+The Sept 5 review now has primary-source backing for architecture-level naming and doctrine questions. Those should be accepted or bounded before another implementation sprint depends on them.

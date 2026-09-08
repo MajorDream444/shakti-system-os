@@ -5,7 +5,7 @@ Recorded by: Codex
 Date of review: 2026-09-05
 Date captured: 2026-09-08
 Mode: Founder-source capture with source-access caveat
-Status: PARTIAL SOURCE PACKET / HUMAN REVIEW REQUIRED
+Status: PRIMARY TRANSCRIPT REVIEWED / HUMAN REVIEW REQUIRED
 
 ## Source Metadata
 
@@ -14,10 +14,11 @@ Status: PARTIAL SOURCE PACKET / HUMAN REVIEW REQUIRED
 | Founder | Sheetal Kandola |
 | Date | 2026-09-05 |
 | Medium | In-person founder review, referenced by Major via sprint brief |
-| Primary transcript status | Not found in the inspected repository, Downloads, or attachment index during this pass |
+| Primary transcript status | Found and reviewed at `/Users/majordreamwilliams/Downloads/Sheetal September 5 meeting - September 05.md` |
 | Governing prompt | `pasted-text.txt` attachment `f2559d8b-71ee-4f35-bb95-cd80648f152e` |
-| Authority level | Founder review is high authority, but exact wording is not fully auditable until the primary transcript is supplied |
-| Canonicality | Meeting-summary claims may guide reconciliation; exact public copy and doctrine require transcript or direct founder confirmation |
+| Transcript boundary | Project conversation admitted through approximately `1:18:58`; unrelated post-boundary media/audio excluded |
+| Authority level | Primary founder transcript is high authority for the pre-boundary project conversation; exploratory language remains exploratory |
+| Canonicality | Direct founder statements may strengthen doctrine/reconciliation; public implementation still requires the stated sprint boundary and human review |
 
 ## Transcript Boundary
 
@@ -32,13 +33,13 @@ Material after that point is classified as unrelated media/audio contamination a
 - Graphify relationships
 - implementation decisions
 
-This exclusion is binding for future transcript processing. If the transcript is later supplied, only the project conversation before approximately `1:18:58` should be processed as candidate founder source.
+This exclusion is binding for current and future transcript processing. Only the project conversation before approximately `1:18:58` is processed as candidate founder source.
 
 ## Verbatim Transcript Status
 
-No verbatim Sept 5 transcript was available to Codex in this pass.
+The primary Sept 5 transcript is available and has been reviewed through the project-conversation boundary at approximately `1:18:58`.
 
-Therefore this document does not present paraphrased sprint-brief claims as Sheetal's verbatim words. Where founder language is unavailable, the record uses `MEETING-SUMMARY CLAIM` and marks exact wording as `NEEDS PRIMARY SOURCE`.
+This document does not reproduce the full transcript. It uses short excerpts only where useful for provenance and keeps Fathom transcription uncertainty visible. Transcript wording that appears malformed is not silently corrected into doctrine.
 
 Known direct founder sources already in the repo remain separate:
 
@@ -51,8 +52,8 @@ Known direct founder sources already in the repo remain separate:
 
 | Claim | Source status | Classification |
 |---|---|---|
-| `SHRI SHAKTI SHALA` may be emerging as a public umbrella, living school, community, or sanctuary. | Meeting-summary claim; primary transcript missing. | NEEDS PRIMARY SOURCE / NEEDS FOUNDER DECISION |
-| `SHAKTI SHADOW & SOMATICS` remains Sheetal's body of work and method layer. | Supported by existing 12G implementation and prior doctrine. | CONFIRMS / REFINES |
+| `SHRI SHAKTI SHALA` is directly named by Sheetal as the page/space name. | Primary transcript: Sheetal says the entire thing can be called Shri Shakti Shala, and later says the space is called Shri Shakti Shala while the method remains separate. | PRIMARY-SUPPORTED / NEEDS IMPLEMENTATION DECISION |
+| `SHAKTI SHADOW & SOMATICS` remains Sheetal's body of work and method layer. | Primary transcript confirms the distinction between the named space and the method/body of work, while prior 12G work already treats Shakti Shadow & Somatics as the method. | CONFIRMS / REFINES |
 
 Do not globally rename the app, routes, documentation, metadata, or public navigation until a brand decision record is reviewed.
 
@@ -66,29 +67,31 @@ Emerging five-pillar architecture named in the sprint brief:
 4. Somatics
 5. Sovereignty
 
-Source status: meeting-summary claim only for Sept 5. The individual concepts are already present in the wider doctrine set, but the exact "five pillars" structure is not yet transcript-verified.
+Source status: primary transcript supports the exact five-pillar sequence. Sheetal says she wants more than three pillars and names `Shakti, shadow, sensuality, somatics, sovereignty`.
 
-Classification: NEW FOUNDER TRUTH CANDIDATE / NEEDS PRIMARY SOURCE.
+Classification: PRIMARY-SUPPORTED FOUNDER TRUTH / NEEDS PUBLIC TAXONOMY APPROVAL.
 
 ## C. Sovereignty
 
-Existing doctrine warns that `sovereignty` was previously over-weighted as founder language. The Sept 5 summary appears to restore sovereignty as a meaningful conceptual axis.
+Existing doctrine warns that `sovereignty` was previously over-weighted as founder language. The Sept 5 primary transcript restores sovereignty as a meaningful conceptual axis.
 
 Current treatment:
 
 - It may function as a pillar, outcome, directional principle, or more than one.
-- It should not be treated as final public vocabulary until the transcript or direct founder wording is supplied.
+- It should not be treated as final public vocabulary until public copy weighting is approved.
 - Prefer source-grounded phrases such as "your own authority," "trust the body," "trust your own power," and "own readiness" where those are better supported.
 
-Classification: REFINES PRIOR SOURCE / NEEDS PRIMARY SOURCE.
+Primary transcript strengthens sovereignty as a pillar and outcome. Sheetal frames it as the path creating "sovereign shaktis," supporting women to be less dependent on external rescue and more connected to their own power.
+
+Classification: PRIMARY-SUPPORTED REFINEMENT / NEEDS PUBLIC WEIGHTING DECISION.
 
 ## D. Containment / Shala Philosophy
 
-Meeting-summary claim:
+Primary transcript:
 
-> "The containment, the space matters even more of how it's held."
+> "the containment, the space matters even more of how it's held"
 
-This is recorded as a founder-derived containment insight, pending transcript verification.
+This is recorded as a primary-supported founder containment insight.
 
 Interpretive placement:
 
@@ -96,11 +99,11 @@ Interpretive placement:
 - The quality of the held container matters as much as, and sometimes more than, the content inside it.
 - This confirms prior system doctrine: "The practitioner teaches. AI prepares. Humans steward. The system remembers. The seeker receives."
 
-Classification: CONFIRMS / REFINES PRIOR SOURCE.
+Classification: PRIMARY-SUPPORTED / CONFIRMS PRIOR SYSTEM BOUNDARY.
 
 ## E. Shala Audience + Readiness
 
-Meeting-summary claims indicate that Shakti Shala audience, readiness, and exclusivity were clarified.
+Primary transcript clarifies that the Shala is not for a general rescue-oriented audience. Sheetal names a desire for "a layer of exclusivity" and describes women who have already tried therapy, teacher training, or other foundational work and want to level up with other sovereign women. Major offers the "dojo" metaphor and Sheetal affirms it.
 
 Current safe interpretation:
 
@@ -108,11 +111,11 @@ Current safe interpretation:
 - Access and continuation require discernment where intimacy, spiritual authority, or deeper participation is involved.
 - Public access language remains: Open, Available to Request, Requires Preparation, By Invitation.
 
-Classification: REFINES PRIOR SOURCE / NEEDS FOUNDER DECISION for exact audience and readiness language.
+Classification: PRIMARY-SUPPORTED DIRECTION / NEEDS PUBLIC LANGUAGE DECISION.
 
 ## F. Waterfall / Energy / Leakage Doctrine
 
-Meeting-summary claim names a Waterfall doctrine:
+Primary transcript names a Waterfall doctrine:
 
 ```text
 energy / resources
@@ -130,11 +133,13 @@ Current safe placement:
 - It should not yet become public homepage copy, a fixed assessment model, or automated scoring logic.
 - If implemented later, it should be source-cited and reviewed by Sheetal.
 
-Classification: NEW FOUNDER TRUTH CANDIDATE / NEEDS PRIMARY SOURCE.
+Sheetal describes the waterfall as always flowing and not depleted, then connects it to women as an "ever-flowing, golden waterfall," with the work of noticing where energy leaks and directing the flow toward nourishment rather than depletion.
+
+Classification: PRIMARY-SUPPORTED FOUNDER DOCTRINE / NOT AUTOMATED SCORING.
 
 ## G. Somatics / Sensuality / Dance / Embodiment
 
-The Sept 5 review reportedly clarified the relationship among somatics, sensuality, dance, and embodiment.
+The primary transcript clarifies the relationship among somatics, sensuality, dance, and embodiment.
 
 Existing stable boundary remains:
 
@@ -142,24 +147,26 @@ Existing stable boundary remains:
 - Never describe Sheetal's modality as `somatic breathwork`.
 - Do not reduce the work to a list of modalities if the founder source describes how they function together.
 
-Classification: CONFIRMS / REFINES PRIOR SOURCE.
+Sheetal identifies sensuality as sensory connection and says that if Tantra is stripped of religion and mantra, it is about senses and energy work. She also states that dance, movement, embodied dance, conscious dance, and movement/transmutation are part of her work.
+
+Classification: PRIMARY-SUPPORTED / REFINES PRIOR SOURCE.
 
 ## H. Founder Identity + Bio Corrections
 
-Meeting-summary claims indicate founder bio and authority direction were clarified.
+Primary transcript clarifies founder bio and authority direction.
 
 Existing constraints remain:
 
 - Do not publish unsupported institutions, degrees, regulated titles, or certificates.
-- Existing safe public identity: Indian woman raised in the American South.
-- Punjabi / second-generation language remains verification-sensitive unless directly confirmed.
+- Existing safe public identity can be strengthened to Punjabi Indian woman raised in the deep American South, subject to exact public wording review.
+- Sheetal explains Sikh as the religion she was born into and Punjabi as the geographical/location lineage, then selects Punjabi/Punjabi Indian framing.
 - Founder authority should be described through lived synthesis, not credential stacking.
 
-Classification: REFINES PRIOR SOURCE / NEEDS VERIFICATION.
+Classification: PRIMARY-SUPPORTED IDENTITY CORRECTION / CREDENTIALS STILL REQUIRE DOCUMENTARY PROOF.
 
 ## I. Goddess Temple Visual Direction
 
-Meeting-summary claim: visual direction moved toward a more explicit Goddess Temple orientation.
+Primary transcript moves visual direction toward a more explicit Goddess Temple orientation.
 
 Current safe interpretation:
 
@@ -168,7 +175,9 @@ Current safe interpretation:
 - The wider Shakti Portal should preserve Himalayan stone, living green, pink dawn, muted gold, flowers, water, and real human photography.
 - Do not place Shri Yantra, Maa Durga, Devi eyes, or other sacred imagery without approved assets.
 
-Classification: REFINES PRIOR SOURCE / NEEDS FOUNDER ASSET.
+Directly supported visual language includes: more red, more gold/yellow, maroon, more light, Goddess Temple, Devi/Goddess presence, hibiscus, bindi/eyes/red dots, yoni/ovals, spirals, Devi's feet, nose ring, sword/kharga, lotus, flowers, plants, trees, jungle, waterfalls, and nature as the realm of the goddess.
+
+Classification: PRIMARY-SUPPORTED VISUAL DIRECTION / NEEDS APPROVED ASSETS.
 
 ## J. Dancing with Durga
 
@@ -181,9 +190,11 @@ Existing Sept 3 direct source confirms the launch foundation:
 - Women-only
 - Request-details CTA until registration/commerce is approved
 
-Sept 5 reportedly clarified emotional visual direction and commerce intent.
+Sept 5 directly clarifies emotional visual direction and commerce intent.
 
-Classification: CONFIRMED / REFINES PRIOR SOURCE / IMPLEMENTATION READY only for already-approved launch-foundation surfaces. Registration and payment remain deferred.
+Delivery note: Sheetal considers "four live gatherings and a bonus call or something like that," but this is exploratory language. It does not supersede the existing five-live-gathering structure.
+
+Classification: CONFIRMED / REFINES PRIOR SOURCE / IMPLEMENTATION READY only for already-approved launch-foundation surfaces. Registration and payment remain deferred until an approved commerce sprint.
 
 ## K. Commerce Intent
 
@@ -204,29 +215,35 @@ Current boundary:
 
 Classification: CONFIRMED FOR PLANNING / INTENTIONALLY DEFERRED FOR IMPLEMENTATION.
 
+Sept 5 primary transcript adds explicit self-serve intent for Dancing with Durga payment: Sheetal wants visitors to come to the page, see everything, pay there, and avoid manual hand-holding. This is commerce intent, not implementation approval.
+
 ## L. Annual Sacred Rhythm
 
-Meeting-summary claim: annual programming rhythm was clarified.
+Primary transcript clarifies annual programming rhythm.
 
 Safe model:
 
 - Structure stays stable.
 - Programming rotates through approved seasonal and community rhythms.
-- Navratri is the current confirmed anchor.
-- Retreats, New Moon, Full Moon, and future annual programming remain founder-pending unless already supported elsewhere.
+- Navratri is a primary anchor, with four Navratris named as annual markers.
+- Retreats are discussed as two yearly live retreat anchors: Himalayas as firmer planning direction, Bali as desired but still carrying some founder uncertainty.
+- New Moon and Full Moon rhythm are named as lighter recurring community rhythms.
+- Weekly gatherings are explicitly more uncertain.
 
-Classification: NEW FOUNDER TRUTH CANDIDATE / NEEDS FOUNDER DECISION.
+Classification: PRIMARY-SUPPORTED STRUCTURE / EXACT DATES AND PUBLIC COMMITMENTS NEED FOUNDER DECISION.
 
 ## M. Retreat Direction
 
-Existing sources mention Bali 2027 and Dharamsala / Himalayas / Navratri 2027 as planning possibilities.
+Primary transcript strengthens retreat rhythm but leaves operational specifics open.
 
 Current boundary:
 
 - Retreat interest does not equal retreat readiness.
 - Do not publish confirmed retreat inventory, applications, deposits, or dates until founder-approved.
 
-Classification: EXPLORATORY / NEEDS FOUNDER DECISION.
+The Himalayas retreat with Hansika is described as something to count on for next year. Bali is discussed as desirable and linked to Bali Spirit Fest, but Sheetal explicitly says she feels some uncertainty.
+
+Classification: HIMALAYAS PRIMARY-SUPPORTED PLANNING DIRECTION / BALI EXPLORATORY / NEEDS FOUNDER DECISION.
 
 ## N. Lunar Rhythm
 
@@ -242,7 +259,7 @@ Classification: CONFIRMS DIRECTION / INTENTIONALLY DEFERRED.
 
 ## O. Vault / Recorded Teaching Memory
 
-Meeting-summary claim: Vault/content-memory direction was clarified.
+Primary transcript clarifies Vault/content-memory direction.
 
 Existing repo state:
 
@@ -256,11 +273,13 @@ Current boundary:
 - The system remembers approved teaching and operational continuity, not private seeker surveillance.
 - Do not publish unreviewed recordings or private content.
 
-Classification: CONFIRMS / NEEDS DATA WORK / NEEDS ASSET INVENTORY.
+Sheetal and Major discuss recorded offerings remaining available when she is not teaching live; Major frames this as content entering the Vault for future access.
+
+Classification: PRIMARY-SUPPORTED / NEEDS DATA WORK / NEEDS ASSET INVENTORY.
 
 ## P. Founder Asset Requirements
 
-Founder-owned dependencies named in the sprint brief and existing docs:
+Founder-owned dependencies named in the transcript, sprint brief, and existing docs:
 
 - domain acquisition
 - updated CV
@@ -272,7 +291,7 @@ Founder-owned dependencies named in the sprint brief and existing docs:
 - approved Shri Yantra
 - 2027 annual rhythm dates
 - retreat decisions/dates
-- unresolved Dancing with Durga delivery decisions
+- Dancing with Durga delivery decision only if founder intentionally changes the five-live structure later
 
 Classification: FOUNDER DEPENDENCY.
 
@@ -282,14 +301,14 @@ See `docs/handoff/SEPT-05-FOUNDER-ACTION-REGISTER.md`.
 
 ## R. Open Decisions / Exploratory Statements
 
-Open until primary source or direct founder decision is supplied:
+Open after primary transcript review:
 
-- Whether to use `SHRI SHAKTI SHALA` as public umbrella.
-- Whether the five-pillar architecture is final and how each pillar is defined.
-- Whether `Sovereignty` should be public pillar language or primarily internal doctrine.
-- Exact Shala audience and readiness wording.
-- Exact annual rhythm beyond Navratri.
-- DWD delivery mechanics if they changed from five live plus four non-live practices.
+- Exact capitalization, routing, metadata, and rollout timing for `Shri Shakti Shala`.
+- Exact public definitions and order for the five pillars.
+- Whether `Sovereignty` should be public pillar language, internal doctrine, outcome language, or all three.
+- Exact Shala audience/readiness copy that preserves invitation without generic exclusivity posturing.
+- Exact 2027 annual rhythm dates and which anchors become public promises.
+- DWD delivery mechanics only if Sheetal later decides to supersede five live plus four non-live practices.
 - Shala membership/founding-member terms.
 - Retreat dates, locations, readiness path, and public claims.
 - Vault taxonomy and approved publication lanes.

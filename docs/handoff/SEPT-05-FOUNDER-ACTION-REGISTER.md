@@ -2,7 +2,7 @@
 
 Owner: Codex
 Created: 2026-09-08
-Status: HUMAN OPERATIONS REGISTER / NOT IMPLEMENTATION
+Status: PRIMARY-SOURCE STRENGTHENED HUMAN OPERATIONS REGISTER / NOT IMPLEMENTATION
 
 ## Purpose
 
@@ -13,11 +13,13 @@ Separate founder-owned dependencies from implementation work so the repo does no
 | Item | Needed for | System of record | Status |
 |---|---|---|---|
 | Founder approval of Dancing with Durga launch page and campaign pack | Public launch readiness | GitHub source docs, later Notion decisions | Pending |
-| Confirm DWD final delivery structure | Prevent 5-live vs possible 4+bonus contradiction | Founder source / GitHub | Pending if Sept 5 source changed Sept 3 facts |
+| Confirm DWD final delivery structure only if changing from five-live plan | Prevent accidental supersession from exploratory 4+bonus language | Founder source / GitHub | Five live remains current; change requires explicit founder decision |
 | Approved Durga/Navadurga imagery or explicit decision to launch without deity art | Campaign visuals | Drive | Pending |
 | Approved Sheetal photography for DWD facilitator use | Campaign visuals | Drive | Partially supplied; clearance/provenance should be confirmed |
 | Registration CTA decision | Launch page behavior | GitHub / future commerce plan | Pending |
 | Scholarship and supported-price review process | Campaign operations | Notion SOP / future Airtable | Pending |
+| Exact `Shri Shakti Shala` public rollout decision | Naming, metadata, domains, navigation | GitHub / domain registrar / Notion | Primary-supported; implementation decision pending |
+| Five-pillar public definitions | Method page, future taxonomy, Vault organization | GitHub doctrine / founder source | Primary-supported doctrine; public wording pending |
 
 ## Required Later
 
@@ -45,4 +47,4 @@ Separate founder-owned dependencies from implementation work so the repo does no
 
 ## Source Hygiene
 
-Do not convert Fathom-generated typos, assistant summaries, or contaminated transcript material into source truth. Exact names, dates, domains, credentials, and pricing require direct founder evidence or explicit human confirmation.
+Do not convert Fathom-generated typos, assistant summaries, or contaminated transcript material into source truth. The Sept 5 primary transcript is admissible only through approximately `1:18:58`; all later unrelated media/audio remains excluded. Exact domains, credentials, public launch dates, and production payment behavior require direct founder evidence or explicit human confirmation.

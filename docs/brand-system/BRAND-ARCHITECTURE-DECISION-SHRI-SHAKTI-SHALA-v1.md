@@ -2,7 +2,7 @@
 
 Owner: Codex
 Created: 2026-09-08
-Status: DECISION RECORD / NOT IMPLEMENTED
+Status: PRIMARY-SOURCE STRENGTHENED DECISION RECORD / NOT IMPLEMENTED
 
 ## Decision Question
 
@@ -16,26 +16,45 @@ Should `SHRI SHAKTI SHALA` become the public umbrella, living school, community,
 | Method/body of work | `Shakti Shadow & Somatics` | Sheetal's method and public body of work. |
 | Internal system | `Shakti System OS` | Architecture, source governance, data boundaries, implementation. |
 
+## Source Strength
+
+Primary transcript reviewed:
+
+```text
+/Users/majordreamwilliams/Downloads/Sheetal September 5 meeting - September 05.md
+```
+
+Admitted range: Sheetal/Major project conversation through approximately `1:18:58`.
+
+Direct founder support:
+
+- Sheetal says the entire thing can be called `Shri Shakti Shala`.
+- Sheetal says the first sentence can name her as founder of `Shri Shakti Shala`.
+- Sheetal distinguishes the space/page from the method/body of work.
+- Sheetal says the public business account has used this name for some time.
+
+Transcript caveat: Fathom transcription mangles some proper nouns. Exact spelling/capitalization still needs final human confirmation before runtime rename.
+
 ## Candidate Future Architecture
 
 | Layer | Candidate name | Candidate role | Status |
 |---|---|---|---|
-| Public umbrella / living school / sanctuary | `SHRI SHAKTI SHALA` | The wider public home for teachings, community, practice, seasonal invitations, and Shala membership. | NEEDS FOUNDER DECISION |
-| Founder method / body of work | `SHAKTI SHADOW & SOMATICS` | The method Sheetal teaches and the lens through which offers are held. | CONFIRMED / REFINED |
+| Public umbrella / living school / sanctuary | `SHRI SHAKTI SHALA` | The wider public home for teachings, community, practice, seasonal invitations, and Shala membership. | PRIMARY-SUPPORTED / NEEDS ROLLOUT DECISION |
+| Founder method / body of work | `SHAKTI SHADOW & SOMATICS` | The method Sheetal teaches and the lens through which offers are held. | PRIMARY-SUPPORTED / REFINED |
 | Internal operating system | `Shakti System OS` | Repository, governance, integrations, memory, source boundaries. | KEEP INTERNAL |
 
 ## Recommendation
 
-Do not rename globally yet.
+Do not rename globally in this amendment.
 
-Use the Sept 5 source packet to prepare the decision, then wait for direct founder approval and exact capitalization before changing public surfaces.
+Use the Sept 5 primary transcript to prepare a bounded rename rollout, then wait for explicit approval of exact capitalization, domains, public metadata, and migration order before changing public surfaces.
 
 ## Why Not Rename Yet
 
-- The primary Sept 5 transcript was not available during this pass.
 - Existing public navigation, copy, docs, and tests currently use `Shakti Shala`.
 - `Shri` carries devotional and cultural specificity that should not be casually applied by implementation inference.
 - A global rename touches search, metadata, routes, docs, tests, screenshots, and user expectations.
+- Domain acquisition and social handle alignment are founder-owned dependencies.
 
 ## Surfaces Affected If Approved
 
