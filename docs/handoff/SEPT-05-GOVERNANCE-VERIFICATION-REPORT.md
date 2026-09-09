@@ -141,3 +141,28 @@ Claims preserved as exploratory or pending:
 | No sacred imagery changed | PASS | No asset or public component changes. |
 | No unsupported founder claim promoted to public truth | PASS | Primary-supported claims were upgraded only in docs; public implementation remains gated. |
 | Transcript contamination after `~1:18:58` excluded | PASS | Source and reconciliation docs include the exclusion boundary. |
+
+## Sprint 12I Acceptance Gate Addendum
+
+Date: 2026-09-09
+
+Scope:
+
+- Created founder brand-boundary acceptance record.
+- Created implementation consequence map.
+- Updated founder asset register.
+- Added bounded STB reusable lesson: founder feedback should change canonical truth before it changes software.
+
+Boundary:
+
+- No runtime files changed.
+- No public app copy changed.
+- No route rename.
+- No redesign.
+- No commerce.
+- No Airtable mutation.
+- No Production deployment.
+- No sacred imagery added or changed.
+- No founder-gated decision converted into implementation.
+
+Verification commands for this addendum are recorded in the final Sprint 12I response.

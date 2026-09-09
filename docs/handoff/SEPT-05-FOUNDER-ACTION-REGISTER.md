@@ -36,6 +36,20 @@ Separate founder-owned dependencies from implementation work so the repo does no
 | Vault source inventory access | Temple Library memory | Drive / Airtable | Pending |
 | Shala owner / review queue rhythm | Human-in-the-loop operations | Notion SOP / Airtable views | Pending |
 
+## Founder Asset Register
+
+| Asset / dependency | Needed for | System of record | Current status | Do not do |
+|---|---|---|---|---|
+| Approved Sheetal headshot / photography | Home, About, DWD facilitator presence, future press kit | Drive with GitHub usage notes | Partially supplied; placement and rights/provenance should be confirmed | Do not imply Sheetal is Maa Durga or over-process the image. |
+| Approved Durga imagery | Dancing with Durga, Durga-specific visual surfaces | Drive | Pending founder asset | Do not use generated deity art as approved sacred imagery. |
+| Approved Navadurga imagery | Dancing with Durga schedule, future teaching/Vault surfaces | Drive | Pending founder asset | Do not fabricate or substitute generic goddess imagery. |
+| Founder-approved Shri Yantra | Classical Shakta Tantra, Shala threshold, sacred visual system | Drive / GitHub source note | Pending founder asset | Do not redraw, regenerate, simplify, or reinterpret sacred geometry. |
+| Testimonial bank | Testimonials page, offer trust evidence, social proof | Drive / future Airtable permissions | Pending Drive folder / inventory | Do not publish private praise without permission. |
+| Testimonial publication permissions | Public testimonials and identity-safe excerpts | Airtable / Notion SOP | Pending | Do not infer consent from possession of a message. |
+| Updated CV | Founder authority, press/about expansion, credential verification | Drive | Pending | Do not publish institutions, degrees, regulated titles, or certificate claims without proof. |
+| Exact 2027 calendar | Annual Rhythm, future public calendar, retreats, seasonal programming | Notion / future Airtable / GitHub summary | Pending founder-filled dates | Do not invent dates or fixed weekly cadence. |
+| Domain acquisition status | Public identity rollout for founder name and `Shri Shakti Shala` | Domain registrar / Notion / GitHub decision record | Pending | Do not rename production surfaces before domain/metadata decision. |
+
 ## Optional / Future
 
 | Item | Potential use | Status |
