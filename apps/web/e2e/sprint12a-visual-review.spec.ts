@@ -64,7 +64,7 @@ test.describe("Sprint 12A visual review evidence", () => {
 
     await page.goto(`${baseUrl}/`);
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
-    await expect(page.getByText("Shakti Shala").first()).toBeVisible();
+    await expect(page.getByText("Shri Shakti Shala").first()).toBeVisible();
     await capture(page, testInfo, "desktop-01-portal-above-fold.png");
 
     await page.locator("#founder").scrollIntoViewIfNeeded();
@@ -76,7 +76,7 @@ test.describe("Sprint 12A visual review evidence", () => {
     await beginToReveal(page, testInfo);
 
     await page.goto(`${baseUrl}/shala`);
-    await expect(page.locator("body")).toContainText(/Shakti Shala|Courtyard|Sanctuary/i);
+    await expect(page.locator("body")).toContainText(/Shri Shakti Shala|Courtyard|Sanctuary/i);
     await capture(page, testInfo, "desktop-06-shala-arrival.png");
 
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
@@ -98,7 +98,7 @@ test.describe("Sprint 12A visual review evidence", () => {
         question: "Can I tell what this place is?",
         status: "YES",
         evidence:
-          "Portal and Shala surfaces expose `Shakti Shala`, `Shakti Shadow & Somatics`, sanctuary language, and room names.",
+          "Portal and Shala surfaces expose `Shri Shakti Shala`, `Shakti Shadow & Somatics`, sanctuary language, and room names.",
       },
       {
         question: "Can I tell where to begin?",
@@ -133,7 +133,7 @@ test.describe("Sprint 12A visual review evidence", () => {
         question: "Does the founder feel human and present?",
         status: "YES",
         evidence:
-          "Founder portrait, name, biography, and contextual Shakti Shala connection are visible in the captured founder section.",
+          "Founder portrait, name, biography, and contextual Shri Shakti Shala connection are visible in the captured founder section.",
       },
       {
         question: "Does the sanctuary feel inhabited?",
@@ -161,7 +161,7 @@ test.describe("Sprint 12A visual review evidence", () => {
     await capture(page, testInfo, "mobile-03-begin-arrival.png");
 
     await page.goto(`${baseUrl}/shala`);
-    await expect(page.locator("body")).toContainText(/Shakti Shala|Courtyard|Sanctuary/i);
+    await expect(page.locator("body")).toContainText(/Shri Shakti Shala|Courtyard|Sanctuary/i);
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
     await expect(page.locator("#threshold-drawer")).toBeVisible();
     await capture(page, testInfo, "mobile-04-shala-map-open.png");
@@ -177,7 +177,7 @@ test.describe("Sprint 12A visual review evidence", () => {
         question: "Can I tell what this place is?",
         status: "YES",
         evidence:
-          "Mobile portal and Shala states expose Shakti Portal/Shakti Shala sanctuary language.",
+          "Mobile portal and Shala states expose Shri Shakti Shala sanctuary language.",
       },
       {
         question: "Can I tell where to begin?",

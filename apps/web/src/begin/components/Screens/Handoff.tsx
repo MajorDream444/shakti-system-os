@@ -23,7 +23,7 @@ type SaveTone = 'idle' | 'saved' | 'local' | 'error';
 
 const SAVE_COPY: Record<SaveTone, string> = {
   idle: '',
-  saved: 'Your path has been saved. Shakti Shala remains open for you.',
+  saved: 'Your path has been saved. Shri Shakti Shala remains open for you.',
   local: 'Your path is held locally and has not been shared yet.',
   error: 'We could not save this right now, but you can continue privately.',
 };
@@ -164,7 +164,7 @@ export default function Handoff({
                 Would you like this doorway sent to you?
               </h2>
               <p className="begin-body text-base text-ash/[0.85] font-normal max-w-lg leading-relaxed">
-                Receive your next step, or continue privately into Shakti Shala.
+                Receive your next step, or continue privately into Shri Shakti Shala.
               </p>
             </div>
 
@@ -251,7 +251,7 @@ export default function Handoff({
               className="w-full min-h-12 justify-center flex items-center gap-2 border border-[#8FB27A]/45 bg-[#0E1A13]/58 text-[#F6EFE7] hover:text-white hover:border-[#8FB27A]/80 transition-colors px-5 py-3 cursor-pointer rounded-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm uppercase tracking-[0.1em] font-bold">Continue Without Sharing · Enter Shakti Shala</span>
+              <span className="text-sm uppercase tracking-[0.1em] font-bold">Continue Without Sharing · Enter Shri Shakti Shala</span>
             </motion.button>
           </motion.div>
         ) : (
@@ -285,7 +285,7 @@ export default function Handoff({
               href={SHALA_PATH}
               className="w-full mb-4 block text-center py-4 bg-[#4A1C22]/70 border border-[#E9C77E]/45 hover:border-[#E9C77E] text-[#F6EFE7] hover:text-white font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm shadow-[0_4px_24px_rgba(233,199,126,0.16)]"
             >
-              Enter Shakti Shala
+              Enter Shri Shakti Shala
             </a>
 
             <a

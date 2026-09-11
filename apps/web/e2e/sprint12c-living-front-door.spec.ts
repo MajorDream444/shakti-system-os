@@ -3,12 +3,11 @@ import { expect, test, type Page, type TestInfo } from "@playwright/test";
 const baseUrl = "http://127.0.0.1:4173";
 
 const knowledgeDoorways = [
-  "Neuroscience",
+  "Shakti",
+  "Shadow",
+  "Sensuality",
   "Somatics",
-  "Shadow Work",
-  "Classical Shakta Tantra",
-  "Diaspora Identity",
-  "Retreat Practice",
+  "Sovereignty",
 ];
 
 const pathwayDoorways = [
@@ -56,7 +55,7 @@ test.describe("Sprint 12C living front door", () => {
     await capture(page, testInfo, "desktop-01-dual-front-door.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await expect(page.getByRole("button", { name: "Open Neuroscience knowledge chamber" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Open Shakti knowledge chamber" })).toBeVisible();
     await capture(page, testInfo, "desktop-02-knowledge-doorways.png");
 
     for (const doorway of knowledgeDoorways) {
@@ -105,8 +104,8 @@ test.describe("Sprint 12C living front door", () => {
     await capture(page, testInfo, "mobile-01-front-door.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
+    await page.getByRole("button", { name: "Open Sovereignty knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Sovereignty" })).toBeVisible();
     await capture(page, testInfo, "mobile-02-knowledge-chamber.png");
     await page.keyboard.press("Escape");
     await expect(page.getByRole("dialog")).toHaveCount(0);

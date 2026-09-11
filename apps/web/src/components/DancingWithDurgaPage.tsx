@@ -50,7 +50,7 @@ export function DancingWithDurgaPage() {
           <figure className="durga-founder-portrait">
             <img
               src={portalImages.durgaFounder}
-              alt="Sheetal Kandola in a green field"
+              alt="Sheetal Kandola wearing a red veil"
               loading="lazy"
             />
           </figure>
@@ -144,11 +144,11 @@ export function DancingWithDurgaPage() {
             <span />
           </div>
           <div className="section-copy">
-            <p className="label">Shakti Shala Doorway</p>
+            <p className="label">Shri Shakti Shala Doorway</p>
             <h2 id="durga-doorway-title">Experience first. Discern what continues.</h2>
             <p>
-              Dancing with Durga opens temporary community and Shala space during
-              the journey. Continuing into Shakti Shala remains a separate
+              Dancing with Durga opens temporary community and Shri Shakti Shala space during
+              the journey. Continuing into Shri Shakti Shala remains a separate
               invitation, simple application, human discernment, and paid
               membership.
             </p>

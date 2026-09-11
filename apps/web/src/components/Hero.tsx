@@ -42,7 +42,7 @@ export function Hero() {
             {portalCopy.hero.secondaryCta}
           </a>
           <a className="button button-tertiary" href={SHALA_PATH}>
-            Enter Shakti Shala
+            Enter Shri Shakti Shala
           </a>
         </div>
       </div>

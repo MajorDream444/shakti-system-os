@@ -5,12 +5,11 @@ import type {
 } from "../types/content";
 
 export const practicePillars = [
-  "Neuroscience",
+  "Shakti",
+  "Shadow",
+  "Sensuality",
   "Somatics",
-  "Shadow Work",
-  "Classical Shakta Tantra",
-  "Diaspora Identity",
-  "Retreat Practice",
+  "Sovereignty",
 ];
 
 export const readiness: ReadinessCopy = {
@@ -53,7 +52,7 @@ export const pathway: PathwayCopy = {
   label: "The Pathway",
   headline: "Self-Audit -> Community -> Container -> Retreat",
   copy:
-    "The path begins with reflection, warms through rhythm, deepens through container, and arrives at retreat prepared.",
+    "The path begins with reflection, warms through rhythm, deepens through container, and arrives at retreat prepared inside Shri Shakti Shala.",
   steps: [
     {
       title: "Self-Audit",

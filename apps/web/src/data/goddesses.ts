@@ -2,9 +2,9 @@ import type { PhilosophyCopy, RitualCardCopy } from "../types/content";
 
 export const philosophy: PhilosophyCopy = {
   label: "The Method",
-  headline: "A bridge between nervous-system care and classical Shakta practice.",
+  headline: "The body of work inside Shri Shakti Shala.",
   paragraphs: [
-    "Sheetal works where somatic therapy, nervous-system literacy, shadow integration, devotional practice, and classical Shakta Tantra can stay in relationship.",
+    "Shakti Shadow & Somatics is the method Sheetal teaches inside Shri Shakti Shala: body-based awareness, shadow integration, sensuality, nervous-system literacy, and classical Shakta practice held in relationship.",
     "The work begins where performance ends - with the body, the shadow, practice, and the next doorway a seeker is actually ready to meet.",
   ],
 };
@@ -13,7 +13,7 @@ export const ritualCard: RitualCardCopy = {
   kicker: "Body · Shadow · Lineage",
   headline: "Listen, meet, return, choose.",
   body:
-    "The public rhythm is simple: listen to the body, meet the shadow, return to sadhana, then choose the next doorway with discernment.",
+    "The public rhythm is simple: listen to the body, meet the shadow, return to embodied practice, then choose the next doorway with discernment.",
 };
 
 export const transitionQuote =

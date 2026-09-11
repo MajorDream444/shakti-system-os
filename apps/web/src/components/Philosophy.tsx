@@ -11,6 +11,29 @@ const methodRhythm = [
   "Choose the next doorway",
 ];
 
+const fivePillars = [
+  {
+    name: "Shakti",
+    meaning: "relationship to energy, inner power, and what is already moving",
+  },
+  {
+    name: "Shadow",
+    meaning: "fear, shame, grief, anger, and bypassed material met with containment",
+  },
+  {
+    name: "Sensuality",
+    meaning: "senses, pleasure, movement, and felt experience returned to dignity",
+  },
+  {
+    name: "Somatics",
+    meaning: "body awareness, nervous-system literacy, pacing, and capacity",
+  },
+  {
+    name: "Sovereignty",
+    meaning: "a direction of practice: more inner ground, tools, and choice",
+  },
+];
+
 export function Philosophy() {
   const [activeChamber, setActiveChamber] = useState<LivingDoorway | null>(null);
 
@@ -28,6 +51,14 @@ export function Philosophy() {
               <li key={item}>{item}</li>
             ))}
           </ol>
+          <div className="five-pillar-constellation" aria-label="Five pillars of Shakti Shadow and Somatics">
+            {fivePillars.map((pillar) => (
+              <article key={pillar.name}>
+                <span>{pillar.name}</span>
+                <p>{pillar.meaning}</p>
+              </article>
+            ))}
+          </div>
         </div>
         <div
           className="ritual-card gradient-shell reveal"

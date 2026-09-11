@@ -27,7 +27,7 @@ export const offerCategories: OfferCategory[] = [
     label: "Begin Here - Free",
     title: "Start Your Shakti Path",
     summary:
-      "A private threshold that listens first, reflects your current doorway, and lets you enter Shakti Shala without pressure.",
+      "A private threshold that listens first, reflects your current doorway, and lets you enter Shri Shakti Shala without pressure.",
     includes: [
       "Eight-station discernment journey",
       "Server-derived pathway when consent and contact are present",
@@ -43,7 +43,7 @@ export const offerCategories: OfferCategory[] = [
   {
     id: "self-guided",
     label: "Self-Guided",
-    title: "Practice, teachings, and temple library resources",
+    title: "Shri Shakti Shala practice, teachings, and temple library resources",
     summary:
       "For seekers who want to orient through practice and approved teaching before requesting deeper human support.",
     includes: [
@@ -55,7 +55,7 @@ export const offerCategories: OfferCategory[] = [
     investment: "Published as each resource is released",
     accessState: "Open",
     href: SHALA_PATH,
-    cta: "Enter Shakti Shala",
+    cta: "Enter Shri Shakti Shala",
     image: portalImages.library,
   },
   {
@@ -123,7 +123,7 @@ export const receivingLadder = [
   },
   {
     level: "Practice and belonging",
-    doorway: "Enter Shakti Shala for open teachings, practices, and sanctuary rhythm.",
+    doorway: "Enter Shri Shakti Shala for open teachings, practices, and sanctuary rhythm.",
   },
   {
     level: "Held support",
@@ -156,7 +156,7 @@ export const aboutSheetalCopy = {
   title: "Sheetal Kandola",
   label: "The woman holding the sanctuary",
   body:
-    "Sheetal Kandola is the founder of Shakti Shadow & Somatics and Shakti Shala. Her work bridges nervous-system literacy, Somatic Experiencing-informed practice, psychology, sensuality, shadow work, classical Shakta Tantra, and lived cultural context.",
+    "Sheetal Kandola is a Punjabi Indian woman raised in the Deep American South, and the founder of Shakti Shadow & Somatics inside Shri Shakti Shala. Her work bridges nervous-system literacy, Somatic Experiencing-informed practice, psychology, embodied sensuality, movement, dance, shadow work, classical Shakta Tantra, and lived cultural context.",
   bodyTwo:
     "This public biography intentionally avoids unsupported credential claims. Training details that require source confirmation remain out of public launch copy until Sheetal or the team approves exact wording.",
   links: [
@@ -189,7 +189,7 @@ export const testimonialArchitecture = {
 export const trustLinks = [
   { label: "About Sheetal", href: ABOUT_SHEETAL_PATH },
   { label: "Transformation Evidence", href: TESTIMONIALS_PATH },
-  { label: "Enter Shakti Shala", href: SHALA_PATH },
+  { label: "Enter Shri Shakti Shala", href: SHALA_PATH },
 ];
 
 export const paymentArchitectureStatus = [

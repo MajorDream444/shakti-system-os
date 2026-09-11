@@ -57,7 +57,7 @@ const STATION_SUMMARIES = [
   'Listen for the support that feels sustainable.',
   'Let the deeper longing surface gently.',
   'Receive a doorway, never a score.',
-  'Carry the thread into Shakti Shala.',
+  'Carry the thread into Shri Shakti Shala.',
 ] as const;
 
 export default function BeginApp() {
@@ -263,7 +263,7 @@ export default function BeginApp() {
 
           {/* Symmetrical Atmospheric Header */}
           <header className="absolute top-4 md:top-6 left-3 right-3 md:left-6 md:right-6 flex justify-between items-center text-[10px] tracking-[0.18em] md:tracking-[0.25em] text-ash/60 lowercase font-light serif z-30">
-            <a href="/" className="flex min-h-11 items-center gap-2 text-ash/65 hover:text-ash transition-colors" aria-label="Return to Shakti Portal home">
+            <a href="/" className="flex min-h-11 items-center gap-2 text-ash/65 hover:text-ash transition-colors" aria-label="Return to Shri Shakti Shala home">
               <Home className="w-4 h-4" />
               <KaliSigil className="w-5 h-5 flex-shrink-0" glow={true} />
               <span className="hidden sm:inline translate-y-[0.5px]">the path of Shakti</span>
@@ -273,7 +273,7 @@ export default function BeginApp() {
             </div>
           </header>
 
-          <nav className="begin-ascent" aria-label="Your path toward Shakti Shala">
+          <nav className="begin-ascent" aria-label="Your path toward Shri Shakti Shala">
             <div className="begin-ascent-title">
               <span className="begin-ascent-seal" aria-hidden="true" />
               <span>Ascent</span>
