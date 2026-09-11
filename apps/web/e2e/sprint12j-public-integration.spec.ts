@@ -96,8 +96,13 @@ test.describe("Sprint 12J public identity and visual integration", () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`${baseUrl}/dancing-with-durga`);
 
-    await expect(page.getByText("Five live online gatherings plus four non-live practices")).toBeVisible();
-    await expect(page.getByText("7:30-9:00 PM IST")).toBeVisible();
+    await expect(page.getByText("Four live gatherings plus five practice nights")).toBeVisible();
+    await expect(page.getByText("7:30-9:30 PM IST")).toBeVisible();
+    await expect(page.getByText("The lotus without the sword can become passivity.")).toBeVisible();
+    await expect(page.getByText("The sword without the lotus can become destruction.")).toBeVisible();
+    await expect(page.locator("body")).not.toContainText("7:30-9:00 PM IST");
+    await expect(page.locator("body")).not.toContainText("Five live online gatherings plus four non-live practices");
+    await expect(page.locator("body")).not.toContainText(/bonus gathering/i);
     await expect(page.getByRole("img", { name: "Sheetal Kandola wearing a red veil" })).toBeVisible();
     await expect(page.getByText("Generated imagery and sacred depictions are review references only")).toBeVisible();
     await capture(page, testInfo, "mobile-12j-dwd-schedule-boundary.png");

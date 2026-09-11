@@ -17,11 +17,7 @@ This is not public event inventory and does not activate payments, applications,
 | September 2026 | Dancing with Durga source confirmation | ACTIVE PLANNING | Founder offer material received; final title/access/payment decisions still need approval. |
 | September 2026 | Launch materials | REQUESTED | Founder asked for visual direction, key artwork, announcement carousel, story assets, and initial messaging ready next week. |
 | October 2026 | Dancing with Durga | WORKING LAUNCH CANDIDATE | Nine-night women-only Navratri sadhana through the Navadurgas. |
-| Sunday, Oct 11, 2026 | Shailaputri - Earth: I Am Here | FOUNDER-SUPPLIED / MECHANICALLY CHECKED | 7:30-9:00 PM IST. |
-| Tuesday, Oct 13, 2026 | Brahmacharini and Chandraghanta - Devotion with a Spine | FOUNDER-SUPPLIED / MECHANICALLY CHECKED | 7:30-9:00 PM IST. |
-| Thursday, Oct 15, 2026 | Kushmanda and Skandamata - Yoni: My Body Is Mine | FOUNDER-SUPPLIED / MECHANICALLY CHECKED | 7:30-9:00 PM IST. |
-| Saturday, Oct 17, 2026 | Katyayani and Kalaratri - Fire: My No Is Sacred | FOUNDER-SUPPLIED / MECHANICALLY CHECKED | 7:30-9:00 PM IST. |
-| Monday, Oct 19, 2026 | Mahagauri and Siddhidatri - Unity: My Power Serves Life | FOUNDER-SUPPLIED / MECHANICALLY CHECKED | 7:30-9:00 PM IST. |
+| Oct 11-19, 2026 | Dancing with Durga Navadurga rhythm | FOUNDER-CONFIRMED STRUCTURE | 9 nights total; 4 live gatherings; 5 practice nights; live gatherings 7:30-9:30 PM IST. Exact live-date assignment still needs final operational mapping. |
 | End of container | Two-month non-member DWD recording/material access begins | PLANNING | Requires content/access contract. |
 | End of container | Shakti Shala invitation/application/discernment | PLANNING | Not automatic; human discernment required. |
 | November 2026 onward | Substack + Shala rhythm | WORKING | Long-form teaching -> relationship -> seasonal invitation -> Shala. |

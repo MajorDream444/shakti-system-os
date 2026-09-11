@@ -11,6 +11,8 @@ Status: SUPERSEDED BY `SPRINT-12H-DANCING-WITH-DURGA-SHAKTI-SHALA-ACTIVATION-PLA
 
 This earlier architecture plan is preserved as historical planning provenance. It was superseded after the later Sept 3 commerce/access refinement clarified Dancing with Durga access and resolved the private-work pricing conflict.
 
+Additional supersession: the Sept. 11 primary founder confirmation supersedes this plan's earlier DWD delivery assumption where it referenced five live gatherings or 7:30-9:00 PM IST. Current DWD delivery truth is four live gatherings, five non-live / practice nights, and 7:30-9:30 PM IST, with any bonus gathering optional and not publicly promised.
+
 Use the canonical current plan:
 
 `docs/sprints/SPRINT-12H-DANCING-WITH-DURGA-SHAKTI-SHALA-ACTIVATION-PLAN.md`

@@ -18,6 +18,8 @@ Sprint 12H-A created the launch-foundation layer for the founder-confirmed Navra
 
 This pass implements campaign truth, launch copy, visual direction, key-art framework, carousel copy, Story copy, launch-page surface, social-team handoff, and the Dancing with Durga Campaign Source Pack.
 
+Supersession note: the delivery assumptions in this historical report were updated by the Sept. 11 primary founder confirmation. Current DWD public truth is four live gatherings, five practice nights, and 7:30-9:30 PM IST. A bonus gathering is optional and not publicly promised.
+
 This pass does not implement commerce, registration, participant operations, Shala membership automation, Access Grants, Airtable writes, Stripe, checkout, production writes, or Sprint 12H-B/C/D.
 
 ## Founder Source Applied

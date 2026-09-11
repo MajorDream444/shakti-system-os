@@ -43,12 +43,26 @@ Local/app route:
 
 The route is an informational launch-foundation surface only. It does not collect payment, register participants, create Airtable records, create Access Grants, or activate Shakti Shala membership.
 
+## Sept. 11 Founder Confirmation
+
+The current DWD operational promise is:
+
+- 9 nights total
+- 4 live gatherings
+- 2 hours each
+- 7:30-9:30 PM IST
+- 5 non-live / practice nights
+
+The prior five-live / 7:30-9:00 PM IST structure is superseded where it conflicts.
+
+A bonus gathering may be added if Sheetal feels called, but it must not be promised publicly.
+
 ## Hard Boundary
 
 Do not publish this campaign until Sheetal approves:
 
 - final visual assets
-- date/weekday labels
+- exact live-date assignment within the Oct. 11-19 rhythm
 - payment/registration route
 - scholarship/support process
 - Shakti Shala continuation wording

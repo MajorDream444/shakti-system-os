@@ -5,12 +5,18 @@ export const dancingWithDurga = {
   campaignLine: "Durga. Devotion. Dharma.",
   subtitle: "A Nine-Night Navratri Sadhana Through the Navadurgas",
   audience: "Women-only",
-  format: "Five live online gatherings plus four non-live practices",
-  timing: "7:30-9:00 PM IST",
+  format: "Four live gatherings plus five practice nights",
+  timing: "7:30-9:30 PM IST",
+  liveGatheringCount: 4,
+  practiceNightCount: 5,
   cta: "Request details",
   boundary: "Registration and payment are not open yet.",
   founderRole:
     "Sheetal Kandola holds this container as practitioner and facilitator. Maa Durga remains the devotional center.",
+  teachingEmphasis:
+    "When the male gods could not defeat the asura, the Divine Feminine was called forth. Their powers converged as Shakti, Durga took form, and she defeated what they could not.",
+  lotusSword:
+    "The lotus without the sword can become passivity. The sword without the lotus can become destruction.",
   essence: [
     "Feel fear and stay.",
     "Trust the body.",
@@ -27,7 +33,8 @@ export const dancingWithDurga = {
     "dance",
     "somatic embodiment",
   ],
-  liveGates: [
+  teachingSequence: ["fear", "boundaries", "anger"] as const,
+  ritualGates: [
     {
       date: "October 11",
       goddess: "Shailaputri",
@@ -91,6 +98,7 @@ export const dancingWithDurga = {
     "lion courage",
     "trishul clarity",
     "sword discernment",
+    "lotus tenderness",
     "devotional fire",
   ],
   gateElements: ["earth", "flame", "water", "fire", "gold"] as const,

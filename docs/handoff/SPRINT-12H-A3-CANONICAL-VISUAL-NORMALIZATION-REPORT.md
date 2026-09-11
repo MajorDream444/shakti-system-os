@@ -14,6 +14,8 @@ This pass returns the page to the established Shakti visual lineage:
 
 while allowing Dancing with Durga to emphasize burgundy, ember, rajas red, antique gold, hibiscus, earth, and controlled devotional intensity.
 
+Supersession note: where this historical visual report refers to five live gate cards, the Sept. 11 primary founder confirmation now governs DWD delivery truth: four live gatherings, five practice nights, and 7:30-9:30 PM IST. The visual rhythm can still show the Navadurga sequence without labeling all five displayed rhythm cards as live sessions.
+
 ## Scope
 
 Changed:
