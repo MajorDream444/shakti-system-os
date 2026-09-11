@@ -14,6 +14,8 @@ Sprint 12H-A.2 was narrowed by the latest handoff into:
 
 No backend, Airtable, commerce, registration, Shakti Shala membership automation, or Production writes were added.
 
+Supersession note: this historical report may refer to five live dates/gates. The Sept. 11 primary founder confirmation now governs current DWD delivery: four live gatherings, five practice nights, and 7:30-9:30 PM IST, with no public bonus-gathering promise.
+
 ## Implemented
 
 - Evolved `/dancing-with-durga` from a text-dominant launch foundation into a more devotional campaign threshold.

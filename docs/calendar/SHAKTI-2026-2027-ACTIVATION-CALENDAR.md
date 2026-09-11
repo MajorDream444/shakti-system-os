@@ -53,7 +53,7 @@ October / Navratri 2027
 | September 2026 | Capture Dancing with Durga raw offer material | PARTIAL | Founder message supplied in chat; commit/build approval still needed. |
 | September 2026 | Clarify pricing and founding membership | PARTIAL / BLOCKED | Dancing with Durga prices are supplied; Shala founding pricing and `$150/session` private-work ambiguity remain blocked. |
 | September 2026 | Plan launch assets | WORKING | Founder requests main visual direction, key artwork, announcement carousel, story assets, and initial launch messaging. |
-| October 11, 13, 15, 17, 19 2026 | Dancing with Durga live gatherings | CONFIRMED FOR PLANNING / MECHANICALLY CHECKED | Founder supplied dates and 7:30-9:00 PM IST live timing; Python check on 2026-09-03 gives Sunday, Tuesday, Thursday, Saturday, Monday. |
+| October 11-19 2026 | Dancing with Durga Navadurga rhythm | FOUNDER-CONFIRMED STRUCTURE | Sept. 11 founder source confirms 9 nights, 4 live gatherings, 5 practice nights, and 7:30-9:30 PM IST live timing. Exact live-date assignment still needs final operational mapping. |
 | October 2026 | Navratri / Dancing with Durga container | WORKING | Strong founder direction, exact launch implementation pending. |
 | End of Navratri 2026 | Shakti Shala founding cohort invitation | WORKING | Access, payment, cohort rules unresolved. |
 | November 2026 onward | Substack as teaching/rhythm layer | WORKING | Should support relationship and seasonal invitations, not become a separate project. |

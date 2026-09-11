@@ -32,16 +32,22 @@ How to protect what is sacred.
 
 ### Story 7
 
-Five live gatherings.
-Four non-live transmissions and practices.
+Four live gatherings.
+Five practice nights.
+7:30-9:30 PM IST.
 
 ### Story 8
+
+The lotus without the sword can become passivity.
+The sword without the lotus can become destruction.
+
+### Story 9
 
 Early Devotion places for the first 9 women.
 One fully gifted scholarship.
 Two supported-price places.
 
-### Story 9
+### Story 10
 
 This is devotion with a spine.
 

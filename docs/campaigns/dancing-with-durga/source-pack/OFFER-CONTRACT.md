@@ -2,6 +2,7 @@
 
 Status: HUMAN REVIEW REQUIRED
 Title status: FOUNDER CONFIRMED - Sept. 3
+Schedule status: FOUNDER CONFIRMED - Sept. 11
 
 ## Title
 
@@ -20,11 +21,13 @@ A Nine-Night Navratri Sadhana Through the Navadurgas
 - 9-night Navratri sadhana
 - women-only
 - Maa Durga / Navadurgas at the center
-- five live online gatherings
-- four non-live nights with shorter mantra, audio transmission, reflection, or embodiment practice
-- all live sessions 7:30-9:00 PM IST
+- four live gatherings
+- two hours each
+- five non-live / practice nights with shorter mantra, audio transmission, reflection, or embodiment practice
+- all live gatherings 7:30-9:30 PM IST
+- bonus gathering optional if Sheetal feels called; do not promise publicly
 
-## Live Gates
+## Navadurga Rhythm
 
 | Date | Gate | Goddess forms | Themes |
 |---|---|---|---|
@@ -34,7 +37,37 @@ A Nine-Night Navratri Sadhana Through the Navadurgas
 | Saturday, Oct 17, 2026 | Fire: My No Is Sacred | Katyayani and Kalaratri | Durga's warrior power, sacred rage, protection, boundaries, Kali current, sound, movement, warrior dance. |
 | Monday, Oct 19, 2026 | Unity: My Power Serves Life | Mahagauri and Siddhidatri | Purification, love, sisterhood, integration, wholeness, dharma, closing blessing. |
 
-Weekday labels were mechanically checked with Python on 2026-09-03.
+These dates preserve the founder-supplied Navadurga rhythm. The Sept. 11 source confirms four live gatherings and five practice nights, but does not yet assign which prior date becomes non-live. Do not label all five listed rhythm gates as live sessions until that operational detail is confirmed.
+
+## Durga Teaching Emphasis
+
+Founder-confirmed teaching direction:
+
+- the male gods could not defeat the asura
+- the Divine Feminine was called forth
+- their powers converge as Shakti
+- Durga takes form
+- Durga defeats what they could not
+
+Public teaching must preserve Durga as fierce and tender: protective, boundary-setting, capable of saying no, and capable of wielding the sword when Dharma requires it.
+
+Primary founder language:
+
+> The lotus without the sword can become passivity. The sword without the lotus can become destruction.
+
+Conceptual relationship:
+
+- Lotus: softness, love, receptivity, tenderness.
+- Sword: fierceness, protection, boundary, discernment.
+- Durga: capacity to hold both in service of Dharma.
+
+The founder-approved sequence is:
+
+```text
+fear -> boundaries -> anger
+```
+
+Do not turn this into a clinical protocol, generic empowerment copy, rage-bait, or adversarial gender-war marketing.
 
 ## Investment
 
@@ -47,7 +80,8 @@ Also included in the source:
 
 - one fully gifted scholarship
 - two supported-price places
-- bonuses and surprises throughout the nine nights
+- surprises throughout the nine nights
+- optional bonus gathering if Sheetal feels called; not a public promise
 
 ## Access
 

@@ -51,7 +51,11 @@ test.describe("Sprint 12H-A Dancing with Durga launch foundation", () => {
     await expect(page.getByRole("heading", { name: "Dancing with Durga: Devotion with a Spine" })).toBeVisible();
     await expect(page.getByRole("link", { name: "Request details" })).toBeVisible();
     await expect(page.getByText("Durga teaches devotion with a spine.")).toBeVisible();
-    await expect(page.getByText("Five live online gatherings plus four non-live practices")).toBeVisible();
+    await expect(page.getByText("Four live gatherings plus five practice nights")).toBeVisible();
+    await expect(page.getByText("7:30-9:30 PM IST")).toBeVisible();
+    await expect(page.locator("body")).not.toContainText("7:30-9:00 PM IST");
+    await expect(page.locator("body")).not.toContainText("Five live online gatherings plus four non-live practices");
+    await expect(page.locator("body")).not.toContainText(/bonus gathering/i);
     await capture(page, testInfo, "mobile-dancing-with-durga-launch-foundation.png");
     await assertCampaignBoundary(page);
   });

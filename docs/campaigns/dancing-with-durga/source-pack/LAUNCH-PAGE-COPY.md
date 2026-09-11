@@ -41,9 +41,21 @@ Durga teaches devotion with a spine.
 - Protect what is sacred.
 - Stand in power without abandoning tenderness.
 
+### Teaching
+
+When the male gods could not defeat the asura, the Divine Feminine was called forth. Their powers converged as Shakti, Durga took form, and she defeated what they could not.
+
+Durga is not only soft, beautiful, receptive, or palatable. She is fierce, protective, boundary-setting, and capable of wielding the sword when Dharma requires it.
+
+> The lotus without the sword can become passivity. The sword without the lotus can become destruction.
+
 ### Rhythm
 
-Five live gatherings carry the spine of the container. Four non-live nights receive shorter mantra, audio transmission, reflection, or embodiment practice so all nine forms are honored without requiring a live gathering every evening.
+Four live gatherings carry the spine of the container. Five practice nights receive shorter mantra, audio transmission, reflection, or embodiment practice so all nine forms are honored without requiring a live gathering every evening.
+
+Live gatherings are 7:30-9:30 PM IST.
+
+Do not promise a bonus gathering publicly.
 
 ### Investment
 

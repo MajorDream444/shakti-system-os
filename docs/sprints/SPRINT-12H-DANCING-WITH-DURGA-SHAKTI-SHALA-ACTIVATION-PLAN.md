@@ -31,6 +31,7 @@ Sprint 12G remains separate and should not be modified by this plan.
 | `docs/founder-source/FOUNDER-SOURCE-NAVRATRI-SHAKTI-SHALA-ACTIVATION-2026-09-02.md` | First direct founder signal that Navratri may activate Shakti Shala. |
 | `docs/founder-source/FOUNDER-SOURCE-DANCING-WITH-DURGA-2026-09-03.md` | Direct founder offer material for Dancing with Durga. |
 | `docs/founder-source/FOUNDER-SOURCE-COMMERCE-ACCESS-REFINEMENT-2026-09-03.md` | Reported founder clarification on access, membership, and private-work pricing. |
+| `docs/founder-source/FOUNDER-SOURCE-DANCING-WITH-DURGA-2026-09-11.md` | Primary founder confirmation superseding DWD live/practice count and live time; adds Durga teaching emphasis. |
 | `docs/reconciliation/SHAKTI-SOURCE-CONFLICT-REGISTER.md` | Current conflict and supersession register. |
 
 ## Current Canonical Planning Truth
@@ -44,12 +45,43 @@ Sprint 12G remains separate and should not be modified by this plan.
 | Container | 9-night Navratri sadhana. |
 | Audience | Women-only. |
 | Center | Maa Durga / Navadurgas. |
-| Live gatherings | Five live online gatherings. |
-| Non-live nights | Four shorter mantra, audio transmission, reflection, or embodiment practices. |
-| Live time | 7:30-9:00 PM IST. |
-| Live dates | Oct 11, 13, 15, 17, 19; year/date labels require final confirmation before publication. |
+| Live gatherings | Four live gatherings. |
+| Non-live nights | Five shorter mantra, audio transmission, reflection, or embodiment practices. |
+| Live time | 7:30-9:30 PM IST. |
+| Bonus gathering | Optional if Sheetal feels called; not publicly promised. |
+| Rhythm dates | Oct 11-19, 2026; exact live-date assignment requires final operational mapping before date-by-date live labels are published. |
 | Visual world | Sindoor red, blood red, oxblood, black, antique gold, Maa Durga, eyes, lion, trishul, sword, red hibiscus. |
 | Visual prohibition | No soft pastel or generic divine feminine aesthetic. |
+
+### Teaching Emphasis
+
+The Sept. 11 primary founder source confirms that Durga mythology is central to the container:
+
+```text
+male gods cannot defeat the asura
+-> Divine Feminine is called forth
+-> their powers converge as Shakti
+-> Durga takes form
+-> Durga defeats what they could not
+```
+
+Public teaching should preserve the integration of fierceness and tenderness:
+
+- Lotus: softness, love, receptivity, tenderness.
+- Sword: fierceness, protection, boundary, discernment.
+- Durga: capacity to hold both in service of Dharma.
+
+Primary founder language:
+
+> The lotus without the sword can become passivity. The sword without the lotus can become destruction.
+
+The founder-approved campaign/teaching sequence is:
+
+```text
+fear -> boundaries -> anger
+```
+
+Do not turn this into generic empowerment, rage-bait, adversarial gender-war marketing, or a clinical protocol.
 
 ### Investment
 

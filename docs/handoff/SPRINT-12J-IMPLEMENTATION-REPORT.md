@@ -125,7 +125,8 @@ Home `/`:
 
 - Uses the approved-candidate red-veil founder photograph.
 - Keeps Sheetal as practitioner/facilitator and Maa Durga as devotional center.
-- Preserves five live gatherings plus four non-live practices and `7:30-9:00 PM IST`.
+- Updates the public container promise to four live gatherings plus five practice nights and `7:30-9:30 PM IST` under the Sept. 11 primary founder confirmation.
+- Adds the founder-confirmed Durga teaching emphasis, lotus/sword language, and fear -> boundaries -> anger campaign sequence without turning them into a clinical protocol.
 - Preserves request-details CTA and no-registration/no-payment boundary.
 
 ## Backend Behaviors Preserved
@@ -215,7 +216,7 @@ Graphify remains context infrastructure only and is not a runtime dependency.
 - Waterfall is now visible but should be reviewed to ensure it feels grounded, not over-productized.
 - Founder Visual Source v2 assets are approved candidates, not a blanket waiver of final crop/context approval.
 - Public `Shri Shakti Shala` naming is implemented in visible copy without route/domain/metadata rename.
-- DWD still uses the previously canonical five-live/four-non-live structure pending any explicit later founder supersession.
+- DWD uses the Sept. 11 founder-confirmed four-live/five-practice structure. Exact live-date assignment remains an operational mapping item before date-by-date live labels are published.
 
 ## Release Recommendation
 

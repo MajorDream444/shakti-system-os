@@ -18,7 +18,7 @@ Primary transcript result:
 - Waterfall/flow/leakage/direction/nourishment is source-supported as doctrine.
 - Dance/movement is source-supported as part of the work.
 - Annual rhythm is source-supported as structure, but exact dates remain founder-filled.
-- DWD four-live-plus-bonus remains exploratory and does not supersede the five-live structure.
+- DWD four-live/five-practice structure is now primary founder-confirmed by the Sept. 11 source and supersedes the older five-live structure. A bonus gathering remains optional and must not be publicly promised.
 
 ## What Should Not Happen Next
 

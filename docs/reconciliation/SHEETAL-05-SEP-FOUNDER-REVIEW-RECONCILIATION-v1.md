@@ -93,7 +93,7 @@ The sprint brief states that the actual project conversation ends at approximate
 | Dark sanctuary vs Goddess Temple | Durga campaign wants red/black/gold force; broader portal requires luminous Shakti with green/pink/water/human photography. | REFINED VISUAL SYSTEM |
 | Pink/Lakshmi vs red/Durga | These are distinct registers, not interchangeable palette choices. | CONFIRMED |
 | Fixed annual calendar vs responsive programming | Founder rhythm requires stable structure with rotating programming, not a fabricated calendar. | REFINED |
-| DWD five live vs possible four plus bonus | Sept 3 direct source says five live gatherings; Sept 5 primary transcript shows four-plus-bonus as thinking-aloud. | FIVE LIVE REMAINS CURRENT CANONICAL STRUCTURE |
+| DWD five live vs possible four plus bonus | Sept 3 direct source said five live gatherings; Sept 5 primary transcript showed four-plus-bonus as thinking-aloud. Sept. 11 primary founder confirmation now supersedes both with four live gatherings plus five practice nights. | SUPERSEDED BY SEPT. 11 PRIMARY FOUNDER CONFIRMATION |
 | Self-serve commerce vs human discernment | DWD payment may be simple later, but Shala continuation remains invitation/application/human discernment. | CONFIRMED BOUNDARY |
 | Vault assumptions | Vault direction is stronger, but source inventory, taxonomy, and permissions are not complete. | NEEDS DATA WORK |
 
@@ -131,5 +131,5 @@ Before implementing public changes from Sept 5, confirm:
 - Exact `Shri Shakti Shala` capitalization, metadata, route behavior, and rollout timing.
 - Founder-approved public definitions for the five pillars.
 - Whether and how sovereignty appears in first-touch public copy.
-- DWD delivery only if Sheetal intentionally changes the existing five-live structure.
+- DWD delivery follows the Sept. 11 primary founder confirmation: four live gatherings, five practice nights, 7:30-9:30 PM IST; exact live-date assignment remains an operational mapping item.
 - Approved sacred imagery and founder photography rights.

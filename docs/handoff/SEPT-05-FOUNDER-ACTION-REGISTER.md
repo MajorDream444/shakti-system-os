@@ -13,7 +13,7 @@ Separate founder-owned dependencies from implementation work so the repo does no
 | Item | Needed for | System of record | Status |
 |---|---|---|---|
 | Founder approval of Dancing with Durga launch page and campaign pack | Public launch readiness | GitHub source docs, later Notion decisions | Pending |
-| Confirm DWD final delivery structure only if changing from five-live plan | Prevent accidental supersession from exploratory 4+bonus language | Founder source / GitHub | Five live remains current; change requires explicit founder decision |
+| Confirm DWD final live-date assignment inside the 4-live / 5-practice structure | Sept. 11 confirmed the count and time, but did not assign which dates are live gatherings | Founder source / GitHub | Four live gatherings, five practice nights, 7:30-9:30 PM IST are current; bonus gathering is optional/not public |
 | Approved Durga/Navadurga imagery or explicit decision to launch without deity art | Campaign visuals | Drive | Pending |
 | Approved Sheetal photography for DWD facilitator use | Campaign visuals | Drive | Partially supplied; clearance/provenance should be confirmed |
 | Registration CTA decision | Launch page behavior | GitHub / future commerce plan | Pending |

@@ -13,13 +13,24 @@ Do not work directly from scattered WhatsApp messages, generated images, or old 
 - Title: Dancing with Durga: Devotion with a Spine
 - Campaign line: Durga. Devotion. Dharma.
 - 9-night women-only Navratri sadhana
-- 5 live online gatherings
-- 4 non-live transmissions/practices
-- 7:30-9:00 PM IST
+- 4 live gatherings
+- 5 non-live / practice nights
+- 7:30-9:30 PM IST
 - pricing as listed in the offer contract
 - one gifted scholarship
 - two supported-price places
 - Shakti Shala continuation is not automatic
+- bonus gathering is optional if Sheetal feels called; do not promise publicly
+
+## Founder-Confirmed Teaching Emphasis
+
+- Durga takes form when the Divine Feminine is called forth and the gods' powers converge as Shakti.
+- Durga defeats what they could not.
+- The teaching includes fierceness and tenderness, not softness alone.
+- Founder language: "The lotus without the sword can become passivity. The sword without the lotus can become destruction."
+- Founder-approved campaign sequence: fear -> boundaries -> anger.
+
+Do not soften this into generic empowerment copy. Do not sensationalize it into rage-bait or gender-war marketing.
 
 ## What The Team Must Not Decide
 

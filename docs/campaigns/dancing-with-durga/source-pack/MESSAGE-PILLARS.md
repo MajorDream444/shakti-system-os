@@ -17,6 +17,30 @@ Durga teaches us:
 - how to protect what is sacred
 - how to stand in power without abandoning tenderness
 
+## Founder-Confirmed Teaching Architecture
+
+```text
+fear -> boundaries -> anger
+```
+
+This is campaign/teaching architecture, not a clinical protocol.
+
+## Mythic Teaching Emphasis
+
+- the male gods could not defeat the asura
+- the Divine Feminine was called forth
+- their powers converge as Shakti
+- Durga takes form
+- Durga defeats what they could not
+
+This is central teaching, not decorative storytelling.
+
+Primary founder language:
+
+> The lotus without the sword can become passivity. The sword without the lotus can become destruction.
+
+Lotus carries softness, love, receptivity, and tenderness. Sword carries fierceness, protection, boundary, and discernment. Durga holds both in service of Dharma.
+
 ## Offer Promise Language
 
 Use carefully:
@@ -52,5 +76,6 @@ These came from the founder source but need final public-copy approval:
 - generic divine feminine
 - soft pastel goddess language
 - vague empowerment claims
+- rage-bait or adversarial gender-war marketing
 - over-clinical positioning
 - checkout urgency before registration is ready

@@ -52,8 +52,8 @@ Exploratory:
 
 Pending founder confirmation:
 
-- Whether `Dancing with Durga` has changed from five live gatherings plus four non-live practice nights to four live gatherings plus five practice nights.
-- Whether the live-gathering time has changed from `7:30-9:00 PM IST` to `7:30-9:30 PM IST`.
+- RESOLVED 2026-09-11: `Dancing with Durga` has changed from five live gatherings plus four non-live practice nights to four live gatherings plus five practice nights.
+- RESOLVED 2026-09-11: live-gathering time has changed from `7:30-9:00 PM IST` to `7:30-9:30 PM IST`.
 - Whether a bonus call is part of the revised delivery structure if the four-live structure is confirmed.
 
 Blocked by founder asset:
@@ -339,16 +339,16 @@ Production crop/context decisions for individual assets.
 ## Pending Founder Confirmation
 
 ```text
-DWD live structure: five live gatherings + four non-live practices remains canonical unless Sheetal confirms four live gatherings + five practice nights.
+DWD live structure: Sept. 11 primary founder confirmation supersedes this older acceptance note. Current structure is four live gatherings + five practice nights.
 DWD bonus call: pending if the four-live structure is confirmed.
-DWD live time: 7:30-9:00 PM IST remains canonical unless Sheetal confirms 7:30-9:30 PM IST.
+DWD live time: Sept. 11 primary founder confirmation supersedes this older acceptance note. Current live time is 7:30-9:30 PM IST.
 ```
 
 ## Exploratory
 
 Current exploratory items:
 
-- DWD four-live-plus-bonus idea; five live gatherings remains current unless explicitly superseded.
+- DWD four-live/five-practice structure is explicitly superseded by Sept. 11 primary founder confirmation. Bonus gathering remains optional and must not be publicly promised.
 - Bali retreat timing and commitment.
 - Weekly gathering cadence.
 - Exact public Waterfall role.
