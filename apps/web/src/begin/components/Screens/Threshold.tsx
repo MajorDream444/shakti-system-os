@@ -179,7 +179,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         transition={{ delay: 1.4, duration: 1.5 }}
         className="text-xs md:text-sm text-ash/55 mb-6 md:mb-12 italic"
       >
-        Shakti Shala opens through attention, not performance.
+        Shri Shakti Shala opens through attention, not performance.
       </motion.p>
 
       <motion.button

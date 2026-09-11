@@ -74,10 +74,10 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await capture(page, testInfo, "desktop-home-legibility.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
+    await page.getByRole("button", { name: "Open Sovereignty knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Sovereignty" })).toBeVisible();
     await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toHaveCount(0);
-    await capture(page, testInfo, "desktop-knowledge-chamber-yantra.png");
+    await capture(page, testInfo, "desktop-five-pillar-sacred-boundary.png");
 
     await beginToReveal(page, testInfo, "desktop");
 
@@ -175,10 +175,10 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await capture(page, testInfo, "mobile-home-legibility.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
+    await page.getByRole("button", { name: "Open Sovereignty knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Sovereignty" })).toBeVisible();
     await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toHaveCount(0);
-    await capture(page, testInfo, "mobile-knowledge-chamber-yantra.png");
+    await capture(page, testInfo, "mobile-five-pillar-sacred-boundary.png");
 
     await beginToReveal(page, testInfo, "mobile");
 

@@ -14,20 +14,54 @@ export type LivingDoorway = {
 
 export const knowledgeDoorways: LivingDoorway[] = [
   {
-    id: "neuroscience",
-    title: "Neuroscience",
+    id: "shakti",
+    title: "Shakti",
     symbol: "Mountain",
     accent: "gold",
-    summary: "The body is not treated as a problem to override.",
+    summary: "Energy and inner power are treated as living material.",
     deeper:
-      "This doorway names the nervous system as part of the path: breath, rhythm, protection, capacity, and integration are held together before a seeker is asked to go deeper.",
+      "Shakti names the living current of power and energy within the work. The question is not how to perform power, but how to relate to it with awareness, capacity, and devotion.",
     why:
-      "Depth work becomes safer when the seeker can notice activation and pacing instead of mistaking intensity for readiness.",
+      "When energy is noticed rather than suppressed or spilled, the seeker can begin to direct it with more discernment.",
     example:
-      "A woman may feel a strong pull toward retreat, but the first invitation may be steadiness, practice, and relationship before immersion.",
+      "A woman may notice where her energy leaks, where it gathers, and what actually nourishes rather than drains her.",
     fromSheetal:
-      "Sheetal's work keeps spiritual depth in conversation with nervous-system literacy and lived discernment.",
-    connectedTo: ["Self-Audit", "Container", "Retreat Practice"],
+      "Shakti remains the central current of the sanctuary and the method.",
+    connectedTo: ["Shakti Waterfall", "Practice", "Sovereignty"],
+    nextLabel: "Continue to Shadow",
+  },
+  {
+    id: "shadow",
+    title: "Shadow",
+    symbol: "Fire",
+    accent: "rajas",
+    summary: "Hidden material is approached as doorway, not identity.",
+    deeper:
+      "Shadow work meets fear, shame, guilt, anger, grief, and bypassed material without turning pain into performance.",
+    why:
+      "The work asks a woman to meet what is actually there while remaining connected to the body and to enough containment.",
+    example:
+      "A repeated pattern may be named gently, then returned to sensation, relationship, and a next practical doorway.",
+    fromSheetal:
+      "The shadow is not the problem. It is the doorway.",
+    connectedTo: ["Somatics", "Containment", "Integration"],
+    nextLabel: "Continue to Sensuality",
+  },
+  {
+    id: "sensuality",
+    title: "Sensuality",
+    symbol: "Lotus",
+    accent: "pink",
+    summary: "The senses are part of practice, not a marketing costume.",
+    deeper:
+      "Sensuality is held as sensory life, felt experience, pleasure, aliveness, and embodied contact. It stays connected to dignity and practice.",
+    why:
+      "The body is not only a place of pain or regulation. It is also where tenderness, desire, beauty, and choice become knowable.",
+    example:
+      "A movement or dance practice may help a woman feel, express, and transmute what has been held in the body.",
+    fromSheetal:
+      "Sensuality belongs to the senses and to embodied life; it is not flattened into sexuality marketing.",
+    connectedTo: ["Body", "Movement", "Dance"],
     nextLabel: "Continue to Somatics",
   },
   {
@@ -37,82 +71,31 @@ export const knowledgeDoorways: LivingDoorway[] = [
     accent: "water",
     summary: "The body becomes a place of listening, not performance.",
     deeper:
-      "Somatic practice here means embodied awareness, pacing, and truthful contact with what is present. It is not spectacle and it is not a generic wellness technique.",
+      "Somatic practice here means embodied awareness, pacing, nervous-system literacy, and truthful contact with what is present.",
     why:
-      "When the body is included, a seeker can meet shadow material without abandoning herself to an idea of transformation.",
+      "When the body is included, a seeker can meet depth without abandoning herself to an idea of transformation.",
     example:
       "A practice may begin with grounding, sensation, and a small honest choice before moving toward larger insight.",
     fromSheetal:
       "The sanctuary holds somatic work as part of Shakti Shadow & Somatics, connected to care, shadow, and integration.",
-    connectedTo: ["Neuroscience", "Shadow Work", "Self-Audit"],
-    nextLabel: "Continue to Shadow Work",
+    connectedTo: ["Nervous System", "Capacity", "Embodiment"],
+    nextLabel: "Continue to Sovereignty",
   },
   {
-    id: "shadow-work",
-    title: "Shadow Work",
-    symbol: "Fire",
-    accent: "rajas",
-    summary: "The shadow is approached as doorway, not identity.",
-    deeper:
-      "Shadow work is present but not over-indexed. The point is not to dramatize pain; it is to make hidden material visible enough to be met with steadiness.",
-    why:
-      "A seeker needs language and containment before intensity. The system keeps shadow connected to body, relationship, and preparation.",
-    example:
-      "A repeated pattern may be named gently, then returned to the body and the next practical doorway.",
-    fromSheetal:
-      "The public language remains restrained: truthful self-encounter, not performance or spiritual urgency.",
-    connectedTo: ["Somatics", "Container", "Community"],
-    nextLabel: "Continue to Classical Shakta Tantra",
-  },
-  {
-    id: "classical-shakti-tantra",
-    title: "Classical Shakta Tantra",
-    symbol: "Sacred Geometry",
-    accent: "pink",
-    summary: "Lineage is treated with precision and restraint.",
-    deeper:
-      "This doorway holds mantra, yantra, goddess pathways, and devotional intelligence as approved teaching material, never as generated invention.",
-    why:
-      "Sacred symbols carry meaning. They are placed intentionally, not used as wallpaper or generic spiritual decoration.",
-    example:
-      "Approved sacred geometry will appear only after source and founder review, held as a doorway into union rather than a decorative motif.",
-    fromSheetal:
-      "The teaching stays precise: goddess, mantra, and symbol are approached with reverence, context, and restraint.",
-    connectedTo: ["Goddess Pathways", "Temple Library", "Shala Threshold"],
-    nextLabel: "Continue to Diaspora Identity",
-  },
-  {
-    id: "diaspora-identity",
-    title: "Diaspora Identity",
-    symbol: "Lotus",
-    accent: "leaf",
-    summary: "Culture and lived place belong in the doorway.",
-    deeper:
-      "This chamber is intentionally held lightly until Sheetal's direct source material can carry the depth of this subject.",
-    why:
-      "The system names lived cultural context with care, without turning identity into a flattened teaching claim.",
-    example:
-      "The public doorway can name culture, migration, and belonging without reducing them to a single story.",
-    fromSheetal:
-      "Lineage, place, and belonging are treated as living context, not brand decoration.",
-    connectedTo: ["Founder Presence", "Community", "Retreat Practice"],
-    nextLabel: "Continue to Retreat Practice",
-  },
-  {
-    id: "retreat-practice",
-    title: "Retreat Practice",
+    id: "sovereignty",
+    title: "Sovereignty",
     symbol: "Temple Threshold",
-    accent: "gold",
-    summary: "Interest is not the same as readiness.",
+    accent: "leaf",
+    summary: "Sovereignty is a pillar and a direction, not a promise.",
     deeper:
-      "Retreat is framed as a deeper embodied container that asks for preparation, relationship, and human discernment.",
+      "Sovereignty points toward capacity, tools, landing space, inner power, and less dependence on external rescue without shaming dependency or promising transformation.",
     why:
-      "A living sanctuary does not turn spiritual depth into instant consumption. The doorway can be requested, but readiness is held by people.",
+      "The work does not ask a woman to become untouchable. It supports the practice of meeting life with more awareness, choice, and inner ground.",
     example:
-      "A seeker can express interest and receive the next preparation path without being told she is approved for retreat.",
+      "A woman may begin to notice the moment before abandoning herself, then choose a steadier response.",
     fromSheetal:
-      "The retreat doorway remains careful: preparation before invitation, human review before deeper access.",
-    connectedTo: ["Container", "Readiness Map", "Shakti Shala"],
+      "Sovereignty is held as a direction of practice, not as a guaranteed outcome or superiority claim.",
+    connectedTo: ["Shakti Waterfall", "Container", "Practice"],
     nextLabel: "Return to the front door",
   },
 ];
@@ -131,8 +114,8 @@ export const methodDoorway: LivingDoorway = {
     "A seeker may begin with reflection, meet a body signal, notice a shadow pattern, and be returned to a doorway that matches capacity.",
   fromSheetal:
     "This work begins beneath surface wellness and returns the seeker to truth in the body.",
-    connectedTo: ["Neuroscience", "Somatics", "Shadow Work", "Classical Shakta Tantra"],
-  nextLabel: "Explore the six doorways",
+  connectedTo: ["Shakti", "Shadow", "Sensuality", "Somatics", "Sovereignty"],
+  nextLabel: "Explore the five pillars",
 };
 
 export const pathwayDoorways: LivingDoorway[] = [

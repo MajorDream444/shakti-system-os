@@ -18,7 +18,7 @@ async function assertCampaignBoundary(page: Page) {
 
   await expect(body).toContainText("Registration and payment are not open yet");
   await expect(body).toContainText("human discernment");
-  await expect(body).toContainText(/temporary community \/ Shala space/i);
+  await expect(body).toContainText(/temporary community \/ Shri Shakti Shala space/i);
   await expect(body).not.toContainText(/Register Now|Buy Now|Checkout|Pay Deposit/i);
   await expect(body).not.toContainText(/somatic breathwork/i);
   await expect(body).not.toContainText(/approved Shri Yantra|Doctrine Passport|approval gate|access rule/i);

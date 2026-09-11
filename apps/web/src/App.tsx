@@ -16,6 +16,7 @@ import { ReadinessMap } from "./components/ReadinessMap";
 import { RetreatVision } from "./components/RetreatVision";
 import { TestimonialsPage } from "./components/TestimonialsPage";
 import { TransitionQuote } from "./components/TransitionQuote";
+import { WaterfallDoctrine } from "./components/WaterfallDoctrine";
 
 const BeginApp = lazy(() => import("./begin/BeginApp"));
 const ShalaApp = lazy(() => import("./shala/ShalaApp"));
@@ -28,6 +29,7 @@ function PortalApp() {
         <GodRays />
         <Hero />
         <Philosophy />
+        <WaterfallDoctrine />
         <OfferPathGateway />
         <FounderPresence />
         <AuthorityStrip />

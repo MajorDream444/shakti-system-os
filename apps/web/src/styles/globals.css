@@ -290,8 +290,8 @@ button {
   background:
     linear-gradient(rgba(5, 5, 5, 0.28), rgba(5, 5, 5, 0.82)),
     var(--hero-image)
-      center / cover;
-  filter: saturate(0.86) brightness(0.7);
+      center 42% / cover;
+  filter: saturate(0.96) brightness(0.76);
   transform: scale(1.04);
   will-change: transform;
 }
@@ -787,6 +787,62 @@ button {
   letter-spacing: 0.12em;
 }
 
+.five-pillar-constellation {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 34px;
+  border: 1px solid rgba(244, 239, 230, 0.1);
+  background: rgba(244, 239, 230, 0.08);
+}
+
+.five-pillar-constellation article {
+  min-height: 160px;
+  padding: 20px 18px;
+  background:
+    radial-gradient(circle at 80% 14%, rgba(229, 132, 155, 0.12), transparent 34%),
+    rgba(8, 8, 8, 0.62);
+}
+
+.five-pillar-constellation article:nth-child(1) {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(233, 199, 126, 0.2), transparent 36%),
+    rgba(8, 8, 8, 0.62);
+}
+
+.five-pillar-constellation article:nth-child(3) {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(229, 132, 155, 0.2), transparent 36%),
+    rgba(24, 10, 14, 0.62);
+}
+
+.five-pillar-constellation article:nth-child(4) {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(95, 163, 160, 0.2), transparent 36%),
+    rgba(8, 8, 8, 0.62);
+}
+
+.five-pillar-constellation article:nth-child(5) {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(143, 178, 122, 0.2), transparent 36%),
+    rgba(11, 25, 20, 0.58);
+}
+
+.five-pillar-constellation span {
+  display: block;
+  color: var(--gold-lit);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.05;
+}
+
+.five-pillar-constellation p {
+  margin: 18px 0 0;
+  color: rgba(244, 239, 230, 0.72);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
 .ritual-card {
   position: relative;
   min-height: 520px;
@@ -837,6 +893,72 @@ button {
   filter: blur(70px);
 }
 
+.waterfall-doctrine {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(95, 163, 160, 0.22), transparent 30%),
+    radial-gradient(circle at 82% 70%, rgba(143, 178, 122, 0.14), transparent 32%),
+    linear-gradient(180deg, #111b14, #080b0d 54%, #16090b);
+}
+
+.waterfall-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(42px, 7vw, 108px);
+  align-items: center;
+}
+
+.waterfall-portrait {
+  position: relative;
+  min-height: 620px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(143, 178, 122, 0.26);
+  border-radius: 999px 999px 24px 24px;
+  background: rgba(7, 12, 9, 0.82);
+  box-shadow:
+    rgba(0, 0, 0, 0.42) 0 36px 110px,
+    rgba(95, 163, 160, 0.12) 0 0 80px;
+}
+
+.waterfall-portrait img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center 32%;
+  filter: saturate(1.02) contrast(1.03) brightness(0.94);
+}
+
+.waterfall-portrait::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, transparent 38%, rgba(8, 11, 13, 0.82)),
+    radial-gradient(circle at 72% 16%, rgba(233, 199, 126, 0.12), transparent 28%);
+}
+
+.waterfall-copy h2 {
+  max-width: 780px;
+}
+
+.waterfall-thread {
+  display: grid;
+  max-width: 680px;
+  margin-top: 34px;
+  border-top: 1px solid rgba(244, 239, 230, 0.12);
+}
+
+.waterfall-thread span {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.1);
+  color: rgba(244, 239, 230, 0.86);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.16;
+}
+
 .authority-section {
   padding: 0 0 136px;
   background: rgba(19, 8, 8, 0.92);
@@ -844,7 +966,7 @@ button {
 
 .authority-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
 }
@@ -1566,7 +1688,7 @@ body {
   background:
     linear-gradient(90deg, rgba(5, 5, 5, 0.82) 0%, rgba(5, 5, 5, 0.38) 42%, rgba(5, 5, 5, 0.12) 72%),
     linear-gradient(180deg, rgba(5, 5, 5, 0.18), rgba(5, 5, 5, 0.78)),
-    var(--hero-image) center / cover;
+    var(--hero-image) center 42% / cover;
   filter: saturate(1.08) brightness(0.86) contrast(1.04);
   transform: none;
 }
@@ -2165,12 +2287,17 @@ body {
 
   .philosophy-grid,
   .founder-layout,
+  .waterfall-layout,
   .readiness-layout {
     grid-template-columns: 1fr;
   }
 
   .founder-portrait {
     min-height: auto;
+  }
+
+  .waterfall-portrait {
+    min-height: 520px;
   }
 
   .founder-context-image {
@@ -2180,7 +2307,7 @@ body {
   }
 
   .authority-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .pathway-grid {
@@ -2331,9 +2458,22 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .five-pillar-constellation {
+    grid-template-columns: 1fr;
+  }
+
+  .five-pillar-constellation article {
+    min-height: 120px;
+  }
+
   .ritual-card {
     min-height: 460px;
     padding: 24px;
+  }
+
+  .waterfall-portrait {
+    min-height: 460px;
+    border-radius: 22px 22px 6px 6px;
   }
 
   .ritual-card h3 {

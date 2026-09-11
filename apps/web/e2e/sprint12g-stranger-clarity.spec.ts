@@ -61,7 +61,12 @@ test.describe("Sprint 12G stranger clarity", () => {
     await expect(page.getByRole("heading", { name: "Shakti Shadow & Somatics" })).toBeVisible();
     await expect(page.getByText("Sheetal Kandola's body of work")).toBeVisible();
     await expect(page.getByText("Rooted in somatics, nervous-system literacy")).toBeVisible();
-    await expect(page.getByText("A bridge between nervous-system care")).toBeVisible();
+    await expect(page.getByText("The body of work inside Shri Shakti Shala.")).toBeVisible();
+    await expect(page.getByText("Shakti", { exact: true }).first()).toBeVisible();
+    await expect(page.getByText("Shadow", { exact: true }).first()).toBeVisible();
+    await expect(page.getByText("Sensuality", { exact: true }).first()).toBeVisible();
+    await expect(page.getByText("Somatics", { exact: true }).first()).toBeVisible();
+    await expect(page.getByText("Sovereignty", { exact: true }).first()).toBeVisible();
     await expect(page.getByText("Listen to the body", { exact: true })).toBeVisible();
     await expect(page.getByText("Meet the shadow", { exact: true })).toBeVisible();
     await expect(page.getByText("Return to practice", { exact: true })).toBeVisible();

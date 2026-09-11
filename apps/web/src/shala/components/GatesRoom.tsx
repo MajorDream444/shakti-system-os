@@ -54,7 +54,7 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
       {/* Header */}
       <div className="w-full flex justify-between items-center z-10">
         <span className="font-sans font-semibold text-xs tracking-[0.24em] text-transform: uppercase text-[#8a7c6d]">
-          SHAKTI SHALA
+          SHRI SHAKTI SHALA
         </span>
         <button
           id="enter-courtyard-btn"

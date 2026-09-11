@@ -38,7 +38,7 @@ test.describe("Sprint 12H-A.2a Durga emotional visual integration", () => {
     await expect(page.getByRole("heading", { name: "Dancing with Durga: Devotion with a Spine" })).toBeVisible();
     await expect(page.getByRole("link", { name: "Request details" })).toBeVisible();
     await expect(page.getByRole("link", { name: "Enter Shakti Shala" })).toHaveCount(0);
-    await expect(page.getByRole("img", { name: "Sheetal Kandola in a green field" })).toBeVisible();
+    await expect(page.getByRole("img", { name: "Sheetal Kandola wearing a red veil" })).toBeVisible();
     await expect(page.getByText("Held by Sheetal. Centered on Maa Durga.")).toBeVisible();
     await expect(page.getByText("Sheetal Kandola holds this container as practitioner and facilitator.")).toBeVisible();
     await expect(page.locator(".durga-motif-line").getByText("hibiscus", { exact: true })).toBeVisible();

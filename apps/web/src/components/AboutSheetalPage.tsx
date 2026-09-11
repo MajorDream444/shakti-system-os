@@ -1,11 +1,18 @@
+import type { CSSProperties } from "react";
 import { aboutSheetalCopy } from "../data/offerings";
 import { FounderPresence } from "./FounderPresence";
 import { PageShell } from "./PageShell";
+import { portalImages } from "./PortalImageSlots";
 
 export function AboutSheetalPage() {
   return (
     <PageShell className="about-sheetal-page">
       <section className="public-hero about-hero">
+        <div
+          className="public-hero-image"
+          style={{ "--public-image": `url(${portalImages.founderEditorial})` } as CSSProperties}
+          aria-hidden="true"
+        />
         <div className="container about-hero-intro">
           <p className="label">{aboutSheetalCopy.label}</p>
           <h1>{aboutSheetalCopy.title}</h1>

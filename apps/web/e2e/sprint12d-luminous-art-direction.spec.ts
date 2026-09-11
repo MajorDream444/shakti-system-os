@@ -38,22 +38,22 @@ test.describe("Sprint 12D luminous Shakti art direction", () => {
     await page.goto(`${baseUrl}/`);
 
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
-    await expect(page.locator(".hero-visual").first()).toHaveCSS("background-image", /reflection_pool/);
+    await expect(page.locator(".hero-visual").first()).toHaveCSS("background-image", /founder-waterfall-v2/);
     await expect(page.getByAltText("Sheetal Kandola in devotional presence")).toBeVisible();
     await capture(page, testInfo, "desktop-home-luminous-front-door.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
-    await expect(page.getByRole("dialog")).toContainText("Approved sacred geometry will appear only after source and founder review");
+    await page.getByRole("button", { name: "Open Sovereignty knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Sovereignty" })).toBeVisible();
+    await expect(page.getByRole("dialog")).toContainText("a direction of practice");
     await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toHaveCount(0);
-    await capture(page, testInfo, "desktop-classical-shakta-tantra-boundary.png");
+    await capture(page, testInfo, "desktop-five-pillar-sacred-boundary.png");
 
     await moveBeginToReveal(page, testInfo, "desktop");
 
     await page.goto(`${baseUrl}/shala`);
     await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(1);
-    await expect(page.locator("body")).toContainText(/Shakti Shala|Courtyard|Sanctuary/i);
+    await expect(page.locator("body")).toContainText(/Shri Shakti Shala|Courtyard|Sanctuary/i);
     await capture(page, testInfo, "desktop-shala-threshold.png");
   });
 
@@ -68,10 +68,10 @@ test.describe("Sprint 12D luminous Shakti art direction", () => {
     await capture(page, testInfo, "mobile-home-luminous-front-door.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Open Classical Shakta Tantra knowledge chamber" }).click();
-    await expect(page.getByRole("dialog").getByRole("heading", { name: "Classical Shakta Tantra" })).toBeVisible();
+    await page.getByRole("button", { name: "Open Sovereignty knowledge chamber" }).click();
+    await expect(page.getByRole("dialog").getByRole("heading", { name: "Sovereignty" })).toBeVisible();
     await expect(page.getByRole("dialog").locator(".shri-yantra-preview")).toHaveCount(0);
-    await capture(page, testInfo, "mobile-classical-shakta-tantra-boundary.png");
+    await capture(page, testInfo, "mobile-five-pillar-sacred-boundary.png");
 
     await moveBeginToReveal(page, testInfo, "mobile");
 

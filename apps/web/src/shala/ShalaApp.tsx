@@ -224,7 +224,7 @@ export default function ShalaApp() {
             <span>Current room</span>
             <strong>{ROOM_LABELS[currentRoom]}</strong>
           </div>
-          <a href="/" className="sanctuary-utility-action" aria-label="Return to Shakti Portal home">
+          <a href="/" className="sanctuary-utility-action" aria-label="Return to Shri Shakti Shala home">
             <Home className="w-4 h-4" />
             <span>Home</span>
           </a>
