@@ -3,14 +3,15 @@
 Owner: Major / Sheetal
 Prepared by: Codex
 Date prepared: 2026-09-09
+Closure amended: 2026-09-11
 Repository: `MajorDream444/shakti-system-os`
 Branch: `codex/sept-05-founder-governance`
 Source baseline: `9b3d77c9931ea8d463421221f3387727981690c2`
-Status: HUMAN ACCEPTANCE REQUIRED / NO RUNTIME IMPLEMENTATION
+Status: ACCEPTED FOR IMPLEMENTATION BOUNDARY / NO RUNTIME IMPLEMENTATION
 
 ## Purpose
 
-This acceptance record turns the Sept. 5 founder review into explicit human decisions before software changes.
+This acceptance record turns the Sept. 5 founder review and Sept. 11 founder-selected visual-source work into explicit implementation boundaries before software changes.
 
 Governing principle:
 
@@ -19,6 +20,56 @@ Founder feedback should change canonical truth before it changes software.
 ```
 
 This sprint does not approve a runtime rename, route change, redesign, commerce, Airtable mutation, Production write activation, or sacred imagery publication.
+
+## Sprint Status
+
+`SPRINT 12I` is accepted for implementation boundary.
+
+This means the next implementation sprint may work from the bounded public identity, five-pillar, sovereignty, Waterfall, and Goddess Temple visual decisions below.
+
+This does not mean every open founder question in the ecosystem is resolved.
+
+Approved for 12J:
+
+- Public identity separation: `Shri Shakti Shala` as public umbrella / living school / sanctuary / community ecosystem; `Shakti Shadow & Somatics` as Sheetal's body of work / method; `Shakti System OS` as internal operating architecture.
+- Five-pillar architecture: Shakti, Shadow, Sensuality, Somatics, Sovereignty.
+- Sovereignty as both a pillar and a directional principle / outcome, without guaranteed transformation or therapeutic claims.
+- Waterfall as emergent founder doctrine with strengthened founder-selected visual support, not a proprietary multi-step branded framework.
+- Goddess Temple visual boundary from Founder Visual Source v2: living Goddess temple grounded in Sheetal's embodied world, not a generic spiritual brand.
+
+Held:
+
+- Exact public definitions for the five pillars.
+- Exact public weighting of sovereignty.
+- Exact public Waterfall placement and language.
+- Exact route/domain/metadata rename mechanics.
+
+Exploratory:
+
+- Bali retreat timing and commitment.
+- Weekly gathering cadence.
+- Any future 2027 programming dates not explicitly approved.
+
+Pending founder confirmation:
+
+- Whether `Dancing with Durga` has changed from five live gatherings plus four non-live practice nights to four live gatherings plus five practice nights.
+- Whether the live-gathering time has changed from `7:30-9:00 PM IST` to `7:30-9:30 PM IST`.
+- Whether a bonus call is part of the revised delivery structure if the four-live structure is confirmed.
+
+Blocked by founder asset:
+
+- Founder-approved Shri Yantra.
+- Sacred/deity artwork source, rights, and contextual approval.
+- Final production crop/context approval for individual founder-selected photographs.
+
+Deferred:
+
+- Stripe/payment implementation.
+- Production Airtable writes.
+- Shala membership automation.
+- Generic CMS.
+- Fixed 2027 annual calendar.
+- Runtime implementation of 12J changes.
 
 ## Source Basis
 
@@ -32,11 +83,16 @@ Supporting governance:
 - `docs/reconciliation/SHAKTI-SOURCE-CONFLICT-REGISTER.md`
 - `docs/doctrine/SHAKTI-FOUNDER-METHOD-DOCTRINE-v1.md`
 - `docs/brand-system/BRAND-ARCHITECTURE-DECISION-SHRI-SHAKTI-SHALA-v1.md`
+- `docs/brand-system/FOUNDER-VISUAL-SOURCE-v2-2026-09-11.md`
 - `docs/roadmap/ANNUAL-SHAKTI-RHYTHM-CONTRACT-v1.md`
 
 Transcript boundary:
 
 Only the Sheetal/Major project conversation through approximately `1:18:58` is admissible as Sept. 5 founder source. Later unrelated captured media/audio is excluded.
+
+Visual-source boundary:
+
+Founder Visual Source v2, received 2026-09-11, is the current founder-selected visual review source. The earlier broad visual folder remains historical provenance but is superseded for current asset selection unless Sheetal explicitly reintroduces an older asset.
 
 ## Decision 1 - Public Identity
 
@@ -62,14 +118,14 @@ Still unresolved:
 
 Decision:
 
-- [ ] APPROVED
+- [x] APPROVED FOR 12J IMPLEMENTATION BOUNDARY
 - [ ] REVISE
 - [ ] HOLD
 
 Decision notes:
 
 ```text
-
+Approved as public identity architecture. Runtime naming, route, metadata, domain, and redirect work remains a bounded 12J implementation decision.
 ```
 
 ## Decision 2 - Five Pillars
@@ -98,14 +154,14 @@ Still unresolved:
 
 Decision:
 
-- [ ] APPROVED
+- [x] APPROVED FOR 12J IMPLEMENTATION BOUNDARY
 - [ ] REVISE
 - [ ] HOLD
 
 Decision notes:
 
 ```text
-
+Approved as founder-confirmed architecture. Public definitions must remain source-supported and may not reduce the work to a simplistic modality list.
 ```
 
 ## Decision 3 - Sovereignty
@@ -133,14 +189,14 @@ Still unresolved:
 
 Decision:
 
-- [ ] APPROVED
+- [x] APPROVED FOR 12J IMPLEMENTATION BOUNDARY
 - [ ] REVISE
 - [ ] HOLD
 
 Decision notes:
 
 ```text
-
+Approved as both pillar and directional principle / outcome. Public language must avoid guaranteed transformation, therapeutic promises, or dependency-shaming.
 ```
 
 ## Decision 4 - Waterfall
@@ -181,14 +237,14 @@ Do not create `The Seven Stages of the Shakti Waterfall` or any similar propriet
 
 Decision:
 
-- [ ] APPROVED
+- [x] APPROVED FOR 12J IMPLEMENTATION BOUNDARY
 - [ ] REVISE
 - [ ] HOLD
 
 Decision notes:
 
 ```text
-
+Approved as emergent founder doctrine with strengthened visual support from the v2 waterfall/water photography family. 12J may integrate carefully where source-supported; do not create a branded framework.
 ```
 
 ## Decision 5 - Goddess Temple Visual Direction
@@ -214,6 +270,15 @@ Founder-supported visual language includes:
 
 Founder also clarified that some pink direction can read more Lakshmi than Durga.
 
+Founder Visual Source v2 adds the current selection boundary:
+
+- Sheetal is the primary human anchor.
+- Red / maroon devotional power and warm gold are used selectively.
+- Waterfalls, water, jungle, living nature, flowers, embodied movement, and temple/sacred context are core visual families.
+- Fierceness and tenderness should coexist.
+- Darkness is threshold/depth rather than the dominant default.
+- Sacred/deity imagery remains provenance-gated.
+
 Proposed public treatment:
 
 ```text
@@ -233,17 +298,18 @@ Still unresolved:
 - Founder-approved Shri Yantra asset
 - Which Sheetal photographs are approved for which placements
 - Whether any generated deity imagery can remain reference-only or must be removed from working packs
+- Final source/rights/context approval for sacred/deity assets and individual public-use crops
 
 Decision:
 
-- [ ] APPROVED
+- [x] APPROVED FOR 12J IMPLEMENTATION BOUNDARY
 - [ ] REVISE
 - [ ] HOLD
 
 Decision notes:
 
 ```text
-
+Founder Visual Source v2 governs current asset selection. Approved candidate does not mean production-approved without normal rights, privacy, crop, and context approval. Sacred/deity assets marked NEEDS PROVENANCE may not ship publicly.
 ```
 
 ## Approved
@@ -251,7 +317,11 @@ Decision notes:
 Use this section during human review.
 
 ```text
-
+Public identity architecture.
+Five-pillar architecture.
+Sovereignty as pillar and direction/outcome.
+Waterfall as emergent doctrine with visual support, not a branded framework.
+Goddess Temple visual boundary from Founder Visual Source v2.
 ```
 
 ## Held
@@ -259,7 +329,19 @@ Use this section during human review.
 Use this section for decisions that are source-supported but not ready for implementation.
 
 ```text
+Exact pillar definitions.
+Exact public sovereignty weighting.
+Exact Waterfall public language and placement.
+Route/domain/metadata rename mechanics.
+Production crop/context decisions for individual assets.
+```
 
+## Pending Founder Confirmation
+
+```text
+DWD live structure: five live gatherings + four non-live practices remains canonical unless Sheetal confirms four live gatherings + five practice nights.
+DWD bonus call: pending if the four-live structure is confirmed.
+DWD live time: 7:30-9:00 PM IST remains canonical unless Sheetal confirms 7:30-9:30 PM IST.
 ```
 
 ## Exploratory
@@ -286,11 +368,12 @@ Current exploratory items:
 
 ## Implementation Consequences
 
-If accepted, these decisions should feed a separate implementation sprint. See:
+These accepted implementation-boundary decisions should feed a separate implementation sprint. See:
 
 - `docs/handoff/SPRINT-12I-IMPLEMENTATION-CONSEQUENCE-MAP.md`
+- `docs/sprints/SPRINT-12J-PUBLIC-IDENTITY-DOCTRINE-VISUAL-INTEGRATION-PLAN.md`
 
-No implementation is authorized by this acceptance record until human review checks the relevant decision boxes and approves the next sprint boundary.
+No runtime implementation is performed in this record. Runtime changes remain limited to the future approved 12J boundary.
 
 ## Explicit Non-Decisions
 

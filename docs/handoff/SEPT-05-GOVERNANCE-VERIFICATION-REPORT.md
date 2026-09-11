@@ -166,3 +166,60 @@ Boundary:
 - No founder-gated decision converted into implementation.
 
 Verification commands for this addendum are recorded in the final Sprint 12I response.
+
+## Sprint 12I Closure + Visual Source v2 Addendum
+
+Date: 2026-09-11
+
+Scope:
+
+- Closed Sprint 12I as `ACCEPTED FOR IMPLEMENTATION BOUNDARY`.
+- Recorded Founder Visual Source v2 as the current founder-selected visual review source.
+- Updated the source conflict register with the Sept. 11 unpublished media-team DWD deltas.
+- Prepared Sprint 12J as the next bounded public identity, doctrine, and visual integration sprint.
+- Added the reusable STB pattern: creative expression stays free; operational truth stays controlled.
+
+Visual source result:
+
+- 38 manifest records reviewed from `visual_asset_manifest_v2.csv`.
+- 27 assets classified as `APPROVED CANDIDATE`.
+- 7 sacred/deity assets classified as `NEEDS PROVENANCE`.
+- 3 assets classified as `REFERENCE ONLY`.
+- 1 asset classified as `DUPLICATE`.
+- Full-resolution image libraries were not copied into GitHub.
+
+DWD operational deltas:
+
+- Media-team copy says `4 live gatherings + 5 practice nights`; current canonical remains `5 live gatherings + 4 non-live practice nights` pending founder confirmation.
+- Media-team copy says `7:30-9:30 PM IST`; current canonical remains `7:30-9:00 PM IST` pending founder confirmation.
+
+Commands run:
+
+| Command | Result |
+|---|---|
+| `git fetch origin --prune` | PASS |
+| `git status --short --branch` | PASS; branch `codex/sept-05-founder-governance`; only known unrelated untracked local material plus current docs work |
+| `git rev-parse HEAD` | `6ff887c0f18fda2801a5f89122ff6579b3f43ae6` before this addendum commit |
+| `git rev-parse origin/main` | `d7cac506eadf4162937711223aee9b9111984404` |
+| `git diff --check` | PASS |
+| root `npm run lint` | NOT AVAILABLE; root has no lint script |
+| `npm run lint` in `apps/web` | PASS |
+| `npm run build` in `apps/web` | PASS |
+| `npm run check:backend` in `apps/web` | PASS |
+| `npm run check:begin-write` in `apps/web` | PASS |
+| `npm run check:vault` in `apps/web` | PASS |
+| bounded `graphify update .` | PASS; rebuilt 5299 nodes, 6013 edges, 351 communities; HTML visualization skipped due graph size |
+
+Boundary verification:
+
+| Boundary | Result |
+|---|---|
+| No runtime application files changed | PASS |
+| No public copy changed | PASS |
+| No deployment occurred | PASS |
+| No Production state changed | PASS |
+| No Airtable writes enabled | PASS |
+| No commerce enabled | PASS |
+| No unrelated dirty files modified | PASS |
+| No DWD pending fact silently canonicalized | PASS |
+| No sacred asset silently production-approved | PASS |

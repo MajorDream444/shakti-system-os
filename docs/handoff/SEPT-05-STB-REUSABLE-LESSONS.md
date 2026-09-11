@@ -73,6 +73,51 @@ Client-specific material stays out of STB IP:
 - private data
 - project IDs and integration IDs
 
+## Creative Output -> Operational Truth Pattern
+
+Reusable principle:
+
+```text
+CREATIVE EXPRESSION STAYS FREE.
+OPERATIONAL TRUTH STAYS CONTROLLED.
+```
+
+Reusable pattern:
+
+```text
+CREATIVE OUTPUT
+-> FACT DELTA DETECTION
+-> SOURCE COMPARISON
+-> HUMAN CONFIRMATION IF NEEDED
+-> CANONICAL UPDATE
+-> PUBLICATION
+```
+
+Why it matters:
+
+- Social, design, and campaign teams may create strong language that helps a client feel the direction.
+- That language can reveal operational deltas in schedule, pricing, delivery, access, or promises.
+- The system should detect deltas without treating every creative line as doctrine or business truth.
+- Confirmed facts become canonical only through the source-governance process.
+- Unconfirmed deltas remain visible as pending questions rather than silently leaking into product, checkout, calendars, or public copy.
+
+Reusable checks:
+
+- Compare campaign/social copy against the current canonical offer contract.
+- Flag changed numbers, dates, times, counts, prices, access promises, participant entitlements, and human-review claims.
+- Separate expressive lines from operational claims.
+- Require human confirmation before operational facts change.
+
+Client-specific material stays with the client:
+
+- deity, sacred, or lineage language.
+- campaign titles and phrases.
+- offer copy.
+- pricing.
+- schedules.
+- assets and imagery.
+- founder doctrine.
+
 ## Recommended Future STB Locations
 
 ```text

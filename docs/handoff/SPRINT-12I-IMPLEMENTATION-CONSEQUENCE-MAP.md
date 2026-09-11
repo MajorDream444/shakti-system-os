@@ -2,15 +2,23 @@
 
 Owner: Codex
 Date prepared: 2026-09-09
+Visual-source amendment: 2026-09-11
 Repository: `MajorDream444/shakti-system-os`
 Branch: `codex/sept-05-founder-governance`
 Status: CONSEQUENCE MAP ONLY / NOT AN IMPLEMENTATION PLAN
 
 ## Purpose
 
-Map what future implementation would be affected if the Sprint 12I founder brand-boundary decisions are accepted.
+Map what future implementation would be affected now that the Sprint 12I founder brand-boundary decisions are accepted for implementation boundary.
 
 This document does not authorize code changes, public copy changes, design changes, Airtable mutation, commerce, Production deployment, or route renames.
+
+Sept. 11 visual-source amendment:
+
+- Founder Visual Source v2 is the current founder-selected visual review source.
+- The earlier broad visual folder remains provenance/history, but is superseded for current asset selection unless Sheetal reintroduces an older asset.
+- Asset presence does not equal publication approval.
+- Sacred/deity imagery remains provenance-gated.
 
 ## Classification Legend
 
@@ -130,7 +138,7 @@ Energy already flows -> leakage becomes visible -> awareness/capacity increases 
 | Page naming | No page rename unless Shakti Waterfall gift is approved. | BLOCKED BY FUTURE SPRINT |
 | Components | Could become a future free-gift or method explainer module. | DEFERRED |
 | Design tokens | No token change. | NO CHANGE |
-| Imagery/assets | Waterfall imagery already matters; approved assets still needed. | BLOCKED BY FOUNDER ASSET |
+| Imagery/assets | Founder Visual Source v2 contains a strong waterfall/water family involving Sheetal and living nature; select candidate assets may be planned for 12J, while rights/crop/context remain approval-gated. | OPTIONAL |
 | Begin experience | Do not add scoring, stages, or Waterfall pathway logic now. | DEFERRED |
 | Offerings | Could explain why containers support energy direction. | OPTIONAL |
 | About Sheetal | Could remain doctrine-level, not first-touch copy. | OPTIONAL |
@@ -140,7 +148,7 @@ Energy already flows -> leakage becomes visible -> awareness/capacity increases 
 | Vault | Future teaching/content category candidate. | DEFERRED |
 | Airtable | No operational field change. | NO CHANGE |
 | Notion | Keep doctrine note and watch for repeated founder usage. | REQUIRED |
-| Drive | Approved waterfall/source imagery may be cataloged later. | BLOCKED BY FOUNDER ASSET |
+| Drive | Originals and rights/provenance notes remain in Drive; web-ready derivatives enter GitHub only when actually used. | REQUIRED |
 | Graphify | Link Waterfall to source, doctrine, future content ideas. | REQUIRED |
 | Operations Playbook | Add anti-productization rule: no framework from one metaphor. | REQUIRED |
 | Tests | Guard against unsupported `Seven Stages`-style overbuilding if public copy changes. | REQUIRED |
@@ -163,7 +171,7 @@ Same visual lineage.
 | Page naming | No page rename. | NO CHANGE |
 | Components | Future visual work should support contextual intensity by surface. | REQUIRED |
 | Design tokens | Refine token guidance for red/maroon/gold, pink/Lakshmi caution, living nature, and threshold darkness. | REQUIRED |
-| Imagery/assets | Approved Sheetal, Durga, Navadurga, Shri Yantra, flowers, nature, and waterfall assets required. | BLOCKED BY FOUNDER ASSET |
+| Imagery/assets | Founder Visual Source v2 supplies approved-candidate founder/nature/water imagery for planning; Durga/Navadurga/Shri Yantra/sacred assets remain provenance-gated. | REQUIRED |
 | Begin experience | Maintain ascent; future visual pass may add living nature and more Goddess Temple cues with restraint. | OPTIONAL |
 | Offerings | Seasonal/campaign surfaces may carry stronger visual register. | OPTIONAL |
 | About Sheetal | Use embodied photography without implying Sheetal is Maa Durga. | REQUIRED |
