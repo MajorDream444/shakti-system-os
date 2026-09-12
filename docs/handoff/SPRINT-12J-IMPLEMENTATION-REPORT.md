@@ -4,6 +4,7 @@ Owner: Codex
 Repository: `MajorDream444/shakti-system-os`
 Branch: `codex/sprint-12j-public-integration`
 Base implementation boundary: Sprint 12I accepted governance, commit `b598c409cd124365c1feea557343cb34b0ab4ab1`
+Stacked parent dependency: PR #24 / Sept. 11 DWD reconciliation, commit `edc8ec262e8d1c9200f239dea4d68d0a700d62f9`
 Status: IMPLEMENTED FOR HUMAN REVIEW / NOT MERGED / NOT PRODUCTION DEPLOYED
 
 ## Purpose
@@ -20,6 +21,30 @@ The implementation clarifies:
 - Founder Visual Source v2 as the current image source boundary.
 
 No commerce, backend behavior, Airtable writes, production write activation, sacred-asset substitution, or route rename was introduced.
+
+Deployment hygiene added:
+
+- `.vercelignore` excludes local source archives, recordings, review exports,
+  untracked operator state, and generated test output from Preview uploads.
+- Runtime-approved image derivatives under `apps/web/src/shala/assets/images/`
+  remain part of the application bundle.
+
+## Stacked Branch Boundary
+
+This implementation branch is stacked on top of PR #24:
+
+```text
+origin/main
+-> PR #24 / Sept. 11 Dancing with Durga reconciliation
+-> Sprint 12J public integration
+```
+
+PR #24 remains a separate parent review dependency. Sprint 12J does not duplicate
+the Sept. 11 reconciliation work; it inherits that source truth and implements
+the accepted public identity, doctrine, and visual integration boundaries.
+
+Before eventual merge, reconcile ancestry against whichever state `main` is in at
+that time. Do not force-push or collapse the parent dependency silently.
 
 ## Skills Used
 
@@ -128,6 +153,8 @@ Home `/`:
 - Updates the public container promise to four live gatherings plus five practice nights and `7:30-9:30 PM IST` under the Sept. 11 primary founder confirmation.
 - Adds the founder-confirmed Durga teaching emphasis, lotus/sword language, and fear -> boundaries -> anger campaign sequence without turning them into a clinical protocol.
 - Preserves request-details CTA and no-registration/no-payment boundary.
+- Exact four live-date mapping remains pending founder confirmation; the public
+  page does not label specific Oct. 11/13/15/17/19 dates as live gatherings.
 
 ## Backend Behaviors Preserved
 
@@ -194,6 +221,51 @@ Dependency audit:
 - Ran `npm audit fix`.
 - `apps/web/package-lock.json` now resolves `js-yaml` to `4.3.2`.
 - Follow-up audit found zero vulnerabilities.
+
+## Preview Deployment
+
+Preview status:
+
+- Vercel project: `shakti-system-os`
+- Vercel project ID: `prj_la2IE2jqtipmj1HGbmYPoo1DVUpB`
+- Local branch: `codex/sprint-12j-public-integration`
+- Review-safe remote branch: `codex/sprint-12j-public-integration-stacked`
+- Source SHA deployed from local/pushed review head:
+  `c28311ea922c918bf54bf94b75407e3abd756780`
+- Deployment ID: `dpl_4Ez7oUgePQmtpXzwUiKNVyV3CTEJ`
+- Preview URL:
+  `https://shakti-system-12tm172rk-major-hanzoais-projects.vercel.app`
+- Target: Preview
+- Ready state: READY
+
+Vercel inspect confirmed the deployment includes:
+
+- `api/begin/complete`
+- `api/request-signal`
+- SPA rewrites for `/begin`, `/offerings`, `/work-with-sheetal`,
+  `/about-sheetal`, `/testimonials`, `/dancing-with-durga`, and `/shala`
+
+Environment boundary checked with `vercel env ls`:
+
+- `AIRTABLE_BASE_ID`: Preview only
+- `AIRTABLE_PERSONAL_ACCESS_TOKEN`: Preview only
+- `BEGIN_WRITES_ENABLED`: Preview only
+- Production Begin writes remain disabled by environment scope.
+
+Preview route smoke:
+
+- Direct unauthenticated browser/HTTP access is limited by Vercel deployment
+  protection in this environment.
+- Authenticated `vercel curl` confirmed the Preview serves the real app shell
+  for `/` and `/dancing-with-durga`.
+- Full route/content evidence was therefore verified locally with Playwright
+  against the exact branch build before deployment.
+
+Deployment upload note:
+
+- Initial Preview deployment attempted to upload local source media and archives.
+- `.vercelignore` was added to exclude those non-runtime files.
+- Retry uploaded `12.9KB` of changed deployment input and completed successfully.
 
 ## Graphify
 
