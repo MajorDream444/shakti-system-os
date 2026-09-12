@@ -190,8 +190,10 @@ Visual source result:
 
 DWD operational deltas:
 
-- Media-team copy says `4 live gatherings + 5 practice nights`; current canonical remains `5 live gatherings + 4 non-live practice nights` pending founder confirmation.
-- Media-team copy says `7:30-9:30 PM IST`; current canonical remains `7:30-9:00 PM IST` pending founder confirmation.
+- Sept. 11 primary founder confirmation resolves the former pending media-team deltas.
+- Current canonical DWD structure is `4 live gatherings + 5 practice nights`.
+- Current canonical live time is `7:30-9:30 PM IST`.
+- Bonus gathering is optional if Sheetal feels called and must not be publicly promised.
 
 Commands run:
 

@@ -192,7 +192,7 @@ Existing Sept 3 direct source confirms the launch foundation:
 
 Sept 5 directly clarifies emotional visual direction and commerce intent.
 
-Delivery note: Sheetal considers "four live gatherings and a bonus call or something like that," but this is exploratory language. It does not supersede the existing five-live-gathering structure.
+Delivery note: Sheetal considers "four live gatherings and a bonus call or something like that," but this was exploratory language on Sept. 5 and did not supersede the existing five-live-gathering structure at that time. The later Sept. 11 primary founder confirmation now supersedes the older DWD delivery structure with four live gatherings, five practice nights, and 7:30-9:30 PM IST. Bonus gathering remains optional and not publicly promised.
 
 Classification: CONFIRMED / REFINES PRIOR SOURCE / IMPLEMENTATION READY only for already-approved launch-foundation surfaces. Registration and payment remain deferred until an approved commerce sprint.
 
@@ -291,7 +291,7 @@ Founder-owned dependencies named in the transcript, sprint brief, and existing d
 - approved Shri Yantra
 - 2027 annual rhythm dates
 - retreat decisions/dates
-- Dancing with Durga delivery decision only if founder intentionally changes the five-live structure later
+- Dancing with Durga delivery now follows the later Sept. 11 primary founder confirmation: four live gatherings, five practice nights, 7:30-9:30 PM IST; exact live-date assignment remains an operational mapping item
 
 Classification: FOUNDER DEPENDENCY.
 
@@ -308,7 +308,7 @@ Open after primary transcript review:
 - Whether `Sovereignty` should be public pillar language, internal doctrine, outcome language, or all three.
 - Exact Shala audience/readiness copy that preserves invitation without generic exclusivity posturing.
 - Exact 2027 annual rhythm dates and which anchors become public promises.
-- DWD delivery mechanics only if Sheetal later decides to supersede five live plus four non-live practices.
+- DWD delivery mechanics now follow the Sept. 11 primary founder confirmation; do not use the Sept. 5 exploratory phrasing as the source of exact live-date assignment.
 - Shala membership/founding-member terms.
 - Retreat dates, locations, readiness path, and public claims.
 - Vault taxonomy and approved publication lanes.

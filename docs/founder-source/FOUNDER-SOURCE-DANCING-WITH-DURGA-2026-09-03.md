@@ -14,6 +14,7 @@ Status: HUMAN REVIEW REQUIRED
 | Date | 2026-09-03 |
 | Medium | Direct founder message supplied by Major, plus generated visual reference supplied for context |
 | Related direct source | `docs/founder-source/FOUNDER-SOURCE-NAVRATRI-SHAKTI-SHALA-ACTIVATION-2026-09-02.md` |
+| Superseding source | `docs/founder-source/FOUNDER-SOURCE-DANCING-WITH-DURGA-2026-09-11.md` |
 | Visual reference | `/Users/majordreamwilliams/Downloads/ChatGPT Image Sep 3, 2026, 12_21_57 AM.png` |
 | Raw offer source status | Direct message now supplied in chat; should be moved into durable source if approved for commit |
 | Authority level | Direct founder offer direction with some unresolved title/commercial/access decisions |
@@ -24,6 +25,16 @@ Status: HUMAN REVIEW REQUIRED
 This record captures the 2026-09-03 founder message as received in chat. The generated image is recorded only as a non-approved review reference.
 
 Do not treat this document as authorization to publish pricing, checkout, member access, or Shakti Shala entitlement behavior.
+
+## Supersession Note - 2026-09-11
+
+A newer primary founder confirmation supersedes the operational schedule claims in this document where they conflict:
+
+- `five live online gatherings` is superseded by `four live gatherings`.
+- `four non-live nights` is superseded by `five non-live / practice nights`.
+- `7:30-9:00 PM IST` is superseded by `7:30-9:30 PM IST`.
+
+The rest of this document remains historical provenance for the Sept. 3 offer formation.
 
 ## Verbatim Founder Message
 
@@ -174,14 +185,14 @@ The Sept 3 packet advances that direction into a more concrete working launch sh
 | DWD-002 | Working title options are `Dancing with Durga - Devotion with a Spine`, `Dancing with Durga - Devotion to Dharma`, or `Durga. Devotion. Dharma.` | WORKING / FOUNDER DECISION REQUIRED | Founder message lists three options. |
 | DWD-003 | The container is a nine-night Navratri sadhana. | CONFIRMED | "This will be a 9 night..." |
 | DWD-004 | The container is women-only. | CONFIRMED | "women-only Maa Durga sadhana..." |
-| DWD-005 | The structure includes five live online gatherings. | CONFIRMED | "...with five live online gatherings." |
+| DWD-005 | The structure includes five live online gatherings. | SUPERSEDED BY 2026-09-11 SOURCE | Sept. 3: "...with five live online gatherings." Sept. 11: four live gatherings is now the promised container. |
 | DWD-006 | Every day meets one form of the Navadurgas. | CONFIRMED | "Every day we will meet a form of the Navadurgas..." |
 | DWD-007 | Practices include myth, mantra, devotion, movement, dance, and somatic embodiment. | CONFIRMED | Founder message names these practices directly. |
 | DWD-008 | Maa Durga is the complete center of this offering. | CONFIRMED | "Maa Durga is the complete center of this offering." |
 | DWD-009 | The feeling is bold, devotional, powerful, sacred Fight Club / Warrior Goddess Club for women. | CONFIRMED AS ENERGY / NEEDS PUBLIC COPY DECISION | Founder frames these as feeling and "almost like"; public wording needs approval. |
-| DWD-010 | Live sessions are 7:30-9:00 PM IST. | CONFIRMED | "All live sessions will be from 7:30 to 9:00 PM IST." |
+| DWD-010 | Live sessions are 7:30-9:00 PM IST. | SUPERSEDED BY 2026-09-11 SOURCE | Sept. 3: "All live sessions will be from 7:30 to 9:00 PM IST." Sept. 11: live sessions are 7:30-9:30 PM IST. |
 | DWD-011 | Live dates are Oct 11, 13, 15, 17, and 19. | CONFIRMED FOR PLANNING / CALENDAR CONFIRMATION REQUIRED | Founder gives dates; exact weekday/year should be checked before publication. |
-| DWD-012 | Four non-live nights receive shorter mantra, audio transmission, reflection, or embodiment practice. | CONFIRMED | Founder message states this directly. |
+| DWD-012 | Four non-live nights receive shorter mantra, audio transmission, reflection, or embodiment practice. | SUPERSEDED BY 2026-09-11 SOURCE | Sept. 3 stated four non-live nights; Sept. 11 confirms five non-live / practice nights. |
 | DWD-013 | Central message centers fear, body trust, sacred no, anger, protection, power, tenderness. | CONFIRMED | Founder message lists these as central message. |
 | DWD-014 | Investment: Global Early Devotion `$111` first 9 women, Standard `$222`; India Early `₹6,666`, Standard `₹9,999`. | CONFIRMED FOR PLANNING / COMMERCE APPROVAL REQUIRED | Founder message gives amounts; checkout still not approved. |
 | DWD-015 | One fully gifted scholarship and two supported-price places are intended. | CONFIRMED FOR PLANNING | Founder message states this directly. |

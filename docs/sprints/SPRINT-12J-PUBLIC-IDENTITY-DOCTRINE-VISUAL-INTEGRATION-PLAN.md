@@ -164,7 +164,7 @@ Purpose:
 Bounded changes:
 
 - Use v2 visual boundary to ensure DWD belongs to Shakti Shala rather than becoming a separate visual universe.
-- Do not change five-live/four-practice structure or live time until founder confirms deltas.
+- Sept. 11 founder confirmation now supersedes the older five-live/four-practice structure and live time. Current DWD public behavior is four live gatherings, five practice nights, and 7:30-9:30 PM IST; bonus gathering is optional and not publicly promised.
 - Do not ship unprovenanced sacred/deity assets.
 
 ## Visual Implementation Rule

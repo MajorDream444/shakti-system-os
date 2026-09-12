@@ -78,23 +78,31 @@ export function DancingWithDurgaPage() {
               <p key={line}>{line}</p>
             ))}
           </div>
+          <div className="durga-teaching-note">
+            <p>{dancingWithDurga.teachingEmphasis}</p>
+            <blockquote>{dancingWithDurga.lotusSword}</blockquote>
+            <p>
+              Durga holds lotus and sword together: love with a spine,
+              devotion with discernment, and feminine power in service of Dharma.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="section durga-gates" aria-labelledby="durga-gates-title">
         <div className="container">
           <div className="section-heading">
-            <p className="label">Nine Nights / Five Live Gates</p>
+            <p className="label">Nine Nights / Four Live Gatherings</p>
             <h2 id="durga-gates-title">A Navratri rhythm through the Navadurgas.</h2>
             <p>
-              The five live gatherings carry the spine of the container. The
-              four non-live nights receive shorter mantra, audio transmission,
+              The four live gatherings carry the spine of the container. The
+              five practice nights receive shorter mantra, audio transmission,
               reflection, or embodiment practice so all nine forms are honored
               without requiring a live gathering every evening.
             </p>
           </div>
           <div className="durga-gate-list">
-            {dancingWithDurga.liveGates.map((gate, index) => (
+            {dancingWithDurga.ritualGates.map((gate, index) => (
               <article
                 className="durga-gate-card"
                 data-element={dancingWithDurga.gateElements[index]}

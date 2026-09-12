@@ -60,9 +60,10 @@ The deadline is next week, so Sprint 12H-A should build toward the living launch
 | Subtitle | `A Nine-Night Navratri Sadhana Through the Navadurgas` | Founder-supplied |
 | Audience | Women-only | Founder-supplied |
 | Center | Maa Durga / Navadurgas | Founder-supplied |
-| Format | 9 nights, 5 live online gatherings, 4 non-live transmissions/practices | Founder-supplied |
-| Time | 7:30-9:00 PM IST | Founder-supplied |
-| Dates | Oct 11, 13, 15, 17, 19 | Founder-supplied; verify year/weekday labels before publishing |
+| Format | 9 nights, 4 live gatherings, 5 non-live / practice nights | Founder-confirmed - Sept. 11 |
+| Time | 7:30-9:30 PM IST | Founder-confirmed - Sept. 11 |
+| Bonus gathering | Optional if Sheetal feels called; not publicly promised | Founder-confirmed - Sept. 11 |
+| Dates | Oct 11-19, 2026 rhythm | Exact live-date assignment still needs final operational mapping before date-by-date live labels |
 | Price | Global `$111` first 9, `$222` standard; India `₹6,666` first 9, `₹9,999` standard | Founder-supplied; no checkout in 12H-A |
 | Support | 1 fully gifted scholarship, 2 supported-price places | Founder-supplied; process not implemented |
 | Shala relationship | Doorway into Shakti Shala after container; not automatic membership | Founder-supplied |
@@ -151,8 +152,8 @@ Required variants:
 1. Cover: `Dancing with Durga: Devotion with a Spine`
 2. What it is: nine-night women-only Navratri sadhana through the Navadurgas
 3. Why Durga now: fear, body trust, sacred no, protection, power, tenderness
-4. The rhythm: five live gatherings and four non-live transmissions/practices
-5. The five live gates: Earth, Devotion, Yoni, Fire, Unity
+4. The rhythm: four live gatherings and five non-live / practice nights
+5. The Navadurga gates: Earth, Devotion, Yoni, Fire, Unity
 6. Investment and support: global/India early and standard, scholarship/support places
 7. Doorway into Shakti Shala: experience first, then invitation/application/discernment
 8. Call to action: register interest / join the waitlist / request details
@@ -164,8 +165,8 @@ CTA wording depends on whether registration/payment is ready. If not ready, use 
 - Story 1: Durga. Durga. Durga.
 - Story 2: A nine-night Navratri sadhana for women.
 - Story 3: Devotion with a spine.
-- Story 4: Five live gatherings, four nightly transmissions.
-- Story 5: The five live gates.
+- Story 4: Four live gatherings, five practice nights.
+- Story 5: The Navadurga rhythm.
 - Story 6: Early Devotion / scholarship / supported-price note.
 - Story 7: Doorway into Shakti Shala.
 - Story 8: Interest CTA.
