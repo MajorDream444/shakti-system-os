@@ -222,6 +222,51 @@ Dependency audit:
 - `apps/web/package-lock.json` now resolves `js-yaml` to `4.3.2`.
 - Follow-up audit found zero vulnerabilities.
 
+## Preview Deployment
+
+Preview status:
+
+- Vercel project: `shakti-system-os`
+- Vercel project ID: `prj_la2IE2jqtipmj1HGbmYPoo1DVUpB`
+- Local branch: `codex/sprint-12j-public-integration`
+- Review-safe remote branch: `codex/sprint-12j-public-integration-stacked`
+- Source SHA deployed from local/pushed review head:
+  `c28311ea922c918bf54bf94b75407e3abd756780`
+- Deployment ID: `dpl_4Ez7oUgePQmtpXzwUiKNVyV3CTEJ`
+- Preview URL:
+  `https://shakti-system-12tm172rk-major-hanzoais-projects.vercel.app`
+- Target: Preview
+- Ready state: READY
+
+Vercel inspect confirmed the deployment includes:
+
+- `api/begin/complete`
+- `api/request-signal`
+- SPA rewrites for `/begin`, `/offerings`, `/work-with-sheetal`,
+  `/about-sheetal`, `/testimonials`, `/dancing-with-durga`, and `/shala`
+
+Environment boundary checked with `vercel env ls`:
+
+- `AIRTABLE_BASE_ID`: Preview only
+- `AIRTABLE_PERSONAL_ACCESS_TOKEN`: Preview only
+- `BEGIN_WRITES_ENABLED`: Preview only
+- Production Begin writes remain disabled by environment scope.
+
+Preview route smoke:
+
+- Direct unauthenticated browser/HTTP access is limited by Vercel deployment
+  protection in this environment.
+- Authenticated `vercel curl` confirmed the Preview serves the real app shell
+  for `/` and `/dancing-with-durga`.
+- Full route/content evidence was therefore verified locally with Playwright
+  against the exact branch build before deployment.
+
+Deployment upload note:
+
+- Initial Preview deployment attempted to upload local source media and archives.
+- `.vercelignore` was added to exclude those non-runtime files.
+- Retry uploaded `12.9KB` of changed deployment input and completed successfully.
+
 ## Graphify
 
 Graphify was read before implementation. The report available at preflight had been generated from commit `6ff887c0`, so direct file reads were used to verify current repo truth before editing.
