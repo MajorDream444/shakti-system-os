@@ -1,0 +1,35 @@
+# Local source media, archives, and review exports are not deployment input.
+*.zip
+*.mp4
+*.mov
+*.m4a
+*.mp3
+*.wav
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.csv
+*.txt
+
+# Root-level visual/media source folders stay outside the runtime bundle.
+Shakti Shala Library/
+THE VAULT _SHAKTI SHALA/
+THE VAULT _SHAKTI SHALA copy/
+WhatsApp Chat - Sheetal <> Engagio  8:8/
+community/
+crm/
+routing/
+social/
+shakti-shala/
+
+# Local operator/tooling state.
+.codex/
+.agents/
+graphify-out/
+
+# Generated local build/test artifacts.
+apps/web/dist/
+apps/web/test-results/
+apps/web/playwright-report/
+apps/web/qa-artifacts/

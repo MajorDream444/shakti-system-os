@@ -22,6 +22,13 @@ The implementation clarifies:
 
 No commerce, backend behavior, Airtable writes, production write activation, sacred-asset substitution, or route rename was introduced.
 
+Deployment hygiene added:
+
+- `.vercelignore` excludes local source archives, recordings, review exports,
+  untracked operator state, and generated test output from Preview uploads.
+- Runtime-approved image derivatives under `apps/web/src/shala/assets/images/`
+  remain part of the application bundle.
+
 ## Stacked Branch Boundary
 
 This implementation branch is stacked on top of PR #24:
