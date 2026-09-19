@@ -44,9 +44,10 @@ AIRTABLE_PERSONAL_ACCESS_TOKEN
 BEGIN_WRITES_ENABLED
 ```
 
-`AIRTABLE_TOKEN` remains a legacy server-only fallback. New configuration must
-use `AIRTABLE_PERSONAL_ACCESS_TOKEN`; do not create multiple credential names to
-mask a mismatch.
+`AIRTABLE_TOKEN` remains a legacy server-only fallback in code. New configuration
+must use `AIRTABLE_PERSONAL_ACCESS_TOKEN`. A temporary duplicate Preview variable
+may exist only during credential migration and should be removed after the
+canonical name passes the bounded Preview QA check.
 
 Writes are disabled unless `BEGIN_WRITES_ENABLED` is exactly `true`. Missing,
 empty, and `false` all fail closed.
@@ -93,21 +94,22 @@ Only that backend should hold private Airtable credentials.
 
 ## HAMAL Environment Review - 2026-09-19
 
-Read-only inspection found:
+Current configuration intent:
 
 ```text
-Preview: AIRTABLE_BASE_ID present; canonical Airtable credential absent;
-BEGIN_WRITES_ENABLED absent; VITE_AIRTABLE_TOKEN absent.
+Preview: AIRTABLE_BASE_ID and the canonical Sensitive credential are present;
+BEGIN_WRITES_ENABLED remains absent or false outside the bounded QA build;
+VITE_AIRTABLE_TOKEN is absent.
 
-Production: AIRTABLE_BASE_ID present; credential stored under an unsupported
-name; BEGIN_WRITES_ENABLED absent; VITE_AIRTABLE_TOKEN absent.
+Production: AIRTABLE_BASE_ID is present; the canonical credential is intentionally
+not installed yet; BEGIN_WRITES_ENABLED is absent; VITE_AIRTABLE_TOKEN is absent.
 ```
 
-No environment value was changed. Before any enabled write test, an authorized
-operator must configure `AIRTABLE_PERSONAL_ACCESS_TOKEN` in the intended
-environment and explicitly set `BEGIN_WRITES_ENABLED` for that environment.
+A bounded Preview build may set `AIRTABLE_QA_VERIFY=true` to run the synthetic
+authentication/schema/write/replay/cleanup script. That flag does not enable the
+public API endpoints; public writes remain governed by `BEGIN_WRITES_ENABLED`.
 
-`VITE_VERCEL_ANALYTICS_ENABLED` is a public feature gate, not a credential. Keep
-it false until Web Analytics is enabled in the HAMAL Vercel dashboard; then set
-it true and redeploy so the first-party analytics script can load without a
-failed request.
+`VITE_VERCEL_ANALYTICS_ENABLED` is a public feature gate, not a credential. Web
+Analytics is enabled for the HAMAL Vercel project. Set the gate to `true` only
+for a deployment intended to emit privacy-bounded page analytics; no visitor PII
+or form values belong in this variable or the analytics payload.

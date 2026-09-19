@@ -155,12 +155,19 @@ export function parseRequestSignalRequest(input: unknown): {
   const idempotencyKey = cleanText(input.idempotencyKey, 180);
   const signalType = cleanText(input.signalType, 80);
 
+  const sourcePath = cleanText(input.sourcePath, 120);
+  const sourceNode = cleanText(input.sourceNode, 80);
+  const allowedSources = new Set([
+    "/begin:handoff",
+    "/dancing-with-durga:request-details",
+    "/shala/retreat:retreat-room",
+  ]);
+
   if (
     !beginSessionId ||
     !firstName ||
     !idempotencyKey ||
-    input.sourcePath !== "/begin" ||
-    input.sourceNode !== "handoff"
+    !allowedSources.has(`${sourcePath}:${sourceNode}`)
   ) {
     return { ok: false, reason: "Missing required request fields." };
   }
@@ -179,8 +186,8 @@ export function parseRequestSignalRequest(input: unknown): {
       consent: normalizeConsent(input.consent),
       signalType: signalType as RequestSignalRequest["signalType"],
       message: cleanText(input.message, 2000) || undefined,
-      sourcePath: "/begin",
-      sourceNode: "handoff",
+      sourcePath: sourcePath as RequestSignalRequest["sourcePath"],
+      sourceNode: sourceNode as RequestSignalRequest["sourceNode"],
       intakeRecordIds: Array.isArray(input.intakeRecordIds)
         ? input.intakeRecordIds.filter((id): id is string => typeof id === "string").slice(0, 20)
         : undefined,

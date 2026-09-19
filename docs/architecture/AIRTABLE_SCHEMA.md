@@ -91,23 +91,26 @@ Anonymous or no-contact Begin journeys remain local-only.
 
 ## Current Verification - 2026-09-19
 
-The code-to-schema contract remains explicit through `liveAirtable.ts`, but the
-HAMAL Production metadata request returned `404` with the configured server
-credential name. Therefore current base reachability, table compatibility, and
-field compatibility are **NOT VERIFIED** by this pass.
+The code-to-schema contract remains explicit through `liveAirtable.ts`.
+`AIRTABLE_PERSONAL_ACCESS_TOKEN` is the canonical server credential. Because a
+Vercel Sensitive value cannot be read back into the local shell, authentication,
+schema compatibility, synthetic writes, replay protection, and cleanup must be
+proven inside a bounded Preview build before this section is upgraded to live
+verified status.
 
-No records were read. No synthetic record was created. No write flag was
-enabled. A safe write proof remains on **HOLD** until the canonical credential
-name, base authority, and metadata access are corrected and rechecked.
+The Preview QA script is fail-closed: it requires `AIRTABLE_QA_VERIFY=true`,
+`VERCEL_ENV=preview`, the intended Shakti base, all required tables and fields,
+and the canonical credential. It creates uniquely labelled synthetic records,
+verifies replay behavior, and removes only those synthetic records in `finally`.
 
 Known operational limits:
 
 ```text
 Begin completion has Progress-based replay protection.
-Request & Signal creation does not yet perform a pre-write idempotency lookup.
+Request & Signal creation performs a stable Signal ID lookup before writing.
 The in-memory rate limiter is per warm function instance, not a durable global limiter.
-DWD community intent is measurable anonymously but has no dedicated Airtable signal mapping.
-The Retreat room remains a local prototype and creates no Airtable record.
+DWD community intent maps to a human-review Support Request after a consented Begin save.
+Retreat interest maps to a human-review Support Request after explicit consent and usable contact.
 ```
 
 Typed app constants:

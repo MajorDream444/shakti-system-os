@@ -46,23 +46,26 @@ export default function Handoff({
   const [saveTone, setSaveTone] = useState<SaveTone>('idle');
   const [saveMessage, setSaveMessage] = useState('');
   const [requestSaved, setRequestSaved] = useState(false);
+  const [requestFailed, setRequestFailed] = useState(false);
 
   useEffect(() => {
     BeginLocalFallbackService.cleanupExpiredPendingBegin();
   }, []);
 
   const hasContact = Boolean(email.trim() || whatsapp.trim());
+  const isCommunityIntent = new URLSearchParams(window.location.search).get('intent') === 'community';
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
 
-    if (new URLSearchParams(window.location.search).get('intent') === 'community') {
+    if (isCommunityIntent) {
       trackAnonymousEventOnce('community_interest_submitted', beginSessionId);
     }
 
     setIsLoading(true);
     setRequestSaved(false);
+    setRequestFailed(false);
 
     const payload = {
       beginSessionId,
@@ -122,26 +125,46 @@ export default function Handoff({
       setSaveMessage(SAVE_COPY.error);
     }
 
-    if (requestGuidance && beginResult?.status === 'saved' && hasContact) {
-      try {
-        const signal = await BeginWriteClient.requestSignal({
-          beginSessionId,
-          firstName: name,
-          email,
-          phone: whatsapp,
-          consent: payload.consent,
-          signalType: 'Guide Request',
-          message: requestMessage,
-          sourcePath: '/begin',
-          sourceNode: 'handoff',
-          intakeRecordIds: beginResult.intakeRecordIds,
-          idempotencyKey: `signal:${beginSessionId}:guide-request`,
-        });
+    if ((requestGuidance || isCommunityIntent) && beginResult?.status === 'saved' && hasContact) {
+      const signalRequests = [
+        ...(isCommunityIntent
+          ? [{
+              signalType: 'Support Request' as const,
+              message: 'Dancing with Durga community interest submitted through Request details.',
+              sourcePath: '/dancing-with-durga' as const,
+              sourceNode: 'request-details' as const,
+              idempotencyKey: `signal:${beginSessionId}:dwd-community`,
+            }]
+          : []),
+        ...(requestGuidance
+          ? [{
+              signalType: 'Guide Request' as const,
+              message: requestMessage,
+              sourcePath: '/begin' as const,
+              sourceNode: 'handoff' as const,
+              idempotencyKey: `signal:${beginSessionId}:guide-request`,
+            }]
+          : []),
+      ];
 
-        setRequestSaved(signal.status === 'saved');
-      } catch {
-        setRequestSaved(false);
-      }
+      const results = await Promise.allSettled(
+        signalRequests.map((request) =>
+          BeginWriteClient.requestSignal({
+            beginSessionId,
+            firstName: name,
+            email,
+            phone: whatsapp,
+            consent: payload.consent,
+            ...request,
+            intakeRecordIds: beginResult?.intakeRecordIds,
+          }),
+        ),
+      );
+      const allSaved = results.every(
+        (result) => result.status === 'fulfilled' && result.value.status === 'saved',
+      );
+      setRequestSaved(allSaved);
+      setRequestFailed(!allSaved);
     }
 
     setIsLoading(false);
@@ -280,8 +303,10 @@ export default function Handoff({
             </p>
 
             <p className="text-sm text-ash/72 font-normal italic mb-10">
-              {requestGuidance && requestSaved
+              {(requestGuidance || isCommunityIntent) && requestSaved
                 ? 'Your request has been shared for human review.'
+                : requestFailed
+                  ? 'Your path was saved, but the request was not shared. Please try again or book a discovery call below.'
                 : 'Carry this quiet flame with you.'}
             </p>
 

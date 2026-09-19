@@ -101,14 +101,82 @@ test("Begin emits journey events once and records community intent without PII",
   expect(redactedUrl).toBe("https://example.test/begin");
 });
 
-test("retreat prototype emits an anonymous local-interest event", async ({ page }) => {
+test("consented DWD intent creates a source-specific CRM signal", async ({ page }) => {
+  let signalPayload: Record<string, unknown> | null = null;
+  await page.route("**/api/begin/complete", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({
+        status: "saved",
+        assignedPathway: "CONTAINER",
+        accessState: "Open",
+        message: "Your path has been saved.",
+        intakeRecordIds: ["rec-intake-1"],
+      }),
+    });
+  });
+  await page.route("**/api/request-signal", async (route) => {
+    signalPayload = route.request().postDataJSON() as Record<string, unknown>;
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ status: "saved", message: "Shared.", signalRecordId: "rec-signal-1" }),
+    });
+  });
+  await page.addInitScript(() => {
+    window.localStorage.setItem(
+      "shakti_path_journey_state",
+      JSON.stringify({
+        beginSessionId: "qa-dwd-session",
+        currentScreen: 8,
+        scores: { CIRCLE: 2, ONE_ON_ONE: 0, CONTAINER: 1, RETREAT: 0 },
+        selections: { 3: "carry", 4: "gentle", 5: "light" },
+        longings: [],
+        reflection: "",
+      }),
+    );
+  });
+
+  await page.goto(`${baseUrl}/begin?intent=community`);
+  await page.getByPlaceholder("First name").fill("DWD QA Person");
+  await page.getByPlaceholder("Email address (optional)").fill("dwd-qa@example.test");
+  await page.getByText("I consent to share my Begin choices").click();
+  await page.getByRole("button", { name: "Save My Path" }).click();
+  await expect(page.getByText("Your request has been shared for human review.")).toBeVisible();
+
+  expect(signalPayload).toMatchObject({
+    signalType: "Support Request",
+    sourcePath: "/dancing-with-durga",
+    sourceNode: "request-details",
+  });
+});
+
+test("retreat interest persists only after a consented server success", async ({ page }) => {
+  let signalPayload: Record<string, unknown> | null = null;
+  await page.route("**/api/request-signal", async (route) => {
+    signalPayload = route.request().postDataJSON() as Record<string, unknown>;
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ status: "saved", message: "Shared.", signalRecordId: "rec-retreat-1" }),
+    });
+  });
   await page.goto(`${baseUrl}/shala`);
   await page.getByRole("button", { name: "Open Sanctuary Map" }).click();
   await page.locator("#nav-room-retreat").click();
   await page.getByRole("button", { name: "Request Retreat Conversation" }).click();
   await page.getByPlaceholder("e.g. Seeker Ishan").fill("Retreat QA Person");
+  await page.getByPlaceholder("Email address").fill("retreat-qa@example.test");
+  await page.getByText("I consent to share these details").click();
   await page.getByRole("button", { name: "Request Human Review" }).click();
   await expect(page.getByRole("heading", { name: "Passage Requested" })).toBeVisible();
+
+  expect(signalPayload).toMatchObject({
+    signalType: "Support Request",
+    sourcePath: "/shala/retreat",
+    sourceNode: "retreat-room",
+  });
 
   const events = await eventNames(page);
   expect(events.filter((event) => event === "retreat_interest_submitted")).toHaveLength(1);
@@ -116,4 +184,25 @@ test("retreat prototype emits an anonymous local-interest event", async ({ page 
     JSON.stringify((window as Window & { vaq?: unknown[][] }).vaq ?? []),
   );
   expect(queueText).not.toContain("Retreat QA Person");
+});
+
+test("retreat Airtable failure never reports success", async ({ page }) => {
+  await page.route("**/api/request-signal", async (route) => {
+    await route.fulfill({
+      status: 502,
+      contentType: "application/json",
+      body: JSON.stringify({ status: "error", message: "Not shared." }),
+    });
+  });
+  await page.goto(`${baseUrl}/shala`);
+  await page.getByRole("button", { name: "Open Sanctuary Map" }).click();
+  await page.locator("#nav-room-retreat").click();
+  await page.getByRole("button", { name: "Request Retreat Conversation" }).click();
+  await page.getByPlaceholder("e.g. Seeker Ishan").fill("Retreat Failure QA");
+  await page.getByPlaceholder("Email address").fill("retreat-failure@example.test");
+  await page.getByText("I consent to share these details").click();
+  await page.getByRole("button", { name: "Request Human Review" }).click();
+
+  await expect(page.getByRole("alert")).toContainText("could not share");
+  await expect(page.getByRole("heading", { name: "Passage Requested" })).toHaveCount(0);
 });

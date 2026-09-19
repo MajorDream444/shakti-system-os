@@ -1,7 +1,7 @@
 # Shakti Backend, Airtable, and Analytics Readiness
 
 Date: 2026-09-19
-Status: PARTIALLY READY
+Status: PREVIEW VERIFICATION PENDING
 Scope: public seeker intake, server write boundary, operational CRM, and anonymous aggregate analytics
 
 ## Purpose
@@ -56,9 +56,9 @@ Handoff
 -> Needs Review / human review required
 ```
 
-Request-signal replay protection is not yet proven because the destination
-schema has no approved idempotency lookup field. Treat repeat submissions as a
-known operational risk.
+Request-signal replay protection derives a stable Signal ID from the submitted
+idempotency key and checks Requests & Signals before writing. Live proof remains
+pending until the bounded Preview QA run succeeds.
 
 ### Dancing with Durga
 
@@ -67,17 +67,18 @@ View offerings & reserve -> public Stripe storefront (external; no site payment 
 Request details -> /begin?intent=community -> Begin handoff
 ```
 
-`community_interest_submitted` is anonymous measurement only. The current
-Airtable contract does not preserve the `community` query intent as a dedicated
-CRM signal, so operational DWD/community routing remains a HOLD item.
+`community_interest_submitted` remains anonymous measurement only. After a
+consented Begin save with usable contact, the community intent creates a
+`Support Request` in Requests & Signals with source `/dancing-with-durga` and
+node `request-details`. It does not create access or promise enrollment.
 
 ### Retreat Interest
 
-The Retreat room collects a local prototype name, nourishment preference, and
-practice-experience selection. It does not call an API, does not create an
-Airtable record, and explicitly tells the visitor that no application or
-approval was created. `retreat_interest_submitted` measures the local action
-without sending the entered values.
+The Retreat room collects a name, email or WhatsApp, nourishment preference,
+practice-experience selection, and explicit consent. It calls
+`/api/request-signal` and reports success only after the server confirms a saved
+`Support Request` with source `/shala/retreat` and node `retreat-room`. It never
+creates an application, readiness decision, approval, or Access Grant.
 
 ### Other Public Surfaces
 
@@ -89,10 +90,10 @@ retains no email, phone, free text, or somatic response content and expires.
 
 | Submission | Destination | Status |
 | --- | --- | --- |
-| Consented Begin with contact | Seekers, Intake Responses, Progress | Implemented; live connectivity not verified |
-| Guidance request after saved Begin | Seekers, Requests & Signals | Implemented; live connectivity not verified |
-| DWD community intent | Begin records only; no dedicated signal | HOLD |
-| Retreat prototype request | None | Local-only by design |
+| Consented Begin with contact | Seekers, Intake Responses, Progress | Implemented; Preview proof pending |
+| Guidance request after saved Begin | Seekers, Requests & Signals | Implemented; Preview proof pending |
+| DWD community intent | Seekers, Requests & Signals after saved Begin | Implemented; Preview proof pending |
+| Retreat conversation request | Seekers, Requests & Signals | Implemented; Preview proof pending |
 | Anonymous analytics | None | Never send to Airtable |
 
 Access Grants are never created by these endpoints. Readiness, access, retreat
@@ -108,22 +109,19 @@ AIRTABLE_PERSONAL_ACCESS_TOKEN
 BEGIN_WRITES_ENABLED
 ```
 
-`AIRTABLE_TOKEN` is a legacy server-only fallback. Current HAMAL inspection
-found the Production credential under a different, unsupported name; Preview
-has no server credential. `BEGIN_WRITES_ENABLED` is absent in both environments
-and therefore false. No `VITE_AIRTABLE_TOKEN` is configured.
-
-No environment variable was added, removed, or changed during this pass.
+`AIRTABLE_TOKEN` is a legacy server-only fallback. Preview now holds the
+canonical credential as a Vercel Sensitive value; it cannot be pulled back into
+the local shell for inspection. Production intentionally has no canonical PAT.
+`BEGIN_WRITES_ENABLED` remains absent or false outside the bounded QA operation,
+and no `VITE_AIRTABLE_TOKEN` is configured.
 
 ## Airtable Verification
 
-A server-side metadata-only request was attempted against the configured HAMAL
-Production environment. It returned `404`, so the current base, table, field,
-choice, and credential-scope contract could not be proven. No record contents
-were requested or displayed.
-
-Because reachability and schema compatibility were not proven, the synthetic
-write proof was not run. This is the required safe outcome.
+The prior local metadata request could not test the real Vercel Sensitive value.
+The definitive proof is therefore a one-time Preview build that authenticates,
+checks the intended base and exact table/field IDs, creates uniquely labelled
+synthetic Begin/DWD/retreat records, verifies replay identity, and removes only
+those records. Until that build passes, live Airtable readiness remains pending.
 
 ## Analytics Foundation
 
@@ -152,13 +150,14 @@ argument, so names, email addresses, phone numbers, free text, answers, pathway
 scores, and retreat-form values cannot enter the event payload. Query strings
 and fragments are removed from page-view URLs before transmission.
 
-Vercel Web Analytics must be enabled in the HAMAL project dashboard before a
-deployment can collect page views. The current script endpoint returns `404`,
-so `VITE_VERCEL_ANALYTICS_ENABLED` remains false by default to avoid failed
-browser requests. After the dashboard feature is enabled, set that public gate
-to true and redeploy. Custom events also require a Vercel plan that supports
-them. Sheetal's future team can view aggregate data in the project's Analytics
-area; Airtable remains the place for consented seeker follow-up.
+Vercel Web Analytics is enabled for the HAMAL project. A deployment must set
+`VITE_VERCEL_ANALYTICS_ENABLED=true` before the first-party page-view script is
+loaded. The HAMAL team is currently on Hobby: anonymous page analytics are
+available, while Vercel custom events are not a supported plan feature. The
+allowlisted event vocabulary remains privacy-bounded and ready for a future
+supported plan, but it must not be reported as dashboard data today. Authorized
+operators can view aggregate data in the project's Analytics area; Airtable
+remains the place for consented seeker follow-up.
 
 ## Failure Points And Decision Rules
 
@@ -166,18 +165,19 @@ area; Airtable remains the place for consented seeker follow-up.
 - Do not create duplicate credential names to conceal a mismatch.
 - Never configure Airtable credentials under `VITE_*`.
 - Do not treat an analytics event as proof of a CRM submission.
-- Do not treat local retreat interest as an application or readiness decision.
+- Do not treat retreat interest as an application or readiness decision.
 - Do not enable general Preview writes for a QA test.
 - Durable abuse protection and request-signal idempotency require a separate approved backend sprint.
 
 ## Safe QA Procedure
 
-1. Use a clean Preview and confirm `BEGIN_WRITES_ENABLED=false`.
-2. Verify page and custom events with synthetic labels only; inspect event names, not visitor identity.
-3. For a future Airtable write proof, first confirm metadata access and exact schema compatibility.
-4. Enable writes only in a bounded QA environment with an authorized server credential.
-5. Submit one clearly fake record through the real endpoint, verify one record, test replay, then archive only that QA record if the workflow authorizes it.
-6. Disable the write gate again and record the result without copying record contents into Git.
+1. Export the exact committed release to a clean temporary deployment snapshot.
+2. Confirm public `BEGIN_WRITES_ENABLED=false`.
+3. Set `AIRTABLE_QA_VERIFY=true` only for the Preview build step.
+4. Let the guarded script verify metadata, synthetic writes, replay, and cleanup with generated labels.
+5. Fail the build if any authentication, schema, write, replay, or cleanup assertion fails.
+6. Remove the temporary duplicate credential name only after the canonical name passes.
+7. Record status without copying record contents, IDs, or credential values into Git.
 
 ## Handoff And Team Training
 
@@ -189,10 +189,8 @@ area; Airtable remains the place for consented seeker follow-up.
 
 ## Remaining Manual Actions
 
-1. Correct the HAMAL server credential to `AIRTABLE_PERSONAL_ACCESS_TOKEN` in the intended non-production verification environment.
-2. Confirm the configured base and credential can access Airtable metadata.
-3. Re-run the schema audit before any write proof.
-4. Enable Vercel Web Analytics for `shakti-system-os` in the HAMAL dashboard.
-5. Set `VITE_VERCEL_ANALYTICS_ENABLED=true` in the intended environment and redeploy.
-6. Confirm the HAMAL plan supports custom events.
-7. Keep Preview writes disabled until a separate, explicitly authorized QA write window.
+1. Run the bounded HAMAL Preview build and capture its pass/fail status.
+2. If successful, remove the obsolete duplicate Preview credential name.
+3. Set `VITE_VERCEL_ANALYTICS_ENABLED=true` in the intended deployment and verify the page-view request.
+4. Treat custom events as unavailable while the HAMAL team remains on Hobby; do not upgrade the plan without separate authorization.
+5. Keep public Preview writes disabled after QA and keep Production writes disabled until separately authorized.

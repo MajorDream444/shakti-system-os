@@ -12,6 +12,7 @@
     "build": "tsc -b tsconfig.app.json && vite build",
     "check:backend": "tsx src/checks/backendReadChecks.ts",
     "check:begin-write": "tsx src/checks/beginWriteChecks.ts",
+    "check:airtable-preview": "tsx scripts/airtablePreviewQa.ts",
     "check:vault": "tsx src/checks/vaultSyncChecks.ts",
     "typecheck:e2e": "tsc -p tsconfig.e2e.json",
     "test:begin-browser": "playwright test e2e/begin-qa.spec.ts --reporter=line",
