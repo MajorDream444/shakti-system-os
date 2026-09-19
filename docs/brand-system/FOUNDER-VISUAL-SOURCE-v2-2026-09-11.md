@@ -149,6 +149,12 @@ Vault / Future Rhythm:
 
 ## Sacred-Image Gate
 
+### Sept. 13 Visual Acceptance Refinement
+
+See `docs/founder-source/SHEETAL-VISUAL-ACCEPTANCE-2026-09-13.md` for the relayed primary response. Waterfalls and portal-like environmental treatment are approved direction; the generated exploration is not approved final artwork. Existing `IMG_5327` production derivative is reused for Home pathway and Begin pace surfaces, with placement metadata in `visualAssets.ts`. No additional source artwork is admitted.
+
+No exact production-approved Shri Yantra is identified by the supplied v2 manifest or current production asset metadata. **SHRI YANTRA PRODUCTION ASSET REQUIRED.** Historical generated geometry studies cannot clear this gate.
+
 Sacred/deity imagery does not become production-approved because it exists in the founder-selected folder.
 
 Do not:

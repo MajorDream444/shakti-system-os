@@ -245,6 +245,20 @@ export async function handleRequestSignal(
   }
 
   try {
+    const existingSignal = await deps.repository.findRequestSignalByIdempotencyKey(
+      request.idempotencyKey,
+    );
+    if (existingSignal) {
+      return {
+        statusCode: 200,
+        body: {
+          status: "saved",
+          message: "Your request has already been shared for human review.",
+          signalRecordId: existingSignal.id,
+        },
+      };
+    }
+
     const seeker = await deps.repository.upsertSeeker({
       firstName: request.firstName,
       email: request.email,

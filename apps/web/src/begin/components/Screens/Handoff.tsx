@@ -1,7 +1,6 @@
 import { useEffect, useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft } from 'lucide-react';
-import KaliSigil from '../KaliSigil';
 import { PathType, PATH_RESULTS } from '../../types';
 import type { BeginIntakeResponseInput, BeginCompleteResponse } from '../../../contracts/beginWriteContract';
 import { BEGIN_CONSENT_VERSION } from '../../../contracts/beginWriteContract';
@@ -10,6 +9,7 @@ import { STORAGE_KEYS } from '../../../constants/storage';
 import { PersistenceService } from '../../../services/PersistenceService';
 import { BeginLocalFallbackService } from '../../../services/BeginLocalFallbackService';
 import { BeginWriteClient } from '../../../services/BeginWriteClient';
+import { trackAnonymousEventOnce } from '../../../services/AnonymousAnalytics';
 
 interface Props {
   beginSessionId: string;
@@ -23,7 +23,7 @@ type SaveTone = 'idle' | 'saved' | 'local' | 'error';
 
 const SAVE_COPY: Record<SaveTone, string> = {
   idle: '',
-  saved: 'Your path has been saved. Shri Shakti Shala remains open for you.',
+  saved: 'Your path has been saved. Sri Shakti Shala remains open for you.',
   local: 'Your path is held locally and has not been shared yet.',
   error: 'We could not save this right now, but you can continue privately.',
 };
@@ -46,19 +46,26 @@ export default function Handoff({
   const [saveTone, setSaveTone] = useState<SaveTone>('idle');
   const [saveMessage, setSaveMessage] = useState('');
   const [requestSaved, setRequestSaved] = useState(false);
+  const [requestFailed, setRequestFailed] = useState(false);
 
   useEffect(() => {
     BeginLocalFallbackService.cleanupExpiredPendingBegin();
   }, []);
 
   const hasContact = Boolean(email.trim() || whatsapp.trim());
+  const isCommunityIntent = new URLSearchParams(window.location.search).get('intent') === 'community';
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
 
+    if (isCommunityIntent) {
+      trackAnonymousEventOnce('community_interest_submitted', beginSessionId);
+    }
+
     setIsLoading(true);
     setRequestSaved(false);
+    setRequestFailed(false);
 
     const payload = {
       beginSessionId,
@@ -118,26 +125,46 @@ export default function Handoff({
       setSaveMessage(SAVE_COPY.error);
     }
 
-    if (requestGuidance && beginResult?.status === 'saved' && hasContact) {
-      try {
-        const signal = await BeginWriteClient.requestSignal({
-          beginSessionId,
-          firstName: name,
-          email,
-          phone: whatsapp,
-          consent: payload.consent,
-          signalType: 'Guide Request',
-          message: requestMessage,
-          sourcePath: '/begin',
-          sourceNode: 'handoff',
-          intakeRecordIds: beginResult.intakeRecordIds,
-          idempotencyKey: `signal:${beginSessionId}:guide-request`,
-        });
+    if ((requestGuidance || isCommunityIntent) && beginResult?.status === 'saved' && hasContact) {
+      const signalRequests = [
+        ...(isCommunityIntent
+          ? [{
+              signalType: 'Support Request' as const,
+              message: 'Dancing with Durga community interest submitted through Request details.',
+              sourcePath: '/dancing-with-durga' as const,
+              sourceNode: 'request-details' as const,
+              idempotencyKey: `signal:${beginSessionId}:dwd-community`,
+            }]
+          : []),
+        ...(requestGuidance
+          ? [{
+              signalType: 'Guide Request' as const,
+              message: requestMessage,
+              sourcePath: '/begin' as const,
+              sourceNode: 'handoff' as const,
+              idempotencyKey: `signal:${beginSessionId}:guide-request`,
+            }]
+          : []),
+      ];
 
-        setRequestSaved(signal.status === 'saved');
-      } catch {
-        setRequestSaved(false);
-      }
+      const results = await Promise.allSettled(
+        signalRequests.map((request) =>
+          BeginWriteClient.requestSignal({
+            beginSessionId,
+            firstName: name,
+            email,
+            phone: whatsapp,
+            consent: payload.consent,
+            ...request,
+            intakeRecordIds: beginResult?.intakeRecordIds,
+          }),
+        ),
+      );
+      const allSaved = results.every(
+        (result) => result.status === 'fulfilled' && result.value.status === 'saved',
+      );
+      setRequestSaved(allSaved);
+      setRequestFailed(!allSaved);
     }
 
     setIsLoading(false);
@@ -157,14 +184,14 @@ export default function Handoff({
             className="w-full flex flex-col items-start"
           >
             <div className="mb-10">
-              <KaliSigil className="w-8 h-8 mb-8 animate-pulse" glow={true} />
+
 
               <p className="begin-kicker mb-4">Enter</p>
               <h2 className="begin-heading text-3xl md:text-5xl font-light mb-4 serif text-stone-100 italic">
                 Would you like this doorway sent to you?
               </h2>
               <p className="begin-body text-base text-ash/[0.85] font-normal max-w-lg leading-relaxed">
-                Receive your next step, or continue privately into Shri Shakti Shala.
+                Receive your next step, or continue privately into Sri Shakti Shala.
               </p>
             </div>
 
@@ -251,7 +278,7 @@ export default function Handoff({
               className="w-full min-h-12 justify-center flex items-center gap-2 border border-[#8FB27A]/45 bg-[#0E1A13]/58 text-[#F6EFE7] hover:text-white hover:border-[#8FB27A]/80 transition-colors px-5 py-3 cursor-pointer rounded-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm uppercase tracking-[0.1em] font-bold">Continue Without Sharing · Enter Shri Shakti Shala</span>
+              <span className="text-sm uppercase tracking-[0.1em] font-bold">Continue Without Sharing · Enter Sri Shakti Shala</span>
             </motion.button>
           </motion.div>
         ) : (
@@ -264,7 +291,7 @@ export default function Handoff({
           >
             <div className="relative mb-8 w-12 h-12 flex items-center justify-center rounded-full bg-red-950/20 border border-red-800/50">
               <div className="absolute inset-0 bg-red-800/5 rounded-full blur-md" />
-              <KaliSigil className="w-6 h-6" glow={true} />
+
             </div>
 
             <h2 className="begin-heading text-3xl md:text-5xl font-light mb-6 serif text-stone-100 italic">
@@ -276,8 +303,10 @@ export default function Handoff({
             </p>
 
             <p className="text-sm text-ash/72 font-normal italic mb-10">
-              {requestGuidance && requestSaved
+              {(requestGuidance || isCommunityIntent) && requestSaved
                 ? 'Your request has been shared for human review.'
+                : requestFailed
+                  ? 'Your path was saved, but the request was not shared. Please try again or book a discovery call below.'
                 : 'Carry this quiet flame with you.'}
             </p>
 
@@ -285,7 +314,7 @@ export default function Handoff({
               href={SHALA_PATH}
               className="w-full mb-4 block text-center py-4 bg-[#4A1C22]/70 border border-[#E9C77E]/45 hover:border-[#E9C77E] text-[#F6EFE7] hover:text-white font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm shadow-[0_4px_24px_rgba(233,199,126,0.16)]"
             >
-              Enter Shri Shakti Shala
+              Enter Sri Shakti Shala
             </a>
 
             <a

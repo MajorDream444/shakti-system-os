@@ -1,4 +1,5 @@
 import { offerCategories, offerPathways, receivingLadder, trustLinks } from "../data/offerings";
+import { LivingForm } from "./LivingPortal";
 
 export function OfferPathGateway() {
   return (
@@ -13,9 +14,11 @@ export function OfferPathGateway() {
             discernment, begin privately and let the pathway reveal the next
             doorway.
           </p>
-          <div className="receiving-ladder" aria-label="What you can receive">
-            {receivingLadder.map((item) => (
+          <div className="receiving-ladder living-concepts" aria-label="What you can receive">
+            {receivingLadder.map((item, index) => (
               <div key={item.level}>
+                <LivingForm variant={index} />
+
                 <span>{item.level}</span>
                 <p>{item.doorway}</p>
               </div>

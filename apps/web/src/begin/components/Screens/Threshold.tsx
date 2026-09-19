@@ -68,73 +68,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
             <div className="absolute inset-0 bg-noise opacity-[0.12] pointer-events-none mix-blend-overlay" />
           </motion.div>
 
-          {/* The Sacred Shakti Sigil: yoni triangle threshold, not a Shri Yantra. */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.1, duration: 2.2, ease: "easeOut" }}
-            className="absolute z-20 w-24 h-24 md:w-36 md:h-36 flex items-center justify-center pointer-events-none select-none"
-          >
-            <svg viewBox="0 0 120 120" className="w-full h-full text-stone-100 filter drop-shadow-[0_0_15px_rgba(122,12,12,0.7)]">
-              {/* Rotated 8-petal ceremonial blood-red outer lotus form */}
-              <g transform="translate(60,60)">
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
-                  <g key={angle} transform={`rotate(${angle})`}>
-                    <path
-                      d="M 0 -44 C 11 -35 14 -15 0 0 C -14 -15 -11 -35 0 -44 Z"
-                      fill="#7a0c0c"
-                      stroke="#a61313"
-                      strokeWidth="0.75"
-                      strokeOpacity="0.5"
-                    />
-                  </g>
-                ))}
-              </g>
-
-              {/* Black field inner core background */}
-              <circle cx="60" cy="60" r="32" fill="#030303" stroke="#ffffff" strokeWidth="0.75" strokeOpacity="0.9" />
-
-              {/* Concentric rings of white sacred linework and ornamental micro-dots */}
-              <circle cx="60" cy="60" r="29" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeDasharray="1.5 2.5" strokeOpacity="0.8" />
-              <circle cx="60" cy="60" r="26" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.25" />
-
-              {/* Downward pointing Devi/Shakti Yoni Triangle (Sacred Geometry) */}
-              <motion.polygon
-                points="42,47 78,47 60,76"
-                fill="none"
-                stroke="#ffffff"
-                strokeWidth="1.25"
-                strokeOpacity="0.95"
-                animate={{
-                  strokeWidth: [1.25, 1.75, 1.25],
-                  opacity: [0.85, 1, 0.85]
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-
-              {/* Third-Eye Flame of Kali (Vertical eye/flame loop) */}
-              <motion.path
-                d="M 60,39 C 63,44 63,51 60,56 C 57,51 57,44 60,39 Z"
-                fill="none"
-                stroke="#e9c77e"
-                strokeWidth="1"
-                animate={{
-                  opacity: [0.8, 1, 0.8],
-                  scale: [0.98, 1.04, 0.98]
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              />
-
-              {/* Innermost Bindu of Infinite Creation */}
-              <circle cx="60" cy="48" r="1.5" fill="#e9c77e" />
-
-              {/* Crescent Moon pointing upward inside the forehead loop */}
-              <path d="M 57,45 A 3,3 0 0,0 63,45 A 2.2,2.2 0 0,1 57,45" fill="#ffffff" opacity="0.85" />
-
-              {/* Sacred Blood-Red/Crimson Bindu point placed centered lower inside the triangle */}
-              <circle cx="60" cy="59" r="2.5" fill="#9d171d" stroke="#ffffff" strokeWidth="0.4" strokeOpacity="0.95" />
-            </svg>
-          </motion.div>
+          {/* Reserved for an exact, production-approved founder asset. */}
 
           {/* Slow candlelight reflection crossing the stone floor threshold */}
           <motion.div
@@ -179,7 +113,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         transition={{ delay: 1.4, duration: 1.5 }}
         className="text-xs md:text-sm text-ash/55 mb-6 md:mb-12 italic"
       >
-        Shri Shakti Shala opens through attention, not performance.
+        Sri Shakti Shala opens through attention, not performance.
       </motion.p>
 
       <motion.button

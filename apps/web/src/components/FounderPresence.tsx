@@ -30,7 +30,7 @@ export function FounderPresence() {
           <p>{portalCopy.founder.continuation}</p>
           <ul className="founder-credentials" aria-label="Sheetal's work includes">
             {portalCopy.founder.credentials.map((credential) => (
-              <li key={credential}>{credential}</li>
+              <li key={credential}><span>{credential}</span></li>
             ))}
           </ul>
         </div>

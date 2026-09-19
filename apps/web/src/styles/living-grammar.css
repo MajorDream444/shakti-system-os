@@ -1,0 +1,174 @@
+/* Local human-review extension: concept forms, open lists, and legible navigation. */
+.site-nav .nav-logo,
+.site-nav .nav-links,
+.site-nav .nav-start {
+  font-size: 17px;
+  letter-spacing: 0;
+}
+.site-nav { width: min(1440px, calc(100% - 40px)); gap: 22px; }
+.site-nav .nav-links { gap: 22px; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.site-nav .menu-button { width: 44px; height: 44px; }
+
+.philosophy,
+.authority-section,
+.offer-gateway {
+  background-image: linear-gradient(100deg, rgba(9, 22, 18, .92), rgba(12, 22, 18, .65)),
+    url('../shala/assets/images/waterfall-nature-v2-img-5327.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.authority-section { padding-top: 60px; background-position: center 70%; }
+.offer-gateway { background-position: center 85%; }
+
+.living-concepts {
+  border: 0;
+  background: transparent;
+  gap: 32px;
+}
+.five-pillar-constellation.living-concepts,
+.authority-grid.living-concepts {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: start;
+}
+.five-pillar-constellation.living-concepts > article,
+.authority-grid.living-concepts > button { grid-column: span 2; }
+.five-pillar-constellation.living-concepts > article:nth-child(4),
+.authority-grid.living-concepts > button:nth-child(4) { grid-column: 2 / span 2; }
+
+.living-concepts > article,
+.living-concepts > button,
+.living-concepts > div {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 390px;
+  padding: 72px 44px 64px;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  border-radius: 0;
+}
+.living-concepts > :nth-child(2) { margin-top: 28px; }
+.living-concepts > :nth-child(3) { margin-top: 8px; }
+.five-pillar-constellation.living-concepts > article:nth-child(n),
+.authority-grid.living-concepts > button:nth-child(n) { background: transparent; }
+.living-form-art {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.living-form-art .living-portal * { animation: none !important; }
+.living-form-art .portal-material image { opacity: .32; }
+.living-form-art .portal-ribbons { opacity: .38; }
+.living-concepts h3 {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 500;
+  margin: 20px 0 12px;
+  color: #f3d295;
+  letter-spacing: 0;
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+.living-concepts p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f4efe6;
+  margin: 0;
+  max-width: 28ch;
+  text-shadow: 0 1px 4px #08130f;
+}
+.living-concepts > div > span:not(.living-form-art) {
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 20px 0 14px;
+}
+.living-concepts .living-form-art { margin: 0; }
+.living-concepts h3 { white-space: nowrap; }
+.living-concepts > article:nth-child(5),
+.living-concepts > button:nth-child(5) { padding-inline: 24px; }
+.living-concepts > :nth-child(5) p { padding-inline: 20px; }
+.pathway-card h3, .begin-heading, .begin-choice p,
+.offer-path-card span, .invitation-door span {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+.living-concepts .concept-arrow { width: 26px; height: 26px; color: #f3d295; margin-top: 22px; }
+.living-concepts > button:focus-visible { outline: 3px solid #f3d295; outline-offset: 5px; }
+.living-concepts > button:hover { background: transparent; }
+
+/* These are aspects of a person's work, not five more destinations. */
+.founder-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+.founder-credentials li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  min-height: 44px;
+  background: none;
+  color: #f4efe6;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-family: var(--sans);
+  text-transform: none;
+}
+.founder-credentials .portal-mark { width: 30px; height: 30px; }
+.offer-gateway-actions .offer-path-card {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #8b805d;
+  border-radius: 0;
+}
+.offer-gateway-actions .offer-path-card p { font-size: 18px; }
+.offer-gateway-actions .offer-path-card strong { font-size: 18px; }
+
+@media (max-width: 1250px) {
+  .site-nav .nav-links, .site-nav .nav-start { display: none; }
+  .site-nav { grid-template-columns: 1fr auto; }
+  .site-nav .menu-button { display: block; }
+}
+@media (max-width: 1050px) {
+  .five-pillar-constellation.living-concepts,
+  .authority-grid.living-concepts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .five-pillar-constellation.living-concepts > article,
+  .authority-grid.living-concepts > button,
+  .five-pillar-constellation.living-concepts > article:nth-child(4),
+  .authority-grid.living-concepts > button:nth-child(4) { grid-column: auto; }
+  .living-concepts { gap: 20px; }
+  .living-concepts > article, .living-concepts > button, .living-concepts > div { padding: 62px 34px; }
+}
+@media (max-width: 700px) {
+  .site-nav .nav-logo { font-size: 16px; }
+  .site-nav { gap: 12px; width: calc(100% - 32px); }
+  .site-nav.scrolled { padding: 0 10px; }
+  .five-pillar-constellation.living-concepts,
+  .authority-grid.living-concepts,
+  .receiving-ladder.living-concepts { grid-template-columns: 1fr; }
+  .living-concepts > :nth-child(n) { margin-top: 0; }
+  .living-concepts > article, .living-concepts > button, .living-concepts > div {
+    min-height: 370px;
+    padding: 66px 44px;
+  }
+  .living-concepts h3 { font-size: 28px; }
+}

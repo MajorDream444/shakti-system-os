@@ -62,8 +62,8 @@ export type RequestSignalRequest = {
   consent: BeginConsentState;
   signalType: "Guide Request" | "Question" | "Support Request";
   message?: string;
-  sourcePath: "/begin";
-  sourceNode: "handoff";
+  sourcePath: "/begin" | "/dancing-with-durga" | "/shala/retreat";
+  sourceNode: "handoff" | "request-details" | "retreat-room";
   intakeRecordIds?: string[];
   idempotencyKey: string;
 };

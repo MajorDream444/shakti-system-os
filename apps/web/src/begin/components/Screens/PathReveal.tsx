@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import KaliSigil from '../KaliSigil';
 
 interface Props {
   result: {
@@ -23,7 +22,7 @@ export default function PathReveal({ result, onNext }: Props) {
         transition={{ duration: 1.2 }}
         className="mb-6 begin-small-seal"
       >
-        <KaliSigil className="w-8 h-8" glow={true} />
+
       </motion.div>
 
       <motion.div

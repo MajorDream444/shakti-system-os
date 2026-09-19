@@ -4,6 +4,9 @@ import { RoomType, SeekerState } from '../types';
 import { ShieldCheck, ArrowLeft, Calendar, MapPin, Award } from 'lucide-react';
 import { SANCTUARY_LANDMARKS } from '../data';
 import { PrayerLamp } from './PrayerLamp';
+import { trackAnonymousEventOnce } from '../../services/AnonymousAnalytics';
+import { BeginWriteClient } from '../../services/BeginWriteClient';
+import { BEGIN_CONSENT_VERSION } from '../../contracts/beginWriteContract';
 
 interface RetreatRoomProps {
   onNavigate: (room: RoomType) => void;
@@ -31,7 +34,21 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
 
   const [requestActive, setRequestActive] = useState(false);
   const [requestStep, setRequestStep] = useState(1);
-  const [formData, setRequestData] = useState({ name: '', diet: 'organic_veg', experience: 'intermediate' });
+  const [formData, setRequestData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    diet: 'organic_veg',
+    experience: 'intermediate',
+  });
+  const [consentAccepted, setConsentAccepted] = useState(false);
+  const [requestLoading, setRequestLoading] = useState(false);
+  const [requestError, setRequestError] = useState('');
+  const [requestId] = useState(() =>
+    typeof crypto !== 'undefined' && 'randomUUID' in crypto
+      ? crypto.randomUUID()
+      : `retreat-${Date.now()}`,
+  );
 
   const handleToggle = (id: string) => {
     setItems((prev) =>
@@ -43,9 +60,41 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
   const progressPercent = (doneCount / items.length) * 100;
   const isReadyToRequest = progressPercent >= 50;
 
-  const handleConfirmRequest = (e: React.FormEvent) => {
+  const handleConfirmRequest = async (e: React.FormEvent) => {
     e.preventDefault();
-    setRequestStep(2);
+    if (!consentAccepted || (!formData.email.trim() && !formData.phone.trim())) return;
+
+    setRequestLoading(true);
+    setRequestError('');
+    try {
+      const result = await BeginWriteClient.requestSignal({
+        beginSessionId: requestId,
+        firstName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        consent: {
+          accepted: true,
+          version: BEGIN_CONSENT_VERSION,
+          acceptedAt: new Date().toISOString(),
+        },
+        signalType: 'Support Request',
+        message: `Retreat interest. Nourishment: ${formData.diet}. Prior experience: ${formData.experience}.`,
+        sourcePath: '/shala/retreat',
+        sourceNode: 'retreat-room',
+        idempotencyKey: `signal:${requestId}:retreat-interest`,
+      });
+
+      if (result.status !== 'saved') {
+        throw new Error('Retreat interest was not saved.');
+      }
+
+      trackAnonymousEventOnce('retreat_interest_submitted', requestId);
+      setRequestStep(2);
+    } catch {
+      setRequestError('We could not share your retreat interest yet. Please try again or contact Sheetal directly.');
+    } finally {
+      setRequestLoading(false);
+    }
   };
 
   return (
@@ -169,7 +218,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
         </div>
       </div>
 
-      {/* Retreat interest stays local in this room; no application or approval is created here. */}
+      {/* Retreat interest creates a human-review signal; it never creates approval or access. */}
       <AnimatePresence>
         {requestActive && (
           <div className="fixed inset-0 bg-[#090707]/95 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
@@ -231,6 +280,29 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="flex flex-col gap-1.5">
+                        <label className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Email</label>
+                        <input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => setRequestData({...formData, email: e.target.value})}
+                          placeholder="Email address"
+                          className="w-full bg-white/[0.04] border border-white/18 focus:border-[#E9C77E] rounded-xl px-4 py-3 font-serif text-lg text-[#F6EFE7] outline-none"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">WhatsApp</label>
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setRequestData({...formData, phone: e.target.value})}
+                          placeholder="WhatsApp number"
+                          className="w-full bg-white/[0.04] border border-white/18 focus:border-[#E9C77E] rounded-xl px-4 py-3 font-serif text-lg text-[#F6EFE7] outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="flex flex-col gap-1.5">
                         <label className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Nourishment Preference</label>
                         <select
                           value={formData.diet}
@@ -258,12 +330,29 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                     </div>
                   </div>
 
+                  <label className="flex items-start gap-3 text-left font-sans text-sm leading-relaxed text-[#C8B7A5]">
+                    <input
+                      type="checkbox"
+                      checked={consentAccepted}
+                      onChange={(e) => setConsentAccepted(e.target.checked)}
+                      className="mt-1 accent-[#E27A3F]"
+                    />
+                    <span>I consent to share these details so the Sri Shakti Shala team can review my retreat interest and contact me.</span>
+                  </label>
+
+                  {requestError && (
+                    <p role="alert" className="font-sans text-sm text-[#F0A0A0]">
+                      {requestError}
+                    </p>
+                  )}
+
                   <div className="mt-4 pt-4 border-t border-white/5 flex flex-col gap-3">
                     <button
                       type="submit"
+                      disabled={requestLoading || !consentAccepted || (!formData.email.trim() && !formData.phone.trim())}
                       className="w-full min-h-12 py-3 bg-gradient-to-r from-[#C35A2E] to-[#E27A3F] text-white font-sans font-bold text-sm tracking-[0.1em] uppercase rounded-full shadow-[0_0_20px_rgba(226,122,63,0.3)] transition-all hover:scale-[1.02]"
                     >
-                      Request Human Review
+                      {requestLoading ? 'Sharing for review...' : 'Request Human Review'}
                     </button>
                     <span className="text-center font-sans text-[11px] text-[#C8B7A5] uppercase tracking-[0.08em] block">
                       Retreat interest does not equal retreat readiness
@@ -282,7 +371,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                   </div>
                   <h3 className="font-serif text-3xl text-[#F6EFE7] mt-4">Passage Requested</h3>
                   <p className="font-sans text-xs text-[#8a7c6d] max-w-sm">
-                    Namaste, <strong className="text-[#F6EFE7]">{formData.name}</strong>. This prototype has noted your retreat interest locally; no application or approval has been created.
+                    Namaste, <strong className="text-[#F6EFE7]">{formData.name}</strong>. Your retreat interest has been shared for human review. No application or approval has been created.
                   </p>
                   <div className="border border-white/5 rounded-2xl p-4 bg-white/[0.01] max-w-sm w-full text-left mt-2">
                     <span className="font-sans text-[9px] tracking-widest text-[#E27A3F] block uppercase mb-1">Next Step</span>

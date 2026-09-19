@@ -3,6 +3,7 @@
 Owner: Major / Sheetal
 Repository: `MajorDream444/shakti-system-os`
 Branch: `codex/sprint-12j-public-integration`
+Parent dependency: PR #24 / Sept. 11 Dancing with Durga reconciliation, commit `edc8ec262e8d1c9200f239dea4d68d0a700d62f9`
 Status: HUMAN REVIEW REQUIRED
 
 ## Review Purpose
@@ -20,6 +21,14 @@ Routes:
 - `/shala`
 - `/dancing-with-durga`
 
+Review note:
+
+Sprint 12J is stacked on PR #24. The Sept. 11 DWD truth is inherited here:
+four live gatherings, five practice nights, and `7:30-9:30 PM IST`.
+The exact four live-date mapping remains `PENDING FOUNDER CONFIRMATION`, so
+public review should confirm that no specific Oct. 11/13/15/17/19 date is
+presented as a live gathering unless separately approved.
+
 ## Acceptance Questions
 
 1. Does `Shri Shakti Shala` read as the place / living school / sanctuary rather than a random rename?
@@ -32,6 +41,8 @@ Routes:
 8. Does the site still avoid generic wellness, cheap Tantra, and SaaS/dashboard language?
 9. Does Dancing with Durga still feel part of the same sanctuary lineage without taking over the whole brand?
 10. Does mobile preserve hierarchy, legibility, and calm?
+11. Does Dancing with Durga correctly promise four live gatherings without implying
+    which four dates are live?
 
 ## Protected Boundaries To Confirm
 
@@ -78,3 +89,6 @@ Founder asset required:
 Required changes before merge:
 
 -
+# Sept. 13 Follow-up
+
+Sprint 12J.1 addresses Major's visual corrections under the relayed founder direction recorded in `docs/founder-source/SHEETAL-VISUAL-ACCEPTANCE-2026-09-13.md`. Acceptance of the direction does not equal final artwork acceptance. See `SPRINT-12J-1-FOUNDER-VISUAL-ACCEPTANCE.md` for the separate review record. The original 12J record above remains historical provenance.

@@ -13,6 +13,8 @@ import type {
 import { handleBeginComplete, handleRequestSignal } from "../server/beginWriteHandlers";
 import { clearWriteRateLimitForTests } from "../server/writeBoundaryRateLimit";
 import type { WriteBoundaryConfig } from "../server/writeBoundaryConfig";
+import { AirtableWriteRepository } from "../server/airtableWriteRepository";
+import { LIVE_AIRTABLE_FIELDS } from "../constants/liveAirtable";
 
 const assert = {
   equal(actual: unknown, expected: unknown, message?: string) {
@@ -108,6 +110,7 @@ class MockRepository implements BeginWriteRepository {
     progressCreates: 0,
     signalCreates: 0,
   };
+  signalByIdempotency = new Map<string, string>();
 
   async findSeekerByContact() {
     return { id: this.seekerRecordId };
@@ -115,6 +118,11 @@ class MockRepository implements BeginWriteRepository {
 
   async findProgressByIdempotencyKey(idempotencyKey: string) {
     const id = this.progressByIdempotency.get(idempotencyKey);
+    return id ? { id } : null;
+  }
+
+  async findRequestSignalByIdempotencyKey(idempotencyKey: string) {
+    const id = this.signalByIdempotency.get(idempotencyKey);
     return id ? { id } : null;
   }
 
@@ -138,8 +146,9 @@ class MockRepository implements BeginWriteRepository {
     return { id: "rec-progress-1" };
   }
 
-  async createRequestSignal() {
+  async createRequestSignal(input: Parameters<BeginWriteRepository["createRequestSignal"]>[0]) {
     this.writes.signalCreates += 1;
+    this.signalByIdempotency.set(input.request.idempotencyKey, "rec-signal-1");
     return { id: "rec-signal-1" };
   }
 }
@@ -247,6 +256,65 @@ async function runChecks() {
   assert.equal(signal.body.status, "saved");
   assert.equal(signalRepo.writes.signalCreates, 1);
   assert.equal(signalRepo.writes.seekerUpserts[0].assignedPathway, undefined);
+
+  const replayedSignal = await handleRequestSignal(signalPayload(), {
+    config: enabledConfig,
+    repository: signalRepo,
+    logger: testLogger,
+  });
+  assert.equal(replayedSignal.body.status, "saved");
+  assert.equal(signalRepo.writes.signalCreates, 1);
+
+  const communityRepo = new MockRepository();
+  const communitySignal = await handleRequestSignal(
+    signalPayload({
+      signalType: "Support Request",
+      sourcePath: "/dancing-with-durga",
+      sourceNode: "request-details",
+      idempotencyKey: "signal:BEGIN-CHECK-001:dwd-community",
+    }),
+    { config: enabledConfig, repository: communityRepo, logger: testLogger },
+  );
+  assert.equal(communitySignal.body.status, "saved");
+
+  const retreatRepo = new MockRepository();
+  const retreatSignal = await handleRequestSignal(
+    signalPayload({
+      signalType: "Support Request",
+      sourcePath: "/shala/retreat",
+      sourceNode: "retreat-room",
+      idempotencyKey: "signal:RETREAT-CHECK-001:retreat-interest",
+    }),
+    { config: enabledConfig, repository: retreatRepo, logger: testLogger },
+  );
+  assert.equal(retreatSignal.body.status, "saved");
+
+  let mappedRequestBody: Record<string, unknown> | null = null;
+  const mappingFetch: typeof fetch = async (_input, init) => {
+    mappedRequestBody = JSON.parse(String(init?.body)) as Record<string, unknown>;
+    return new Response(JSON.stringify({ records: [{ id: "rec-signal-map", fields: {} }] }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  };
+  const mappingRepository = new AirtableWriteRepository(enabledConfig, mappingFetch);
+  await mappingRepository.createRequestSignal({
+    request: signalPayload({
+      signalType: "Support Request",
+      sourcePath: "/shala/retreat",
+      sourceNode: "retreat-room",
+    }),
+    seekerRecordId: "rec-seeker-map",
+    occurredAt: "2026-09-19T00:00:00.000Z",
+  });
+  const mappedFields = (
+    (mappedRequestBody as { records?: Array<{ fields?: Record<string, unknown> }> } | null)
+      ?.records?.[0]?.fields ?? {}
+  );
+  assert.equal(mappedFields[LIVE_AIRTABLE_FIELDS.requestsSignals.signalType], "Support Request");
+  assert.equal(mappedFields[LIVE_AIRTABLE_FIELDS.requestsSignals.sourcePath], "/shala/retreat");
+  assert.equal(mappedFields[LIVE_AIRTABLE_FIELDS.requestsSignals.sourceNode], "retreat-room");
+  assert.equal(mappedFields[LIVE_AIRTABLE_FIELDS.requestsSignals.humanReviewNeeded], true);
 
   const localStore = installStorageMock();
   BeginLocalFallbackService.retainPendingBegin(beginPayload(), "CONTAINER");

@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "npm@11.6.2",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b tsconfig.app.json && vite build",
     "check:backend": "tsx src/checks/backendReadChecks.ts",
     "check:begin-write": "tsx src/checks/beginWriteChecks.ts",
+    "check:airtable-preview": "tsx scripts/airtablePreviewQa.ts",
     "check:vault": "tsx src/checks/vaultSyncChecks.ts",
+    "typecheck:e2e": "tsc -p tsconfig.e2e.json",
     "test:begin-browser": "playwright test e2e/begin-qa.spec.ts --reporter=line",
     "test:visual-review": "playwright test e2e/sprint12a-visual-review.spec.ts --reporter=line",
     "lint": "eslint .",
@@ -28,6 +34,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@playwright/test": "^1.62.1",
+    "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.1",

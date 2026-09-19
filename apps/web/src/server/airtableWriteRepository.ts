@@ -26,6 +26,7 @@ export type CreatedIntakeResponse = {
 export type BeginWriteRepository = {
   findSeekerByContact(email?: string, phone?: string): Promise<{ id: string } | null>;
   findProgressByIdempotencyKey(idempotencyKey: string): Promise<{ id: string } | null>;
+  findRequestSignalByIdempotencyKey(idempotencyKey: string): Promise<{ id: string } | null>;
   upsertSeeker(input: SeekerUpsertInput): Promise<{ id: string }>;
   createIntakeResponses(input: {
     begin: BeginCompleteRequest;
@@ -66,9 +67,11 @@ function buildRecordId(prefix: string, stablePart: string) {
 
 export class AirtableWriteRepository implements BeginWriteRepository {
   private readonly config: WriteBoundaryConfig;
+  private readonly fetchImpl: typeof fetch;
 
-  constructor(config: WriteBoundaryConfig) {
+  constructor(config: WriteBoundaryConfig, fetchImpl: typeof fetch = fetch) {
     this.config = config;
+    this.fetchImpl = fetchImpl;
   }
 
   private async request<TResponse>(
@@ -80,7 +83,7 @@ export class AirtableWriteRepository implements BeginWriteRepository {
       url.searchParams.set(key, value);
     });
 
-    const response = await fetch(url, {
+    const response = await this.fetchImpl(url, {
       ...options,
       headers: {
         Authorization: `Bearer ${this.config.token}`,
@@ -130,6 +133,19 @@ export class AirtableWriteRepository implements BeginWriteRepository {
     return payload.records[0] ? { id: payload.records[0].id } : null;
   }
 
+  async findRequestSignalByIdempotencyKey(idempotencyKey: string) {
+    const signalId = buildRecordId("SIG", idempotencyKey);
+    const payload = await this.request<AirtableListResponse>(LIVE_AIRTABLE_TABLE_IDS.requestsSignals, {
+      method: "GET",
+      query: {
+        filterByFormula: `{Signal ID} = "${escapeFormulaValue(signalId)}"`,
+        maxRecords: "1",
+      },
+    });
+
+    return payload.records[0] ? { id: payload.records[0].id } : null;
+  }
+
   async upsertSeeker(input: SeekerUpsertInput) {
     const existing = await this.findSeekerByContact(input.email, input.phone);
     const fields = {
@@ -147,7 +163,7 @@ export class AirtableWriteRepository implements BeginWriteRepository {
     };
 
     if (existing) {
-      const response = await fetch(
+      const response = await this.fetchImpl(
         `${AIRTABLE_API_ROOT}/${this.config.baseId}/${LIVE_AIRTABLE_TABLE_IDS.seekers}/${existing.id}`,
         {
           method: "PATCH",

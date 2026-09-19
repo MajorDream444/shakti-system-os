@@ -3,6 +3,7 @@ import { portalCopy } from "../data/portalCopy";
 import { methodDoorway, type LivingDoorway } from "../data/livingDoorways";
 import { KnowledgeChamber } from "./KnowledgeChamber";
 import { portalImages } from "./PortalImageSlots";
+import { LivingForm } from "./LivingPortal";
 
 const methodRhythm = [
   "Listen to the body",
@@ -51,14 +52,6 @@ export function Philosophy() {
               <li key={item}>{item}</li>
             ))}
           </ol>
-          <div className="five-pillar-constellation" aria-label="Five pillars of Shakti Shadow and Somatics">
-            {fivePillars.map((pillar) => (
-              <article key={pillar.name}>
-                <span>{pillar.name}</span>
-                <p>{pillar.meaning}</p>
-              </article>
-            ))}
-          </div>
         </div>
         <div
           className="ritual-card gradient-shell reveal"
@@ -75,6 +68,16 @@ export function Philosophy() {
           >
             Open the method
           </button>
+        </div>
+        <div className="five-pillar-constellation living-concepts" aria-label="Five pillars of Shakti Shadow and Somatics">
+          {fivePillars.map((pillar, index) => (
+            <article key={pillar.name}>
+              <LivingForm variant={index} />
+
+              <h3>{pillar.name}</h3>
+              <p>{pillar.meaning}</p>
+            </article>
+          ))}
         </div>
       </div>
       <KnowledgeChamber

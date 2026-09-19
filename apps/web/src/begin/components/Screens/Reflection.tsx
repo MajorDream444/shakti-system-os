@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import KaliSigil from '../KaliSigil';
 
 const LONGINGS = [
   "rhythm", "grounding", "sensual embodiment", "shadow integration",
@@ -29,7 +28,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
         transition={{ duration: 1.2 }}
         className="mb-6 begin-small-seal"
       >
-        <KaliSigil className="w-8 h-8" glow={true} />
+
       </motion.div>
 
       <motion.div
@@ -50,6 +49,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.04, duration: 0.8 }}
             onClick={() => toggleLonging(longing)}
+            aria-pressed={selectedLongings.includes(longing)}
             className={`px-5 py-3 rounded-full border transition-all duration-700 text-xs tracking-[0.1em] lowercase cursor-pointer ${
               selectedLongings.includes(longing)
                 ? 'bg-red-950/30 border-red-800 text-red-200 shadow-[0_0_15px_rgba(157,23,29,0.3)]'
@@ -72,6 +72,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
         </p>
         <div className="relative group">
           <textarea
+            aria-label="In a few words, what has brought you here?"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="A sentence is enough. Let it be honest."

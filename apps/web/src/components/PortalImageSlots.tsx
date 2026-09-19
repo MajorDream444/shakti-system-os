@@ -12,16 +12,23 @@ import founderWaterfallRedV2 from "../shala/assets/images/founder-waterfall-red-
 import founderTempleV2 from "../shala/assets/images/founder-temple-v2-img-5130.jpg";
 import waterfallNatureV2 from "../shala/assets/images/waterfall-nature-v2-img-5327.jpg";
 import founderEditorialV2 from "../shala/assets/images/founder-editorial-v2-jul06198.jpg";
+import founderSuppliedRedWaterfall from "../shala/assets/images/founder-supplied-red-waterfall-sept15.jpg";
+import founderSuppliedRedRiver from "../shala/assets/images/founder-supplied-red-river-sept15.jpg";
+import founderSuppliedOceanMovement from "../shala/assets/images/founder-supplied-ocean-movement-sept15.jpg";
+import founderRedPrayerHands from "../shala/assets/images/founder-red-prayer-hands-sept18.jpg";
 
 export const portalImages = {
-  hero: founderWaterfallV2,
   founder: founderPortraitV2,
+  founderWelcome: founderRedPrayerHands,
   durgaFounder: founderRedVeilV2,
   founderContext: founderTempleV2,
   founderEditorial: founderEditorialV2,
   founderWaterfall: founderWaterfallV2,
   founderWaterfallRed: founderWaterfallRedV2,
   waterfallNature: waterfallNatureV2,
+  homeWorldCandidate: founderSuppliedRedWaterfall,
+  beginTerrainCandidate: founderSuppliedRedRiver,
+  energyFlowCandidate: founderSuppliedOceanMovement,
   legacyFounder: founderImage,
   legacyDurgaFounder: durgaFounderImage,
   gates: gatesImage,
@@ -40,13 +47,14 @@ export function PortalImageGallery() {
       caption: "energy, flow, and direction",
     },
     {
-      src: portalImages.founder,
+      src: portalImages.founderWelcome,
       label: "Sheetal Kandola",
       caption: "founder, practitioner, and guide",
+      alt: "Sheetal Kandola smiling in a red veil with her hands together in greeting",
     },
     {
       src: portalImages.founderContext,
-      label: "Shri Shakti Shala",
+      label: "Sri Shakti Shala",
       caption: "living school and sanctuary",
     },
     {
@@ -57,10 +65,10 @@ export function PortalImageGallery() {
   ];
 
   return (
-    <div className="portal-gallery" aria-label="Shri Shakti Shala visual atmosphere">
+    <div className="portal-gallery" aria-label="Sri Shakti Shala visual atmosphere">
       {images.map((image) => (
         <figure key={image.label} className="portal-gallery-frame">
-          <img src={image.src} alt="" loading="eager" />
+          <img src={image.src} alt={"alt" in image ? image.alt : ""} loading="eager" />
           <figcaption>
             <span>{image.label}</span>
             <small>{image.caption}</small>

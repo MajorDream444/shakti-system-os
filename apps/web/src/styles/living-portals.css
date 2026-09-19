@@ -1,0 +1,128 @@
+/* Reference translation: translucent materials and non-sacred environmental edges. */
+.living-portal {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; overflow: visible;
+  filter: drop-shadow(0 9px 12px rgba(0,0,0,.28));
+}
+.portal-material, .portal-membrane, .portal-ribbons, .living-portal-waterline {
+  transform-origin: 50% 55%;
+}
+.portal-material { animation: material-current 19s ease-in-out infinite alternate; }
+.portal-membrane { animation: membrane-breath 13s ease-in-out infinite alternate; }
+.portal-ribbons { animation: ribbon-flow 17s ease-in-out infinite alternate; opacity: .65; }
+.living-portal-waterline { animation: refraction-flow 11s ease-in-out infinite alternate; }
+.living-portal--1 .portal-ribbons { animation-delay: -7s; }
+.living-portal--2 .portal-membrane { animation-delay: -5s; }
+.living-portal--3 .portal-material { animation-delay: -10s; }
+@keyframes material-current { to { transform: translateY(5px) scale(1.015); } }
+@keyframes membrane-breath { to { transform: scale(1.012,.99); opacity: .8; } }
+@keyframes ribbon-flow { to { transform: rotate(2deg) scale(1.018,.97); opacity: 1; } }
+@keyframes refraction-flow { to { transform: scale(.977,1.009) rotate(-1deg); } }
+.portal-mark {
+  width: 44px; height: 44px; flex-shrink: 0; color: #f0cb88;
+  filter: drop-shadow(0 0 9px rgba(241,187,95,.28));
+  transition: transform 700ms ease, filter 700ms ease;
+}
+.portal-motion-control {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; flex-shrink: 0; margin-top: 16px;
+  border: 1px solid rgba(233,199,126,.5); border-radius: 50%;
+  background: rgba(12,22,17,.7); color: #f0d49f; cursor: pointer;
+}
+.hero-invitation-fork .invitation-door {
+  position: relative; isolation: isolate; overflow: visible;
+  display: flex; min-height: 230px; padding: 54px 44px;
+  flex-direction: column; align-items: center; justify-content: center;
+  border: 0; border-radius: 0; background: transparent; text-align: center;
+}
+.hero-invitation-fork .invitation-door > :not(.living-portal) { position: relative; z-index: 1; }
+.hero-invitation-fork .invitation-door span { font-size: 1.65rem; line-height: 1.15; }
+.hero-invitation-fork .invitation-door small { max-width: 24ch; font-size: 1.125rem; line-height: 1.5; }
+.hero-invitation-fork .invitation-door:hover,
+.hero-invitation-fork .invitation-door:focus-visible { background: transparent; transform: translateY(-4px); }
+.pathway.pathway--living {
+  position: relative; isolation: isolate; overflow: hidden;
+  background: #18261e; padding-top: 90px; padding-bottom: 110px;
+}
+.pathway-water-environment {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 45%; z-index: -3;
+}
+.pathway--living::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background: linear-gradient(110deg,rgba(8,18,14,.87),rgba(12,21,17,.45) 55%,rgba(8,18,14,.15)),
+    linear-gradient(0deg,rgba(8,18,14,.9),transparent 32%);
+}
+.pathway--living .section-heading { max-width: 900px; position: relative; }
+.pathway--living .section-heading h2 { font-size: 4.25rem; max-width: 24ch; line-height: 1.1; }
+.pathway--living .section-heading p { color: #f4efe6; font-size: 1.125rem; max-width: 650px; }
+.pathway--living .section-heading .label { color: #ebc78c; font-size: .9rem; }
+.pathway--living .pathway-grid {
+  gap: 20px; align-items: center; margin-top: 28px;
+}
+.pathway--living .pathway-card {
+  position: relative; isolation: isolate;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 440px; padding: 72px 35px 50px;
+  text-align: center; border: 0; border-radius: 0; background: transparent;
+  transition: transform 700ms ease;
+}
+.pathway--living .pathway-card::after {
+  content: ""; position: absolute; bottom: -16px; left: 18%; right: 18%;
+  height: 16px; border-bottom: 1px solid rgba(220,203,157,.3);
+  border-radius: 50%; box-shadow: 0 7px 14px -10px #e9c77e;
+  pointer-events: none;
+}
+.pathway--living .pathway-card > :not(.living-portal) { position: relative; }
+.pathway--living .pathway-card h3 { margin: 16px 0 12px; font-size: 2rem; line-height: 1.15; }
+.pathway--living .pathway-card p { font-size: 1.2rem; line-height: 1.55; color: #fff4e0; text-shadow: 0 1px 4px #08110c; }
+.pathway--living .pathway-card .portal-arrow {
+  margin-top: 20px; width: 44px; height: 44px; padding: 11px;
+  border: 1px solid #d2b177; border-radius: 50%; color: #fff4e0;
+}
+.pathway--living .pathway-card:hover, .pathway--living .pathway-card:focus-visible { background: transparent; transform: translateY(-4px); }
+.pathway-card:hover .portal-mark, .pathway-card:focus-visible .portal-mark,
+.begin-pace-portal:hover .portal-mark, .begin-pace-portal:focus-visible .portal-mark {
+  transform: translateY(-3px); filter: drop-shadow(0 0 12px #c68b40);
+}
+.pathway-card:hover .portal-membrane, .begin-pace-portal:hover .portal-membrane { stroke-width: 2; filter: brightness(1.25); }
+.pathway--living .pathway-card:focus-visible, .begin-choice-screen .begin-choice:focus-visible,
+.portal-motion-control:focus-visible {
+  outline: 3px solid #f0d59b; outline-offset: 5px;
+}
+.begin-choice-screen .begin-body { font-size: 1.125rem; line-height: 1.65; letter-spacing: 0; }
+.begin-choice-screen .begin-heading { max-width: 25ch; }
+.begin-choice-screen .begin-choice p { font-size: 1.125rem; line-height: 1.6; letter-spacing: 0; }
+.begin-choice-screen .begin-pace-portal {
+  min-height: 330px; padding: 62px 45px 56px; gap: 18px;
+  align-items: center; justify-content: center; background: transparent;
+  border: 0; border-radius: 0; overflow: visible; backdrop-filter: none; box-shadow: none;
+}
+.begin-choice-screen .begin-pace-portal:hover,
+.begin-choice-screen .begin-pace-portal.begin-choice--selected { background: transparent; box-shadow: none; }
+.begin-choice-screen .begin-pace-portal > div { display: none; }
+.begin-choice-screen .begin-pace-portal .portal-mark { position: relative; z-index: 1; }
+.begin-choice-screen .begin-pace-portal p {
+  text-align: center; padding-right: 0; font-family: var(--serif);
+  font-size: 1.75rem; line-height: 1.25; color: #fff4e0; text-shadow: 0 2px 8px #080e0b;
+}
+.begin-pace-portal[aria-pressed="true"] .portal-membrane { filter: brightness(1.6); transform: scale(1.025); }
+.portals-paused .living-portal * { animation-play-state: paused; }
+@media (max-width: 1100px) {
+  .pathway--living .pathway-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 600px) {
+  .pathway.pathway--living { padding: 64px 0; }
+  .pathway--living .section-heading h2 { font-size: 2.5rem; }
+  .pathway--living .pathway-grid { grid-template-columns: 1fr; gap: 22px; }
+  .pathway--living .pathway-card { min-height: 440px; padding: 75px 55px 55px; }
+  .begin-choice-screen .begin-pace-portal { min-height: 310px; padding: 65px 46px; }
+  .hero-invitation-fork .invitation-door { min-height: 260px; padding: 68px 46px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .living-portal * { animation: none !important; }
+  .pathway--living .pathway-card, .portal-mark { transition: none; }
+  .pathway--living .pathway-card:hover, .pathway-card:hover .portal-mark,
+  .begin-pace-portal:hover .portal-mark { transform: none; }
+  .portal-motion-control { display: none; }
+}

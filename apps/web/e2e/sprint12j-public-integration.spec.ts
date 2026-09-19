@@ -1,6 +1,6 @@
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 
-const baseUrl = "http://127.0.0.1:4173";
+const baseUrl = (process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:4173").replace(/\/$/, "");
 
 test.setTimeout(120_000);
 
@@ -29,13 +29,13 @@ test.describe("Sprint 12J public identity and visual integration", () => {
     await page.setViewportSize({ width: 1440, height: 1100 });
     await page.goto(`${baseUrl}/`);
 
-    await expect(page.getByText("SHRI SHAKTI SHALA / LIVING SCHOOL")).toBeVisible();
+    await expect(page.getByText("SRI SHAKTI SHALA / LIVING SCHOOL")).toBeVisible();
     await expect(page.getByRole("heading", { name: "Shakti Shadow & Somatics" })).toBeVisible();
-    await expect(page.getByText("Sheetal Kandola's body of work inside Shri Shakti Shala")).toBeVisible();
+    await expect(page.getByText("Sheetal Kandola's body of work inside Sri Shakti Shala")).toBeVisible();
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: "Work With Sheetal" }).first()).toBeVisible();
     await expect(page.locator(".portal-gallery").getByText("Shakti Waterfall")).toBeVisible();
-    await expect(page.getByText("The body of work inside Shri Shakti Shala.")).toBeVisible();
+    await expect(page.getByText("The body of work inside Sri Shakti Shala.")).toBeVisible();
 
     for (const pillar of ["Shakti", "Shadow", "Sensuality", "Somatics", "Sovereignty"]) {
       await expect(page.getByRole("button", { name: new RegExp(`Open ${pillar}`) })).toBeVisible();
@@ -55,7 +55,7 @@ test.describe("Sprint 12J public identity and visual integration", () => {
     await page.goto(`${baseUrl}/offerings`);
     await expect(page.getByRole("heading", { name: "Work With Sheetal" })).toBeVisible();
     await expect(page.getByText("One body of work. Different ways to enter")).toBeVisible();
-    await expect(page.getByText("Enter Shri Shakti Shala for open teachings")).toBeVisible();
+    await expect(page.getByText("Enter Sri Shakti Shala for open teachings")).toBeVisible();
     await expect(page.getByText("Private work in 6-, 9-, or 12-session containers")).toBeVisible();
     await capture(page, testInfo, "desktop-12j-offerings-public-identity.png");
     await assertPublicBoundaries(page);
@@ -75,7 +75,7 @@ test.describe("Sprint 12J public identity and visual integration", () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`${baseUrl}/`);
 
-    await expect(page.getByText("SHRI SHAKTI SHALA / LIVING SCHOOL")).toBeVisible();
+    await expect(page.getByText("SRI SHAKTI SHALA / LIVING SCHOOL")).toBeVisible();
     await expect(page.getByRole("heading", { name: "Shakti Shadow & Somatics" })).toBeVisible();
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
     await expect(page.getByText("Sovereignty", { exact: true }).first()).toBeVisible();
@@ -83,7 +83,7 @@ test.describe("Sprint 12J public identity and visual integration", () => {
     await assertPublicBoundaries(page);
 
     await page.goto(`${baseUrl}/shala`);
-    await expect(page.getByText("SHRI SHAKTI SHALA")).toBeVisible();
+    await expect(page.getByText("SRI SHAKTI SHALA")).toBeVisible();
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
     await expect(page.locator("#threshold-drawer")).toBeVisible();
     await capture(page, testInfo, "mobile-12j-shala-map-public-name.png");
