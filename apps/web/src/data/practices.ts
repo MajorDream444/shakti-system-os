@@ -50,9 +50,9 @@ export const readiness: ReadinessCopy = {
 
 export const pathway: PathwayCopy = {
   label: "The Pathway",
-  headline: "Self-Audit -> Community -> Container -> Retreat",
+  headline: "What is calling you?",
   copy:
-    "The path begins with reflection, warms through rhythm, deepens through container, and arrives at retreat prepared inside Shri Shakti Shala.",
+    "The most powerful path is not always the most intense one.",
   steps: [
     {
       title: "Self-Audit",

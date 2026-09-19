@@ -1,5 +1,3 @@
-import { portalImages } from "./PortalImageSlots";
-
 const waterfallThread = [
   "Energy is already moving.",
   "Leakage becomes visible.",
@@ -13,12 +11,17 @@ export function WaterfallDoctrine() {
   return (
     <section className="section waterfall-doctrine" aria-labelledby="waterfall-doctrine-title">
       <div className="container waterfall-layout">
-        <figure className="waterfall-portrait">
+        <figure
+          className="waterfall-portrait energy-flow-portrait"
+          data-asset-status="FOUNDER_SUPPLIED_PRODUCTION_CANDIDATE"
+          data-image-gate="founder-acceptance-and-rights-confirmation-required"
+        >
           <img
-            src={portalImages.founderWaterfall}
-            alt="Sheetal Kandola smiling near a waterfall"
+            src={portalImages.energyFlowCandidate}
+            alt="Sheetal Kandola standing beside the ocean with one arm raised."
             loading="lazy"
           />
+          <figcaption>Body, water, attention, and movement.</figcaption>
         </figure>
         <div className="section-copy waterfall-copy">
           <p className="label">Shakti Waterfall</p>
@@ -38,3 +41,4 @@ export function WaterfallDoctrine() {
     </section>
   );
 }
+import { portalImages } from "./PortalImageSlots";

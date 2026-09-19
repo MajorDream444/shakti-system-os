@@ -1,8 +1,8 @@
 export type ShaktiVisualAsset = {
   id: string;
   sourceFilename: string;
-  source: "Founder Visual Source v2";
-  status: "APPROVED_CANDIDATE";
+  source: "Founder Visual Source v2" | "Founder-supplied Sept. 15 review source" | "Founder-selected Sept. 18 site review";
+  status: "APPROVED_CANDIDATE" | "FOUNDER_SUPPLIED_PRODUCTION_CANDIDATE" | "FOUNDER_SUPPLIED_PROVENANCE_REQUIRED" | "FOUNDER_SELECTED_PLACEMENT_APPROVED";
   derivativePath: string;
   pages: string[];
   role: string;
@@ -14,6 +14,71 @@ export type ShaktiVisualAsset = {
 
 export const shaktiVisualAssets: ShaktiVisualAsset[] = [
   {
+    id: "founder-red-prayer-hands-sept18",
+    sourceFilename: "IMG_3201.PNG",
+    source: "Founder-selected Sept. 18 site review",
+    status: "FOUNDER_SELECTED_PLACEMENT_APPROVED",
+    derivativePath: "apps/web/src/shala/assets/images/founder-red-prayer-hands-sept18.jpg",
+    pages: ["/"],
+    role: "Home visual gallery welcoming founder portrait, replacing the rejected temporary portrait in that exact slot.",
+    cropBehavior: "Preserve Sheetal's face, red veil, and prayer hands; adjust the crop within the existing gallery form rather than selecting another photograph.",
+    mobileBehavior: "Keep the face and greeting visible in the single-column gallery crop.",
+    altTextIntent: "Sheetal Kandola smiling in a red veil with her hands together in greeting.",
+    replacementNotes: "Placement selected by Sheetal on Sept. 18. Final web-publication rights and full founder transcript remain to be attached to the release record.",
+  },
+  {
+    id: "founder-supplied-red-waterfall-sept15",
+    sourceFilename: "IbjmmIyD5RXQZA8_U6YI5mMx6NcrH-fg12C-ooYEBT2bX1zfm6v1zRTTV_Se6OMrxxw7Y9TTNf3cbf-j7lVXjIo2GdErBKer01rz9lgEoMs5EMqKgwUwAKzsYHLT4wsvjbwzxPfLV1trCVDbl7_U_tahNUBlhTJjrpPmygKDfDH1l-eJSUvv9pgFutNwXjdA.jpeg",
+    source: "Founder-supplied Sept. 15 review source",
+    status: "FOUNDER_SUPPLIED_PROVENANCE_REQUIRED",
+    derivativePath: "apps/web/src/shala/assets/images/founder-supplied-red-waterfall-sept15.jpg",
+    pages: ["/"],
+    role: "Local-review Home world: water, red living nature, depth, and environmental arrival without repeating a founder portrait.",
+    cropBehavior: "Full-bleed landscape crop; preserve the stepped waterfall and red canopy while keeping the central copy readable.",
+    mobileBehavior: "Favor the waterfall terraces and red foliage; do not crop to a featureless patch of leaves.",
+    altTextIntent: "Decorative environmental layer behind separately readable Home content.",
+    replacementNotes: "Do not deploy or publish until provenance, rights, and founder placement acceptance are confirmed.",
+  },
+  {
+    id: "founder-supplied-red-river-sept15",
+    sourceFilename: "vMz4QrjL50suLL_BsCuEo94GvSKfwe6ShiRUcaS5SW3PSlcYPCNXdG1i3fskiHXRvqia3J8Sjd9NXfsKOdrVmED6VvlfQ1fsAD4KiPDb3eoS1m3pgQLYPYoZtKkU4-YQVLXCxYYFBB-fk51H7g8Mr9kRLCFUAHUhnG-g5RyKa0plBd3EGDbHjZjUGOuXgkEW.jpeg",
+    source: "Founder-supplied Sept. 15 review source",
+    status: "FOUNDER_SUPPLIED_PROVENANCE_REQUIRED",
+    derivativePath: "apps/web/src/shala/assets/images/founder-supplied-red-river-sept15.jpg",
+    pages: ["/begin"],
+    role: "Local-review early Begin terrain: the river supplies direction, distance, scale, mist, and somewhere to go.",
+    cropBehavior: "Keep the branching river visible through the forest; early stations use the landscape before later stations transition to the existing founder-library waterfall.",
+    mobileBehavior: "Center the strongest river bend beneath the mist; verify the path remains legible at narrow crops.",
+    altTextIntent: "Decorative journey environment behind separately readable Begin content.",
+    replacementNotes: "Do not deploy or publish until provenance, rights, and founder placement acceptance are confirmed.",
+  },
+  {
+    id: "founder-supplied-ocean-movement-sept15",
+    sourceFilename: "WhatsApp Image 2026-09-15 at 14.11.58.jpeg",
+    source: "Founder-supplied Sept. 15 review source",
+    status: "FOUNDER_SUPPLIED_PRODUCTION_CANDIDATE",
+    derivativePath: "apps/web/src/shala/assets/images/founder-supplied-ocean-movement-sept15.jpg",
+    pages: ["/"],
+    role: "Notice where energy flows: Sheetal, bodily direction, raised-arm movement, water, horizon, and spacious attention.",
+    cropBehavior: "Editorial portrait crop; preserve Sheetal's full raised arm, ocean horizon, and enough open sky for scale.",
+    mobileBehavior: "Use a tall crop that retains hand, face, ocean, and grounded stance.",
+    altTextIntent: "Sheetal Kandola standing beside the ocean with one arm raised.",
+    replacementNotes: "Founder supplied; final placement acceptance and publication rights confirmation remain required.",
+  },
+  {
+    id: "begin-water-canopy-v2-img-4675",
+    sourceFilename: "IMG_4675.heif / IMG_4675.jpg",
+    source: "Founder Visual Source v2",
+    status: "APPROVED_CANDIDATE",
+    derivativePath: "apps/web/src/shala/assets/images/begin-water-canopy-v2-img-4675.jpg",
+    pages: ["/begin"],
+    role: "Local review candidate: continuous water, canopy and stone environment across Begin; not literal Himalayan terrain or approved sacred art.",
+    cropBehavior: "Upper canopy/water crop. Full source includes Sheetal near the base; environment is the intended focus, not another founder portrait.",
+    mobileBehavior: "Single 300px environmental opening; text on opaque reading surfaces. Never repeat as a foreground image.",
+    altTextIntent: "Decorative environmental photograph behind separately readable journey content.",
+    replacementNotes: "Founder placement acceptance and publication rights remain gated. New candidate selection does not resolve the Home hero or energy-flow replacement gates.",
+  },
+  {
     id: "founder-waterfall-v2-img-2359",
     sourceFilename: "IMG_2359.heif / IMG_2359.jpg",
     source: "Founder Visual Source v2",
@@ -22,12 +87,12 @@ export const shaktiVisualAssets: ShaktiVisualAsset[] = [
       "apps/web/src/shala/assets/images/founder-waterfall-v2-img-2359.jpg",
     pages: ["/", "/about-sheetal", "/offerings"],
     role:
-      "Primary Waterfall doctrine and living-nature anchor; shows Sheetal in actual water/place rather than synthetic metaphor.",
+      "Home: one foreground Shakti Waterfall placement only. Primary Waterfall doctrine anchor; not a hero background or energy-flow illustration.",
     cropBehavior: "Editorial cover crop; preserve Sheetal, falling water, and green context.",
     mobileBehavior: "Center Sheetal and waterfall; avoid tight face-only crop.",
     altTextIntent: "Sheetal Kandola smiling near a waterfall.",
     replacementNotes:
-      "Replace only with founder-approved water/waterfall photography carrying the same doctrine role.",
+      "Retain the Home Shakti Waterfall placement. Hero background and Notice where energy flows require separately approved replacements; do not reuse this photograph there.",
   },
   {
     id: "founder-portrait-v2-a3e7a30e",
@@ -70,7 +135,7 @@ export const shaktiVisualAssets: ShaktiVisualAsset[] = [
       "apps/web/src/shala/assets/images/founder-temple-v2-img-5130.jpg",
     pages: ["/", "/about-sheetal"],
     role:
-      "Temple-context support image for Shri Shakti Shala as living sanctuary.",
+      "Temple-context support image for Sri Shakti Shala as living sanctuary.",
     cropBehavior: "Preserve founder and temple/sacred context.",
     mobileBehavior: "Use as supporting context, not primary mobile hero.",
     altTextIntent: "Sheetal Kandola in a temple or sacred-context setting.",
@@ -84,9 +149,9 @@ export const shaktiVisualAssets: ShaktiVisualAsset[] = [
     status: "APPROVED_CANDIDATE",
     derivativePath:
       "apps/web/src/shala/assets/images/waterfall-nature-v2-img-5327.jpg",
-    pages: ["/offerings", "/begin"],
+    pages: ["/", "/offerings", "/begin"],
     role:
-      "Waterfall/nature breathing-space image for flow, reflection, and threshold.",
+      "Waterfall/nature breathing-space image for flow, reflection, and threshold; Home pathway environment and non-sacred organic portal surfaces in Home and Begin pace choices.",
     cropBehavior: "Preserve waterfall and living green density.",
     mobileBehavior: "Use as atmospheric cover; avoid text directly over busy water detail.",
     altTextIntent: "Waterfall surrounded by green living nature.",

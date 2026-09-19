@@ -3,6 +3,7 @@ import { BEGIN_PATH } from "../constants/navigation";
 import { offerCategories, offerPathways, receivingLadder } from "../data/offerings";
 import { PageShell } from "./PageShell";
 import { portalImages } from "./PortalImageSlots";
+import { LivingForm } from "./LivingPortal";
 
 export function OfferingsPage() {
   return (
@@ -54,9 +55,11 @@ export function OfferingsPage() {
               Private work is container-based: 6, 9, or 12 sessions, with 3
               sessions only by exception.
             </p>
-            <div className="receiving-ladder offerings-ladder" aria-label="Offerings by depth and proximity">
-              {receivingLadder.map((item) => (
+            <div className="receiving-ladder offerings-ladder living-concepts" aria-label="Offerings by depth and proximity">
+              {receivingLadder.map((item, index) => (
                 <div key={item.level}>
+                  <LivingForm variant={index} />
+
                   <span>{item.level}</span>
                   <p>{item.doorway}</p>
                 </div>

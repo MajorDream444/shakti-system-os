@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import KaliSigil from '../KaliSigil';
 
 export default function Orientation({ onNext }: { onNext: () => void }) {
   return (
@@ -11,7 +10,7 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
         transition={{ duration: 1.2 }}
         className="mb-6 begin-small-seal"
       >
-        <KaliSigil className="w-8 h-8" glow={true} />
+
       </motion.div>
 
       <motion.h2

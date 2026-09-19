@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { Choice, PathType } from '../../types';
-import KaliSigil from '../KaliSigil';
+import { LivingPortal, PortalMotionControl } from '../../../components/LivingPortal';
 
 interface Props {
   id: number;
@@ -14,6 +14,8 @@ interface Props {
 
 export default function ChoiceScreen({ id, prompt, supportLine, choices, selectedChoiceId, onSelect }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(selectedChoiceId ?? null);
+  const reducedMotion = useReducedMotion();
+  const [motionPaused, setMotionPaused] = useState(false);
 
   const handleSelection = (choiceId: string, scores: Partial<Record<PathType, number>>) => {
     if (selectedId) {
@@ -32,9 +34,9 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
   };
 
   return (
-    <div className="begin-screen begin-choice-screen flex flex-col items-start w-full max-w-4xl px-0">
+    <div className={`begin-screen begin-choice-screen flex flex-col items-start w-full max-w-4xl px-0 ${motionPaused ? 'portals-paused' : ''}`}>
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={reducedMotion ? false : { opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-10 text-left"
       >
@@ -48,6 +50,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
         )}
       </motion.div>
 
+      <PortalMotionControl paused={motionPaused} onToggle={() => setMotionPaused(!motionPaused)} />
       <div className="begin-choice-grid grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 w-full">
         {choices.map((choice, i) => {
           const isSelected = selectedId === choice.id;
@@ -58,25 +61,27 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
             <motion.button
               key={choice.id}
               disabled={isAnySelected && choice.id !== selectedId}
-              initial={{ opacity: 0, y: 15 }}
+              initial={reducedMotion ? false : { opacity: 0, y: 15 }}
               animate={{
                 opacity: isDimmed ? 0.25 : 1,
                 y: 0,
-                scale: isSelected ? 1.01 : 1
+                scale: isSelected && !reducedMotion ? 1.01 : 1
               }}
-              transition={{
+              transition={reducedMotion ? { duration: 0 } : {
                 opacity: { duration: 0.8 },
                 y: { delay: i * 0.08, duration: 1.2, ease: [0.16, 1, 0.3, 1] },
                 scale: { duration: 0.8 }
               }}
               onClick={() => handleSelection(choice.id, choice.scores)}
               aria-pressed={isSelected}
-              className={`begin-choice group relative min-h-28 md:min-h-40 p-6 md:p-7 border transition-all duration-1000 text-left flex flex-col justify-end overflow-hidden backdrop-blur-[2px] cursor-pointer ${
+              className={`begin-choice begin-pace-portal group relative min-h-28 md:min-h-40 p-6 md:p-7 border transition-all duration-1000 text-left flex flex-col justify-end overflow-hidden backdrop-blur-[2px] cursor-pointer ${
                 isSelected
                   ? 'begin-choice--selected'
                   : 'begin-choice--idle'
               }`}
             >
+              <LivingPortal variant={i} />
+
               {/* Layer 1: Stone shadow recess — kept below the contrast floor so the
                   card stays visibly a card. See SHAKTI-COLOR-DOCTRINE.md §5. */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent opacity-70" />
@@ -99,12 +104,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
                 }`} />
 
                 {/* Derived Kali Sigil at the heart of the threshold portal */}
-                <KaliSigil
-                  className={`w-5 h-5 transition-all duration-1000 ${
-                    isSelected ? 'opacity-100 scale-110' : 'opacity-40 group-hover:opacity-90'
-                  }`}
-                  glow={isSelected}
-                />
+
               </div>
 
               {/* Fine tactile canvas noise overlay */}

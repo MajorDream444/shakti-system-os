@@ -2,9 +2,9 @@ import type { PhilosophyCopy, RitualCardCopy } from "../types/content";
 
 export const philosophy: PhilosophyCopy = {
   label: "The Method",
-  headline: "The body of work inside Shri Shakti Shala.",
+  headline: "The body of work inside Sri Shakti Shala.",
   paragraphs: [
-    "Shakti Shadow & Somatics is the method Sheetal teaches inside Shri Shakti Shala: body-based awareness, shadow integration, sensuality, nervous-system literacy, and classical Shakta practice held in relationship.",
+    "Shakti Shadow & Somatics is the method Sheetal teaches inside Sri Shakti Shala: body-based awareness, shadow integration, sensuality, nervous-system literacy, and classical Shakta practice held in relationship.",
     "The work begins where performance ends - with the body, the shadow, practice, and the next doorway a seeker is actually ready to meet.",
   ],
 };

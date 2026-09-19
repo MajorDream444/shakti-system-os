@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo, type CSSProperties } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, MotionConfig } from 'motion/react';
 import { ArrowLeft, Home } from 'lucide-react';
 import { AppState, PathType, PATH_RESULTS } from './types';
 import Threshold from './components/Screens/Threshold';
@@ -8,15 +8,13 @@ import ChoiceScreen from './components/Screens/ChoiceScreen';
 import Reflection from './components/Screens/Reflection';
 import PathReveal from './components/Screens/PathReveal';
 import Handoff from './components/Screens/Handoff';
-import CustomCursor from './components/CustomCursor';
-import AmberSanctuaryCanvas from './components/AmberSanctuaryCanvas';
-import KaliSigil from './components/KaliSigil';
 import SanctuaryAudio from './components/SanctuaryAudio';
 import { SHALA_PATH } from '../constants/navigation';
 import { STORAGE_KEYS } from '../constants/storage';
 import { PersistenceService } from '../services/PersistenceService';
 import './begin.css';
-import { portalImages } from '../components/PortalImageSlots';
+import waterCanopy from '../shala/assets/images/begin-water-canopy-v2-img-4675.jpg';
+import redRiverTerrain from '../shala/assets/images/founder-supplied-red-river-sept15.jpg';
 
 function createBeginSessionId() {
   return `begin_${globalThis.crypto?.randomUUID?.() ?? Date.now().toString(36)}`;
@@ -57,7 +55,7 @@ const STATION_SUMMARIES = [
   'Listen for the support that feels sustainable.',
   'Let the deeper longing surface gently.',
   'Receive a doorway, never a score.',
-  'Carry the thread into Shri Shakti Shala.',
+  'Carry the thread into Sri Shakti Shala.',
 ] as const;
 
 export default function BeginApp() {
@@ -234,19 +232,21 @@ export default function BeginApp() {
   };
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className={`begin-station begin-station-${state.currentScreen} relative min-h-[100svh] bg-obsidian text-ash overflow-x-hidden overflow-y-auto flex flex-col selection:bg-ember/30`}>
-      <CustomCursor />
-      <AmberSanctuaryCanvas />
       <div
         className="begin-ascent-image"
-        style={{ "--begin-ascent-image": `url(${portalImages.ascent})` } as CSSProperties}
+        data-asset-status="FOUNDER_SUPPLIED_PROVENANCE_REQUIRED"
+        style={{
+          '--journey-path-image': `url(${redRiverTerrain})`,
+          '--journey-water-image': `url(${waterCanopy})`,
+        } as CSSProperties}
         aria-hidden="true"
       />
       <div className="begin-luminous-field" aria-hidden="true">
         <span className="begin-flora begin-flora-a" />
         <span className="begin-flora begin-flora-b" />
         <span className="begin-waterline" />
-        <span className="begin-lotus-threshold" />
       </div>
 
       {/* 1. Base Atmospheric Layer */}
@@ -262,20 +262,19 @@ export default function BeginApp() {
         <div className="begin-shell relative w-full max-w-6xl mx-auto flex-grow min-h-[calc(100svh-1.5rem)] md:min-h-[80vh]">
 
           {/* Symmetrical Atmospheric Header */}
-          <header className="absolute top-4 md:top-6 left-3 right-3 md:left-6 md:right-6 flex justify-between items-center text-[10px] tracking-[0.18em] md:tracking-[0.25em] text-ash/60 lowercase font-light serif z-30">
-            <a href="/" className="flex min-h-11 items-center gap-2 text-ash/65 hover:text-ash transition-colors" aria-label="Return to Shri Shakti Shala home">
+          <header className="begin-header">
+            <a href="/" className="flex min-h-11 items-center gap-2 text-ash/65 hover:text-ash transition-colors" aria-label="Return to Sri Shakti Shala home">
               <Home className="w-4 h-4" />
-              <KaliSigil className="w-5 h-5 flex-shrink-0" glow={true} />
-              <span className="hidden sm:inline translate-y-[0.5px]">the path of Shakti</span>
+
+              <span>Start Your Shakti Path</span>
             </a>
             <div className="italic text-right">
               {STATIONS[state.currentScreen - 1]}
             </div>
           </header>
 
-          <nav className="begin-ascent" aria-label="Your path toward Shri Shakti Shala">
+          <nav className="begin-ascent" aria-label="Your path toward Sri Shakti Shala">
             <div className="begin-ascent-title">
-              <span className="begin-ascent-seal" aria-hidden="true" />
               <span>Ascent</span>
             </div>
             <div className="begin-ascent-line" aria-hidden="true" />
@@ -320,9 +319,9 @@ export default function BeginApp() {
           )}
 
           {/* Symmetrical Minimalist Footer */}
-          <footer className="absolute bottom-4 md:bottom-6 left-3 right-3 md:left-6 md:right-6 flex justify-between items-center text-[9px] tracking-[0.14em] md:tracking-[0.2em] text-ash/40 lowercase font-light serif italic">
+          <footer className="begin-footer">
             <div className="flex items-center gap-2 pointer-events-none select-none">
-              <KaliSigil className="w-4 h-4 flex-shrink-0" glow={false} />
+
               <span className="translate-y-[0.5px]">sheetal kandola somatics</span>
             </div>
             <div className="flex items-center gap-4">
@@ -334,5 +333,6 @@ export default function BeginApp() {
       </div>
 
     </div>
+    </MotionConfig>
   );
 }

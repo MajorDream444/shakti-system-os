@@ -82,9 +82,9 @@ export const dancingWithDurga = {
   access: [
     "One fully gifted scholarship",
     "Two supported-price places",
-    "Temporary community / Shri Shakti Shala space during the journey",
+    "Temporary community / Sri Shakti Shala space during the journey",
     "Two months of recording and material access for non-members after the container",
-    "Shri Shakti Shala continuation through invitation, simple application, human discernment, and paid membership",
+    "Sri Shakti Shala continuation through invitation, simple application, human discernment, and paid membership",
   ],
   visualRules: [
     "Sindoor red, blood red, deep oxblood",

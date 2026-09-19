@@ -152,11 +152,11 @@ export function DancingWithDurgaPage() {
             <span />
           </div>
           <div className="section-copy">
-            <p className="label">Shri Shakti Shala Doorway</p>
+            <p className="label">Sri Shakti Shala Doorway</p>
             <h2 id="durga-doorway-title">Experience first. Discern what continues.</h2>
             <p>
-              Dancing with Durga opens temporary community and Shri Shakti Shala space during
-              the journey. Continuing into Shri Shakti Shala remains a separate
+              Dancing with Durga opens temporary community and Sri Shakti Shala space during
+              the journey. Continuing into Sri Shakti Shala remains a separate
               invitation, simple application, human discernment, and paid
               membership.
             </p>

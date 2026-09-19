@@ -6,10 +6,10 @@ import { retreatVision } from "./retreats";
 export const portalCopy = {
   nav: NAV_ITEMS,
   hero: {
-    eyebrow: "SHRI SHAKTI SHALA / LIVING SCHOOL",
+    eyebrow: "SRI SHAKTI SHALA / LIVING SCHOOL",
     headline: "Shakti Shadow & Somatics",
     subheadline:
-      "Sheetal Kandola's body of work inside Shri Shakti Shala: a living sanctuary for women seeking a deeper relationship with body, shadow, practice, and inner life.",
+      "Sheetal Kandola's body of work inside Sri Shakti Shala: a living sanctuary for women seeking a deeper relationship with body, shadow, practice, and inner life.",
     body:
       "Rooted in somatics, nervous-system literacy, shadow integration, and classical Shakta Tantra, the work helps women move with more awareness, capacity, and discernment rather than forcing transformation.",
     primaryCta: "Start Your Shakti Path",
@@ -40,7 +40,7 @@ export const portalCopy = {
   retreatVision,
   finalCta,
   footer: {
-    title: "Shri Shakti Shala",
+    title: "Sri Shakti Shala",
     guide: "Sheetal Kandola",
     method: "Shakti Shadow & Somatics",
     pathway: "Private Entry · Community · Retreats",
