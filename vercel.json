@@ -1,11 +1,15 @@
 {
-  "buildCommand": "cd apps/web && npm install && npm run build",
+  "buildCommand": "cd apps/web && npm run build",
   "outputDirectory": "apps/web/dist",
-  "installCommand": "echo 'install handled in buildCommand'",
+  "installCommand": "cd apps/web && npm ci",
   "framework": null,
   "rewrites": [
     {
       "source": "/begin",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/begin/:path*",
       "destination": "/index.html"
     },
     {
@@ -31,6 +35,33 @@
     {
       "source": "/shala",
       "destination": "/index.html"
+    },
+    {
+      "source": "/shala/:path*",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
     }
   ]
 }
