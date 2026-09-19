@@ -1,6 +1,6 @@
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 
-const baseUrl = "http://127.0.0.1:4173";
+const baseUrl = (process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:4173").replace(/\/$/, "");
 
 test.setTimeout(120_000);
 
@@ -44,7 +44,8 @@ test.describe("Sprint 12H-A.2a Durga emotional visual integration", () => {
     await expect(page.getByText("Held by Sheetal. Centered on Maa Durga.")).toBeVisible();
     await expect(page.getByText("Sheetal Kandola holds this container as practitioner and facilitator.")).toBeVisible();
     await expect(page.locator(".durga-motif-line").getByText("hibiscus", { exact: true })).toBeVisible();
-    await expect(page.locator(".durga-boundary")).toContainText("Sri Shakti Shala Stripe storefront");
+    await expect(page.locator(".durga-boundary")).toContainText("Sri Shakti Shala's secure reservation page");
+    await expect(page.locator("body")).not.toContainText(/Stripe/i);
     await expect(page.locator("body")).not.toContainText(/founder-supplied pricing|approved commerce sprint|gated by human review/i);
     await expect(page.locator("body")).not.toContainText(/Register Now|Buy Now|Checkout|Pay Deposit|somatic breathwork/i);
     await capture(page, testInfo, "mobile-durga-emotional-integration.png");

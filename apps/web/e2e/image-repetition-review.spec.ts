@@ -44,10 +44,13 @@ for (const width of [390, 1440]) {
         await expect(photo).toHaveCount(1);
         await expect(page.locator(".portal-gallery").locator('img[src*="founder-waterfall-v2-img-2359"]')).toHaveCount(1);
         expect(review.uses.filter(use => use.url.includes("founder-waterfall-v2-img-2359"))).toHaveLength(1);
-        await expect(page.locator('[data-image-gate="founder-hero-background-provenance-and-acceptance-required"]')).toHaveAttribute(
+        const heroEnvironment = page.locator('[data-image-gate="founder-visual-source-v2-approved-candidate"]');
+        await expect(heroEnvironment).toHaveAttribute(
           "data-asset-status",
-          "FOUNDER_SUPPLIED_PROVENANCE_REQUIRED",
+          "APPROVED_CANDIDATE",
         );
+        await expect(heroEnvironment).toHaveCSS("background-image", /founder-waterfall-red-v2-img-4518/);
+        expect(review.uses.filter(use => use.url.includes("founder-waterfall-red-v2-img-4518"))).toHaveLength(1);
         await expect(page.locator('[data-image-gate="founder-acceptance-and-rights-confirmation-required"] img')).toHaveCount(1);
         await expect(page.getByRole("heading", { name: "Notice where energy flows." })).toBeVisible();
         await page.screenshot({ path: testInfo.outputPath(`home-${width}.png`), fullPage: true });

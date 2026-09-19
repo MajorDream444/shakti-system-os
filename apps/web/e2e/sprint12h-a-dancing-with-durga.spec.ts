@@ -16,7 +16,10 @@ async function capture(page: Page, testInfo: TestInfo, name: string) {
 async function assertCampaignBoundary(page: Page) {
   const body = page.locator("body");
 
-  await expect(body).toContainText("Current offerings and prices are available through the Sri Shakti Shala Stripe storefront");
+  await expect(body).toContainText(
+    "Current offerings and contribution levels are available through Sri Shakti Shala's secure reservation page",
+  );
+  await expect(body).not.toContainText(/Stripe/i);
   await expect(body).toContainText("human discernment");
   await expect(body).toContainText(/temporary community \/ Sri Shakti Shala space/i);
   await expect(body).not.toContainText(/\$111|\$222|₹6,666|₹9,999/);
@@ -26,7 +29,7 @@ async function assertCampaignBoundary(page: Page) {
 }
 
 test.describe("Sprint 12H-A Dancing with Durga launch foundation", () => {
-  test("desktop exposes founder-confirmed campaign truth and the public storefront", async ({
+  test("desktop exposes founder-confirmed campaign truth and secure reservation", async ({
     page,
   }, testInfo) => {
     await page.setViewportSize({ width: 1440, height: 1100 });
