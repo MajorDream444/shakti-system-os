@@ -9,8 +9,12 @@ export const dancingWithDurga = {
   timing: "7:30-9:30 PM IST",
   liveGatheringCount: 4,
   practiceNightCount: 5,
+  paymentCta: {
+    label: "View offerings & reserve",
+    href: "https://stripe.com/@srishaktishala",
+  },
   cta: "Request details",
-  boundary: "Registration and payment are not open yet.",
+  boundary: "Current offerings and prices are available through the Sri Shakti Shala Stripe storefront.",
   founderRole:
     "Sheetal Kandola holds this container as practitioner and facilitator. Maa Durga remains the devotional center.",
   teachingEmphasis:
@@ -65,18 +69,6 @@ export const dancingWithDurga = {
       goddess: "Mahagauri and Siddhidatri",
       gate: "Unity: My Power Serves Life",
       themes: "Purification, love, sisterhood, integration, wholeness, dharma, and closing blessing.",
-    },
-  ],
-  investment: [
-    {
-      region: "Global",
-      early: "$111 Early Devotion",
-      standard: "$222 Standard",
-    },
-    {
-      region: "India-resident",
-      early: "₹6,666 Early Devotion",
-      standard: "₹9,999 Standard",
     },
   ],
   access: [

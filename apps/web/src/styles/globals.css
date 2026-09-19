@@ -3702,7 +3702,8 @@ body {
 }
 
 .durga-investment .label,
-.durga-investment .durga-price-panel span {
+.durga-investment .durga-price-panel span,
+.durga-investment .durga-storefront-panel span {
   color: rgba(122, 13, 13, 0.78);
 }
 
@@ -3720,6 +3721,43 @@ body {
     radial-gradient(circle at 12% 14%, rgba(177, 18, 23, 0.12), transparent 34%),
     linear-gradient(145deg, rgba(255, 251, 242, 0.74), rgba(216, 200, 172, 0.32));
   box-shadow: rgba(36, 21, 21, 0.14) 0 22px 60px;
+}
+
+.durga-storefront-panel {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 52px);
+  border: 1px solid rgba(74, 31, 36, 0.22);
+  background:
+    radial-gradient(circle at 12% 14%, rgba(177, 18, 23, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(255, 251, 242, 0.74), rgba(216, 200, 172, 0.32));
+  box-shadow: rgba(36, 21, 21, 0.14) 0 22px 60px;
+}
+
+.durga-storefront-panel span {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.durga-storefront-panel strong {
+  margin-top: 16px;
+  color: var(--durga-sindoor);
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.durga-storefront-panel p {
+  margin: 16px 0 0;
+  color: rgba(36, 21, 21, 0.72);
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 .durga-investment .durga-price-panel strong {

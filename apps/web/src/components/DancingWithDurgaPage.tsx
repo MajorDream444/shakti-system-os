@@ -19,7 +19,15 @@ export function DancingWithDurgaPage() {
               abandoning themselves.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href={`${BEGIN_PATH}?intent=community`}>
+              <a
+                className="button button-primary"
+                href={dancingWithDurga.paymentCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {dancingWithDurga.paymentCta.label}
+              </a>
+              <a className="button button-secondary" href={`${BEGIN_PATH}?intent=community`}>
                 {dancingWithDurga.cta}
               </a>
             </div>
@@ -125,18 +133,14 @@ export function DancingWithDurgaPage() {
             <p className="label">Investment / Access</p>
             <h2 id="durga-investment-title">Accessible entry, held carefully.</h2>
             <p>
-              Early Devotion is available for the first nine women in each region.
-              Registration and payment are not open yet.
+              Visit the Sri Shakti Shala storefront to view the offerings that are
+              currently available and reserve directly through Stripe.
             </p>
           </div>
-          <div className="durga-price-panel">
-            {dancingWithDurga.investment.map((price) => (
-              <article key={price.region}>
-                <span>{price.region}</span>
-                <strong>{price.early}</strong>
-                <p>{price.standard}</p>
-              </article>
-            ))}
+          <div className="durga-storefront-panel">
+            <span>Public storefront</span>
+            <strong>Offerings and prices are maintained by Sri Shakti Shala on Stripe.</strong>
+            <p>The website does not duplicate or override the storefront catalog.</p>
           </div>
         </div>
         <div className="container durga-access-list" aria-label="Access notes">

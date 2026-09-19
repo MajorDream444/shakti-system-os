@@ -45,12 +45,16 @@ test("Home uses the exact founder-selected welcoming portrait", async ({ page })
   expect(await portrait.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
 });
 
-test("DWD does not promise unconfirmed dates, bonus, or checkout", async ({ page }) => {
+test("DWD preserves confirmed delivery facts and links to the public storefront", async ({ page }) => {
   await page.goto(`${baseUrl}/dancing-with-durga`);
   const body = page.locator("body");
   await expect(body).toContainText("Four live gatherings plus five practice nights");
   await expect(body).toContainText("7:30-9:30 PM IST");
   await expect(body).not.toContainText(/five live gatherings|7:30-9:00 PM IST|bonus gathering/i);
   await expect(body).not.toContainText(/October (11|13|15|17|19)\s*[-:]?\s*LIVE/i);
+  const paymentCta = page.getByRole("link", { name: "View offerings & reserve" });
+  await expect(paymentCta).toHaveAttribute("href", "https://stripe.com/@srishaktishala");
+  await expect(paymentCta).toHaveAttribute("target", "_blank");
+  await expect(paymentCta).toHaveAttribute("rel", "noopener noreferrer");
   await expect(page.getByRole("link", { name: "Request details" })).toHaveAttribute("href", /\/begin\?intent=community/);
 });
