@@ -12,7 +12,6 @@ import founderWaterfallRedV2 from "../shala/assets/images/founder-waterfall-red-
 import founderTempleV2 from "../shala/assets/images/founder-temple-v2-img-5130.jpg";
 import waterfallNatureV2 from "../shala/assets/images/waterfall-nature-v2-img-5327.jpg";
 import founderEditorialV2 from "../shala/assets/images/founder-editorial-v2-jul06198.jpg";
-import founderSuppliedRedWaterfall from "../shala/assets/images/founder-supplied-red-waterfall-sept15.jpg";
 import founderSuppliedRedRiver from "../shala/assets/images/founder-supplied-red-river-sept15.jpg";
 import founderSuppliedOceanMovement from "../shala/assets/images/founder-supplied-ocean-movement-sept15.jpg";
 import founderRedPrayerHands from "../shala/assets/images/founder-red-prayer-hands-sept18.jpg";
@@ -26,7 +25,7 @@ export const portalImages = {
   founderWaterfall: founderWaterfallV2,
   founderWaterfallRed: founderWaterfallRedV2,
   waterfallNature: waterfallNatureV2,
-  homeWorldCandidate: founderSuppliedRedWaterfall,
+  homeWorldCandidate: founderWaterfallRedV2,
   beginTerrainCandidate: founderSuppliedRedRiver,
   energyFlowCandidate: founderSuppliedOceanMovement,
   legacyFounder: founderImage,

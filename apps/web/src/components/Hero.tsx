@@ -1,5 +1,11 @@
 import { type CSSProperties } from "react";
-import { BEGIN_PATH, OFFERINGS_PATH, SHALA_PATH } from "../constants/navigation";
+import {
+  BEGIN_PATH,
+  DANCING_WITH_DURGA_PATH,
+  OFFERINGS_PATH,
+  SHALA_PATH,
+} from "../constants/navigation";
+import { dancingWithDurga } from "../data/dancingWithDurga";
 import { portalCopy } from "../data/portalCopy";
 import { PortalImageGallery } from "./PortalImageSlots";
 import { portalImages } from "./PortalImageSlots";
@@ -11,8 +17,8 @@ export function Hero() {
       <div
         className="hero-visual"
         aria-hidden="true"
-        data-image-gate="founder-hero-background-provenance-and-acceptance-required"
-        data-asset-status="FOUNDER_SUPPLIED_PROVENANCE_REQUIRED"
+        data-image-gate="founder-visual-source-v2-approved-candidate"
+        data-asset-status="APPROVED_CANDIDATE"
         style={{ "--hero-image": `url(${portalImages.homeWorldCandidate})` } as CSSProperties}
       />
       <div className="hero-veils" aria-hidden="true" />
@@ -35,6 +41,16 @@ export function Hero() {
           </a>
         </div>
         <p className="hero-body">{portalCopy.hero.body}</p>
+        <a className="hero-seasonal-doorway" href={DANCING_WITH_DURGA_PATH}>
+          <span>
+            <small>Navratri 2026</small>
+            <strong>Dancing with Durga</strong>
+          </span>
+          <span>
+            {dancingWithDurga.format} · {dancingWithDurga.timing}
+          </span>
+          <b>Enter the devotional container</b>
+        </a>
         <div className="hero-actions" aria-label="Primary actions">
           <a className="button button-primary" href={BEGIN_PATH}>
             {portalCopy.hero.primaryCta}

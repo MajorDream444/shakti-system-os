@@ -1,5 +1,6 @@
 export type NavItem =
   | "Offerings"
+  | "Dancing with Durga"
   | "About"
   | "Pathway"
   | "Retreat"

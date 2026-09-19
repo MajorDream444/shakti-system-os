@@ -3,6 +3,7 @@ import { dancingWithDurga } from "../data/dancingWithDurga";
 import { PageShell } from "./PageShell";
 import { portalImages } from "./PortalImageSlots";
 import { trackAnonymousEvent } from "../services/AnonymousAnalytics";
+import { CeremonialForm } from "./CeremonialForm";
 
 export function DancingWithDurgaPage() {
   return (
@@ -139,19 +140,24 @@ export function DancingWithDurgaPage() {
             <p className="label">Investment / Access</p>
             <h2 id="durga-investment-title">Accessible entry, held carefully.</h2>
             <p>
-              Visit the Sri Shakti Shala storefront to view the offerings that are
-              currently available and reserve directly through Stripe.
+              View the offerings currently available and reserve your place through
+              Sri Shakti Shala's secure payment page.
             </p>
           </div>
           <div className="durga-storefront-panel">
-            <span>Public storefront</span>
-            <strong>Offerings and prices are maintained by Sri Shakti Shala on Stripe.</strong>
-            <p>The website does not duplicate or override the storefront catalog.</p>
+            <span>Secure reservation</span>
+            <strong>
+              Current offerings, availability, and contribution levels are maintained
+              through Sri Shakti Shala's secure reservation page.
+            </strong>
+            <p>Follow the secure link for current availability and reservation details.</p>
           </div>
         </div>
-        <div className="container durga-access-list" aria-label="Access notes">
-          {dancingWithDurga.access.map((item) => (
-            <p key={item}>{item}</p>
+        <div className="container durga-access-list ceremonial-sequence ceremonial-sequence--five" aria-label="Access notes">
+          {dancingWithDurga.access.map((item, index) => (
+            <CeremonialForm key={item} className="durga-access-form" tone="durga" variant={index}>
+              <p>{item}</p>
+            </CeremonialForm>
           ))}
         </div>
       </section>

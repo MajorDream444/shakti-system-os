@@ -14,7 +14,8 @@ export const dancingWithDurga = {
     href: "https://stripe.com/@srishaktishala",
   },
   cta: "Request details",
-  boundary: "Current offerings and prices are available through the Sri Shakti Shala Stripe storefront.",
+  boundary:
+    "Current offerings and contribution levels are available through Sri Shakti Shala's secure reservation page.",
   founderRole:
     "Sheetal Kandola holds this container as practitioner and facilitator. Maa Durga remains the devotional center.",
   teachingEmphasis:

@@ -14,6 +14,19 @@ export type ShaktiVisualAsset = {
 
 export const shaktiVisualAssets: ShaktiVisualAsset[] = [
   {
+    id: "founder-waterfall-red-v2-img-4518",
+    sourceFilename: "IMG_4518.HEIC / IMG_4518.jpg",
+    source: "Founder Visual Source v2",
+    status: "APPROVED_CANDIDATE",
+    derivativePath: "apps/web/src/shala/assets/images/founder-waterfall-red-v2-img-4518.jpg",
+    pages: ["/"],
+    role: "Home arrival environment: Sheetal as the human anchor inside real waterfall, jungle, movement, and red devotional energy.",
+    cropBehavior: "Full-bleed crop centered slightly low; preserve Sheetal's raised gesture, face and body while retaining visible waterfall and living jungle.",
+    mobileBehavior: "Keep Sheetal's raised hand and body legible with water and foliage still establishing the environment; avoid a face-only crop.",
+    altTextIntent: "Decorative environmental layer behind separately readable Home content.",
+    replacementNotes: "Use once on Home for the arrival world. Do not repeat it in another prominent Home section without an approved narrative reason.",
+  },
+  {
     id: "founder-red-prayer-hands-sept18",
     sourceFilename: "IMG_3201.PNG",
     source: "Founder-selected Sept. 18 site review",

@@ -19,6 +19,7 @@ export const DANCING_WITH_DURGA_PATH = "/dancing-with-durga";
 
 export const NAV_ITEMS: NavItem[] = [
   "Offerings",
+  "Dancing with Durga",
   "About",
   "Pathway",
   "Retreat",
@@ -28,6 +29,7 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const NAV_TARGETS: Record<NavItem, string> = {
   Offerings: OFFERINGS_PATH,
+  "Dancing with Durga": DANCING_WITH_DURGA_PATH,
   About: ABOUT_SHEETAL_PATH,
   Pathway: SECTION_ANCHORS.pathway,
   Retreat: SECTION_ANCHORS.retreat,

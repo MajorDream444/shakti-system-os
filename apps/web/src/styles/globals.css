@@ -168,6 +168,15 @@ button {
   color: var(--accent);
 }
 
+.nav-links a[href="/dancing-with-durga"] {
+  color: var(--gold-lit);
+}
+
+.nav-links a[href="/dancing-with-durga"]:hover,
+.nav-links a[href="/dancing-with-durga"]:focus-visible {
+  color: #fff4e0;
+}
+
 .nav-start {
   padding: 12px 18px;
   border: 1px solid rgba(244, 239, 230, 0.26);
@@ -1761,6 +1770,7 @@ body {
 .hero-title,
 .hero-subheadline,
 .hero-body,
+.hero-seasonal-doorway,
 .hero-invitation-fork,
 .hero-actions {
   grid-column: 1;
@@ -1786,6 +1796,63 @@ body {
 .hero-body {
   max-width: 520px;
   color: rgba(244, 239, 230, 0.84);
+}
+
+.hero-seasonal-doorway {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(180px, 0.8fr) auto;
+  gap: 18px;
+  align-items: center;
+  width: min(680px, 100%);
+  margin-top: 22px;
+  padding: 18px 4px;
+  border-top: 1px solid rgba(214, 177, 92, 0.46);
+  border-bottom: 1px solid rgba(177, 18, 23, 0.48);
+  color: #fff4e0;
+  background: linear-gradient(90deg, rgba(122, 13, 13, 0.3), rgba(5, 5, 5, 0.12));
+  transition: border-color 220ms ease, background 220ms ease;
+}
+
+.hero-seasonal-doorway:hover,
+.hero-seasonal-doorway:focus-visible {
+  border-color: rgba(233, 199, 126, 0.86);
+  background: linear-gradient(90deg, rgba(177, 18, 23, 0.38), rgba(5, 5, 5, 0.2));
+  outline: none;
+}
+
+.hero-seasonal-doorway > span:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.hero-seasonal-doorway small,
+.hero-seasonal-doorway b {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-seasonal-doorway small,
+.hero-seasonal-doorway b {
+  color: var(--gold-lit);
+}
+
+.hero-seasonal-doorway strong {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.hero-seasonal-doorway > span:nth-child(2) {
+  color: rgba(244, 239, 230, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.hero-seasonal-doorway b {
+  text-align: right;
 }
 
 .portal-gallery {
@@ -2402,6 +2469,17 @@ body {
   .hero-actions {
     justify-content: stretch;
     width: 100%;
+  }
+
+  .hero-seasonal-doorway {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    padding: 18px 0;
+  }
+
+  .hero-seasonal-doorway b {
+    text-align: left;
   }
 
   .hero-invitation-fork {
@@ -4033,5 +4111,558 @@ body {
 
   .durga-doorway-visual {
     min-height: 360px;
+  }
+}
+
+/* Dancing with Durga visual preview: richer material depth without sacred-asset substitution. */
+.durga-page {
+  background:
+    radial-gradient(circle at 72% 7%, rgba(214, 177, 92, 0.2), transparent 24%),
+    radial-gradient(circle at 8% 34%, rgba(177, 18, 23, 0.34), transparent 28%),
+    linear-gradient(180deg, #080303, #260709 38%, #090303 76%, #050303);
+}
+
+.durga-page .label {
+  color: #e7c779;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+}
+
+.durga-hero {
+  min-height: 100dvh;
+  padding-top: 132px;
+  background:
+    radial-gradient(ellipse at 76% 42%, rgba(228, 67, 35, 0.2), transparent 29%),
+    radial-gradient(ellipse at 42% 92%, rgba(128, 8, 12, 0.4), transparent 38%);
+  box-shadow: inset 0 -80px 110px rgba(4, 1, 1, 0.56);
+}
+
+.durga-hero::before {
+  background:
+    linear-gradient(112deg, rgba(5, 2, 2, 0.94) 3%, rgba(55, 5, 9, 0.76) 48%, rgba(8, 3, 3, 0.9) 100%),
+    repeating-linear-gradient(116deg, transparent 0 62px, rgba(214, 177, 92, 0.035) 63px 64px);
+}
+
+.durga-hero::after {
+  right: -6vw;
+  bottom: -24%;
+  width: min(48vw, 620px);
+  border-color: rgba(224, 183, 91, 0.32);
+  border-radius: 52% 48% 12% 12% / 42% 46% 12% 12%;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(244, 204, 113, 0.3), transparent 7%),
+    radial-gradient(ellipse at 50% 56%, rgba(182, 13, 20, 0.55), transparent 42%),
+    linear-gradient(160deg, rgba(105, 4, 9, 0.48), rgba(8, 3, 3, 0.05));
+  box-shadow:
+    inset 0 0 100px rgba(4, 1, 1, 0.82),
+    0 0 120px rgba(177, 18, 23, 0.22);
+  transform: rotate(-8deg);
+  animation: durga-fabric-drift 12s ease-in-out infinite alternate;
+}
+
+.durga-hero-grid::before {
+  position: absolute;
+  top: -16%;
+  right: 12%;
+  z-index: -1;
+  width: 44%;
+  height: 138%;
+  border-left: 1px solid rgba(224, 183, 91, 0.2);
+  border-radius: 48% 0 0 56%;
+  content: "";
+  background: linear-gradient(110deg, transparent 22%, rgba(156, 9, 15, 0.2) 52%, transparent 76%);
+  filter: blur(1px);
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+
+.durga-hero-flame {
+  top: 8%;
+  left: 2%;
+  width: 180px;
+  height: 260px;
+  background:
+    radial-gradient(circle at 58% 26%, rgba(255, 220, 132, 0.68), transparent 10%),
+    linear-gradient(155deg, rgba(205, 33, 25, 0.68), rgba(88, 4, 8, 0.05));
+  filter: blur(12px);
+  opacity: 0.58;
+  animation: durga-ember-breathe 7s ease-in-out infinite alternate;
+}
+
+.durga-hero-copy {
+  padding: clamp(10px, 3vw, 42px) 0;
+}
+
+.durga-hero-copy h1 {
+  max-width: 900px;
+  font-size: clamp(4.5rem, 8.6vw, 9.4rem);
+  line-height: 0.88;
+  text-wrap: balance;
+  text-shadow:
+    0 2px 0 rgba(218, 176, 91, 0.15),
+    0 22px 90px rgba(0, 0, 0, 0.9),
+    0 0 70px rgba(155, 10, 17, 0.28);
+}
+
+.durga-subtitle {
+  max-width: 660px;
+  color: #e8c97e;
+  text-wrap: balance;
+}
+
+.durga-page .hero-actions {
+  margin-top: 34px;
+}
+
+.durga-page .button-primary {
+  border-color: #e2bd68;
+  background:
+    linear-gradient(135deg, #f0d18b 0%, #c9902e 48%, #7d1114 100%);
+  color: #180405;
+  box-shadow:
+    0 16px 48px rgba(118, 5, 11, 0.44),
+    0 0 0 1px rgba(255, 235, 185, 0.15) inset;
+  font-weight: 800;
+  transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+
+.durga-page .button-primary:hover,
+.durga-page .button-primary:focus-visible {
+  box-shadow:
+    0 20px 62px rgba(165, 15, 20, 0.5),
+    0 0 0 1px rgba(255, 244, 224, 0.26) inset;
+  filter: saturate(1.1) brightness(1.08);
+  transform: translateY(-3px);
+}
+
+.durga-page .button-secondary {
+  border-color: rgba(231, 199, 121, 0.5);
+  background: rgba(31, 4, 6, 0.54);
+  color: #fff4e0;
+  backdrop-filter: blur(10px);
+}
+
+.durga-experience-panel {
+  min-height: 640px;
+  padding: clamp(28px, 4vw, 48px);
+  border-width: 0 1px 1px 0;
+  border-color: rgba(230, 191, 103, 0.42);
+  background:
+    linear-gradient(168deg, rgba(132, 8, 14, 0.64), rgba(13, 4, 5, 0.88) 58%),
+    repeating-linear-gradient(132deg, transparent 0 34px, rgba(229, 190, 102, 0.04) 35px 36px);
+  box-shadow:
+    -28px 30px 100px rgba(0, 0, 0, 0.56),
+    26px -24px 80px rgba(155, 10, 17, 0.16);
+  clip-path: polygon(8% 0, 100% 0, 100% 93%, 90% 100%, 0 100%, 0 9%);
+}
+
+.durga-sacred-slot {
+  min-height: 330px;
+  border: 0;
+  border-radius: 52% 48% 14% 18% / 43% 47% 12% 14%;
+  background:
+    radial-gradient(ellipse at 54% 22%, rgba(249, 215, 140, 0.34), transparent 13%),
+    radial-gradient(ellipse at 64% 55%, rgba(205, 27, 28, 0.62), transparent 36%),
+    linear-gradient(148deg, rgba(110, 5, 10, 0.88), rgba(19, 3, 5, 0.94));
+  box-shadow:
+    inset 26px 0 60px rgba(244, 183, 88, 0.08),
+    inset -30px -20px 80px rgba(0, 0, 0, 0.7),
+    0 30px 80px rgba(78, 3, 8, 0.48);
+  transform: rotate(-2deg);
+  animation: durga-material-drift 10s ease-in-out infinite alternate;
+}
+
+.durga-sacred-slot::before,
+.durga-sacred-slot::after,
+.durga-trident-mark,
+.durga-panel-altar {
+  display: none;
+}
+
+.durga-experience-panel > span {
+  color: #edce85;
+  font-size: clamp(2.35rem, 3.4vw, 3.8rem);
+  text-wrap: balance;
+}
+
+.durga-experience-panel li {
+  border-color: rgba(232, 199, 126, 0.28);
+  color: rgba(255, 244, 224, 0.84);
+  font-size: 1rem;
+}
+
+.durga-founder-field {
+  background:
+    linear-gradient(90deg, rgba(6, 3, 3, 0.94), rgba(38, 8, 10, 0.82)),
+    radial-gradient(circle at 18% 40%, rgba(209, 36, 35, 0.3), transparent 30%);
+}
+
+.durga-founder-portrait {
+  min-height: 700px;
+  border-color: rgba(232, 199, 126, 0.48);
+  border-radius: 58% 42% 18px 18px / 38% 48% 18px 18px;
+  box-shadow:
+    -36px 42px 120px rgba(0, 0, 0, 0.56),
+    30px -18px 80px rgba(166, 13, 18, 0.2);
+  transform: rotate(-1deg);
+}
+
+.durga-founder-portrait img {
+  filter: saturate(1.15) contrast(1.05) brightness(0.94);
+  transform: scale(1.025);
+}
+
+.durga-founder-copy {
+  padding-left: clamp(0px, 3vw, 42px);
+}
+
+.durga-founder-copy h2 {
+  color: #fff6e7;
+  text-shadow: 0 18px 70px rgba(0, 0, 0, 0.7);
+  text-wrap: balance;
+}
+
+.durga-motif-line {
+  gap: 0;
+  border-top: 1px solid rgba(231, 199, 121, 0.3);
+  border-bottom: 1px solid rgba(231, 199, 121, 0.3);
+}
+
+.durga-motif-line span {
+  padding: 13px 16px;
+  border: 0;
+  border-right: 1px solid rgba(231, 199, 121, 0.2);
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 239, 208, 0.8);
+}
+
+.durga-message {
+  background:
+    radial-gradient(ellipse at 78% 36%, rgba(186, 17, 23, 0.28), transparent 34%),
+    radial-gradient(ellipse at 12% 82%, rgba(220, 164, 68, 0.14), transparent 30%),
+    linear-gradient(145deg, #070303 10%, #260709 54%, #0b0304);
+}
+
+.durga-message::before {
+  top: 9%;
+  right: -6%;
+  border-radius: 46% 54% 48% 52%;
+  background:
+    linear-gradient(118deg, transparent 18%, rgba(224, 183, 91, 0.08) 19% 20%, transparent 21% 48%, rgba(224, 183, 91, 0.06) 49% 50%, transparent 51%),
+    radial-gradient(ellipse at 50% 50%, rgba(159, 9, 15, 0.42), transparent 62%);
+  opacity: 0.7;
+  transform: rotate(7deg);
+  animation: durga-ornament-turn 28s linear infinite;
+}
+
+.durga-essence-list p {
+  padding: 20px 0;
+  color: #efd38f;
+}
+
+.durga-teaching-note {
+  border-width: 1px 0;
+  border-color: rgba(231, 199, 121, 0.34);
+  background: linear-gradient(110deg, rgba(100, 5, 10, 0.26), rgba(6, 3, 3, 0.22));
+  box-shadow: 26px 28px 80px rgba(0, 0, 0, 0.3);
+}
+
+.durga-gates {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(215, 57, 29, 0.2), transparent 30%),
+    linear-gradient(180deg, #27080a, #090303 68%, #150506);
+}
+
+.durga-gates::before {
+  position: absolute;
+  top: 20px;
+  right: 3vw;
+  color: rgba(231, 199, 121, 0.07);
+  content: "9";
+  font-family: var(--serif);
+  font-size: min(44vw, 610px);
+  line-height: 0.8;
+  pointer-events: none;
+}
+
+.durga-gate-list {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.durga-gate-card {
+  min-height: 360px;
+  border-width: 1px 0 0;
+  border-color: rgba(231, 199, 121, 0.38);
+  background:
+    radial-gradient(circle at 16% 12%, rgba(202, 43, 30, 0.2), transparent 32%),
+    linear-gradient(155deg, rgba(49, 7, 10, 0.92), rgba(7, 3, 3, 0.82));
+  box-shadow: 0 28px 74px rgba(0, 0, 0, 0.4);
+  transition: transform 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+
+.durga-gate-card:nth-child(1) { grid-column: span 5; }
+.durga-gate-card:nth-child(2) { grid-column: span 7; }
+.durga-gate-card:nth-child(3),
+.durga-gate-card:nth-child(4),
+.durga-gate-card:nth-child(5) { grid-column: span 4; }
+
+.durga-gate-card:hover {
+  border-color: rgba(242, 207, 130, 0.72);
+  background:
+    radial-gradient(circle at 16% 12%, rgba(224, 68, 37, 0.28), transparent 34%),
+    linear-gradient(155deg, rgba(67, 8, 12, 0.96), rgba(8, 3, 3, 0.86));
+  transform: translateY(-6px);
+}
+
+.durga-gate-card i {
+  width: 84px;
+  height: 3px;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(90deg, #d6a94e, rgba(214, 177, 92, 0));
+}
+
+.durga-gate-card h3 {
+  max-width: 12ch;
+  font-size: clamp(2.15rem, 3.5vw, 3.8rem);
+  text-wrap: balance;
+}
+
+.durga-investment {
+  background:
+    radial-gradient(circle at 84% 16%, rgba(177, 18, 23, 0.2), transparent 24%),
+    linear-gradient(155deg, #f2e3c8, #cdb17e 58%, #ab7d43);
+}
+
+.durga-storefront-panel {
+  border-width: 0 0 0 2px;
+  border-color: rgba(122, 13, 13, 0.62);
+  background:
+    linear-gradient(120deg, rgba(255, 250, 237, 0.72), rgba(221, 193, 139, 0.26));
+  box-shadow: 26px 28px 80px rgba(72, 24, 14, 0.16);
+}
+
+.durga-shala-doorway {
+  background:
+    radial-gradient(ellipse at 24% 46%, rgba(204, 47, 30, 0.22), transparent 32%),
+    radial-gradient(ellipse at 78% 28%, rgba(216, 177, 92, 0.17), transparent 29%),
+    linear-gradient(180deg, #070303, #210709);
+}
+
+.durga-doorway-visual {
+  border-color: rgba(231, 199, 121, 0.46);
+  background:
+    radial-gradient(ellipse at 50% 58%, rgba(235, 192, 93, 0.44), transparent 15%),
+    radial-gradient(ellipse at 50% 82%, rgba(166, 13, 18, 0.28), transparent 34%),
+    linear-gradient(90deg, rgba(7, 3, 3, 0.98), rgba(92, 8, 12, 0.42), rgba(7, 3, 3, 0.98));
+  box-shadow:
+    inset 0 0 110px rgba(0, 0, 0, 0.86),
+    0 44px 130px rgba(116, 6, 12, 0.22);
+}
+
+.durga-visual-world {
+  border-top: 1px solid rgba(231, 199, 121, 0.2);
+  background:
+    radial-gradient(circle at 10% 28%, rgba(176, 14, 20, 0.22), transparent 26%),
+    linear-gradient(145deg, #150506, #050303 68%);
+}
+
+.durga-rule-grid span {
+  border-width: 0 0 1px;
+  border-color: rgba(231, 199, 121, 0.26);
+  background: linear-gradient(90deg, rgba(111, 6, 11, 0.2), transparent);
+  color: rgba(255, 244, 224, 0.82);
+  font-size: 1rem;
+}
+
+@keyframes durga-fabric-drift {
+  from { transform: translate3d(0, 0, 0) rotate(-8deg) scale(1); }
+  to { transform: translate3d(-18px, -12px, 0) rotate(-4deg) scale(1.04); }
+}
+
+@keyframes durga-material-drift {
+  from { transform: translate3d(0, 0, 0) rotate(-2deg) scale(1); }
+  to { transform: translate3d(8px, -6px, 0) rotate(1deg) scale(1.02); }
+}
+
+@keyframes durga-ember-breathe {
+  from { opacity: 0.38; transform: rotate(12deg) scale(0.94); }
+  to { opacity: 0.66; transform: rotate(18deg) scale(1.05); }
+}
+
+@keyframes durga-ornament-turn {
+  to { transform: rotate(367deg); }
+}
+
+@media (max-width: 1040px) {
+  .durga-hero-grid::before {
+    top: 18%;
+    right: -18%;
+    width: 68%;
+    height: 70%;
+  }
+
+  .durga-experience-panel {
+    min-height: 580px;
+  }
+
+  .durga-gate-card:nth-child(n) {
+    grid-column: span 6;
+  }
+
+  .durga-gate-card:last-child {
+    grid-column: 4 / span 6;
+  }
+}
+
+@media (max-width: 680px) {
+  .durga-page .label {
+    font-size: 0.76rem;
+  }
+
+  .durga-hero {
+    min-height: auto;
+    padding-top: 110px;
+  }
+
+  .durga-hero::after {
+    top: 72px;
+    right: -38vw;
+    bottom: auto;
+    width: 88vw;
+    opacity: 0.34;
+  }
+
+  .durga-hero-copy h1 {
+    font-size: clamp(3.3rem, 16vw, 4.8rem);
+    line-height: 0.94;
+  }
+
+  .durga-page .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .durga-page .hero-actions .button {
+    width: 100%;
+  }
+
+  .durga-experience-panel {
+    min-height: 500px;
+    clip-path: polygon(5% 0, 100% 0, 100% 95%, 92% 100%, 0 100%, 0 6%);
+  }
+
+  .durga-sacred-slot {
+    min-height: 245px;
+  }
+
+  .durga-founder-portrait {
+    min-height: 480px;
+  }
+
+  .durga-founder-copy {
+    padding-left: 0;
+  }
+
+  .durga-motif-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .durga-motif-line span {
+    border-right: 0;
+    text-align: left;
+  }
+
+  .durga-gate-list {
+    grid-template-columns: 1fr;
+  }
+
+  .durga-gate-card:nth-child(n),
+  .durga-gate-card:last-child {
+    grid-column: 1;
+  }
+
+  .durga-gate-card {
+    min-height: 320px;
+  }
+
+  .durga-gates::before {
+    top: 80px;
+    right: -5vw;
+    font-size: 80vw;
+  }
+}
+
+/* DWD investment/access refinement: a staggered ceremonial sequence, not card columns. */
+.durga-investment .section-copy h2 {
+  color: #2c0d0f;
+  text-shadow: none;
+}
+
+#root .durga-page .durga-investment .section-copy > p:not(.label) {
+  color: #2a0b0d;
+  font-size: 1.25rem;
+  line-height: 1.75;
+}
+
+.durga-investment .label,
+.durga-investment .durga-storefront-panel span {
+  color: #741015;
+}
+
+#root .durga-page .durga-investment .label {
+  color: #741015;
+}
+
+.durga-storefront-panel {
+  border-left-color: #7a1719;
+  background-color: #ead6ae;
+  background-image:
+    linear-gradient(118deg, rgba(255, 250, 237, 0.84), rgba(207, 170, 103, 0.22)),
+    linear-gradient(90deg, rgba(122, 13, 13, 0.06), transparent 42%);
+}
+
+.durga-storefront-panel strong {
+  color: #6a1015;
+}
+
+#root .durga-page .durga-investment .durga-storefront-panel > p {
+  color: #2a0b0d;
+}
+
+.durga-access-list {
+  margin-top: 52px;
+  padding-bottom: 20px;
+}
+
+#root .durga-investment .durga-access-form {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  transition: transform 260ms ease;
+}
+
+#root .durga-investment .durga-access-form:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 680px) {
+  #root .durga-page .durga-investment .section-copy > p:not(.label) {
+    font-size: 1.25rem;
+  }
+
+  .durga-storefront-panel {
+    border-width: 1px 0 0;
+    border-top-color: #7a1719;
+  }
+
+  .durga-access-list {
+    margin-top: 36px;
   }
 }
