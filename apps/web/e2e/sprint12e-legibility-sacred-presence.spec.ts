@@ -1,6 +1,6 @@
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 
-const baseUrl = "http://127.0.0.1:4173";
+const baseUrl = (process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:4173").replace(/\/$/, "");
 
 test.setTimeout(120_000);
 
@@ -43,7 +43,8 @@ async function attachRubric(testInfo: TestInfo, title: string, answers: RubricAn
 async function beginToMid(page: Page, testInfo: TestInfo, prefix: string) {
   await page.goto(`${baseUrl}/begin`);
   await expect(page.getByText("Arrival").first()).toBeVisible();
-  await expect(page.locator(".begin-lotus-threshold")).toHaveCount(1);
+  // September 13 source-first correction supersedes decorative seal presence.
+  await expect(page.locator(".begin-lotus-threshold")).toHaveCount(0);
   await capture(page, testInfo, `${prefix}-begin-arrival.png`);
 
   await page.locator("button").filter({ hasText: /begin|enter|continue/i }).first().click();
@@ -70,7 +71,7 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await page.goto(`${baseUrl}/`);
 
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
-    await expect(page.locator(".hero-lotus-seal")).toHaveCount(1);
+    await expect(page.locator(".hero-lotus-seal")).toHaveCount(0);
     await capture(page, testInfo, "desktop-home-legibility.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
@@ -82,10 +83,10 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await beginToReveal(page, testInfo, "desktop");
 
     await page.goto(`${baseUrl}/shala`);
-    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(1);
+    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(0);
     await capture(page, testInfo, "desktop-shala-arrival.png");
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
-    await expect(page.locator(".threshold-map-seal .threshold-map-lotus")).toHaveCount(1);
+    await expect(page.locator(".threshold-map-seal .threshold-map-lotus")).toHaveCount(0);
     await capture(page, testInfo, "desktop-shala-map.png");
 
     await page.locator("#nav-room-retreat").click();
@@ -119,14 +120,14 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
         evidence: "Home and Shala screenshots keep foreground text separated from photography with controlled overlays.",
       },
       {
-        question: "Is sacred-symbol usage visibly present without claiming an approved Shri Yantra?",
+        question: "Are unsupported sacred-symbol substitutes absent?",
         status: "YES",
-        evidence: "Home seal, Begin threshold, chamber approval boundary, Shala threshold, and map orientation roles are present.",
+        evidence: "Invented Home, Begin and Shala seals are absent; sacred artwork remains source-gated.",
       },
       {
-        question: "Does symbolic usage vary rather than appearing copy-pasted?",
+        question: "Are gated symbolic positions left without invented replacements?",
         status: "YES",
-        evidence: "Different role classes are present: home seal, threshold, approval boundary, and orientation.",
+        evidence: "No substitute sacred marks are used to fill the removed seal positions.",
       },
       {
         question: "Does the experience feel more like a place than a slide deck?",
@@ -171,7 +172,7 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await page.goto(`${baseUrl}/`);
 
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
-    await expect(page.locator(".hero-lotus-seal")).toHaveCount(1);
+    await expect(page.locator(".hero-lotus-seal")).toHaveCount(0);
     await capture(page, testInfo, "mobile-home-legibility.png");
 
     await page.locator("#explore").scrollIntoViewIfNeeded();
@@ -185,7 +186,7 @@ test.describe("Sprint 12E legibility, sacred presence, and embodiment", () => {
     await page.goto(`${baseUrl}/shala`);
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
     await expect(page.locator("#threshold-drawer")).toBeVisible();
-    await expect(page.locator(".threshold-map-seal .threshold-map-lotus")).toHaveCount(1);
+    await expect(page.locator(".threshold-map-seal .threshold-map-lotus")).toHaveCount(0);
     await capture(page, testInfo, "mobile-shala-map.png");
 
     await page.locator("#nav-room-retreat").click();

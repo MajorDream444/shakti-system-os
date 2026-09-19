@@ -1,6 +1,6 @@
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 
-const baseUrl = "http://127.0.0.1:4173";
+const baseUrl = (process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:4173").replace(/\/$/, "");
 
 test.setTimeout(120_000);
 
@@ -61,7 +61,7 @@ test.describe("Sprint 12G stranger clarity", () => {
     await expect(page.getByRole("heading", { name: "Shakti Shadow & Somatics" })).toBeVisible();
     await expect(page.getByText("Sheetal Kandola's body of work")).toBeVisible();
     await expect(page.getByText("Rooted in somatics, nervous-system literacy")).toBeVisible();
-    await expect(page.getByText("The body of work inside Shri Shakti Shala.")).toBeVisible();
+    await expect(page.getByText("The body of work inside Sri Shakti Shala.")).toBeVisible();
     await expect(page.getByText("Shakti", { exact: true }).first()).toBeVisible();
     await expect(page.getByText("Shadow", { exact: true }).first()).toBeVisible();
     await expect(page.getByText("Sensuality", { exact: true }).first()).toBeVisible();

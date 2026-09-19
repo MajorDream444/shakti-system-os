@@ -1,6 +1,6 @@
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 
-const baseUrl = "http://127.0.0.1:4173";
+const baseUrl = (process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:4173").replace(/\/$/, "");
 
 test.setTimeout(90_000);
 
@@ -38,7 +38,9 @@ test.describe("Sprint 12D luminous Shakti art direction", () => {
     await page.goto(`${baseUrl}/`);
 
     await expect(page.getByRole("link", { name: "Start Your Shakti Path" }).first()).toBeVisible();
-    await expect(page.locator(".hero-visual").first()).toHaveCSS("background-image", /founder-waterfall-v2/);
+    // Sept. 15: the rejected duplicate must not return as the hero background.
+    await expect(page.locator(".hero-visual").first()).not.toHaveCSS("background-image", /founder-waterfall-v2/);
+    await expect(page.locator('.portal-gallery img[src*="founder-waterfall-v2"]')).toHaveCount(1);
     await expect(page.getByAltText("Sheetal Kandola in devotional presence")).toBeVisible();
     await capture(page, testInfo, "desktop-home-luminous-front-door.png");
 
@@ -52,8 +54,8 @@ test.describe("Sprint 12D luminous Shakti art direction", () => {
     await moveBeginToReveal(page, testInfo, "desktop");
 
     await page.goto(`${baseUrl}/shala`);
-    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(1);
-    await expect(page.locator("body")).toContainText(/Shri Shakti Shala|Courtyard|Sanctuary/i);
+    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(0);
+    await expect(page.locator("body")).toContainText(/Sri Shakti Shala|Courtyard|Sanctuary/i);
     await capture(page, testInfo, "desktop-shala-threshold.png");
   });
 
@@ -78,7 +80,7 @@ test.describe("Sprint 12D luminous Shakti art direction", () => {
     await page.goto(`${baseUrl}/shala`);
     await page.locator("button").filter({ hasText: /sanctuary map|map/i }).first().click();
     await expect(page.locator("#threshold-drawer")).toBeVisible();
-    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(1);
+    await expect(page.locator("#gates-room .shala-threshold-seal")).toHaveCount(0);
     await capture(page, testInfo, "mobile-shala-map-threshold.png");
   });
 });
