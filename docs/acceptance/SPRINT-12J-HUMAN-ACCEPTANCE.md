@@ -89,3 +89,6 @@ Founder asset required:
 Required changes before merge:
 
 -
+# Sept. 13 Follow-up
+
+Sprint 12J.1 addresses Major's visual corrections under the relayed founder direction recorded in `docs/founder-source/SHEETAL-VISUAL-ACCEPTANCE-2026-09-13.md`. Acceptance of the direction does not equal final artwork acceptance. See `SPRINT-12J-1-FOUNDER-VISUAL-ACCEPTANCE.md` for the separate review record. The original 12J record above remains historical provenance.

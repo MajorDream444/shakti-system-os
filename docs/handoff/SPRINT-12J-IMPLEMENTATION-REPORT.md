@@ -63,12 +63,12 @@ Skills advised implementation quality. They did not supersede founder governance
 | `docs/acceptance/SPRINT-12I-FOUNDER-BRAND-BOUNDARY-ACCEPTANCE.md` | Governing public identity / pillars / Waterfall / visual boundary. |
 | `docs/brand-system/FOUNDER-VISUAL-SOURCE-v2-2026-09-11.md` | Asset provenance and sacred-image gate. |
 | `docs/sprints/SPRINT-12J-PUBLIC-IDENTITY-DOCTRINE-VISUAL-INTEGRATION-PLAN.md` | Implementation scope and non-goals. |
-| `/Users/majordreamwilliams/Downloads/visual_asset_manifest_v2.csv` | Source filename, approval status, placement guidance. |
-| `/Users/majordreamwilliams/Downloads/Shri_Shakti_Shala_Visual_Acceptance_and_Placement_Map_v2.pdf` | Visual placement and Goddess Temple boundary. |
+| `docs/brand-system/FOUNDER-VISUAL-SOURCE-v2-2026-09-11.md` (repository record for `visual_asset_manifest_v2.csv`) | Source filename, approval status, placement guidance. |
+| `docs/brand-system/FOUNDER-VISUAL-SOURCE-v2-2026-09-11.md` (repository record for `Shri_Shakti_Shala_Visual_Acceptance_and_Placement_Map_v2.pdf`) | Visual placement and Goddess Temple boundary. |
 
 ## Local ZIP Handling
 
-ZIPs listed in `/Users/majordreamwilliams/Desktop/Shakti Portal`:
+ZIPs listed in the repository root (`./`):
 
 - `Shakti Shala (SK)-20260911T053719Z-1-001.zip`
 - `Shakti_Shala_v2_Converted_Visual_Library.zip`
@@ -82,7 +82,7 @@ Classification:
 
 Action taken:
 
-- Created temporary extraction directory at `/tmp/shakti-visual-v2-12j`.
+- Created temporary extraction directory at `<temporary-clean-room-directory>`.
 - Did not extract ZIPs into `apps/web/public`.
 - Did not modify or delete source ZIPs.
 - Did not commit raw ZIP archives.
@@ -227,7 +227,7 @@ Dependency audit:
 Preview status:
 
 - Vercel project: `shakti-system-os`
-- Vercel project ID: `prj_la2IE2jqtipmj1HGbmYPoo1DVUpB`
+- Vercel project ID: legacy Vercel project linkage (identifier intentionally omitted)
 - Local branch: `codex/sprint-12j-public-integration`
 - Review-safe remote branch: `codex/sprint-12j-public-integration-stacked`
 - Source SHA deployed from local/pushed review head:
@@ -303,3 +303,6 @@ BACKEND/AIRTABLE: UNCHANGED
 ```
 
 Do not merge or deploy Production until Major / Sheetal accepts the visual, naming, and doctrine integration.
+# Sept. 13 Follow-up
+
+Sprint 12J.1 is a bounded visual correction following human acceptance. Its implementation, checks and sacred-asset hold are recorded in `SPRINT-12J-1-FOUNDER-VISUAL-CORRECTION-REPORT.md`. The original 12J report above remains provenance for the reviewed base.
