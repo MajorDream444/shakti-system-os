@@ -12,6 +12,7 @@ import SanctuaryAudio from './components/SanctuaryAudio';
 import { SHALA_PATH } from '../constants/navigation';
 import { STORAGE_KEYS } from '../constants/storage';
 import { PersistenceService } from '../services/PersistenceService';
+import { trackAnonymousEventOnce } from '../services/AnonymousAnalytics';
 import './begin.css';
 import waterCanopy from '../shala/assets/images/begin-water-canopy-v2-img-4675.jpg';
 import redRiverTerrain from '../shala/assets/images/founder-supplied-red-river-sept15.jpg';
@@ -79,6 +80,19 @@ export default function BeginApp() {
   useEffect(() => {
     PersistenceService.write(STORAGE_KEYS.beginJourneyState, state);
   }, [state]);
+
+  useEffect(() => {
+    trackAnonymousEventOnce('start_path_viewed', 'begin-route');
+  }, []);
+
+  useEffect(() => {
+    if (state.currentScreen >= 3) {
+      trackAnonymousEventOnce('self_audit_started', state.beginSessionId);
+    }
+    if (state.currentScreen >= 7) {
+      trackAnonymousEventOnce('self_audit_completed', state.beginSessionId);
+    }
+  }, [state.beginSessionId, state.currentScreen]);
 
   useEffect(() => {
     window.scrollTo(0, 0);

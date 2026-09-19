@@ -9,6 +9,7 @@ import { STORAGE_KEYS } from '../../../constants/storage';
 import { PersistenceService } from '../../../services/PersistenceService';
 import { BeginLocalFallbackService } from '../../../services/BeginLocalFallbackService';
 import { BeginWriteClient } from '../../../services/BeginWriteClient';
+import { trackAnonymousEventOnce } from '../../../services/AnonymousAnalytics';
 
 interface Props {
   beginSessionId: string;
@@ -55,6 +56,10 @@ export default function Handoff({
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
+
+    if (new URLSearchParams(window.location.search).get('intent') === 'community') {
+      trackAnonymousEventOnce('community_interest_submitted', beginSessionId);
+    }
 
     setIsLoading(true);
     setRequestSaved(false);

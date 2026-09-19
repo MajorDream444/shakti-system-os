@@ -4,6 +4,7 @@ import { RoomType, SeekerState } from '../types';
 import { ShieldCheck, ArrowLeft, Calendar, MapPin, Award } from 'lucide-react';
 import { SANCTUARY_LANDMARKS } from '../data';
 import { PrayerLamp } from './PrayerLamp';
+import { trackAnonymousEventOnce } from '../../services/AnonymousAnalytics';
 
 interface RetreatRoomProps {
   onNavigate: (room: RoomType) => void;
@@ -45,6 +46,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
 
   const handleConfirmRequest = (e: React.FormEvent) => {
     e.preventDefault();
+    trackAnonymousEventOnce('retreat_interest_submitted', 'retreat-local-request');
     setRequestStep(2);
   };
 

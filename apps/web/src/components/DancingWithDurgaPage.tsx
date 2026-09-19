@@ -2,6 +2,7 @@ import { BEGIN_PATH } from "../constants/navigation";
 import { dancingWithDurga } from "../data/dancingWithDurga";
 import { PageShell } from "./PageShell";
 import { portalImages } from "./PortalImageSlots";
+import { trackAnonymousEvent } from "../services/AnonymousAnalytics";
 
 export function DancingWithDurgaPage() {
   return (
@@ -24,10 +25,15 @@ export function DancingWithDurgaPage() {
                 href={dancingWithDurga.paymentCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackAnonymousEvent("stripe_storefront_clicked")}
               >
                 {dancingWithDurga.paymentCta.label}
               </a>
-              <a className="button button-secondary" href={`${BEGIN_PATH}?intent=community`}>
+              <a
+                className="button button-secondary"
+                href={`${BEGIN_PATH}?intent=community`}
+                onClick={() => trackAnonymousEvent("request_details_clicked")}
+              >
                 {dancingWithDurga.cta}
               </a>
             </div>

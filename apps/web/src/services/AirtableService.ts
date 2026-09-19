@@ -2,7 +2,6 @@ import {
   AIRTABLE_INITIAL_BUILD_PRIORITY,
   AIRTABLE_TABLES,
 } from "../constants/airtableSchema";
-import { env } from "../config/env";
 import { AirtableReadOnlyClient } from "./AirtableReadOnlyClient";
 import type {
   AirtableIntegrationStatus,
@@ -19,9 +18,8 @@ export const AirtableService = {
     const readOnlyState = AirtableReadOnlyClient.getState();
 
     return {
-      configured:
-        env.airtableBase.length > 0 && readOnlyState.source === "airtable",
-      base: env.airtableBase,
+      configured: readOnlyState.source === "airtable",
+      base: "",
     };
   },
 
