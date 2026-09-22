@@ -466,3 +466,26 @@ The first-build engagement is complete when Sheetal and her future team can:
 - operate the system without Major as a permanent dependency.
 
 This file should be updated whenever a reconciliation batch materially changes the state above.
+
+## Reconciliation continuation — 2026-09-22 (verified folder pass)
+
+This pass inspected folder contents directly through the connected Drive account. It did **not** copy, rename, classify, publish, or delete files, and did not mutate Airtable.
+
+| Source / folder ID | Verified contents relevant to practice search | Classification / action |
+|---|---|---|
+| DWD source pack `1v05uH_BZHh5-zQ0yjEZz4BJlBz0tLon5` | 11 Markdown campaign/source files; no media or participant practice files | Source-backed DWD offer/governance only; no additional canonical copy needed |
+| DWD parent `1bHmPBWkMwhOmMXJdBezko4DXNLsyRKXN` | Source-pack folder and `.DS_Store` | No participant practice found |
+| Prior Navratri `1KOxCBT2YWrzD69kO1m8_lk4RDspRUrqq` | Six HEIC images, generic filenames | Visual source only; do not classify as practices |
+| Shakti Workshops `13SA8MUo68WqVYxIdS55huwRwvjT6qPfk` | Previously catalogued Maa Kali session shortcut and unidentified `video1331315744.mp4` shortcut | Existing team action remains; no duplicate queue |
+| Vault capture inbox `1eOgB0S-Z6qcvNcXWANarQyZl65QDJhR2` | Documents, images, archived packages, process folders; no direct DWD practice file in first 100 direct entries | Listing cap means do not claim exhaustive absence. Follow nested source folders separately |
+| Vault `01_PRACTICES` `11eaklSlaLOlMDK7-3QEkRWZuOpoB14Yf` and `02_MEDITATIONS` `1C7cs85M9hYgG3DxrAtvhtOTfz28OKCOq` | Both directly empty at time checked | No canonical asset yet; source absence still unproven |
+| Vault `05_CONTENT`, `06_OFFERS`, `07_COMMUNITY_AND_CLIENT_WORK`, `09_MEDIA_EXPORTS` | Directly empty | No practice media in these branches |
+| Working Podcasts `1q41k5oKtc2GI_K2INVJ6pvEbAYDmpfFh` | Existing two catalogued audio reflections and transcript folder with matching two transcripts | Not five DWD practices |
+| Social-team source folder `1AVMjCg1xa-olSX9pVQwIUV2cHgzOht3o` | Named visual/media batches; prior Navratri folder is here | Proven Sheetal source, but context of raw media must come from team |
+| Social-team `Somatics` `1kwKsqEd4My3I-LSw9Bjjo2NSgyA2Fkb-` | Five files: `IMG_8417.mov` (`1HUnMJ5RuZhUajR-oos9Ez0m2Wt2VWBHf`), `IMG_8416.mov` (`1QEgvmoU3DilbuXGGd37PUApY8dcbv8Fk`), `IMG_7415.mov` (`1ChmwF4aoHG2ZLMq3_Adb5DqvHt2wXaJQ`), `IMG_8423.mov` (`1pZq4eAC11i_Kimb8ATwSjjy2RctDQSWH`), `IMG_7412.mov` (`1DHs-Fvw_YV6aEy9BdWucj4dG3uQGsfEs`) | **TEAM ACTION REQUIRED:** one bounded batch request to identify what these clips depict, connected teaching/container, intended use, and creator/rights if unclear. The count five is coincidental; do **not** map to five DWD nights |
+| Social-team `Shakti Somatica` `1FrjXxUbzK4bIyHd3bUpEihgdnk7AwBsw` | Two generically named MOVs plus many HEIC images (first 100 direct entries inspected) | Raw-media batch; hold identification and DWD mapping pending source context |
+| Engagio social-team export `1WnLpjAjMd31sco8MaN0R1uO8jUJhDpYn` | Sept. 2 offer discussion; Sept. 11 confirmation and social production; Sept. 12 directs team to last year's Navratri visuals. No explicit delivered five-night participant practice set in searched text | Campaign evidence, not participant media; Sept. 11 structure still controls |
+
+**Current five-night state: UNVERIFIED.** No evidence yet justifies `PROVEN MISSING` or a creation request to Sheetal. No exact duplicate decision was made during this pass.
+
+**NEXT SPECIFIC BATCH:** reconcile the remaining **named** sources inside the verified social-team Drive folder, prioritizing `SRI SHAKTI SHALA - FOUNDER VISUAL SOURCE` (`17IsDoC59g465i-HRR9RIzTtPQzQBP9Ex`) and other contextual folders only if they contain a practice, instruction, or clear DWD link. Then review the deeper capture-inbox process subfolders if needed; its direct listing is capped at 100. For raw generic MOV/HEIC collections, create a concrete Social Team batch question, not a guessed practice entry. Check Airtable for an existing action record before adding one.
