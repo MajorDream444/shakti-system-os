@@ -489,3 +489,637 @@ This pass inspected folder contents directly through the connected Drive account
 **Current five-night state: UNVERIFIED.** No evidence yet justifies `PROVEN MISSING` or a creation request to Sheetal. No exact duplicate decision was made during this pass.
 
 **NEXT SPECIFIC BATCH:** reconcile the remaining **named** sources inside the verified social-team Drive folder, prioritizing `SRI SHAKTI SHALA - FOUNDER VISUAL SOURCE` (`17IsDoC59g465i-HRR9RIzTtPQzQBP9Ex`) and other contextual folders only if they contain a practice, instruction, or clear DWD link. Then review the deeper capture-inbox process subfolders if needed; its direct listing is capped at 100. For raw generic MOV/HEIC collections, create a concrete Social Team batch question, not a guessed practice entry. Check Airtable for an existing action record before adding one.
+
+
+# Client Workspace + Engagement Closure Intention
+
+Status: CANONICAL FIRST-BUILD INTENT
+This section is part of the operating truth for the current closure sprint. It is not merely a future idea.
+
+## Why the Sheetal Workspace exists
+
+Public client workspace:
+`https://sheetal-workspace-mvp.majoraimindset.chatgpt.site/`
+
+The workspace was confirmed by Major to open publicly in an incognito browser.
+
+The Sheetal Workspace is intended to become the client-facing communication, transparency, scope-governance and handoff room for this engagement.
+
+It is not intended to become:
+- another marketing site,
+- a replacement for the Sri Shakti Shala public website,
+- a developer console,
+- unrestricted backend editing access during the build,
+- an infinite revision surface,
+- a place where every new founder idea silently becomes included implementation.
+
+The underlying problem it solves is operational: Sheetal should be able to understand what is being built, why it exists, how the pieces connect, what is live, what still needs her input, what Major is responsible for, what her team is responsible for, what has been accepted, what remains unpaid, and what she will own at handoff without needing Major to repeatedly reconstruct the project in conversation.
+
+Core principle:
+
+```text
+TRANSPARENCY DOES NOT REQUIRE EDIT ACCESS.
+```
+
+During the active build, Sheetal can see the project clearly without being given unrestricted implementation access merely so the build can be continuously changed. Backend/code/project ownership and operating access are part of coherent final handoff.
+
+## Relationship between the two sites
+
+### Sri Shakti Shala public experience
+
+The public Sri Shakti Shala site serves seekers.
+
+Its job is to:
+- explain Sheetal and Shakti Shadow & Somatics to a stranger,
+- provide a clear front door,
+- route people toward the right offer/community/path,
+- support Dancing with Durga and future current sacred programming,
+- support Start Your Shakti Path,
+- eventually expose the minimum approved Vault/library experience,
+- help create real economic activity without automating intimacy.
+
+Public production baseline:
+`https://shakti-system-os-psi.vercel.app`
+
+Canonical domain reported by Major:
+`https://www.srishaktishala.com/`
+
+### Sheetal Workspace
+
+The Sheetal Workspace serves Sheetal and, later, her operating team.
+
+Its job is to answer:
+- What did we agree to build?
+- What has been delivered?
+- What is live versus planned?
+- What needs Sheetal’s decision?
+- What needs the social/media team?
+- What is a correction versus a new request?
+- What is blocking completion?
+- What payment milestone are we at?
+- What accounts/data/keys will Sheetal own?
+- What will the future team need to operate?
+- What remains a dependency on Major?
+- When is the engagement ready to move from build to handoff to owner mode?
+
+The two surfaces must not be conflated.
+
+```text
+PUBLIC SITE
+serves seekers and participants
+
+CLIENT WORKSPACE
+serves Sheetal, scope governance, acceptance and handoff
+```
+
+## First-build engagement intention
+
+This is a defined first build layer, not an indefinite operating relationship.
+
+The working commercial context preserved in project continuity is:
+- fixed first-build engagement: $6,500,
+- $2,500 start milestone received,
+- $2,000 preview milestone,
+- $2,000 final-delivery milestone,
+- any optional six-month alignment/revenue layer was separate rather than automatic.
+
+If exact legal/commercial wording is required, locate the signed offer/SOW before treating this summary as contract text.
+
+Major’s intended endpoint is explicit:
+1. complete the coherent first-build operating layer;
+2. make the system understandable;
+3. verify the money/participant loops that are in scope;
+4. document the operating system;
+5. transfer the appropriate code, accounts, access, data and instructions;
+6. satisfy final-delivery acceptance criteria;
+7. collect the final milestone payment;
+8. remove Major as an operational dependency.
+
+This engagement should not silently expand because new ideas appear during founder conversations.
+
+New ideas may be valuable and should be captured, but value does not automatically make them part of the current build.
+
+## Scope governance model
+
+Every new request should be classified before implementation.
+
+### Bug / Correction
+Something in agreed work is broken, inaccurate, incomplete relative to accepted scope, or implemented contrary to an approved source.
+
+Default: current build.
+
+### Founder Review
+A decision, clarification or acceptance is required from Sheetal before the system should proceed.
+
+Default: current governance task; implementation depends on the answer.
+
+### Revision
+A bounded change within an agreed review round or already-approved deliverable.
+
+Default: current build only when it remains within agreed scope.
+
+### Change Request
+A new direction, feature, workflow, design system, integration, deliverable or material expansion beyond accepted scope.
+
+Default: do not silently implement. Record it.
+
+### Future / Phase 2
+A useful idea deliberately outside this first-build closure.
+
+Default: preserve it without allowing it to block handoff.
+
+Decision rule:
+
+```text
+Is this required to correct or complete agreed work?
+YES → current build
+NO  → Change Request or Phase 2
+```
+
+This classification should be visible and human, not adversarial.
+
+## Intended workspace information architecture
+
+The workspace foundation has been discussed around:
+- Dashboard
+- Deliverables
+- Systems
+- Activity
+- Decisions
+- Payments
+- Feedback
+- Resources
+
+The closure version should make the following concepts explicit even if the final navigation names differ:
+
+### Dashboard
+A bilateral project status view.
+
+It should show both:
+- what Major owes Sheetal, and
+- what Sheetal / her team owes the project.
+
+Examples of client-side dependencies:
+- founder decisions,
+- missing approved assets,
+- social-team asset identification,
+- account invitations,
+- safe credential/account setup,
+- payment milestone,
+- acceptance.
+
+### Current Scope / Deliverables
+Show the original first-build commitments and current completion state.
+
+Do not allow Phase 2 ideas to visually masquerade as unfinished original scope.
+
+### Systems
+Explain each business flow in human terms.
+
+For each meaningful system show:
+- Purpose
+- Inputs
+- Outputs
+- Owner
+- Trigger
+- Tools
+- Decision rules
+- Maintenance rhythm
+- Failure points
+- Handoff notes
+- Team training notes
+
+Examples:
+- Start Your Shakti Path
+- Dancing with Durga
+- Sri Shakti Shala / community pathway
+- Vault / Library
+- Retreat interest pathway
+- lead/request memory
+- current sacred rhythm
+- asset intake
+
+The client does not need implementation internals to understand what the system does.
+
+### Activity
+Show meaningful build/release/acceptance events, not noisy developer telemetry.
+
+### Decisions
+Track unresolved founder choices and accepted decisions with provenance.
+
+### Payments
+This should become engagement governance, not merely a payment ledger.
+
+Conceptual chain:
+
+```text
+Agreement
+→ deliverable
+→ founder feedback
+→ decision
+→ acceptance
+→ milestone
+→ payment
+→ handoff
+```
+
+The final $2,000 milestone should be tied to explicit final-delivery criteria rather than an ambiguous “final delivery” label.
+
+### Feedback
+Feedback should enter the classification model:
+- Bug / Correction
+- Founder Review
+- Revision
+- Change Request
+- Future / Phase 2
+
+The workspace should prevent “feedback” from automatically becoming free new implementation.
+
+### Needed From Sheetal / Team
+This is a precise dependency queue, not a generic request for the founder to organize her business.
+
+For Vault/media work:
+- prove the asset is absent before asking Sheetal to create it;
+- when an asset exists but lacks identity/context, assign it to the social/media team;
+- ask only for the minimum context the team knows;
+- let the system handle taxonomy and routing.
+
+### Handoff Readiness
+This is a required closure surface.
+
+It should answer:
+- what Sheetal owns,
+- where code lives,
+- domain ownership,
+- deployment ownership,
+- Airtable ownership,
+- Drive/Vault ownership,
+- payment ownership,
+- communication accounts,
+- AI/API accounts if any,
+- analytics if any,
+- documentation location,
+- remaining Major-owned credentials,
+- remaining Major dependencies,
+- future-team responsibilities,
+- known limitations,
+- Phase 2 backlog,
+- final acceptance state.
+
+## Workspace lifecycle
+
+The workspace should visibly transition through:
+
+```text
+BUILD MODE
+→ HANDOFF MODE
+→ OWNER MODE
+```
+
+### Build Mode
+Major is actively implementing the defined first build.
+The workspace provides transparency, dependencies, decisions, previews and scope boundaries.
+
+### Handoff Mode
+The system is substantially complete.
+Focus shifts to:
+- final acceptance,
+- documentation,
+- account ownership,
+- credential replacement,
+- team instructions,
+- known limitations,
+- remaining dependency elimination.
+
+### Owner Mode
+Sheetal / Sri Shakti Shala owns and operates the system.
+Major is not a required operational dependency.
+
+The workspace can remain useful as an operating reference after the engagement, but it must not imply that Major remains the operator.
+
+## Account sovereignty
+
+Final handoff standard:
+
+```text
+YOUR BUSINESS.
+YOUR ACCOUNTS.
+YOUR DATA.
+YOUR KEYS.
+```
+
+Any ongoing service that controls billing, identity, customer data, content, deployment or runtime behavior should ultimately be owned by Sheetal / Sri Shakti Shala where practical.
+
+Potential ownership categories:
+- domain / DNS,
+- GitHub / source access,
+- Vercel / deployment,
+- Stripe / payments,
+- Airtable / operational CRM,
+- Google Drive / Vault,
+- email / communications,
+- analytics,
+- AI/API provider accounts if required,
+- any other ongoing paid infrastructure.
+
+Major’s personal API keys or billing credentials must not remain hidden production dependencies after final handoff.
+
+Credential transfer process:
+
+```text
+identify dependency
+→ establish client-owned account / credential
+→ replace production dependency
+→ verify
+→ revoke Major-owned credential/access where appropriate
+→ document owner
+→ close dependency
+```
+
+Never ask Sheetal to send passwords, recovery codes, banking credentials or other personal security secrets in chat. Prefer account ownership, invitations and scoped access.
+
+OpenRouter was discussed as one possible future AI access layer because it can provide model-provider flexibility. It must not be represented as inherently open-source or local. A truly local/open-weight architecture is a separate choice. No AI-provider decision should create unnecessary recurring cost before the business has evidence/revenue to support it.
+
+## Relationship to the Vault work currently underway
+
+The Vault reconciliation is not a disconnected cleanup project.
+
+It serves the closure intention because Sheetal needs a system where:
+- assets can be captured easily,
+- the team identifies unknown source context,
+- agents prepare metadata,
+- sensitive material gets human review,
+- canonical files are findable,
+- access is governed,
+- approved teachings can be delivered,
+- existing work can be reused and monetized,
+- the future team knows how to maintain it.
+
+Minimum economically useful Vault:
+
+```text
+discover approved collection
+→ determine entitlement
+→ watch / listen / read
+→ return later
+```
+
+Do not build a giant Netflix-like platform during first-build closure.
+
+The Vault MVP and Current Sacred Rhythm contract are first-build blockers because they enable the system to operate and change without Major rebuilding the site every season.
+
+Advanced recommendation systems, AI personalization, complex subscription infrastructure, giant media-platform behavior and advanced seasonal automation remain Phase 2 unless a new approved scope decision says otherwise.
+
+## Relationship to Current Sacred Rhythm
+
+Dancing with Durga is the current real program, but the website must not become permanently hard-coded around DWD.
+
+The intended reusable pattern is:
+
+```text
+PLANNED
+→ PREPARING
+→ CURRENT
+→ COMPLETE
+→ ARCHIVED
+```
+
+A stable Current Sacred Rhythm / Current Invitation component should render what is CURRENT.
+
+Conceptual fields:
+- Name
+- Type
+- Maa / current
+- Start
+- End
+- Status
+- Description
+- Hero asset
+- CTA
+- Offer/payment
+- Practices
+- Vault collection
+- Archive state
+
+DWD is the first real record.
+
+When DWD completes:
+- its public current state changes,
+- appropriate recordings/practices/support material transition to the Vault under approved access rules,
+- the next founder-approved current rhythm can occupy the same architectural surface.
+
+The operating idea is:
+
+```text
+STABLE SANCTUARY.
+LIVING ALTAR.
+```
+
+Do not invent Sheetal’s future annual calendar.
+
+Known source-backed rhythm concepts include Navratri anchors and real Full Moon/New Moon material, but exact future cadence remains founder-governed.
+
+## Relationship to revenue
+
+The closure sprint should activate/verify real money loops before adding infrastructure luxury.
+
+Priority loops:
+- DWD payment → participant state → welcome/access,
+- Sri Shakti Shala interest → appropriate next action,
+- private-work inquiry → human conversation,
+- retreat interest → tracked state, not automatic readiness,
+- approved Vault asset → entitlement → delivery.
+
+Rule:
+
+```text
+BUILD THE SMALLEST SYSTEM THAT CAN
+CREATE,
+CAPTURE,
+DELIVER,
+AND LEARN FROM
+REAL ECONOMIC ACTIVITY.
+```
+
+Expand infrastructure from evidence and revenue.
+
+## Final closure matrix
+
+### Public experience
+DONE / baseline:
+- production site,
+- Sri Shakti Shala identity,
+- Start Your Shakti Path,
+- DWD public experience,
+- public domain.
+
+VERIFY:
+- DWD enrollment/payment → participant → welcome/access journey.
+
+### Vault
+FOUNDATION EXISTS:
+- Drive structure,
+- capture inbox,
+- taxonomy,
+- Airtable Library Assets.
+
+MUST COMPLETE:
+- current reconciliation,
+- Drive → Airtable canonical sync,
+- access/entitlement decisions where needed,
+- Asset Intake SOP,
+- minimum usable Vault presentation.
+
+### Practice library
+MUST COMPLETE:
+- reconcile represented practices,
+- classify READY / TEAM ACTION / FOUNDER DECISION / PROVEN MISSING,
+- do not manufacture audio/practices.
+
+### Annual rhythm
+DONE:
+- DWD current implementation.
+
+MUST COMPLETE:
+- reusable Current Sacred Rhythm contract,
+- CURRENT → COMPLETE → ARCHIVED behavior,
+- Vault relationship.
+
+### Relationship memory
+FOUNDATION EXISTS:
+- Airtable operating base.
+
+VERIFY / COMPLETE:
+- website submissions,
+- human review SOP,
+- DWD participant state,
+- Sri Shakti Shala interest state,
+- retreat-interest state.
+
+### Client Workspace
+FOUNDATION EXISTS:
+- public client workspace.
+
+MUST COMPLETE:
+- Live vs Planned,
+- Current Scope,
+- Needed From Sheetal / Team,
+- feedback/change governance,
+- decisions,
+- acceptance,
+- payment state,
+- accounts/ownership,
+- handoff readiness,
+- BUILD → HANDOFF → OWNER.
+
+### Ownership
+MUST COMPLETE:
+- account inventory,
+- identify Major-owned production dependencies,
+- client-owned replacements,
+- verify replacements,
+- revoke Major dependency where appropriate,
+- document ownership.
+
+### Operations Playbook
+MUST COMPLETE:
+- system map,
+- website guide,
+- Vault guide,
+- Asset Intake SOP,
+- Lead Handling,
+- DWD enrollment,
+- Sri Shakti Shala onboarding,
+- Retreat Interest SOP,
+- Founder Approval,
+- Change Control,
+- deployment/maintenance,
+- account/credential ownership,
+- future-team training.
+
+### Final handoff
+MUST COMPLETE:
+- repository access,
+- domain/account map,
+- Airtable guide,
+- Drive/Vault guide,
+- integration/credential map,
+- known limitations,
+- Phase 2 backlog,
+- acceptance checklist,
+- final-payment milestone,
+- Major zero dependency.
+
+## Hard handoff boundary
+
+If something is not necessary for Sheetal to:
+- operate,
+- receive revenue,
+- understand the system,
+- or inherit it safely,
+
+it does not block first-build handoff.
+
+## STB / Client Zero extraction
+
+Sheetal is Client Zero for reusable Stop the Bleed operating methods.
+
+Do not copy Shakti medicine into STB.
+
+Reusable methods emerging from this work include:
+- Client Workspace,
+- Engagement Governance,
+- Scope Control,
+- Asset Intelligence / Vault,
+- Founder Truth,
+- Acceptance Gates,
+- Account Sovereignty,
+- Revenue Activation,
+- Evidence / QA,
+- Handoff System,
+- Stable Infrastructure / Programmable Rhythm.
+
+Governing abstraction:
+
+```text
+Client-specific truth → stays with client
+Reusable operating method → STB asset
+Agent behavior → skill/plugin/automation
+Deterministic check → test/script/automation
+```
+
+Extract the method, not the medicine.
+
+## Instruction to future ChatGPT / Codex sessions
+
+Do not restart strategy from scratch.
+
+Read this canonical checkpoint first.
+
+Continue two coordinated tracks:
+
+TRACK 1 — SOURCE / OPERATIONS
+Resume the exact Vault reconciliation from the latest `NEXT SPECIFIC BATCH` in this file. Maintain READY / TEAM ACTION REQUIRED / FOUNDER DECISION REQUIRED / PROVEN MISSING.
+
+TRACK 2 — REPOSITORY / CLOSURE
+Use Codex for bounded implementation work after truth is reconciled:
+- audit current Vault implementation,
+- audit Current Sacred Rhythm implementation,
+- audit Airtable assumptions,
+- prepare minimum implementation plan,
+- preserve accepted visual production baseline,
+- do not deploy until implementation/tests/preview/human acceptance gates are satisfied.
+
+Then complete the Client Workspace and handoff system described above.
+
+The intended final state is not “Major keeps running Sheetal’s system.”
+
+The intended final state is:
+
+```text
+SHEETAL UNDERSTANDS IT.
+SHEETAL OWNS IT.
+HER TEAM CAN OPERATE IT.
+THE SYSTEM CAN CHANGE RHYTHM WITHOUT A REBUILD.
+MAJOR IS NO LONGER A REQUIRED DEPENDENCY.
+```
