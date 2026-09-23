@@ -309,7 +309,7 @@ Production application SHA:
 `08bc7dcc86d0528ca5e1d3969a8889dbfbae058f`
 
 Production deployment:
-`https://shakti-system-4p29igp9m-hamal-agi.vercel.app`
+`https://shakti-system-6gchf8c96-hamal-agi.vercel.app`
 
 Stable Production URL:
 `https://shakti-system-os-psi.vercel.app`
