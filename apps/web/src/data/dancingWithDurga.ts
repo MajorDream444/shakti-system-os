@@ -1,3 +1,5 @@
+import { commerceOffers } from "./commerce";
+
 export const dancingWithDurga = {
   path: "/dancing-with-durga",
   title: "Dancing with Durga: Devotion with a Spine",
@@ -9,18 +11,7 @@ export const dancingWithDurga = {
   timing: "7:30-9:30 PM IST",
   liveGatheringCount: 4,
   practiceNightCount: 5,
-  paymentOptions: [
-    {
-      region: "global",
-      label: "Global · $150 USD",
-      href: "https://buy.stripe.com/7sYfZg0zre8DdUA9ePd7q00",
-    },
-    {
-      region: "india",
-      label: "Indian Citizens · ₹9,999 INR",
-      href: "https://buy.stripe.com/fZu6oGbe5aWr3fWgHhd7q01",
-    },
-  ] as const,
+  paymentOptions: commerceOffers.dancingWithDurga,
   cta: "Request details",
   boundary:
     "Choose the payment option that applies to you. You will continue to Sri Shakti Shala's secure payment page.",

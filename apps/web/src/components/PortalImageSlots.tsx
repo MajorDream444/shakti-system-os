@@ -15,6 +15,8 @@ import founderEditorialV2 from "../shala/assets/images/founder-editorial-v2-jul0
 import founderSuppliedRedRiver from "../shala/assets/images/founder-supplied-red-river-sept15.jpg";
 import founderSuppliedOceanMovement from "../shala/assets/images/founder-supplied-ocean-movement-sept15.jpg";
 import founderRedPrayerHands from "../shala/assets/images/founder-red-prayer-hands-sept18.jpg";
+import durgaApprovedArtwork from "../shala/assets/images/durga-approved-art-sept23.jpg";
+import durgaNineFormsArtwork from "../shala/assets/images/durga-nine-forms-approved-sept23.jpg";
 
 export const portalImages = {
   founder: founderPortraitV2,
@@ -30,6 +32,8 @@ export const portalImages = {
   energyFlowCandidate: founderSuppliedOceanMovement,
   legacyFounder: founderImage,
   legacyDurgaFounder: durgaFounderImage,
+  durgaApprovedArtwork,
+  durgaNineFormsArtwork,
   gates: gatesImage,
   library: libraryImage,
   water: waterfallNatureV2,

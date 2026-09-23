@@ -45,7 +45,6 @@ async function assertNoBoundaryRegression(page: Page) {
   const body = page.locator("body");
 
   await expect(body).not.toContainText(/somatic breathwork/i);
-  await expect(body).not.toContainText(/book (a )?(single|standalone) session|one-off support|try a session/i);
   await expect(body).not.toContainText(/buy now|pay deposit/i);
   await expect(body).not.toContainText(/King's College|LSHTM|MSc Global Mental Health|certified|licensed/i);
   await expect(body).not.toContainText(/approved Shri Yantra|Doctrine Passport|approval gate|access rule/i);
@@ -85,7 +84,7 @@ test.describe("Sprint 12G stranger clarity", () => {
     await expect(page.getByText("Practice and belonging")).toBeVisible();
     await expect(page.getByText("Held support")).toBeVisible();
     await expect(page.getByText("Deeper immersion")).toBeVisible();
-    await expect(page.getByText("Private work is container-based")).toBeVisible();
+    await expect(page.getByText(/Current founder-approved payment choices appear inside the doorway/)).toBeVisible();
     await capture(page, testInfo, "desktop-offerings-receiving-ladder.png");
     await assertNoBoundaryRegression(page);
 
@@ -147,7 +146,7 @@ test.describe("Sprint 12G stranger clarity", () => {
     await expect(page).toHaveURL(/\/offerings/);
     await expect(page.getByText("Free orientation")).toBeVisible();
     await expect(page.getByText("Request Private Work").first()).toBeVisible();
-    await expect(page.getByText("6-, 9-, or 12-session private pathways")).toBeVisible();
+    await expect(page.getByText("Single session or 3-, 6-, 9-, and 12-session containers")).toBeVisible();
     await capture(page, testInfo, "mobile-offerings-receiving-ladder.png");
     await assertNoBoundaryRegression(page);
 

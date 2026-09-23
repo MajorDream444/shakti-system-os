@@ -4662,7 +4662,391 @@ body {
     border-top-color: #7a1719;
   }
 
-  .durga-access-list {
+.durga-access-list {
     margin-top: 36px;
+  }
+}
+
+/* Founder-approved Sept. 23 DWD image-led hero. Commerce behavior is unchanged. */
+.durga-hero-grid {
+  grid-template-columns: minmax(360px, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.durga-hero-art {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  margin: 0;
+  isolation: isolate;
+}
+
+.durga-hero-art::before,
+.durga-hero-art::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.durga-hero-art::before {
+  inset: -18px 24px 34px -18px;
+  border: 1px solid rgba(231, 199, 121, 0.34);
+  background: rgba(108, 9, 13, 0.22);
+  transform: rotate(-1.5deg);
+}
+
+.durga-hero-art::after {
+  inset: 9% -7% -5% 11%;
+  background: radial-gradient(ellipse, rgba(190, 37, 24, 0.42), transparent 68%);
+  filter: blur(28px);
+}
+
+.durga-hero-art-frame {
+  position: relative;
+  aspect-ratio: 779 / 1008;
+  max-height: min(73vh, 760px);
+  overflow: hidden;
+  border: 1px solid rgba(244, 204, 113, 0.72);
+  background: #230607;
+  box-shadow:
+    0 34px 100px rgba(0, 0, 0, 0.58),
+    0 0 70px rgba(162, 14, 18, 0.2);
+}
+
+.durga-hero-art-frame::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(13, 4, 4, 0.04), transparent 62%, rgba(21, 4, 5, 0.34)),
+    linear-gradient(90deg, rgba(13, 4, 4, 0.2), transparent 14% 86%, rgba(13, 4, 4, 0.18));
+  pointer-events: none;
+}
+
+.durga-hero-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.04) contrast(1.03) brightness(0.94);
+}
+
+.durga-hero-art figcaption {
+  max-width: 30ch;
+  margin: 24px auto 0;
+  color: rgba(255, 239, 208, 0.78);
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+  font-style: italic;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.durga-hero-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.durga-nine-forms-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 0.7fr);
+  gap: clamp(38px, 7vw, 96px);
+  align-items: center;
+  margin-bottom: clamp(54px, 8vw, 108px);
+}
+
+.durga-nine-forms-intro .section-heading {
+  margin: 0;
+}
+
+.durga-nine-forms-art {
+  position: relative;
+  margin: 0;
+  isolation: isolate;
+}
+
+.durga-nine-forms-art::before {
+  position: absolute;
+  z-index: -1;
+  inset: 22px -18px -18px 22px;
+  border: 1px solid rgba(231, 199, 121, 0.32);
+  background: rgba(130, 14, 17, 0.22);
+  content: "";
+  transform: rotate(1.25deg);
+}
+
+.durga-nine-forms-art img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 796 / 986;
+  border: 1px solid rgba(244, 204, 113, 0.62);
+  background: #050303;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.54);
+  object-fit: cover;
+}
+
+.durga-hero-copy h1 {
+  max-width: 760px;
+  font-size: clamp(4.1rem, 6.4vw, 7rem);
+  line-height: 0.92;
+}
+
+.durga-hero-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  padding: 0;
+  margin: 28px 0 0;
+  border-top: 1px solid rgba(231, 199, 121, 0.28);
+  list-style: none;
+}
+
+.durga-hero-facts li {
+  min-width: 0;
+  padding: 16px 18px 16px 0;
+  border-bottom: 1px solid rgba(231, 199, 121, 0.2);
+  color: rgba(255, 244, 224, 0.84);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.durga-hero-facts li:nth-child(even) {
+  padding-right: 0;
+  padding-left: 18px;
+  border-left: 1px solid rgba(231, 199, 121, 0.2);
+}
+
+.durga-hero-facts span {
+  display: block;
+  margin-bottom: 6px;
+  color: #e7c779;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.commerce-doorways {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  max-width: 1080px;
+  margin: 38px auto 0;
+  border: 1px solid rgba(212, 175, 91, 0.24);
+  background: rgba(212, 175, 91, 0.18);
+}
+
+.commerce-doorways a {
+  min-width: 0;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 80% 12%, rgba(184, 40, 45, 0.14), transparent 38%),
+    rgba(8, 5, 5, 0.96);
+  color: var(--paper);
+  text-decoration: none;
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.commerce-doorways a:hover,
+.commerce-doorways a:focus-visible {
+  background:
+    radial-gradient(circle at 80% 12%, rgba(214, 167, 72, 0.19), transparent 42%),
+    rgba(31, 8, 9, 0.98);
+  outline: 1px solid var(--gold-lit);
+  outline-offset: -1px;
+  transform: translateY(-3px);
+}
+
+.commerce-doorways span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold-lit);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.commerce-doorways strong {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.offering-purchase-family {
+  margin-top: 36px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(212, 175, 91, 0.42);
+}
+
+.offering-purchase-family-heading {
+  margin-bottom: 22px;
+}
+
+.offering-purchase-family-heading h4 {
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.offering-purchase-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(212, 175, 91, 0.24);
+}
+
+.offering-purchase {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  min-width: 0;
+  padding: 24px 24px 24px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(212, 175, 91, 0.2);
+  background: transparent;
+}
+
+.offering-purchase:nth-child(even) {
+  padding-right: 0;
+  padding-left: 24px;
+  border-left: 1px solid rgba(212, 175, 91, 0.2);
+}
+
+.offering-purchase .label {
+  margin: 0 0 8px;
+  color: var(--gold-lit);
+}
+
+.offering-purchase h4 {
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.offering-purchase p {
+  margin: 8px 0 0;
+  color: rgba(244, 239, 230, 0.72);
+  font-size: 1.05rem;
+}
+
+.offering-purchase-action {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+
+.offering-purchase-action strong {
+  color: var(--gold-lit);
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+}
+
+.offering-promo {
+  color: var(--gold-lit) !important;
+  font-family: var(--mono);
+  font-size: 1.125rem !important;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1040px) {
+  .durga-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .durga-hero-copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .durga-hero-art {
+    grid-column: 1;
+    grid-row: 2;
+    width: min(100%, 620px);
+    margin-inline: auto;
+  }
+
+  .durga-nine-forms-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .durga-nine-forms-art {
+    width: min(100%, 620px);
+    margin-inline: auto;
+  }
+
+  .commerce-doorways {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .durga-hero-copy h1 {
+    font-size: clamp(3.25rem, 15.5vw, 4.75rem);
+  }
+
+  .durga-hero-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .durga-hero-facts li,
+  .durga-hero-facts li:nth-child(even) {
+    padding: 14px 0;
+    border-left: 0;
+  }
+
+  .durga-hero-art {
+    width: calc(100% - 20px);
+    margin-top: 18px;
+  }
+
+  .durga-hero-art::before {
+    inset: -10px 12px 24px -10px;
+  }
+
+  .durga-hero-art-frame {
+    max-height: none;
+  }
+
+  .offering-purchase {
+    padding: 22px 0;
+  }
+
+  .offering-purchase:nth-child(even) {
+    padding-right: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .offering-purchase-action {
+    justify-items: start;
+    width: 100%;
+  }
+
+  .offering-purchase-action .button {
+    width: 100%;
+  }
+
+  .offering-purchase-options {
+    grid-template-columns: 1fr;
+  }
+
+  .durga-nine-forms-art {
+    width: calc(100% - 20px);
   }
 }

@@ -11,6 +11,17 @@ export function DancingWithDurgaPage() {
       <section className="durga-hero" aria-labelledby="durga-title">
         <div className="durga-hero-flame" aria-hidden="true" />
         <div className="container durga-hero-grid">
+          <figure className="durga-hero-art">
+            <div className="durga-hero-art-frame">
+              <img
+                src={portalImages.durgaApprovedArtwork}
+                alt="Traditional devotional artwork of Maa Durga with her lion and accompanying deities"
+                data-asset-status="FOUNDER_APPROVED"
+              />
+            </div>
+            <figcaption>{dancingWithDurga.campaignLine}</figcaption>
+          </figure>
+
           <div className="durga-hero-copy">
             <p className="label">Navratri 2026 / Founder-confirmed launch foundation</p>
             <h1 id="durga-title">{dancingWithDurga.title}</h1>
@@ -20,18 +31,24 @@ export function DancingWithDurgaPage() {
               the body, stand up, say no, protect what is sacred, and stop
               abandoning themselves.
             </p>
+            <ul className="durga-hero-facts" aria-label="Dancing with Durga format">
+              <li><span>Container</span>{dancingWithDurga.audience}</li>
+              <li><span>Rhythm</span>{dancingWithDurga.format}</li>
+              <li><span>Time</span>{dancingWithDurga.timing}</li>
+              <li><span>Practice</span>{dancingWithDurga.practices.join(" · ")}</li>
+            </ul>
             <div className="hero-actions">
               {dancingWithDurga.paymentOptions.map((option) => (
                 <a
                   className="button button-primary"
-                  data-payment-region={option.region}
+                  data-payment-region={option.id}
                   href={option.href}
-                  key={option.region}
+                  key={option.id}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackAnonymousEvent("stripe_storefront_clicked")}
                 >
-                  {option.label}
+                  {option.cta}
                 </a>
               ))}
               <a
@@ -45,22 +62,6 @@ export function DancingWithDurgaPage() {
             <p className="durga-boundary">{dancingWithDurga.boundary}</p>
           </div>
 
-          <aside className="durga-experience-panel" aria-label="Dancing with Durga experience">
-            <div className="durga-sacred-slot" aria-hidden="true">
-              <span className="durga-trident-mark" aria-hidden="true" />
-            </div>
-            <div className="durga-panel-altar" aria-hidden="true">
-              <span />
-              <i />
-            </div>
-            <span>{dancingWithDurga.campaignLine}</span>
-            <ul>
-              <li>{dancingWithDurga.audience}</li>
-              <li>{dancingWithDurga.format}</li>
-              <li>{dancingWithDurga.timing}</li>
-              <li>{dancingWithDurga.practices.join(" · ")}</li>
-            </ul>
-          </aside>
         </div>
       </section>
 
@@ -110,15 +111,25 @@ export function DancingWithDurgaPage() {
 
       <section className="section durga-gates" aria-labelledby="durga-gates-title">
         <div className="container">
-          <div className="section-heading">
-            <p className="label">Nine Nights / Four Live Gatherings</p>
-            <h2 id="durga-gates-title">A Navratri rhythm through the Navadurgas.</h2>
-            <p>
-              The four live gatherings carry the spine of the container. The
-              five practice nights receive shorter mantra, audio transmission,
-              reflection, or embodiment practice so all nine forms are honored
-              without requiring a live gathering every evening.
-            </p>
+          <div className="durga-nine-forms-intro">
+            <div className="section-heading">
+              <p className="label">Nine Nights / Four Live Gatherings</p>
+              <h2 id="durga-gates-title">A Navratri rhythm through the Navadurgas.</h2>
+              <p>
+                The four live gatherings carry the spine of the container. The
+                five practice nights receive shorter mantra, audio transmission,
+                reflection, or embodiment practice so all nine forms are honored
+                without requiring a live gathering every evening.
+              </p>
+            </div>
+            <figure className="durga-nine-forms-art">
+              <img
+                src={portalImages.durgaNineFormsArtwork}
+                alt="Traditional devotional artwork showing the nine forms of Durga"
+                loading="lazy"
+                data-asset-status="FOUNDER_APPROVED"
+              />
+            </figure>
           </div>
           <div className="durga-gate-list">
             {dancingWithDurga.ritualGates.map((gate, index) => (
@@ -191,9 +202,8 @@ export function DancingWithDurgaPage() {
             <h2 id="durga-visual-title">Durga. Durga. Durga.</h2>
             <p>
               The campaign should feel powerful, earthy, visceral, and devotional.
-              Maa Durga remains at the center. Generated imagery and sacred
-              depictions are review references only until Sheetal approves the
-              final assets.
+              Maa Durga remains at the center through founder-approved artwork
+              and the established Sri Shakti Shala visual world.
             </p>
           </div>
           <div className="durga-rule-grid">

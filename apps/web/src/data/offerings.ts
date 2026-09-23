@@ -6,6 +6,7 @@ import {
   TESTIMONIALS_PATH,
 } from "../constants/navigation";
 import { portalImages } from "../components/PortalImageSlots";
+import { commerceOffers, type HostedPaymentOption } from "./commerce";
 
 export type OfferCategory = {
   id: "begin-here" | "self-guided" | "circles" | "private-work" | "retreats";
@@ -19,6 +20,7 @@ export type OfferCategory = {
   href: string;
   cta: string;
   image: string;
+  purchaseOptions?: readonly HostedPaymentOption[];
 };
 
 export const offerCategories: OfferCategory[] = [
@@ -52,11 +54,12 @@ export const offerCategories: OfferCategory[] = [
       "Practices released as Sheetal approves them",
     ],
     nextStep: "Enter the open sanctuary and begin with practice.",
-    investment: "Published as each resource is released",
+    investment: "Open resources; founding membership options available",
     accessState: "Open",
     href: SHALA_PATH,
     cta: "Enter Sri Shakti Shala",
     image: portalImages.library,
+    purchaseOptions: commerceOffers.shalaMembership,
   },
   {
     id: "circles",
@@ -79,22 +82,22 @@ export const offerCategories: OfferCategory[] = [
   {
     id: "private-work",
     label: "Work With Sheetal",
-    title: "Private work in 6-, 9-, or 12-session containers",
+    title: "1:1 Shakti Embodiment",
     summary:
       "For women ready for closer guidance with Sheetal inside Shakti Shadow & Somatics. Private work begins with a container and continuity over time.",
     includes: [
       "Fit conversation before commitment",
-      "6-, 9-, or 12-session private pathways",
-      "A shorter 3-session container only by exception when appropriate",
+      "Single session or 3-, 6-, 9-, and 12-session containers",
       "Pacing around nervous-system capacity",
       "Human discernment before any deeper doorway",
     ],
-    nextStep: "Request a conversation. Payment is not completed by the browser in this release.",
-    investment: "Confirmed before commitment",
+    nextStep: "Request a conversation, or choose the approved session container that fits your current doorway.",
+    investment: "$175-$1,500 USD",
     accessState: "Available to Request",
     href: `${BEGIN_PATH}?intent=guide`,
     cta: "Request Private Work",
     image: portalImages.founder,
+    purchaseOptions: commerceOffers.shaktiEmbodiment,
   },
   {
     id: "retreats",
@@ -200,17 +203,17 @@ export const paymentArchitectureStatus = [
   },
   {
     item: "Checkout/payment route",
-    status: "DEFERRED",
-    note: "No Stripe checkout or payment completion is implemented in Sprint 12F.",
+    status: "BOUNDED ACTIVE",
+    note: "Hosted payment links are active only for Dancing with Durga, approved 1:1 Shakti Embodiment choices, and approved founding memberships.",
   },
   {
     item: "Stripe public key placeholder",
     status: "PLACEHOLDER",
-    note: "Existing environment placeholder remains unused by the public offer path.",
+    note: "Existing environment placeholder remains unused; public hosted links require no browser key.",
   },
   {
     item: "Payment approval",
-    status: "HUMAN APPROVAL REQUIRED",
-    note: "Prices, deposits, checkout copy, and processor activation require a dedicated approved sprint.",
+    status: "OFFER-SPECIFIC",
+    note: "Only exact founder-approved offers, prices, and hosted destinations may become public.",
   },
 ];

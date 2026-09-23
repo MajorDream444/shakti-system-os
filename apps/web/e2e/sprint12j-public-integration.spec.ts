@@ -56,7 +56,7 @@ test.describe("Sprint 12J public identity and visual integration", () => {
     await expect(page.getByRole("heading", { name: "Work With Sheetal" })).toBeVisible();
     await expect(page.getByText("One body of work. Different ways to enter")).toBeVisible();
     await expect(page.getByText("Enter Sri Shakti Shala for open teachings")).toBeVisible();
-    await expect(page.getByText("Private work in 6-, 9-, or 12-session containers")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "1:1 Shakti Embodiment" }).first()).toBeVisible();
     await capture(page, testInfo, "desktop-12j-offerings-public-identity.png");
     await assertPublicBoundaries(page);
 
@@ -104,7 +104,7 @@ test.describe("Sprint 12J public identity and visual integration", () => {
     await expect(page.locator("body")).not.toContainText("Five live online gatherings plus four non-live practices");
     await expect(page.locator("body")).not.toContainText(/bonus gathering/i);
     await expect(page.getByRole("img", { name: "Sheetal Kandola wearing a red veil" })).toBeVisible();
-    await expect(page.getByText("Generated imagery and sacred depictions are review references only")).toBeVisible();
+    await expect(page.getByText(/Maa Durga remains at the center through founder-approved artwork/)).toBeVisible();
     await capture(page, testInfo, "mobile-12j-dwd-schedule-boundary.png");
     await assertPublicBoundaries(page);
   });

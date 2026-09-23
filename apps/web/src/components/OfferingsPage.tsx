@@ -1,9 +1,11 @@
 import type { CSSProperties } from "react";
 import { BEGIN_PATH } from "../constants/navigation";
 import { offerCategories, offerPathways, receivingLadder } from "../data/offerings";
+import { DANCING_WITH_DURGA_PATH, SHALA_PATH } from "../constants/navigation";
 import { PageShell } from "./PageShell";
 import { portalImages } from "./PortalImageSlots";
 import { LivingForm } from "./LivingPortal";
+import { trackAnonymousEvent } from "../services/AnonymousAnalytics";
 
 export function OfferingsPage() {
   return (
@@ -52,9 +54,24 @@ export function OfferingsPage() {
               Pricing and payment are shown only when Sheetal's team has approved
               the exact offer. Until then, the next step is clearly marked as
               open, request-based, preparation-based, or invitation-based.
-              Private work is container-based: 6, 9, or 12 sessions, with 3
-              sessions only by exception.
+              Current founder-approved payment choices appear inside the doorway
+              they belong to, while deeper access still follows the stated human
+              and readiness boundaries.
             </p>
+            <nav className="commerce-doorways" aria-label="Current ways to enter">
+              <a href={DANCING_WITH_DURGA_PATH}>
+                <span>Current Ceremony</span>
+                <strong>Dancing with Durga</strong>
+              </a>
+              <a href="#private-work">
+                <span>Work Directly With Sheetal</span>
+                <strong>1:1 Shakti Embodiment</strong>
+              </a>
+              <a href={`${SHALA_PATH}#membership`}>
+                <span>Enter the Ongoing Shala</span>
+                <strong>Sri Shakti Shala Founding Membership</strong>
+              </a>
+            </nav>
             <div className="receiving-ladder offerings-ladder living-concepts" aria-label="Offerings by depth and proximity">
               {receivingLadder.map((item, index) => (
                 <div key={item.level}>
@@ -95,6 +112,44 @@ export function OfferingsPage() {
                   <a className="button button-primary" href={category.href}>
                     {category.cta}
                   </a>
+                  {category.purchaseOptions && (
+                    <div
+                      className="offering-purchase-family"
+                      id={category.id === "self-guided" ? "membership" : undefined}
+                    >
+                      <div className="offering-purchase-family-heading">
+                        <p className="label">Available now</p>
+                        <h4>
+                          {category.id === "private-work"
+                            ? "1:1 Shakti Embodiment"
+                            : "Sri Shakti Shala Founding Membership"}
+                        </h4>
+                      </div>
+                      <div className="offering-purchase-options">
+                        {category.purchaseOptions.map((offer) => (
+                          <article className="offering-purchase" key={offer.id}>
+                      <div>
+                        <h4>{offer.label}</h4>
+                            {offer.detail && <p>{offer.detail}</p>}
+                            {offer.promo && <p className="offering-promo">{offer.promo}</p>}
+                      </div>
+                      <div className="offering-purchase-action">
+                        <strong>{offer.price}</strong>
+                        <a
+                          className="button button-secondary"
+                          href={offer.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => trackAnonymousEvent("stripe_storefront_clicked")}
+                        >
+                          {offer.cta}
+                        </a>
+                      </div>
+                          </article>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </article>
             ))}
@@ -106,26 +161,25 @@ export function OfferingsPage() {
         <div className="container payment-state-grid">
           <div className="section-copy">
             <p className="label">Payment State</p>
-            <h2 id="payment-state-title">No browser checkout is active in this release.</h2>
+            <h2 id="payment-state-title">Checkout appears only for founder-approved offers.</h2>
             <p>
-              The public site can help a seeker find the right doorway. It does
-              not complete deposits, paid initiation, retreat approval, or private
-              access in the browser.
+              Dancing with Durga, approved 1:1 Shakti Embodiment choices, and
+              founding memberships use secure external payment pages. Retreats,
+              initiation, and restricted access remain request-based.
             </p>
           </div>
           <div className="payment-status-list">
             <article>
               <span>Current State</span>
-              <h3>Request before commitment.</h3>
+              <h3>Most deeper work still begins with conversation.</h3>
               <p>
-                Private work, circles, and retreat next steps are held through
-                conversation or application before any financial commitment is
-                made.
+                Circles, retreats, and restricted next steps are held through
+                conversation or application before commitment.
               </p>
             </article>
             <article>
               <span>Clear Boundary</span>
-              <h3>No instant paid access.</h3>
+              <h3>Payment does not grant deeper access.</h3>
               <p>
                 A browser action cannot approve retreat readiness, initiation,
                 restricted access, or private work with Sheetal.

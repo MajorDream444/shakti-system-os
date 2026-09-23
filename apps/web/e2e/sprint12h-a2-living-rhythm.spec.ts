@@ -21,7 +21,11 @@ test.describe("Sprint 12H-A.2a Durga emotional visual integration", () => {
     await page.goto(`${baseUrl}/dancing-with-durga`);
 
     await expect(page.getByRole("heading", { name: "Dancing with Durga: Devotion with a Spine" })).toBeVisible();
-    await expect(page.locator(".durga-sacred-slot")).toBeVisible();
+    await expect(
+      page.getByRole("img", {
+        name: "Traditional devotional artwork of Maa Durga with her lion and accompanying deities",
+      }),
+    ).toHaveAttribute("data-asset-status", "FOUNDER_APPROVED");
     await expect(page.getByRole("heading", { name: "Devotion with a Spine", exact: true })).toBeVisible();
     await expect(page.getByRole("link", { name: "Global · $150 USD" })).toHaveAttribute(
       "href",

@@ -323,8 +323,36 @@ and `$222` pricing remains historical provenance and must not be presented as
 current checkout pricing unless the founder later supplies and approves a new
 commerce configuration.
 
-Other Sri Shakti Shala commerce products remain:
-`FOUNDER PREPARING / NOT A DWD LAUNCH BLOCKER`.
+The founder supplied a bounded 1:1 Shakti Embodiment family and founding
+membership family later on 2026-09-23. Those offers are now Preview candidates;
+they do not alter the already active DWD commerce paths.
+
+### Current commerce matrix — 2026-09-23
+
+| Offer | Amount | Billing | Trial | Promo | Payment URL | Verification | Runtime |
+|---|---:|---|---|---|---|---|---|
+| Dancing with Durga — Global | `$150 USD` | One-time | None | None supplied | `https://buy.stripe.com/7sYfZg0zre8DdUA9ePd7q00` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production unchanged |
+| Dancing with Durga — Indian Citizens | `₹9,999 INR` | One-time | None | None supplied | `https://buy.stripe.com/fZu6oGbe5aWr3fWgHhd7q01` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production unchanged |
+| 1:1 Shakti Embodiment — Single Session | `$175 USD` | One-time | None | No claim | `https://buy.stripe.com/14A00igyp0hN03KfDdd7q02` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+| 1:1 Shakti Embodiment — 3-Session Container | `$500 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/dRm3cu2Hzc0v9Ek9ePd7q04` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+| 1:1 Shakti Embodiment — 6-Session Container | `$900 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/28EeVc2HzaWr9Ek62Dd7q05` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+| 1:1 Shakti Embodiment — 9-Session Container | `$1,200 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/aFa00i4PH8Oj8Ag1Mnd7q06` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+| 1:1 Shakti Embodiment — 12-Session Container | `$1,500 USD` | One-time | None | No claim | `https://buy.stripe.com/5kQ3cu2Hzd4zcQw1Mnd7q03` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+| Sri Shakti Shala — Annual Founding Membership | `$1,111 USD / year` | One-time annual checkout | None | None supplied | `https://buy.stripe.com/dRm28qdmd1lReYE76Hd7q07` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+| Sri Shakti Shala — Monthly Founding Membership — Global | `$111 USD / month` | Recurring; minimum 6-month commitment shown by Stripe | 21 days free | None supplied | `https://buy.stripe.com/cNi14maa18OjbMsez9d7q08` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+| Sri Shakti Shala — Monthly Founding Membership — Indian Resident | `₹2,222 INR / month` | Recurring | 21 days free | None supplied | `https://buy.stripe.com/5kQ3cu95XggLcQwgHhd7q09` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+
+No session duration, cadence, inclusions, entitlement, preparation requirements,
+refund policy, outcomes, or post-purchase access claim has been approved.
+
+DWD → Shala 21-day invitation:
+`PROPOSED / FOUNDER CONSIDERING`. It is not automatic enrollment or an approved
+DWD entitlement.
+
+Promo verification:
+`SHAKTISHALA` applies `$50 USD` off the 3-, 6-, and 9-session Shakti
+Embodiment checkouts. No expiration or redemption limit was visible. No promo
+claim is made for the Single Session or 12-Session Container.
 
 Release-gate result:
 - deterministic install, lint, production build and E2E type-check passed;
