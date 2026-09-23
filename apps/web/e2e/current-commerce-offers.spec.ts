@@ -53,3 +53,37 @@ test("DWD uses both founder-approved devotional images without changing commerce
   await expect(approvedImages.nth(0)).toHaveAttribute("src", /durga-approved-art-sept23/);
   await expect(approvedImages.nth(1)).toHaveAttribute("src", /durga-nine-forms-approved-sept23/);
 });
+
+test("purchase actions use one accessible filled hierarchy across current offers", async ({ page }) => {
+  await page.goto(`${baseUrl}/offerings`);
+
+  const actions = page.locator(".offering-purchase-action .button");
+  await expect(actions).toHaveCount(8);
+
+  const baseStyles = await actions.evaluateAll((links) =>
+    links.map((link) => {
+      const style = getComputedStyle(link);
+      return {
+        backgroundImage: style.backgroundImage,
+        color: style.color,
+        borderRadius: style.borderRadius,
+      };
+    }),
+  );
+
+  expect(new Set(baseStyles.map((style) => style.backgroundImage)).size).toBe(1);
+  expect(new Set(baseStyles.map((style) => style.color)).size).toBe(1);
+  expect(baseStyles.every((style) => style.backgroundImage !== "none")).toBe(true);
+  expect(baseStyles.every((style) => style.borderRadius === "999px")).toBe(true);
+
+  const firstAction = actions.first();
+  await firstAction.focus();
+  await expect
+    .poll(() => firstAction.evaluate((link) => getComputedStyle(link).boxShadow))
+    .toContain("6px");
+
+  await firstAction.hover();
+  await expect
+    .poll(() => firstAction.evaluate((link) => getComputedStyle(link).transform))
+    .not.toBe("none");
+});
