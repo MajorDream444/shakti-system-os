@@ -76,7 +76,7 @@ test("Dancing with Durga is discoverable from Home and primary navigation", asyn
   await expect(mobileNavLink).toHaveText("Dancing with Durga");
 });
 
-test("DWD preserves confirmed delivery facts and links to the public storefront", async ({ page }) => {
+test("DWD preserves confirmed delivery facts and links to both hosted checkouts", async ({ page }) => {
   await page.goto(`${baseUrl}/dancing-with-durga`);
   const body = page.locator("body");
   await expect(body).toContainText("Four live gatherings plus five practice nights");
@@ -85,11 +85,28 @@ test("DWD preserves confirmed delivery facts and links to the public storefront"
   await expect(body).not.toContainText(/October (11|13|15|17|19)\s*[-:]?\s*LIVE/i);
   await expect(body).not.toContainText(/Stripe/i);
   await expect(body).toContainText("Secure reservation");
-  const paymentCta = page.getByRole("link", { name: "View offerings & reserve" });
-  await expect(paymentCta).toHaveAttribute("href", "https://stripe.com/@srishaktishala");
-  await expect(paymentCta).toHaveAttribute("target", "_blank");
-  await expect(paymentCta).toHaveAttribute("rel", "noopener noreferrer");
+  await expect(body).not.toContainText(/coupon|promotion code|first 9|spaces? (left|remain)/i);
+
+  const globalPayment = page.getByRole("link", { name: "Global · $150 USD" });
+  await expect(globalPayment).toHaveAttribute(
+    "href",
+    "https://buy.stripe.com/7sYfZg0zre8DdUA9ePd7q00",
+  );
+  await expect(globalPayment).toHaveAttribute("target", "_blank");
+  await expect(globalPayment).toHaveAttribute("rel", "noopener noreferrer");
+
+  const indiaPayment = page.getByRole("link", { name: "Indian Citizens · ₹9,999 INR" });
+  await expect(indiaPayment).toHaveAttribute(
+    "href",
+    "https://buy.stripe.com/fZu6oGbe5aWr3fWgHhd7q01",
+  );
+  await expect(indiaPayment).toHaveAttribute("target", "_blank");
+  await expect(indiaPayment).toHaveAttribute("rel", "noopener noreferrer");
   await expect(page.getByRole("link", { name: "Request details" })).toHaveAttribute("href", /\/begin\?intent=community/);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(globalPayment).toBeVisible();
+  await expect(indiaPayment).toBeVisible();
 });
 
 test("DWD access notes inherit the shared ceremonial portal system", async ({ page }) => {

@@ -63,9 +63,14 @@ pending until the bounded Preview QA run succeeds.
 ### Dancing with Durga
 
 ```text
-View offerings & reserve -> public Stripe storefront (external; no site payment data)
+Global · $150 USD -> founder-supplied Stripe-hosted checkout
+Indian Citizens · ₹9,999 INR -> founder-supplied Stripe-hosted checkout
 Request details -> /begin?intent=community -> Begin handoff
 ```
+
+The participant chooses the applicable checkout; the site does not infer
+nationality or region. Stripe remains payment source of truth. Clicking a link
+does not create a paid state, access grant, or membership entitlement.
 
 `community_interest_submitted` remains anonymous measurement only. After a
 consented Begin save with usable contact, the community intent creates a

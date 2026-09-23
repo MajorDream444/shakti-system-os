@@ -17,12 +17,12 @@ async function assertCampaignBoundary(page: Page) {
   const body = page.locator("body");
 
   await expect(body).toContainText(
-    "Current offerings and contribution levels are available through Sri Shakti Shala's secure reservation page",
+    "Choose the payment option that applies to you. You will continue to Sri Shakti Shala's secure payment page.",
   );
   await expect(body).not.toContainText(/Stripe/i);
   await expect(body).toContainText("human discernment");
   await expect(body).toContainText(/temporary community \/ Sri Shakti Shala space/i);
-  await expect(body).not.toContainText(/\$111|\$222|₹6,666|₹9,999/);
+  await expect(body).not.toContainText(/\$111|\$222|₹6,666/);
   await expect(body).not.toContainText(/Register Now|Buy Now|Checkout|Pay Deposit/i);
   await expect(body).not.toContainText(/somatic breathwork/i);
   await expect(body).not.toContainText(/approved Shri Yantra|Doctrine Passport|approval gate|access rule/i);
@@ -40,10 +40,14 @@ test.describe("Sprint 12H-A Dancing with Durga launch foundation", () => {
     await expect(page.getByText("Durga. Devotion. Dharma.")).toBeVisible();
     await expect(page.getByText("Feel fear and stay.")).toBeVisible();
     await expect(page.getByText("Yoni: My Body Is Mine")).toBeVisible();
-    const paymentCta = page.getByRole("link", { name: "View offerings & reserve" });
-    await expect(paymentCta).toHaveAttribute("href", "https://stripe.com/@srishaktishala");
-    await expect(paymentCta).toHaveAttribute("target", "_blank");
-    await expect(paymentCta).toHaveAttribute("rel", "noopener noreferrer");
+    await expect(page.getByRole("link", { name: "Global · $150 USD" })).toHaveAttribute(
+      "href",
+      "https://buy.stripe.com/7sYfZg0zre8DdUA9ePd7q00",
+    );
+    await expect(page.getByRole("link", { name: "Indian Citizens · ₹9,999 INR" })).toHaveAttribute(
+      "href",
+      "https://buy.stripe.com/fZu6oGbe5aWr3fWgHhd7q01",
+    );
     await expect(page.getByRole("link", { name: "Request details" })).toHaveAttribute("href", "/begin?intent=community");
     await expect(page.getByRole("link", { name: "Enter Shakti Shala" })).toHaveCount(0);
     await capture(page, testInfo, "desktop-dancing-with-durga-launch-foundation.png");
@@ -55,7 +59,8 @@ test.describe("Sprint 12H-A Dancing with Durga launch foundation", () => {
     await page.goto(`${baseUrl}/dancing-with-durga`);
 
     await expect(page.getByRole("heading", { name: "Dancing with Durga: Devotion with a Spine" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "View offerings & reserve" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Global · $150 USD" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Indian Citizens · ₹9,999 INR" })).toBeVisible();
     await expect(page.getByRole("link", { name: "Request details" })).toBeVisible();
     await expect(page.getByText("Durga teaches devotion with a spine.")).toBeVisible();
     await expect(page.getByText("Four live gatherings plus five practice nights")).toBeVisible();

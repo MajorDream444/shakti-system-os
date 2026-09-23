@@ -9,13 +9,21 @@ export const dancingWithDurga = {
   timing: "7:30-9:30 PM IST",
   liveGatheringCount: 4,
   practiceNightCount: 5,
-  paymentCta: {
-    label: "View offerings & reserve",
-    href: "https://stripe.com/@srishaktishala",
-  },
+  paymentOptions: [
+    {
+      region: "global",
+      label: "Global · $150 USD",
+      href: "https://buy.stripe.com/7sYfZg0zre8DdUA9ePd7q00",
+    },
+    {
+      region: "india",
+      label: "Indian Citizens · ₹9,999 INR",
+      href: "https://buy.stripe.com/fZu6oGbe5aWr3fWgHhd7q01",
+    },
+  ] as const,
   cta: "Request details",
   boundary:
-    "Current offerings and contribution levels are available through Sri Shakti Shala's secure reservation page.",
+    "Choose the payment option that applies to you. You will continue to Sri Shakti Shala's secure payment page.",
   founderRole:
     "Sheetal Kandola holds this container as practitioner and facilitator. Maa Durga remains the devotional center.",
   teachingEmphasis:

@@ -1,7 +1,7 @@
 # Sri Shakti Shala — Canonical Operational Checkpoint
 
 Status: ACTIVE CANONICAL CONTINUITY RECORD
-Updated: 2026-09-22
+Updated: 2026-09-23
 Scope: Drive / Vault / Airtable reconciliation and closure sprint
 Repository: MajorDream444/shakti-system-os
 Canonical branch: main
@@ -275,6 +275,31 @@ The five practice nights may include shorter:
 At this checkpoint those five participant-facing practice assets are UNVERIFIED. They are not yet PROVEN MISSING.
 
 Do not generate them from the offer description.
+
+### DWD current commerce state — 2026-09-23
+
+Dancing with Durga is the current commerce priority. The public website offers
+two participant-selected Stripe-hosted checkout paths:
+
+- Global: `$150 USD`; founder-supplied Payment Link.
+- Indian Citizens: `₹9,999 INR`; founder-supplied Payment Link.
+
+No coupon or additional discount information was supplied at implementation
+time. The public purchase presentation must therefore show only the prices
+that the live Stripe checkouts charge. It must not advertise `$111`, `₹6,666`,
+`$222`, a founding allocation, or a scarcity count unless a later approved
+commerce decision and matching checkout configuration supersede this state.
+
+Earlier DWD pricing remains preserved in founder-source, campaign, and sprint
+records as historical provenance; it is not silently deleted or rewritten.
+
+The website links directly to Stripe-hosted checkout and does not collect card
+data, infer payment success from a redirect, or grant Sri Shakti Shala access.
+Stripe remains payment source of truth and payment-to-participant reconciliation
+remains human-managed for this controlled launch.
+
+Other Stripe products, including private work and broader Sri Shakti Shala
+offers, are being prepared by the founder and are not blockers for DWD.
 
 ## Exact point where reconciliation stopped
 

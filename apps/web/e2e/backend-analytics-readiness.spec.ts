@@ -51,11 +51,12 @@ for (const viewport of [
     await page.setViewportSize(viewport);
     await page.goto(`${baseUrl}/dancing-with-durga`);
 
-    await clickWithoutNavigation(page, "View offerings & reserve");
+    await clickWithoutNavigation(page, "Global · $150 USD");
+    await clickWithoutNavigation(page, "Indian Citizens · ₹9,999 INR");
     await clickWithoutNavigation(page, "Request details");
 
     const events = await eventNames(page);
-    expect(events.filter((event) => event === "stripe_storefront_clicked")).toHaveLength(1);
+    expect(events.filter((event) => event === "stripe_storefront_clicked")).toHaveLength(2);
     expect(events.filter((event) => event === "request_details_clicked")).toHaveLength(1);
     expect(JSON.stringify(events)).not.toMatch(/email|phone|whatsapp|message|response/i);
   });

@@ -21,15 +21,19 @@ export function DancingWithDurgaPage() {
               abandoning themselves.
             </p>
             <div className="hero-actions">
-              <a
-                className="button button-primary"
-                href={dancingWithDurga.paymentCta.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackAnonymousEvent("stripe_storefront_clicked")}
-              >
-                {dancingWithDurga.paymentCta.label}
-              </a>
+              {dancingWithDurga.paymentOptions.map((option) => (
+                <a
+                  className="button button-primary"
+                  data-payment-region={option.region}
+                  href={option.href}
+                  key={option.region}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackAnonymousEvent("stripe_storefront_clicked")}
+                >
+                  {option.label}
+                </a>
+              ))}
               <a
                 className="button button-secondary"
                 href={`${BEGIN_PATH}?intent=community`}
