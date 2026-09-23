@@ -1,11 +1,11 @@
 # Sri Shakti Shala — Canonical Operational Checkpoint
 
 Status: ACTIVE CANONICAL CONTINUITY RECORD
-Updated: 2026-09-23
+Updated: 2026-09-24
 Scope: Drive / Vault / Airtable reconciliation and closure sprint
 Repository: MajorDream444/shakti-system-os
 Canonical branch: main
-Production application SHA at checkpoint: b0622f5e383c0fb2560dcb6057a8032a2c0df359
+Production application SHA at checkpoint: 08bc7dcc86d0528ca5e1d3969a8889dbfbae058f
 
 ## Why this file exists
 
@@ -61,7 +61,7 @@ No “Needed From Sheetal” request is created until reconciliation has proven 
 ### GitHub
 - Repository: `MajorDream444/shakti-system-os`
 - Branch: `main`
-- Production application SHA: `b0622f5e383c0fb2560dcb6057a8032a2c0df359`
+- Production application SHA: `08bc7dcc86d0528ca5e1d3969a8889dbfbae058f`
 - Production: `https://shakti-system-os-psi.vercel.app`
 - Approved visual production baseline is frozen absent a proven defect or new founder evidence.
 
@@ -303,13 +303,13 @@ offers, are being prepared by the founder and are not blockers for DWD.
 
 ### DANCING WITH DURGA COMMERCE — PRODUCTION ACTIVATED
 
-Activation date: `2026-09-23`
+Activation date: `2026-09-24`
 
 Production application SHA:
-`b0622f5e383c0fb2560dcb6057a8032a2c0df359`
+`08bc7dcc86d0528ca5e1d3969a8889dbfbae058f`
 
 Production deployment:
-`https://shakti-system-289j2skqo-hamal-agi.vercel.app`
+`https://shakti-system-4p29igp9m-hamal-agi.vercel.app`
 
 Stable Production URL:
 `https://shakti-system-os-psi.vercel.app`
@@ -324,23 +324,23 @@ current checkout pricing unless the founder later supplies and approves a new
 commerce configuration.
 
 The founder supplied a bounded 1:1 Shakti Embodiment family and founding
-membership family later on 2026-09-23. Those offers are now Preview candidates;
-they do not alter the already active DWD commerce paths.
+membership family later on 2026-09-23. Those offers are now active in
+Production and do not alter the already active DWD commerce paths.
 
-### Current commerce matrix — 2026-09-23
+### Current commerce matrix — 2026-09-24
 
 | Offer | Amount | Billing | Trial | Promo | Payment URL | Verification | Runtime |
 |---|---:|---|---|---|---|---|---|
-| Dancing with Durga — Global | `$150 USD` | One-time | None | None supplied | `https://buy.stripe.com/7sYfZg0zre8DdUA9ePd7q00` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production unchanged |
-| Dancing with Durga — Indian Citizens | `₹9,999 INR` | One-time | None | None supplied | `https://buy.stripe.com/fZu6oGbe5aWr3fWgHhd7q01` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production unchanged |
-| 1:1 Shakti Embodiment — Single Session | `$175 USD` | One-time | None | No claim | `https://buy.stripe.com/14A00igyp0hN03KfDdd7q02` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
-| 1:1 Shakti Embodiment — 3-Session Container | `$500 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/dRm3cu2Hzc0v9Ek9ePd7q04` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
-| 1:1 Shakti Embodiment — 6-Session Container | `$900 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/28EeVc2HzaWr9Ek62Dd7q05` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
-| 1:1 Shakti Embodiment — 9-Session Container | `$1,200 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/aFa00i4PH8Oj8Ag1Mnd7q06` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
-| 1:1 Shakti Embodiment — 12-Session Container | `$1,500 USD` | One-time | None | No claim | `https://buy.stripe.com/5kQ3cu2Hzd4zcQw1Mnd7q03` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
-| Sri Shakti Shala — Annual Founding Membership | `$1,111 USD / year` | One-time annual checkout | None | None supplied | `https://buy.stripe.com/dRm28qdmd1lReYE76Hd7q07` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
-| Sri Shakti Shala — Monthly Founding Membership — Global | `$111 USD / month` | Recurring; minimum 6-month commitment shown by Stripe | 21 days free | None supplied | `https://buy.stripe.com/cNi14maa18OjbMsez9d7q08` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
-| Sri Shakti Shala — Monthly Founding Membership — Indian Resident | `₹2,222 INR / month` | Recurring | 21 days free | None supplied | `https://buy.stripe.com/5kQ3cu95XggLcQwgHhd7q09` | STRIPE VERIFIED / FOUNDER SUPPLIED | Preview candidate |
+| Dancing with Durga — Global | `$150 USD` | One-time | None | None supplied | `https://buy.stripe.com/7sYfZg0zre8DdUA9ePd7q00` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| Dancing with Durga — Indian Citizens | `₹9,999 INR` | One-time | None | None supplied | `https://buy.stripe.com/fZu6oGbe5aWr3fWgHhd7q01` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| 1:1 Shakti Embodiment — Single Session | `$175 USD` | One-time | None | No claim; Sheetal approval required | `https://buy.stripe.com/14A00igyp0hN03KfDdd7q02` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| 1:1 Shakti Embodiment — 3-Session Container | `$500 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/dRm3cu2Hzc0v9Ek9ePd7q04` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| 1:1 Shakti Embodiment — 6-Session Container | `$900 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/28EeVc2HzaWr9Ek62Dd7q05` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| 1:1 Shakti Embodiment — 9-Session Container | `$1,200 USD` | One-time | None | `SHAKTISHALA`: `$50 off` verified | `https://buy.stripe.com/aFa00i4PH8Oj8Ag1Mnd7q06` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| 1:1 Shakti Embodiment — 12-Session Container | `$1,500 USD` | One-time | None | No claim | `https://buy.stripe.com/5kQ3cu2Hzd4zcQw1Mnd7q03` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| Sri Shakti Shala — Annual Founding Membership | `$1,111 USD / year` | One-time annual checkout | None | None supplied | `https://buy.stripe.com/dRm28qdmd1lReYE76Hd7q07` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| Sri Shakti Shala — Monthly Founding Membership — Global | `$111 USD / month` | Recurring; minimum 6-month commitment shown by Stripe | 21 days free | None supplied | `https://buy.stripe.com/cNi14maa18OjbMsez9d7q08` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
+| Sri Shakti Shala — Monthly Founding Membership — Indian Resident | `₹2,222 INR / month` | Recurring | 21 days free | None supplied | `https://buy.stripe.com/5kQ3cu95XggLcQwgHhd7q09` | STRIPE VERIFIED / FOUNDER SUPPLIED | Production active |
 
 No session duration, cadence, inclusions, entitlement, preparation requirements,
 refund policy, outcomes, or post-purchase access claim has been approved.
@@ -358,16 +358,34 @@ Release-gate result:
 - deterministic install, lint, production build and E2E type-check passed;
 - backend-read, secure-write and Vault checks passed;
 - production dependency audit reported zero vulnerabilities;
-- full local Playwright suite passed `80/80`;
-- focused live Production DWD and release suite passed `11/11`;
+- full local Playwright suite passed `84/84`;
+- focused live Production commerce, DWD and release suite passed `13/13`;
 - desktop and mobile checkout links, responsive overflow, console, page errors,
   failed requests and same-origin failures passed;
-- both founder-supplied Stripe checkouts resolved and displayed their
-  corresponding `$150 USD` and `₹9,999 INR` amounts;
+- all ten founder-supplied Stripe checkouts resolved; displayed prices and
+  checkout terms matched the current commerce matrix;
+- `SHAKTISHALA` was verified live as `$50 USD` off the 3-, 6-, and 9-session
+  checkouts;
+- the single-session Sheetal approval condition, annual one-time checkout,
+  Global 21-day trial and six-month minimum commitment, and Indian Resident
+  21-day trial remained present;
 - `Request details` continued to route to `/begin?intent=community`;
 - Production API GET probes continued to return `405` for
   `/api/request-signal` and `/api/begin/complete`;
 - required security headers remained present.
+
+Commerce status:
+`CURRENT COMMERCE LAYER DELIVERED / FROZEN`.
+
+Known operational conditions:
+- Stripe remains payment source of truth; no browser redirect grants access;
+- payment reconciliation and participant onboarding remain human-managed;
+- DWD → Shala 21-day invitation remains `PROPOSED / FOUNDER CONSIDERING`, not
+  an automatic entitlement;
+- pushing `main` also produced a deployment status for a separate legacy
+  Vercel project named `web`; no legacy linkage or project setting was changed
+  during this release, and that collision remains a separate infrastructure
+  cleanup item.
 
 Remaining human operational step:
 reconcile successful Stripe payments to participant onboarding and access.
