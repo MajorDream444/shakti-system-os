@@ -5,7 +5,7 @@ Updated: 2026-09-23
 Scope: Drive / Vault / Airtable reconciliation and closure sprint
 Repository: MajorDream444/shakti-system-os
 Canonical branch: main
-Production baseline SHA at checkpoint: e8b0b72c903c7d1d48dddc10b122789b01c6a1a0
+Production application SHA at checkpoint: b0622f5e383c0fb2560dcb6057a8032a2c0df359
 
 ## Why this file exists
 
@@ -61,7 +61,7 @@ No “Needed From Sheetal” request is created until reconciliation has proven 
 ### GitHub
 - Repository: `MajorDream444/shakti-system-os`
 - Branch: `main`
-- Production baseline SHA: `e8b0b72c903c7d1d48dddc10b122789b01c6a1a0`
+- Production application SHA: `b0622f5e383c0fb2560dcb6057a8032a2c0df359`
 - Production: `https://shakti-system-os-psi.vercel.app`
 - Approved visual production baseline is frozen absent a proven defect or new founder evidence.
 
@@ -300,6 +300,51 @@ remains human-managed for this controlled launch.
 
 Other Stripe products, including private work and broader Sri Shakti Shala
 offers, are being prepared by the founder and are not blockers for DWD.
+
+### DANCING WITH DURGA COMMERCE — PRODUCTION ACTIVATED
+
+Activation date: `2026-09-23`
+
+Production application SHA:
+`b0622f5e383c0fb2560dcb6057a8032a2c0df359`
+
+Production deployment:
+`https://shakti-system-289j2skqo-hamal-agi.vercel.app`
+
+Stable Production URL:
+`https://shakti-system-os-psi.vercel.app`
+
+Current checkout paths:
+- Global: `$150 USD`; founder-supplied Stripe Payment Link.
+- Indian Citizens: `₹9,999 INR`; founder-supplied Stripe Payment Link.
+
+No coupon was supplied at implementation time. Previous `$111`, `₹6,666`,
+and `$222` pricing remains historical provenance and must not be presented as
+current checkout pricing unless the founder later supplies and approves a new
+commerce configuration.
+
+Other Sri Shakti Shala commerce products remain:
+`FOUNDER PREPARING / NOT A DWD LAUNCH BLOCKER`.
+
+Release-gate result:
+- deterministic install, lint, production build and E2E type-check passed;
+- backend-read, secure-write and Vault checks passed;
+- production dependency audit reported zero vulnerabilities;
+- full local Playwright suite passed `80/80`;
+- focused live Production DWD and release suite passed `11/11`;
+- desktop and mobile checkout links, responsive overflow, console, page errors,
+  failed requests and same-origin failures passed;
+- both founder-supplied Stripe checkouts resolved and displayed their
+  corresponding `$150 USD` and `₹9,999 INR` amounts;
+- `Request details` continued to route to `/begin?intent=community`;
+- Production API GET probes continued to return `405` for
+  `/api/request-signal` and `/api/begin/complete`;
+- required security headers remained present.
+
+Remaining human operational step:
+reconcile successful Stripe payments to participant onboarding and access.
+Stripe remains payment source of truth; no payment success or participant
+entitlement is inferred from a browser redirect.
 
 ## Exact point where reconciliation stopped
 
