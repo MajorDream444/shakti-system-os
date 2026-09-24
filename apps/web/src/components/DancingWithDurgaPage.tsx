@@ -150,17 +150,24 @@ export function DancingWithDurgaPage() {
             <p className="label">Investment / Access</p>
             <h2 id="durga-investment-title">Accessible entry, held carefully.</h2>
             <p>
-              View the offerings currently available and reserve your place through
+              Choose the option that applies to you. You will continue to
               Sri Shakti Shala's secure payment page.
             </p>
-          </div>
-          <div className="durga-storefront-panel">
-            <span>Secure reservation</span>
-            <strong>
-              Current offerings, availability, and contribution levels are maintained
-              through Sri Shakti Shala's secure reservation page.
-            </strong>
-            <p>Follow the secure link for current availability and reservation details.</p>
+            <div className="hero-actions">
+              {dancingWithDurga.paymentOptions.map((option) => (
+                <a
+                  className="button button-primary"
+                  data-payment-region={option.id}
+                  href={option.href}
+                  key={option.id}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackAnonymousEvent("stripe_storefront_clicked")}
+                >
+                  {option.cta}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
         <div className="container durga-access-list ceremonial-sequence ceremonial-sequence--five" aria-label="Access notes">
