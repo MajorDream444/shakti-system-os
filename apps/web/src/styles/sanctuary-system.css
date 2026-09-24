@@ -132,7 +132,7 @@
 #root .begin-choice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 #root .begin-choice-screen .begin-choice { min-height: 330px; padding: 64px 44px; }
 #root .begin-choice-screen .begin-choice p { font-size: 28px; line-height: 1.45; font-weight: 400; color: #fff5e7; }
-#root .begin-choice[aria-pressed="true"] { outline: 3px solid #ffe1a3; outline-offset: 4px; }
+#root .begin-choice[aria-pressed="true"] { outline: 0; }
 #root .begin-longing-grid { max-width: none; gap: 16px; }
 #root .begin-longing-grid button { font-size: 20px; background: #243c31; border: 2px solid #a4b5a4; border-radius: 32% 16% / 24% 20%; }
 #root .begin-longing-grid button[aria-pressed="true"] { background: #683443; border-color: #ffe1a3; box-shadow: none; }
