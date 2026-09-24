@@ -1880,9 +1880,17 @@ body {
   border-radius: 22px 999px 999px 22px;
 }
 
+.portal-gallery-frame:nth-child(2) figcaption {
+  right: clamp(88px, 22%, 156px);
+}
+
 .portal-gallery-frame:nth-child(3) {
   transform: translateX(24px);
   border-radius: 999px 22px 22px 999px;
+}
+
+.portal-gallery-frame:nth-child(3) figcaption {
+  left: clamp(88px, 22%, 156px);
 }
 
 .portal-gallery-frame:nth-child(4) {
@@ -2254,6 +2262,14 @@ body {
     min-height: 132px;
     transform: none;
     border-radius: 18px;
+  }
+
+  .portal-gallery-frame:nth-child(3) figcaption {
+    left: 14px;
+  }
+
+  .portal-gallery-frame:nth-child(2) figcaption {
+    right: 14px;
   }
 
   .knowledge-chamber {

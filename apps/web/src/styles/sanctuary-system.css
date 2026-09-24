@@ -117,7 +117,6 @@
 #root .begin-screen { max-width: none; width: 100%; margin-top: 0; }
 #root .begin-stage-inner, #root .begin-screen, #root .begin-screen :is(p, h1, h2, h3, button, div) { opacity: 1 !important; }
 #root .begin-stage-inner::before { display: none; }
-#root .begin-header > div { background: #15261e; padding: 8px 12px; }
 #root :is(header, footer, nav) span { font-size: max(1.125rem, 1em); color: inherit; letter-spacing: 0; }
 #root .begin-heading { font-size: 2.75rem; line-height: 1.18; max-width: 26ch; margin-bottom: 24px; color: var(--sanctuary-ink); text-shadow: none; }
 #root .begin-screen :is(p, label, small) { color: var(--sanctuary-support); opacity: 1; }
@@ -132,7 +131,7 @@
 #root .begin-choice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 #root .begin-choice-screen .begin-choice { min-height: 330px; padding: 64px 44px; }
 #root .begin-choice-screen .begin-choice p { font-size: 28px; line-height: 1.45; font-weight: 400; color: #fff5e7; }
-#root .begin-choice[aria-pressed="true"] { outline: 3px solid #ffe1a3; outline-offset: 4px; }
+#root .begin-choice[aria-pressed="true"] { outline: 0; }
 #root .begin-longing-grid { max-width: none; gap: 16px; }
 #root .begin-longing-grid button { font-size: 20px; background: #243c31; border: 2px solid #a4b5a4; border-radius: 32% 16% / 24% 20%; }
 #root .begin-longing-grid button[aria-pressed="true"] { background: #683443; border-color: #ffe1a3; box-shadow: none; }
@@ -143,6 +142,9 @@
 #root .begin-enter-screen form { max-width: none; }
 #root .begin-back { position: static; grid-column: 1; justify-self: start; padding: 12px 24px; }
 #root .begin-footer { border-top: 1px solid #8e9b88; padding-top: 24px; }
+@media (min-width: 1051px) {
+  #root .begin-ascent-station span { white-space: nowrap; }
+}
 @media (max-width: 1050px) {
   #root .begin-shell { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 0; }
   #root .begin-ascent { grid-column: 1; grid-row: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
@@ -164,7 +166,7 @@
   #root .begin-station-7 .begin-ascent-image, #root .begin-station-8 .begin-ascent-image { background-position: center 18%; }
   #root .begin-ascent-image::after { background: linear-gradient(0deg, #20352e, transparent 65%); }
   #root .begin-header { min-height: 240px; text-shadow: 0 2px 4px #000; }
-  #root .begin-header a, #root .begin-header > div { background: #15261e; padding: 8px; }
+  #root .begin-header a { background: #15261e; padding: 8px; }
   #root .begin-stage { background: #16211d; }
   #root .begin-screen :is(button, a) { max-width: 100%; overflow-wrap: normal; }
   #root .begin-footer { align-items: flex-start; }
