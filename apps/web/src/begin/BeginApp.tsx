@@ -282,9 +282,6 @@ export default function BeginApp() {
 
               <span>Start Your Shakti Path</span>
             </a>
-            <div className="italic text-right">
-              {STATIONS[state.currentScreen - 1]}
-            </div>
           </header>
 
           <nav className="begin-ascent" aria-label="Your path toward Sri Shakti Shala">
