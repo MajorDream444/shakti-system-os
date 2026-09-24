@@ -210,3 +210,112 @@
   margin-inline: auto;
   text-wrap: balance;
 }
+
+/* ---------------------------------------------------------------
+   Dancing with Durga — registration cards
+   ---------------------------------------------------------------
+   Sheetal, 2026-09-24: "the registration payment journeys look simple."
+   The previous treatment was a bare pill reading "Global · $150 USD",
+   which never said what pressing it did or who it was for. Each option
+   is now a card carrying who it is for, the price, an explicit action,
+   and a confirming line — matching the approved DWD direction. */
+
+#root .durga-payment { display: grid; gap: 18px; margin-top: 28px; }
+
+#root .durga-payment-heading {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #e9c77e;
+}
+
+#root .durga-payment-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+#root .durga-payment-card {
+  display: grid;
+  gap: 10px;
+  padding: 24px 24px 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(233, 199, 126, 0.42);
+  background: linear-gradient(168deg, rgba(244, 212, 155, 0.96), rgba(226, 178, 108, 0.92));
+  color: #3a1218;
+}
+
+#root .durga-payment-label {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #5c2029;
+}
+
+#root .durga-payment-price {
+  margin: 0;
+  font-family: var(--font-serif, "Cormorant Garamond", Georgia, serif);
+  font-size: 34px;
+  line-height: 1.05;
+  color: #3a1218;
+}
+
+#root .durga-payment-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #5c2029;
+  color: #ffeccd;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+#root .durga-payment-action:hover { background: #6e2833; transform: translateY(-1px); }
+
+#root .durga-payment-action:focus-visible {
+  outline: 3px solid #3a1218;
+  outline-offset: 3px;
+}
+
+#root .durga-payment-audience {
+  margin: 0;
+  font-size: 15px;
+  color: #5c2029;
+}
+
+#root .durga-payment-help {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding-top: 6px;
+}
+
+#root .durga-payment-help p {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: 17px;
+  color: var(--sanctuary-support, #d8c5b0);
+}
+
+#root .durga-payment-help-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 1px solid rgba(233, 199, 126, 0.55);
+  border-radius: 999px;
+  color: #ffe1a3;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+#root .durga-payment-help-action:hover { background: rgba(233, 199, 126, 0.12); }
