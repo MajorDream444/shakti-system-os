@@ -17,6 +17,7 @@ import founderSuppliedOceanMovement from "../shala/assets/images/founder-supplie
 import founderRedPrayerHands from "../shala/assets/images/founder-red-prayer-hands-sept18.jpg";
 import durgaApprovedArtwork from "../shala/assets/images/durga-approved-art-sept23.jpg";
 import durgaNineFormsArtwork from "../shala/assets/images/durga-nine-forms-approved-sept23.jpg";
+import founderHolySpring from "../shala/assets/images/founder-holy-spring-sept24.jpg";
 
 export const portalImages = {
   founder: founderPortraitV2,
@@ -34,6 +35,7 @@ export const portalImages = {
   legacyDurgaFounder: durgaFounderImage,
   durgaApprovedArtwork,
   durgaNineFormsArtwork,
+  founderHolySpring,
   gates: gatesImage,
   library: libraryImage,
   water: waterfallNatureV2,
@@ -45,9 +47,10 @@ export const portalImages = {
 export function PortalImageGallery() {
   const images = [
     {
-      src: portalImages.founderWaterfall,
-      label: "Shakti Waterfall",
-      caption: "energy, flow, and direction",
+      src: portalImages.founderHolySpring,
+      label: "Sheetal Kandola",
+      caption: "devotion at the holy spring",
+      alt: "Sheetal Kandola waist-deep in a Balinese holy spring in red, hands together in prayer before a golden lotus and carved shrine",
     },
     {
       src: portalImages.founderWelcome,
@@ -56,9 +59,9 @@ export function PortalImageGallery() {
       alt: "Sheetal Kandola smiling in a red veil with her hands together in greeting",
     },
     {
-      src: portalImages.founderContext,
-      label: "Sri Shakti Shala",
-      caption: "living school and sanctuary",
+      src: portalImages.waterfallNature,
+      label: "Shakti Waterfall",
+      caption: "energy, flow, and direction",
     },
     {
       src: portalImages.gates,
