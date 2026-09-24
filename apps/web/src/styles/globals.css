@@ -1880,8 +1880,17 @@ body {
   border-radius: 22px 999px 999px 22px;
 }
 
+/* The 999px bottom-right radius eats roughly 147px of horizontal room at the
+   caption's baseline on a 445px frame, so a 98px inset still ran "founder,
+   practitioner, and guide" into the curve. Clear the arc, and let the line
+   wrap rather than truncate. */
 .portal-gallery-frame:nth-child(2) figcaption {
-  right: clamp(88px, 22%, 156px);
+  right: clamp(120px, 35%, 178px);
+}
+
+.portal-gallery-frame:nth-child(2) figcaption small {
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .portal-gallery-frame:nth-child(3) {

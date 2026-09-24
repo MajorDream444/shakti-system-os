@@ -5,6 +5,53 @@ import { portalImages } from "./PortalImageSlots";
 import { trackAnonymousEvent } from "../services/AnonymousAnalytics";
 import { CeremonialForm } from "./CeremonialForm";
 
+/* Who each option is for. Derived from the option id rather than added to
+   commerce.ts, so the frozen commerce release is not edited for display copy. */
+const PAYMENT_AUDIENCE: Record<string, string> = {
+  global: "For participants outside India",
+  india: "For Indian citizens",
+};
+
+function PaymentOptions() {
+  return (
+    <div className="durga-payment">
+      <p className="durga-payment-heading">Choose your payment option</p>
+      <div className="durga-payment-cards">
+        {dancingWithDurga.paymentOptions.map((option) => (
+          <div className="durga-payment-card" key={option.id}>
+            <p className="durga-payment-label">{option.label}</p>
+            <p className="durga-payment-price">{option.price}</p>
+            <a
+              className="durga-payment-action"
+              data-payment-region={option.id}
+              href={option.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackAnonymousEvent("stripe_storefront_clicked")}
+            >
+              Pay now <span aria-hidden="true">→</span>
+            </a>
+            <p className="durga-payment-audience">{PAYMENT_AUDIENCE[option.id]}</p>
+          </div>
+        ))}
+      </div>
+      <div className="durga-payment-help">
+        <p>
+          If you are unsure which option is right for you, or you have questions,
+          start with the request details form.
+        </p>
+        <a
+          className="durga-payment-help-action"
+          href={`${BEGIN_PATH}?intent=community`}
+          onClick={() => trackAnonymousEvent("request_details_clicked")}
+        >
+          {dancingWithDurga.cta}
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function DancingWithDurgaPage() {
   return (
     <PageShell className="durga-page">
@@ -37,29 +84,7 @@ export function DancingWithDurgaPage() {
               <li><span>Time</span>{dancingWithDurga.timing}</li>
               <li><span>Practice</span>{dancingWithDurga.practices.join(" · ")}</li>
             </ul>
-            <div className="hero-actions">
-              {dancingWithDurga.paymentOptions.map((option) => (
-                <a
-                  className="button button-primary"
-                  data-payment-region={option.id}
-                  href={option.href}
-                  key={option.id}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackAnonymousEvent("stripe_storefront_clicked")}
-                >
-                  {option.cta}
-                </a>
-              ))}
-              <a
-                className="button button-secondary"
-                href={`${BEGIN_PATH}?intent=community`}
-                onClick={() => trackAnonymousEvent("request_details_clicked")}
-              >
-                {dancingWithDurga.cta}
-              </a>
-            </div>
-            <p className="durga-boundary">{dancingWithDurga.boundary}</p>
+            <PaymentOptions />
           </div>
 
         </div>
@@ -150,17 +175,10 @@ export function DancingWithDurgaPage() {
             <p className="label">Investment / Access</p>
             <h2 id="durga-investment-title">Accessible entry, held carefully.</h2>
             <p>
-              View the offerings currently available and reserve your place through
+              Choose the option that applies to you. You will continue to
               Sri Shakti Shala's secure payment page.
             </p>
-          </div>
-          <div className="durga-storefront-panel">
-            <span>Secure reservation</span>
-            <strong>
-              Current offerings, availability, and contribution levels are maintained
-              through Sri Shakti Shala's secure reservation page.
-            </strong>
-            <p>Follow the secure link for current availability and reservation details.</p>
+            <PaymentOptions />
           </div>
         </div>
         <div className="container durga-access-list ceremonial-sequence ceremonial-sequence--five" aria-label="Access notes">
