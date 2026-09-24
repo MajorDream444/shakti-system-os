@@ -1885,6 +1885,10 @@ body {
   border-radius: 999px 22px 22px 999px;
 }
 
+.portal-gallery-frame:nth-child(3) figcaption {
+  left: clamp(88px, 22%, 156px);
+}
+
 .portal-gallery-frame:nth-child(4) {
   transform: translateX(-12px);
   border-radius: 22px;
@@ -2254,6 +2258,10 @@ body {
     min-height: 132px;
     transform: none;
     border-radius: 18px;
+  }
+
+  .portal-gallery-frame:nth-child(3) figcaption {
+    left: 14px;
   }
 
   .knowledge-chamber {
