@@ -175,3 +175,38 @@
   #root *, #root *::before, #root *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   #root .begin-stage-inner, #root .begin-screen * { transform: none !important; }
 }
+
+/* ---------------------------------------------------------------
+   Organic choice portals — no rectangles on soft shapes
+   ---------------------------------------------------------------
+   The global :focus-visible rule paints outline: 3px solid on every
+   <button>. The Begin choice portals and longing chips are organic
+   silhouettes, so that rectangle framed a soft shape and read as a
+   hard box the moment a choice was clicked or tabbed to.
+
+   Accessibility is preserved, not removed: the rectangle is replaced
+   with a luminous halo that follows the rendered alpha of the shape
+   itself, so keyboard focus stays clearly visible without a box. */
+
+#root .begin-choice:focus-visible,
+#root .begin-longing-grid button:focus-visible {
+  outline: none;
+  filter:
+    drop-shadow(0 0 3px var(--sanctuary-focus))
+    drop-shadow(0 0 14px rgba(255, 225, 163, 0.78));
+}
+
+/* Selected state also stays shapeless. */
+#root .begin-choice[aria-pressed="true"] {
+  outline: 0;
+  filter: drop-shadow(0 0 12px rgba(255, 225, 163, 0.5));
+}
+
+/* Keep the sentence inside the portal's dark core, not over its rim.
+   The painted silhouette is wider than its readable centre, so the
+   text column is capped by measure rather than by the container box. */
+#root .begin-choice-screen .begin-choice p {
+  max-width: 21ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
