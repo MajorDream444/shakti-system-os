@@ -23,7 +23,7 @@ export function DancingWithDurgaPage() {
           </figure>
 
           <div className="durga-hero-copy">
-            <p className="label">Navratri 2026 / Founder-confirmed launch foundation</p>
+            <p className="label">Navratri 2026</p>
             <h1 id="durga-title">{dancingWithDurga.title}</h1>
             <p className="durga-subtitle">{dancingWithDurga.subtitle}</p>
             <p>
@@ -78,11 +78,6 @@ export function DancingWithDurgaPage() {
             <p className="label">Practitioner Presence</p>
             <h2 id="durga-founder-title">Held by Sheetal. Centered on Maa Durga.</h2>
             <p>{dancingWithDurga.founderRole}</p>
-            <div className="durga-motif-line" aria-label="Campaign motifs">
-              {dancingWithDurga.motifs.map((motif) => (
-                <span key={motif}>{motif}</span>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -195,24 +190,6 @@ export function DancingWithDurgaPage() {
         </div>
       </section>
 
-      <section className="section durga-visual-world" aria-labelledby="durga-visual-title">
-        <div className="container durga-visual-grid">
-          <div className="section-copy">
-            <p className="label">Visual World</p>
-            <h2 id="durga-visual-title">Durga. Durga. Durga.</h2>
-            <p>
-              The campaign should feel powerful, earthy, visceral, and devotional.
-              Maa Durga remains at the center through founder-approved artwork
-              and the established Sri Shakti Shala visual world.
-            </p>
-          </div>
-          <div className="durga-rule-grid">
-            {dancingWithDurga.visualRules.map((rule) => (
-              <span key={rule}>{rule}</span>
-            ))}
-          </div>
-        </div>
-      </section>
     </PageShell>
   );
 }

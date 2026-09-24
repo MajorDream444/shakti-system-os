@@ -1335,3 +1335,25 @@ Reusable platform doctrine is recorded separately in:
 `MajorDream444/MAIM_Client_Intelligence_Workspace_Platform/docs/canonical/CLIENT-ZERO-DELIVERY-AND-BACKEND-ACCESS-DOCTRINE.md`
 
 Extract the operating method into MAIM / Stop the Bleed. Keep Sheetal's doctrine, sacred content, private information and client-specific implementation within her governed client boundary.
+
+
+## Public copy boundary correction — 2026-09-25
+
+Sheetal identified two public Dancing with Durga elements as internal working language rather than participant-facing content:
+
+- the `Visual World / Durga. Durga. Durga.` art-direction block, including palette and aesthetic rules;
+- the motif strip containing `hibiscus`, `lion courage`, `trishul clarity`, `sword discernment`, `lotus tenderness`, and `devotional fire`.
+
+Classification: **Bug / Correction**.
+
+Canonical public/private rule:
+
+```text
+CREATIVE BRIEF / APPROVAL STATE / PALETTE RULE / ASSET NOTE / CAMPAIGN SHORTHAND
+→ INTERNAL CANONICAL DOCUMENTATION
+
+SEEKER OR PARTICIPANT NEEDS IT TO UNDERSTAND, DISCERN, ENROLL OR PARTICIPATE
+→ PUBLIC EXPERIENCE
+```
+
+Internal creative direction may govern the public design without being printed as public copy. Public pages should contain only audience-relevant story, practice, schedule, access, participation and payment information. Tests must reject known internal production language from rendered public routes.

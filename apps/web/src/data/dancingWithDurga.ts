@@ -3,7 +3,6 @@ import { commerceOffers } from "./commerce";
 export const dancingWithDurga = {
   path: "/dancing-with-durga",
   title: "Dancing with Durga: Devotion with a Spine",
-  titleStatus: "FOUNDER CONFIRMED - Sept. 3",
   campaignLine: "Durga. Devotion. Dharma.",
   subtitle: "A Nine-Night Navratri Sadhana Through the Navadurgas",
   audience: "Women-only",
@@ -77,21 +76,6 @@ export const dancingWithDurga = {
     "Temporary community / Sri Shakti Shala space during the journey",
     "Two months of recording and material access for non-members after the container",
     "Sri Shakti Shala continuation through invitation, simple application, human discernment, and paid membership",
-  ],
-  visualRules: [
-    "Sindoor red, blood red, deep oxblood",
-    "Black and antique gold",
-    "Maa Durga, her eyes, lion, trishul, sword, and red hibiscus",
-    "Powerful, earthy, visceral, devotional",
-    "No soft pastel or generic divine feminine aesthetic",
-  ],
-  motifs: [
-    "hibiscus",
-    "lion courage",
-    "trishul clarity",
-    "sword discernment",
-    "lotus tenderness",
-    "devotional fire",
   ],
   gateElements: ["earth", "flame", "water", "fire", "gold"] as const,
 };

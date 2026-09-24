@@ -55,6 +55,12 @@ async function assertNoPublicInternalLanguage(page: Page) {
     "SHEETAL APPROVAL REQUIRED",
     "NEEDS SOURCE CONFIRMATION",
     "somatic breathwork",
+    "founder-confirmed launch foundation",
+    "lion courage",
+    "trishul clarity",
+    "sword discernment",
+    "lotus tenderness",
+    "devotional fire",
   ]) {
     expect(visibleText).not.toContain(phrase);
   }

@@ -104,7 +104,10 @@ test.describe("Sprint 12J public identity and visual integration", () => {
     await expect(page.locator("body")).not.toContainText("Five live online gatherings plus four non-live practices");
     await expect(page.locator("body")).not.toContainText(/bonus gathering/i);
     await expect(page.getByRole("img", { name: "Sheetal Kandola wearing a red veil" })).toBeVisible();
-    await expect(page.getByText(/Maa Durga remains at the center through founder-approved artwork/)).toBeVisible();
+    await expect(page.getByText("Visual World", { exact: true })).toHaveCount(0);
+    await expect(page.getByText("Durga. Durga. Durga.", { exact: true })).toHaveCount(0);
+    await expect(page.locator("body")).not.toContainText("founder-approved artwork");
+    await expect(page.locator("body")).not.toContainText(/founder-confirmed launch foundation|hibiscus|lion courage|trishul clarity|sword discernment|lotus tenderness|devotional fire/i);
     await capture(page, testInfo, "mobile-12j-dwd-schedule-boundary.png");
     await assertPublicBoundaries(page);
   });

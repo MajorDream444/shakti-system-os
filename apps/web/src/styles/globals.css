@@ -3262,7 +3262,6 @@ body {
 .durga-hero-grid,
 .durga-message-grid,
 .durga-investment-grid,
-.durga-visual-grid,
 .durga-founder-grid {
   position: relative;
   z-index: 1;
@@ -3580,27 +3579,9 @@ body {
   line-height: 1.8;
 }
 
-.durga-motif-line {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 650px;
-}
-
-.durga-motif-line span {
-  padding: 10px 14px;
-  border: 1px solid rgba(214, 177, 92, 0.26);
-  border-radius: 999px;
-  background: rgba(143, 178, 122, 0.1);
-  color: rgba(255, 244, 224, 0.76);
-  font-size: 0.8rem;
-  font-weight: 800;
-}
-
 .durga-message h2,
 .durga-gates h2,
-.durga-investment h2,
-.durga-visual-world h2 {
+.durga-investment h2 {
   color: #fff4e0;
 }
 
@@ -3766,7 +3747,6 @@ body {
 }
 
 .durga-investment,
-.durga-visual-world,
 .durga-shala-doorway {
   background: #080b0d;
 }
@@ -3887,8 +3867,7 @@ body {
   margin-top: 38px;
 }
 
-.durga-access-list p,
-.durga-rule-grid span {
+.durga-access-list p {
   margin: 0;
   padding: 18px;
   border: 1px solid rgba(214, 177, 92, 0.18);
@@ -3901,17 +3880,6 @@ body {
   border-color: rgba(74, 31, 36, 0.18);
   background: rgba(36, 21, 21, 0.88);
   color: rgba(243, 235, 221, 0.78);
-}
-
-.durga-rule-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.durga-rule-grid span:last-child {
-  grid-column: 1 / -1;
-  color: #ffb7a8;
 }
 
 .durga-shala-doorway {
@@ -3989,7 +3957,6 @@ body {
   .durga-hero-grid,
   .durga-message-grid,
   .durga-investment-grid,
-  .durga-visual-grid,
   .durga-founder-grid,
   .durga-doorway-grid {
     grid-template-columns: 1fr;
@@ -4074,8 +4041,7 @@ body {
   }
 
   .durga-gate-list,
-  .durga-access-list,
-  .durga-rule-grid {
+  .durga-access-list {
     grid-template-columns: 1fr;
   }
 
@@ -4102,11 +4068,6 @@ body {
 
   .durga-founder-copy h2 {
     font-size: clamp(2.55rem, 13vw, 4.6rem);
-  }
-
-  .durga-motif-line span {
-    flex: 1 1 140px;
-    text-align: center;
   }
 
   .durga-doorway-visual {
@@ -4322,21 +4283,6 @@ body {
   text-wrap: balance;
 }
 
-.durga-motif-line {
-  gap: 0;
-  border-top: 1px solid rgba(231, 199, 121, 0.3);
-  border-bottom: 1px solid rgba(231, 199, 121, 0.3);
-}
-
-.durga-motif-line span {
-  padding: 13px 16px;
-  border: 0;
-  border-right: 1px solid rgba(231, 199, 121, 0.2);
-  border-radius: 0;
-  background: transparent;
-  color: rgba(255, 239, 208, 0.8);
-}
-
 .durga-message {
   background:
     radial-gradient(ellipse at 78% 36%, rgba(186, 17, 23, 0.28), transparent 34%),
@@ -4465,21 +4411,6 @@ body {
     0 44px 130px rgba(116, 6, 12, 0.22);
 }
 
-.durga-visual-world {
-  border-top: 1px solid rgba(231, 199, 121, 0.2);
-  background:
-    radial-gradient(circle at 10% 28%, rgba(176, 14, 20, 0.22), transparent 26%),
-    linear-gradient(145deg, #150506, #050303 68%);
-}
-
-.durga-rule-grid span {
-  border-width: 0 0 1px;
-  border-color: rgba(231, 199, 121, 0.26);
-  background: linear-gradient(90deg, rgba(111, 6, 11, 0.2), transparent);
-  color: rgba(255, 244, 224, 0.82);
-  font-size: 1rem;
-}
-
 @keyframes durga-fabric-drift {
   from { transform: translate3d(0, 0, 0) rotate(-8deg) scale(1); }
   to { transform: translate3d(-18px, -12px, 0) rotate(-4deg) scale(1.04); }
@@ -4567,16 +4498,6 @@ body {
 
   .durga-founder-copy {
     padding-left: 0;
-  }
-
-  .durga-motif-line {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .durga-motif-line span {
-    border-right: 0;
-    text-align: left;
   }
 
   .durga-gate-list {

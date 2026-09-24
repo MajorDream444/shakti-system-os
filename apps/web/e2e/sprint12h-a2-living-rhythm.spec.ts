@@ -55,7 +55,8 @@ test.describe("Sprint 12H-A.2a Durga emotional visual integration", () => {
     await expect(page.getByRole("img", { name: "Sheetal Kandola wearing a red veil" })).toBeVisible();
     await expect(page.getByText("Held by Sheetal. Centered on Maa Durga.")).toBeVisible();
     await expect(page.getByText("Sheetal Kandola holds this container as practitioner and facilitator.")).toBeVisible();
-    await expect(page.locator(".durga-motif-line").getByText("hibiscus", { exact: true })).toBeVisible();
+    await expect(page.getByText("Navratri 2026", { exact: true })).toBeVisible();
+    await expect(page.locator("body")).not.toContainText(/founder-confirmed launch foundation|lion courage|trishul clarity|sword discernment|lotus tenderness|devotional fire/i);
     await expect(page.locator(".durga-boundary")).toContainText("Sri Shakti Shala's secure payment page");
     await expect(page.locator("body")).not.toContainText(/Stripe/i);
     await expect(page.locator("body")).not.toContainText(/founder-supplied pricing|approved commerce sprint|gated by human review/i);
