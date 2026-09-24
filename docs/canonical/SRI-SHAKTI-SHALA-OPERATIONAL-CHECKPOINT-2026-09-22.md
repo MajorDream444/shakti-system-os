@@ -1284,3 +1284,54 @@ Result:
 - No files were deleted, promoted to canonical Vault or added to Airtable during this evidence pass.
 
 **NEXT SPECIFIC BATCH:** inspect only the remaining named/content-bearing branches within the verified Shakti capture and social source chain that could plausibly contain participant instruction—not code mirrors, generic visual libraries, campaign exports or global Drive results. Prioritize source-linked audio/instruction items with chat provenance. For generic media, add a concrete team identity question and check Airtable for an existing action record before creating one.
+
+
+## Client Zero backend access and handoff boundary — 2026-09-24
+
+This engagement is the first proving ground for reusable Stop the Bleed and MAIM Client Intelligence Workspace methods. Client Zero flexibility is learning input; it is not permission for unlimited revision, indefinite delivery, or direct modification of the active implementation.
+
+Canonical access rule:
+
+```text
+TRANSPARENCY DOES NOT REQUIRE EDIT ACCESS.
+
+BUILD
+→ client sees progress, previews, deliverables, decisions and requests
+→ MAIM/operator retains implementation and production control
+
+HANDOFF
+→ ownership package, accounts, documentation, code and training transfer
+→ acceptance verifies the transfer
+
+OWNER
+→ Sheetal and her authorized team may operate, alter or redesign the inherited system
+→ Major is no longer an undocumented operational dependency
+```
+
+During BUILD and HANDOFF, Sheetal and her team should use the Client Workspace, review surfaces, media-identification matrix, decision queue and approved request channels. They should not directly change production code, canonical records, schemas, deployment configuration, integrations or automation logic unless a bounded contributor role is expressly approved.
+
+This boundary protects:
+- version history and rollback;
+- implementation continuity;
+- testing and release evidence;
+- privacy and security;
+- source provenance;
+- scope and commercial accountability;
+- and a coherent final handoff.
+
+Requests must be classified as:
+- Bug / Correction;
+- Founder Review;
+- included Revision;
+- Change Request;
+- Future / Phase 2;
+- or Owner Maintenance.
+
+A request being technically fast does not make it included. Added responsibility, judgment, testing, integration, risk or operating burden remains chargeable scope.
+
+The Sheetal Workspace exists to provide real transparency without turning the client into an administrator of an unfinished system. At accepted handoff, the agreed repository/code, accounts, data, keys, documentation, operating procedures, known limitations and training transfer according to the engagement terms. After that transfer, the system is Sheetal's to operate directly or with another team.
+
+Reusable platform doctrine is recorded separately in:
+`MajorDream444/MAIM_Client_Intelligence_Workspace_Platform/docs/canonical/CLIENT-ZERO-DELIVERY-AND-BACKEND-ACCESS-DOCTRINE.md`
+
+Extract the operating method into MAIM / Stop the Bleed. Keep Sheetal's doctrine, sacred content, private information and client-specific implementation within her governed client boundary.
