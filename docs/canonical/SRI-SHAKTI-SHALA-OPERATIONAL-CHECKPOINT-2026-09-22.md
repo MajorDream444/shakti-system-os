@@ -1239,3 +1239,48 @@ HER TEAM CAN OPERATE IT.
 THE SYSTEM CAN CHANGE RHYTHM WITHOUT A REBUILD.
 MAJOR IS NO LONGER A REQUIRED DEPENDENCY.
 ```
+
+
+## 2026-09-24 closure continuation — commerce frozen and DWD source pass
+
+### Current production baseline
+
+Current commerce layer status: **DELIVERED / FROZEN**.
+
+- Approved application SHA: `08bc7dcc86d0528ca5e1d3969a8889dbfbae058f`
+- Final pushed `main`: `f8ee79508ec74381497f0fb9392b2d68386beb97`
+- Production: `https://shakti-system-os-psi.vercel.app/`
+- Immutable deployment: `https://shakti-system-9i5mrgsxv-hamal-agi.vercel.app/`
+- Release date: 2026-09-24
+- Verification reported at release: deterministic install/lint/build/E2E type-check PASS; backend/secure-write/Vault checks PASS; dependency audit 0 vulnerabilities; local Playwright 84/84; live release 13/13; commerce smoke 4/4.
+- All ten approved Stripe destinations and the `SHAKTISHALA` promotion behavior were live-verified without completing a payment.
+- DWD → 21-day Sri Shakti Shala trial access remains proposed, not automatic.
+- Do not reopen commerce for new offers or optional improvements. A new offer is owner maintenance unless it corrects this delivered layer.
+- Infrastructure cleanup item: pushes to `main` also trigger a separate legacy Vercel project named `web`. Do not alter it casually during closure.
+
+### DWD practice reconciliation pass completed
+
+Verified founder visual source:
+- Folder: `SRI SHAKTI SHALA - FOUNDER VISUAL SOURCE`
+- ID: `17IsDoC59g465i-HRR9RIzTtPQzQBP9Ex`
+- Direct contents inspected: photograph/image material plus nested `Shakti Shala (SK)`.
+- Nested folder ID `14Z86S-lAwbGCAYPGufEIWR_DdYAycI3V`: 53 image files; no audio, video, practice instruction or participant delivery asset.
+- Classification: **TEAM ACTION REQUIRED for visual selection/rights only**. This source cannot satisfy a DWD practice night.
+
+Verified capture-inbox contextual source:
+- Folder: `WhatsApp Chat - Sheetal <> Engagio (1)`
+- ID: `1Q_6eJi5o3ivt1b5DIzt1AdlvHU_c53QM`
+- Chat export: `_chat.txt`, ID `1WnLpjAjMd31sco8MaN0R1uO8jUJhDpYn`.
+- The September 18 source videos `IMG_1128.MP4`, `IMG_1127.MP4`, and `IMG_1124.MP4` have Drive IDs `1gp4ahe4kXXcShCW4WfZZAf0-nqsTUNp5`, `120A-pm4p8aDkROXE8zf1rQhOY_ABTcP7`, and `1CdVabH_w2veEF13BBsKMpjODJPe53c7w`.
+- Chat provenance identifies them as reels made “for the container,” handed to the social team for selection/editing/publication. The ensuing thread discusses music, subtitles, cover/flyer placement and publishing.
+- Classification: **POTENTIAL SOCIAL / CAMPAIGN ASSETS**, not verified participant practices.
+- The adjacent September 18 voice note `00001502-AUDIO-2026-09-18-19-29-24.opus`, ID `1DD2ueb6NTM0EpbWpLy0FqaEx9CBCP7wi`, occurs inside the video-edit review thread. It has no practice title, night association or participant-delivery evidence. Classification: **TEAM ACTION REQUIRED if retained/reused**.
+- The export contains social-production media, voice notes and Navratri campaign discussion, but no explicit set of five finished participant-facing practices and no one-to-one practice-night mapping.
+
+Result:
+- DWD five practice-night assets remain **UNVERIFIED**.
+- They are still not **PROVEN MISSING**.
+- Do not map the three container reels, generic Somatics clips, founder photos or nearby voice notes to DWD practice nights without source-owner confirmation.
+- No files were deleted, promoted to canonical Vault or added to Airtable during this evidence pass.
+
+**NEXT SPECIFIC BATCH:** inspect only the remaining named/content-bearing branches within the verified Shakti capture and social source chain that could plausibly contain participant instruction—not code mirrors, generic visual libraries, campaign exports or global Drive results. Prioritize source-linked audio/instruction items with chat provenance. For generic media, add a concrete team identity question and check Airtable for an existing action record before creating one.
