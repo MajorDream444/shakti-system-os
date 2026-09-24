@@ -30,3 +30,13 @@ For each *usable asset or coherent batch*, reply with **source filename or link;
 ## Decision and release rule
 
 Team identification → System validates source/content and duplicate state → Sheetal reviews sensitive doctrine, sacred imagery, entitlement and publication → canonical Vault copy and Airtable update → participant/public delivery. Keep `Content Entitlement` separate from historical `Access Level`. No raw asset is public merely because its Drive link exists.
+
+
+## September 18–19 Navratri container media — reconciliation note (2026-09-24)
+
+| Batch | Verified source context | Classification | Required action |
+|---|---|---|---|
+| `IMG_1128.MP4` (`1gp4ahe4kXXcShCW4WfZZAf0-nqsTUNp5`), `IMG_1127.MP4` (`120A-pm4p8aDkROXE8zf1QhOY_ABTcP7`), `IMG_1124.MP4` (`1CdVabH_w2veEF13BBsKMpjODJPe53c7w`) | Sheetal said she made reels “for the container”; the social thread then selected, edited and prepared them for publication with music, subtitles and cover/flyer treatment. | **POTENTIAL SOCIAL / CAMPAIGN ASSETS.** Not participant practices; no night mapping or instructional delivery evidence. | Social team may identify the final published derivatives and intended reuse. System does not map them to DWD practice nights. |
+| `00001502-AUDIO-2026-09-18-19-29-24.opus` (`1DD2ueb6NTM0EpbWpLy0FqaEx9CBCP7wi`) | Adjacent to the video-edit review thread; no practice title, participant instruction or night association in the chat export. | **TEAM ACTION REQUIRED if retained/reused.** | Source owner identifies what the note says and whether it is merely edit feedback. Do not promote or publish by inference. |
+
+The same chat contains offer copy promising five practice nights, but no delivered five-asset participant set. DWD remains **UNVERIFIED**, not **PROVEN MISSING**.
