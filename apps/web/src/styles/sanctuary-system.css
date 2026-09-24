@@ -117,7 +117,6 @@
 #root .begin-screen { max-width: none; width: 100%; margin-top: 0; }
 #root .begin-stage-inner, #root .begin-screen, #root .begin-screen :is(p, h1, h2, h3, button, div) { opacity: 1 !important; }
 #root .begin-stage-inner::before { display: none; }
-#root .begin-header > div { background: #15261e; padding: 8px 12px; }
 #root :is(header, footer, nav) span { font-size: max(1.125rem, 1em); color: inherit; letter-spacing: 0; }
 #root .begin-heading { font-size: 2.75rem; line-height: 1.18; max-width: 26ch; margin-bottom: 24px; color: var(--sanctuary-ink); text-shadow: none; }
 #root .begin-screen :is(p, label, small) { color: var(--sanctuary-support); opacity: 1; }
@@ -167,7 +166,7 @@
   #root .begin-station-7 .begin-ascent-image, #root .begin-station-8 .begin-ascent-image { background-position: center 18%; }
   #root .begin-ascent-image::after { background: linear-gradient(0deg, #20352e, transparent 65%); }
   #root .begin-header { min-height: 240px; text-shadow: 0 2px 4px #000; }
-  #root .begin-header a, #root .begin-header > div { background: #15261e; padding: 8px; }
+  #root .begin-header a { background: #15261e; padding: 8px; }
   #root .begin-stage { background: #16211d; }
   #root .begin-screen :is(button, a) { max-width: 100%; overflow-wrap: normal; }
   #root .begin-footer { align-items: flex-start; }
