@@ -11,11 +11,7 @@ export function WaterfallDoctrine() {
   return (
     <section className="section waterfall-doctrine" aria-labelledby="waterfall-doctrine-title">
       <div className="container waterfall-layout">
-        <figure
-          className="waterfall-portrait energy-flow-portrait"
-          data-asset-status="FOUNDER_SUPPLIED_PRODUCTION_CANDIDATE"
-          data-image-gate="founder-acceptance-and-rights-confirmation-required"
-        >
+        <figure className="waterfall-portrait energy-flow-portrait">
           <img
             src={portalImages.energyFlowCandidate}
             alt="Sheetal Kandola standing beside the ocean with one arm raised."
@@ -27,9 +23,9 @@ export function WaterfallDoctrine() {
           <p className="label">Shakti Waterfall</p>
           <h2 id="waterfall-doctrine-title">Notice where energy flows.</h2>
           <p>
-            The Waterfall is held here as emergent founder doctrine, not a fixed
-            formula. It gives language to the way energy, awareness, capacity,
-            nourishment, and sovereignty can begin to relate.
+            The Waterfall is a way of seeing, not a formula. It gives language
+            to how energy, awareness, capacity, nourishment, and sovereignty
+            begin to relate in you.
           </p>
           <div className="waterfall-thread" aria-label="Waterfall doctrine thread">
             {waterfallThread.map((line) => (

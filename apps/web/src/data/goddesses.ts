@@ -5,7 +5,7 @@ export const philosophy: PhilosophyCopy = {
   headline: "The body of work inside Sri Shakti Shala.",
   paragraphs: [
     "Shakti Shadow & Somatics is the method Sheetal teaches inside Sri Shakti Shala: body-based awareness, shadow integration, sensuality, nervous-system literacy, and classical Shakta practice held in relationship.",
-    "The work begins where performance ends - with the body, the shadow, practice, and the next doorway a seeker is actually ready to meet.",
+    "The work begins where performance ends - with the body, the shadow, practice, and the next doorway you are actually ready to meet.",
   ],
 };
 

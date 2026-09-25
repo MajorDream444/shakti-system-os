@@ -22,7 +22,7 @@ export function ReadinessMap() {
               <span>{portalCopy.readiness.dashboardField}</span>
             </div>
             <p className="readiness-map-note">
-              This is an illustration, not you. It does not score, rank, or diagnose a seeker.
+              This is an illustration of the path, not a measurement of you.
             </p>
             <div className="readiness-map-grid">
               {portalCopy.readiness.cards.map((card) => (

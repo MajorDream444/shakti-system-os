@@ -1,5 +1,6 @@
 import { testimonialArchitecture } from "../data/offerings";
 import { PageShell } from "./PageShell";
+import { portalImages } from "./PortalImageSlots";
 
 export function TestimonialsPage() {
   return (
@@ -22,11 +23,13 @@ export function TestimonialsPage() {
               ))}
             </div>
           </div>
-          <div className="testimonial-field-card" aria-label="Testimonial publication fields">
-            {testimonialArchitecture.fields.map((field) => (
-              <span key={field}>{field}</span>
-            ))}
-          </div>
+          <figure className="testimonial-portrait">
+            <img
+              src={portalImages.founderHolySpring}
+              alt="Sheetal Kandola in a Balinese holy spring, hands together in prayer"
+              loading="lazy"
+            />
+          </figure>
         </div>
       </section>
     </PageShell>

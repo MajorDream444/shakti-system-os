@@ -55,7 +55,7 @@ export const pathway: PathwayCopy = {
     "The most powerful path is not always the most intense one.",
   steps: [
     {
-      title: "Self-Audit",
+      title: "Where You Are Now",
       body: "Name the pattern and locate what the body already knows.",
     },
     {
@@ -76,5 +76,5 @@ export const pathway: PathwayCopy = {
 export const finalCta: FinalCtaCopy = {
   label: "Begin",
   headline: "Begin Your Shakti Path.",
-  body: "Start with the self-audit. Let the path reveal the next threshold.",
+  body: "Start where you are. Let the path reveal the next threshold.",
 };

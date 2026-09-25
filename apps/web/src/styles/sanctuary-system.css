@@ -232,8 +232,14 @@
 
 #root .durga-payment-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+}
+
+/* auto-fit was generating a third, empty track and pushing the second card
+   past the container edge. Two options, two columns, one row below 520px. */
+@media (max-width: 520px) {
+  #root .durga-payment-cards { grid-template-columns: minmax(0, 1fr); }
 }
 
 #root .durga-payment-card {
@@ -246,12 +252,13 @@
   color: #3a1218;
 }
 
-#root .durga-payment-label {
+#root .durga-payment-audience {
   margin: 0;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #5c2029;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6b2b26;
 }
 
 #root .durga-payment-price {
@@ -285,37 +292,187 @@
   outline-offset: 3px;
 }
 
-#root .durga-payment-audience {
-  margin: 0;
-  font-size: 15px;
-  color: #5c2029;
-}
-
+/* One quiet line instead of a paragraph plus a second competing button. The
+   checkout now has exactly one call to action per card and no rival CTA. */
 #root .durga-payment-help {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
-  padding-top: 6px;
-}
-
-#root .durga-payment-help p {
-  flex: 1 1 260px;
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--sanctuary-support, #d8c5b0);
 }
 
-#root .durga-payment-help-action {
-  display: inline-flex;
-  align-items: center;
-  min-height: 48px;
-  padding: 0 24px;
-  border: 1px solid rgba(233, 199, 126, 0.55);
-  border-radius: 999px;
+#root .durga-payment-help a {
   color: #ffe1a3;
-  font-size: 17px;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-#root .durga-payment-help-action:hover { background: rgba(233, 199, 126, 0.12); }
+#root .durga-payment-help a:hover { color: #fff3d6; }
+
+/* ---------------------------------------------------------------------------
+   Dancing with Durga — hero treatment B (approved 2026-09-25).
+
+   Replaces the earlier hero, where the artwork rendered 479x621, did not begin
+   until 450px down the page, and was cut off at the viewport base — leaving a
+   large empty field above it. The founder-supplied 3x upscale (1400x1812)
+   makes a much larger render possible: at 604px the artwork still has 2.3x
+   resolution headroom, so it stays crisp at 2x device pixel ratio.
+
+   The painting carries its own gold arch, so the frame here is a thin mat that
+   sets it off rather than a second ornament competing with the first.
+   --------------------------------------------------------------------------- */
+
+#root .durga-hero {
+  display: flex;
+  align-items: center;
+  min-height: auto;
+  padding-block: clamp(48px, 6vw, 88px);
+}
+
+/* Slightly wider than the shared .container (1180px) so the artwork can be
+   large without starving the copy column. Keeps the same 24px side gutter. */
+#root .durga-hero-grid {
+  width: min(1320px, calc(100% - 48px));
+  grid-template-columns: minmax(0, 604px) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: clamp(28px, 3vw, 40px) clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+
+/* Artwork holds the left column across both rows; title and details stack in
+   the right column. Source order stays title -> art -> details for phones. */
+#root .durga-hero-art {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+#root .durga-hero-title {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+}
+
+#root .durga-hero-copy {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+}
+
+/* The rotated backing panel and offset blur read as a misaligned second box
+   behind the art. The glow alone does the atmospheric work. */
+#root .durga-hero-art::before { content: none; }
+
+#root .durga-hero-art::after {
+  inset: 4% -6% -4% -6%;
+  background: radial-gradient(ellipse, rgba(190, 37, 24, 0.44), transparent 70%);
+  filter: blur(42px);
+}
+
+#root .durga-hero-art-frame {
+  max-height: none;
+  padding: 9px;
+  border: 1px solid rgba(233, 199, 126, 0.55);
+  background: linear-gradient(160deg, rgba(196, 161, 90, 0.22), rgba(196, 161, 90, 0.06));
+  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.62);
+}
+
+#root .durga-hero-art-frame::after { inset: 9px; }
+
+#root .durga-hero-art figcaption {
+  max-width: 34ch;
+  margin-top: 26px;
+  font-size: clamp(1.12rem, 1.4vw, 1.4rem);
+}
+
+/* The data title carries the name and the teaching. The name is the headline;
+   the teaching drops to a lighter second line so the hero is not four lines of
+   display type pushing the artwork and the checkout below the fold. */
+#root .durga-hero-title h1 {
+  margin-bottom: 16px;
+  font-size: clamp(2.9rem, 4.6vw, 4.6rem);
+  line-height: 1.0;
+  text-wrap: balance;
+}
+
+#root .durga-hero-title h1 span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.52em;
+  font-style: italic;
+  line-height: 1.16;
+  color: rgba(255, 239, 208, 0.82);
+}
+
+#root .durga-hero-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 30px;
+  margin-block: 26px 4px;
+}
+
+#root .durga-hero-facts li {
+  display: block;
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(196, 161, 90, 0.3);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+#root .durga-hero-facts li::before { content: none; }
+
+#root .durga-hero-facts span {
+  display: block;
+  width: auto;
+  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c4a15a;
+}
+
+@media (max-width: 1040px) {
+  #root .durga-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    gap: 34px;
+  }
+
+  /* One column, in document order: title, artwork, details. */
+  #root .durga-hero-title,
+  #root .durga-hero-art,
+  #root .durga-hero-copy {
+    grid-column: 1;
+    grid-row: auto;
+    align-self: auto;
+  }
+
+  #root .durga-hero-art {
+    width: min(100%, 460px);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  #root .durga-hero-facts { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Testimonials: the page previously rendered the record schema (quote,
+   attribution, source, visibility...) as visible page content, which also
+   overflowed the hero on mobile. Replaced with a portrait. */
+#root .testimonial-portrait {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(233, 199, 126, 0.42);
+  border-radius: 18px;
+}
+
+#root .testimonial-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  /* She stands low in the frame; a centred crop cut her head off. */
+  object-position: center 72%;
+}
