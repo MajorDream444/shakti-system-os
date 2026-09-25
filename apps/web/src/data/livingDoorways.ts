@@ -22,7 +22,7 @@ export const knowledgeDoorways: LivingDoorway[] = [
     deeper:
       "Shakti names the living current of power and energy within the work. The question is not how to perform power, but how to relate to it with awareness, capacity, and devotion.",
     why:
-      "When energy is noticed rather than suppressed or spilled, the seeker can begin to direct it with more discernment.",
+      "When energy is noticed rather than suppressed or spilled, you can begin to direct it with more discernment.",
     example:
       "A woman may notice where her energy leaks, where it gathers, and what actually nourishes rather than drains her.",
     fromSheetal:
@@ -73,7 +73,7 @@ export const knowledgeDoorways: LivingDoorway[] = [
     deeper:
       "Somatic practice here means embodied awareness, pacing, nervous-system literacy, and truthful contact with what is present.",
     why:
-      "When the body is included, a seeker can meet depth without abandoning herself to an idea of transformation.",
+      "When the body is included, you can meet depth without abandoning yourself to an idea of transformation.",
     example:
       "A practice may begin with grounding, sensation, and a small honest choice before moving toward larger insight.",
     fromSheetal:
@@ -107,13 +107,13 @@ export const methodDoorway: LivingDoorway = {
   accent: "gold",
   summary: "Shakti Shadow & Somatics is the bridge, not a slogan.",
   deeper:
-    "The method holds nervous-system literacy, somatic practice, shadow integration, and Shakti practice together so the seeker is not asked to split clinical clarity from devotion.",
+    "The method holds nervous-system literacy, somatic practice, shadow integration, and Shakti practice together so you are not asked to split clinical clarity from devotion.",
   why:
     "The path needs enough structure to be trustworthy and enough softness to remain human.",
   example:
-    "A seeker may begin with reflection, meet a body signal, notice a shadow pattern, and be returned to a doorway that matches capacity.",
+    "You may begin with reflection, meet a body signal, notice a shadow pattern, and be returned to a doorway that matches your capacity.",
   fromSheetal:
-    "This work begins beneath surface wellness and returns the seeker to truth in the body.",
+    "This work begins beneath surface wellness and returns you to truth in the body.",
   connectedTo: ["Shakti", "Shadow", "Sensuality", "Somatics", "Sovereignty"],
   nextLabel: "Explore the five pillars",
 };
@@ -121,18 +121,18 @@ export const methodDoorway: LivingDoorway = {
 export const pathwayDoorways: LivingDoorway[] = [
   {
     id: "self-audit",
-    title: "Self-Audit",
+    title: "Where You Are Now",
     symbol: "Water",
     accent: "water",
     summary: "Orientation, not diagnosis.",
     deeper:
-      "The self-audit asks enough to return a doorway with care. It does not rank the seeker, label her, or expose scores.",
+      "Beginning asks enough to return a doorway with care. It does not rank you, label you, or show you a score.",
     why:
       "Reflection should create continuity without becoming surveillance.",
     example:
-      "After Begin, the seeker sees language like 'Based on what you've shared,' not a number or an authority claim.",
+      "After Begin, you see language like 'Based on what you've shared,' not a number or an authority claim.",
     fromSheetal:
-      "The path begins by listening before asking a seeker to enter anything deeper.",
+      "The path begins by listening before asking anyone to enter something deeper.",
     connectedTo: ["Begin", "Personal Shakti Path Reflection", "Privacy"],
     nextLabel: "Start Your Shakti Path",
   },
@@ -145,7 +145,7 @@ export const pathwayDoorways: LivingDoorway[] = [
     deeper:
       "Community is not a generic membership layer. It is a held rhythm for witnessing, practice, and orientation.",
     why:
-      "A seeker may need relationship and repetition before a deeper container is appropriate.",
+      "You may need relationship and repetition before a deeper container is right.",
     example:
       "Moon rhythm can provide context, but it does not become spiritual authority or automated approval.",
     fromSheetal:

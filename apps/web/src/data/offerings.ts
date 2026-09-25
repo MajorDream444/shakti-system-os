@@ -47,7 +47,7 @@ export const offerCategories: OfferCategory[] = [
     label: "Self-Guided",
     title: "Sri Shakti Shala practice, teachings, and temple library resources",
     summary:
-      "For seekers who want to orient through practice and approved teaching before requesting deeper human support.",
+      "For women who want to orient through practice and teaching before asking for deeper support.",
     includes: [
       "Open Shala rooms",
       "Temple Library orientation",
@@ -66,7 +66,7 @@ export const offerCategories: OfferCategory[] = [
     label: "Circles & Community",
     title: "Held rhythm with other women",
     summary:
-      "For seekers who need witness, repetition, and shared practice before a deeper container is right.",
+      "For women who need witness, repetition, and shared practice before a deeper container is right.",
     includes: [
       "Community rhythm",
       "Group practice agreements",
@@ -91,7 +91,7 @@ export const offerCategories: OfferCategory[] = [
       "Pacing around nervous-system capacity",
       "Human discernment before any deeper doorway",
     ],
-    nextStep: "Request a conversation, or choose the approved session container that fits your current doorway.",
+    nextStep: "Request a conversation, or choose the session that fits where you are now.",
     investment: "$175-$1,500 USD",
     accessState: "Available to Request",
     href: `${BEGIN_PATH}?intent=guide`,
@@ -106,7 +106,7 @@ export const offerCategories: OfferCategory[] = [
     summary:
       "For women drawn toward immersion, with readiness held through preparation and human review.",
     includes: [
-      "Retreat interest without automatic approval",
+      "Register your interest in a retreat",
       "Preparation before invitation",
       "Application path only when Sheetal's team opens it",
     ],
@@ -169,20 +169,10 @@ export const aboutSheetalCopy = {
 };
 
 export const testimonialArchitecture = {
-  title: "Transformation Evidence",
-  label: "Stories require consent",
+  title: "In their own words",
+  label: "Shared with consent",
   body:
-    "Client words will appear here only when publication approval, attribution, source, container context, date, and visibility have been recorded.",
-  fields: [
-    "quote",
-    "attribution",
-    "context or container",
-    "optional image",
-    "publication approval",
-    "source",
-    "date",
-    "visibility",
-  ],
+    "The women who have walked through these containers speak about the work in their own time and their own language. Their words will appear here only when they have offered them, and only in the form they chose. Nothing is lifted from a private conversation.",
   links: [
     { label: "Meet Sheetal", href: ABOUT_SHEETAL_PATH },
     { label: "View Offerings", href: OFFERINGS_PATH },

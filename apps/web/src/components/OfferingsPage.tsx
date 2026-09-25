@@ -51,12 +51,10 @@ export function OfferingsPage() {
             <p className="label">Current Doorways</p>
             <h2 id="offerings-list-title">Begin free, request human support, or prepare for deeper work.</h2>
             <p>
-              Pricing and payment are shown only when Sheetal's team has approved
-              the exact offer. Until then, the next step is clearly marked as
-              open, request-based, preparation-based, or invitation-based.
-              Current founder-approved payment choices appear inside the doorway
-              they belong to, while deeper access still follows the stated human
-              and readiness boundaries.
+              Every doorway below says plainly how it opens — freely, by
+              request, through preparation, or by invitation. Where there is a
+              price, you will find it inside the doorway it belongs to. Deeper
+              work begins with a conversation.
             </p>
             <nav className="commerce-doorways" aria-label="Current ways to enter">
               <a href={DANCING_WITH_DURGA_PATH}>
@@ -160,29 +158,29 @@ export function OfferingsPage() {
       <section className="section payment-state" aria-labelledby="payment-state-title">
         <div className="container payment-state-grid">
           <div className="section-copy">
-            <p className="label">Payment State</p>
-            <h2 id="payment-state-title">Checkout appears only for founder-approved offers.</h2>
+            <p className="label">How to Enter</p>
+            <h2 id="payment-state-title">Some doors you can walk through today.</h2>
             <p>
-              Dancing with Durga, approved 1:1 Shakti Embodiment choices, and
-              founding memberships use secure external payment pages. Retreats,
-              initiation, and restricted access remain request-based.
+              Dancing with Durga, 1:1 Shakti Embodiment, and founding
+              memberships can be paid for directly through a secure payment
+              page. Retreats and initiation begin with a request.
             </p>
           </div>
           <div className="payment-status-list">
             <article>
-              <span>Current State</span>
-              <h3>Most deeper work still begins with conversation.</h3>
+              <span>Deeper Work</span>
+              <h3>Retreats and initiation begin with a conversation.</h3>
               <p>
-                Circles, retreats, and restricted next steps are held through
-                conversation or application before commitment.
+                Circles, retreats, and private work are arranged in dialogue
+                with Sheetal before anything is committed to.
               </p>
             </article>
             <article>
-              <span>Clear Boundary</span>
-              <h3>Payment does not grant deeper access.</h3>
+              <span>What This Protects</span>
+              <h3>Readiness is met in person, not at a checkout.</h3>
               <p>
-                A browser action cannot approve retreat readiness, initiation,
-                restricted access, or private work with Sheetal.
+                Some thresholds ask to be arrived at rather than purchased.
+                Where that is true, you will be invited rather than charged.
               </p>
             </article>
           </div>

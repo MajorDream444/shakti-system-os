@@ -17,8 +17,6 @@ export function Hero() {
       <div
         className="hero-visual"
         aria-hidden="true"
-        data-image-gate="founder-visual-source-v2-approved-candidate"
-        data-asset-status="APPROVED_CANDIDATE"
         style={{ "--hero-image": `url(${portalImages.homeWorldCandidate})` } as CSSProperties}
       />
       <div className="hero-veils" aria-hidden="true" />

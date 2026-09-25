@@ -24,7 +24,7 @@ export const retreatVision: RetreatCopy = {
     },
     {
       title: "Future Temple Space",
-      body: "A sanctuary for women and diaspora seekers ready for depth.",
+      body: "A sanctuary for women and diaspora women ready for depth.",
       image:
         "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&w=1200&q=80",
     },

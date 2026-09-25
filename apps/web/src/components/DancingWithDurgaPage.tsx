@@ -5,21 +5,22 @@ import { portalImages } from "./PortalImageSlots";
 import { trackAnonymousEvent } from "../services/AnonymousAnalytics";
 import { CeremonialForm } from "./CeremonialForm";
 
-/* Who each option is for. Derived from the option id rather than added to
-   commerce.ts, so the frozen commerce release is not edited for display copy. */
+/* One line per option, stating plainly who it is for. Derived from the option
+   id rather than added to commerce.ts, so the frozen commerce release is not
+   edited for display copy. */
 const PAYMENT_AUDIENCE: Record<string, string> = {
-  global: "For participants outside India",
-  india: "For Indian citizens",
+  global: "Outside India",
+  india: "Indian citizens",
 };
 
-function PaymentOptions() {
+function PaymentOptions({ heading = "Reserve your place" }: { heading?: string }) {
   return (
     <div className="durga-payment">
-      <p className="durga-payment-heading">Choose your payment option</p>
+      <p className="durga-payment-heading">{heading}</p>
       <div className="durga-payment-cards">
         {dancingWithDurga.paymentOptions.map((option) => (
           <div className="durga-payment-card" key={option.id}>
-            <p className="durga-payment-label">{option.label}</p>
+            <p className="durga-payment-audience">{PAYMENT_AUDIENCE[option.id]}</p>
             <p className="durga-payment-price">{option.price}</p>
             <a
               className="durga-payment-action"
@@ -31,26 +32,29 @@ function PaymentOptions() {
             >
               Pay now <span aria-hidden="true">→</span>
             </a>
-            <p className="durga-payment-audience">{PAYMENT_AUDIENCE[option.id]}</p>
           </div>
         ))}
       </div>
-      <div className="durga-payment-help">
-        <p>
-          If you are unsure which option is right for you, or you have questions,
-          start with the request details form.
-        </p>
+      <p className="durga-payment-help">
+        Secure payment via Stripe. Questions first?{" "}
         <a
-          className="durga-payment-help-action"
           href={`${BEGIN_PATH}?intent=community`}
           onClick={() => trackAnonymousEvent("request_details_clicked")}
         >
           {dancingWithDurga.cta}
         </a>
-      </div>
+      </p>
     </div>
   );
 }
+
+/* The data title carries both the name and the teaching ("Dancing with Durga:
+   Devotion with a Spine"). Shown as two lines so the name stays the headline
+   and the teaching does not force a four-line hero. */
+const [DURGA_NAME, DURGA_TEACHING] = (() => {
+  const [name, ...rest] = dancingWithDurga.title.split(":");
+  return [name.trim(), rest.join(":").trim()];
+})();
 
 export function DancingWithDurgaPage() {
   return (
@@ -58,25 +62,36 @@ export function DancingWithDurgaPage() {
       <section className="durga-hero" aria-labelledby="durga-title">
         <div className="durga-hero-flame" aria-hidden="true" />
         <div className="container durga-hero-grid">
+          {/* Source order is title, artwork, details. On desktop the grid
+              lifts the artwork into its own column; on a phone the page reads
+              in this order, so the artwork sits directly under the title
+              instead of below the checkout. */}
+          <div className="durga-hero-title">
+            <p className="label">Navratri 2026 · {dancingWithDurga.campaignLine}</p>
+            <h1 id="durga-title">
+              {DURGA_NAME}
+              <span>{DURGA_TEACHING}</span>
+            </h1>
+            <p className="durga-subtitle">{dancingWithDurga.subtitle}</p>
+          </div>
+
           <figure className="durga-hero-art">
             <div className="durga-hero-art-frame">
               <img
                 src={portalImages.durgaApprovedArtwork}
                 alt="Traditional devotional artwork of Maa Durga with her lion and accompanying deities"
-                data-asset-status="FOUNDER_APPROVED"
               />
             </div>
-            <figcaption>{dancingWithDurga.campaignLine}</figcaption>
+            <figcaption>
+              May the fierce and tender grace of Maa Durga awaken what is yours
+              to reclaim.
+            </figcaption>
           </figure>
 
           <div className="durga-hero-copy">
-            <p className="label">Navratri 2026</p>
-            <h1 id="durga-title">{dancingWithDurga.title}</h1>
-            <p className="durga-subtitle">{dancingWithDurga.subtitle}</p>
             <p>
-              A bold, devotional Maa Durga container for women learning to trust
-              the body, stand up, say no, protect what is sacred, and stop
-              abandoning themselves.
+              A devotional Maa Durga container for women learning to trust the
+              body, stand up, say no, and protect what is sacred.
             </p>
             <ul className="durga-hero-facts" aria-label="Dancing with Durga format">
               <li><span>Container</span>{dancingWithDurga.audience}</li>
@@ -147,7 +162,6 @@ export function DancingWithDurgaPage() {
                 src={portalImages.durgaNineFormsArtwork}
                 alt="Traditional devotional artwork showing the nine forms of Durga"
                 loading="lazy"
-                data-asset-status="FOUNDER_APPROVED"
               />
             </figure>
           </div>
@@ -172,13 +186,9 @@ export function DancingWithDurgaPage() {
       <section className="section durga-investment" aria-labelledby="durga-investment-title">
         <div className="container durga-investment-grid">
           <div className="section-copy">
-            <p className="label">Investment / Access</p>
+            <p className="label">Investment</p>
             <h2 id="durga-investment-title">Accessible entry, held carefully.</h2>
-            <p>
-              Choose the option that applies to you. You will continue to
-              Sri Shakti Shala's secure payment page.
-            </p>
-            <PaymentOptions />
+            <PaymentOptions heading="Choose the option that applies to you" />
           </div>
         </div>
         <div className="container durga-access-list ceremonial-sequence ceremonial-sequence--five" aria-label="Access notes">

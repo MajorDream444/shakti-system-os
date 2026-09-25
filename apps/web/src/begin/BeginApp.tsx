@@ -250,7 +250,6 @@ export default function BeginApp() {
     <div className={`begin-station begin-station-${state.currentScreen} relative min-h-[100svh] bg-obsidian text-ash overflow-x-hidden overflow-y-auto flex flex-col selection:bg-ember/30`}>
       <div
         className="begin-ascent-image"
-        data-asset-status="FOUNDER_SUPPLIED_PROVENANCE_REQUIRED"
         style={{
           '--journey-path-image': `url(${redRiverTerrain})`,
           '--journey-water-image': `url(${waterCanopy})`,

@@ -4651,7 +4651,7 @@ body {
 
 .durga-hero-art-frame {
   position: relative;
-  aspect-ratio: 779 / 1008;
+  aspect-ratio: 1400 / 1812;
   max-height: min(73vh, 760px);
   overflow: hidden;
   border: 1px solid rgba(244, 204, 113, 0.72);
