@@ -181,7 +181,7 @@ export const testimonialArchitecture = {
 
 export const trustLinks = [
   { label: "About Sheetal", href: ABOUT_SHEETAL_PATH },
-  { label: "Transformation Evidence", href: TESTIMONIALS_PATH },
+  { label: "In Their Own Words", href: TESTIMONIALS_PATH },
   { label: "Enter Sri Shakti Shala", href: SHALA_PATH },
 ];
 
