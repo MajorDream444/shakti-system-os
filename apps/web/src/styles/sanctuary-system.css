@@ -488,3 +488,139 @@
   /* She stands low in the frame; a centred crop cut her head off. */
   object-position: center 72%;
 }
+
+/* ---------------------------------------------------------------------------
+   Home page length (2026-09-25).
+
+   The home page measured 14,720px at 1440 and 23,029px on a phone. The single
+   largest block was the hero's image gallery at 2,231px: four founder-selected
+   frames stacked in one column. Laying them two-up keeps every image and the
+   organic frame shapes while reclaiming roughly half that height.
+   --------------------------------------------------------------------------- */
+
+#root .portal-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-content: center;
+}
+
+/* The frame is now a plain container: image above, caption below. The arch
+   and oval shapes, the border and the clipping all move to the media box, so
+   nothing can crop the caption. */
+#root .portal-gallery-frame,
+#root .portal-gallery-frame:first-child {
+  min-height: 0;
+  aspect-ratio: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: visible;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+#root .portal-gallery-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 1px solid rgba(240, 196, 208, 0.24);
+  background: rgba(240, 196, 208, 0.07);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  border-radius: 999px 999px 18px 18px;
+}
+
+#root .portal-gallery-frame:nth-child(2) .portal-gallery-media {
+  border-radius: 22px 999px 999px 22px;
+}
+
+#root .portal-gallery-frame:nth-child(3) .portal-gallery-media {
+  border-radius: 999px 22px 999px 22px;
+}
+
+#root .portal-gallery-frame:nth-child(4) .portal-gallery-media {
+  border-radius: 18px 18px 999px 999px;
+}
+
+#root .portal-gallery-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Static, below the shape, free to wrap. */
+#root .portal-gallery-frame figcaption,
+#root .portal-gallery-frame:nth-child(2) figcaption,
+#root .portal-gallery-frame:nth-child(3) figcaption {
+  position: static;
+  inset: auto;
+  right: auto;
+  left: auto;
+  bottom: auto;
+  max-width: none;
+  padding: 0 4px;
+  background: none;
+  text-align: left;
+}
+
+#root .portal-gallery-frame figcaption span {
+  display: block;
+  font-size: 15px;
+  color: #f6ecd8;
+}
+
+#root .portal-gallery-frame figcaption small {
+  display: block;
+  white-space: normal;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  color: rgba(246, 236, 216, 0.72);
+}
+
+/* The staggered offset was tuned for a single column; side by side it pushed
+   the second frame into the first. */
+#root .portal-gallery-frame:nth-child(2),
+#root .portal-gallery-frame:nth-child(3),
+#root .portal-gallery-frame:nth-child(4) {
+  transform: none;
+}
+
+#root .portal-gallery-frame img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 702px of page for one sentence. */
+#root .transition-quote {
+  min-height: 0;
+  padding-block: clamp(64px, 7vw, 96px);
+}
+
+/* Most sections carried 136px of padding top and bottom. */
+#root :is(.philosophy, .offer-gateway, .founder-presence, .authority-section, .pathway, .final-cta) {
+  padding-block: clamp(64px, 7vw, 96px);
+}
+
+@media (max-width: 720px) {
+  #root .portal-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+}
+
+/* The entry ladder and the two gateway actions were single columns. */
+#root .receiving-ladder {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#root .offer-gateway-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 620px) {
+  #root .receiving-ladder,
+  #root .offer-gateway-actions { grid-template-columns: minmax(0, 1fr); }
+}
