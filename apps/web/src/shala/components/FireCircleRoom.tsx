@@ -54,14 +54,14 @@ export const FireCircleRoom: React.FC<FireCircleRoomProps> = ({
         <button
           id="back-to-sanctuary"
           onClick={() => onNavigate('COURTYARD')}
-          className="flex items-center gap-2 font-sans font-semibold text-xs tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-100 transition-opacity"
+          className="flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-100 transition-opacity"
         >
           <ArrowLeft className="w-4 h-4" />
           Sanctuary
         </button>
         <div className="flex items-center gap-2">
           <Flame className="w-4 h-4 text-[#E27A3F]" />
-          <span className="font-sans font-semibold text-xs tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
+          <span className="font-sans font-semibold text-sm tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
             THE FIRE CIRCLE
           </span>
         </div>
@@ -89,7 +89,7 @@ export const FireCircleRoom: React.FC<FireCircleRoomProps> = ({
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`font-sans font-semibold text-xs tracking-[0.14em] text-transform: uppercase pb-1.5 transition-all ${
+              className={`font-sans font-semibold text-sm tracking-[0.14em] text-transform: uppercase pb-1.5 transition-all ${
                 selectedCategory === cat
                   ? 'text-[#E27A3F] border-b-2 border-[#E27A3F]'
                   : 'text-[#8a7c6d] hover:text-[#D8C5B0]'
@@ -102,7 +102,7 @@ export const FireCircleRoom: React.FC<FireCircleRoomProps> = ({
 
         {/* Practices List */}
         <div className="flex flex-col gap-3 mt-6 w-full max-w-lg">
-          <p className="font-sans text-[11px] text-[#8a7c6d] uppercase tracking-[0.18em] mb-1">
+          <p className="font-sans text-[14px] text-[#8a7c6d] uppercase tracking-[0.18em] mb-1">
             {activeCollection.title}
           </p>
           {activeCollection.practices.map((practice) => (
@@ -118,7 +118,7 @@ export const FireCircleRoom: React.FC<FireCircleRoomProps> = ({
                 </div>
                 <div>
                   <div className="font-sans font-medium tracking-tight text-[#F6EFE7] text-[17px]">{practice.title}</div>
-                  <div className="font-sans text-xs text-[#8a7c6d] mt-1">{practice.duration}</div>
+                  <div className="font-sans text-sm text-[#8a7c6d] mt-1">{practice.duration}</div>
                 </div>
               </div>
               <div style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', fontSize: '15px', color: '#8a7c6d' }}>

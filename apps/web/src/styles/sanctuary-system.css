@@ -97,13 +97,23 @@
   font-size: 18px; line-height: 1.5; color: var(--sanctuary-ink);
 }
 #root .begin-header a { color: var(--sanctuary-ink); font-size: 20px; }
+/* The panel's top is a semicircle (border-radius 999px clamps to half the
+   width), so near the top edge the usable width is far narrower than the
+   panel. At the old 20px padding the "Ascent" title began at x=21 while the
+   arch edge at that depth was x=52 — the heading sat outside the shape. The
+   top padding now clears the steep part of the curve (about 22% of the width
+   gives close to full inner width) and the title is centred on the apex. */
 #root .begin-ascent {
   position: static; grid-column: 2; grid-row: 2;
   transform: none; width: auto;
   display: flex; flex-direction: column; gap: 20px;
-  padding: 20px; align-self: start; background: rgba(16,31,25,.93);
+  padding: clamp(58px, 24%, 92px) 20px 24px;
+  align-self: start; background: rgba(16,31,25,.93);
 }
-#root .begin-ascent-title { writing-mode: horizontal-tb; align-self: start; font-size: 18px; color: #ffe1a3; letter-spacing: 0; }
+#root .begin-ascent-title {
+  writing-mode: horizontal-tb; align-self: center; text-align: center;
+  font-size: 18px; color: #ffe1a3; letter-spacing: 0.14em; text-transform: uppercase;
+}
 #root .begin-ascent-line { display: none; }
 #root .begin-ascent-station {
   display: grid; grid-template-columns: 14px 1fr; gap: 8px 12px;
@@ -143,7 +153,9 @@
 #root .begin-back { position: static; grid-column: 1; justify-self: start; padding: 12px 24px; }
 #root .begin-footer { border-top: 1px solid #8e9b88; padding-top: 24px; }
 @media (min-width: 1051px) {
-  #root .begin-ascent-station span { white-space: nowrap; }
+  /* "Discernment / Reveal" does not fit the 240px panel on one line, and
+     nowrap pushed it past the edge. Let long station names wrap instead. */
+  #root .begin-ascent-station span { white-space: normal; overflow-wrap: break-word; }
 }
 @media (max-width: 1050px) {
   #root .begin-shell { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 0; }
@@ -224,7 +236,7 @@
 
 #root .durga-payment-heading {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #e9c77e;
@@ -254,7 +266,7 @@
 
 #root .durga-payment-audience {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -425,7 +437,7 @@
   display: block;
   width: auto;
   margin-bottom: 5px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;

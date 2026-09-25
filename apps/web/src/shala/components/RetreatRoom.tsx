@@ -130,14 +130,14 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
         <button
           id="retreat-back-sanctuary"
           onClick={() => onNavigate('COURTYARD')}
-          className="flex items-center gap-2 font-sans font-semibold text-xs tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-100 transition-opacity"
+          className="flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-100 transition-opacity"
         >
           <ArrowLeft className="w-4 h-4" />
           Sanctuary
         </button>
         <div className="flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-[#E27A3F]" />
-          <span className="font-sans font-semibold text-xs tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
+          <span className="font-sans font-semibold text-sm tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
             RETREAT THRESHOLD
           </span>
         </div>
@@ -146,7 +146,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
       {/* Main Focus: October retreat container */}
       <div className="max-w-2xl mx-auto w-full my-auto py-8 z-10 flex flex-col gap-8">
         <div>
-          <span className="font-sans font-semibold text-[10px] tracking-[0.28em] text-transform: uppercase text-[#B27A52]">
+          <span className="font-sans font-semibold text-[14px] tracking-[0.28em] text-transform: uppercase text-[#B27A52]">
             THE THRESHOLD · HIMALAYA
           </span>
           <h2 className="font-serif text-3xl md:text-5xl text-[#F6EFE7] mt-3">
@@ -166,14 +166,14 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                 className="absolute left-0 right-0 bottom-0 bg-gradient-to-t from-[#C35A2E] to-[#E27A3F] transition-all duration-700"
               />
             </div>
-            <div className="font-sans text-[11px] text-[#8a7c6d] uppercase tracking-[0.18em]">
+            <div className="font-sans text-[14px] text-[#8a7c6d] uppercase tracking-[0.18em]">
               Readiness Vessel — {Math.round(progressPercent)}%
             </div>
           </div>
 
           <div className="border border-[#E27A3F]/20 rounded-2xl bg-[#4A1F24]/10 p-6 flex flex-col justify-center items-center text-center">
             <h4 className="font-serif text-lg text-[#F6EFE7]">October Pilgrimage</h4>
-            <p className="font-sans text-[11px] text-[#8a7c6d] mt-1">
+            <p className="font-sans text-[14px] text-[#8a7c6d] mt-1">
               {isReadyToRequest
                 ? 'Your container is stable. You can now request passage.'
                 : 'Complete at least 50% of the milestones to prepare a request.'}
@@ -181,7 +181,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
             <button
               onClick={() => setRequestActive(true)}
               disabled={!isReadyToRequest}
-              className={`mt-4 min-h-11 px-6 py-2 rounded-full font-sans font-bold text-xs tracking-[0.1em] uppercase transition-all duration-300 ${
+              className={`mt-4 min-h-11 px-6 py-2 rounded-full font-sans font-bold text-sm tracking-[0.1em] uppercase transition-all duration-300 ${
                 isReadyToRequest
                   ? 'bg-[#E27A3F] hover:bg-[#C35A2E] text-white shadow-[0_0_15px_rgba(226,122,63,0.3)] hover:scale-105 cursor-pointer'
                   : 'bg-white/[0.08] text-white/[0.54] border border-white/[0.12] cursor-not-allowed'
@@ -208,7 +208,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                     : 'border-[#6b5f52] bg-transparent'
                 }`}
               >
-                {item.checked && <span className="text-[#090707] text-[10px] font-bold">✓</span>}
+                {item.checked && <span className="text-[#090707] text-[14px] font-bold">✓</span>}
               </div>
               <span className={`font-serif text-lg ${item.checked ? 'text-[#F6EFE7]' : 'text-[#C8B7A5]'}`}>
                 {item.label}
@@ -231,7 +231,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
               {/* Close button */}
               <button
                 onClick={() => { setRequestActive(false); setRequestStep(1); }}
-                className="absolute top-6 right-6 min-h-11 px-3 text-[#C8B7A5] hover:text-[#F6EFE7] font-sans text-xs font-bold tracking-[0.1em] uppercase cursor-pointer"
+                className="absolute top-6 right-6 min-h-11 px-3 text-[#C8B7A5] hover:text-[#F6EFE7] font-sans text-sm font-bold tracking-[0.1em] uppercase cursor-pointer"
               >
                 Close
               </button>
@@ -239,7 +239,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
               {requestStep === 1 ? (
                 <form onSubmit={handleConfirmRequest} className="flex flex-col gap-5">
                   <div className="text-center">
-                    <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#E27A3F]">Retreat Discernment</span>
+                    <span className="font-sans text-[14px] tracking-[0.3em] uppercase text-[#E27A3F]">Retreat Discernment</span>
                     <h3 className="font-serif text-3xl text-[#F6EFE7] mt-1.5">Request Sacred Passage</h3>
                     <p className="font-sans text-sm text-[#C8B7A5] mt-2">
                       Himalayan Sanctuary container — October 14 to 28, 2026.
@@ -249,17 +249,17 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center py-4 border-y border-white/5 my-2">
                     <div className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-white/[0.01]">
                       <Calendar className="w-5 h-5 text-[#E27A3F]" />
-                      <span className="font-sans text-xs text-[#C8B7A5] uppercase">Timeline</span>
+                      <span className="font-sans text-sm text-[#C8B7A5] uppercase">Timeline</span>
                       <span className="font-serif text-sm text-[#F6EFE7]">Oct 14 - 28</span>
                     </div>
                     <div className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-white/[0.01]">
                       <MapPin className="w-5 h-5 text-[#E27A3F]" />
-                      <span className="font-sans text-xs text-[#C8B7A5] uppercase">Location</span>
+                      <span className="font-sans text-sm text-[#C8B7A5] uppercase">Location</span>
                       <span className="font-serif text-sm text-[#F6EFE7]">Kedar Valley</span>
                     </div>
                     <div className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-white/[0.01]">
                       <ShieldCheck className="w-5 h-5 text-[#E27A3F]" />
-                      <span className="font-sans text-xs text-[#C8B7A5] uppercase">Access State</span>
+                      <span className="font-sans text-sm text-[#C8B7A5] uppercase">Access State</span>
                       <span className="font-serif text-sm text-[#F6EFE7]">Available to Request</span>
                     </div>
                   </div>
@@ -267,7 +267,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                   {/* Form fields */}
                   <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <label className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Name in Practice</label>
+                      <label className="font-sans text-sm font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Name in Practice</label>
                       <input
                         type="text"
                         required
@@ -280,7 +280,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="flex flex-col gap-1.5">
-                        <label className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Email</label>
+                        <label className="font-sans text-sm font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Email</label>
                         <input
                           type="email"
                           value={formData.email}
@@ -290,7 +290,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                         />
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">WhatsApp</label>
+                        <label className="font-sans text-sm font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">WhatsApp</label>
                         <input
                           type="tel"
                           value={formData.phone}
@@ -303,7 +303,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="flex flex-col gap-1.5">
-                        <label className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Nourishment Preference</label>
+                        <label className="font-sans text-sm font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Nourishment Preference</label>
                         <select
                           value={formData.diet}
                           onChange={(e) => setRequestData({...formData, diet: e.target.value})}
@@ -316,7 +316,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                       </div>
 
                       <div className="flex flex-col gap-1.5">
-                        <label className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Prior Stillness Experience</label>
+                        <label className="font-sans text-sm font-bold tracking-[0.08em] uppercase text-[#C8B7A5]">Prior Stillness Experience</label>
                         <select
                           value={formData.experience}
                           onChange={(e) => setRequestData({...formData, experience: e.target.value})}
@@ -354,7 +354,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                     >
                       {requestLoading ? 'Sharing for review...' : 'Request Human Review'}
                     </button>
-                    <span className="text-center font-sans text-[11px] text-[#C8B7A5] uppercase tracking-[0.08em] block">
+                    <span className="text-center font-sans text-[14px] text-[#C8B7A5] uppercase tracking-[0.08em] block">
                       Retreat interest does not equal retreat readiness
                     </span>
                   </div>
@@ -370,18 +370,18 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
                     <Award className="w-16 h-16 text-[#E27A3F] relative z-10 animate-bounce" />
                   </div>
                   <h3 className="font-serif text-3xl text-[#F6EFE7] mt-4">Passage Requested</h3>
-                  <p className="font-sans text-xs text-[#8a7c6d] max-w-sm">
+                  <p className="font-sans text-sm text-[#8a7c6d] max-w-sm">
                     Namaste, <strong className="text-[#F6EFE7]">{formData.name}</strong>. Your retreat interest has been shared for human review. No application or approval has been created.
                   </p>
                   <div className="border border-white/5 rounded-2xl p-4 bg-white/[0.01] max-w-sm w-full text-left mt-2">
-                    <span className="font-sans text-[9px] tracking-widest text-[#E27A3F] block uppercase mb-1">Next Step</span>
-                    <span className="font-sans text-xs text-[#C8B7A5]">
+                    <span className="font-sans text-[14px] tracking-widest text-[#E27A3F] block uppercase mb-1">Next Step</span>
+                    <span className="font-sans text-sm text-[#C8B7A5]">
                       A human conversation is required before any retreat doorway can be considered.
                     </span>
                   </div>
                   <button
                     onClick={() => { setRequestActive(false); setRequestStep(1); }}
-                    className="mt-6 px-6 py-2 bg-white/5 hover:bg-white/10 text-white font-sans font-semibold text-[10px] tracking-widest uppercase rounded-full transition-all"
+                    className="mt-6 px-6 py-2 bg-white/5 hover:bg-white/10 text-white font-sans font-semibold text-[14px] tracking-widest uppercase rounded-full transition-all"
                   >
                     Return to Shala
                   </button>
@@ -405,7 +405,7 @@ export const RetreatRoom: React.FC<RetreatRoomProps> = ({
 
       {/* Footer message */}
       <div className="w-full text-center z-10 mt-auto pt-4 border-t border-[#D8C5B0]/5">
-        <span className="font-sans font-semibold text-[9px] tracking-[0.18em] text-transform: uppercase text-[#6b5f52]">
+        <span className="font-sans font-semibold text-[14px] tracking-[0.18em] text-transform: uppercase text-[#6b5f52]">
           we gather as initiates · we walk as seekers
         </span>
       </div>

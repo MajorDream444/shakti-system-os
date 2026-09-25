@@ -84,7 +84,7 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
             onSoundToggle(!soundActive);
             if (!soundActive) handleBellStrike();
           }}
-          className={`flex items-center gap-2 p-2 px-3 rounded-full border text-[10px] font-sans font-semibold tracking-[0.16em] text-transform: uppercase transition-all duration-300 ${
+          className={`flex items-center gap-2 p-2 px-3 rounded-full border text-[14px] font-sans font-semibold tracking-[0.16em] text-transform: uppercase transition-all duration-300 ${
             soundActive
               ? 'border-[#E27A3F]/40 bg-[#090707]/80 text-[#E27A3F]'
               : 'border-white/10 bg-[#090707]/60 text-[#8b949e] hover:border-white/20'
@@ -100,7 +100,7 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
           <button
             id="resonant-bell-strike-btn"
             onClick={handleBellStrike}
-            className="p-2 rounded-full border border-white/10 bg-[#090707]/80 hover:bg-[#090707]/100 hover:border-[#E27A3F]/30 text-[#D8C5B0] text-[10px] font-sans font-semibold tracking-[0.16em] text-transform: uppercase transition-all duration-300"
+            className="p-2 rounded-full border border-white/10 bg-[#090707]/80 hover:bg-[#090707]/100 hover:border-[#E27A3F]/30 text-[#D8C5B0] text-[14px] font-sans font-semibold tracking-[0.16em] text-transform: uppercase transition-all duration-300"
             title="Strike Prayer Bell"
           >
             🔔 Bell
@@ -136,14 +136,14 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
               {/* Dial Title */}
               <div className="flex items-center gap-2 pb-3 mb-4 border-b border-white/5">
                 <div className="w-2 h-2 rounded-full bg-[#E27A3F]" />
-                <span className="font-sans font-bold text-[10px] tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
+                <span className="font-sans font-bold text-[14px] tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
                   MOUNTAIN CANOPY
                 </span>
               </div>
 
               {/* Seasons Grid */}
               <div className="mb-4">
-                <label className="block font-sans text-[9px] tracking-[0.16em] text-transform: uppercase text-[#6b5f52] mb-2">
+                <label className="block font-sans text-[14px] tracking-[0.16em] text-transform: uppercase text-[#6b5f52] mb-2">
                   Mountain Season
                 </label>
                 <div className="grid grid-cols-4 gap-1.5">
@@ -154,7 +154,7 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
                         key={s.id}
                         id={`hud-season-${s.id.toLowerCase()}`}
                         onClick={() => onSeasonChange(s.id)}
-                        className={`py-1.5 rounded-lg border text-[10px] font-semibold tracking-wider transition-all ${
+                        className={`py-1.5 rounded-lg border text-[14px] font-semibold tracking-wider transition-all ${
                           isSelected
                             ? 'border-[#E27A3F]/40 bg-[#E27A3F]/10 text-[#F6EFE7]'
                             : 'border-white/5 bg-white/[0.01] text-[#6b5f52] hover:border-white/15'
@@ -169,7 +169,7 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
 
               {/* Time of Day Grid */}
               <div className="mb-4">
-                <label className="block font-sans text-[9px] tracking-[0.16em] text-transform: uppercase text-[#6b5f52] mb-2">
+                <label className="block font-sans text-[14px] tracking-[0.16em] text-transform: uppercase text-[#6b5f52] mb-2">
                   Sanctuary Time
                 </label>
                 <div className="grid grid-cols-2 gap-1.5">
@@ -180,7 +180,7 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
                         key={t.id}
                         id={`hud-time-${t.id.toLowerCase()}`}
                         onClick={() => onTimeChange(t.id)}
-                        className={`flex items-center gap-2 p-2 rounded-lg border text-left text-[10px] font-semibold transition-all ${
+                        className={`flex items-center gap-2 p-2 rounded-lg border text-left text-[14px] font-semibold transition-all ${
                           isSelected
                             ? 'border-[#E27A3F]/40 bg-[#E27A3F]/10 text-[#F6EFE7]'
                             : 'border-white/5 bg-white/[0.01] text-[#6b5f52] hover:border-white/15'
@@ -196,7 +196,7 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
 
               {/* Weather Conditions */}
               <div>
-                <label className="block font-sans text-[9px] tracking-[0.16em] text-transform: uppercase text-[#6b5f52] mb-2">
+                <label className="block font-sans text-[14px] tracking-[0.16em] text-transform: uppercase text-[#6b5f52] mb-2">
                   Weather Atmosphere
                 </label>
                 <div className="grid grid-cols-2 gap-1.5">
@@ -207,7 +207,7 @@ export const EnvironmentalCanopy: React.FC<EnvironmentalCanopyProps> = ({
                         key={w.id}
                         id={`hud-weather-${w.id.toLowerCase()}`}
                         onClick={() => onWeatherChange(w.id)}
-                        className={`flex items-center gap-2 p-2 rounded-lg border text-left text-[10px] font-semibold transition-all ${
+                        className={`flex items-center gap-2 p-2 rounded-lg border text-left text-[14px] font-semibold transition-all ${
                           isSelected
                             ? 'border-[#E27A3F]/40 bg-[#E27A3F]/10 text-[#F6EFE7]'
                             : 'border-white/5 bg-white/[0.01] text-[#6b5f52] hover:border-white/15'

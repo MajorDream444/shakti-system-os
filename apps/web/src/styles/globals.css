@@ -139,7 +139,7 @@ button {
 .readiness-map-card span,
 .pathway-card span {
   font-family: var(--mono);
-  font-size: 0.74rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -380,7 +380,7 @@ button {
 
 .portal-gallery-frame small {
   color: rgba(244, 239, 230, 0.78);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   line-height: 1.3;
 }
 
@@ -428,7 +428,7 @@ button {
   max-width: 25ch;
   margin-top: 8px;
   color: rgba(244, 239, 230, 0.8);
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   line-height: 1.45;
 }
 
@@ -555,7 +555,7 @@ button {
   gap: 10px;
   color: rgba(244, 239, 230, 0.58);
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -671,7 +671,7 @@ button {
 
 .founder-portrait figcaption small {
   color: rgba(244, 239, 230, 0.58);
-  font-size: 0.74rem;
+  font-size: 0.875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -743,7 +743,7 @@ button {
   background: rgba(10, 10, 10, 0.62);
   color: rgba(244, 239, 230, 0.75);
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.11em;
   line-height: 1.45;
@@ -791,7 +791,7 @@ button {
   content: counter(method-step, decimal-leading-zero);
   color: var(--gold-lit);
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -848,7 +848,7 @@ button {
 .five-pillar-constellation p {
   margin: 18px 0 0;
   color: rgba(244, 239, 230, 0.72);
-  font-size: 0.86rem;
+  font-size: 0.875rem;
   line-height: 1.55;
 }
 
@@ -885,7 +885,7 @@ button {
   margin: 0;
   color: var(--accent);
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1046,7 +1046,7 @@ button {
 .authority-pillar p {
   margin: 16px 0 0;
   color: rgba(244, 239, 230, 0.58);
-  font-size: 0.83rem;
+  font-size: 0.875rem;
   line-height: 1.55;
 }
 
@@ -1397,7 +1397,7 @@ button {
   margin-bottom: 8px;
   color: var(--gold-lit);
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1421,7 +1421,7 @@ button {
   border-radius: 999px;
   color: rgba(244, 239, 230, 0.72);
   font-style: normal;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 }
 
 .chamber-actions {
@@ -1441,7 +1441,7 @@ button {
   background: rgba(233, 199, 126, 0.08);
   color: var(--text);
   cursor: pointer;
-  font-size: 0.76rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1828,7 +1828,7 @@ body {
 .hero-seasonal-doorway small,
 .hero-seasonal-doorway b {
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -2839,7 +2839,7 @@ body {
   align-self: end;
   color: var(--pink-soft);
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -2900,7 +2900,7 @@ body {
   margin-bottom: 9px;
   color: var(--gold-lit);
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2960,7 +2960,7 @@ body {
 .offer-rail-item small {
   color: rgba(233, 199, 126, 0.88);
   font-family: var(--mono);
-  font-size: 0.64rem;
+  font-size: 0.875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -2976,7 +2976,7 @@ body {
 .trust-link-row a {
   color: rgba(244, 239, 230, 0.76);
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3059,7 +3059,7 @@ body {
 .offering-card dt {
   color: rgba(244, 239, 230, 0.52);
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3115,7 +3115,7 @@ body {
 .testimonial-field-card span {
   color: var(--gold-lit);
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3328,7 +3328,7 @@ body {
   max-width: 560px;
   margin-top: 18px;
   color: rgba(255, 244, 224, 0.62);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
@@ -3743,7 +3743,7 @@ body {
   z-index: 1;
   color: var(--durga-antique-gold);
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -3766,7 +3766,7 @@ body {
   margin-bottom: 18px;
   color: #ff5a3e;
   font-family: var(--mono);
-  font-size: 0.74rem;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -3821,7 +3821,7 @@ body {
 
 .durga-storefront-panel span {
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -3863,7 +3863,7 @@ body {
 .durga-price-panel span {
   color: rgba(255, 244, 224, 0.64);
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -4110,7 +4110,7 @@ body {
 
 .durga-page .label {
   color: #e7c779;
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   letter-spacing: 0.12em;
 }
 
@@ -4478,7 +4478,7 @@ body {
 
 @media (max-width: 680px) {
   .durga-page .label {
-    font-size: 0.76rem;
+    font-size: 0.875rem;
   }
 
   .durga-hero {
@@ -4770,7 +4770,7 @@ body {
   margin-bottom: 6px;
   color: #e7c779;
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -4812,7 +4812,7 @@ body {
   margin-bottom: 10px;
   color: var(--gold-lit);
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;

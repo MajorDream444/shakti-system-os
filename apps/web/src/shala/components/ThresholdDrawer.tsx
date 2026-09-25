@@ -77,7 +77,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
               <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/5">
                 <div className="flex items-center gap-2">
                   <Compass className="w-4 h-4 text-[#D8B45E]" />
-                  <span className="font-sans font-bold text-xs tracking-[0.16em] text-transform: uppercase text-[#E9C77E]">
+                  <span className="font-sans font-bold text-sm tracking-[0.16em] text-transform: uppercase text-[#E9C77E]">
                     Sanctuary Map
                   </span>
                 </div>
@@ -148,7 +148,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
                           <div>
                             <div className="flex items-center gap-1.5">
                               <span className="font-serif text-lg text-[#F6EFE7]">{node.label}</span>
-                              <span className={`font-sans text-[10px] font-bold tracking-[0.04em] px-2 py-0.5 rounded ${
+                              <span className={`font-sans text-[14px] font-bold tracking-[0.04em] px-2 py-0.5 rounded ${
                                 node.state === 'Open'
                                   ? 'text-[#8FB98A] bg-[#8FB98A]/10'
                                   : node.state === 'Available to Request'
@@ -160,7 +160,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
                                 {node.state}
                               </span>
                             </div>
-                            <span className="font-sans text-xs text-[#C8B7A5] mt-1 block">
+                            <span className="font-sans text-sm text-[#C8B7A5] mt-1 block">
                               {node.desc}
                             </span>
                           </div>
@@ -180,7 +180,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
 
             {/* Footer message */}
             <div className="mt-8 pt-4 border-t border-[#D8C5B0]/5 text-center">
-              <span className="font-sans font-semibold text-[10px] tracking-[0.12em] text-[#C8B7A5] uppercase block leading-relaxed">
+              <span className="font-sans font-semibold text-[14px] tracking-[0.12em] text-[#C8B7A5] uppercase block leading-relaxed">
                 Open rooms can be entered now. Other doorways are held with preparation or invitation.
               </span>
             </div>
