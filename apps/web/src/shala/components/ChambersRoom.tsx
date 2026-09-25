@@ -58,7 +58,7 @@ export const ChambersRoom: React.FC<ChambersRoomProps> = ({
         <button
           id="chambers-back-sanctuary"
           onClick={() => onNavigate('COURTYARD')}
-          className="flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 font-sans font-semibold text-base tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-80 transition-opacity"
         >
           <ArrowLeft className="w-4 h-4" />
           Sanctuary
@@ -66,7 +66,7 @@ export const ChambersRoom: React.FC<ChambersRoomProps> = ({
         <button
           id="chambers-open-threshold"
           onClick={onOpenThreshold}
-          className="flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.24em] text-transform: uppercase text-[#E27A3F] hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 font-sans font-semibold text-base tracking-[0.24em] text-transform: uppercase text-[#E27A3F] hover:opacity-80 transition-opacity"
         >
           <Compass className="w-4 h-4" />
           THRESHOLD
@@ -90,7 +90,7 @@ export const ChambersRoom: React.FC<ChambersRoomProps> = ({
                     : 'border-white/5 bg-transparent hover:border-white/10'
                 }`}
               >
-                <div className="font-sans font-semibold text-[14px] tracking-[0.2em] uppercase text-[#8a7c6d]">
+                <div className="font-sans font-semibold text-base tracking-[0.2em] uppercase text-[#c7b6a2]">
                   CHAMBER
                 </div>
                 <div className="font-serif text-2xl text-[#F6EFE7] mt-1">{g.name}</div>
@@ -111,7 +111,7 @@ export const ChambersRoom: React.FC<ChambersRoomProps> = ({
               className="flex flex-col gap-4"
             >
               <div>
-                <span className="font-sans font-semibold text-[14px] tracking-[0.28em] text-transform: uppercase text-[#B27A52]">
+                <span className="font-sans font-semibold text-base tracking-[0.28em] text-transform: uppercase text-[#dc9a68]">
                   {currentChamber.atmosphere} Atmosphere
                 </span>
                 <h3 className="font-serif text-4xl md:text-5xl text-[#F6EFE7] mt-2">
@@ -122,35 +122,35 @@ export const ChambersRoom: React.FC<ChambersRoomProps> = ({
                 </p>
               </div>
 
-              <p className="font-sans text-sm line-height-relaxed text-[#C8B7A5]">
+              <p className="font-sans text-base line-height-relaxed text-[#C8B7A5]">
                 {currentChamber.description}
               </p>
 
               {/* Sensory Specifications */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#D8C5B0]/10 pt-5 mt-2">
                 <div className="flex flex-col gap-1">
-                  <span className="font-sans font-semibold text-[14px] tracking-[0.16em] text-transform: uppercase text-[#B27A52]">
+                  <span className="font-sans font-semibold text-base tracking-[0.16em] text-transform: uppercase text-[#dc9a68]">
                     MATERIALS &amp; SPACE
                   </span>
-                  <span className="font-sans text-sm text-[#C8B7A5]">{currentChamber.materials}</span>
+                  <span className="font-sans text-base text-[#C8B7A5]">{currentChamber.materials}</span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="font-sans font-semibold text-[14px] tracking-[0.16em] text-transform: uppercase text-[#B27A52]">
+                  <span className="font-sans font-semibold text-base tracking-[0.16em] text-transform: uppercase text-[#dc9a68]">
                     LIGHT
                   </span>
-                  <span className="font-sans text-sm text-[#C8B7A5]">{currentChamber.light}</span>
+                  <span className="font-sans text-base text-[#C8B7A5]">{currentChamber.light}</span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="font-sans font-semibold text-[14px] tracking-[0.16em] text-transform: uppercase text-[#B27A52]">
+                  <span className="font-sans font-semibold text-base tracking-[0.16em] text-transform: uppercase text-[#dc9a68]">
                     SOUND
                   </span>
-                  <span className="font-sans text-sm text-[#C8B7A5]">{currentChamber.sound}</span>
+                  <span className="font-sans text-base text-[#C8B7A5]">{currentChamber.sound}</span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="font-sans font-semibold text-[14px] tracking-[0.16em] text-transform: uppercase text-[#B27A52]">
+                  <span className="font-sans font-semibold text-base tracking-[0.16em] text-transform: uppercase text-[#dc9a68]">
                     MOVEMENT &amp; BODILY POSTURE
                   </span>
-                  <span className="font-sans text-sm text-[#C8B7A5]">{currentChamber.movement}</span>
+                  <span className="font-sans text-base text-[#C8B7A5]">{currentChamber.movement}</span>
                 </div>
               </div>
 
@@ -186,7 +186,7 @@ export const ChambersRoom: React.FC<ChambersRoomProps> = ({
 
       {/* Footer message */}
       <div className="w-full text-center z-10 mt-auto pt-4 border-t border-[#D8C5B0]/5">
-        <span className="font-sans font-semibold text-[14px] tracking-[0.18em] text-transform: uppercase text-[#6b5f52]">
+        <span className="font-sans font-semibold text-base tracking-[0.18em] text-transform: uppercase text-[#bda994]">
           Eight sovereign environments · aligned to deep shakti lineages
         </span>
       </div>

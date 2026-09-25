@@ -77,7 +77,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
               <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/5">
                 <div className="flex items-center gap-2">
                   <Compass className="w-4 h-4 text-[#D8B45E]" />
-                  <span className="font-sans font-bold text-sm tracking-[0.16em] text-transform: uppercase text-[#E9C77E]">
+                  <span className="font-sans font-bold text-base tracking-[0.16em] text-transform: uppercase text-[#E9C77E]">
                     Sanctuary Map
                   </span>
                 </div>
@@ -94,7 +94,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
                 <div className="threshold-map-seal" aria-hidden="true">
                 </div>
                 <h3 className="font-serif text-3xl text-[#F6EFE7]">Where are you in the sanctuary?</h3>
-                <p className="font-sans text-sm text-[#C8B7A5] mt-2 leading-relaxed">
+                <p className="font-sans text-base text-[#C8B7A5] mt-2 leading-relaxed">
                   See what is open now, what can be requested, and what opens with preparation or invitation.
                 </p>
               </div>
@@ -116,7 +116,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
                         {isActive ? (
                           <div className="w-3.5 h-3.5 rounded-full bg-[#E27A3F] border border-white/20 shadow-[0_0_12px_#E27A3F]" />
                         ) : (
-                          <div className={`w-2.5 h-2.5 rounded-full bg-[#1c1414] border transition-colors ${isOpen ? 'border-[#D8C5B0]/30 hover:border-[#E27A3F]/50' : 'border-[#8a7c6d]/25'}`} />
+                          <div className={`w-2.5 h-2.5 rounded-full bg-[#1c1414] border transition-colors ${isOpen ? 'border-[#D8C5B0]/30 hover:border-[#E27A3F]/50' : 'border-[#c7b6a2]/25'}`} />
                         )}
                       </div>
 
@@ -144,11 +144,11 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <Icon className={`w-4 h-4 ${isActive ? 'text-[#E27A3F]' : isOpen ? 'text-[#D8C5B0]' : 'text-[#8a7c6d]'}`} />
+                          <Icon className={`w-4 h-4 ${isActive ? 'text-[#E27A3F]' : isOpen ? 'text-[#D8C5B0]' : 'text-[#c7b6a2]'}`} />
                           <div>
                             <div className="flex items-center gap-1.5">
                               <span className="font-serif text-lg text-[#F6EFE7]">{node.label}</span>
-                              <span className={`font-sans text-[14px] font-bold tracking-[0.04em] px-2 py-0.5 rounded ${
+                              <span className={`font-sans text-base font-bold tracking-[0.04em] px-2 py-0.5 rounded ${
                                 node.state === 'Open'
                                   ? 'text-[#8FB98A] bg-[#8FB98A]/10'
                                   : node.state === 'Available to Request'
@@ -160,16 +160,16 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
                                 {node.state}
                               </span>
                             </div>
-                            <span className="font-sans text-sm text-[#C8B7A5] mt-1 block">
+                            <span className="font-sans text-base text-[#C8B7A5] mt-1 block">
                               {node.desc}
                             </span>
                           </div>
                         </div>
 
                         {!isOpen ? (
-                          <CircleDot className="w-3.5 h-3.5 text-[#6b5f52]" />
+                          <CircleDot className="w-3.5 h-3.5 text-[#bda994]" />
                         ) : (
-                          <ChevronRight className={`w-4 h-4 transition-transform ${isActive ? 'text-[#E27A3F]' : 'text-[#6b5f52] group-hover:translate-x-0.5'}`} />
+                          <ChevronRight className={`w-4 h-4 transition-transform ${isActive ? 'text-[#E27A3F]' : 'text-[#bda994] group-hover:translate-x-0.5'}`} />
                         )}
                       </button>
                     </div>
@@ -180,7 +180,7 @@ export const ThresholdDrawer: React.FC<ThresholdDrawerProps> = ({
 
             {/* Footer message */}
             <div className="mt-8 pt-4 border-t border-[#D8C5B0]/5 text-center">
-              <span className="font-sans font-semibold text-[14px] tracking-[0.12em] text-[#C8B7A5] uppercase block leading-relaxed">
+              <span className="font-sans font-semibold text-base tracking-[0.12em] text-[#C8B7A5] uppercase block leading-relaxed">
                 Open rooms can be entered now. Other doorways are held with preparation or invitation.
               </span>
             </div>

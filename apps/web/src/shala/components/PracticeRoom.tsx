@@ -88,7 +88,7 @@ export const PracticeRoom: React.FC<PracticeRoomProps> = ({
 
       {/* Top Header - extremely minimal */}
       <div className="w-full flex justify-between items-center z-10">
-        <span className="font-sans font-semibold text-[14px] tracking-[0.24em] text-transform: uppercase text-[#6b5f52]">
+        <span className="font-sans font-semibold text-base tracking-[0.24em] text-transform: uppercase text-[#bda994]">
           DEPTH 04 · PRACTICE
         </span>
         <button
@@ -103,7 +103,7 @@ export const PracticeRoom: React.FC<PracticeRoomProps> = ({
 
       {/* Center Breathing Space */}
       <div className="max-w-md mx-auto w-full text-center my-auto flex flex-col items-center justify-center z-10">
-        <span className="font-sans font-semibold text-sm tracking-[0.2em] text-transform: uppercase text-[#B27A52] opacity-80">
+        <span className="font-sans font-semibold text-base tracking-[0.2em] text-transform: uppercase text-[#dc9a68] opacity-80">
           {practice.category}
         </span>
         <h2 className="font-serif text-3xl md:text-4xl text-[#F6EFE7] mt-3">
@@ -136,7 +136,7 @@ export const PracticeRoom: React.FC<PracticeRoomProps> = ({
 
         {/* Progress Bar & Timer */}
         <div className="w-full max-w-xs flex flex-col gap-2">
-          <div className="flex justify-between text-sm font-mono text-[#6b5f52]">
+          <div className="flex justify-between text-base font-mono text-[#bda994]">
             <span>{formatTime(secondsElapsed)}</span>
             <span>{formatTime(totalSeconds)}</span>
           </div>
@@ -153,7 +153,7 @@ export const PracticeRoom: React.FC<PracticeRoomProps> = ({
           <button
             id="reset-practice-timer"
             onClick={() => setSecondsElapsed(0)}
-            className="p-2 rounded-full border border-white/5 bg-white/[0.02] text-[#8a7c6d] hover:text-[#F6EFE7] hover:bg-white/5 transition-colors"
+            className="p-2 rounded-full border border-white/5 bg-white/[0.02] text-[#c7b6a2] hover:text-[#F6EFE7] hover:bg-white/5 transition-colors"
           >
             <RotateCcw className="w-4 h-4" />
           </button>
@@ -169,7 +169,7 @@ export const PracticeRoom: React.FC<PracticeRoomProps> = ({
 
       {/* Footer Instructions - extremely understated */}
       <div className="w-full text-center z-10 mt-auto">
-        <span className="font-serif italic text-sm text-[#5c5145] tracking-wide">
+        <span className="font-serif italic text-base text-[#5c5145] tracking-wide">
           close your eyes · follow the breath
         </span>
       </div>

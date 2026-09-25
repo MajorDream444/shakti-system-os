@@ -111,7 +111,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1.5 }}
-        className="text-sm md:text-sm text-ash/55 mb-6 md:mb-12 italic"
+        className="text-base md:text-base text-ash/55 mb-6 md:mb-12 italic"
       >
         Sri Shakti Shala opens through attention, not performance.
       </motion.p>
@@ -123,7 +123,7 @@ export default function Threshold({ onNext }: { onNext: () => void }) {
         onClick={onNext}
         className="begin-primary-action relative group px-14 py-4 bg-transparent border border-burgundy/30 hover:border-ember/50 transition-colors duration-700 overflow-hidden rounded-sm cursor-pointer shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
       >
-        <span className="relative z-10 text-ash/80 group-hover:text-ember transition-colors duration-500 tracking-[0.25em] font-medium text-sm uppercase">
+        <span className="relative z-10 text-ash/80 group-hover:text-ember transition-colors duration-500 tracking-[0.25em] font-medium text-base uppercase">
           Begin the Ascent
         </span>
         <div className="absolute inset-0 bg-ember/0 group-hover:bg-ember/[0.04] transition-colors duration-700" />

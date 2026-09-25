@@ -67,7 +67,7 @@ export default function PathReveal({ result, onNext }: Props) {
 
         <div className="flex flex-col items-start relative py-4 border-t border-ash/5">
           <div className="absolute inset-0 bg-burgundy/[0.015] blur-3xl rounded-full" />
-          <span className="relative z-10 text-[14px] uppercase tracking-[0.16em] text-[#E9C77E] mb-5 font-bold">Your doorway</span>
+          <span className="relative z-10 text-base uppercase tracking-[0.16em] text-[#E9C77E] mb-5 font-bold">Your doorway</span>
           <h3 className="relative z-10 text-2xl md:text-3xl text-red-400 font-light tracking-wide text-glow">
             {result.nextStep}
           </h3>
@@ -89,7 +89,7 @@ export default function PathReveal({ result, onNext }: Props) {
           className="group relative flex items-center gap-4 px-12 py-5 bg-[#4A1C22]/64 border border-[#E9C77E]/42 hover:border-[#E9C77E] text-[#F6EFE7] hover:text-white transition-all duration-500 rounded-sm overflow-hidden cursor-pointer"
         >
           <div className="absolute inset-0 bg-red-950 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-700" />
-          <span className="relative z-10 tracking-[0.12em] uppercase text-sm font-bold">
+          <span className="relative z-10 tracking-[0.12em] uppercase text-base font-bold">
             {result.primaryCTA}
           </span>
           <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-2 transition-transform duration-700" />
@@ -103,7 +103,7 @@ export default function PathReveal({ result, onNext }: Props) {
           }}
           className="group flex flex-col items-center gap-2 cursor-pointer rounded-sm px-4 py-3 border border-ash/[0.18] hover:border-[#E5849B]/50 transition-colors"
         >
-          <span className="text-ash/[0.82] group-hover:text-[#F0C4D0] text-sm uppercase tracking-[0.1em] font-bold transition-colors duration-500">
+          <span className="text-ash/[0.82] group-hover:text-[#F0C4D0] text-base uppercase tracking-[0.1em] font-bold transition-colors duration-500">
             {result.secondaryCTA}
           </span>
           <div className="w-8 h-[0.5px] bg-ash/20 group-hover:w-16 group-hover:bg-ash/40 transition-all duration-700" />
@@ -116,12 +116,12 @@ export default function PathReveal({ result, onNext }: Props) {
         transition={{ delay: 2.4, duration: 1.5 }}
         className="mt-7 flex flex-col items-center gap-3"
       >
-        <p className="text-[14px] uppercase tracking-[0.14em] text-ash/[0.64] font-semibold">or speak directly with Sheetal</p>
+        <p className="text-base uppercase tracking-[0.14em] text-ash/[0.64] font-semibold">or speak directly with Sheetal</p>
         <a
           href="https://calendly.com/sheetalkandola/discovery-call"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm uppercase tracking-[0.1em] text-[#F6EFE7] hover:text-[#F0C4D0] transition-colors duration-500 border-b border-[#E9C77E]/30 hover:border-[#E5849B]/60 pb-[2px] font-bold"
+          className="text-base uppercase tracking-[0.1em] text-[#F6EFE7] hover:text-[#F0C4D0] transition-colors duration-500 border-b border-[#E9C77E]/30 hover:border-[#E5849B]/60 pb-[2px] font-bold"
         >
           Book a Discovery Call
         </a>

@@ -259,10 +259,10 @@ export default function SanctuaryAudio() {
         onClick={toggleSound}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`flex items-center gap-2 px-3 py-1.5 border rounded-full transition-all duration-700 uppercase tracking-[0.25em] text-[14px] font-semibold cursor-pointer ${
+        className={`flex items-center gap-2 px-3 py-1.5 border rounded-full transition-all duration-700 uppercase tracking-[0.25em] text-base font-semibold cursor-pointer ${
           isPlaying
             ? 'bg-red-950/20 border-red-800 text-red-400 font-bold shadow-[0_0_10px_rgba(157,23,29,0.25)]'
-            : 'bg-stone-900/10 border-ash/10 text-ash/40 hover:text-stone-300 hover:border-ash/25'
+            : 'bg-stone-900/70 border-ash/35 text-ash hover:text-white hover:border-ash/60'
         }`}
         title="Sanctuary Temple Drone"
       >

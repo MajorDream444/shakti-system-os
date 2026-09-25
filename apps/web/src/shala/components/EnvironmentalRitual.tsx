@@ -65,7 +65,7 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
           ) : (
             <Sun className="w-4 h-4 text-[#E27A3F]" />
           )}
-          <span className="font-sans font-bold text-[14px] tracking-[0.22em] text-[#E27A3F] uppercase">
+          <span className="font-sans font-bold text-base tracking-[0.22em] text-[#E27A3F] uppercase">
             {roomId === 'GATES' ? 'Archway Growth Ritual' : 'Hearth Flame Ritual'}
           </span>
         </div>
@@ -74,7 +74,7 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
           <button
             id={`toggle-ritual-history-${roomId.toLowerCase()}`}
             onClick={() => setShowHistory(!showHistory)}
-            className="flex items-center gap-1 font-sans text-[14px] text-[#8a7c6d] hover:text-[#F6EFE7] uppercase tracking-wider transition-colors cursor-pointer"
+            className="flex items-center gap-1 font-sans text-base text-[#c7b6a2] hover:text-[#F6EFE7] uppercase tracking-wider transition-colors cursor-pointer"
           >
             <History className="w-3 h-3" />
             {showHistory ? 'Offer Intent' : `Echos (${intentions.length})`}
@@ -96,7 +96,7 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
                 ? 'Sow an Intention at the Arch'
                 : 'Feed the Hearth with Sincerity'}
             </h3>
-            <p className="font-sans text-sm text-[#8a7c6d] leading-relaxed mb-4">
+            <p className="font-sans text-base text-[#c7b6a2] leading-relaxed mb-4">
               Your written aspirations shape the mountain sanctuary. Every whisper transforms the physical space, nourishing living growth or heightening sacred embers.
             </p>
 
@@ -109,10 +109,10 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
                   value={intention}
                   onChange={(e) => setIntention(e.target.value)}
                   placeholder="e.g., Cultivating patience with myself..."
-                  className="w-full px-4 py-3 bg-white/[0.02] border border-[#D8C5B0]/15 rounded-xl font-sans text-sm text-[#F6EFE7] placeholder-[#6b5f52] focus:outline-none focus:border-[#E27A3F]/50 transition-colors"
+                  className="w-full px-4 py-3 bg-white/[0.02] border border-[#D8C5B0]/15 rounded-xl font-sans text-base text-[#F6EFE7] placeholder-[#bda994] focus:outline-none focus:border-[#E27A3F]/50 transition-colors"
                   disabled={isSubmitting}
                 />
-                <span className="absolute right-3 top-3.5 font-mono text-[14px] text-[#6b5f52] select-none">
+                <span className="absolute right-3 top-3.5 font-mono text-base text-[#bda994] select-none">
                   {120 - intention.length}
                 </span>
               </div>
@@ -121,7 +121,7 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
                 id={`ritual-submit-btn-${roomId.toLowerCase()}`}
                 type="submit"
                 disabled={isSubmitting || !intention.trim()}
-                className="w-full py-2.5 bg-gradient-to-r from-[#C35A2E]/80 to-[#E27A3F]/80 hover:from-[#C35A2E] hover:to-[#E27A3F] disabled:from-white/5 disabled:to-white/5 disabled:text-[#6b5f52] text-white font-sans font-bold text-[14px] tracking-widest uppercase rounded-xl transition-all duration-300 shadow-[0_0_12px_rgba(226,122,63,0.1)] hover:scale-[1.01] cursor-pointer"
+                className="w-full py-2.5 bg-gradient-to-r from-[#C35A2E]/80 to-[#E27A3F]/80 hover:from-[#C35A2E] hover:to-[#E27A3F] disabled:from-white/5 disabled:to-white/5 disabled:text-[#bda994] text-white font-sans font-bold text-base tracking-widest uppercase rounded-xl transition-all duration-300 shadow-[0_0_12px_rgba(226,122,63,0.1)] hover:scale-[1.01] cursor-pointer"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-1">
@@ -136,10 +136,10 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
             <div className="mt-5 pt-4 border-t border-white/5 flex gap-3 items-start">
               <span className="text-lg leading-none">🏔️</span>
               <div>
-                <span className="font-sans font-bold text-[14px] text-[#E27A3F] tracking-widest block uppercase mb-1">
+                <span className="font-sans font-bold text-base text-[#E27A3F] tracking-widest block uppercase mb-1">
                   CURRENT RESPONSE · LEVEL {growthLevel}
                 </span>
-                <p className="font-serif italic text-sm text-[#D8C5B0] leading-relaxed">
+                <p className="font-serif italic text-base text-[#D8C5B0] leading-relaxed">
                   "{getGrowthFeedback()}"
                 </p>
               </div>
@@ -156,7 +156,7 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
           >
             <div>
               <h3 className="font-serif text-lg text-[#F6EFE7] mb-1">Whispers of the Past</h3>
-              <p className="font-sans text-[14px] text-[#8a7c6d] uppercase tracking-wider">
+              <p className="font-sans text-base text-[#c7b6a2] uppercase tracking-wider">
                 Intention Lineage kept by the winds
               </p>
             </div>
@@ -167,10 +167,10 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
                   key={idx}
                   className="p-3 rounded-lg border border-white/5 bg-white/[0.01]"
                 >
-                  <p className="font-serif italic text-sm text-[#D8C5B0]">
+                  <p className="font-serif italic text-base text-[#D8C5B0]">
                     "{item}"
                   </p>
-                  <span className="font-sans text-[14px] text-[#6b5f52] block mt-1 uppercase tracking-widest">
+                  <span className="font-sans text-base text-[#bda994] block mt-1 uppercase tracking-widest">
                     Ritual offering #{intentions.length - idx}
                   </span>
                 </div>
@@ -179,7 +179,7 @@ export const EnvironmentalRitual: React.FC<EnvironmentalRitualProps> = ({
 
             <button
               onClick={() => setShowHistory(false)}
-              className="w-full py-2 bg-white/5 hover:bg-white/10 text-[#D8C5B0] font-sans font-semibold text-[14px] tracking-wider uppercase rounded-lg transition-colors cursor-pointer"
+              className="w-full py-2 bg-white/5 hover:bg-white/10 text-[#D8C5B0] font-sans font-semibold text-base tracking-wider uppercase rounded-lg transition-colors cursor-pointer"
             >
               Back to Ritual Form
             </button>
