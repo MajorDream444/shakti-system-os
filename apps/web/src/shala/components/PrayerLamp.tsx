@@ -17,7 +17,7 @@ export const PrayerLamp: React.FC<PrayerLampProps> = ({ roomId, isLit, onToggle 
 
   return (
     <div className="flex flex-col items-center gap-1.5 p-3.5 rounded-2xl border border-white/5 bg-black/40 backdrop-blur-md select-none w-28 text-center">
-      <span className="text-[14px] font-sans font-bold tracking-[0.2em] uppercase text-[#8a7c6d]">
+      <span className="text-base font-sans font-bold tracking-[0.2em] uppercase text-[#c7b6a2]">
         {isLit ? 'LAMP GLOWING' : 'OFFER FLAME'}
       </span>
 
@@ -46,7 +46,7 @@ export const PrayerLamp: React.FC<PrayerLampProps> = ({ roomId, isLit, onToggle 
         )}
       </button>
 
-      <span className="text-[14px] font-serif italic text-[#6b5f52] truncate max-w-full">
+      <span className="text-base font-serif italic text-[#bda994] truncate max-w-full">
         {isLit ? 'Burning steady' : 'Tap to light'}
       </span>
     </div>

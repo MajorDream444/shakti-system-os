@@ -236,7 +236,7 @@
 
 #root .durga-payment-heading {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #e9c77e;
@@ -266,7 +266,7 @@
 
 #root .durga-payment-audience {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -437,7 +437,7 @@
   display: block;
   width: auto;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -567,7 +567,7 @@
 
 #root .portal-gallery-frame figcaption span {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   color: #f6ecd8;
 }
 
@@ -575,7 +575,7 @@
   display: block;
   white-space: normal;
   overflow-wrap: break-word;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(246, 236, 216, 0.72);
 }
 
@@ -679,7 +679,7 @@
   padding: 0 22px;
   border-radius: 999px;
   border: 1px solid rgba(233, 199, 126, 0.55);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -699,4 +699,168 @@
 
 #root .offer-path-card:first-child:hover > strong {
   filter: brightness(1.06);
+}
+
+/* ---------------------------------------------------------------------------
+   Reading floor, second pass (2026-09-25).
+
+   Sheetal's community skews older than the original design assumed. Body and
+   label text now starts at 16px rather than 14px, and text that sits over a
+   photograph is given a deterministic ground so its contrast does not depend
+   on whatever leaf happens to be behind it.
+   --------------------------------------------------------------------------- */
+
+/* The trust links were 14px at 76% opacity, tracked wide, directly over a
+   photograph of foliage — small and low contrast at the same time. */
+#root .trust-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(12, 8, 9, 0.72);
+  backdrop-filter: blur(3px);
+}
+
+#root .trust-link-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid rgba(233, 199, 126, 0.42);
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #fbf1dd;
+  text-decoration: none;
+}
+
+#root .trust-link-row a:hover,
+#root .trust-link-row a:focus-visible {
+  border-color: rgba(233, 199, 126, 0.85);
+  background: rgba(233, 199, 126, 0.12);
+  color: #fff6e3;
+}
+
+/* Full-strength cream for body copy. Faded text is the other half of the
+   legibility problem, and alpha over a photograph is unpredictable. */
+#root :is(p, li, dd, figcaption, small, .section-copy p, .durga-payment-help) {
+  color: var(--sanctuary-ink, #f4efe6);
+}
+
+#root :is(p, li, figcaption, small) {
+  font-size: max(1rem, 1em);
+  line-height: 1.65;
+}
+
+/* ---------------------------------------------------------------------------
+   Text over photographs.
+
+   A pixel-sampled contrast pass over 214 rendered text elements found every
+   public page at or above the WCAG AA floor, and nine failures where labels
+   sit directly on imagery inside the members' Shala and on the Begin audio
+   control — between 2.56:1 and 4.46:1 against a floor of 4.5:1. Photographs
+   give no contrast guarantee, so those labels get a ground of their own.
+   --------------------------------------------------------------------------- */
+
+/* The cause was the ink, not the ground: overlay labels used muted taupes
+   (#8a7c6d, #6b5f52) and a copper (#B27A52) that sat at 2.5:1 to 4.5:1 on
+   the dark photography behind them. Those three are now lighter throughout
+   the Shala components, and the Begin audio toggle no longer renders at 40%
+   opacity. A shadow keeps glyph edges clean where a pale leaf falls behind
+   a letter. */
+#root :is(.shala-room, .shala-app) :is(span, small, div, p, h1, h2, h3) {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* The Shala utility bar set 0.95em on the container, so its <strong>
+   rendered at 15.2px. */
+#root .sanctuary-utility,
+#root .sanctuary-utility-current,
+#root .sanctuary-utility :is(strong, span, small) {
+  font-size: max(1rem, 1em);
+}
+
+/* ---------------------------------------------------------------------------
+   Dancing with Durga — Investment (2026-09-25).
+
+   The section sat transparent over the page's cream ground while two of its
+   own strings were near-white (#fff5e7): "Choose the option that applies to
+   you" and the Stripe help line both bled into the background. Giving the
+   section a deep oxblood ground fixes those and matches the hero, so the
+   two headings flip from near-black to cream and gold to suit it.
+   --------------------------------------------------------------------------- */
+
+#root .durga-investment {
+  position: relative;
+  background:
+    radial-gradient(circle at 84% 16%, rgba(177, 18, 23, 0.26), transparent 42%),
+    linear-gradient(168deg, #2a1216 0%, #1c090c 100%);
+}
+
+#root .durga-investment .label {
+  color: #e9c77e;
+}
+
+#root .durga-investment h2 {
+  color: #fbf1dd;
+}
+
+#root .durga-investment .durga-payment-heading {
+  color: #e9c77e;
+}
+
+#root .durga-investment .durga-payment-help {
+  color: rgba(246, 236, 216, 0.88);
+}
+
+#root .durga-investment .durga-payment-help a {
+  color: #ffe1a3;
+}
+
+/* The access notes below the cards were also authored for a light ground. */
+#root .durga-investment .durga-access-form p {
+  color: #f4e6c8;
+}
+
+/* A later rule in this file carries #root in its selector list and was still
+   painting the label and the body copy for a cream ground. */
+#root .durga-page .durga-investment .label,
+#root .durga-page .durga-investment .durga-storefront-panel span,
+#root .durga-page .durga-investment .durga-price-panel span {
+  color: #e9c77e;
+}
+
+#root .durga-page .durga-investment .section-copy p,
+#root .durga-page .durga-investment p {
+  color: rgba(246, 236, 216, 0.9);
+}
+
+#root .durga-page .durga-investment h2 {
+  color: #fbf1dd;
+}
+
+/* The body-ink rule above matches any <p>, and the payment card's audience
+   and price are <p> elements on a light gold fill — they were being painted
+   cream on gold. Restore the dark ink inside the cards. */
+#root .durga-payment-card .durga-payment-audience {
+  color: #6b2b26;
+}
+
+#root .durga-payment-card .durga-payment-price {
+  color: #3a1218;
+}
+
+/* The .durga-investment paragraph rule above is more specific than the card
+   rule, so inside that section the cards were still cream on gold. */
+#root .durga-page .durga-investment .durga-payment-card .durga-payment-audience,
+#root .durga-page .durga-payment-card .durga-payment-audience {
+  color: #6b2b26;
+}
+
+#root .durga-page .durga-investment .durga-payment-card .durga-payment-price,
+#root .durga-page .durga-payment-card .durga-payment-price {
+  color: #3a1218;
 }

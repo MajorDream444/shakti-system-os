@@ -44,7 +44,7 @@ export default function ChoiceScreen({ id, prompt, supportLine, choices, selecte
           {prompt}
         </h2>
         {supportLine && (
-          <p className="begin-body text-ash/58 italic text-sm md:text-base font-light font-sans tracking-wide max-w-xl">
+          <p className="begin-body text-ash/58 italic text-base md:text-base font-light font-sans tracking-wide max-w-xl">
             {supportLine}
           </p>
         )}

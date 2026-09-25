@@ -221,7 +221,7 @@ export default function Handoff({
                 />
               </div>
 
-              <label className="flex items-start gap-3 text-left text-sm leading-relaxed text-ash/[0.82]">
+              <label className="flex items-start gap-3 text-left text-base leading-relaxed text-ash/[0.82]">
                 <input
                   type="checkbox"
                   checked={consentAccepted}
@@ -231,7 +231,7 @@ export default function Handoff({
                 <span>I consent to share my Begin choices and contact details so the team can remember this doorway with care.</span>
               </label>
 
-              <label className="flex items-start gap-3 text-left text-sm leading-relaxed text-ash/[0.82]">
+              <label className="flex items-start gap-3 text-left text-base leading-relaxed text-ash/[0.82]">
                 <input
                   type="checkbox"
                   checked={requestGuidance}
@@ -258,7 +258,7 @@ export default function Handoff({
                     scale: (!name || isLoading) ? 1 : 1.01,
                     transition: { duration: 1, ease: [0.25, 1, 0.5, 1] }
                   }}
-                  className={`w-full py-4.5 border font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm cursor-pointer ${
+                  className={`w-full py-4.5 border font-bold tracking-[0.12em] uppercase text-base transition-all duration-500 rounded-sm cursor-pointer ${
                     (!name || isLoading)
                       ? 'border-ash/[0.12] text-ash/45 cursor-not-allowed bg-stone-950/25'
                       : 'border-[#E9C77E]/55 bg-[#4A1C22]/65 hover:border-[#E9C77E] text-[#F6EFE7] shadow-[0_4px_24px_rgba(233,199,126,0.16)]'
@@ -278,7 +278,7 @@ export default function Handoff({
               className="w-full min-h-12 justify-center flex items-center gap-2 border border-[#8FB27A]/45 bg-[#0E1A13]/58 text-[#F6EFE7] hover:text-white hover:border-[#8FB27A]/80 transition-colors px-5 py-3 cursor-pointer rounded-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm uppercase tracking-[0.1em] font-bold">Continue Without Sharing · Enter Sri Shakti Shala</span>
+              <span className="text-base uppercase tracking-[0.1em] font-bold">Continue Without Sharing · Enter Sri Shakti Shala</span>
             </motion.button>
           </motion.div>
         ) : (
@@ -302,7 +302,7 @@ export default function Handoff({
               Thank you, <span className="text-red-400 font-medium">{name}</span>. {saveMessage || SAVE_COPY[saveTone]}
             </p>
 
-            <p className="text-sm text-ash/72 font-normal italic mb-10">
+            <p className="text-base text-ash/72 font-normal italic mb-10">
               {(requestGuidance || isCommunityIntent) && requestSaved
                 ? 'Your request has been shared for human review.'
                 : requestFailed
@@ -312,7 +312,7 @@ export default function Handoff({
 
             <a
               href={SHALA_PATH}
-              className="w-full mb-4 block text-center py-4 bg-[#4A1C22]/70 border border-[#E9C77E]/45 hover:border-[#E9C77E] text-[#F6EFE7] hover:text-white font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm shadow-[0_4px_24px_rgba(233,199,126,0.16)]"
+              className="w-full mb-4 block text-center py-4 bg-[#4A1C22]/70 border border-[#E9C77E]/45 hover:border-[#E9C77E] text-[#F6EFE7] hover:text-white font-bold tracking-[0.12em] uppercase text-base transition-all duration-500 rounded-sm shadow-[0_4px_24px_rgba(233,199,126,0.16)]"
             >
               Enter Sri Shakti Shala
             </a>
@@ -321,7 +321,7 @@ export default function Handoff({
               href="https://calendly.com/sheetalkandola/discovery-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full mb-4 block text-center py-4 bg-stone-950/45 border border-ash/[0.28] hover:border-[#E5849B]/55 text-ash/[0.88] hover:text-[#F0C4D0] font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm"
+              className="w-full mb-4 block text-center py-4 bg-stone-950/45 border border-ash/[0.28] hover:border-[#E5849B]/55 text-ash/[0.88] hover:text-[#F0C4D0] font-bold tracking-[0.12em] uppercase text-base transition-all duration-500 rounded-sm"
             >
               Book a Discovery Call with Sheetal
             </a>
@@ -335,7 +335,7 @@ export default function Handoff({
                 scale: 1.01,
                 transition: { duration: 1, ease: [0.25, 1, 0.5, 1] }
               }}
-              className="w-full py-4.5 bg-stone-950/40 border border-ash/[0.24] hover:border-[#E5849B]/45 text-ash/[0.82] hover:text-[#F0C4D0] font-bold tracking-[0.12em] uppercase text-sm transition-all duration-500 rounded-sm cursor-pointer"
+              className="w-full py-4.5 bg-stone-950/40 border border-ash/[0.24] hover:border-[#E5849B]/45 text-ash/[0.82] hover:text-[#F0C4D0] font-bold tracking-[0.12em] uppercase text-base transition-all duration-500 rounded-sm cursor-pointer"
             >
               Delete local journey
             </motion.button>
@@ -343,7 +343,7 @@ export default function Handoff({
         )}
       </AnimatePresence>
 
-      <p className="mt-14 text-[14px] text-ash/26 uppercase tracking-[0.25em] serif italic">
+      <p className="mt-14 text-base text-ash/26 uppercase tracking-[0.25em] serif italic">
         somatic integration & classical tantra
       </p>
     </div>

@@ -52,13 +52,13 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
 
       {/* Header */}
       <div className="w-full flex justify-between items-center z-10">
-        <span className="font-sans font-semibold text-sm tracking-[0.24em] text-transform: uppercase text-[#8a7c6d]">
+        <span className="font-sans font-semibold text-base tracking-[0.24em] text-transform: uppercase text-[#c7b6a2]">
           SRI SHAKTI SHALA
         </span>
         <button
           id="enter-courtyard-btn"
           onClick={() => onNavigate('COURTYARD')}
-          className="font-sans font-semibold text-sm tracking-[0.16em] text-transform: uppercase text-[#E27A3F] border border-[#E27A3F]/20 rounded-full px-4 py-2 hover:bg-[#E27A3F]/10 transition-colors"
+          className="font-sans font-semibold text-base tracking-[0.16em] text-transform: uppercase text-[#E27A3F] border border-[#E27A3F]/20 rounded-full px-4 py-2 hover:bg-[#E27A3F]/10 transition-colors"
         >
           Enter Shala
         </button>
@@ -70,7 +70,7 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 0.9 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="font-sans font-semibold text-sm tracking-[0.28em] text-transform: uppercase text-[#B27A52]"
+          className="font-sans font-semibold text-base tracking-[0.28em] text-transform: uppercase text-[#dc9a68]"
         >
           THE TEMPLE GATES
         </motion.div>
@@ -105,10 +105,10 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
               <div aria-hidden="true" className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#cdbfa8] to-[#9c9080] shadow-[0_0_12px_rgba(205,191,168,0.6)]" />
               <div>
                 <div className="font-serif text-xl text-[#F6EFE7]">Continue Daily Practice</div>
-                <div className="font-sans text-sm text-[#8a7c6d] mt-1">Grounding · 12 min</div>
+                <div className="font-sans text-base text-[#c7b6a2] mt-1">Grounding · 12 min</div>
               </div>
             </div>
-            <ChevronRight aria-hidden="true" className="w-4 h-4 text-[#8a7c6d]" />
+            <ChevronRight aria-hidden="true" className="w-4 h-4 text-[#c7b6a2]" />
           </button>
 
           {/* Enter Vault / Library */}
@@ -121,7 +121,7 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
               <div aria-hidden="true" className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#E27A3F] to-[#C35A2E] shadow-[0_0_12px_rgba(226,122,63,0.7)] animate-[flicker_5s_ease-in-out_infinite]" />
               <div>
                 <div className="font-serif text-xl text-[#F6EFE7]">Enter the Temple Library</div>
-                <div className="font-sans text-sm text-[#8a7c6d] mt-1">The Vault of Teachings</div>
+                <div className="font-sans text-base text-[#c7b6a2] mt-1">The Vault of Teachings</div>
               </div>
             </div>
             <ChevronRight aria-hidden="true" className="w-4 h-4 text-[#E27A3F]" />
@@ -137,10 +137,10 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
               <div aria-hidden="true" className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#B65A3C] to-[#7a3a20] shadow-[0_0_12px_rgba(182,90,60,0.6)]" />
               <div>
                 <div className="font-serif text-xl text-[#F6EFE7]">Walk the Goddess Pathways</div>
-                <div className="font-sans text-sm text-[#8a7c6d] mt-1">The Eight Chambers</div>
+                <div className="font-sans text-base text-[#c7b6a2] mt-1">The Eight Chambers</div>
               </div>
             </div>
-            <ChevronRight aria-hidden="true" className="w-4 h-4 text-[#8a7c6d]" />
+            <ChevronRight aria-hidden="true" className="w-4 h-4 text-[#c7b6a2]" />
           </button>
         </div>
 
@@ -156,7 +156,7 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
 
           {/* Prayer Flags Interactive Widget */}
           <div className="flex flex-col items-center gap-1.5 p-3.5 rounded-2xl border border-white/5 bg-black/40 backdrop-blur-md select-none w-28 text-center">
-            <span className="text-[14px] font-sans font-bold tracking-[0.2em] uppercase text-[#8a7c6d]">
+            <span className="text-base font-sans font-bold tracking-[0.2em] uppercase text-[#c7b6a2]">
               PRAYER FLAGS
             </span>
             <button
@@ -170,7 +170,7 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
             >
               <Flag aria-hidden="true" className="w-5 h-5 text-[#D8C5B0]" />
             </button>
-            <span className="text-[14px] font-serif italic text-[#6b5f52] truncate max-w-full">
+            <span className="text-base font-serif italic text-[#bda994] truncate max-w-full">
               {seekerState?.prayerFlagsCount || 0} Fluttering
             </span>
           </div>
@@ -179,7 +179,7 @@ export const GatesRoom: React.FC<GatesRoomProps> = ({
 
       {/* Footer */}
       <div className="relative bottom-12 md:bottom-0 w-full text-center z-10 mt-auto">
-        <span className="font-sans font-semibold text-[14px] tracking-[0.18em] text-transform: uppercase text-[#6b5f52]">
+        <span className="font-sans font-semibold text-base tracking-[0.18em] text-transform: uppercase text-[#bda994]">
           Himalayan stillness · {hoursInStillness} Hours Kept
         </span>
       </div>

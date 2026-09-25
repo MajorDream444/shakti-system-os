@@ -146,14 +146,14 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
         <button
           id="threshold-nav-trigger"
           onClick={onOpenThreshold}
-          className="flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.24em] text-transform: uppercase text-[#E27A3F] hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 font-sans font-semibold text-base tracking-[0.24em] text-transform: uppercase text-[#E27A3F] hover:opacity-80 transition-opacity"
         >
           <Compass className="w-4 h-4" />
           THRESHOLD
         </button>
 
         <div className="flex items-center gap-1.5 bg-white/[0.03] border border-white/10 rounded-full px-3 py-1.5">
-          <Sun className="w-3.5 h-3.5 text-[#8a7c6d]" />
+          <Sun className="w-3.5 h-3.5 text-[#c7b6a2]" />
           <div className="flex gap-1">
             {(['MORNING', 'AFTERNOON', 'GOLDEN_HOUR', 'EVENING', 'NIGHT'] as TimeOfDay[]).map((time) => (
               <button
@@ -166,7 +166,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
               />
             ))}
           </div>
-          <Moon className="w-3.5 h-3.5 text-[#8a7c6d]" />
+          <Moon className="w-3.5 h-3.5 text-[#c7b6a2]" />
         </div>
       </div>
 
@@ -174,7 +174,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
       <div className="max-w-2xl mx-auto w-full my-auto py-12 z-10 flex flex-col gap-10">
         {/* Welcome Block */}
         <div>
-          <span className={`font-sans font-semibold text-[14px] tracking-[0.28em] text-transform: uppercase ${currentConfig.textColor}`}>
+          <span className={`font-sans font-semibold text-base tracking-[0.28em] text-transform: uppercase ${currentConfig.textColor}`}>
             {currentConfig.label} · {currentConfig.desc}
           </span>
           <h1 className="font-serif text-3xl md:text-5xl leading-tight text-[#F6EFE7] mt-3">
@@ -189,7 +189,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 border border-[#D8C5B0]/10 rounded-2xl bg-white/[0.005]">
           <div className="flex-1">
             <h4 className="font-serif text-[#F6EFE7] text-md">Mountain Living Sanctuary</h4>
-            <p className="font-sans text-sm text-[#8a7c6d] mt-1 leading-relaxed">
+            <p className="font-sans text-base text-[#c7b6a2] mt-1 leading-relaxed">
               Your continuous presence shapes this high valley. At present, <strong className="text-[#D8C5B0]">{seekerState?.litLamps?.length || 0} prayer lamps</strong> burn brightly across the rooms, and <strong className="text-[#D8C5B0]">{seekerState?.prayerFlagsCount || 0} prayer flags</strong> carry your quiet aspirations upon the wind.
             </p>
           </div>
@@ -204,7 +204,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
 
             {/* Interactive Prayer Flags */}
             <div className="flex flex-col items-center gap-1.5 p-3.5 rounded-2xl border border-white/5 bg-black/40 backdrop-blur-md select-none w-28 text-center">
-              <span className="text-[14px] font-sans font-bold tracking-[0.2em] uppercase text-[#8a7c6d]">
+              <span className="text-base font-sans font-bold tracking-[0.2em] uppercase text-[#c7b6a2]">
                 HANG FLAG
               </span>
               <button
@@ -217,7 +217,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
               >
                 🎏
               </button>
-              <span className="text-[14px] font-serif italic text-[#6b5f52] truncate max-w-full">
+              <span className="text-base font-serif italic text-[#bda994] truncate max-w-full">
                 {seekerState?.prayerFlagsCount || 0} Flags
               </span>
             </div>
@@ -237,7 +237,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
             </div>
             <div>
               <div className="font-serif text-xl text-[#F6EFE7]">The Fire Circle</div>
-              <p className="font-sans text-sm text-[#8a7c6d] mt-1">Gather by the steady hearth for daily practice.</p>
+              <p className="font-sans text-base text-[#c7b6a2] mt-1">Gather by the steady hearth for daily practice.</p>
             </div>
           </button>
 
@@ -252,7 +252,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
             </div>
             <div>
               <div className="font-serif text-xl text-[#F6EFE7]">Temple Library</div>
-              <p className="font-sans text-sm text-[#8a7c6d] mt-1">Explore the archive, curated doctrine, and meditations.</p>
+              <p className="font-sans text-base text-[#c7b6a2] mt-1">Explore the archive, curated doctrine, and meditations.</p>
             </div>
           </button>
 
@@ -267,7 +267,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
             </div>
             <div>
               <div className="font-serif text-xl text-[#F6EFE7]">Reflection Pool</div>
-              <p className="font-sans text-sm text-[#8a7c6d] mt-1">Pour your mind into the quiet water of the Sacred Journal.</p>
+              <p className="font-sans text-base text-[#c7b6a2] mt-1">Pour your mind into the quiet water of the Sacred Journal.</p>
             </div>
           </button>
 
@@ -282,7 +282,7 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
             </div>
             <div>
               <div className="font-serif text-xl text-[#F6EFE7]">Personal Journey</div>
-              <p className="font-sans text-sm text-[#8a7c6d] mt-1">Witness your hours in stillness and set pathway goals.</p>
+              <p className="font-sans text-base text-[#c7b6a2] mt-1">Witness your hours in stillness and set pathway goals.</p>
             </div>
           </button>
 
@@ -297,9 +297,9 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
             </div>
             <div className="flex-1">
               <div className="font-serif text-xl text-[#F6EFE7]">The Goddess Chambers</div>
-              <p className="font-sans text-sm text-[#8a7c6d] mt-1">Walk the silent mountain path to each of the eight distinct rooms of wisdom.</p>
+              <p className="font-sans text-base text-[#c7b6a2] mt-1">Walk the silent mountain path to each of the eight distinct rooms of wisdom.</p>
             </div>
-            <span className="text-[#8a7c6d] text-xl font-serif pr-2">›</span>
+            <span className="text-[#c7b6a2] text-xl font-serif pr-2">›</span>
           </button>
         </div>
       </div>
@@ -311,23 +311,23 @@ export const CourtyardRoom: React.FC<CourtyardRoomProps> = ({
           onClick={() => onNavigate('GATES')}
           className="flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity"
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-transparent border border-[#6b5f52]" />
-          <span className="font-sans text-[14px] tracking-[0.08em] text-transform: uppercase text-[#6b5f52]">Gates</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-transparent border border-[#bda994]" />
+          <span className="font-sans text-base tracking-[0.08em] text-transform: uppercase text-[#bda994]">Gates</span>
         </button>
         <button
           id="footer-nav-courtyard"
           className="flex flex-col items-center gap-1.5"
         >
           <div className="w-1.5 h-1.5 rounded-full bg-[#E27A3F] shadow-[0_0_10px_#E27A3F]" />
-          <span className="font-sans text-[14px] tracking-[0.08em] text-transform: uppercase text-[#D8C5B0]">Sanctuary</span>
+          <span className="font-sans text-base tracking-[0.08em] text-transform: uppercase text-[#D8C5B0]">Sanctuary</span>
         </button>
         <button
           id="footer-nav-retreat"
           onClick={() => onNavigate('RETREAT')}
           className="flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity"
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-transparent border border-[#6b5f52]" />
-          <span className="font-sans text-[14px] tracking-[0.08em] text-transform: uppercase text-[#6b5f52]">Retreat</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-transparent border border-[#bda994]" />
+          <span className="font-sans text-base tracking-[0.08em] text-transform: uppercase text-[#bda994]">Retreat</span>
         </button>
       </div>
     </motion.div>

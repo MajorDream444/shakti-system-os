@@ -50,7 +50,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
             transition={{ delay: i * 0.04, duration: 0.8 }}
             onClick={() => toggleLonging(longing)}
             aria-pressed={selectedLongings.includes(longing)}
-            className={`px-5 py-3 rounded-full border transition-all duration-700 text-sm tracking-[0.1em] lowercase cursor-pointer ${
+            className={`px-5 py-3 rounded-full border transition-all duration-700 text-base tracking-[0.1em] lowercase cursor-pointer ${
               selectedLongings.includes(longing)
                 ? 'bg-red-950/30 border-red-800 text-red-200 shadow-[0_0_15px_rgba(157,23,29,0.3)]'
                 : 'bg-stone-900/10 border-ash/5 text-ash/50 hover:border-ash/20 hover:text-stone-300'
@@ -67,7 +67,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
         transition={{ delay: 0.4 }}
         className="w-full mb-12 max-w-xl"
       >
-        <p className="text-left text-ash/48 mb-6 font-light italic text-sm serif">
+        <p className="text-left text-ash/48 mb-6 font-light italic text-base serif">
           In a few words, what has brought you here?
         </p>
         <div className="relative group">
@@ -76,7 +76,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="A sentence is enough. Let it be honest."
-            className="w-full h-36 bg-stone-950/40 border border-ash/10 group-hover:border-ash/15 focus:border-red-800 rounded-sm p-4 text-ash placeholder:text-ash/15 outline-none transition-all duration-700 resize-none text-sm font-light leading-relaxed backdrop-blur-[2px] shadow-[inset_0_4px_25px_rgba(0,0,0,0.8)]"
+            className="w-full h-36 bg-stone-950/40 border border-ash/10 group-hover:border-ash/15 focus:border-red-800 rounded-sm p-4 text-ash placeholder:text-ash/15 outline-none transition-all duration-700 resize-none text-base font-light leading-relaxed backdrop-blur-[2px] shadow-[inset_0_4px_25px_rgba(0,0,0,0.8)]"
           />
         </div>
       </motion.div>
@@ -86,7 +86,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7 }}
         onClick={() => onNext(selectedLongings, text)}
-        className="begin-primary-action px-14 py-4 bg-transparent border border-burgundy/30 hover:border-red-800 hover:bg-red-950/[0.03] transition-all duration-700 tracking-[0.2em] uppercase text-sm font-semibold rounded-sm text-ash/90 hover:text-red-200 cursor-pointer"
+        className="begin-primary-action px-14 py-4 bg-transparent border border-burgundy/30 hover:border-red-800 hover:bg-red-950/[0.03] transition-all duration-700 tracking-[0.2em] uppercase text-base font-semibold rounded-sm text-ash/90 hover:text-red-200 cursor-pointer"
       >
         Continue
       </motion.button>
