@@ -624,3 +624,79 @@
   #root .receiving-ladder,
   #root .offer-gateway-actions { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------------------------------------------------------------------------
+   The two ways to work with Sheetal read as loose text lying on the
+   background photograph: no edge, no surface, and the call to action was a
+   bare pink line rather than something to press. They are the page's main
+   choice, so they are now two cards with their own ground, and the primary
+   one carries a real button.
+   --------------------------------------------------------------------------- */
+
+#root .offer-path-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 28px 28px 30px;
+  border: 1px solid rgba(233, 199, 126, 0.34);
+  border-radius: 18px;
+  background: linear-gradient(168deg, rgba(31, 16, 19, 0.93), rgba(20, 10, 12, 0.96));
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+#root .offer-path-card:hover,
+#root .offer-path-card:focus-visible {
+  border-color: rgba(233, 199, 126, 0.72);
+  transform: translateY(-2px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.58);
+}
+
+#root .offer-path-card > span {
+  font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  line-height: 1.12;
+  color: #e9c77e;
+  text-wrap: balance;
+}
+
+#root .offer-path-card > p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(246, 236, 216, 0.82);
+}
+
+/* The action was an underlined tracking-wide line of pink text. Give it the
+   shape of the control it is. */
+#root .offer-path-card > strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  margin-top: auto;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(233, 199, 126, 0.55);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffe1a3;
+}
+
+/* First card is the direct route to the offerings, so it leads. */
+#root .offer-path-card:first-child > strong {
+  border-color: transparent;
+  background: linear-gradient(168deg, #f4d49b, #e2b26c);
+  color: #4a1118;
+}
+
+#root .offer-path-card:hover > strong {
+  border-color: rgba(233, 199, 126, 0.9);
+}
+
+#root .offer-path-card:first-child:hover > strong {
+  filter: brightness(1.06);
+}
