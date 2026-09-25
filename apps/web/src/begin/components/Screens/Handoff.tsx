@@ -343,7 +343,7 @@ export default function Handoff({
         )}
       </AnimatePresence>
 
-      <p className="mt-14 text-[9px] text-ash/26 uppercase tracking-[0.25em] serif italic">
+      <p className="mt-14 text-[14px] text-ash/26 uppercase tracking-[0.25em] serif italic">
         somatic integration & classical tantra
       </p>
     </div>

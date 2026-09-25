@@ -50,7 +50,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
             transition={{ delay: i * 0.04, duration: 0.8 }}
             onClick={() => toggleLonging(longing)}
             aria-pressed={selectedLongings.includes(longing)}
-            className={`px-5 py-3 rounded-full border transition-all duration-700 text-xs tracking-[0.1em] lowercase cursor-pointer ${
+            className={`px-5 py-3 rounded-full border transition-all duration-700 text-sm tracking-[0.1em] lowercase cursor-pointer ${
               selectedLongings.includes(longing)
                 ? 'bg-red-950/30 border-red-800 text-red-200 shadow-[0_0_15px_rgba(157,23,29,0.3)]'
                 : 'bg-stone-900/10 border-ash/5 text-ash/50 hover:border-ash/20 hover:text-stone-300'
@@ -86,7 +86,7 @@ export default function Reflection({ onNext }: { onNext: (longings: string[], te
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7 }}
         onClick={() => onNext(selectedLongings, text)}
-        className="begin-primary-action px-14 py-4 bg-transparent border border-burgundy/30 hover:border-red-800 hover:bg-red-950/[0.03] transition-all duration-700 tracking-[0.2em] uppercase text-xs font-semibold rounded-sm text-ash/90 hover:text-red-200 cursor-pointer"
+        className="begin-primary-action px-14 py-4 bg-transparent border border-burgundy/30 hover:border-red-800 hover:bg-red-950/[0.03] transition-all duration-700 tracking-[0.2em] uppercase text-sm font-semibold rounded-sm text-ash/90 hover:text-red-200 cursor-pointer"
       >
         Continue
       </motion.button>

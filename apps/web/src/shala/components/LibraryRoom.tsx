@@ -53,14 +53,14 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
         <button
           id="library-back-sanctuary"
           onClick={() => onNavigate('COURTYARD')}
-          className="flex items-center gap-2 font-sans font-semibold text-xs tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-100 transition-opacity"
+          className="flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-100 transition-opacity"
         >
           <ArrowLeft className="w-4 h-4" />
           Sanctuary
         </button>
         <div className="flex items-center gap-2">
           <BookOpen className="w-4 h-4 text-[#E27A3F]" />
-          <span className="font-sans font-semibold text-xs tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
+          <span className="font-sans font-semibold text-sm tracking-[0.24em] text-transform: uppercase text-[#E27A3F]">
             TEMPLE LIBRARY
           </span>
         </div>
@@ -69,7 +69,7 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
       {/* Content Area */}
       <div className="max-w-3xl mx-auto w-full my-auto py-12 z-10 flex flex-col gap-10">
         <div>
-          <span className="font-sans font-semibold text-[10px] tracking-[0.28em] text-transform: uppercase text-[#8a7f6b]">
+          <span className="font-sans font-semibold text-[14px] tracking-[0.28em] text-transform: uppercase text-[#8a7f6b]">
             THE ARCHIVE · DEPTH 02
           </span>
           <h2 className="font-serif text-3xl md:text-5xl text-[#F6EFE7] mt-3">
@@ -90,7 +90,7 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
               {/* Collection Left Header */}
               <div className="md:w-1/3 flex flex-col gap-2">
                 <h3 className="font-serif text-2xl text-[#F6EFE7]">{collection.title}</h3>
-                <p className="font-sans text-xs text-[#8a7c6d] leading-relaxed">
+                <p className="font-sans text-sm text-[#8a7c6d] leading-relaxed">
                   {collection.description}
                 </p>
               </div>
@@ -110,12 +110,12 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
                       </div>
                       <div>
                         <div className="font-serif text-lg text-[#F6EFE7]">{practice.title}</div>
-                        <div className="font-sans text-[11px] text-[#8a7c6d] mt-0.5">
+                        <div className="font-sans text-[14px] text-[#8a7c6d] mt-0.5">
                           {practice.duration} · {practice.category}
                         </div>
                       </div>
                     </div>
-                    <span className="font-serif italic text-xs text-[#8a7c6d] group-hover:text-[#E27A3F] transition-colors pr-1">
+                    <span className="font-serif italic text-sm text-[#8a7c6d] group-hover:text-[#E27A3F] transition-colors pr-1">
                       begin ›
                     </span>
                   </button>
@@ -139,7 +139,7 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
 
       {/* Footer message */}
       <div className="w-full text-center z-10 mt-auto pt-4 border-t border-[#D8C5B0]/5">
-        <span className="font-sans font-semibold text-[9px] tracking-[0.18em] text-transform: uppercase text-[#6b5f52]">
+        <span className="font-sans font-semibold text-[14px] tracking-[0.18em] text-transform: uppercase text-[#6b5f52]">
           Doctrines kept unchanged · verified lineage
         </span>
       </div>

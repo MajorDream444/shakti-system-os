@@ -97,13 +97,23 @@
   font-size: 18px; line-height: 1.5; color: var(--sanctuary-ink);
 }
 #root .begin-header a { color: var(--sanctuary-ink); font-size: 20px; }
+/* The panel's top is a semicircle (border-radius 999px clamps to half the
+   width), so near the top edge the usable width is far narrower than the
+   panel. At the old 20px padding the "Ascent" title began at x=21 while the
+   arch edge at that depth was x=52 — the heading sat outside the shape. The
+   top padding now clears the steep part of the curve (about 22% of the width
+   gives close to full inner width) and the title is centred on the apex. */
 #root .begin-ascent {
   position: static; grid-column: 2; grid-row: 2;
   transform: none; width: auto;
   display: flex; flex-direction: column; gap: 20px;
-  padding: 20px; align-self: start; background: rgba(16,31,25,.93);
+  padding: clamp(58px, 24%, 92px) 20px 24px;
+  align-self: start; background: rgba(16,31,25,.93);
 }
-#root .begin-ascent-title { writing-mode: horizontal-tb; align-self: start; font-size: 18px; color: #ffe1a3; letter-spacing: 0; }
+#root .begin-ascent-title {
+  writing-mode: horizontal-tb; align-self: center; text-align: center;
+  font-size: 18px; color: #ffe1a3; letter-spacing: 0.14em; text-transform: uppercase;
+}
 #root .begin-ascent-line { display: none; }
 #root .begin-ascent-station {
   display: grid; grid-template-columns: 14px 1fr; gap: 8px 12px;
@@ -143,7 +153,9 @@
 #root .begin-back { position: static; grid-column: 1; justify-self: start; padding: 12px 24px; }
 #root .begin-footer { border-top: 1px solid #8e9b88; padding-top: 24px; }
 @media (min-width: 1051px) {
-  #root .begin-ascent-station span { white-space: nowrap; }
+  /* "Discernment / Reveal" does not fit the 240px panel on one line, and
+     nowrap pushed it past the edge. Let long station names wrap instead. */
+  #root .begin-ascent-station span { white-space: normal; overflow-wrap: break-word; }
 }
 @media (max-width: 1050px) {
   #root .begin-shell { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 0; }
@@ -224,7 +236,7 @@
 
 #root .durga-payment-heading {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #e9c77e;
@@ -254,7 +266,7 @@
 
 #root .durga-payment-audience {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -425,7 +437,7 @@
   display: block;
   width: auto;
   margin-bottom: 5px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -475,4 +487,216 @@
   object-fit: cover;
   /* She stands low in the frame; a centred crop cut her head off. */
   object-position: center 72%;
+}
+
+/* ---------------------------------------------------------------------------
+   Home page length (2026-09-25).
+
+   The home page measured 14,720px at 1440 and 23,029px on a phone. The single
+   largest block was the hero's image gallery at 2,231px: four founder-selected
+   frames stacked in one column. Laying them two-up keeps every image and the
+   organic frame shapes while reclaiming roughly half that height.
+   --------------------------------------------------------------------------- */
+
+#root .portal-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-content: center;
+}
+
+/* The frame is now a plain container: image above, caption below. The arch
+   and oval shapes, the border and the clipping all move to the media box, so
+   nothing can crop the caption. */
+#root .portal-gallery-frame,
+#root .portal-gallery-frame:first-child {
+  min-height: 0;
+  aspect-ratio: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: visible;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+#root .portal-gallery-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 1px solid rgba(240, 196, 208, 0.24);
+  background: rgba(240, 196, 208, 0.07);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  border-radius: 999px 999px 18px 18px;
+}
+
+#root .portal-gallery-frame:nth-child(2) .portal-gallery-media {
+  border-radius: 22px 999px 999px 22px;
+}
+
+#root .portal-gallery-frame:nth-child(3) .portal-gallery-media {
+  border-radius: 999px 22px 999px 22px;
+}
+
+#root .portal-gallery-frame:nth-child(4) .portal-gallery-media {
+  border-radius: 18px 18px 999px 999px;
+}
+
+#root .portal-gallery-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Static, below the shape, free to wrap. */
+#root .portal-gallery-frame figcaption,
+#root .portal-gallery-frame:nth-child(2) figcaption,
+#root .portal-gallery-frame:nth-child(3) figcaption {
+  position: static;
+  inset: auto;
+  right: auto;
+  left: auto;
+  bottom: auto;
+  max-width: none;
+  padding: 0 4px;
+  background: none;
+  text-align: left;
+}
+
+#root .portal-gallery-frame figcaption span {
+  display: block;
+  font-size: 15px;
+  color: #f6ecd8;
+}
+
+#root .portal-gallery-frame figcaption small {
+  display: block;
+  white-space: normal;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  color: rgba(246, 236, 216, 0.72);
+}
+
+/* The staggered offset was tuned for a single column; side by side it pushed
+   the second frame into the first. */
+#root .portal-gallery-frame:nth-child(2),
+#root .portal-gallery-frame:nth-child(3),
+#root .portal-gallery-frame:nth-child(4) {
+  transform: none;
+}
+
+#root .portal-gallery-frame img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 702px of page for one sentence. */
+#root .transition-quote {
+  min-height: 0;
+  padding-block: clamp(64px, 7vw, 96px);
+}
+
+/* Most sections carried 136px of padding top and bottom. */
+#root :is(.philosophy, .offer-gateway, .founder-presence, .authority-section, .pathway, .final-cta) {
+  padding-block: clamp(64px, 7vw, 96px);
+}
+
+@media (max-width: 720px) {
+  #root .portal-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+}
+
+/* The entry ladder and the two gateway actions were single columns. */
+#root .receiving-ladder {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#root .offer-gateway-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 620px) {
+  #root .receiving-ladder,
+  #root .offer-gateway-actions { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------------------------------------------------------------------------
+   The two ways to work with Sheetal read as loose text lying on the
+   background photograph: no edge, no surface, and the call to action was a
+   bare pink line rather than something to press. They are the page's main
+   choice, so they are now two cards with their own ground, and the primary
+   one carries a real button.
+   --------------------------------------------------------------------------- */
+
+#root .offer-path-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 28px 28px 30px;
+  border: 1px solid rgba(233, 199, 126, 0.34);
+  border-radius: 18px;
+  background: linear-gradient(168deg, rgba(31, 16, 19, 0.93), rgba(20, 10, 12, 0.96));
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+#root .offer-path-card:hover,
+#root .offer-path-card:focus-visible {
+  border-color: rgba(233, 199, 126, 0.72);
+  transform: translateY(-2px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.58);
+}
+
+#root .offer-path-card > span {
+  font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  line-height: 1.12;
+  color: #e9c77e;
+  text-wrap: balance;
+}
+
+#root .offer-path-card > p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(246, 236, 216, 0.82);
+}
+
+/* The action was an underlined tracking-wide line of pink text. Give it the
+   shape of the control it is. */
+#root .offer-path-card > strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  margin-top: auto;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(233, 199, 126, 0.55);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffe1a3;
+}
+
+/* First card is the direct route to the offerings, so it leads. */
+#root .offer-path-card:first-child > strong {
+  border-color: transparent;
+  background: linear-gradient(168deg, #f4d49b, #e2b26c);
+  color: #4a1118;
+}
+
+#root .offer-path-card:hover > strong {
+  border-color: rgba(233, 199, 126, 0.9);
+}
+
+#root .offer-path-card:first-child:hover > strong {
+  filter: brightness(1.06);
 }

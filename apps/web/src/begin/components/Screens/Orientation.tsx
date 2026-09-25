@@ -51,7 +51,7 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1.2 }}
-        className="text-xs text-ash/45 mb-12 italic text-left"
+        className="text-sm text-ash/45 mb-12 italic text-left"
       >
         There are no right answers. Only a clearer doorway.
       </motion.p>
@@ -61,7 +61,7 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 2.1, duration: 1 }}
         onClick={onNext}
-        className="begin-primary-action px-12 py-4 border border-burgundy/30 hover:border-ember/40 hover:bg-ember/[0.02] transition-all duration-700 tracking-[0.25em] uppercase text-xs font-semibold rounded-sm cursor-pointer"
+        className="begin-primary-action px-12 py-4 border border-burgundy/30 hover:border-ember/40 hover:bg-ember/[0.02] transition-all duration-700 tracking-[0.25em] uppercase text-sm font-semibold rounded-sm cursor-pointer"
       >
         Continue
       </motion.button>

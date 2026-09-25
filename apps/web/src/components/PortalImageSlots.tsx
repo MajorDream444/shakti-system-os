@@ -73,8 +73,15 @@ export function PortalImageGallery() {
   return (
     <div className="portal-gallery" aria-label="Sri Shakti Shala visual atmosphere">
       {images.map((image) => (
+        /* The caption used to sit inside the frame, which is clipped to an
+           arch or an oval. At the caption's baseline the curve cuts across
+           the text, so labels read as "...kti Waterfall" and "founder,
+           practitioner" with the rest gone. The image now has its own
+           clipped element and the caption sits below it, outside the shape. */
         <figure key={image.label} className="portal-gallery-frame">
-          <img src={image.src} alt={"alt" in image ? image.alt : ""} loading="eager" />
+          <div className="portal-gallery-media">
+            <img src={image.src} alt={"alt" in image ? image.alt : ""} loading="eager" />
+          </div>
           <figcaption>
             <span>{image.label}</span>
             <small>{image.caption}</small>

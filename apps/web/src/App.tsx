@@ -1,22 +1,20 @@
 import { lazy, Suspense } from "react";
-import { AuthorityStrip } from "./components/AuthorityStrip";
 import { AboutSheetalPage } from "./components/AboutSheetalPage";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
 import { FounderPresence } from "./components/FounderPresence";
 import { GodRays } from "./components/GodRays";
 import { Hero } from "./components/Hero";
+/* Removed from the home page on 2026-09-25; re-import and re-add to <main>
+   to restore: AuthorityStrip, ReadinessMap, RetreatVision, WaterfallDoctrine. */
 import { Nav } from "./components/Nav";
 import { DancingWithDurgaPage } from "./components/DancingWithDurgaPage";
 import { OfferingsPage } from "./components/OfferingsPage";
 import { OfferPathGateway } from "./components/OfferPathGateway";
 import { Pathway } from "./components/Pathway";
 import { Philosophy } from "./components/Philosophy";
-import { ReadinessMap } from "./components/ReadinessMap";
-import { RetreatVision } from "./components/RetreatVision";
 import { TestimonialsPage } from "./components/TestimonialsPage";
 import { TransitionQuote } from "./components/TransitionQuote";
-import { WaterfallDoctrine } from "./components/WaterfallDoctrine";
 
 const BeginApp = lazy(() => import("./begin/BeginApp"));
 const ShalaApp = lazy(() => import("./shala/ShalaApp"));
@@ -26,17 +24,27 @@ function PortalApp() {
     <>
       <Nav />
       <main className="app-shell">
+        {/* Home was 14,720px at 1440 and 23,029px on a phone — roughly 27
+            screens — which is what the founder's clients meant by
+            "repetitive". Three sections were removed rather than shortened:
+
+            WaterfallDoctrine  covered the same ground as Philosophy.
+            ReadinessMap       restated the journey Pathway already lays out.
+            RetreatVision      described work that is not bookable, and the
+                               retreat is no longer a navigation item.
+            AuthorityStrip     repeated Philosophy's five pillars (Shakti,
+                               Shadow, Sensuality, Somatics, Sovereignty)
+                               with the wording changed.
+
+            Their components are kept in the tree so any of them can be put
+            back with a single line. */}
         <GodRays />
         <Hero />
         <Philosophy />
-        <WaterfallDoctrine />
         <OfferPathGateway />
         <FounderPresence />
-        <AuthorityStrip />
         <TransitionQuote />
-        <ReadinessMap />
         <Pathway />
-        <RetreatVision />
         <FinalCTA />
       </main>
       <Footer />

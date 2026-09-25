@@ -67,7 +67,7 @@ export default function PathReveal({ result, onNext }: Props) {
 
         <div className="flex flex-col items-start relative py-4 border-t border-ash/5">
           <div className="absolute inset-0 bg-burgundy/[0.015] blur-3xl rounded-full" />
-          <span className="relative z-10 text-[11px] uppercase tracking-[0.16em] text-[#E9C77E] mb-5 font-bold">Your doorway</span>
+          <span className="relative z-10 text-[14px] uppercase tracking-[0.16em] text-[#E9C77E] mb-5 font-bold">Your doorway</span>
           <h3 className="relative z-10 text-2xl md:text-3xl text-red-400 font-light tracking-wide text-glow">
             {result.nextStep}
           </h3>
@@ -116,7 +116,7 @@ export default function PathReveal({ result, onNext }: Props) {
         transition={{ delay: 2.4, duration: 1.5 }}
         className="mt-7 flex flex-col items-center gap-3"
       >
-        <p className="text-[11px] uppercase tracking-[0.14em] text-ash/[0.64] font-semibold">or speak directly with Sheetal</p>
+        <p className="text-[14px] uppercase tracking-[0.14em] text-ash/[0.64] font-semibold">or speak directly with Sheetal</p>
         <a
           href="https://calendly.com/sheetalkandola/discovery-call"
           target="_blank"

@@ -72,14 +72,14 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
         <button
           id="journey-back-sanctuary"
           onClick={() => onNavigate('COURTYARD')}
-          className="flex items-center gap-2 font-sans font-semibold text-xs tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-100 transition-opacity"
+          className="flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.16em] text-transform: uppercase text-[#D8C5B0] hover:opacity-100 transition-opacity"
         >
           <ArrowLeft className="w-4 h-4" />
           Sanctuary
         </button>
         <div className="flex items-center gap-2">
           <Mountain className="w-4 h-4 text-[#cdbfa8]" />
-          <span className="font-sans font-semibold text-xs tracking-[0.24em] text-transform: uppercase text-[#cdbfa8]">
+          <span className="font-sans font-semibold text-sm tracking-[0.24em] text-transform: uppercase text-[#cdbfa8]">
             PERSONAL JOURNEY
           </span>
         </div>
@@ -88,7 +88,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
       {/* Main Stats Area */}
       <div className="max-w-2xl mx-auto w-full my-auto py-8 z-10 flex flex-col gap-10">
         <div>
-          <span className="font-sans font-semibold text-[10px] tracking-[0.28em] text-transform: uppercase text-[#8a7f6b]">
+          <span className="font-sans font-semibold text-[14px] tracking-[0.28em] text-transform: uppercase text-[#8a7f6b]">
             THE MOUNTAIN PATH · DEPTH 03
           </span>
           <h2 className="font-serif text-3xl md:text-5xl text-[#F6EFE7] mt-3">
@@ -102,7 +102,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
         {/* Continuous Sanctuary Environmental Memories - Rather than dry metrics */}
         <div className="flex flex-col gap-6">
           <div className="border border-[#D8C5B0]/10 rounded-2xl p-6 bg-white/[0.005]">
-            <span className="font-sans font-bold text-[9px] tracking-[0.24em] text-transform: uppercase text-[#E27A3F] block mb-4">
+            <span className="font-sans font-bold text-[14px] tracking-[0.24em] text-transform: uppercase text-[#E27A3F] block mb-4">
               Sanctuary Continuity &amp; Witnessed Growth
             </span>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
@@ -110,7 +110,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                 <span className="text-xl">🌲</span>
                 <div>
                   <h4 className="font-serif text-[#F6EFE7] text-md">The Sacred Cedar Tree</h4>
-                  <p className="font-sans text-xs text-[#8a7c6d] mt-1 leading-relaxed">
+                  <p className="font-sans text-sm text-[#8a7c6d] mt-1 leading-relaxed">
                     Planted at your initial arrival. Grown to a sturdy <strong className="text-[#D8C5B0]">{(seekerState.hoursInStillness * 0.05 + 1).toFixed(1)} meters</strong> sapling, breathing the fresh morning mist of the north mountain ridge.
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                 <span className="text-xl">🪨</span>
                 <div>
                   <h4 className="font-serif text-[#F6EFE7] text-md">The Stone Prayer Wall</h4>
-                  <p className="font-sans text-xs text-[#8a7c6d] mt-1 leading-relaxed">
+                  <p className="font-sans text-sm text-[#8a7c6d] mt-1 leading-relaxed">
                     <strong className="text-[#D8C5B0]">{Math.floor(seekerState.hoursInStillness * 0.15 + 3)} intentions</strong> are now lovingly hand-carved upon the high slate of the monastery wall to be kissed by high winds.
                   </p>
                 </div>
@@ -128,7 +128,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                 <span className="text-xl">🏮</span>
                 <div>
                   <h4 className="font-serif text-[#F6EFE7] text-md">The Western Lantern</h4>
-                  <p className="font-sans text-xs text-[#8a7c6d] mt-1 leading-relaxed">
+                  <p className="font-sans text-sm text-[#8a7c6d] mt-1 leading-relaxed">
                     Your quiet dedication has kept the flame burning faithfully for <strong className="text-[#D8C5B0]">{Math.floor(seekerState.hoursInStillness / 40) + 1} full lunar cycles</strong> without failing once.
                   </p>
                 </div>
@@ -137,7 +137,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                 <span className="text-xl">🌸</span>
                 <div>
                   <h4 className="font-serif text-[#F6EFE7] text-md">The Reflection Pool</h4>
-                  <p className="font-sans text-xs text-[#8a7c6d] mt-1 leading-relaxed">
+                  <p className="font-sans text-sm text-[#8a7c6d] mt-1 leading-relaxed">
                     Holds <strong className="text-[#D8C5B0]">{seekerState.journalEntries.length} deep reflections</strong>. {seekerState.journalEntries.length >= 2 ? (
                       <span className="text-[#E27A3F] italic">A pale pink lotus flower has fully blossomed on the quiet water surface.</span>
                     ) : (
@@ -157,13 +157,13 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
             <div className="font-serif italic text-2xl text-[#E27A3F] mt-1.5">
               {seekerState.currentPathway}
             </div>
-            <div className="font-sans text-[10px] text-[#8a7c6d] mt-1 tracking-wider uppercase">
+            <div className="font-sans text-[14px] text-[#8a7c6d] mt-1 tracking-wider uppercase">
               Open sanctuary continuity in this release
             </div>
             <button
               id="journey-ascend-initiation"
               onClick={() => setIsAscending(true)}
-              className="mt-4 px-5 py-2 bg-[#E27A3F] hover:bg-[#C35A2E] text-white font-sans font-semibold text-[10px] tracking-widest text-transform: uppercase rounded-full transition-all duration-300 shadow-[0_0_12px_rgba(226,122,63,0.3)] hover:scale-105 cursor-pointer animate-[pulse_4s_infinite]"
+              className="mt-4 px-5 py-2 bg-[#E27A3F] hover:bg-[#C35A2E] text-white font-sans font-semibold text-[14px] tracking-widest text-transform: uppercase rounded-full transition-all duration-300 shadow-[0_0_12px_rgba(226,122,63,0.3)] hover:scale-105 cursor-pointer animate-[pulse_4s_infinite]"
             >
               Request Human Guidance
             </button>
@@ -172,7 +172,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
 
         {/* Access state progression */}
         <div className="border-t border-[#D8C5B0]/10 pt-6">
-          <div className="font-sans font-semibold text-[10px] tracking-[0.2em] uppercase text-[#6b5f52] mb-4">
+          <div className="font-sans font-semibold text-[14px] tracking-[0.2em] uppercase text-[#6b5f52] mb-4">
             Doorway States
           </div>
           <div className="flex flex-wrap gap-2">
@@ -188,7 +188,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                   }`}
                 >
                   <span className="font-serif text-md">{stage.state}</span>
-                  <span className="font-sans text-[9px] tracking-wide uppercase opacity-80">{stage.desc}</span>
+                  <span className="font-sans text-[14px] tracking-wide uppercase opacity-80">{stage.desc}</span>
                 </div>
               );
             })}
@@ -204,7 +204,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
             <h3 className="font-serif text-2xl text-[#F6EFE7]">
               Now walking · {seekerState.currentPathway}
             </h3>
-            <div className="font-sans text-xs text-[#8a7c6d] mt-1">
+            <div className="font-sans text-sm text-[#8a7c6d] mt-1">
               Day {seekerState.pathwayDay} of {seekerState.pathwayTotalDays}
             </div>
             {/* Progress line */}
@@ -221,13 +221,13 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
           <div className="relative mb-6 opacity-60">
             <div className="absolute left-[-24px] top-1 w-2.5 h-2.5 rounded-full bg-[#8a7c6d]" />
             <h3 className="font-serif text-xl text-[#D8C5B0]">Began {seekerState.currentPathway}</h3>
-            <div className="font-sans text-xs text-[#8a7c6d] mt-1">28 June</div>
+            <div className="font-sans text-sm text-[#8a7c6d] mt-1">28 June</div>
           </div>
 
           <div className="relative opacity-40">
             <div className="absolute left-[-24px] top-1 w-2.5 h-2.5 rounded-full bg-[#8a7c6d]" />
             <h3 className="font-serif text-xl text-[#D8C5B0]">Entered the Vault</h3>
-            <div className="font-sans text-xs text-[#8a7c6d] mt-1">Spring Equinox</div>
+            <div className="font-sans text-sm text-[#8a7c6d] mt-1">Spring Equinox</div>
           </div>
         </div>
       </div>
@@ -245,13 +245,13 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
               {/* Close Button */}
               <button
                 onClick={() => { if (!isProcessing) setIsAscending(false); }}
-                className="absolute top-6 right-6 text-[#8a7c6d] hover:text-[#F6EFE7] font-sans text-xs tracking-widest uppercase cursor-pointer"
+                className="absolute top-6 right-6 text-[#8a7c6d] hover:text-[#F6EFE7] font-sans text-sm tracking-widest uppercase cursor-pointer"
               >
                 Close
               </button>
 
               <div className="text-center">
-                <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#E27A3F]">Human Review</span>
+                <span className="font-sans text-[14px] tracking-[0.3em] uppercase text-[#E27A3F]">Human Review</span>
                 <h3 className="font-serif text-3xl md:text-4xl text-[#F6EFE7] mt-2">Request a Protected Doorway</h3>
                 <p className="font-serif italic text-sm text-[#8a7c6d] mt-1">
                   A human guide stewards protected containers, invitations, and retreat discernment.
@@ -273,7 +273,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                     <ShieldCheck className="w-16 h-16 text-[#E27A3F] relative z-10" />
                   </motion.div>
                   <h4 className="font-serif text-2xl text-[#F6EFE7] mt-4">Request Noted Locally</h4>
-                  <p className="font-sans text-xs text-[#8a7c6d] max-w-sm">
+                  <p className="font-sans text-sm text-[#8a7c6d] max-w-sm">
                     This visual prototype does not grant access or begin a formal review. Use the Begin pathway to share a request.
                   </p>
                 </motion.div>
@@ -281,7 +281,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                 <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
                   <div className="w-12 h-12 rounded-full border-2 border-t-[#E27A3F] border-r-transparent border-b-transparent border-l-transparent animate-spin" />
                   <h4 className="font-serif text-xl text-[#F6EFE7]">Holding Request...</h4>
-                  <p className="font-sans text-xs text-[#8a7c6d]">No credential or access grant is created from this room.</p>
+                  <p className="font-sans text-sm text-[#8a7c6d]">No credential or access grant is created from this room.</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-6 mt-2">
@@ -292,7 +292,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                         className="p-3 rounded-2xl border border-white/5 bg-white/[0.005] text-left"
                       >
                         <span className="font-serif text-lg text-[#F6EFE7]">{stage.state}</span>
-                        <span className="font-sans text-[10px] tracking-wide uppercase text-[#8a7c6d] block mt-1">
+                        <span className="font-sans text-[14px] tracking-wide uppercase text-[#8a7c6d] block mt-1">
                           {stage.desc}
                         </span>
                       </div>
@@ -302,15 +302,15 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                   <div className="border border-[#D8C5B0]/10 rounded-3xl p-5 bg-white/[0.005] flex flex-col justify-between">
                     <div>
                       <h4 className="font-serif text-2xl text-[#F6EFE7]">Ask for a Guide</h4>
-                      <p className="font-sans text-xs text-[#8a7c6d] mt-2 leading-relaxed">
+                      <p className="font-sans text-sm text-[#8a7c6d] mt-2 leading-relaxed">
                         This room can remember your orientation locally, but it cannot approve a doorway or create access. For this release, requests that need a person are made through the Begin pathway.
                       </p>
 
                       <div className="mt-5 border-t border-white/5 pt-4">
-                        <span className="font-sans text-[9px] tracking-widest uppercase text-[#6b5f52] block mb-2">What stays protected</span>
+                        <span className="font-sans text-[14px] tracking-widest uppercase text-[#6b5f52] block mb-2">What stays protected</span>
                         <ul className="flex flex-col gap-1.5">
                           {['No access is granted here', 'No retreat readiness is decided here', 'No initiation is automated'].map((item) => (
-                            <li key={item} className="font-sans text-[11px] text-[#C8B7A5] flex items-start gap-2">
+                            <li key={item} className="font-sans text-[14px] text-[#C8B7A5] flex items-start gap-2">
                               <span className="text-[#E27A3F] mt-0.5">•</span>
                               {item}
                             </li>
@@ -322,11 +322,11 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
                     <div className="mt-6 pt-4 border-t border-white/5 flex flex-col gap-3">
                       <button
                         onClick={handleAscend}
-                        className="w-full py-3 bg-gradient-to-r from-[#C35A2E] to-[#E27A3F] text-white font-sans font-semibold text-xs tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(226,122,63,0.3)] transition-all hover:scale-[1.02] cursor-pointer"
+                        className="w-full py-3 bg-gradient-to-r from-[#C35A2E] to-[#E27A3F] text-white font-sans font-semibold text-sm tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(226,122,63,0.3)] transition-all hover:scale-[1.02] cursor-pointer"
                       >
                         Hold This Request Locally
                       </button>
-                      <span className="text-center font-sans text-[9px] text-[#6b5f52] uppercase tracking-wider block">
+                      <span className="text-center font-sans text-[14px] text-[#6b5f52] uppercase tracking-wider block">
                         Human discernment remains human
                       </span>
                     </div>
@@ -351,7 +351,7 @@ export const JourneyRoom: React.FC<JourneyRoomProps> = ({
 
       {/* Footer message */}
       <div className="w-full text-center z-10 mt-auto pt-4 border-t border-[#D8C5B0]/5">
-        <span className="font-sans font-semibold text-[9px] tracking-[0.18em] text-transform: uppercase text-[#6b5f52]">
+        <span className="font-sans font-semibold text-[14px] tracking-[0.18em] text-transform: uppercase text-[#6b5f52]">
           the descent is an honor · the ascent is yours
         </span>
       </div>
