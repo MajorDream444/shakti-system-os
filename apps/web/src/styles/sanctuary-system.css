@@ -782,3 +782,85 @@
 #root .sanctuary-utility :is(strong, span, small) {
   font-size: max(1rem, 1em);
 }
+
+/* ---------------------------------------------------------------------------
+   Dancing with Durga — Investment (2026-09-25).
+
+   The section sat transparent over the page's cream ground while two of its
+   own strings were near-white (#fff5e7): "Choose the option that applies to
+   you" and the Stripe help line both bled into the background. Giving the
+   section a deep oxblood ground fixes those and matches the hero, so the
+   two headings flip from near-black to cream and gold to suit it.
+   --------------------------------------------------------------------------- */
+
+#root .durga-investment {
+  position: relative;
+  background:
+    radial-gradient(circle at 84% 16%, rgba(177, 18, 23, 0.26), transparent 42%),
+    linear-gradient(168deg, #2a1216 0%, #1c090c 100%);
+}
+
+#root .durga-investment .label {
+  color: #e9c77e;
+}
+
+#root .durga-investment h2 {
+  color: #fbf1dd;
+}
+
+#root .durga-investment .durga-payment-heading {
+  color: #e9c77e;
+}
+
+#root .durga-investment .durga-payment-help {
+  color: rgba(246, 236, 216, 0.88);
+}
+
+#root .durga-investment .durga-payment-help a {
+  color: #ffe1a3;
+}
+
+/* The access notes below the cards were also authored for a light ground. */
+#root .durga-investment .durga-access-form p {
+  color: #f4e6c8;
+}
+
+/* A later rule in this file carries #root in its selector list and was still
+   painting the label and the body copy for a cream ground. */
+#root .durga-page .durga-investment .label,
+#root .durga-page .durga-investment .durga-storefront-panel span,
+#root .durga-page .durga-investment .durga-price-panel span {
+  color: #e9c77e;
+}
+
+#root .durga-page .durga-investment .section-copy p,
+#root .durga-page .durga-investment p {
+  color: rgba(246, 236, 216, 0.9);
+}
+
+#root .durga-page .durga-investment h2 {
+  color: #fbf1dd;
+}
+
+/* The body-ink rule above matches any <p>, and the payment card's audience
+   and price are <p> elements on a light gold fill — they were being painted
+   cream on gold. Restore the dark ink inside the cards. */
+#root .durga-payment-card .durga-payment-audience {
+  color: #6b2b26;
+}
+
+#root .durga-payment-card .durga-payment-price {
+  color: #3a1218;
+}
+
+/* The .durga-investment paragraph rule above is more specific than the card
+   rule, so inside that section the cards were still cream on gold. */
+#root .durga-page .durga-investment .durga-payment-card .durga-payment-audience,
+#root .durga-page .durga-payment-card .durga-payment-audience {
+  color: #6b2b26;
+}
+
+#root .durga-page .durga-investment .durga-payment-card .durga-payment-price,
+#root .durga-page .durga-payment-card .durga-payment-price {
+  color: #3a1218;
+}
