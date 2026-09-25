@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer";
 import { FounderPresence } from "./components/FounderPresence";
 import { GodRays } from "./components/GodRays";
 import { Hero } from "./components/Hero";
+import { PortalImageGallery } from "./components/PortalImageSlots";
 /* Removed from the home page on 2026-09-25; re-import and re-add to <main>
    to restore: AuthorityStrip, ReadinessMap, RetreatVision, WaterfallDoctrine. */
 import { Nav } from "./components/Nav";
@@ -40,6 +41,14 @@ function PortalApp() {
             back with a single line. */}
         <GodRays />
         <Hero />
+        {/* The founder-selected frames used to be the largest block inside the
+            hero. They keep their place on the page, just below the first
+            screen rather than in front of it. */}
+        <section className="section home-atmosphere" aria-label="Sri Shakti Shala visual atmosphere">
+          <div className="container">
+            <PortalImageGallery />
+          </div>
+        </section>
         <Philosophy />
         <OfferPathGateway />
         <FounderPresence />
