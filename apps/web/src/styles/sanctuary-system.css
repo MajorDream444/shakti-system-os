@@ -1390,3 +1390,123 @@
 #root .seasonal-offering-art {
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), 0 0 70px rgba(233, 199, 126, 0.12);
 }
+
+/* ---------------------------------------------------------------------------
+   CRYSTALS LARGER THAN THEIR TEXT — 2026-09-26
+   Founder note: "the floating crystals should be larger to capture all of the
+   text, the text is leaking outside of the crystals."
+
+   Correct on both counts, and it is fixed from both directions: the form is
+   pushed out past the article box, and the text is pulled in. In the founder's
+   own reference render the copy occupies a little over half the crystal's
+   width — here it was filling more than ninety percent, so the title and the
+   last line of body text sat on the rim.
+
+   The forms now overlap their neighbours slightly at the widest breakpoint.
+   That is intended, and matches the reference: these read as a constellation
+   of floating shapes, not as five boxes in a row.
+   --------------------------------------------------------------------------- */
+
+#root .five-pillar-constellation > article {
+  min-height: 430px;
+}
+
+#root .five-pillar-constellation .living-form-art {
+  inset: -13% -19%;
+}
+
+#root .five-pillar-constellation .pillar-portal {
+  padding: 72px 30px 64px;
+}
+
+#root .five-pillar-constellation .pillar-portal h3 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.16;
+}
+
+#root .five-pillar-constellation .pillar-portal p {
+  max-width: 20ch;
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+#root .five-pillar-constellation .pillar-portal-cue {
+  margin-top: 16px;
+}
+
+/* Between 900 and 1400 the three-across grid is narrower but the forms are
+   not, so a -19% push sent the outer two off the side of the screen and they
+   were clipped mid-shape. The push tapers instead of staying fixed. */
+@media (max-width: 1400px) {
+  #root .five-pillar-constellation .living-form-art { inset: -13% -7%; }
+}
+
+@media (max-width: 1080px) {
+  #root .five-pillar-constellation .living-form-art { inset: -12% -3%; }
+}
+
+/* Below the three-across breakpoint the forms have room again, so the text
+   can breathe back out rather than staying artificially narrow. */
+@media (max-width: 900px) {
+  #root .five-pillar-constellation .living-form-art { inset: -10% -12%; }
+  #root .five-pillar-constellation .pillar-portal h3 { max-width: 18ch; }
+  #root .five-pillar-constellation .pillar-portal p { max-width: 24ch; }
+}
+
+/* ---------------------------------------------------------------------------
+   SACRED GEOMETRY IN THE PLAIN AREAS — 2026-09-26
+   Founder note: "those areas where we just have some plain — we need the
+   symbols floating in the background, especially in the blank spaces on the
+   Durga page."
+
+   The Sri Yantra sits in the right third of the seasonal band, which was flat
+   burgundy. It drifts rather than pulses: a slow rotation and a slow rise,
+   nothing that competes with the OPEN NOW marker for attention.
+
+   It is behind everything (z-index 0 against the content's 1) and it is
+   pointer-events:none, so it can never intercept a tap meant for a price
+   card. It is hidden below 900px, where there is no spare space for it and
+   it would only sit behind the text.
+   --------------------------------------------------------------------------- */
+
+#root .seasonal-offering { overflow: hidden; }
+
+#root .seasonal-offering-yantra {
+  position: absolute;
+  top: 50%;
+  right: clamp(16px, 3vw, 72px);
+  width: clamp(330px, 27vw, 460px);
+  height: auto;
+  color: #f0c97e;
+  opacity: 0.26;
+  filter: drop-shadow(0 0 26px rgba(233, 199, 126, 0.35));
+  transform: translateY(-50%);
+  transform-origin: center;
+  pointer-events: none;
+  z-index: 0;
+  animation: yantra-drift 13s ease-in-out infinite;
+}
+
+#root .seasonal-offering-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* It floats and breathes rather than rotating. A full rotation reads as a
+   spinning box, because the bhupura is square and the eye locks onto its
+   corners — the one part of the figure that must not look like motion. */
+@keyframes yantra-drift {
+  0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.22; }
+  50%      { transform: translateY(-54%) scale(1.035); opacity: 0.32; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .seasonal-offering-yantra { animation: none; }
+}
+
+@media (max-width: 900px) {
+  #root .seasonal-offering-yantra { display: none; }
+}

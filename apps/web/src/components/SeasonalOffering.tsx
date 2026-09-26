@@ -1,6 +1,7 @@
 import { DANCING_WITH_DURGA_PATH } from "../constants/navigation";
 import { dancingWithDurga } from "../data/dancingWithDurga";
 import { portalImages } from "./PortalImageSlots";
+import { SriYantra } from "./SriYantra";
 
 /* The season's open container, on the home page.
 
@@ -16,6 +17,12 @@ import { portalImages } from "./PortalImageSlots";
 export function SeasonalOffering() {
   return (
     <section className="section seasonal-offering" aria-labelledby="seasonal-offering-title">
+      {/* The right-hand third of this band was flat burgundy. It now holds a
+          Sri Yantra, drawn rather than sourced, drifting slowly behind the
+          content — the founder asked for sacred symbols in the plain areas
+          rather than empty colour. Decorative and non-interactive. */}
+      <SriYantra className="seasonal-offering-yantra" />
+
       <div className="container seasonal-offering-grid">
         <figure className="seasonal-offering-art">
           <img
