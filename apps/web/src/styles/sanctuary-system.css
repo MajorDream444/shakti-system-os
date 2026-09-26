@@ -1087,3 +1087,119 @@
 @media (max-width: 900px) {
   #root .home-atmosphere .portal-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ---------------------------------------------------------------------------
+   SEASONAL OFFERING — the open container, on the home page
+   Added 2026-09-26 with the Guided Path homepage.
+
+   Constraints held here rather than re-derived: nothing below 16px, because
+   her community skews older; the price cards carry dark ink on gold, since a
+   previous cream-on-gold rule rendered at 1.22:1; and the artwork is capped
+   so the band cannot out-scale the hero the way the atmosphere strip once did.
+   --------------------------------------------------------------------------- */
+
+#root .seasonal-offering {
+  padding-block: clamp(48px, 5.5vw, 76px);
+}
+
+#root .seasonal-offering-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 52px);
+  align-items: center;
+  width: min(1320px, calc(100% - 48px));
+}
+
+#root .seasonal-offering-art {
+  margin: 0;
+  padding: 8px;
+  border: 1px solid rgba(233, 199, 126, 0.46);
+  background: linear-gradient(160deg, rgba(196, 161, 90, 0.18), rgba(196, 161, 90, 0.04));
+}
+
+#root .seasonal-offering-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+#root .seasonal-offering-copy {
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+}
+
+#root .seasonal-offering-copy h2 {
+  margin: 0;
+  font-family: var(--font-display, "Cormorant Garamond", Georgia, serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  line-height: 1.08;
+}
+
+#root .seasonal-offering-lede,
+#root .seasonal-offering-essence {
+  margin: 0;
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  line-height: 1.66;
+}
+
+#root .seasonal-offering-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 4px;
+  width: min(100%, 560px);
+}
+
+#root .seasonal-offering-price {
+  flex: 1 1 210px;
+  display: grid;
+  gap: 2px;
+  padding: 16px 22px;
+  border-radius: 16px;
+  background: linear-gradient(168deg, #f4d49b, #e2b26c);
+  color: #3a1218;
+  text-decoration: none;
+}
+
+#root .seasonal-offering-price .seasonal-offering-price-label {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b2b26;
+}
+
+#root .seasonal-offering-price strong {
+  font-family: var(--font-display, "Cormorant Garamond", Georgia, serif);
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.12;
+  color: #3a1218;
+}
+
+#root .seasonal-offering-price:hover,
+#root .seasonal-offering-price:focus-visible {
+  filter: brightness(1.05);
+}
+
+#root .seasonal-offering-more {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-lit, #e9c77e);
+}
+
+@media (max-width: 900px) {
+  #root .seasonal-offering-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #root .seasonal-offering-art {
+    max-width: 320px;
+  }
+}

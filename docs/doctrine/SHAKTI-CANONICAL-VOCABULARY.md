@@ -241,15 +241,67 @@ characteristic — see `SHAKTI-VOICE-AND-LANGUAGE.md` §3.
 | Ida & Pingala | mapped to parasympathetic & sympathetic | 2026-07-24 |
 | Sattva / Rajas / Tamas | the three gunas — white / red / black | S-001, 2026-08-13 |
 
-## CORRECTION — "Sovereignty" is over-weighted
+## "Sovereignty" — over-weighted in prose, but it IS a pillar name
 
-`sovereign` appears **once** in 102 records across two years.
+`sovereign` appears **once** in 102 caption records across two years.
 
-Prior doctrine treats sovereignty as a core axis. It is **our** word, not hers.
+**AMENDED 2026-09-26.** An earlier version of this section said sovereignty was
+"our word, not hers" and instructed us to stop using it. **That was too strong
+and is withdrawn.** A carousel published by her social team names
+**"SOVEREIGNTY & POWER"** as one of the five Shakti Shala pillars — so it is
+formal brand vocabulary, whatever its frequency in her prose.
 
-- KEEP the concept: the seeker retains authority over her own experience.
-- STOP using the word as though it were founder language.
-- PREFER: "your own authority," "trust your own power," "her own readiness."
+The accurate rule is narrower:
+
+- **KEEP** it as a pillar name. `Sovereignty & Power` is correct and published.
+- **DO NOT** sprinkle it through body copy as if it were her everyday register.
+  One use in 102 captions means it is structural language, not conversational.
+- **PREFER, in prose:** "your own authority," "trust your own power."
+
+Supporting founder language, 2026-08-03:
+> *"Not, How do I become more powerful? But, Can I trust my own power?"*
+
+---
+
+# The Five Pillars — CONFIRMED PUBLISHED 2026-09-26
+
+Source: Dancing with Durga carousel, her social team. These are the canonical
+five and their published glosses. Use these names exactly.
+
+| Pillar | Published gloss |
+|---|---|
+| **Shakti Embodiment** | Meet the Goddess through movement, breath & embodied practice |
+| **Shadow & Inner Work** | Explore the patterns shaping how you love, protect & express yourself |
+| **Somatic Experiencing** | Listen to sensation. Create space for feeling |
+| **Sensuality & Eros** | Reconnect with pleasure, senses & desire |
+| **Sovereignty & Power** | Become a safe space for yourself. Honour your boundaries. Live your dharma |
+
+Note `Somatic Experiencing` — not "somatic breathwork", consistent with the
+breath/somatics rules above.
+
+---
+
+# Evidence from her social team — 2026-09-26
+
+Four published graphics reviewed. Three things they settle:
+
+**1. `Sadhana` is confirmed in her public marketing.** The Dancing with Durga
+card reads *"A 9-NIGHT NAVRATRI SADHANA"* and *"DEVOTION WITH A SPINE"*. The
+recommendation above to prefer `sadhana` over a generic "practice" is not our
+invention — her own team already does it.
+
+**2. Her public register runs hotter than the site's.**
+> *"People love Kali's fire until a woman actually has it."*
+
+That is confrontational, funny and angry, and it matches the Founder Voice Rule
+above — direct truth, sacred rage. The site's copy is calmer than this. That is
+**correct for functional pages** and should be deliberate, not accidental: keep
+the heat for editorial and doctrine, keep clarity at the door.
+
+**3. Their typography is not ours, on purpose.** The graphics use heavy
+condensed all-caps sans in gold over dark red. The site uses a serif. **Do not
+converge them.** The site is a temple door; the feed is a megaphone. Making the
+site an extension of Instagram is explicitly not the brief.
 
 Supporting founder language, 2026-08-03:
 > *"Not, How do I become more powerful? But, Can I trust my own power?"*
