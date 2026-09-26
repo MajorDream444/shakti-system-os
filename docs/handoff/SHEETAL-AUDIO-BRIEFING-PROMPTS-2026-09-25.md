@@ -84,7 +84,7 @@ When answering questions or generating summaries:
 
 ---
 
-## 3. Audio Overview prompt — v2
+## 3. Audio Overview prompt — v3
 
 > **v1 was generated and reviewed on 2026-09-25. It was good, and one section
 > was wrong.** Both hosts explained that the website has "antennas constantly
@@ -114,7 +114,14 @@ Create a warm, grounded audio briefing FOR Sheetal Kandola — she is the
 listener, not a subject being analysed. Two hosts, conversational and calm.
 No hype, no breathless podcast energy, no jokes at anyone's expense.
 
-Pronounce her name SHEE-tuhl. Never Cheadle, Sheila or Chital.
+NAME HANDLING — important. Address her as "you" throughout. Do not say her
+name in the body of the briefing at all. Use it exactly twice: once in the
+opening greeting and once in the closing line. Both times it is "Sheetal",
+pronounced SHEE-tuhl. Never Sheetha, Sheethal, Yoshito, Chital or Cheadle.
+Everywhere else, say "you".
+
+Do not cite studies, research or statistics. Make every argument from her own
+experience and from what she said, not from invented authority.
 
 Think of it as a trusted friend catching her up on a meeting she was in, so
 the agreements stay clear while she travels.
@@ -226,7 +233,19 @@ Tone notes:
 - Never describe a capability as working when it is not. If something is
   written but not switched on, say so. Overstating what is built is the
   thing that caused this conversation in the first place.
+- Say "Major" rather than "the technical team". There is no team; there is
+  one person she already knows, and pretending otherwise is its own small
+  overstatement.
 ```
+
+> **Why v3.** v2 fixed the substance — the Drive claim, the missing email ask,
+> the switched-off replies — and then mangled her name four times, including
+> "Yoshito". A pronunciation instruction did not hold, so v3 removes the
+> surface area instead: her name is said twice, at the top and the bottom, and
+> everywhere else the hosts say "you". v2 also asserted that "studies in user
+> psychology show generous negative space physically lowers the viewer's heart
+> rate", which neither of us can source — the same overstatement habit wearing
+> an academic coat. v3 forbids citations outright.
 
 ## 4. Two alternates
 
