@@ -14,6 +14,7 @@ import { OfferingsPage } from "./components/OfferingsPage";
 import { OfferPathGateway } from "./components/OfferPathGateway";
 import { Pathway } from "./components/Pathway";
 import { Philosophy } from "./components/Philosophy";
+import { SeasonalOffering } from "./components/SeasonalOffering";
 import { TestimonialsPage } from "./components/TestimonialsPage";
 import { TransitionQuote } from "./components/TransitionQuote";
 
@@ -49,11 +50,21 @@ function PortalApp() {
             <PortalImageGallery />
           </div>
         </section>
+        {/* Order below is the founder-selected "Guided Path" (option 2 of two,
+            chosen 2026-09-26): explain the work, then route, then show what is
+            open, and only then introduce the woman holding it.
+
+            Two changes from the previous order. Pathway now comes before
+            FounderPresence, so a visitor understands how the work deepens
+            before meeting Sheetal — "they should come because of the vision."
+            And SeasonalOffering is new: the one bookable thing was previously
+            invisible below the first screen. */}
         <Philosophy />
         <OfferPathGateway />
+        <Pathway />
+        <SeasonalOffering />
         <FounderPresence />
         <TransitionQuote />
-        <Pathway />
         <FinalCTA />
       </main>
       <Footer />

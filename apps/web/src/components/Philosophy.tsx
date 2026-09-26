@@ -12,26 +12,40 @@ const methodRhythm = [
   "Choose the next doorway",
 ];
 
+/* The five pillars, in the founder's own published wording.
+
+   These names and glosses are taken verbatim from the Dancing with Durga
+   carousel her social team published, and are recorded in
+   docs/doctrine/SHAKTI-CANONICAL-VOCABULARY.md. They replace one-word
+   paraphrases the build had invented ("Shakti", "Shadow", "Somatics"), which
+   said roughly the same thing in words she does not use.
+
+   Two are worth not "tidying" later. "Somatic Experiencing" is the correct
+   term and must not drift to "somatic breathwork", which is not her modality.
+   "Sovereignty & Power" stays because it is a published pillar name, even
+   though the word is rare in her everyday writing. */
 const fivePillars = [
   {
-    name: "Shakti",
-    meaning: "relationship to energy, inner power, and what is already moving",
+    name: "Shakti Embodiment",
+    meaning: "Meet the Goddess through movement, breath and embodied practice.",
   },
   {
-    name: "Shadow",
-    meaning: "fear, shame, grief, anger, and bypassed material met with containment",
+    name: "Shadow & Inner Work",
+    meaning:
+      "Explore the patterns shaping how you love, protect and express yourself.",
   },
   {
-    name: "Sensuality",
-    meaning: "senses, pleasure, movement, and felt experience returned to dignity",
+    name: "Somatic Experiencing",
+    meaning: "Listen to sensation. Create space for feeling.",
   },
   {
-    name: "Somatics",
-    meaning: "body awareness, nervous-system literacy, pacing, and capacity",
+    name: "Sensuality & Eros",
+    meaning: "Reconnect with pleasure, senses and desire.",
   },
   {
-    name: "Sovereignty",
-    meaning: "a direction of practice: more inner ground, tools, and choice",
+    name: "Sovereignty & Power",
+    meaning:
+      "Become a safe space for yourself. Honour your boundaries. Live your dharma.",
   },
 ];
 
