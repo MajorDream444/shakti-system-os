@@ -21,7 +21,7 @@ export function Nav() {
     <>
       <nav className={`site-nav ${isScrolled ? "scrolled" : ""}`}>
         <a className="nav-logo" href="/" onClick={closeMenu}>
-          SRI SHAKTI SHALA
+          Sri Shakti Shala
         </a>
         <div className="nav-links" aria-label="Primary navigation">
           {portalCopy.nav.map((item) => (

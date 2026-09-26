@@ -50,7 +50,10 @@ export const readiness: ReadinessCopy = {
 
 export const pathway: PathwayCopy = {
   label: "The Pathway",
-  headline: "What is calling you?",
+  /* The hero already asks "Is the goddess calling you?" — asking almost the
+     same question again two screens later is the repetition the founder
+     reported. This section's job is the four stages, so it says that. */
+  headline: "How the work deepens.",
   copy:
     "The most powerful path is not always the most intense one.",
   steps: [

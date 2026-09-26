@@ -5,15 +5,26 @@ import { retreatVision } from "./retreats";
 
 export const portalCopy = {
   nav: NAV_ITEMS,
+  /* Approved by the founder 2026-09-25 (direction A).
+
+     The name was the small eyebrow text while "Shakti Shadow & Somatics" was
+     the headline, so the school was never the biggest thing on its own front
+     page — her words: "Shakti Shala is here twice, it should be front and
+     centre." The two are swapped: the name is the headline and the old
+     headline became the descriptor line, the slot "School Of Feminine
+     Embodied Awakening" occupies on the reference site she chose.
+
+     Everything here has to answer what this is, who it is for, and where to
+     go, without scrolling. */
   hero: {
-    eyebrow: "SRI SHAKTI SHALA / LIVING SCHOOL",
-    headline: "Shakti Shadow & Somatics",
-    subheadline:
-      "Sheetal Kandola's body of work inside Sri Shakti Shala: a living sanctuary for women seeking a deeper relationship with body, shadow, practice, and inner life.",
+    eyebrow: "A Living School of Shakti, Shadow & Somatics",
+    headline: "Sri Shakti Shala",
+    subheadline: "Is the goddess calling you?",
     body:
-      "Rooted in somatics, nervous-system literacy, shadow integration, and classical Shakta Tantra, the work helps women move with more awareness, capacity, and discernment rather than forcing transformation.",
-    primaryCta: "Start Your Shakti Path",
-    secondaryCta: "Work With Sheetal",
+      "For women learning to trust the body, meet the shadow, and stop abandoning themselves. Held by Sheetal Kandola.",
+    primaryCta: "Begin your path",
+    secondaryCta: "Dancing with Durga",
+    seasonalLine: "Navratri 2026 · 11–19 October",
   },
   philosophy,
   founder: {

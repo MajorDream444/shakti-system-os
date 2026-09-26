@@ -46,11 +46,15 @@ export const portalImages = {
 
 export function PortalImageGallery() {
   const images = [
+    /* The holy spring is the hero image. Repeating it as the first frame of
+       the band directly beneath put the same photograph on screen twice, and
+       left two of four frames as portraits of the founder on a page built
+       around "people should come for the vision, not for me". */
     {
-      src: portalImages.founderHolySpring,
-      label: "Sheetal Kandola",
-      caption: "devotion at the holy spring",
-      alt: "Sheetal Kandola waist-deep in a Balinese holy spring in red, hands together in prayer before a golden lotus and carved shrine",
+      src: portalImages.ascent,
+      label: "Stillness",
+      caption: "the valley before the climb",
+      alt: "A still mountain valley under low cloud",
     },
     {
       src: portalImages.founderWelcome,
