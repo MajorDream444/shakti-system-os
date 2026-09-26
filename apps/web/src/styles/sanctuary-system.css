@@ -1060,3 +1060,30 @@
   text-transform: none;
   color: #e9c77e;
 }
+
+/* ---------------------------------------------------------------------------
+   The atmosphere band below the hero.
+
+   Moving the founder-selected frames out of the hero was right; leaving them
+   two-up was not. At 1,963px the band was taller than the hero it was meant
+   to sit beneath — the same mistake relocated. Four across, and it reads as
+   a breath between sections instead of a second hero.
+   --------------------------------------------------------------------------- */
+
+#root .home-atmosphere {
+  padding-block: clamp(40px, 5vw, 64px);
+}
+
+#root .home-atmosphere .portal-gallery {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+#root .home-atmosphere .portal-gallery-media {
+  aspect-ratio: 4 / 5;
+}
+
+@media (max-width: 900px) {
+  #root .home-atmosphere .portal-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
