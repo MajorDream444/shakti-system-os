@@ -921,24 +921,60 @@
   text-align: center;
 }
 
+/* The name, unapologetic.
+
+   Founder note, 2026-09-26: "bigger and bolder, embodied, unapologetic —
+   when she sees this she should say oh wow, here we go." So the ceiling goes
+   from 6.5rem to 9rem and the weight from 400 to 600. The floor stays at
+   3rem because a phone cannot carry more without wrapping to four lines.
+
+   "A Living School" is taken literally: the name breathes. The motion is
+   deliberately barely-there — a slow scale and a gold light that drifts
+   across the letterforms. It should register as alive, not as a banner ad.
+   All of it collapses under prefers-reduced-motion. */
 #root .hero-threshold-title {
   margin: 0;
   font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
-  font-weight: 400;
-  font-size: clamp(3rem, 7.2vw, 6.5rem);
-  line-height: 0.98;
+  font-weight: 600;
+  font-size: clamp(3rem, 9.6vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
   color: #fffaf0;
   text-wrap: balance;
-  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.62);
+  animation: hero-living 7.5s ease-in-out infinite;
+  will-change: transform, text-shadow;
+}
+
+/* The living quality is carried by a breathing light rather than a gradient
+   sweep. A gradient needs a transparent text fill, and with a transparent
+   fill the drop shadow shows through the letterforms — against the bright
+   moss in this photograph the name rendered grey. Contrast wins over the
+   effect: the fill stays solid cream and the gold glow does the breathing. */
+@keyframes hero-living {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.72), 0 0 58px rgba(233, 199, 126, 0.16);
+  }
+  50% {
+    transform: scale(1.015);
+    text-shadow: 0 2px 34px rgba(0, 0, 0, 0.76), 0 0 104px rgba(233, 199, 126, 0.46);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .hero-threshold-title {
+    animation: none;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.72), 0 0 70px rgba(233, 199, 126, 0.24);
+  }
 }
 
 #root .hero-threshold .hero-threshold-descriptor {
   margin: 0;
   /* Floor at 1rem: the 16px reading floor applies to the hero too, and this
      line is the one that tells a stranger what the school is. */
-  font-size: clamp(1rem, 1.45vw, 1.3rem);
+  font-size: clamp(1rem, 1.7vw, 1.55rem);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   line-height: 1.5;
   text-transform: uppercase;
   color: #e9c77e;
@@ -1202,4 +1238,155 @@
   #root .seasonal-offering-art {
     max-width: 320px;
   }
+}
+
+/* ---------------------------------------------------------------------------
+   PILLAR PORTALS — 2026-09-26
+   Founder note: "the five pillars just look like text, they don't look like
+   activated portals to take you further in."
+
+   They were <article> elements with no behaviour. Each is now a real button
+   opening that pillar's knowledge chamber, and it has to *look* pressable
+   before it is hovered — a resting border and lift, not a hover-only cue,
+   since nothing on a touch screen ever hovers.
+   --------------------------------------------------------------------------- */
+
+/* The constellation shapes ARE the portals — each pillar already sits inside
+   its own drawn form. An earlier pass gave the button its own card background
+   and the two boxes fought: the card sat inside the article's padding while
+   the glow filled the article, so every shape looked knocked out of
+   alignment. The button now fills the article and draws nothing of its own.
+   The only new furniture is the ENTER cue, which has to be visible at rest —
+   a hover-only affordance tells a phone user nothing. */
+#root .five-pillar-constellation .pillar-portal {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 72px 44px 64px;
+  border: 0;
+  border-radius: 24px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 240ms ease;
+}
+
+#root .five-pillar-constellation .pillar-portal h3,
+#root .five-pillar-constellation .pillar-portal p {
+  margin: 0;
+}
+
+#root .five-pillar-constellation .pillar-portal p {
+  margin-top: 6px;
+}
+
+#root .five-pillar-constellation .pillar-portal-cue {
+  margin-top: 14px;
+  padding: 8px 20px;
+  border: 1px solid rgba(233, 199, 126, 0.58);
+  border-radius: 999px;
+  background: rgba(20, 10, 12, 0.5);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #e9c77e;
+  transition: background 240ms ease, color 240ms ease, border-color 240ms ease;
+}
+
+#root .five-pillar-constellation .pillar-portal:hover,
+#root .five-pillar-constellation .pillar-portal:focus-visible {
+  transform: translateY(-6px);
+}
+
+#root .five-pillar-constellation .pillar-portal:hover .pillar-portal-cue,
+#root .five-pillar-constellation .pillar-portal:focus-visible .pillar-portal-cue {
+  background: linear-gradient(168deg, #f4d49b, #e2b26c);
+  border-color: transparent;
+  color: #3a1218;
+}
+
+#root .five-pillar-constellation .pillar-portal:focus-visible {
+  outline: 2px solid #e9c77e;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .five-pillar-constellation .pillar-portal { transition: none; }
+  #root .five-pillar-constellation .pillar-portal:hover,
+  #root .five-pillar-constellation .pillar-portal:focus-visible { transform: none; }
+}
+
+/* ---------------------------------------------------------------------------
+   THE SEASON, LOUDER — 2026-09-26
+   Founder note: "right now it's really about promoting Dancing with Durga —
+   there needs to be an emphasis that's slapped in your face."
+
+   The band was correct and quiet. It now announces itself: a lit edge, a
+   heading at hero scale rather than section scale, and a pulsing OPEN NOW
+   marker. The pulse is on the small dot only — the type never moves, because
+   moving type is the thing that reads as an advertisement.
+   --------------------------------------------------------------------------- */
+
+#root .seasonal-offering {
+  position: relative;
+  border-block: 1px solid rgba(233, 199, 126, 0.34);
+  background:
+    radial-gradient(ellipse 70% 120% at 18% 50%, rgba(122, 31, 39, 0.4), transparent 70%),
+    linear-gradient(180deg, rgba(36, 14, 18, 0.72), rgba(20, 10, 12, 0.5));
+}
+
+#root .seasonal-offering .label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px;
+  border: 1px solid rgba(233, 199, 126, 0.5);
+  border-radius: 999px;
+  background: rgba(122, 31, 39, 0.34);
+  font-size: 1rem;
+}
+
+#root .seasonal-offering .label::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #f4d49b;
+  box-shadow: 0 0 0 0 rgba(244, 212, 155, 0.75);
+  animation: season-pulse 2.4s ease-out infinite;
+}
+
+@keyframes season-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(244, 212, 155, 0.7); }
+  70%  { box-shadow: 0 0 0 13px rgba(244, 212, 155, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 212, 155, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .seasonal-offering .label::before { animation: none; }
+}
+
+#root .seasonal-offering-copy h2 {
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+  font-weight: 600;
+  line-height: 0.98;
+  color: #fffaf0;
+  text-shadow: 0 0 60px rgba(233, 199, 126, 0.2);
+}
+
+#root .seasonal-offering-lede {
+  font-size: clamp(1.06rem, 1.3vw, 1.25rem);
+}
+
+#root .seasonal-offering-art {
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), 0 0 70px rgba(233, 199, 126, 0.12);
 }

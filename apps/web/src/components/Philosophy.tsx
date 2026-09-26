@@ -1,6 +1,6 @@
 import { useState, type CSSProperties } from "react";
 import { portalCopy } from "../data/portalCopy";
-import { methodDoorway, type LivingDoorway } from "../data/livingDoorways";
+import { knowledgeDoorways, methodDoorway, type LivingDoorway } from "../data/livingDoorways";
 import { KnowledgeChamber } from "./KnowledgeChamber";
 import { portalImages } from "./PortalImageSlots";
 import { LivingForm } from "./LivingPortal";
@@ -26,23 +26,28 @@ const methodRhythm = [
    though the word is rare in her everyday writing. */
 const fivePillars = [
   {
+    id: "shakti",
     name: "Shakti Embodiment",
     meaning: "Meet the Goddess through movement, breath and embodied practice.",
   },
   {
+    id: "shadow",
     name: "Shadow & Inner Work",
     meaning:
       "Explore the patterns shaping how you love, protect and express yourself.",
   },
   {
+    id: "somatics",
     name: "Somatic Experiencing",
     meaning: "Listen to sensation. Create space for feeling.",
   },
   {
+    id: "sensuality",
     name: "Sensuality & Eros",
     meaning: "Reconnect with pleasure, senses and desire.",
   },
   {
+    id: "sovereignty",
     name: "Sovereignty & Power",
     meaning:
       "Become a safe space for yourself. Honour your boundaries. Live your dharma.",
@@ -84,14 +89,33 @@ export function Philosophy() {
           </button>
         </div>
         <div className="five-pillar-constellation living-concepts" aria-label="Five pillars of Shakti Shadow and Somatics">
-          {fivePillars.map((pillar, index) => (
-            <article key={pillar.name}>
-              <LivingForm variant={index} />
+          {fivePillars.map((pillar, index) => {
+            /* Matched by id, not by position: the published pillar order puts
+               Somatic Experiencing before Sensuality & Eros, while
+               knowledgeDoorways is the other way round. Indexing would have
+               opened the wrong chamber on two of the five. */
+            const doorway = knowledgeDoorways.find((entry) => entry.id === pillar.id);
 
-              <h3>{pillar.name}</h3>
-              <p>{pillar.meaning}</p>
-            </article>
-          ))}
+            return (
+              <article key={pillar.name}>
+                <button
+                  className="pillar-portal"
+                  type="button"
+                  aria-haspopup="dialog"
+                  onClick={() => doorway && setActiveChamber(doorway)}
+                  disabled={!doorway}
+                >
+                  <LivingForm variant={index} />
+
+                  <h3>{pillar.name}</h3>
+                  <p>{pillar.meaning}</p>
+                  <span className="pillar-portal-cue" aria-hidden="true">
+                    Enter
+                  </span>
+                </button>
+              </article>
+            );
+          })}
         </div>
       </div>
       <KnowledgeChamber
