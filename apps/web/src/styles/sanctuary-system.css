@@ -1293,7 +1293,9 @@
   padding: 8px 20px;
   border: 1px solid rgba(233, 199, 126, 0.58);
   border-radius: 999px;
-  background: rgba(20, 10, 12, 0.5);
+  /* Opaque enough that the cue never depends on what the crystal is
+     sitting over. At 0.5 it measured 1.00:1 against a bright rim glow. */
+  background: rgba(16, 8, 10, 0.82);
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -1408,52 +1410,95 @@
    --------------------------------------------------------------------------- */
 
 #root .five-pillar-constellation > article {
-  min-height: 430px;
+  min-height: 470px;
 }
 
+/* The form is sized by HEIGHT with its own aspect ratio pinned, never by
+   stretching to the article box.
+
+   The SVG is preserveAspectRatio="none" over a 300x440 viewBox, so it takes
+   whatever shape its container has. An earlier pass pushed it out by -13%
+   vertically and -19% horizontally, which quietly stretched every contour
+   wider than it was drawn: the teardrops turned into bloated rounds and the
+   outer glows collided with their neighbours. Pinning aspect-ratio makes that
+   class of distortion impossible whatever the grid does. */
 #root .five-pillar-constellation .living-form-art {
-  inset: -13% -19%;
+  inset: auto;
+  top: 50%;
+  left: 50%;
+  height: 126%;
+  width: auto;
+  aspect-ratio: 300 / 440;
+  transform: translate(-50%, -50%);
 }
 
+/* Weighted toward the bottom on purpose. These contours are teardrops —
+   narrow at the point, widest around three-fifths down — so a vertically
+   centred block put every title up in the neck where the form has no body
+   behind it. The content now sits in the belly. */
 #root .five-pillar-constellation .pillar-portal {
-  padding: 72px 30px 64px;
+  padding: 118px 26px 26px;
 }
 
+/* One word, so it needs no wrapping and no squeezing, and it can be bigger
+   than the two-word version ever could. white-space stays normal anyway:
+   living-grammar sets nowrap here, and under nowrap a heading honours its
+   max-width while its glyphs paint straight out of the box and off the side
+   of the crystal. That is what was happening to "Somatic Experiencing". */
 #root .five-pillar-constellation .pillar-portal h3 {
-  max-width: 14ch;
+  max-width: 100%;
   margin: 0;
-  font-size: 26px;
-  line-height: 1.16;
+  font-size: 30px;
+  line-height: 1.15;
+  white-space: normal;
 }
 
 #root .five-pillar-constellation .pillar-portal p {
-  max-width: 20ch;
+  max-width: 19ch;
   margin-top: 10px;
   font-size: 1rem;
-  line-height: 1.55;
+  line-height: 1.5;
+  text-wrap: pretty;
 }
 
 #root .five-pillar-constellation .pillar-portal-cue {
   margin-top: 16px;
 }
 
-/* Between 900 and 1400 the three-across grid is narrower but the forms are
-   not, so a -19% push sent the outer two off the side of the screen and they
-   were clipped mid-shape. The push tapers instead of staying fixed. */
-@media (max-width: 1400px) {
-  #root .five-pillar-constellation .living-form-art { inset: -13% -7%; }
+/* Between the three-across breakpoint and roughly 1150 the columns narrow
+   faster than the forms do, so the height tapers to keep the outer two from
+   running off the side and being clipped mid-shape. */
+@media (max-width: 1150px) {
+  #root .five-pillar-constellation .living-form-art { height: 112%; }
 }
 
-@media (max-width: 1080px) {
-  #root .five-pillar-constellation .living-form-art { inset: -12% -3%; }
-}
-
-/* Below the three-across breakpoint the forms have room again, so the text
-   can breathe back out rather than staying artificially narrow. */
 @media (max-width: 900px) {
-  #root .five-pillar-constellation .living-form-art { inset: -10% -12%; }
-  #root .five-pillar-constellation .pillar-portal h3 { max-width: 18ch; }
-  #root .five-pillar-constellation .pillar-portal p { max-width: 24ch; }
+  #root .five-pillar-constellation .living-form-art { height: 118%; }
+  #root .five-pillar-constellation .pillar-portal p { max-width: 22ch; }
+}
+
+/* On a phone the crystal is small enough that the waterfall behind it reads
+   through the interior, and the body copy measured 2.48:1 over the brightest
+   part of it. A soft radial plate sits behind the text — only where the
+   forms get small, and shaped so it never shows an edge. */
+@media (max-width: 620px) {
+  #root .five-pillar-constellation .pillar-portal {
+    padding: 96px 22px 24px;
+  }
+  #root .five-pillar-constellation .pillar-portal::before {
+    content: "";
+    position: absolute;
+    inset: 16% 8%;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(12, 6, 8, 0.86) 0%,
+      rgba(12, 6, 8, 0.78) 52%,
+      rgba(12, 6, 8, 0) 78%
+    );
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 /* ---------------------------------------------------------------------------

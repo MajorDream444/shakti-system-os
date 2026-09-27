@@ -12,43 +12,57 @@ const methodRhythm = [
   "Choose the next doorway",
 ];
 
-/* The five pillars, in the founder's own published wording.
+/* The five pillars.
 
-   These names and glosses are taken verbatim from the Dancing with Durga
-   carousel her social team published, and are recorded in
-   docs/doctrine/SHAKTI-CANONICAL-VOCABULARY.md. They replace one-word
-   paraphrases the build had invented ("Shakti", "Shadow", "Somatics"), which
-   said roughly the same thing in words she does not use.
+   Two names each, and the split is the point. The crystal carries ONE word —
+   the call, in her vocabulary, with the alliteration intact. The full
+   published pillar name waits inside the chamber, once someone has chosen to
+   enter.
 
-   Two are worth not "tidying" later. "Somatic Experiencing" is the correct
-   term and must not drift to "somatic breathwork", which is not her modality.
-   "Sovereignty & Power" stays because it is a published pillar name, even
-   though the word is rare in her everyday writing. */
+   Founder direction, 2026-09-27: "On those floating crystals it should just
+   say Shadow. Then when they enter, the next page can say Shadow & Inner
+   Work. Shakti. Shadow. Somatics. Sensuality. Sovereignty. Keep that
+   alliteration. We want the front page clean — people don't have much time."
+
+   This replaced a CSS problem with an editorial answer. Two-word titles were
+   being wrapped, shrunk and width-capped to keep them inside the teardrops;
+   one word needs none of that.
+
+   The full names and their glosses are the founder's own published wording,
+   taken from her team's carousel and recorded in
+   docs/doctrine/SHAKTI-CANONICAL-VOCABULARY.md. "Somatic Experiencing" is the
+   correct term and must not drift toward "somatic breathwork", which is not
+   her modality. */
 const fivePillars = [
   {
     id: "shakti",
-    name: "Shakti Embodiment",
+    short: "Shakti",
+    full: "Shakti Embodiment",
     meaning: "Meet the Goddess through movement, breath and embodied practice.",
   },
   {
     id: "shadow",
-    name: "Shadow & Inner Work",
+    short: "Shadow",
+    full: "Shadow & Inner Work",
     meaning:
       "Explore the patterns shaping how you love, protect and express yourself.",
   },
   {
     id: "somatics",
-    name: "Somatic Experiencing",
+    short: "Somatics",
+    full: "Somatic Experiencing",
     meaning: "Listen to sensation. Create space for feeling.",
   },
   {
     id: "sensuality",
-    name: "Sensuality & Eros",
+    short: "Sensuality",
+    full: "Sensuality & Eros",
     meaning: "Reconnect with pleasure, senses and desire.",
   },
   {
     id: "sovereignty",
-    name: "Sovereignty & Power",
+    short: "Sovereignty",
+    full: "Sovereignty & Power",
     meaning:
       "Become a safe space for yourself. Honour your boundaries. Live your dharma.",
   },
@@ -94,10 +108,14 @@ export function Philosophy() {
                Somatic Experiencing before Sensuality & Eros, while
                knowledgeDoorways is the other way round. Indexing would have
                opened the wrong chamber on two of the five. */
-            const doorway = knowledgeDoorways.find((entry) => entry.id === pillar.id);
+            const base = knowledgeDoorways.find((entry) => entry.id === pillar.id);
+            /* The chamber is where the full name belongs — it is the "next
+               page" the founder described, so it carries the published
+               pillar name rather than the one-word call on the crystal. */
+            const doorway = base ? { ...base, title: pillar.full } : undefined;
 
             return (
-              <article key={pillar.name}>
+              <article key={pillar.id}>
                 <button
                   className="pillar-portal"
                   type="button"
@@ -107,7 +125,7 @@ export function Philosophy() {
                 >
                   <LivingForm variant={index} />
 
-                  <h3>{pillar.name}</h3>
+                  <h3>{pillar.short}</h3>
                   <p>{pillar.meaning}</p>
                   <span className="pillar-portal-cue" aria-hidden="true">
                     Enter
