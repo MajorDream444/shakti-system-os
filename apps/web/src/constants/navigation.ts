@@ -41,14 +41,14 @@ export const DANCING_WITH_DURGA_PATH = routePath("/dancing-with-durga");
 export const NAV_ITEMS: NavItem[] = [
   "About",
   "Offerings",
-  "Dancing with Maa Durga Devi",
+  "Dancing with Durga Devi",
   "Begin",
 ];
 
 export const NAV_TARGETS: Record<NavItem, string> = {
   About: ABOUT_SHEETAL_PATH,
   Offerings: OFFERINGS_PATH,
-  "Dancing with Maa Durga Devi": DANCING_WITH_DURGA_PATH,
+  "Dancing with Durga Devi": DANCING_WITH_DURGA_PATH,
   Begin: BEGIN_PATH,
   Pathway: SECTION_ANCHORS.pathway,
   Retreat: SECTION_ANCHORS.retreat,

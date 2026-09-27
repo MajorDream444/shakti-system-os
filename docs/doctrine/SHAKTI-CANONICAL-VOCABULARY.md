@@ -314,35 +314,67 @@ decorative.
 
 ---
 
-# Goddess naming rule — ADDED 2026-09-27
+# Goddess naming rule — ADDED 2026-09-27, SOURCED 2026-09-27
 
-**Every goddess name carries `Maa`.** Maa Durga, Maa Kali, Maa Shailaputri,
-Maa Kamakhya. Never the bare name in anything a visitor reads.
+**The goddess always carries `Maa`. The container does not.**
 
-Applies to page copy, headings, letters, email, alt text and social captions.
+She draws this line herself, and it is the whole rule.
 
-## Provenance, stated honestly
+## Sourced from her own voice
 
-Major recalls Sheetal saying this explicitly in a meeting, and asked for the
-quote. **It is not in this repository.** The raw transcripts of the 23 and 25
-September calls are not stored here — only the direction document extracted
-from the 25th — and the meeting-prep PDF contains no instance of the word. So
-the rule is recorded as **founder direction relayed by Major**, not as a
-sourced quotation. If the raw recording is ever added, cite it here.
+**18 September call**, her recorded invitation, read aloud by her:
 
-What the repository does hold is strong corroboration, which is why the rule
-was adopted without waiting for the transcript:
+> *"I'm inviting you to **Dancing with Durga Devi**, Devotion with the Spine,
+> beginning October 11th during Navratri, the nine nights honouring the
+> goddess ... we'll explore desire, discernment, devotion, and our destiny
+> with **Maa Durga, the warrior goddess**, as our guide ... DM the word Durga
+> for details to join this sacred, juicy, feminine container.
+> **Jai Maa Durga.**"*
 
-- `Maa` appears **87 times** across 102 of her own posts — one of her highest
-  frequency terms, and higher than `goddess` at 59.
-- Her own campaign copy, supplied 2026-09-27, uses it unprompted twice:
-  *"Held by Maa Durga and her 9 forms"* and *"Maa Durga remains at the
-  centre."*
-- The Dancing with Maa Durga Devi sprint plans state *"Maa Durga is the
-  centre"* in three separate places.
+In one breath she names the container **"Dancing with Durga Devi"** — no Maa —
+and the goddess **"Maa Durga"**, twice. That is the distinction.
 
-## One deliberate exception
+**25 September call**, on how assets should be titled:
 
-The campaign line **"Durga. Devotion. Dharma."** keeps the bare name. It is a
-three-beat chant built on the repeated initial D, and "Maa Durga. Devotion.
-Dharma." breaks the cadence that makes it work. Flagged for her to overrule.
+> *"Say, for example, I share a video about **Maa Kali**. Has, for example,
+> the title **Maa Kali**."*
+
+So it holds for file titles too, not only devotional invocation.
+
+## The rule
+
+| Context | Form |
+|---|---|
+| The goddess, anywhere | **Maa Durga**, **Maa Kali**, **Maa Shailaputri** |
+| Asset and file titles | **Maa Kali**, per her own example |
+| The container's name | **Dancing with Durga Devi** — her title, unchanged |
+| The campaign chant | **Durga. Devotion. Dharma.** — cadence wins |
+
+**Spelling is `Maa`,** two a's. The transcripts render her speech as "Ma" and
+"Madurga", but her written form across 102 of her own posts is `Maa`, 87
+times. Follow the writing, not the transcription.
+
+## A correction worth keeping
+
+An earlier pass applied Maa to the container as well — "Dancing with Maa
+Durga Devi" — on the reasonable-sounding logic that if goddesses take Maa,
+so should anything named after one. The transcript shows that is wrong: she
+says the container's name without it, in the same sentence where she says the
+goddess's name with it. Reverted.
+
+## Four D's, from the same invitation
+
+> *"desire, discernment, devotion, and our destiny"*
+
+Her own four-fold for these nine nights, and it is not yet anywhere on the
+site. Worth using.
+
+## Source handling — read this before asking for the transcripts
+
+The raw recordings are **deliberately not stored in this repository.** They
+contain a first-person account of a physical assault, a circulated list naming
+private individuals with allegations against them and a phone number, and
+extended personal material about her life and relationships. None of that
+belongs in a client repo, a prompt, or anything an agent might quote back.
+
+Quote from them only what is about the work, as above.

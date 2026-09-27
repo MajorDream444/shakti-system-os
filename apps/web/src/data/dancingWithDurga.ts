@@ -2,12 +2,22 @@ import { commerceOffers } from "./commerce";
 
 export const dancingWithDurga = {
   path: "/dancing-with-durga",
-  title: "Dancing with Maa Durga Devi: Devotion with a Spine",
-  /* Goddess names carry Maa. Founder convention: it is her own address for
-     the goddess, 87 times across 102 of her posts, and her campaign copy says
-     "Maa Durga" unprompted. The campaign line is the one exception — it is a
-     three-beat chant on the initial D, and "Maa Durga. Devotion. Dharma."
-     breaks the cadence that makes it work. Flag if she wants it changed. */
+  title: "Dancing with Durga Devi: Devotion with a Spine",
+  /* The container's name and the goddess's name follow different rules, and
+     the founder draws that line herself. From her recorded invitation,
+     18 September, in her own voice:
+
+       "I'm inviting you to Dancing with Durga Devi, Devotion with the Spine
+        ... we'll explore desire, discernment, devotion, and our destiny with
+        Maa Durga, the warrior goddess, as our guide ... Jai Maa Durga."
+
+     The CONTAINER is "Dancing with Durga Devi" — her title, spoken, no Maa.
+     The GODDESS is always "Maa Durga". The campaign line keeps the same
+     licence: "Durga. Devotion. Dharma." is a three-beat chant on the repeated
+     D, and prefixing it breaks the cadence.
+
+     She says "Devotion with the Spine"; the published graphic says "a Spine".
+     The graphic wins, because that is what is already public. */
   campaignLine: "Durga. Devotion. Dharma.",
   subtitle: "A Nine-Night Navratri Sadhana Through the Navadurgas",
   /* Founder's own campaign copy, supplied 2026-09-27. Written for the previous
