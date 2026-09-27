@@ -30,27 +30,29 @@ export const dancingWithDurga = {
   audience: "Women-only",
   format: "Four live gatherings plus five practice nights",
   timing: "7:30-9:30 PM IST",
-  /* ANSWERED on the follow-up call, 27 September, and the earlier reading was
-     wrong. The fifth call is NOT included — it is conditional on the circle
-     showing up.
+  /* INTERNAL CONTEXT — NOT FOR THE PAGE.
 
-     Sheetal: "That is initiative, to be engaging and reciprocal in this
-     container. Otherwise the fifth call might be just an integration call,
-     but four calls..."
-     Major: "So set at four. If the vibe is right, bam, here comes the fifth."
-     Sheetal: "If they're engaged, if they're there, if they're present, then
-     yes. If not, then I just give them 'this is how you integrate on your
-     own.'"
+     The feeling behind the fifth call is reciprocity. Sheetal, 27 September:
+     "That is initiative, to be engaging and reciprocal in this container."
+     Major, relaying her: "If everybody's doing their work, the fifth is not
+     just a bonus, it's a reward. It's me matching your energy."
 
-     So: FOUR are committed. A fifth opens if the group is present. Either
-     way she gives integration guidance, so nobody is left without a close.
+     That reasoning governs how she runs the container. It does NOT go on the
+     page. An earlier version of this line read "A fifth opens as an
+     integration night when the circle is present for it" — which is the
+     internal logic printed in public, and lands as "if you prove yourselves,
+     you get the fifth." She was explicit that she does not want it said like
+     that.
 
-     The previous line said "A fifth call is included as a bonus," which
-     promised a paying woman something Sheetal has not committed to. Corrected
-     before anyone could buy on it. She was also explicit about tone — "I
-     don't want to say it like that" — so this reads as an invitation earned
-     together, not a threat of withdrawal. */
-  bonusNote: "Four gatherings are held. A fifth opens as an integration night when the circle is present for it.",
+     The version before that said "included as a bonus", which went the other
+     way and promised a paying woman a session that is not committed.
+
+     So the page says the plain true thing: four are held, a fifth is a bonus.
+     Four is the commitment. The fifth is hers to give, and she intends to
+     give it in some form either way — live if the circle is alive, written
+     integration guidance if not. Nobody is left without a close, and nobody
+     is told they have to earn one. */
+  bonusNote: "Four gatherings are held, with a fifth as a bonus night.",
   practiceNightCount: 5,
   paymentOptions: commerceOffers.dancingWithDurga,
   cta: "Request details",

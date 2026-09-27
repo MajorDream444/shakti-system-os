@@ -145,3 +145,48 @@ Registered here so it is not reinvented under a different name.
 3. Profanity present in her social voice does **not** transfer to site copy without
    explicit approval — the register transfers, the specific words do not.
 4. When in doubt, use her current words over our synthesis.
+
+---
+
+## 9. Internal reasoning is not public copy — ADDED 2026-09-27
+
+**The why behind an offer governs how she runs it. It does not go on the page.**
+
+Major, 27 September:
+
+> *"Separate the editorial conversation versus what we really want. I don't
+> want to say 'oh, if you guys are worthy, then you get the fifth.' But just
+> know that that's the feeling behind it — if everybody's doing their work,
+> the fifth is not just a bonus, it's a reward. It's me matching your energy."*
+
+### How this went wrong, so it is recognisable next time
+
+The fifth Dancing with Durga Devi call is conditional on the group's
+engagement. That is true, and it is why she structures it that way. Three
+versions of the public line, two of them wrong in opposite directions:
+
+| Version | Problem |
+|---|---|
+| "A fifth call is **included** as a bonus" | Over-promises. A paying woman is owed a session Sheetal has not committed to. |
+| "A fifth opens **when the circle is present for it**" | The internal logic printed in public. Reads as *prove yourselves and you get it.* |
+| **"Four gatherings are held, with a fifth as a bonus night."** | Plain and true. Four is the commitment; the fifth is hers to give. |
+
+Both failures came from the same instinct — that because something is true and
+well-reasoned, it belongs on the page.
+
+### The test
+
+Before publishing a line that carries a condition, a rationale or a
+justification, ask: **is this the offer, or is this the thinking behind the
+offer?**
+
+The offer goes on the page. The thinking goes in the code comment, the
+doctrine, or the brief. A seeker reading the page should feel welcomed into
+something, never assessed by it.
+
+### Why it matters here specifically
+
+Her whole positioning is a magnet rather than a funnel — *"I'm not trying to
+manipulate you, but I'm magnetizing the right people to me."* Conditional
+language inverts that. It turns an invitation into a test, which is precisely
+the dynamic her work exists to undo.
