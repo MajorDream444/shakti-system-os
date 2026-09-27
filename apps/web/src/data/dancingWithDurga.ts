@@ -29,7 +29,18 @@ export const dancingWithDurga = {
     "A space for fierce devotion, embodied power, and the courage to meet yourself fully. Through mantra, movement, meditation and the wisdom of Durga Devi, we explore the Warrior Mother Goddess who holds us and reminds us we have a right to claim our space, discern who earns our softness, and honour our desires.",
   audience: "Women-only",
   format: "Four live gatherings plus five practice nights",
-  timing: "7:30-9:30 PM IST",
+  timing: "7:30–9:30 PM IST",
+  /* Confirmed dates, from Sheetal's own buyer-welcome copy, 27 September:
+     "We have 4 confirmed live gatherings: October 11, 13, 15 & 17 ... There
+     will also be a possible bonus gathering on October 19, which will be
+     confirmed closer to the time depending on the engagement and needs of the
+     group."
+
+     Until now the site said only "11–19 October", which is the span of the
+     nine nights, not the nights she is actually live. A buyer needs the four
+     dates before she buys, not after. */
+  liveGatheringDates: "11, 13, 15 & 17 October",
+  bonusGatheringDate: "19 October",
   /* INTERNAL CONTEXT — NOT FOR THE PAGE.
 
      The feeling behind the fifth call is reciprocity. Sheetal, 27 September:
@@ -55,7 +66,7 @@ export const dancingWithDurga = {
   /* "May" is doing real work here. The previous line — "with a fifth as a
      bonus night" — still read as though the fifth were happening and merely
      labelled a bonus. It can be withheld, so the page has to say so. */
-  bonusNote: "Four gatherings are held. A fifth may open as a bonus night.",
+  bonusNote: "A fifth may open on 19 October, as a bonus.",
   practiceNightCount: 5,
   paymentOptions: commerceOffers.dancingWithDurga,
   cta: "Request details",

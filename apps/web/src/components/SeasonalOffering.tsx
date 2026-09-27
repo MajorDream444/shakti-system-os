@@ -36,8 +36,9 @@ export function SeasonalOffering() {
           <p className="label">Open now · Navratri 2026</p>
           <h2 id="seasonal-offering-title">Dancing with Durga Devi</h2>
           <p className="seasonal-offering-lede">
-            {dancingWithDurga.subtitle}. Four live gatherings and five practice
-            nights, 11–19 October, {dancingWithDurga.timing}.
+            {dancingWithDurga.subtitle}. Four live gatherings —{" "}
+            {dancingWithDurga.liveGatheringDates} — at {dancingWithDurga.timing}.
+            On the other nights, practices to explore in your own space and time.
           </p>
           <p className="seasonal-offering-bonus">{dancingWithDurga.bonusNote}</p>
           <p className="seasonal-offering-essence">
