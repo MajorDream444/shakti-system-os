@@ -22,13 +22,15 @@
    this is the core alone — five interlocking triangles and the bindu — which
    still reads as itself at this size. */
 
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 export type GlyphName = "yantra" | "spiral" | "waves" | "lotus" | "sun";
 
 type SacredGlyphProps = {
   name: GlyphName;
   className?: string;
+  /** Carries --glyph-color so the mark can take its crystal's own edge colour. */
+  style?: CSSProperties;
 };
 
 /* An Archimedean spiral, sampled rather than eyeballed, so the turns stay even. */
@@ -93,10 +95,11 @@ const GLYPHS: Record<GlyphName, ReactNode> = {
   ),
 };
 
-export function SacredGlyph({ name, className }: SacredGlyphProps) {
+export function SacredGlyph({ name, className, style }: SacredGlyphProps) {
   return (
     <svg
       className={className}
+      style={style}
       viewBox="0 0 48 48"
       fill="none"
       stroke="currentColor"

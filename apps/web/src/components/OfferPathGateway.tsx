@@ -1,5 +1,11 @@
 import { offerCategories, offerPathways, receivingLadder, trustLinks } from "../data/offerings";
-import { LivingForm } from "./LivingPortal";
+import type { CSSProperties } from "react";
+import { LivingForm, livingFormAccent } from "./LivingPortal";
+import { SacredGlyph, type GlyphName } from "./SacredGlyph";
+
+/* One mark per rung, deepening as the ladder does: first contact, opening,
+   turning inward, then the seat. Each takes its own crystal's colour. */
+const LADDER_GLYPHS: GlyphName[] = ["waves", "lotus", "spiral", "yantra"];
 
 export function OfferPathGateway() {
   return (
@@ -19,6 +25,11 @@ export function OfferPathGateway() {
               <div key={item.level}>
                 <LivingForm variant={index} />
 
+                <SacredGlyph
+                  name={LADDER_GLYPHS[index % LADDER_GLYPHS.length]}
+                  className="crystal-glyph"
+                  style={{ "--glyph-color": livingFormAccent(index) } as CSSProperties}
+                />
                 <span>{item.level}</span>
                 <p>{item.doorway}</p>
               </div>

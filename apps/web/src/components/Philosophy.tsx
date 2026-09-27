@@ -3,7 +3,7 @@ import { portalCopy } from "../data/portalCopy";
 import { knowledgeDoorways, methodDoorway, type LivingDoorway } from "../data/livingDoorways";
 import { KnowledgeChamber } from "./KnowledgeChamber";
 import { portalImages } from "./PortalImageSlots";
-import { LivingForm } from "./LivingPortal";
+import { LivingForm, livingFormAccent } from "./LivingPortal";
 import { SacredGlyph, type GlyphName } from "./SacredGlyph";
 
 const methodRhythm = [
@@ -131,7 +131,11 @@ export function Philosophy() {
                 >
                   <LivingForm variant={index} />
 
-                  <SacredGlyph name={pillar.glyph} className="pillar-glyph" />
+                  <SacredGlyph
+                    name={pillar.glyph}
+                    className="pillar-glyph"
+                    style={{ "--glyph-color": livingFormAccent(index) } as CSSProperties}
+                  />
                   <h3>{pillar.short}</h3>
                   <p>{pillar.meaning}</p>
                   <span className="pillar-portal-cue" aria-hidden="true">

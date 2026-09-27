@@ -1,6 +1,13 @@
+import type { CSSProperties } from "react";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { LivingPortal, PortalMotionControl } from "./LivingPortal";
+import { LivingPortal, PortalMotionControl , livingFormAccent } from "./LivingPortal";
+import { SacredGlyph, type GlyphName } from "./SacredGlyph";
+
+/* One mark per stage of the path: sensing where you are, opening into
+   community, turning inward in a container, then standing in your own light.
+   Each takes its crystal's colour rather than a fixed gold. */
+const PATHWAY_GLYPHS: GlyphName[] = ["waves", "lotus", "spiral", "sun"];
 import waterfall from "../shala/assets/images/waterfall-nature-v2-img-5327.jpg";
 import { portalCopy } from "../data/portalCopy";
 import { pathwayDoorways, type LivingDoorway } from "../data/livingDoorways";
@@ -34,6 +41,11 @@ export function Pathway() {
             >
               <LivingPortal variant={index} />
 
+              <SacredGlyph
+                name={PATHWAY_GLYPHS[index % PATHWAY_GLYPHS.length]}
+                className="crystal-glyph"
+                style={{ "--glyph-color": livingFormAccent(index) } as CSSProperties}
+              />
               <h3>{step.title}</h3>
               <p>{step.body}</p>
               <ArrowRight className="portal-arrow" aria-hidden="true" />
