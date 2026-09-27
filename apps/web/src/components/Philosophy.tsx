@@ -4,6 +4,7 @@ import { knowledgeDoorways, methodDoorway, type LivingDoorway } from "../data/li
 import { KnowledgeChamber } from "./KnowledgeChamber";
 import { portalImages } from "./PortalImageSlots";
 import { LivingForm } from "./LivingPortal";
+import { SacredGlyph, type GlyphName } from "./SacredGlyph";
 
 const methodRhythm = [
   "Listen to the body",
@@ -36,12 +37,14 @@ const methodRhythm = [
 const fivePillars = [
   {
     id: "shakti",
+    glyph: "yantra" as GlyphName,
     short: "Shakti",
     full: "Shakti Embodiment",
     meaning: "Meet the Goddess through movement, breath and embodied practice.",
   },
   {
     id: "shadow",
+    glyph: "spiral" as GlyphName,
     short: "Shadow",
     full: "Shadow & Inner Work",
     meaning:
@@ -49,18 +52,21 @@ const fivePillars = [
   },
   {
     id: "somatics",
+    glyph: "waves" as GlyphName,
     short: "Somatics",
     full: "Somatic Experiencing",
     meaning: "Listen to sensation. Create space for feeling.",
   },
   {
     id: "sensuality",
+    glyph: "lotus" as GlyphName,
     short: "Sensuality",
     full: "Sensuality & Eros",
     meaning: "Reconnect with pleasure, senses and desire.",
   },
   {
     id: "sovereignty",
+    glyph: "sun" as GlyphName,
     short: "Sovereignty",
     full: "Sovereignty & Power",
     meaning:
@@ -125,6 +131,7 @@ export function Philosophy() {
                 >
                   <LivingForm variant={index} />
 
+                  <SacredGlyph name={pillar.glyph} className="pillar-glyph" />
                   <h3>{pillar.short}</h3>
                   <p>{pillar.meaning}</p>
                   <span className="pillar-portal-cue" aria-hidden="true">

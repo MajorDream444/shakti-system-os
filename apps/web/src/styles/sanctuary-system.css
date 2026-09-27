@@ -1483,18 +1483,22 @@
    forms get small, and shaped so it never shows an edge. */
 @media (max-width: 620px) {
   #root .five-pillar-constellation .pillar-portal {
-    padding: 96px 22px 24px;
+    padding: 88px 22px 24px;
+  }
+  #root .five-pillar-constellation .pillar-glyph {
+    width: 30px;
+    margin-bottom: 6px;
   }
   #root .five-pillar-constellation .pillar-portal::before {
     content: "";
     position: absolute;
-    inset: 16% 8%;
+    inset: 6% 2%;
     border-radius: 50%;
     background: radial-gradient(
       ellipse at center,
-      rgba(12, 6, 8, 0.86) 0%,
-      rgba(12, 6, 8, 0.78) 52%,
-      rgba(12, 6, 8, 0) 78%
+      rgba(10, 5, 7, 0.96) 0%,
+      rgba(10, 5, 7, 0.93) 62%,
+      rgba(10, 5, 7, 0) 86%
     );
     z-index: -1;
     pointer-events: none;
@@ -1554,4 +1558,29 @@
 
 @media (max-width: 900px) {
   #root .seasonal-offering-yantra { display: none; }
+}
+
+/* The glyph above each title. Small, thin, and quiet — a mark, not
+   illustration. It inherits the heading's gold rather than carrying a colour
+   of its own, and it sits at 0.62 opacity so it reads as struck into the
+   crystal rather than stuck on top of it. */
+#root .five-pillar-constellation .pillar-glyph {
+  width: clamp(34px, 3vw, 44px);
+  height: auto;
+  margin-bottom: 10px;
+  color: #f3d295;
+  opacity: 0.7;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+#root .five-pillar-constellation .pillar-portal:hover .pillar-glyph,
+#root .five-pillar-constellation .pillar-portal:focus-visible .pillar-glyph {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .five-pillar-constellation .pillar-glyph { transition: none; }
+  #root .five-pillar-constellation .pillar-portal:hover .pillar-glyph,
+  #root .five-pillar-constellation .pillar-portal:focus-visible .pillar-glyph { transform: none; }
 }
