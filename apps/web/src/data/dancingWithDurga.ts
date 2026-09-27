@@ -52,7 +52,10 @@ export const dancingWithDurga = {
      give it in some form either way — live if the circle is alive, written
      integration guidance if not. Nobody is left without a close, and nobody
      is told they have to earn one. */
-  bonusNote: "Four gatherings are held, with a fifth as a bonus night.",
+  /* "May" is doing real work here. The previous line — "with a fifth as a
+     bonus night" — still read as though the fifth were happening and merely
+     labelled a bonus. It can be withheld, so the page has to say so. */
+  bonusNote: "Four gatherings are held. A fifth may open as a bonus night.",
   practiceNightCount: 5,
   paymentOptions: commerceOffers.dancingWithDurga,
   cta: "Request details",
