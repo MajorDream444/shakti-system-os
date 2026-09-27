@@ -39,6 +39,7 @@ export function SeasonalOffering() {
             {dancingWithDurga.subtitle}. Four live gatherings and five practice
             nights, 11–19 October, {dancingWithDurga.timing}.
           </p>
+          <p className="seasonal-offering-bonus">{dancingWithDurga.bonusNote}</p>
           <p className="seasonal-offering-essence">
             For women learning to say no without apologising, feel anger without
             being consumed, and stand in power without abandoning tenderness.

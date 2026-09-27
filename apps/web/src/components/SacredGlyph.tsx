@@ -61,13 +61,26 @@ const sunRays = (() => {
 })();
 
 const GLYPHS: Record<GlyphName, ReactNode> = {
+  /* The downward triangle — adho-mukha trikona, the Shakti symbol.
+
+     This was an interlocking up-and-down pair, which is a hexagram, and
+     Sheetal caught it on 27 September: "instead of using a star here, because
+     it's going to be too synonymous with Judaism, just put an upside down
+     triangle. It's more Shakti representative ... I don't want people to
+     think I'm Jewish."
+
+     She is right on both counts. The two interlocking triangles do appear in
+     her lineage — she said so herself — but at this size the shape reads as a
+     Star of David and nothing else. The single downward triangle is
+     unambiguous, and it is the older symbol for what this pillar actually is.
+
+     Nested rather than single so it still reads as a yantra rather than a
+     warning sign, with the bindu at the centre. */
   yantra: (
     <>
-      <path d="M24 8 L38 32 L10 32 Z" />
-      <path d="M24 40 L10 16 L38 16 Z" />
-      <path d="M24 14 L33.5 30 L14.5 30 Z" opacity="0.7" />
-      <path d="M24 34 L14.5 18 L33.5 18 Z" opacity="0.7" />
-      <circle cx="24" cy="24" r="1.9" fill="currentColor" stroke="none" />
+      <path d="M9 13 L39 13 L24 39 Z" />
+      <path d="M15.5 18 L32.5 18 L24 32.5 Z" opacity="0.72" />
+      <circle cx="24" cy="22.5" r="1.9" fill="currentColor" stroke="none" />
     </>
   ),
   spiral: <path d={spiralPath} />,

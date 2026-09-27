@@ -61,27 +61,25 @@ This is the Shakti Temple Arts pattern from §2 — name → what it is → a qu
 ## §1.2 — Not about her
 
 > *"I don't care about people coming because of me… I'm just a vessel."*
-> *"These pictures are beautiful of me… but it's not super important."*
 
 **Decision:** the four-portrait opening is gone. Her face moves deeper into the
 site and onto her own page.
 
-**State: PARTIAL — NEEDS HER CONFIRM.**
+**State: DONE — SHE APPROVED IT, 27 September.** This was the register's most
+uncertain item. It is now closed, in her words:
 
-Done: the home page no longer opens with four photographs of her.
+> *"Even this temple is a very special temple for me… it's the first water
+> temple I went to in Bali, on my 35th birthday when I came to Bali. That
+> picture is from my 35th birthday."*
 
-The open question: the hero is now a single real photograph of a temple water
-shrine — `founder-holy-spring-sept24.jpg`. Sheetal is in it, small, in the lower
-third, in red, head bowed, face not legible. It is a photograph of a temple that
-happens to contain her, not a portrait.
+> *"Another thing that I like about that image is that you're in it, but
+> everything else — so it's like, **Shala is bigger than me**, and I'm just,
+> that's it."*
 
-**That is a judgement call made on her behalf.** It satisfies "I want this to
-feel like a temple space" and "simple and realistic", and it is not a portrait —
-but she said her face is not the hero more than once, and she has not seen this.
-**She decides.** If it is wrong, the same frame works with a temple photograph
-containing nobody.
-
----
+She named the exact quality the choice was made for, unprompted. Record it:
+the photograph is not a stock temple, it is *her* temple, from her 35th
+birthday — and she reads her own smallness inside it as the point rather than
+a compromise. Do not swap this image without her.
 
 ## §1.3 — Real before stylised
 
@@ -295,8 +293,9 @@ blocker, it does not grant the approval.
 
 Everything else above is decided. These are not.
 
-1. **The hero photograph** — temple shrine with her small and face-down in it.
-   Right, or replace with a temple containing nobody?
+1. ~~**The hero photograph**~~ — **ANSWERED 27 September. She approved it and
+   explained why: it is her own temple, from her 35th birthday, and "Shala is
+   bigger than me" is the reading she wanted.**
 2. **Who this is *not* for** — she asked for it; it needs her words.
 3. **The three email sequences** — written, verified, defect fixed, switched
    off, waiting on her read.

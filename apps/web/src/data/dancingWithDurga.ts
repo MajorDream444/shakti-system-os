@@ -30,7 +30,29 @@ export const dancingWithDurga = {
   audience: "Women-only",
   format: "Four live gatherings plus five practice nights",
   timing: "7:30-9:30 PM IST",
-  liveGatheringCount: 4,
+  /* INTERNAL CONTEXT — NOT FOR THE PAGE.
+
+     The feeling behind the fifth call is reciprocity. Sheetal, 27 September:
+     "That is initiative, to be engaging and reciprocal in this container."
+     Major, relaying her: "If everybody's doing their work, the fifth is not
+     just a bonus, it's a reward. It's me matching your energy."
+
+     That reasoning governs how she runs the container. It does NOT go on the
+     page. An earlier version of this line read "A fifth opens as an
+     integration night when the circle is present for it" — which is the
+     internal logic printed in public, and lands as "if you prove yourselves,
+     you get the fifth." She was explicit that she does not want it said like
+     that.
+
+     The version before that said "included as a bonus", which went the other
+     way and promised a paying woman a session that is not committed.
+
+     So the page says the plain true thing: four are held, a fifth is a bonus.
+     Four is the commitment. The fifth is hers to give, and she intends to
+     give it in some form either way — live if the circle is alive, written
+     integration guidance if not. Nobody is left without a close, and nobody
+     is told they have to earn one. */
+  bonusNote: "Four gatherings are held, with a fifth as a bonus night.",
   practiceNightCount: 5,
   paymentOptions: commerceOffers.dancingWithDurga,
   cta: "Request details",
