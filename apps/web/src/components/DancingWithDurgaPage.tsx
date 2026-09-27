@@ -73,6 +73,11 @@ export function DancingWithDurgaPage() {
               <span>{DURGA_TEACHING}</span>
             </h1>
             <p className="durga-subtitle">{dancingWithDurga.subtitle}</p>
+            {/* The founder's own campaign copy, in her voice. It sits under
+                the subtitle rather than further down the page because it is
+                the clearest statement of what the nine nights actually are. */}
+            <p className="durga-energy-heading">{dancingWithDurga.energyHeading}</p>
+            <p className="durga-energy">{dancingWithDurga.energy}</p>
           </div>
 
           <figure className="durga-hero-art">

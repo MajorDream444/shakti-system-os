@@ -2,9 +2,16 @@ import { commerceOffers } from "./commerce";
 
 export const dancingWithDurga = {
   path: "/dancing-with-durga",
-  title: "Dancing with Durga: Devotion with a Spine",
+  title: "Dancing with Durga Devi: Devotion with a Spine",
   campaignLine: "Durga. Devotion. Dharma.",
   subtitle: "A Nine-Night Navratri Sadhana Through the Navadurgas",
+  /* Founder's own campaign copy, supplied 2026-09-27. Written for the previous
+     design and still accurate, so it is carried over rather than rewritten.
+     "Maa" and "Devi" are her natural address for the goddess — see the
+     devotional vocabulary in SHAKTI-CANONICAL-VOCABULARY.md. */
+  energyHeading: "Rooted in Earth. Held by Maa Durga and her nine forms.",
+  energy:
+    "A space for fierce devotion, embodied power, and the courage to meet yourself fully. Through mantra, movement, meditation and the wisdom of Durga Devi, we explore the Warrior Mother Goddess who holds us and reminds us we have a right to claim our space, discern who earns our softness, and honour our desires.",
   audience: "Women-only",
   format: "Four live gatherings plus five practice nights",
   timing: "7:30-9:30 PM IST",

@@ -36,6 +36,7 @@ export const commerceOffers = {
       price: "$175 USD",
       href: "https://buy.stripe.com/14A00igyp0hN03KfDdd7q02",
       cta: "Reserve single session",
+      promo: "Use SHAKTI at checkout",
       billing: "one-time",
     },
     {

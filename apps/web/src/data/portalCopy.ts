@@ -23,7 +23,7 @@ export const portalCopy = {
     body:
       "For women learning to trust the body, meet the shadow, and stop abandoning themselves. Held by Sheetal Kandola.",
     primaryCta: "Begin your path",
-    secondaryCta: "Dancing with Durga",
+    secondaryCta: "Dancing with Durga Devi",
     seasonalLine: "Navratri 2026 · 11–19 October",
   },
   philosophy,
