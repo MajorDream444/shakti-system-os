@@ -216,7 +216,7 @@ pass counts 102 across both her accounts, so absolute counts differ. Rankings ag
 | Tantra | 132 | APPROVED | Always classical/traditional Tantra. Never "generic Tantra." |
 | Feminine | 118 | APPROVED | Both dark and light feminine — never only one. |
 | Ritual | 102 | APPROVED | Strong founder language. |
-| **Maa** | 87 | **APPROVED — NEW** | Her natural address for the goddess. Prefer over always writing "the goddess." |
+| **Maa** | 87 | **APPROVED — NEW** | Her natural address for the goddess. Prefer over always writing "the goddess." **Goddess names take it as a prefix — see the naming rule below.** |
 | Kali / Ma Kali | 76 | APPROVED | Fierce/dark feminine. Pair with Lakshmi where integration is the point. |
 | Healing | 76 | APPROVED | |
 | Retreat | 65 | APPROVED | |
@@ -311,3 +311,38 @@ Supporting founder language, 2026-08-03:
 The three gunas are also the colour system. See `SHAKTI-COLOR-DOCTRINE.md` — white is
 sattva, red is rajas, black is tamas, and red is doctrinally required rather than
 decorative.
+
+---
+
+# Goddess naming rule — ADDED 2026-09-27
+
+**Every goddess name carries `Maa`.** Maa Durga, Maa Kali, Maa Shailaputri,
+Maa Kamakhya. Never the bare name in anything a visitor reads.
+
+Applies to page copy, headings, letters, email, alt text and social captions.
+
+## Provenance, stated honestly
+
+Major recalls Sheetal saying this explicitly in a meeting, and asked for the
+quote. **It is not in this repository.** The raw transcripts of the 23 and 25
+September calls are not stored here — only the direction document extracted
+from the 25th — and the meeting-prep PDF contains no instance of the word. So
+the rule is recorded as **founder direction relayed by Major**, not as a
+sourced quotation. If the raw recording is ever added, cite it here.
+
+What the repository does hold is strong corroboration, which is why the rule
+was adopted without waiting for the transcript:
+
+- `Maa` appears **87 times** across 102 of her own posts — one of her highest
+  frequency terms, and higher than `goddess` at 59.
+- Her own campaign copy, supplied 2026-09-27, uses it unprompted twice:
+  *"Held by Maa Durga and her 9 forms"* and *"Maa Durga remains at the
+  centre."*
+- The Dancing with Maa Durga Devi sprint plans state *"Maa Durga is the
+  centre"* in three separate places.
+
+## One deliberate exception
+
+The campaign line **"Durga. Devotion. Dharma."** keeps the bare name. It is a
+three-beat chant built on the repeated initial D, and "Maa Durga. Devotion.
+Dharma." breaks the cadence that makes it work. Flagged for her to overrule.
