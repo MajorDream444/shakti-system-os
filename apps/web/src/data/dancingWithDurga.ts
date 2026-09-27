@@ -30,19 +30,27 @@ export const dancingWithDurga = {
   audience: "Women-only",
   format: "Four live gatherings plus five practice nights",
   timing: "7:30-9:30 PM IST",
-  /* Sheetal, 27 September: "make that at least clear that the fifth call is
-     bonus." She was explicit that the DATES do not change — she commits to
-     what she publishes — so this is not a hedge, it is a fifth call given as
-     a reward on top of the four.
+  /* ANSWERED on the follow-up call, 27 September, and the earlier reading was
+     wrong. The fifth call is NOT included — it is conditional on the circle
+     showing up.
 
-     NEEDS MAJOR'S CONFIRM: her exact words were "it says four and I have five
-     there right now ... that is a reward ... fifth is bonus." Read literally
-     that is four core gatherings plus a fifth bonus. The counts below say
-     four live and five practice. If the bonus is a fifth LIVE call, this
-     needs to become five. Left at four plus an explicit bonus line rather
-     than silently restating what a buyer is promised. */
-  liveGatheringCount: 4,
-  bonusNote: "A fifth call is included as a bonus.",
+     Sheetal: "That is initiative, to be engaging and reciprocal in this
+     container. Otherwise the fifth call might be just an integration call,
+     but four calls..."
+     Major: "So set at four. If the vibe is right, bam, here comes the fifth."
+     Sheetal: "If they're engaged, if they're there, if they're present, then
+     yes. If not, then I just give them 'this is how you integrate on your
+     own.'"
+
+     So: FOUR are committed. A fifth opens if the group is present. Either
+     way she gives integration guidance, so nobody is left without a close.
+
+     The previous line said "A fifth call is included as a bonus," which
+     promised a paying woman something Sheetal has not committed to. Corrected
+     before anyone could buy on it. She was also explicit about tone — "I
+     don't want to say it like that" — so this reads as an invitation earned
+     together, not a threat of withdrawal. */
+  bonusNote: "Four gatherings are held. A fifth opens as an integration night when the circle is present for it.",
   practiceNightCount: 5,
   paymentOptions: commerceOffers.dancingWithDurga,
   cta: "Request details",
