@@ -128,7 +128,7 @@ export function OfferingsPage() {
                           <article className="offering-purchase" key={offer.id}>
                       <div>
                         <h4>{offer.label}</h4>
-                            {offer.detail && <p>{offer.detail}</p>}
+                            {offer.detail && <p className="offer-detail-fineprint">{offer.detail}</p>}
                             {offer.promo && <p className="offering-promo">{offer.promo}</p>}
                       </div>
                       <div className="offering-purchase-action">

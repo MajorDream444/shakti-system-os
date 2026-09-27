@@ -1603,3 +1603,94 @@
   font-size: clamp(1rem, 1.15vw, 1.1rem);
   line-height: 1.66;
 }
+
+/* ---------------------------------------------------------------------------
+   SOCIAL CHANNELS IN THE NAV — 2026-09-27
+   Founder note: "Connect the socials. The socials also give a lot of
+   information." Both Instagram accounts, the Shala's first.
+
+   Icon-only in the bar, where space is tight, but every link carries an
+   aria-label naming WHICH account — two identical marks side by side would
+   otherwise be indistinguishable to a screen reader. The mobile menu has room
+   for the handles, so it shows them as words.
+
+   Tap targets are 44px, which is the floor for a thumb even though the mark
+   inside is 19px.
+   --------------------------------------------------------------------------- */
+
+#root .site-nav .nav-social {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+#root .site-nav .nav-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #e9c77e;
+  opacity: 0.82;
+  transition: opacity 200ms ease, background 200ms ease;
+}
+
+#root .site-nav .nav-social-link svg {
+  width: 19px;
+  height: 19px;
+}
+
+#root .site-nav .nav-social-link:hover,
+#root .site-nav .nav-social-link:focus-visible {
+  opacity: 1;
+  background: rgba(233, 199, 126, 0.14);
+}
+
+#root .site-nav .nav-social-link:focus-visible {
+  outline: 2px solid #e9c77e;
+  outline-offset: 2px;
+}
+
+#root .mobile-menu .mobile-social {
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(233, 199, 126, 0.24);
+}
+
+#root .mobile-menu .mobile-social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  font-size: 1rem;
+  color: #e9c77e;
+  text-decoration: none;
+}
+
+#root .mobile-menu .mobile-social-link svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+@media (max-width: 900px) {
+  #root .site-nav .nav-social { display: none; }
+}
+
+/* Fine print under an offer. Muted and italic rather than small: the reading
+   floor is 16px and her community skews older, so "fine print" is expressed
+   by weight and colour, never by shrinking below the floor. This carries the
+   six-month commitment on the monthly membership, which is a contractual
+   claim and has to be legible. */
+#root .offer-detail-fineprint {
+  margin: 6px 0 0;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(246, 236, 216, 0.74);
+}
