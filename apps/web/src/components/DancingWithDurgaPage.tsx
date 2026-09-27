@@ -73,6 +73,11 @@ export function DancingWithDurgaPage() {
               <span>{DURGA_TEACHING}</span>
             </h1>
             <p className="durga-subtitle">{dancingWithDurga.subtitle}</p>
+            {/* The founder's own campaign copy, in her voice. It sits under
+                the subtitle rather than further down the page because it is
+                the clearest statement of what the nine nights actually are. */}
+            <p className="durga-energy-heading">{dancingWithDurga.energyHeading}</p>
+            <p className="durga-energy">{dancingWithDurga.energy}</p>
           </div>
 
           <figure className="durga-hero-art">
@@ -93,7 +98,7 @@ export function DancingWithDurgaPage() {
               A devotional Maa Durga container for women learning to trust the
               body, stand up, say no, and protect what is sacred.
             </p>
-            <ul className="durga-hero-facts" aria-label="Dancing with Durga format">
+            <ul className="durga-hero-facts" aria-label="Dancing with Durga Devi format">
               <li><span>Container</span>{dancingWithDurga.audience}</li>
               <li><span>Rhythm</span>{dancingWithDurga.format}</li>
               <li><span>Time</span>{dancingWithDurga.timing}</li>
@@ -209,7 +214,7 @@ export function DancingWithDurgaPage() {
             <p className="label">Sri Shakti Shala Doorway</p>
             <h2 id="durga-doorway-title">Experience first. Discern what continues.</h2>
             <p>
-              Dancing with Durga opens temporary community and Sri Shakti Shala space during
+              Dancing with Durga Devi opens temporary community and Sri Shakti Shala space during
               the journey. Continuing into Sri Shakti Shala remains a separate
               invitation, simple application, human discernment, and paid
               membership.

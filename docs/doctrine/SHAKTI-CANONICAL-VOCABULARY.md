@@ -216,7 +216,7 @@ pass counts 102 across both her accounts, so absolute counts differ. Rankings ag
 | Tantra | 132 | APPROVED | Always classical/traditional Tantra. Never "generic Tantra." |
 | Feminine | 118 | APPROVED | Both dark and light feminine — never only one. |
 | Ritual | 102 | APPROVED | Strong founder language. |
-| **Maa** | 87 | **APPROVED — NEW** | Her natural address for the goddess. Prefer over always writing "the goddess." |
+| **Maa** | 87 | **APPROVED — NEW** | Her natural address for the goddess. Prefer over always writing "the goddess." **Goddess names take it as a prefix — see the naming rule below.** |
 | Kali / Ma Kali | 76 | APPROVED | Fierce/dark feminine. Pair with Lakshmi where integration is the point. |
 | Healing | 76 | APPROVED | |
 | Retreat | 65 | APPROVED | |
@@ -311,3 +311,70 @@ Supporting founder language, 2026-08-03:
 The three gunas are also the colour system. See `SHAKTI-COLOR-DOCTRINE.md` — white is
 sattva, red is rajas, black is tamas, and red is doctrinally required rather than
 decorative.
+
+---
+
+# Goddess naming rule — ADDED 2026-09-27, SOURCED 2026-09-27
+
+**The goddess always carries `Maa`. The container does not.**
+
+She draws this line herself, and it is the whole rule.
+
+## Sourced from her own voice
+
+**18 September call**, her recorded invitation, read aloud by her:
+
+> *"I'm inviting you to **Dancing with Durga Devi**, Devotion with the Spine,
+> beginning October 11th during Navratri, the nine nights honouring the
+> goddess ... we'll explore desire, discernment, devotion, and our destiny
+> with **Maa Durga, the warrior goddess**, as our guide ... DM the word Durga
+> for details to join this sacred, juicy, feminine container.
+> **Jai Maa Durga.**"*
+
+In one breath she names the container **"Dancing with Durga Devi"** — no Maa —
+and the goddess **"Maa Durga"**, twice. That is the distinction.
+
+**25 September call**, on how assets should be titled:
+
+> *"Say, for example, I share a video about **Maa Kali**. Has, for example,
+> the title **Maa Kali**."*
+
+So it holds for file titles too, not only devotional invocation.
+
+## The rule
+
+| Context | Form |
+|---|---|
+| The goddess, anywhere | **Maa Durga**, **Maa Kali**, **Maa Shailaputri** |
+| Asset and file titles | **Maa Kali**, per her own example |
+| The container's name | **Dancing with Durga Devi** — her title, unchanged |
+| The campaign chant | **Durga. Devotion. Dharma.** — cadence wins |
+
+**Spelling is `Maa`,** two a's. The transcripts render her speech as "Ma" and
+"Madurga", but her written form across 102 of her own posts is `Maa`, 87
+times. Follow the writing, not the transcription.
+
+## A correction worth keeping
+
+An earlier pass applied Maa to the container as well — "Dancing with Maa
+Durga Devi" — on the reasonable-sounding logic that if goddesses take Maa,
+so should anything named after one. The transcript shows that is wrong: she
+says the container's name without it, in the same sentence where she says the
+goddess's name with it. Reverted.
+
+## Four D's, from the same invitation
+
+> *"desire, discernment, devotion, and our destiny"*
+
+Her own four-fold for these nine nights, and it is not yet anywhere on the
+site. Worth using.
+
+## Source handling — read this before asking for the transcripts
+
+The raw recordings are **deliberately not stored in this repository.** They
+contain a first-person account of a physical assault, a circulated list naming
+private individuals with allegations against them and a phone number, and
+extended personal material about her life and relationships. None of that
+belongs in a client repo, a prompt, or anything an agent might quote back.
+
+Quote from them only what is about the work, as above.

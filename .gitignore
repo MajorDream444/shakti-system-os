@@ -65,3 +65,4 @@ social/
 apps/web/qa-artifacts/
 apps/web/test-results/
 apps/web/playwright-report/
+apps/web/dist-preview/

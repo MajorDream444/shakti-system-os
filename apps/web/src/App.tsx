@@ -73,19 +73,21 @@ function PortalApp() {
 }
 
 function App() {
+  /* In a static preview the route arrives as a hash fragment, because there is
+     no server to rewrite unknown paths onto index.html. Falls back to the real
+     pathname, so production behaviour is unchanged. */
+  const hash = window.location.hash.replace(/^#/, "");
+  const pathname = hash.startsWith("/") ? hash : window.location.pathname;
+
   const isBeginRoute =
-    window.location.pathname === "/begin" ||
-    window.location.pathname.startsWith("/begin/");
+    pathname === "/begin" || pathname.startsWith("/begin/");
   const isShalaRoute =
-    window.location.pathname === "/shala" ||
-    window.location.pathname.startsWith("/shala/");
+    pathname === "/shala" || pathname.startsWith("/shala/");
   const isOfferingsRoute =
-    window.location.pathname === "/offerings" ||
-    window.location.pathname === "/work-with-sheetal";
-  const isAboutRoute = window.location.pathname === "/about-sheetal";
-  const isTestimonialsRoute = window.location.pathname === "/testimonials";
-  const isDancingWithDurgaRoute =
-    window.location.pathname === "/dancing-with-durga";
+    pathname === "/offerings" || pathname === "/work-with-sheetal";
+  const isAboutRoute = pathname === "/about-sheetal";
+  const isTestimonialsRoute = pathname === "/testimonials";
+  const isDancingWithDurgaRoute = pathname === "/dancing-with-durga";
 
   if (isBeginRoute) {
     return (

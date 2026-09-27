@@ -59,7 +59,7 @@ export function OfferingsPage() {
             <nav className="commerce-doorways" aria-label="Current ways to enter">
               <a href={DANCING_WITH_DURGA_PATH}>
                 <span>Current Ceremony</span>
-                <strong>Dancing with Durga</strong>
+                <strong>Dancing with Durga Devi</strong>
               </a>
               <a href="#private-work">
                 <span>Work Directly With Sheetal</span>
@@ -128,7 +128,7 @@ export function OfferingsPage() {
                           <article className="offering-purchase" key={offer.id}>
                       <div>
                         <h4>{offer.label}</h4>
-                            {offer.detail && <p>{offer.detail}</p>}
+                            {offer.detail && <p className="offer-detail-fineprint">{offer.detail}</p>}
                             {offer.promo && <p className="offering-promo">{offer.promo}</p>}
                       </div>
                       <div className="offering-purchase-action">
@@ -161,7 +161,7 @@ export function OfferingsPage() {
             <p className="label">How to Enter</p>
             <h2 id="payment-state-title">Some doors you can walk through today.</h2>
             <p>
-              Dancing with Durga, 1:1 Shakti Embodiment, and founding
+              Dancing with Durga Devi, 1:1 Shakti Embodiment, and founding
               memberships can be paid for directly through a secure payment
               page. Retreats and initiation begin with a request.
             </p>

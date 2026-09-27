@@ -921,24 +921,60 @@
   text-align: center;
 }
 
+/* The name, unapologetic.
+
+   Founder note, 2026-09-26: "bigger and bolder, embodied, unapologetic —
+   when she sees this she should say oh wow, here we go." So the ceiling goes
+   from 6.5rem to 9rem and the weight from 400 to 600. The floor stays at
+   3rem because a phone cannot carry more without wrapping to four lines.
+
+   "A Living School" is taken literally: the name breathes. The motion is
+   deliberately barely-there — a slow scale and a gold light that drifts
+   across the letterforms. It should register as alive, not as a banner ad.
+   All of it collapses under prefers-reduced-motion. */
 #root .hero-threshold-title {
   margin: 0;
   font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
-  font-weight: 400;
-  font-size: clamp(3rem, 7.2vw, 6.5rem);
-  line-height: 0.98;
+  font-weight: 600;
+  font-size: clamp(3rem, 9.6vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
   color: #fffaf0;
   text-wrap: balance;
-  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.62);
+  animation: hero-living 7.5s ease-in-out infinite;
+  will-change: transform, text-shadow;
+}
+
+/* The living quality is carried by a breathing light rather than a gradient
+   sweep. A gradient needs a transparent text fill, and with a transparent
+   fill the drop shadow shows through the letterforms — against the bright
+   moss in this photograph the name rendered grey. Contrast wins over the
+   effect: the fill stays solid cream and the gold glow does the breathing. */
+@keyframes hero-living {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.72), 0 0 58px rgba(233, 199, 126, 0.16);
+  }
+  50% {
+    transform: scale(1.015);
+    text-shadow: 0 2px 34px rgba(0, 0, 0, 0.76), 0 0 104px rgba(233, 199, 126, 0.46);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .hero-threshold-title {
+    animation: none;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.72), 0 0 70px rgba(233, 199, 126, 0.24);
+  }
 }
 
 #root .hero-threshold .hero-threshold-descriptor {
   margin: 0;
   /* Floor at 1rem: the 16px reading floor applies to the hero too, and this
      line is the one that tells a stranger what the school is. */
-  font-size: clamp(1rem, 1.45vw, 1.3rem);
+  font-size: clamp(1rem, 1.7vw, 1.55rem);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   line-height: 1.5;
   text-transform: uppercase;
   color: #e9c77e;
@@ -1202,4 +1238,605 @@
   #root .seasonal-offering-art {
     max-width: 320px;
   }
+}
+
+/* ---------------------------------------------------------------------------
+   PILLAR PORTALS — 2026-09-26
+   Founder note: "the five pillars just look like text, they don't look like
+   activated portals to take you further in."
+
+   They were <article> elements with no behaviour. Each is now a real button
+   opening that pillar's knowledge chamber, and it has to *look* pressable
+   before it is hovered — a resting border and lift, not a hover-only cue,
+   since nothing on a touch screen ever hovers.
+   --------------------------------------------------------------------------- */
+
+/* The constellation shapes ARE the portals — each pillar already sits inside
+   its own drawn form. An earlier pass gave the button its own card background
+   and the two boxes fought: the card sat inside the article's padding while
+   the glow filled the article, so every shape looked knocked out of
+   alignment. The button now fills the article and draws nothing of its own.
+   The only new furniture is the ENTER cue, which has to be visible at rest —
+   a hover-only affordance tells a phone user nothing. */
+#root .five-pillar-constellation .pillar-portal {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 72px 44px 64px;
+  border: 0;
+  border-radius: 24px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 240ms ease;
+}
+
+#root .five-pillar-constellation .pillar-portal h3,
+#root .five-pillar-constellation .pillar-portal p {
+  margin: 0;
+}
+
+#root .five-pillar-constellation .pillar-portal p {
+  margin-top: 6px;
+}
+
+#root .five-pillar-constellation .pillar-portal-cue {
+  margin-top: 14px;
+  padding: 8px 20px;
+  border: 1px solid rgba(233, 199, 126, 0.58);
+  border-radius: 999px;
+  /* Opaque enough that the cue never depends on what the crystal is
+     sitting over. At 0.5 it measured 1.00:1 against a bright rim glow. */
+  background: rgba(16, 8, 10, 0.82);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #e9c77e;
+  transition: background 240ms ease, color 240ms ease, border-color 240ms ease;
+}
+
+#root .five-pillar-constellation .pillar-portal:hover,
+#root .five-pillar-constellation .pillar-portal:focus-visible {
+  transform: translateY(-6px);
+}
+
+#root .five-pillar-constellation .pillar-portal:hover .pillar-portal-cue,
+#root .five-pillar-constellation .pillar-portal:focus-visible .pillar-portal-cue {
+  background: linear-gradient(168deg, #f4d49b, #e2b26c);
+  border-color: transparent;
+  color: #3a1218;
+}
+
+#root .five-pillar-constellation .pillar-portal:focus-visible {
+  outline: 2px solid #e9c77e;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .five-pillar-constellation .pillar-portal { transition: none; }
+  #root .five-pillar-constellation .pillar-portal:hover,
+  #root .five-pillar-constellation .pillar-portal:focus-visible { transform: none; }
+}
+
+/* ---------------------------------------------------------------------------
+   THE SEASON, LOUDER — 2026-09-26
+   Founder note: "right now it's really about promoting Dancing with Durga —
+   there needs to be an emphasis that's slapped in your face."
+
+   The band was correct and quiet. It now announces itself: a lit edge, a
+   heading at hero scale rather than section scale, and a pulsing OPEN NOW
+   marker. The pulse is on the small dot only — the type never moves, because
+   moving type is the thing that reads as an advertisement.
+   --------------------------------------------------------------------------- */
+
+#root .seasonal-offering {
+  position: relative;
+  border-block: 1px solid rgba(233, 199, 126, 0.34);
+  background:
+    radial-gradient(ellipse 70% 120% at 18% 50%, rgba(122, 31, 39, 0.4), transparent 70%),
+    linear-gradient(180deg, rgba(36, 14, 18, 0.72), rgba(20, 10, 12, 0.5));
+}
+
+#root .seasonal-offering .label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px;
+  border: 1px solid rgba(233, 199, 126, 0.5);
+  border-radius: 999px;
+  background: rgba(122, 31, 39, 0.34);
+  font-size: 1rem;
+}
+
+#root .seasonal-offering .label::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #f4d49b;
+  box-shadow: 0 0 0 0 rgba(244, 212, 155, 0.75);
+  animation: season-pulse 2.4s ease-out infinite;
+}
+
+@keyframes season-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(244, 212, 155, 0.7); }
+  70%  { box-shadow: 0 0 0 13px rgba(244, 212, 155, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 212, 155, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .seasonal-offering .label::before { animation: none; }
+}
+
+#root .seasonal-offering-copy h2 {
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+  font-weight: 600;
+  line-height: 0.98;
+  color: #fffaf0;
+  text-shadow: 0 0 60px rgba(233, 199, 126, 0.2);
+}
+
+#root .seasonal-offering-lede {
+  font-size: clamp(1.06rem, 1.3vw, 1.25rem);
+}
+
+#root .seasonal-offering-art {
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), 0 0 70px rgba(233, 199, 126, 0.12);
+}
+
+/* ---------------------------------------------------------------------------
+   CRYSTALS LARGER THAN THEIR TEXT — 2026-09-26
+   Founder note: "the floating crystals should be larger to capture all of the
+   text, the text is leaking outside of the crystals."
+
+   Correct on both counts, and it is fixed from both directions: the form is
+   pushed out past the article box, and the text is pulled in. In the founder's
+   own reference render the copy occupies a little over half the crystal's
+   width — here it was filling more than ninety percent, so the title and the
+   last line of body text sat on the rim.
+
+   The forms now overlap their neighbours slightly at the widest breakpoint.
+   That is intended, and matches the reference: these read as a constellation
+   of floating shapes, not as five boxes in a row.
+   --------------------------------------------------------------------------- */
+
+#root .five-pillar-constellation > article {
+  min-height: 470px;
+}
+
+/* The form is sized by HEIGHT with its own aspect ratio pinned, never by
+   stretching to the article box.
+
+   The SVG is preserveAspectRatio="none" over a 300x440 viewBox, so it takes
+   whatever shape its container has. An earlier pass pushed it out by -13%
+   vertically and -19% horizontally, which quietly stretched every contour
+   wider than it was drawn: the teardrops turned into bloated rounds and the
+   outer glows collided with their neighbours. Pinning aspect-ratio makes that
+   class of distortion impossible whatever the grid does. */
+#root .five-pillar-constellation .living-form-art {
+  inset: auto;
+  top: 50%;
+  left: 50%;
+  height: 126%;
+  width: auto;
+  aspect-ratio: 300 / 440;
+  transform: translate(-50%, -50%);
+}
+
+/* Weighted toward the bottom on purpose. These contours are teardrops —
+   narrow at the point, widest around three-fifths down — so a vertically
+   centred block put every title up in the neck where the form has no body
+   behind it. The content now sits in the belly. */
+#root .five-pillar-constellation .pillar-portal {
+  padding: 118px 26px 26px;
+}
+
+/* One word, so it needs no wrapping and no squeezing, and it can be bigger
+   than the two-word version ever could. white-space stays normal anyway:
+   living-grammar sets nowrap here, and under nowrap a heading honours its
+   max-width while its glyphs paint straight out of the box and off the side
+   of the crystal. That is what was happening to "Somatic Experiencing". */
+#root .five-pillar-constellation .pillar-portal h3 {
+  max-width: 100%;
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.15;
+  white-space: normal;
+}
+
+#root .five-pillar-constellation .pillar-portal p {
+  max-width: 19ch;
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+#root .five-pillar-constellation .pillar-portal-cue {
+  margin-top: 16px;
+}
+
+/* Between the three-across breakpoint and roughly 1150 the columns narrow
+   faster than the forms do, so the height tapers to keep the outer two from
+   running off the side and being clipped mid-shape. */
+@media (max-width: 1150px) {
+  #root .five-pillar-constellation .living-form-art { height: 112%; }
+}
+
+@media (max-width: 900px) {
+  #root .five-pillar-constellation .living-form-art { height: 118%; }
+  #root .five-pillar-constellation .pillar-portal p { max-width: 22ch; }
+}
+
+/* On a phone the crystal is small enough that the waterfall behind it reads
+   through the interior, and the body copy measured 2.48:1 over the brightest
+   part of it. A soft radial plate sits behind the text — only where the
+   forms get small, and shaped so it never shows an edge. */
+@media (max-width: 620px) {
+  #root .five-pillar-constellation .pillar-portal {
+    padding: 88px 22px 24px;
+  }
+  #root .five-pillar-constellation .pillar-glyph {
+    width: 30px;
+    margin-bottom: 6px;
+  }
+  #root .five-pillar-constellation .pillar-portal::before {
+    content: "";
+    position: absolute;
+    inset: 6% 2%;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(10, 5, 7, 0.96) 0%,
+      rgba(10, 5, 7, 0.93) 62%,
+      rgba(10, 5, 7, 0) 86%
+    );
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   SACRED GEOMETRY IN THE PLAIN AREAS — 2026-09-26
+   Founder note: "those areas where we just have some plain — we need the
+   symbols floating in the background, especially in the blank spaces on the
+   Durga page."
+
+   The Sri Yantra sits in the right third of the seasonal band, which was flat
+   burgundy. It drifts rather than pulses: a slow rotation and a slow rise,
+   nothing that competes with the OPEN NOW marker for attention.
+
+   It is behind everything (z-index 0 against the content's 1) and it is
+   pointer-events:none, so it can never intercept a tap meant for a price
+   card. It is hidden below 900px, where there is no spare space for it and
+   it would only sit behind the text.
+   --------------------------------------------------------------------------- */
+
+#root .seasonal-offering { overflow: hidden; }
+
+#root .seasonal-offering-yantra {
+  position: absolute;
+  top: 50%;
+  right: clamp(16px, 3vw, 72px);
+  width: clamp(330px, 27vw, 460px);
+  height: auto;
+  color: #f0c97e;
+  opacity: 0.26;
+  filter: drop-shadow(0 0 26px rgba(233, 199, 126, 0.35));
+  transform: translateY(-50%);
+  transform-origin: center;
+  pointer-events: none;
+  z-index: 0;
+  animation: yantra-drift 13s ease-in-out infinite;
+}
+
+#root .seasonal-offering-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* It floats and breathes rather than rotating. A full rotation reads as a
+   spinning box, because the bhupura is square and the eye locks onto its
+   corners — the one part of the figure that must not look like motion. */
+@keyframes yantra-drift {
+  0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.22; }
+  50%      { transform: translateY(-54%) scale(1.035); opacity: 0.32; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .seasonal-offering-yantra { animation: none; }
+}
+
+@media (max-width: 900px) {
+  #root .seasonal-offering-yantra { display: none; }
+}
+
+/* The glyph above each title. Small, thin, and quiet — a mark, not
+   illustration. It inherits the heading's gold rather than carrying a colour
+   of its own, and it sits at 0.62 opacity so it reads as struck into the
+   crystal rather than stuck on top of it. */
+#root .five-pillar-constellation .pillar-glyph {
+  width: clamp(34px, 3vw, 44px);
+  height: auto;
+  margin-bottom: 10px;
+  color: var(--glyph-color, #f3d295);
+  opacity: 0.85;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+#root .five-pillar-constellation .pillar-portal:hover .pillar-glyph,
+#root .five-pillar-constellation .pillar-portal:focus-visible .pillar-glyph {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .five-pillar-constellation .pillar-glyph { transition: none; }
+  #root .five-pillar-constellation .pillar-portal:hover .pillar-glyph,
+  #root .five-pillar-constellation .pillar-portal:focus-visible .pillar-glyph { transform: none; }
+}
+
+/* The founder's campaign copy on the Durga page. Kept at reading size rather
+   than shrunk to fit — her community skews older and the 16px floor holds
+   here as everywhere. */
+#root .durga-energy-heading {
+  margin: 18px 0 8px;
+  max-width: 54ch;
+  font-family: var(--font-display, "Cormorant Garamond", Georgia, serif);
+  font-size: clamp(1.25rem, 1.9vw, 1.65rem);
+  line-height: 1.28;
+  color: #e9c77e;
+}
+
+#root .durga-energy {
+  margin: 0;
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.66;
+}
+
+/* ---------------------------------------------------------------------------
+   SOCIAL CHANNELS IN THE NAV — 2026-09-27
+   Founder note: "Connect the socials. The socials also give a lot of
+   information." Both Instagram accounts, the Shala's first.
+
+   Icon-only in the bar, where space is tight, but every link carries an
+   aria-label naming WHICH account — two identical marks side by side would
+   otherwise be indistinguishable to a screen reader. The mobile menu has room
+   for the handles, so it shows them as words.
+
+   Tap targets are 44px, which is the floor for a thumb even though the mark
+   inside is 19px.
+   --------------------------------------------------------------------------- */
+
+#root .site-nav .nav-social {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+#root .site-nav .nav-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #e9c77e;
+  opacity: 0.82;
+  transition: opacity 200ms ease, background 200ms ease;
+}
+
+#root .site-nav .nav-social-link svg {
+  width: 19px;
+  height: 19px;
+}
+
+#root .site-nav .nav-social-link:hover,
+#root .site-nav .nav-social-link:focus-visible {
+  opacity: 1;
+  background: rgba(233, 199, 126, 0.14);
+}
+
+#root .site-nav .nav-social-link:focus-visible {
+  outline: 2px solid #e9c77e;
+  outline-offset: 2px;
+}
+
+#root .mobile-menu .mobile-social {
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(233, 199, 126, 0.24);
+}
+
+#root .mobile-menu .mobile-social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  font-size: 1rem;
+  color: #e9c77e;
+  text-decoration: none;
+}
+
+#root .mobile-menu .mobile-social-link svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+@media (max-width: 900px) {
+  #root .site-nav .nav-social { display: none; }
+}
+
+/* Fine print under an offer. Muted and italic rather than small: the reading
+   floor is 16px and her community skews older, so "fine print" is expressed
+   by weight and colour, never by shrinking below the floor. This carries the
+   six-month commitment on the monthly membership, which is a contractual
+   claim and has to be legible. */
+#root .offer-detail-fineprint {
+  margin: 6px 0 0;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(246, 236, 216, 0.74);
+}
+
+/* ---------------------------------------------------------------------------
+   SELF-SUFFICIENT COLOUR, AND MORE CONTRAST — 2026-09-27
+
+   A real bug first. Section headings never set their own colour; they
+   inherited it. That is fine on the deployed site, whose body carries the dark
+   theme — but the moment the built page is embedded in a host that sets its
+   own body colour (the artifact preview sets color:#141413 on a light
+   color-scheme), every heading computed to rgb(20,20,19) and painted
+   near-black on a near-black photograph. The founder saw it before I did,
+   because I had only ever screenshotted the standalone build.
+
+   The rule is now: anything that must be legible states its own colour. Do not
+   rely on inheritance from body for text over photography.
+
+   Founder note the same day: "more contrast, more evoking a feeling — we have
+   a palette, gold or pink, it needs to pop." So headings go to the brightest
+   cream with a gold bloom behind them, the same treatment as the hero name.
+   --------------------------------------------------------------------------- */
+
+#root,
+#root .app-shell {
+  color-scheme: dark;
+  color: #f4efe6;
+}
+
+#root .section h2,
+#root .philosophy h2,
+#root .offer-gateway h2,
+#root .pathway h2,
+#root .founder-presence h2,
+#root .final-cta h2 {
+  color: #fffaf0;
+  text-shadow:
+    0 2px 26px rgba(0, 0, 0, 0.72),
+    0 0 74px rgba(233, 199, 126, 0.3);
+}
+
+/* The eyebrow labels carry the gold, so the pair reads as one system: gold
+   above, bright cream below. */
+#root .section .label,
+#root .final-cta .label {
+  color: #f0c97e;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------------------------------------------------------------------------
+   THE DOORWAY LINE — was 16px, which made the hinge of the whole page a
+   footnote. Founder: "that's too small." It is the single sentence that turns
+   shadow from a warning into an invitation, so it is now set like a statement.
+   --------------------------------------------------------------------------- */
+
+#root .transition-quote .quote-frame p {
+  max-width: 24ch;
+  font-family: var(--font-display, "Cormorant Garamond", Georgia, serif);
+  font-size: clamp(1.9rem, 4.4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: #fffaf0;
+  text-wrap: balance;
+  text-shadow:
+    0 2px 30px rgba(0, 0, 0, 0.8),
+    0 0 80px rgba(233, 199, 126, 0.26);
+}
+
+/* ---------------------------------------------------------------------------
+   THE CLOSE — "everything on this page should evoke an action, and shouldn't
+   be made small." The heading, the line beneath it and both doors all go up,
+   and the doors get real weight rather than sitting like footer links.
+   --------------------------------------------------------------------------- */
+
+#root .final-cta .label {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  letter-spacing: 0.26em;
+}
+
+#root .final-cta h2 {
+  font-size: clamp(2.8rem, 6.6vw, 6rem);
+  line-height: 0.98;
+  font-weight: 600;
+}
+
+#root .final-cta .final-content > p {
+  max-width: 46ch;
+  margin-inline: auto;
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.55;
+  color: rgba(246, 236, 216, 0.94);
+}
+
+#root .final-cta .hero-actions {
+  margin-top: 30px;
+  gap: 18px;
+}
+
+#root .final-cta .button {
+  min-height: 62px;
+  padding-inline: 38px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+/* ---------------------------------------------------------------------------
+   SHADOW · LINEAGE — the kicker on the ritual card sat up in the curve of the
+   arch, cramped against it and off-centre. Founder: "lower it slightly, centre
+   it, make it more prominent — you have more width down there."
+   --------------------------------------------------------------------------- */
+
+#root .ritual-card .ritual-kicker {
+  margin-top: clamp(26px, 4.5vw, 52px);
+  padding-inline: 14px;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #f4d49b;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.85);
+}
+
+/* The same mark on the other two crystal sets — the receiving ladder and the
+   pathway. Founder: "those symbols should be on all the crystals, and use them
+   for colour." Each inherits its own form's light edge through --glyph-color,
+   so a burgundy crystal carries a burgundy mark. */
+#root .crystal-glyph {
+  width: clamp(30px, 2.5vw, 38px);
+  height: auto;
+  margin: 0 auto 10px;
+  color: var(--glyph-color, #f3d295);
+  opacity: 0.85;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+#root .pathway-card:hover .crystal-glyph,
+#root .pathway-card:focus-visible .crystal-glyph,
+#root .receiving-ladder > div:hover .crystal-glyph {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .crystal-glyph { transition: none; }
+  #root .pathway-card:hover .crystal-glyph,
+  #root .pathway-card:focus-visible .crystal-glyph { transform: none; }
 }

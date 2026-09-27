@@ -31,6 +31,17 @@ const durgaContours = [
 // Informational forms stay still; motion is reserved for deliberate portal moments.
 type PortalTone = "sanctuary" | "durga";
 
+/* The light edge colour of a given form.
+
+   Founder direction, 2026-09-27: "Use them for colour, versus randomly
+   putting them down — if it's a burgundy crystal, use that colour on it."
+   So a glyph asks the form what colour it is rather than carrying a fixed
+   gold, and the pairing stays correct if the palettes are ever reordered. */
+export function livingFormAccent(variant: number, tone: PortalTone = "sanctuary"): string {
+  const materials = tone === "durga" ? durgaMaterials : sanctuaryMaterials;
+  return materials[variant % materials.length].light;
+}
+
 export function LivingForm({ variant, tone = "sanctuary" }: { variant: number; tone?: PortalTone }) {
   return <span className="living-form-art" aria-hidden="true"><LivingPortal variant={variant} tone={tone} /></span>;
 }

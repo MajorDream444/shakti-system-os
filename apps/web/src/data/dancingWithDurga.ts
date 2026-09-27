@@ -2,9 +2,31 @@ import { commerceOffers } from "./commerce";
 
 export const dancingWithDurga = {
   path: "/dancing-with-durga",
-  title: "Dancing with Durga: Devotion with a Spine",
+  title: "Dancing with Durga Devi: Devotion with a Spine",
+  /* The container's name and the goddess's name follow different rules, and
+     the founder draws that line herself. From her recorded invitation,
+     18 September, in her own voice:
+
+       "I'm inviting you to Dancing with Durga Devi, Devotion with the Spine
+        ... we'll explore desire, discernment, devotion, and our destiny with
+        Maa Durga, the warrior goddess, as our guide ... Jai Maa Durga."
+
+     The CONTAINER is "Dancing with Durga Devi" — her title, spoken, no Maa.
+     The GODDESS is always "Maa Durga". The campaign line keeps the same
+     licence: "Durga. Devotion. Dharma." is a three-beat chant on the repeated
+     D, and prefixing it breaks the cadence.
+
+     She says "Devotion with the Spine"; the published graphic says "a Spine".
+     The graphic wins, because that is what is already public. */
   campaignLine: "Durga. Devotion. Dharma.",
   subtitle: "A Nine-Night Navratri Sadhana Through the Navadurgas",
+  /* Founder's own campaign copy, supplied 2026-09-27. Written for the previous
+     design and still accurate, so it is carried over rather than rewritten.
+     "Maa" and "Devi" are her natural address for the goddess — see the
+     devotional vocabulary in SHAKTI-CANONICAL-VOCABULARY.md. */
+  energyHeading: "Rooted in Earth. Held by Maa Durga and her nine forms.",
+  energy:
+    "A space for fierce devotion, embodied power, and the courage to meet yourself fully. Through mantra, movement, meditation and the wisdom of Durga Devi, we explore the Warrior Mother Goddess who holds us and reminds us we have a right to claim our space, discern who earns our softness, and honour our desires.",
   audience: "Women-only",
   format: "Four live gatherings plus five practice nights",
   timing: "7:30-9:30 PM IST",
@@ -40,32 +62,32 @@ export const dancingWithDurga = {
   ritualGates: [
     {
       date: "October 11",
-      goddess: "Shailaputri",
+      goddess: "Maa Shailaputri",
       gate: "Earth: I Am Here",
       themes: "Grounding, safety, trust, fear, belonging, the root, and opening sankalpa.",
     },
     {
       date: "October 13",
-      goddess: "Brahmacharini and Chandraghanta",
+      goddess: "Maa Brahmacharini and Maa Chandraghanta",
       gate: "Devotion with a Spine",
       themes: "Tapas, courage, inner authority, voice, boundaries, and the sacred no.",
     },
     {
       date: "October 15",
-      goddess: "Kushmanda and Skandamata",
+      goddess: "Maa Kushmanda and Maa Skandamata",
       gate: "Yoni: My Body Is Mine",
       themes:
         "Water, flow, sensuality, creative life force, bodily sovereignty, fierce inner mother, and trauma-aware yoni sthana exploration.",
     },
     {
       date: "October 17",
-      goddess: "Katyayani and Kalaratri",
+      goddess: "Maa Katyayani and Maa Kalaratri",
       gate: "Fire: My No Is Sacred",
       themes: "Warrior power, sacred rage, protection, boundaries, the Kali current, sound, movement, and warrior dance.",
     },
     {
       date: "October 19",
-      goddess: "Mahagauri and Siddhidatri",
+      goddess: "Maa Mahagauri and Maa Siddhidatri",
       gate: "Unity: My Power Serves Life",
       themes: "Purification, love, sisterhood, integration, wholeness, dharma, and closing blessing.",
     },
