@@ -1840,3 +1840,13 @@
   #root .pathway-card:hover .crystal-glyph,
   #root .pathway-card:focus-visible .crystal-glyph { transform: none; }
 }
+
+/* The bonus call. Gold rather than body cream so it reads as something given,
+   not as another line of detail. Held at the 16px floor. */
+#root .seasonal-offering-bonus {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #f0c97e;
+}

@@ -30,7 +30,19 @@ export const dancingWithDurga = {
   audience: "Women-only",
   format: "Four live gatherings plus five practice nights",
   timing: "7:30-9:30 PM IST",
+  /* Sheetal, 27 September: "make that at least clear that the fifth call is
+     bonus." She was explicit that the DATES do not change — she commits to
+     what she publishes — so this is not a hedge, it is a fifth call given as
+     a reward on top of the four.
+
+     NEEDS MAJOR'S CONFIRM: her exact words were "it says four and I have five
+     there right now ... that is a reward ... fifth is bonus." Read literally
+     that is four core gatherings plus a fifth bonus. The counts below say
+     four live and five practice. If the bonus is a fifth LIVE call, this
+     needs to become five. Left at four plus an explicit bonus line rather
+     than silently restating what a buyer is promised. */
   liveGatheringCount: 4,
+  bonusNote: "A fifth call is included as a bonus.",
   practiceNightCount: 5,
   paymentOptions: commerceOffers.dancingWithDurga,
   cta: "Request details",
