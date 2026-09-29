@@ -22,11 +22,23 @@ export const PATH_RESULTS: Record<PathType, {
   primaryCTA: string;
   secondaryCTA: string;
 }> = {
+  /* Shakti Moon Circles, fortnightly — NOT the weekly circle this said until
+     29 September.
+
+     Her own seeker email (SSSEMAILS_27Sep_SK) describes it as "Shakti Moon
+     Circles, our gathering every fortnight around the lunar cycle." The site
+     said "Weekly Shakti Circle". Two different offers, and the older one was
+     wrong: a woman routed here would have been told to expect a gathering
+     twice as often as it happens.
+
+     Her copy is the newer source, and it is the one she is sending, so it
+     wins. The rhythm is also the point — fortnightly IS the lunar cycle, new
+     moon to full, which "weekly" severs from the thing that gives it meaning. */
   CIRCLE: {
     headline: "Your clearest doorway may be rhythm.",
     reflection: "You may be seeking a place to return — steady practice, shared presence, and community rhythm without needing to enter the deepest work all at once.",
-    nextStep: "Weekly Shakti Circle",
-    primaryCTA: "Explore the Weekly Circle",
+    nextStep: "Shakti Moon Circles",
+    primaryCTA: "Explore the Moon Circles",
     secondaryCTA: "Begin Where You Are"
   },
   ONE_ON_ONE: {
