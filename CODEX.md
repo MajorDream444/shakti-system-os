@@ -16,10 +16,14 @@ Before planning or editing:
    specification, in her own words. This is the single most important document
    in the repository. It did not exist until four months into the build, and
    its absence explains most of what went wrong
-3. `docs/handoff/HANDOVER-2026-09-25-CLAUDE-TO-CODEX.md` — current engineering
-   state, open work in priority order, environment traps
-4. `docs/canonical/CROSS-REPO-AGENT-MAP-2026-09-26.md` — which repo owns what
-5. `docs/handoff/DESIGN-CAPABILITY-ROADMAP-2026-09-26.md` — tooling direction
+3. **`docs/handoff/HANDOVER-2026-09-30-WEEK-IN-REVIEW.md`** — the most recent
+   state. What shipped 23–30 September, what is switched off and why, what is
+   owed by whom, and four mistakes worth inheriting. **Start here for anything
+   current**
+4. `docs/handoff/HANDOVER-2026-09-25-CLAUDE-TO-CODEX.md` — the prior
+   engineering state it builds on
+5. `docs/canonical/CROSS-REPO-AGENT-MAP-2026-09-26.md` — which repo owns what
+6. `docs/handoff/DESIGN-CAPABILITY-ROADMAP-2026-09-26.md` — tooling direction
 
 ## The standard
 
@@ -41,6 +45,15 @@ it. As of 25 September she was not.
   rendered the record schema as page content.
 - **Reading floor is 16px.** Her community skews older. Nothing below it.
 - **Real content only.** Placeholder text hides the defects that matter.
+- **Verify against the pushed tree, not the build.** `.gitignore` blocks media
+  by extension, so `git add -A` can skip a file in silence while the local
+  build still looks correct — Vite copies from the working tree.
+  `git cat-file -e origin/<branch>:<path>`.
+- **Anything that must be legible states its own colour.** Inheriting from
+  body works on the deployed site and paints near-black inside any host that
+  sets its own. Nothing over photography inherits.
+- **Her published words beat our doctrine.** Twice in one week the registry
+  was wrong and her own captions or graphics were right.
 
 ## Environment
 
