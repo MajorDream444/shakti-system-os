@@ -42,6 +42,15 @@ skills-lock.json
 # Production sanctuary imagery is part of the deployed application bundle.
 !apps/web/src/shala/assets/images/*.jpg
 
+# Files that emails link to are part of the deployment too — they are served
+# from the site root and an email cannot reach anything that is not committed.
+# Without this, `git add -A` skips them SILENTLY: the working tree and the
+# local build both look correct while the file never reaches the repo.
+# See docs/assets/EMAIL-LINKED-FILES.md
+!apps/web/public/email/*.jpg
+!apps/web/public/email/*.jpeg
+!apps/web/public/email/*.png
+
 # Loose workspace artifacts kept outside the tracked app/docs contract.
 architecture.md
 brand-positioning.md
