@@ -15,6 +15,7 @@ import { OfferPathGateway } from "./components/OfferPathGateway";
 import { Pathway } from "./components/Pathway";
 import { Philosophy } from "./components/Philosophy";
 import { SeasonalOffering } from "./components/SeasonalOffering";
+import { LegalPage } from "./components/LegalPage";
 import { TestimonialsPage } from "./components/TestimonialsPage";
 import { TransitionQuote } from "./components/TransitionQuote";
 
@@ -87,6 +88,7 @@ function App() {
     pathname === "/offerings" || pathname === "/work-with-sheetal";
   const isAboutRoute = pathname === "/about-sheetal";
   const isTestimonialsRoute = pathname === "/testimonials";
+  const isLegalRoute = pathname === "/important-information";
   const isDancingWithDurgaRoute = pathname === "/dancing-with-durga";
 
   if (isBeginRoute) {
@@ -119,6 +121,10 @@ function App() {
 
   if (isTestimonialsRoute) {
     return <TestimonialsPage />;
+  }
+
+  if (isLegalRoute) {
+    return <LegalPage />;
   }
 
   if (isDancingWithDurgaRoute) {

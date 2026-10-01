@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { BEGIN_PATH } from "../constants/navigation";
+import { LEGAL_PATH } from "../constants/navigation";
 import { offerCategories, offerPathways, receivingLadder } from "../data/offerings";
 import { DANCING_WITH_DURGA_PATH, SHALA_PATH } from "../constants/navigation";
 import { PageShell } from "./PageShell";
@@ -164,6 +165,13 @@ export function OfferingsPage() {
               Dancing with Durga Devi, 1:1 Shakti Embodiment, and founding
               memberships can be paid for directly through a secure payment
               page. Retreats and initiation begin with a request.
+            </p>
+            {/* Visible beside the prices, not only in the footer. */}
+            <p className="purchase-disclaimer">
+              These are offerings of education and practice. They are not
+              medical care, psychotherapy, or a substitute for either.{" "}
+              <a href={LEGAL_PATH}>Please read the important information</a>{" "}
+              before you book.
             </p>
           </div>
           <div className="payment-status-list">

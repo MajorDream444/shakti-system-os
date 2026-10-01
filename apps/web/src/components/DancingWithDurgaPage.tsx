@@ -1,4 +1,5 @@
 import { BEGIN_PATH } from "../constants/navigation";
+import { LEGAL_PATH } from "../constants/navigation";
 import { dancingWithDurga } from "../data/dancingWithDurga";
 import { PageShell } from "./PageShell";
 import { portalImages } from "./PortalImageSlots";
@@ -43,6 +44,15 @@ function PaymentOptions({ heading = "Reserve your place" }: { heading?: string }
         >
           {dancingWithDurga.cta}
         </a>
+      </p>
+      {/* At the point of sale, not only buried in a footer. A woman deciding
+          to pay is the moment this has to be visible — the work touches
+          trauma and the body, and the founder's own copy says "therapist". */}
+      <p className="purchase-disclaimer">
+        This is education and practice. It is not medical care, psychotherapy,
+        or a substitute for either.{" "}
+        <a href={LEGAL_PATH}>Please read the important information</a> before
+        you book.
       </p>
     </div>
   );
