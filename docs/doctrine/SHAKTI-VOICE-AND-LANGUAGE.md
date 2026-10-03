@@ -190,3 +190,123 @@ Her whole positioning is a magnet rather than a funnel — *"I'm not trying to
 manipulate you, but I'm magnetizing the right people to me."* Conditional
 language inverts that. It turns an invitation into a test, which is precisely
 the dynamic her work exists to undo.
+
+---
+
+## 10. The private register — client email — ADDED 2026-10-03
+
+Source: *"Sample Email_SS_3Oct_Sk"*, Google Doc
+`1KMMgnILa53tz7QgQ6OEsShKWLJDJ7CAJztlaLqoXMaI`, sent by Sheetal via Major,
+3 October 2026. Five emails she actually sent to 1:1 Shakti Embodiment
+clients — two welcome letters, three post-session letters.
+
+> **THE SOURCE IS DELIBERATELY NOT STORED IN THIS REPOSITORY.** The five
+> emails name individual clients and their children, and contain a
+> hysterectomy, a history of abuse, and a named performance date. That is
+> somebody's medical and trauma history written to them in confidence. The
+> patterns below are extracted; the material stays in her Drive. If an agent
+> needs the originals, read them from Drive and do not copy them down.
+
+Everything prior to this section was derived from her **public** voice —
+captions, reels, the website. This is the first corpus of the voice she uses
+with a woman who has already paid. They are not the same voice and the
+difference is the most useful thing in the document.
+
+### The public voice sells. The private voice witnesses.
+
+Public: *"BE LOUD. BE PROUD. BE YOUR FUCKING SELF."* — fire, humour, profanity.
+
+Private: no profanity, no exhortation, no selling. The register is warm,
+unhurried, clinically precise about the body, and structurally generous. She
+is not persuading anyone of anything; they already said yes.
+
+### Structure she uses every time
+
+Welcome letters:
+
+1. `Dear ____ Devi ji,` — always *Devi ji*, always the blank for the name.
+2. Congratulations on **the choice**, not on the purchase.
+3. **One thing from the call, named back to her.** A single word or image she
+   used herself — *softness*, *a soul calling* — quoted and held up.
+4. What moved Sheetal personally, stated as having moved her.
+5. The capacity line, near-verbatim each time (below).
+6. What the container is, in a sentence.
+7. A bulleted *"our work may support"* — **may**, never *will*.
+8. `### Next Steps` — numbered, three items, links inline.
+9. `JAI MAA` / `Jai Ma Durga` and `In devotion, Sheetal`.
+
+Post-session letters:
+
+1. Thanks for a *specific* act of courage in the session.
+2. The deity energy that showed up, named.
+3. Her Sankalpa, quoted back in bold.
+4. The chakra, taught: identity, element, bija, location, then
+   **deficient / excessive / balanced** as three parallel lists.
+5. `Home Play` — numbered practices, each with a safety note where the
+   practice is activating.
+6. Resources, with real links.
+7. A blessing paragraph, then `In devotion, Sheetal`.
+
+### Lines that recur and should be treated as hers
+
+> **Shakti work is not about intensity. It is about capacity.**
+> It is about learning how to safely hold more softness, more truth, more
+> power, more devotion, and more of yourself.
+
+Appears in both welcome letters near-identically. This is her thesis sentence
+and the single best summary of the work in her own words.
+
+> *Shiva gives the riverbanks. Shakti becomes the river.*
+
+> **Unconscious anger destroys. Conscious anger transforms.**
+
+> Nothing needs fixing. Everything needs witnessing.
+
+> There is nothing you need to fix. Your body adapted intelligently.
+
+### Grammar of the private voice
+
+- **"may support"**, never "will give you". Every outcome list is hedged. She
+  already writes to the standard the disclaimer asks for, without being asked.
+- **Second person, present tense, short sentences.** Paragraphs run one to
+  three lines. White space does the work.
+- **Bold for the single load-bearing phrase**, not for emphasis generally.
+- **Sanskrit unglossed but placed** — *Sankalpa*, *Svadhisthana*, *Ashwini
+  Mudra*, *Manipura* — each followed by a plain-English sentence rather than a
+  translation. The reader is trusted with the word and given the meaning.
+- **Safety is inline, not footnoted**: *"Can be activating so only do it when
+  you feel safe & regulated in your body."* Immediately after the practice.
+- **Her own boundary is named as teaching**, not as a complaint — a late
+  arrival became the doorway into Ma Kali.
+- Lowercase *lol* and the occasional aside survive into the private voice.
+  The humour is intact; the profanity is not.
+- **Devi ji** for the client throughout. Not *dear one*, not *beloved*.
+
+### Where this contradicts what we had
+
+1. The voice doc said the site is *more solemn than Sheetal is*. True of the
+   public surface. The private letters are **more solemn than the captions and
+   warmer than the site** — a third register, and the one a buyer meets the
+   day after paying. Welcome and post-purchase email should be written here,
+   not in caption voice.
+2. **Maa / Ma splits by register — neither doc was wrong.** The `Maa` rule
+   in `SHAKTI-CANONICAL-VOCABULARY.md` rests on 87 instances across her own
+   public posts, and it stands for public copy. These private letters use
+   *Ma Durga*, *Ma Kali*, *Ma Saraswati* — one *a*, consistently, in the same
+   woman's typing. **Public surface: `Maa <Goddess>`. Client letters:
+   `Ma <Goddess>`.** `JAI MAA` is the closing invocation in both.
+
+3. She routes every welcome through three fixed assets: a coaching agreement
+   (attachment), an intake form (`forms.gle/cam5Ewp8CoASEL6NA`), and Calendly
+   (`calendly.com/sheetalkandola/1-1-embodiment-session`). The buyer emails we
+   assembled do not reference any of them. For 1:1 work they must.
+4. Resources are sent **by WhatsApp**, not by email, and at least one is
+   marked *"please keep it confidential"*. Any automated delivery has to
+   respect that split.
+
+### What is still missing
+
+She said she would send *"five emails of how I want them to be expressed"* —
+the sequence for someone who signs up. This document is the adjacent thing:
+how she writes **after** the relationship exists. It does not cover the
+cold-to-warm sequence, and it is not a substitute for it.

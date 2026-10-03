@@ -378,3 +378,10 @@ extended personal material about her life and relationships. None of that
 belongs in a client repo, a prompt, or anything an agent might quote back.
 
 Quote from them only what is about the work, as above.
+
+**Register split, added 2026-10-03.** The `Maa` spelling above governs the
+public surface, where it is evidenced 87 times in her own posts. In the
+private client letters she sent on 3 October she types `Ma Durga`, `Ma Kali`,
+`Ma Saraswati` — one *a*, consistently. Both are hers. Public copy takes
+`Maa`; a letter written to one woman takes `Ma`. `JAI MAA` closes either.
+See `SHAKTI-VOICE-AND-LANGUAGE.md` §10.
