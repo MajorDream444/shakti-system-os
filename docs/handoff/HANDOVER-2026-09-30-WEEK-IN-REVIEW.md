@@ -239,3 +239,67 @@ buyer welcome is switched on.
 - **`.gitignore` blocks all media by extension.** Add a per-directory
   exception before adding any image, or it is dropped without warning.
 - Airtable attachment URLs expire in ~2 hours. Never link an email to one.
+
+---
+
+# Addendum — 3 October 2026
+
+Sheetal sent a voice note from the Himalayas (she has left Bali; four days of
+travel, arrived the night before) plus two Google Docs. Three things changed.
+
+## 1. She wrote the Shala welcome herself
+
+`SSSEMAILS_27Sep_SK` has been extended with two new emails. The first —
+*"You've chosen to step into a space that is not only about your own
+becoming, but about the collective rising of the feminine"* — is her own
+copy for a woman who has just joined the Shala.
+
+**That is the email I previously had to assemble from her phrases.** The
+`Shala Membership — founding` branch of `Buyer welcome — on payment` now
+carries her words verbatim, and both invented sentences are gone:
+
+- ~~"choosing to be met"~~ — removed from this branch
+- ~~"Founding members are the women who build the ground the rest will
+  stand on."~~ — removed entirely
+
+Airtable reports the automation valid. It remains **switched off**.
+
+**Still needing her approval:** the `Shakti Embodiment — 1:1` branch is the
+last assembled email, and it still carries *"choosing to be met"*. It is now
+the only unapproved sentence in the buyer path.
+
+## 2. A new sequence step exists that we have no home for
+
+Her second new email, *"For those who haven't joined yet"*, is a nurture note
+for a seeker who received the Waterfall practice and did not join. It names a
+**founding discounted price** — a commercial claim with no counterpart
+anywhere in the site or the base.
+
+**It is also unfinished.** The document ends mid-sentence on *"That might "*.
+It cannot be built from as it stands.
+
+## 3. The 1:1 branch is missing three assets she always sends
+
+Her real client welcomes (`Sample Email_SS_3Oct_Sk`, 3 October) route every
+new 1:1 client through a coaching agreement attachment, an intake form at
+`forms.gle/cam5Ewp8CoASEL6NA`, and Calendly at
+`calendly.com/sheetalkandola/1-1-embodiment-session`. The Shakti Embodiment
+branch references none of them. See `SHAKTI-VOICE-AND-LANGUAGE.md` §10.
+
+## What she said about the freebie
+
+> *"We do have the one freebie ready to go, the Shakti Waterfall."*
+
+Consistent with what is already in Seeker 2 — her Vimeo link is in the
+automation with tracking parameters stripped. The line in the table above
+calling it *"a dead placeholder"* was written before the link arrived and is
+**out of date**. The open question on it is unchanged and is not about the
+link: the video is **password protected**, and egress here blocks Vimeo, so
+nobody has yet opened it logged out to confirm it resolves.
+
+She is still finishing the **A–Z of Tantra** PDF. Not ready.
+
+## Her ask
+
+A call, **Tuesday or Wednesday**. She is tired and unwell from the travel.
+Nothing in this addendum needs to interrupt that.
