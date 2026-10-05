@@ -33,6 +33,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/important-information",
+      "destination": "/index.html"
+    },
+    {
       "source": "/shala",
       "destination": "/index.html"
     },
