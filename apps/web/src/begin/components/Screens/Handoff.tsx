@@ -228,7 +228,15 @@ export default function Handoff({
                   onChange={(e) => setConsentAccepted(e.target.checked)}
                   className="mt-1 accent-red-800"
                 />
-                <span>I consent to share my Begin choices and contact details so the team can remember this doorway with care.</span>
+                <span>
+                  I am 18 or over, and I consent to share my Begin choices and
+                  contact details so the team can remember this doorway with
+                  care.{" "}
+                  <a href="/important-information" target="_blank" rel="noopener noreferrer">
+                    How your information is handled
+                  </a>
+                  .
+                </span>
               </label>
 
               <label className="flex items-start gap-3 text-left text-base leading-relaxed text-ash/[0.82]">

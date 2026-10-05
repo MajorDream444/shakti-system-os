@@ -32,6 +32,7 @@ export const SHALA_PATH = routePath("/shala");
 export const OFFERINGS_PATH = routePath("/offerings");
 export const ABOUT_SHEETAL_PATH = routePath("/about-sheetal");
 export const TESTIMONIALS_PATH = routePath("/testimonials");
+export const LEGAL_PATH = routePath("/important-information");
 export const DANCING_WITH_DURGA_PATH = routePath("/dancing-with-durga");
 
 /* Five items. Pathway and Retreat were anchors into the home page rather than

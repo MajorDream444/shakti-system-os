@@ -88,7 +88,11 @@ export const commerceOffers = {
       id: "shala-founding-monthly-global",
       label: "Monthly Founding Membership — Global",
       price: "$111 USD / month",
-      detail: "21 days free, then monthly; minimum 6-month commitment",
+      /* California's Automatic Renewal Law requires the renewal terms to be
+         clear and conspicuous BEFORE purchase, not only in terms elsewhere:
+         what recurs, how often, how much, and how to stop it. */
+      detail:
+        "21 days free, then $111 USD automatically every month until you cancel. Minimum 6-month commitment. Cancel any time by emailing sheetalkandola@gmail.com.",
       href: "https://buy.stripe.com/cNi14maa18OjbMsez9d7q08",
       cta: "Begin global membership trial",
       billing: "recurring",
@@ -98,7 +102,8 @@ export const commerceOffers = {
       id: "shala-founding-monthly-india",
       label: "Monthly Founding Membership — Indian Resident",
       price: "₹2,222 INR / month",
-      detail: "21 days free, then monthly",
+      detail:
+        "21 days free, then ₹2,222 INR automatically every month until you cancel. Cancel any time by emailing sheetalkandola@gmail.com.",
       href: "https://buy.stripe.com/5kQ3cu95XggLcQwgHhd7q09",
       cta: "Begin Indian resident membership trial",
       billing: "recurring",
