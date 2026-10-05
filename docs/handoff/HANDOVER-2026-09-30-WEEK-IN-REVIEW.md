@@ -303,3 +303,57 @@ She is still finishing the **A–Z of Tantra** PDF. Not ready.
 
 A call, **Tuesday or Wednesday**. She is tired and unwell from the travel.
 Nothing in this addendum needs to interrupt that.
+
+---
+
+# Correction — 5 October 2026
+
+**The automations are ON and have been. I was wrong, repeatedly, and the cause
+is worth recording so it does not happen again.**
+
+The Airtable API exposes `deploymentStatus` (whether a valid version is
+deployed) but **not** whether an automation is enabled. Lacking that, I had
+written "SWITCHED OFF" into each automation's own description field back when
+Major turned them off — and then read my own stale note back to him as if it
+were live state, across several reports.
+
+**`list_automation_runs` is the only reliable check.** Seeker sequence 2 has
+run successfully every morning, including 01:01 UTC on 5 October. That is
+proof it is live. The "SWITCHED OFF" prefixes have been removed from
+`Seeker sequence 1` and `Buyer welcome`, and both now carry a note telling the
+next agent not to reintroduce them.
+
+Still stale, substance otherwise accurate: the descriptions on
+`Seeker sequence 2` and `Seeker sequence 3` still open with "SWITCHED OFF".
+Ignore that phrase; the runs log overrules it.
+
+## Buyer welcome had zero runs for a boring reason
+
+`Payments` (`tblf2kC6qHsgJMjUm`) holds **zero records**. The automation has
+never fired because nothing has ever been written for it to fire on — not
+because it is off. The first real purchase is its first run, and it will be
+sending to a live buyer with no rehearsal. That is the one genuine risk left
+before 11 October.
+
+**Only Major can close it.** The Stripe MCP in this session is connected to
+**M.A.I.M.** (`acct_1TLgn2BaiziDnHMm`), not Sheetal's account, so her webhook
+deliveries cannot be read from here. Stripe Dashboard → Developers → Webhooks
+→ the endpoint's delivery attempts will say in seconds whether
+`/api/stripe-webhook` is receiving and returning 2xx.
+
+Egress from this container now rejects `srishaktishala.com` outright, so the
+live site cannot be curled from here either. Vercel reports production
+**READY** on `main @66c8735`, which is the merge of this branch.
+
+## The 1:1 branch no longer waits on approval
+
+Rather than hold the launch for a one-sentence sign-off, the invented line
+*"choosing to be met"* is simply gone, and the branch now carries the two
+assets her real client welcomes always carry — the intake form
+(`forms.gle/cam5Ewp8CoASEL6NA`) and Calendly
+(`calendly.com/sheetalkandola/1-1-embodiment-session`). The coaching agreement
+is named as something she will send personally, because it is an attachment
+and this automation cannot attach it.
+
+**Every email in the buyer path is now either her own words verbatim or her
+own words plus her own links.** Nothing in it is invented.
