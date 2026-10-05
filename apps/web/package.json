@@ -9,7 +9,7 @@
   "packageManager": "npm@11.6.2",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b tsconfig.app.json && vite build",
+    "build": "tsc -b tsconfig.app.json && vite build && npm run smoke",
     "check:backend": "tsx src/checks/backendReadChecks.ts",
     "check:begin-write": "tsx src/checks/beginWriteChecks.ts",
     "check:airtable-preview": "tsx scripts/airtablePreviewQa.ts",
@@ -18,7 +18,8 @@
     "test:begin-browser": "playwright test e2e/begin-qa.spec.ts --reporter=line",
     "test:visual-review": "playwright test e2e/sprint12a-visual-review.spec.ts --reporter=line",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",
