@@ -172,6 +172,35 @@ export async function runResendDeliveryChecks() {
     );
   }
 
+  /* 8. The over-claim caught in the 6 October preview test.
+
+        A missing key produced a screen saying "Sheetal has been told", which
+        was false: nothing had failed, so nothing had alerted her. These assert
+        the distinction the UI now keys on — skipped must never alert, failed
+        must always alert. */
+  {
+    const { impl, calls } = stubFetch(() => ({ ok: true, status: 200, payload: { id: "x" } }));
+    const { writer } = recordingWriter();
+    const out = await deliverSeekerWelcome(
+      { ...BASE, email: "her@example.com" },
+      { env: {}, writer, fetchImpl: impl },
+    );
+    check("skipped: Sheetal is NOT alerted", calls.length === 0 && out.result.outcome === "skipped");
+  }
+  {
+    const { impl, calls } = stubFetch((call) =>
+      String((call.body.to as string[])?.[0]).includes("sheetalkandola")
+        ? { ok: true, status: 200, payload: { id: "alert" } }
+        : { ok: false, status: 500, payload: { message: "boom" } },
+    );
+    const { writer } = recordingWriter();
+    await deliverSeekerWelcome({ ...BASE, email: "her@example.com" }, { env: ENV, writer, fetchImpl: impl });
+    check(
+      "failed: Sheetal IS alerted",
+      calls.some((c) => String((c.body.to as string[])?.[0]).includes("sheetalkandola")),
+    );
+  }
+
   const failed = results.filter((r) => !r.pass);
   for (const r of results) {
     console.log(`${r.pass ? "  PASS" : "  FAIL"}  ${r.name}${r.detail ? `  (${r.detail})` : ""}`);

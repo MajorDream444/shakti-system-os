@@ -59,6 +59,20 @@ export type BeginCompleteResponse = {
      failure this field exists to prevent. Absent on older responses, which is
      why the client treats undefined as "do not promise". */
   waterfallDelivered?: boolean;
+  /* WHY THIS IS SEPARATE FROM THE BOOLEAN ABOVE.
+
+     "Not delivered" has two very different meanings and the screen must not
+     conflate them. Caught in the 6 October preview test, where a missing API
+     key produced a screen that told a woman "Sheetal has been told and will
+     send it to you directly" — she had not been told, because nothing had
+     failed; nothing had been attempted.
+
+       sent      Resend accepted it. Promise the inbox.
+       failed    Resend refused. Sheetal IS alerted. Say so.
+       skipped   Nothing was attempted — no key configured. Sheetal is NOT
+                 alerted, so the screen must not claim she is.
+       private   No email given. Nothing owed, nothing promised. */
+  waterfallDeliveryStatus?: "sent" | "failed" | "skipped" | "private";
 };
 
 export type RequestSignalRequest = {

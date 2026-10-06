@@ -200,6 +200,14 @@ export async function handleBeginComplete(
         /* Lets the confirmation screen promise the practice only when it is
            actually on its way, rather than inferring it from "saved". */
         waterfallDelivered: delivery.result.outcome === "accepted",
+        waterfallDeliveryStatus:
+          delivery.result.outcome === "accepted"
+            ? "sent"
+            : delivery.result.outcome === "failed"
+              ? "failed"
+              : request.email?.trim()
+                ? "skipped"
+                : "private",
         consistencyWarning:
           request.clientAssignedPathway && request.clientAssignedPathway !== assignment.assignedPathway
             ? "Client pathway did not match server-derived pathway."

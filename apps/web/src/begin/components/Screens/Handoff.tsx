@@ -56,6 +56,10 @@ export default function Handoff({
   /* The server's verdict on whether Resend actually accepted the welcome.
      Undefined until a response arrives, and treated as "do not promise". */
   const [waterfallSent, setWaterfallSent] = useState<boolean | undefined>(undefined);
+  /* Distinguishes "Resend refused" from "nothing was attempted". The screen
+     may only say Sheetal was alerted in the first case. */
+  const [waterfallStatus, setWaterfallStatus] =
+    useState<'sent' | 'failed' | 'skipped' | 'private' | undefined>(undefined);
 
   useEffect(() => {
     BeginLocalFallbackService.cleanupExpiredPendingBegin();
@@ -120,6 +124,7 @@ export default function Handoff({
         setSaveTone('saved');
         setSaveMessage(SAVE_COPY.saved);
         setWaterfallSent(beginResult.waterfallDelivered === true);
+        setWaterfallStatus(beginResult.waterfallDeliveryStatus);
       } else {
         BeginLocalFallbackService.retainPendingBegin(payload, beginResult.assignedPathway);
         setSaveTone(beginResult.status === 'local_only' || beginResult.status === 'write_disabled' ? 'local' : 'error');
@@ -196,9 +201,14 @@ export default function Handoff({
 
   /* She gave an address and we saved her, but the practice did not go out.
      Distinct from Hold Privately: something IS owed, and saying nothing would
-     leave her waiting for an email that is not coming. */
-  const waterfallFailed =
+     leave her waiting for an email that is not coming.
+
+     Split into two, because only one of them has actually alerted Sheetal.
+     Saying she has been told when she has not is the kind of small false
+     reassurance that leaves a woman waiting for an email nobody knows to send. */
+  const waterfallOwed =
     saveTone === 'saved' && Boolean(email.trim()) && waterfallSent === false;
+  const sheetalWasAlerted = waterfallStatus === 'failed';
 
   return (
     <div className="begin-screen begin-enter-screen flex flex-col items-start max-w-2xl w-full px-0 text-left">
@@ -369,13 +379,14 @@ export default function Handoff({
                   {waterfallSupportLine}
                 </p>
               </>
-            ) : waterfallFailed ? (
+            ) : waterfallOwed ? (
               <p className="text-base text-ash/[0.86] font-normal leading-relaxed mb-8">
                 Your path is saved, but your{' '}
                 <span className="text-[#F0C4D0]">Shakti Waterfall</span>{' '}
-                practice could not be sent just now. Sheetal has been told and
-                will send it to you directly. If you would rather not wait, write
-                to sheetalkandola@gmail.com.
+                practice could not be sent just now.{' '}
+                {sheetalWasAlerted
+                  ? 'Sheetal has been told and will send it to you directly. If you would rather not wait, write to sheetalkandola@gmail.com.'
+                  : 'Please write to sheetalkandola@gmail.com and it will be sent to you straight away.'}
               </p>
             ) : (
               <p className="text-base text-ash/[0.68] font-normal leading-relaxed mb-8">
