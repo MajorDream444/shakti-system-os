@@ -329,3 +329,108 @@ check an inbox that will stay empty.
 
 The test row `rec7BJKP7tpA1cPWx` is left in place as evidence. Safe to delete
 once this is resolved.
+
+---
+
+# ADDENDUM 2 — the Gmail route, and the one thing blocking it
+
+Major's decision, 6 October: do **not** upgrade Airtable and do **not** build
+Resend now. Move the four customer-facing sends to Airtable's **Gmail Send
+Email** action, from Sheetal's own address, keeping every trigger, condition,
+branch, link and record-update step exactly as it is.
+
+This is the better call. Airtable's own documentation confirms free workspaces
+can reach external recipients through the Gmail or Outlook action, so nothing
+needs to be bought or rebuilt — and the messages arrive from an address her
+women already recognise.
+
+**Sender, confirmed by Major:** `sheetalkandola@gmail.com` — already the
+reply-to on every automated email, so nothing changes from the reader's side.
+
+## BLOCKED: no Gmail account is connected to Airtable
+
+`list_external_accounts` returns Slack, Google Drive, Google Forms, Google
+Sheets and GitHub Pull Requests. **There is no Gmail account.**
+
+The API confirms the dependency:
+
+> `gmailSendEmail` — Prerequisite: call `list_external_accounts` to get the
+> `externalAccountId` for a Gmail account. Include it on the node.
+
+Without that ID the action cannot be configured, and the connection is an OAuth
+consent flow in the Airtable UI. **It cannot be done through the API, and it
+has to be done by whoever owns the mailbox** — the emails must come from
+Sheetal's address, so Sheetal signs in, or Major does if he holds that account.
+
+### What Sheetal (or Major) needs to do — once, about two minutes
+
+1. Open the base → **Automations**.
+2. Open `Seeker sequence 1 — welcome + Shakti Waterfall` → the **Send email**
+   action.
+3. Change the action type to **Gmail → Send email**.
+4. Click **Connect new account**, sign in as **sheetalkandola@gmail.com**, and
+   grant Airtable permission to send mail.
+5. Stop there and tell Claude Code. The remaining configuration is scripted.
+
+Only step 4 matters — once that account exists, it is reusable across all four
+automations and the rest is applied by API in one call each.
+
+## What happens the moment it is connected
+
+| # | Automation | Change |
+|---|---|---|
+| 1 | `Seeker sequence 1 — welcome + Shakti Waterfall` | `sendEmail` → `gmailSendEmail` + `externalAccountId`. Copy, subject, Waterfall link, password and the `updateRecord` step unchanged. |
+| 2 | `Seeker sequence 2 — day three, the doorway` | same swap. Copy, doorway formula fields, `repeatingGroup` and step gate unchanged. Existing opt-out retained. |
+| 3 | `Seeker sequence 3 — day seven` | same swap, **plus an opt-out line added** — it is a nurture message and currently has none. |
+| 4 | `Buyer welcome — on payment` | same swap on all three sending branches. The "Other" branch has no email and is untouched. |
+| — | `Alert Sheetal — new Seeker` | **unchanged.** Internal, reaches a collaborator, works today. |
+| — | `Alert Sheetal — new request or signal` | **unchanged**, same reason. |
+
+### Opt-out, per Major's instruction 3
+
+| Message | Opt-out | Action |
+|---|---|---|
+| Seeker 1 | welcome/transactional — carries the practice someone asked for | none needed |
+| Seeker 2 | *"reply **No, thank you**, and I'll honor that too"* | already present |
+| Seeker 3 | none | **add**, in her own existing wording |
+| Buyer welcome | transactional, follows a purchase | none needed |
+
+Proposed line for Seeker 3, reusing her phrasing verbatim from Seeker 2 so the
+voice does not drift:
+
+> And if you'd rather not hear from me again, you can simply reply
+> **"No, thank you,"** and I'll honor that too.
+
+### Then, in order
+
+5. Create a **fresh** seeker record — never rerun the failed one. Airtable
+   reruns use the *old* configuration, so a rerun would prove nothing.
+6. Confirm the Waterfall email arrives immediately, and that `Sequence Step`
+   advances to 1 (it did not on the failed run, because the send halted the
+   automation before `updateRecord`).
+7. Confirm Sequence 2 cannot resend the practice — it carries no link, and the
+   step gate requires `Sequence Step = 1` with the last email 3+ days old.
+8. Run a controlled Buyer Welcome test before 11 October.
+9. Record run IDs and screenshots here.
+10. Merge and deploy only on Major's approval of the successful results.
+
+## Test record status (instruction 9)
+
+`rec7BJKP7tpA1cPWx` is kept as evidence and marked unmistakably:
+
+- name → `ZZ TEST RECORD — DO NOT CONTACT`
+- notes → the full failure account, including the rerun warning
+- the suppression checkbox (`fldJ4jziAZG86E2Jx`) is **ticked**, which removes it
+  from the `findRecords` filter in sequences 2 and 3, so it can never be picked
+  up by a later send
+
+Safe to delete once the Gmail route is verified.
+
+## Branch status
+
+`claude/waterfall-lead-path` @ `1d6362d`. **Not merged, not deployed.**
+Preview: `https://shakti-system-63icm329l-hamal-agi.vercel.app`
+
+The site work is finished and verified. It stays unmerged for one reason: the
+confirmation screen tells a woman to check her inbox, and until the Gmail route
+is live that inbox stays empty.
