@@ -17,10 +17,10 @@ Before planning or editing:
    in the repository. It did not exist until four months into the build, and
    its absence explains most of what went wrong
 3. **`docs/canonical/SHAKTI-WATERFALL-LEAD-PATH-2026-10-06.md`** — the current founder direction and bounded launch-closure brief. It governs the visible free-practice invitation, Guided Path delivery, Vimeo verification, Stripe proof, and the move from BUILD to HANDOFF
-4. **`docs/handoff/HANDOVER-2026-09-30-WEEK-IN-REVIEW.md`** — the most recent
-   state. What shipped 23–30 September, what is switched off and why, what is
-   owed by whom, and four mistakes worth inheriting. **Start here for anything
-   current**
+4. **`docs/handoff/HANDOVER-2026-09-30-WEEK-IN-REVIEW.md`** — the September
+   engineering state plus October corrections. Read its addenda before relying
+   on automation status; the October 6 canonical brief above governs current
+   launch direction
 5. `docs/handoff/HANDOVER-2026-09-25-CLAUDE-TO-CODEX.md` — the prior
    engineering state it builds on
 6. `docs/canonical/CROSS-REPO-AGENT-MAP-2026-09-26.md` — which repo owns what
