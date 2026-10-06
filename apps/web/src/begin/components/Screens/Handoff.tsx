@@ -10,6 +10,11 @@ import { PersistenceService } from '../../../services/PersistenceService';
 import { BeginLocalFallbackService } from '../../../services/BeginLocalFallbackService';
 import { BeginWriteClient } from '../../../services/BeginWriteClient';
 import { trackAnonymousEventOnce } from '../../../services/AnonymousAnalytics';
+import {
+  waterfallConfirmationBody,
+  waterfallConfirmationTitle,
+  waterfallSupportLine,
+} from '../../../data/waterfallCopy';
 
 interface Props {
   beginSessionId: string;
@@ -171,6 +176,13 @@ export default function Handoff({
     setIsSubmitted(true);
   };
 
+  /* The Waterfall is carried by the Airtable seeker sequence, which sends to
+     the EMAIL field specifically — a WhatsApp number alone will not reach it,
+     even though `hasContact` accepts either. And the sequence only runs for a
+     seeker row that actually landed, so a local-only or failed write means no
+     practice is coming. Both conditions must hold before the screen says so. */
+  const waterfallWillSend = saveTone === 'saved' && Boolean(email.trim());
+
   return (
     <div className="begin-screen begin-enter-screen flex flex-col items-start max-w-2xl w-full px-0 text-left">
       <AnimatePresence mode="wait">
@@ -205,13 +217,31 @@ export default function Handoff({
                   placeholder="First name"
                   className="w-full bg-stone-950/60 border border-ash/[0.25] hover:border-ash/40 focus:border-[#E9C77E] p-4.5 text-base text-ash placeholder:text-ash/[0.52] outline-none transition-all duration-500 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.72)] font-normal"
                 />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email address (optional)"
-                  className="w-full bg-stone-950/60 border border-ash/[0.25] hover:border-ash/40 focus:border-[#E9C77E] p-4.5 text-base text-ash placeholder:text-ash/[0.52] outline-none transition-all duration-500 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.72)] font-normal"
-                />
+                <div>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email address"
+                    aria-describedby="waterfall-delivery-note"
+                    className="w-full bg-stone-950/60 border border-ash/[0.25] hover:border-ash/40 focus:border-[#E9C77E] p-4.5 text-base text-ash placeholder:text-ash/[0.52] outline-none transition-all duration-500 rounded-sm shadow-[inset_0_4px_15px_rgba(0,0,0,0.72)] font-normal"
+                  />
+                  {/* §4: "Repeat the delivery promise next to the email request.
+                      Do not collect an email without explaining why it is
+                      needed." The field stays optional — "Hold Privately" is a
+                      real path Sheetal offers and forcing an address to see a
+                      result would make the magnet a gate — so this states the
+                      consequence rather than blocking the visitor. */}
+                  <p
+                    id="waterfall-delivery-note"
+                    className="mt-2 text-base leading-relaxed text-ash/[0.68]"
+                  >
+                    Where your free{' '}
+                    <span className="text-[#F0C4D0]">Shakti Waterfall</span>{' '}
+                    practice is sent. Leave it blank to continue privately
+                    without the practice.
+                  </p>
+                </div>
                 <input
                   type="tel"
                   value={whatsapp}
@@ -302,13 +332,36 @@ export default function Handoff({
 
             </div>
 
+            {/* The confirmation branches on whether the practice can actually
+                be sent. Saying "it is on its way" to a woman who left the email
+                field blank, or whose write failed, would be a promise the
+                system cannot keep — and the rule on this project is to never
+                describe a capability as working when it is not. */}
             <h2 className="begin-heading text-3xl md:text-5xl font-light mb-6 serif text-stone-100 italic">
-              Your path is held.
+              {waterfallWillSend ? waterfallConfirmationTitle : 'Your path is held.'}
             </h2>
 
             <p className="text-base text-ash/[0.86] font-normal leading-relaxed mb-6">
               Thank you, <span className="text-red-400 font-medium">{name}</span>. {saveMessage || SAVE_COPY[saveTone]}
             </p>
+
+            {waterfallWillSend ? (
+              <>
+                <p className="text-base text-ash/[0.86] font-normal leading-relaxed mb-4">
+                  {waterfallConfirmationBody}
+                </p>
+                {/* §4 requires a stated recovery route if delivery fails. */}
+                <p className="text-base text-ash/[0.62] font-normal leading-relaxed mb-8">
+                  {waterfallSupportLine}
+                </p>
+              </>
+            ) : (
+              <p className="text-base text-ash/[0.68] font-normal leading-relaxed mb-8">
+                The free <span className="text-[#F0C4D0]">Shakti Waterfall</span>{' '}
+                practice is sent by email. You can request it any time by writing
+                to sheetalkandola@gmail.com.
+              </p>
+            )}
 
             <p className="text-base text-ash/72 font-normal italic mb-10">
               {(requestGuidance || isCommunityIntent) && requestSaved
