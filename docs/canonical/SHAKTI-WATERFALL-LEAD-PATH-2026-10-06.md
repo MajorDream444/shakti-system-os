@@ -1,6 +1,6 @@
 # Shakti Waterfall Lead Path — Founder Direction and Launch Closure
 
-**Status:** ACTIVE CANONICAL BUILD DIRECTION  
+**Status:** ACTIVE CANONICAL BUILD DIRECTION — amended 6 October with Major's implementation decisions (§13)  
 **Date:** 6 October 2026  
 **Founder source:** Sheetal Kandola  
 **Meeting:** [Sheetal in India — 6 October 2026](https://fathom.video/share/ngxYGac7XLP3KP66ZLp6xV8Ga3QNxKvG)  
@@ -99,8 +99,11 @@ If the shorter CTA is used, nearby copy must still state that completion deliver
 Before the first question, state:
 
 - this is a short Guided Path;
-- it contains seven reflective questions;
 - the visitor receives Shakti Waterfall by email after completion.
+
+**No question count is stated.** This record originally said "seven reflective
+questions"; the build has four, and rather than print a number that is wrong
+today and fragile tomorrow, the count is not claimed at all. See §13.2.
 
 Do not add a pop-up, forced modal, countdown, or manipulative scarcity language.
 
@@ -113,7 +116,10 @@ Repeat the delivery promise next to the email request. Do not collect an email w
 Recommended message:
 
 > **Your Shakti Waterfall practice is on its way**  
-> Check your inbox for your free embodiment practice. This is an invitation to soften, feel, receive, and return to what is already alive within you.
+> Check your inbox — it arrives with Sheetal's welcome note. This is an invitation to soften, feel, receive, and return to what is already alive within you.
+
+This is literally true as of §13.1: the practice is delivered by Seeker
+sequence 1 on record creation, not three days later.
 
 Provide a support/failure instruction if delivery does not arrive. Do not expose the protected Vimeo URL in public HTML merely to make the confirmation screen feel complete.
 
@@ -151,7 +157,7 @@ As of the October 6 direction:
 
 - the Guided Path already captures seeker and intake data;
 - Airtable seeker automations are ON;
-- the Shakti Waterfall Vimeo link already exists in the seeker sequence;
+- the Shakti Waterfall Vimeo link already exists in the seeker sequence — it sat in sequence 2 (day three) until 6 October and now sits in sequence 1 (immediate), per §13.1;
 - prior descriptions claiming the automations were switched off were stale text, not live state;
 - the remaining Waterfall question is whether a logged-out viewer can open the Vimeo link and whether a password is required;
 - the Payments table previously contained zero rows, so Buyer Welcome had not had a real payment-triggered rehearsal;
@@ -295,3 +301,74 @@ Stripe → webhook → Payments → Buyer Welcome
 ```
 
 After evidence is recorded, freeze non-critical expansion and move this first build layer from **BUILD** into **HANDOFF**.
+
+---
+
+## 13. Implementation decisions — Major, 6 October
+
+Three contradictions surfaced when this brief was read against the running
+system. Major resolved all three. This section records the decisions and what
+was changed, so the document describes the system that exists.
+
+### 13.1 Delivery is immediate (Option A)
+
+**Found:** the practice did not arrive on completion. `Seeker sequence 1` fired
+immediately with Sheetal's welcome and carried no link; the Waterfall sat in
+`Seeker sequence 2 — day three`, which runs daily over seekers whose last email
+was 3+ days old. A woman finishing the path waited roughly three days.
+
+**Decision:** deliver immediately. Sheetal described the practice as the reward
+for completing the path; a three-day gap weakened both the promise and the
+lead-generation purpose.
+
+**Changed, in live Airtable:**
+
+| Automation | Before | After |
+|---|---|---|
+| `Seeker sequence 1` | welcome only | welcome **+ Waterfall link and password**, renamed *welcome + Shakti Waterfall* |
+| `Seeker sequence 2` | carried the link | **refers back** to the practice, delivers nothing |
+
+No seeker receives the link twice. `Seeker sequence 3` already referred back to
+the practice and needed no change. Both edits validate; neither automation's
+trigger, filter or step-gating was altered.
+
+**Coupling:** the site asserts immediate delivery in exactly two strings —
+`waterfallDeliveryWindow` and `waterfallConfirmationBody` in
+`apps/web/src/data/waterfallCopy.ts`. If delivery ever moves again, those move
+with it. Nothing else in the codebase claims timing.
+
+### 13.2 No question count is claimed
+
+**Found:** §4 asked `/begin` to say "seven reflective questions". `BeginApp`
+renders eight stations, of which a visitor answers four.
+
+**Decision:** do not add three artificial questions, and do not print a number.
+Say "a short Guided Path" or "guided reflection". The experience can evolve
+without making the copy false.
+
+§4 above is corrected in place. No numeric claim exists anywhere in
+`apps/web/src/` — verified by search.
+
+### 13.3 Hold Privately is preserved, and the exchange is stated plainly
+
+**Found:** the email field was optional, and the Waterfall can only be sent to
+an email — a WhatsApp number will not reach it, though the existing contact
+check accepts either.
+
+**Decision:** keep the private path. Require email only to receive the practice.
+
+**Implemented:**
+
+- the field is no longer labelled "(optional)";
+- beside it: *"Enter your email to receive Shakti Waterfall, or continue
+  privately without email."*;
+- the confirmation **branches** — it promises the practice only when a seeker
+  row actually saved **and** an address was given. Someone who holds privately
+  is told plainly that no email was sent and how to ask for the practice later.
+
+### 13.4 Status of this brief
+
+§1–§12 remain the founder direction. §13 is what was built. Where the two
+disagree, §13 describes the running system and §1–§12 record what was asked
+for. Evidence lives in
+`docs/acceptance/WATERFALL-LEAD-PATH-EVIDENCE-2026-10-06.md`.

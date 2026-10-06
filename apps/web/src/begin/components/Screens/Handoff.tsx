@@ -13,6 +13,7 @@ import { trackAnonymousEventOnce } from '../../../services/AnonymousAnalytics';
 import {
   waterfallConfirmationBody,
   waterfallConfirmationTitle,
+  waterfallEmailPrompt,
   waterfallSupportLine,
 } from '../../../data/waterfallCopy';
 
@@ -236,10 +237,7 @@ export default function Handoff({
                     id="waterfall-delivery-note"
                     className="mt-2 text-base leading-relaxed text-ash/[0.68]"
                   >
-                    Where your free{' '}
-                    <span className="text-[#F0C4D0]">Shakti Waterfall</span>{' '}
-                    practice is sent. Leave it blank to continue privately
-                    without the practice.
+                    {waterfallEmailPrompt}
                   </p>
                 </div>
                 <input
@@ -357,9 +355,10 @@ export default function Handoff({
               </>
             ) : (
               <p className="text-base text-ash/[0.68] font-normal leading-relaxed mb-8">
-                The free <span className="text-[#F0C4D0]">Shakti Waterfall</span>{' '}
-                practice is sent by email. You can request it any time by writing
-                to sheetalkandola@gmail.com.
+                You completed the path privately, so no email was sent. The
+                free <span className="text-[#F0C4D0]">Shakti Waterfall</span>{' '}
+                practice is delivered by email — you can ask for it any time by
+                writing to sheetalkandola@gmail.com.
               </p>
             )}
 

@@ -89,6 +89,8 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
           <span className="text-[#F0C4D0]">Shakti Waterfall</span>, a free
           Tantric somatic embodiment practice, by email.
         </p>
+        {/* No question count, by decision — the experience can change without
+            making this line false. See waterfallCopy.ts. */}
         <p className="text-base leading-relaxed text-ash/[0.62] mt-2">
           {waterfallPathShape} {waterfallDeliveryWindow}
         </p>

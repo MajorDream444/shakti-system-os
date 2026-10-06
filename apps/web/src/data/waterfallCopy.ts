@@ -12,20 +12,27 @@
      full operational name Shakti Waterfall Embodiment Practice
    It is a PRACTICE, never a "course", until Sheetal says otherwise.
 
-   ── DELIVERY TIMING IS A LIVE CONSTRAINT ───────────────────────────────────
-   The Waterfall link does not go out on completion. It is carried by the
-   Airtable automation "Seeker sequence 2 — day three, the doorway", which runs
-   daily at 09:00 WITA over seekers whose Sequence Step = 1 and whose last
-   sequence email was 3+ days ago. Seeker sequence 1 fires immediately on
-   completion and carries no link.
+   ── DELIVERY IS IMMEDIATE (Major's decision, 6 October, Option A) ──────────
+   The Waterfall access now rides in "Seeker sequence 1 — welcome reply", which
+   triggers on record creation, so the practice arrives with Sheetal's welcome
+   as soon as a Guided Path submission saves. "Seeker sequence 2 — day three"
+   refers back to the practice and no longer delivers it, so nobody is sent the
+   same link twice.
 
-   So a woman who finishes the path today receives the practice in about three
-   days, not in her inbox now.
+   Rationale on the record: Sheetal described the practice as the reward for
+   completing the path, and a three-day gap weakened both the promise and the
+   lead-generation purpose.
 
-   Every line below is therefore written to be TRUE UNDER THE CURRENT SYSTEM.
-   If the automation is later changed to deliver immediately, `deliveryWindow`
-   and `confirmationBody` are the two strings to revisit — nothing else here
-   asserts timing. */
+   Timing is asserted in exactly two strings below — `waterfallDeliveryWindow`
+   and `waterfallConfirmationBody`. If the automation ever moves again, those
+   are the only two to revisit.
+
+   ── NO NUMERICAL CLAIMS ABOUT THE PATH ─────────────────────────────────────
+   Nothing here states how many questions the Guided Path contains. The brief
+   said seven, the build has four, and rather than add three artificial
+   questions or print a number that will age badly, the count is simply not
+   claimed. "A short Guided Path" stays true as the experience evolves.
+   Do not reintroduce a count. */
 
 export const WATERFALL_LABEL = "Free Embodiment Practice";
 export const WATERFALL_TITLE = "Shakti Waterfall";
@@ -52,35 +59,31 @@ export const waterfallCallToPresence = "Come home to your Shakti.";
 export const waterfallExchange =
   "Complete the short Guided Path and receive Shakti Waterfall, a free Tantric somatic embodiment practice, by email.";
 
-/* What the Guided Path actually contains.
-
-   THE BRIEF SAYS "seven reflective questions". THE BUILD DOES NOT HAVE SEVEN.
-   BeginApp renders eight stations, of which a visitor answers four: three
-   choice questions (current state, pace, support) and one written reflection.
-   The other four are arrival, orientation, the path reveal and the handoff.
-
-   Writing "seven questions" on the page would be a false statement about the
-   product, so this says what is there. Raised for Sheetal to resolve: either
-   the copy stays accurate at four, or three questions are added to match what
-   she described. Until she rules, accuracy wins. */
+/* How the path is described. No count, by decision — see the header. */
 export const waterfallPathShape =
-  "Four short reflections. There are no right answers.";
+  "A short Guided Path. There are no right answers.";
 
-/* §4 asks for the delivery window to be stated honestly rather than implied.
-   Tied to the day-three automation described at the top of this file. */
+/* Delivery is immediate, carried by Seeker sequence 1 on record creation. */
 export const waterfallDeliveryWindow =
-  "It arrives by email within a few days, after Sheetal's welcome note.";
+  "It arrives by email as soon as you finish.";
 
-/* §4 completion state. Deliberately does NOT say "check your inbox now" — that
-   would be false under the current rhythm. It also does not expose the
+/* §4 completion state. "Check your inbox" is now literally true: the practice
+   is sent by Seeker sequence 1 on record creation. It still does not expose the
    protected Vimeo URL, which §4 forbids. */
 export const waterfallConfirmationTitle =
   "Your Shakti Waterfall practice is on its way";
 
 export const waterfallConfirmationBody =
-  "It arrives by email within the next few days, after Sheetal's welcome note. This is an invitation to soften, feel, receive, and return to what is already alive within you.";
+  "Check your inbox — it arrives with Sheetal's welcome note. This is an invitation to soften, feel, receive, and return to what is already alive within you.";
 
 /* §4 requires a recovery instruction for non-delivery. Her own address, which
-   is already the reply-to on every automated email, so nothing new is exposed. */
+   is already the reply-to on every automated email, so nothing new is exposed.
+   The window is short because delivery is immediate: if it has not arrived in
+   minutes something is wrong, and she should not wait a week to be told that. */
 export const waterfallSupportLine =
-  "If it has not reached you within a week, check your spam folder, then write to sheetalkandola@gmail.com and it will be sent to you directly.";
+  "If it has not arrived within a few minutes, check your spam folder, then write to sheetalkandola@gmail.com and it will be sent to you directly.";
+
+/* The note beside the email field. Major's wording, 6 October: it names the
+   exchange and the private alternative in one line, without blocking anyone. */
+export const waterfallEmailPrompt =
+  "Enter your email to receive Shakti Waterfall, or continue privately without email.";
