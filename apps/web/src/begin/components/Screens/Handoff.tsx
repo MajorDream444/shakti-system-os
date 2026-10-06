@@ -53,6 +53,9 @@ export default function Handoff({
   const [saveMessage, setSaveMessage] = useState('');
   const [requestSaved, setRequestSaved] = useState(false);
   const [requestFailed, setRequestFailed] = useState(false);
+  /* The server's verdict on whether Resend actually accepted the welcome.
+     Undefined until a response arrives, and treated as "do not promise". */
+  const [waterfallSent, setWaterfallSent] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     BeginLocalFallbackService.cleanupExpiredPendingBegin();
@@ -116,6 +119,7 @@ export default function Handoff({
         BeginLocalFallbackService.clearSensitivePendingBegin();
         setSaveTone('saved');
         setSaveMessage(SAVE_COPY.saved);
+        setWaterfallSent(beginResult.waterfallDelivered === true);
       } else {
         BeginLocalFallbackService.retainPendingBegin(payload, beginResult.assignedPathway);
         setSaveTone(beginResult.status === 'local_only' || beginResult.status === 'write_disabled' ? 'local' : 'error');
@@ -177,12 +181,24 @@ export default function Handoff({
     setIsSubmitted(true);
   };
 
-  /* The Waterfall is carried by the Airtable seeker sequence, which sends to
-     the EMAIL field specifically — a WhatsApp number alone will not reach it,
-     even though `hasContact` accepts either. And the sequence only runs for a
-     seeker row that actually landed, so a local-only or failed write means no
-     practice is coming. Both conditions must hold before the screen says so. */
-  const waterfallWillSend = saveTone === 'saved' && Boolean(email.trim());
+  /* Whether to promise the practice.
+
+     This is now the SERVER'S answer, not a guess. The handler sends through
+     Resend before responding and reports whether Resend accepted the message,
+     so the screen promises an inbox only when something is genuinely on its
+     way. A saved record with a failed send reports false, and the woman is
+     told the truth while Sheetal gets an alert to send it by hand.
+
+     Undefined means an older server or no verdict — treated as "do not
+     promise", because silence must never read as success. */
+  const waterfallWillSend =
+    saveTone === 'saved' && Boolean(email.trim()) && waterfallSent === true;
+
+  /* She gave an address and we saved her, but the practice did not go out.
+     Distinct from Hold Privately: something IS owed, and saying nothing would
+     leave her waiting for an email that is not coming. */
+  const waterfallFailed =
+    saveTone === 'saved' && Boolean(email.trim()) && waterfallSent === false;
 
   return (
     <div className="begin-screen begin-enter-screen flex flex-col items-start max-w-2xl w-full px-0 text-left">
@@ -353,6 +369,14 @@ export default function Handoff({
                   {waterfallSupportLine}
                 </p>
               </>
+            ) : waterfallFailed ? (
+              <p className="text-base text-ash/[0.86] font-normal leading-relaxed mb-8">
+                Your path is saved, but your{' '}
+                <span className="text-[#F0C4D0]">Shakti Waterfall</span>{' '}
+                practice could not be sent just now. Sheetal has been told and
+                will send it to you directly. If you would rather not wait, write
+                to sheetalkandola@gmail.com.
+              </p>
             ) : (
               <p className="text-base text-ash/[0.68] font-normal leading-relaxed mb-8">
                 You completed the path privately, so no email was sent. The

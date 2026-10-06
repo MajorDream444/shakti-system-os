@@ -7,6 +7,10 @@ export async function handleBeginCompleteHttp(payload: unknown, env: ServerEnv) 
   return handleBeginComplete(payload, {
     config,
     repository: new AirtableWriteRepository(config),
+    /* The environment has to reach the handler or RESEND_API_KEY is never
+       found and every welcome is silently skipped. This single line is the
+       whole difference between the practice sending and not. */
+    env,
   });
 }
 

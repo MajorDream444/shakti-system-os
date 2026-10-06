@@ -45,6 +45,20 @@ export type BeginWriteRepository = {
     seekerRecordId: string;
     occurredAt: string;
   }): Promise<{ id: string }>;
+  /* Called ONLY after Resend accepts the welcome. Advances the seeker to step
+     1 and stamps when, so the day-three automation can pick her up correctly. */
+  markWaterfallDelivered(input: {
+    seekerRecordId: string;
+    messageId: string;
+    occurredAt: string;
+  }): Promise<void>;
+  /* Called ONLY on a failed send. Deliberately does NOT write sequenceStep:
+     an undelivered seeker must not look delivered, and must stay visible. */
+  recordDeliveryFailure(input: {
+    seekerRecordId: string;
+    reason: string;
+    occurredAt: string;
+  }): Promise<void>;
 };
 
 type AirtableListResponse = {
@@ -304,5 +318,53 @@ export class AirtableWriteRepository implements BeginWriteRepository {
     });
 
     return { id: payload.records[0].id };
+  }
+
+  async markWaterfallDelivered(input: {
+    seekerRecordId: string;
+    messageId: string;
+    occurredAt: string;
+  }) {
+    await this.request(LIVE_AIRTABLE_TABLE_IDS.seekers, {
+      method: "PATCH",
+      body: JSON.stringify({
+        records: [
+          {
+            id: input.seekerRecordId,
+            fields: {
+              [LIVE_AIRTABLE_FIELDS.seekers.sequenceStep]: 1,
+              [LIVE_AIRTABLE_FIELDS.seekers.lastSequenceAt]: input.occurredAt,
+            },
+          },
+        ],
+      }),
+    });
+  }
+
+  async recordDeliveryFailure(input: {
+    seekerRecordId: string;
+    reason: string;
+    occurredAt: string;
+  }) {
+    /* No sequenceStep write. The row stays at "never sent", which is both the
+       truth and what keeps the day-three filter from selecting her. The review
+       flag is what surfaces her in Sheetal's view. */
+    await this.request(LIVE_AIRTABLE_TABLE_IDS.seekers, {
+      method: "PATCH",
+      body: JSON.stringify({
+        records: [
+          {
+            id: input.seekerRecordId,
+            fields: {
+              [LIVE_AIRTABLE_FIELDS.seekers.humanReviewNeeded]: true,
+              [LIVE_AIRTABLE_FIELDS.seekers.notes]:
+                `WATERFALL EMAIL DID NOT SEND at ${input.occurredAt}. Reason: ${input.reason}. ` +
+                `Her record is intact and her sequence has NOT advanced, so no later email assumes ` +
+                `she has the practice. Send her the Shakti Waterfall link directly.`,
+            },
+          },
+        ],
+      }),
+    });
   }
 }

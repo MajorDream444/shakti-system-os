@@ -40,6 +40,16 @@ export const LIVE_AIRTABLE_FIELDS = {
     requestsSignals: "fldfWWYlu5Lv1Hiaz",
     progress: "fldeJpqHiODA9TnlQ",
     accessGrants: "fld4rbPXrqLiqAhNX",
+    /* Email sequence state. Owned by the delivery path in
+       seekerEmailDelivery.ts and by the Airtable day-three / day-seven
+       automations. sequenceStep advances ONLY after Resend accepts a message:
+       the old native-send failure halted before this write, which stranded
+       seekers in a state no sequence selects. */
+    sequenceStep: "fldPBc3VYjBgYR2Wk",
+    lastSequenceAt: "fldMRbvUXb4qKYBtj",
+    /* Ticked to remove a row from the day-three / day-seven filters. Used for
+       test rows and for anyone who has opted out. */
+    sequencePaused: "fldJ4jziAZG86E2Jx",
   },
   intakeResponses: {
     intakeResponseId: "fldRfSEmf7P39Vy0F",

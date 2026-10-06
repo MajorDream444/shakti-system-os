@@ -52,6 +52,13 @@ export type BeginCompleteResponse = {
   intakeRecordIds?: string[];
   progressRecordId?: string;
   consistencyWarning?: string;
+  /* True only when Resend accepted the welcome carrying the Shakti Waterfall.
+     The confirmation screen keys its promise on this rather than on `saved`,
+     because a record can save perfectly while the email does not go out — and
+     telling a woman to check an inbox that will stay empty is the exact
+     failure this field exists to prevent. Absent on older responses, which is
+     why the client treats undefined as "do not promise". */
+  waterfallDelivered?: boolean;
 };
 
 export type RequestSignalRequest = {
