@@ -212,3 +212,120 @@ Do not merge to `main` until:
 
 Items 3–12 of the Guided Path tests and all of the Stripe tests can run against
 a preview deployment; they do not require production.
+
+---
+
+# ADDENDUM — controlled seeker test, 6 October 12:22 UTC
+
+## LAUNCH BLOCKER: Airtable cannot email anyone who is not a base collaborator
+
+The controlled test did not prove delivery. It proved the opposite, and the
+failure is not specific to the Waterfall — **it affects every customer-facing
+email in the system, including Buyer Welcome.**
+
+### What was done
+
+One controlled row created in `Seekers` (`tblKLBelhnhTaoS6o`):
+
+| | |
+|---|---|
+| Record | `rec7BJKP7tpA1cPWx` |
+| Seeker ID | `SEE-WATERFALL-EVIDENCE-2026-10-06` |
+| Email | `waterfall-evidence-2026-10-06@agentmail.to` (agent-controlled test inbox) |
+| Created | 2026-10-06 12:22:39 UTC |
+
+### What happened
+
+Two automations fire on `recordCreated` for that table. Both ran at 12:22:40
+UTC — **one second after creation**, from the same record:
+
+| Automation | Recipient | Result |
+|---|---|---|
+| `Alert Sheetal — new Seeker` | Sheetal — **a base collaborator** | **success** |
+| `Seeker sequence 1 — welcome + Shakti Waterfall` | the seeker — **not a collaborator** | **failure** |
+
+The failure, from the run log:
+
+```
+nodeKey      wac9je8hPnMvVVAU1   (the Send Email node)
+code         NODE_SPECIFIC_FAILURE
+specificCode NON_COLLABORATOR_RECIPIENTS
+```
+
+Test inbox after the run: **empty, including spam.**
+
+### Why this is conclusive
+
+Same instant, same trigger, same record, same base. The *only* difference
+between the automation that succeeded and the one that failed is whether the
+recipient is a collaborator on the base. The error code states it outright.
+
+### What it actually means
+
+Airtable's native **Send Email** action on this base's plan will only deliver to
+base collaborators. Therefore:
+
+- **no seeker has ever received a welcome, a Waterfall, or a day-three note;**
+- **no buyer would receive a welcome either** — `Buyer welcome — on payment`
+  uses the same action and sends to the buyer's address;
+- the "Alert Sheetal" automations work, and always have, because Sheetal is a
+  collaborator. That is why the system has looked alive.
+
+**Dancing with Durga Devi opens on 11 October, in five days.** As it stands, a
+woman who pays would receive nothing automatically.
+
+### Why this was never caught
+
+`Seeker sequence 2` and `3` run daily and report **success** every morning —
+but their `findRecords` step matches on `Sequence Step`, and no row has ever
+carried the value that makes them match. A run that emails nobody still
+succeeds. The green run history was real and meant nothing.
+
+The one real non-test seeker on the base (23 September) has no `Sequence Step`
+set, so no sequence has ever selected him either.
+
+### One more consequence
+
+The failed send halted the automation before its `updateRecord` node, so
+`rec7BJKP7tpA1cPWx` has no `Sequence Step`. A failed delivery therefore leaves
+the seeker in a state no later sequence will ever pick up — the failure is
+silent *and* self-perpetuating.
+
+## What has to happen, and who owns it
+
+| # | Action | Owner |
+|---|---|---|
+| 1 | Decide the delivery route — see the two options below | Major + Sheetal |
+| 2 | Re-run this exact test and confirm the message lands in a non-collaborator inbox | Major |
+| 3 | Only then re-run the Stripe → Payments → Buyer Welcome plan in §4 | Major |
+
+**Option A — upgrade the Airtable plan.** Paid Airtable plans lift the
+collaborator restriction on the Send Email action. Smallest change by far:
+nothing in the automations or the site moves, and every email already written
+in Sheetal's voice starts working as built. Needs the plan confirmed against
+Airtable's current limits before paying.
+
+**Option B — send through a real email service.** Move delivery to a provider
+(Resend, Postmark, SendGrid) called from a Vercel function, triggered by the
+same Airtable events or directly from the Begin write. More robust long term,
+gives real deliverability, bounce handling and a sending domain — but it is a
+build, not a setting, and five days before Navratri it is the riskier path.
+
+**Recommendation: Option A now, Option B later if volume justifies it.** The
+emails are written, the branching is correct, and the only broken link is a
+plan restriction.
+
+## Status of the rest of this branch
+
+Everything in §3 of this document still holds. The site work is complete and
+verified: the invitation renders, the exchange is stated before the first
+question, both confirmation branches behave, nothing overflows, nothing is
+under 16px, and the Vimeo URL and password stay out of public HTML.
+
+**But the confirmation screen now promises something the system cannot
+deliver.** Until the sending route is fixed, this branch must not be merged —
+not because the code is wrong, but because shipping it would tell a woman to
+check an inbox that will stay empty.
+
+The test row `rec7BJKP7tpA1cPWx` is left in place as evidence. Safe to delete
+once this is resolved.
