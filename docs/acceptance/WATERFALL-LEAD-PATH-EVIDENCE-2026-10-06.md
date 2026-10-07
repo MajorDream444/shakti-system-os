@@ -434,3 +434,55 @@ Preview: `https://shakti-system-63icm329l-hamal-agi.vercel.app`
 The site work is finished and verified. It stays unmerged for one reason: the
 confirmation screen tells a woman to check her inbox, and until the Gmail route
 is live that inbox stays empty.
+
+---
+
+# ADDENDUM 3 — pre-flight audit, 7 October
+
+Requested by Major while `srishaktishala.com` DNS ownership is established.
+**No DNS was changed, no verification attempted, no email sent.**
+
+| # | Requirement | Verified | Evidence |
+|---|---|---|---|
+| 1 | `RESEND_API_KEY` in Preview **and** Production, value not displayed | **PASS** | target `["production","preview"]`, `visibility: secret`, `decrypted: false` |
+| 2 | Sender `Sheetal Kandola <hello@srishaktishala.com>`, Reply-To `sheetalkandola@gmail.com` | **PASS** | `resendClient.ts` constants; `from` composed as `${fromName} <${fromAddress}>`; `reply_to` set on every send |
+| 3 | Four honest states | **PASS** | `"sent" \| "failed" \| "skipped" \| "private"` in the contract, derived in the handler |
+| 4 | `Sequence Step` = 1 only after acceptance | **PASS** | `markWaterfallDelivered` is called inside the `accepted` branch only; `recordDeliveryFailure` never writes `sequenceStep` |
+| 5 | No false claim that Sheetal was notified | **PASS** | screen keys on `waterfallStatus === 'failed'`; the alert send sits only in the failed branch |
+| 6 | Vimeo URL and password server-side only | **PASS** | absent from every built asset; present only in `server/emailTemplates.ts` and its checks; no client module imports it |
+| 7 | Tests | **PASS** | typecheck clean, build clean, 30/30 delivery checks, begin-write checks pass, smoke passes, lint 1566 vs 1571 on `main` — five fewer, none added |
+| 8 | Controlled test prepared, not run | **DONE** | `WATERFALL-CONTROLLED-TEST-PROCEDURE.md` |
+| 9 | Branch unmerged, production unchanged | **PASS** | `main` at `0b742f7`; branch 6 ahead, 0 behind |
+
+## One finding from the audit
+
+**A redeploy is required before the test, independent of DNS.**
+`RESEND_API_KEY` was last updated at `1791292095`. The most recent preview
+deployment was created at `1791292084` — eleven seconds earlier. Vercel injects
+environment variables at deploy time, so that build cannot see the key. This is
+the whole explanation for the first attempt's log line:
+
+```
+waterfall_delivery_skipped { reason: 'RESEND_API_KEY is not configured' }
+```
+
+Not a code fault, not a key fault. A build that predates its own secret.
+
+## What the first real submission did prove
+
+Everything except the send, which is most of the pipeline:
+
+- one seeker row, correctly **upserted** on the existing email rather than
+  duplicated;
+- three intake responses created and linked;
+- a progress record created;
+- a Guide Request signal saved;
+- `Sequence Step` correctly **left unset**, because nothing was delivered.
+
+That last line is the behaviour that did not exist before. Under the old native
+send a failure halted the automation before its state write and stranded the
+seeker silently; here the absence of a step is a deliberate, recorded outcome.
+
+It also surfaced a real defect in my own work — the screen claimed Sheetal had
+been alerted when nothing had been attempted — which is now fixed and guarded
+by two checks.
