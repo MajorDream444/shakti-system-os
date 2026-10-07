@@ -486,3 +486,118 @@ seeker silently; here the absence of a step is a deliberate, recorded outcome.
 It also surfaced a real defect in my own work — the screen claimed Sheetal had
 been alerted when nothing had been attempted — which is now fixed and guarded
 by two checks.
+
+---
+
+# ADDENDUM 4 — SEEKER PATH PROVEN END TO END, 7 October
+
+The controlled test passed. This is the first time a Guided Path submission has
+ever produced an email for a real address.
+
+## Run record
+
+| | |
+|---|---|
+| Preview | `shakti-system-cf69zrn1u-hamal-agi.vercel.app` |
+| Commit | `26ed7fe` (app code identical to `0624559`) |
+| Seeker record | `rec38s7kWz9UQUxR5` — **new row**, not an upsert |
+| Recipient | `waterfall-resend-verified-07oct@agentmail.to` (fresh, empty inbox) |
+| Resend message id | `01a11592-e7a3-7c27-85cd-eb4f103d66f5` |
+
+## Results
+
+| # | Check | Result |
+|---|---|---|
+| 1 | Exactly one seeker record | **PASS** |
+| 2 | Intake responses stored and linked | **PASS** — 3 |
+| 3 | `Sequence Step` = 1 | **PASS** — and only because Resend accepted |
+| 4 | `Last Sequence At` stamped | **PASS** — `08:55:11.496Z` |
+| 5 | Review flag not set | **PASS** |
+| 6 | Exactly one email, none in spam | **PASS** |
+| 7 | From | **PASS** — `Sheetal Kandola <hello@srishaktishala.com>` |
+| 8 | Reply-To | **PASS** — `sheetalkandola@gmail.com` |
+| 9 | Vimeo link and password present | **PASS** |
+| 10 | Founder copy intact | **PASS** — her welcome verbatim, `Jai Ma`, `In devotion, Sheetal` |
+
+## The number that matters
+
+```
+08:55:10   seeker record created
+08:55:11   waterfall_delivered { messageId: 01a11592-… }
+```
+
+**About one second.** The three-day gap is closed, and the ordering held under
+real conditions: the step advanced *after* acceptance, which is precisely the
+sequence that failed silently under Airtable's native send.
+
+## Infrastructure note
+
+Four Resend DNS records were added at **Porkbun**. The existing Vercel and
+Porkbun mail records were left untouched and nameservers were not moved, so the
+live site was never at risk. Resend reports `srishaktishala.com` **Verified**.
+
+The earlier `RESEND_API_KEY is not configured` was neither a code nor a key
+fault: the preview build predated the key by eleven seconds, and Vercel injects
+environment variables at deploy time.
+
+---
+
+# ADDENDUM 5 — BUYER WELCOME BUILT, awaiting controlled test
+
+`47e82f7`. Built and unit-proven; **not yet exercised by a real Stripe event.**
+
+## Design
+
+The Payments row is written first and never rolled back. Only then is the
+welcome attempted. A delivery problem cannot cost the payment record; the worst
+case is a recorded buyer who has not yet heard from Sheetal, which is visible
+and recoverable.
+
+## New Payments fields
+
+| Field | Meaning |
+|---|---|
+| `Welcome Sent` (existing) | Ticked **only** when Resend accepted |
+| `Welcome Status` | Sent / Failed / Skipped |
+| `Welcome Message ID` | Resend's id, the delivery evidence |
+| `Welcome Attempted At` | When it was tried, success or not |
+| `Welcome Failure Reason` | Why not — rows with text here are the queue to work |
+
+## Idempotency, two layers
+
+1. The webhook already returns early when a row exists for the session, so a
+   Stripe retry never reaches the send.
+2. Every send carries `buyer-welcome:<stripe session id>`, so even a duplicate
+   that got through is de-duplicated by Resend for 24 hours.
+
+Both Airtable write-backs are wrapped so neither can turn a successful payment
+into a 500 and a Stripe retry. The handler returns 200 whatever the email did.
+
+## Checks — 56 total, 24 new
+
+Offering mapping both directions; Zoom link, dates and calendar link on Durga;
+intake form and Calendly on the 1:1; rejection leaving the buyer unmarked with
+Sheetal alerted; skips for an unknown offering and a missing address; one
+idempotency key across duplicate events; no buyer email leaking the Vimeo
+password.
+
+## Not done, and owned by Major
+
+| # | Test | Why it cannot run here |
+|---|---|---|
+| 1 | Hold Privately, live | Egress blocks the preview host |
+| 2 | Intentional Resend failure, live | Same |
+| 3 | Stripe → Payments → Buyer Welcome | Needs a Stripe test event from **Sheetal's** account; the MCP here is M.A.I.M. and §7 forbids using it as evidence |
+| 4 | Vimeo opened logged out | Egress blocks Vimeo |
+
+Procedure for all four: `WATERFALL-CONTROLLED-TEST-PROCEDURE.md`.
+
+## Deliberately unchanged
+
+Public contact addresses, legal copy, cancellation language, reply-to routing.
+`support@`, `retreats@` and `payments@` are **not** implemented and must not be
+until each forwards to Sheetal's Gmail and is tested in both directions.
+
+Native Airtable customer sends stay in place and stay incapable of reaching a
+customer, so there is no duplicate risk. Internal alerts to Sheetal unchanged.
+Branch unmerged; `main` at `0b742f7`.
