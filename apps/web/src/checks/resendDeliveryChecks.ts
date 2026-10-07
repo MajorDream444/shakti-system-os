@@ -16,6 +16,10 @@ import {
   type SequenceStateWriter,
 } from "../server/seekerEmailDelivery.js";
 import { buildBuyerWelcomeEmail, buildSeekerWelcomeEmail } from "../server/emailTemplates.js";
+import {
+  deliverBuyerWelcome,
+  offeringToTemplateKey,
+} from "../server/buyerEmailDelivery.js";
 
 type Call = { url: string; body: Record<string, unknown> };
 
@@ -198,6 +202,120 @@ export async function runResendDeliveryChecks() {
     check(
       "failed: Sheetal IS alerted",
       calls.some((c) => String((c.body.to as string[])?.[0]).includes("sheetalkandola")),
+    );
+  }
+
+  /* 9. BUYER WELCOME — the path that matters for 11 October. A woman who pays
+        and hears nothing is the failure these assert against. */
+  const BUYER = {
+    paymentRecordId: "recPAY",
+    sessionId: "cs_test_abc123",
+    buyerEmail: "buyer@example.com",
+    buyerName: "Buyer",
+  };
+
+  /* Offering mapping, both directions. */
+  {
+    check("offering: Durga maps", offeringToTemplateKey("Dancing with Durga") === "dancing-with-durga");
+    check("offering: Embodiment maps", offeringToTemplateKey("Shakti Embodiment") === "shakti-embodiment");
+    check("offering: Shala maps", offeringToTemplateKey("Shala Membership") === "shala-membership");
+    check("offering: Other does NOT map", offeringToTemplateKey("Other") === null);
+  }
+
+  /* Accepted → Sent, welcomeSent true, message id recorded. */
+  {
+    const { impl, calls } = stubFetch(() => ({ ok: true, status: 200, payload: { id: "msg_buyer" } }));
+    const { state } = await deliverBuyerWelcome(
+      { ...BUYER, offering: "Dancing with Durga" },
+      { env: ENV, fetchImpl: impl },
+    );
+    check("buyer accepted: status Sent", state.status === "Sent");
+    check("buyer accepted: welcomeSent true", state.welcomeSent === true);
+    check("buyer accepted: message id recorded", state.messageId === "msg_buyer");
+    check("buyer accepted: attemptedAt recorded", Boolean(state.attemptedAt));
+    check("buyer accepted: no failure reason", state.failureReason === undefined);
+    const body = String(calls[0]?.body.text ?? "");
+    check("buyer accepted: carries the Zoom link", body.includes("us06web.zoom.us"));
+    check("buyer accepted: carries the dates", body.includes("October 11, 13, 15 & 17"));
+    check("buyer accepted: carries the calendar link", body.includes("calendar.app.google"));
+  }
+
+  /* The 1:1 welcome must carry her intake form and Calendly. */
+  {
+    const { impl, calls } = stubFetch(() => ({ ok: true, status: 200, payload: { id: "m" } }));
+    await deliverBuyerWelcome({ ...BUYER, offering: "Shakti Embodiment" }, { env: ENV, fetchImpl: impl });
+    const body = String(calls[0]?.body.text ?? "");
+    check("buyer 1:1: carries the intake form", body.includes("forms.gle/cam5Ewp8CoASEL6NA"));
+    check("buyer 1:1: carries Calendly", body.includes("calendly.com/sheetalkandola"));
+  }
+
+  /* Rejected → Failed, NOT welcomed, reason kept, Sheetal alerted. */
+  {
+    const { impl, calls } = stubFetch((call) =>
+      String((call.body.to as string[])?.[0]).includes("sheetalkandola")
+        ? { ok: true, status: 200, payload: { id: "alert" } }
+        : { ok: false, status: 403, payload: { message: "sender not verified" } },
+    );
+    const { state } = await deliverBuyerWelcome(
+      { ...BUYER, offering: "Dancing with Durga" },
+      { env: ENV, fetchImpl: impl },
+    );
+    check("buyer failed: status Failed", state.status === "Failed");
+    check("buyer failed: NOT marked welcomed", state.welcomeSent === false);
+    check("buyer failed: reason recorded", Boolean(state.failureReason?.includes("403")));
+    check("buyer failed: no message id", state.messageId === undefined);
+    check(
+      "buyer failed: Sheetal IS alerted",
+      calls.some((c) => String((c.body.to as string[])?.[0]).includes("sheetalkandola")),
+    );
+  }
+
+  /* Unmatched offering → Skipped, nothing invented, nothing sent. */
+  {
+    const { impl, calls } = stubFetch(() => ({ ok: true, status: 200, payload: { id: "m" } }));
+    const { state } = await deliverBuyerWelcome({ ...BUYER, offering: "Other" }, { env: ENV, fetchImpl: impl });
+    check("buyer other: status Skipped", state.status === "Skipped");
+    check("buyer other: nothing sent", calls.length === 0);
+    check("buyer other: NOT marked welcomed", state.welcomeSent === false);
+    check("buyer other: reason explains", Boolean(state.failureReason?.includes("Other")));
+  }
+
+  /* No buyer email on the session → Skipped, not Failed. */
+  {
+    const { impl, calls } = stubFetch(() => ({ ok: true, status: 200, payload: { id: "m" } }));
+    const { state } = await deliverBuyerWelcome(
+      { ...BUYER, buyerEmail: "", offering: "Dancing with Durga" },
+      { env: ENV, fetchImpl: impl },
+    );
+    check("buyer no email: Skipped", state.status === "Skipped" && calls.length === 0);
+  }
+
+  /* DUPLICATE STRIPE EVENT: same session twice must reuse one idempotency key,
+     so Resend de-duplicates and the buyer receives exactly one welcome. */
+  {
+    const seen: string[] = [];
+    const impl = (async (_u: unknown, init?: { headers?: Record<string, string> }) => {
+      seen.push(init?.headers?.["Idempotency-Key"] ?? "none");
+      return { ok: true, status: 200, json: async () => ({ id: "dup" }), text: async () => "" };
+    }) as unknown as typeof fetch;
+    await deliverBuyerWelcome({ ...BUYER, offering: "Dancing with Durga" }, { env: ENV, fetchImpl: impl });
+    await deliverBuyerWelcome({ ...BUYER, offering: "Dancing with Durga" }, { env: ENV, fetchImpl: impl });
+    check(
+      "buyer retry: one idempotency key for both",
+      seen.length === 2 && seen[0] === seen[1] && seen[0] === `buyer-welcome:${BUYER.sessionId}`,
+      seen.join(" | "),
+    );
+  }
+
+  /* No welcome may carry a Vimeo password — that belongs to the seeker path. */
+  {
+    const { impl, calls } = stubFetch(() => ({ ok: true, status: 200, payload: { id: "m" } }));
+    for (const o of ["Dancing with Durga", "Shakti Embodiment", "Shala Membership"]) {
+      await deliverBuyerWelcome({ ...BUYER, offering: o }, { env: ENV, fetchImpl: impl });
+    }
+    check(
+      "buyer: no welcome leaks the Vimeo password",
+      calls.every((c) => !String(c.body.text ?? "").includes("Shakti108")),
     );
   }
 
