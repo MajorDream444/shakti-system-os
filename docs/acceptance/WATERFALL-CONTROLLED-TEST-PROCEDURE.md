@@ -1,9 +1,9 @@
 # Controlled end-to-end test — prepared, NOT yet run
 
-**Status:** READY TO EXECUTE. Held pending one external dependency.
-**Blocker:** `srishaktishala.com` is not verified in Resend. Sheetal is
-identifying where its DNS is managed. **Do not change nameservers and do not
-attempt domain verification until Major supplies the provider.**
+**Status:** CLEARED TO EXECUTE as of 7 October.
+**Domain:** `srishaktishala.com` shows **Verified** in Resend. Four DNS records
+added at **Porkbun**, with the existing Vercel and Porkbun mail records left
+untouched — nameservers were not moved, so the website was never at risk.
 
 Nothing in this document sends an email. It is the procedure to run the moment
 the domain shows Verified, written down now so the test is fast and identical
@@ -16,8 +16,8 @@ each time it is repeated.
 | # | Condition | State as of 7 October | How to re-check |
 |---|---|---|---|
 | 1 | `RESEND_API_KEY` set for Preview **and** Production | **MET** — target `["production","preview"]`, `visibility: secret` | `filter_project_envs`; never decrypt |
-| 2 | A preview deployment built **after** the key was last updated | **NOT MET** — key updated at `1791292095`, last preview built `1791292084`, 11s earlier | compare `updatedAt` to deployment `created` |
-| 3 | `srishaktishala.com` verified in Resend | **NOT MET** — blocked on DNS provider | Resend dashboard → Domains |
+| 2 | A preview deployment built **after** the key was last updated | **MET on the 7 October redeploy** — see the run record below | compare `updatedAt` to deployment `created` |
+| 3 | `srishaktishala.com` verified in Resend | **MET** — 7 October, records at Porkbun | Resend dashboard → Domains |
 | 4 | `BEGIN_WRITES_ENABLED` for Preview | **MET** | `filter_project_envs` |
 | 5 | Branch unmerged, production untouched | **MET** — `main` at `0b742f7`, branch 6 commits ahead | `git log origin/main -1` |
 
