@@ -319,6 +319,79 @@ export async function runResendDeliveryChecks() {
     );
   }
 
+  /* 10. ALERT INDEPENDENCE — the question Major asked before authorising the
+         intentional-failure test, and the reason it was not run as designed.
+
+         Originally the alert reused the customer config, so breaking
+         RESEND_FROM_ADDRESS would have broken the alert too and Sheetal would
+         have learned nothing. These simulate exactly that: the sender override
+         is set to an unverified domain and the transport rejects anything from
+         it. The customer send must fail and the alert must still go out. */
+  {
+    const BROKEN_ENV = { RESEND_API_KEY: "re_test_key_not_real", RESEND_FROM_ADDRESS: "nope@unverified-domain.invalid" };
+    const sent: Array<{ from: string; to: string }> = [];
+    const impl = (async (_u: unknown, init?: { body?: string }) => {
+      const b = JSON.parse(init?.body ?? "{}") as { from: string; to: string[] };
+      const from = String(b.from);
+      sent.push({ from, to: b.to[0] });
+      /* The transport refuses anything from the unverified domain, exactly as
+         Resend would. The pinned alert sender is unaffected. */
+      if (from.includes("unverified-domain.invalid")) {
+        return { ok: false, status: 403, json: async () => ({ message: "domain not verified" }), text: async () => "" };
+      }
+      return { ok: true, status: 200, json: async () => ({ id: "alert_ok" }), text: async () => "" };
+    }) as unknown as typeof fetch;
+
+    const { writer, marked } = recordingWriter();
+    const out = await deliverSeekerWelcome(
+      { ...BASE, email: "her@example.com" },
+      { env: BROKEN_ENV, writer, fetchImpl: impl },
+    );
+    const toCustomer = sent.find((m) => m.to === "her@example.com");
+    const toSheetal = sent.find((m) => m.to.includes("sheetalkandola"));
+
+    check("broken sender: customer send DID fail", out.result.outcome === "failed");
+    check("broken sender: sequence NOT advanced", marked.length === 0);
+    check(
+      "broken sender: customer mail used the broken sender",
+      Boolean(toCustomer?.from.includes("unverified-domain.invalid")),
+      toCustomer?.from,
+    );
+    check(
+      "broken sender: ALERT STILL REACHED SHEETAL",
+      Boolean(toSheetal),
+      toSheetal ? `from ${toSheetal.from}` : "NO ALERT SENT",
+    );
+    check(
+      "broken sender: alert used the pinned verified sender",
+      Boolean(toSheetal?.from.includes("hello@srishaktishala.com")),
+      toSheetal?.from,
+    );
+
+    /* Same guarantee on the buyer path. */
+    const sent2: Array<{ from: string; to: string }> = [];
+    const impl2 = (async (_u: unknown, init?: { body?: string }) => {
+      const b = JSON.parse(init?.body ?? "{}") as { from: string; to: string[] };
+      sent2.push({ from: String(b.from), to: b.to[0] });
+      if (String(b.from).includes("unverified-domain.invalid")) {
+        return { ok: false, status: 403, json: async () => ({ message: "domain not verified" }), text: async () => "" };
+      }
+      return { ok: true, status: 200, json: async () => ({ id: "alert_ok" }), text: async () => "" };
+    }) as unknown as typeof fetch;
+    const { state } = await deliverBuyerWelcome(
+      { paymentRecordId: "recPAY", sessionId: "cs_broken", buyerEmail: "buyer@example.com", buyerName: "Buyer", offering: "Dancing with Durga" },
+      { env: BROKEN_ENV, fetchImpl: impl2 },
+    );
+    const buyerAlert = sent2.find((m) => m.to.includes("sheetalkandola"));
+    check("broken sender (buyer): status Failed", state.status === "Failed");
+    check("broken sender (buyer): NOT marked welcomed", state.welcomeSent === false);
+    check(
+      "broken sender (buyer): ALERT STILL REACHED SHEETAL",
+      Boolean(buyerAlert?.from.includes("hello@srishaktishala.com")),
+      buyerAlert ? `from ${buyerAlert.from}` : "NO ALERT SENT",
+    );
+  }
+
   const failed = results.filter((r) => !r.pass);
   for (const r of results) {
     console.log(`${r.pass ? "  PASS" : "  FAIL"}  ${r.name}${r.detail ? `  (${r.detail})` : ""}`);

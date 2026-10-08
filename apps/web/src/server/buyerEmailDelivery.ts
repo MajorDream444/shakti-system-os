@@ -28,6 +28,7 @@ import {
   type BuyerWelcomeOffering,
 } from "./emailTemplates.js";
 import {
+  getAlertConfig,
   getResendConfig,
   sendViaResend,
   type ResendConfig,
@@ -156,8 +157,9 @@ export async function deliverBuyerWelcome(
     reason: result.reason,
   });
 
+  /* Pinned alert config, not the customer one — see getAlertConfig. */
   await sendViaResend(
-    config,
+    deps.resendConfigOverride !== undefined ? deps.resendConfigOverride : getAlertConfig(deps.env),
     {
       to: deps.alertAddress ?? DEFAULT_ALERT_ADDRESS,
       subject: "ACTION NEEDED — a buyer has paid and did not receive her welcome",

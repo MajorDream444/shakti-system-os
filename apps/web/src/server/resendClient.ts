@@ -79,6 +79,32 @@ export function getResendConfig(env: Record<string, string | undefined>): Resend
   };
 }
 
+/* The config used for INTERNAL ALERTS to Sheetal.
+
+   WHY THIS IS SEPARATE. An alert that shares a failure mode with the thing it
+   reports is not an alert. The customer config honours RESEND_FROM_ADDRESS,
+   and the single likeliest cause of a customer send failing is a sender or
+   domain fault — which would silently take the alert down with it, exactly
+   when it is needed.
+
+   So alerts ignore every sender override and always use the pinned, verified
+   default. Only the API key is shared, because it must be.
+
+   This is still not full independence: a revoked key or a Resend outage stops
+   both. That gap is covered outside this file by the Airtable flag on the
+   record, which Sheetal can see without any email arriving at all. */
+export function getAlertConfig(env: Record<string, string | undefined>): ResendConfig | null {
+  const apiKey = env.RESEND_API_KEY;
+  if (!apiKey) return null;
+
+  return {
+    apiKey,
+    fromName: DEFAULT_FROM_NAME,
+    fromAddress: DEFAULT_FROM_ADDRESS,
+    replyTo: DEFAULT_REPLY_TO,
+  };
+}
+
 /* Sends one message. Never throws — every path returns a ResendSendResult, so
    a caller can never mistake an exception for a delivery. */
 export async function sendViaResend(

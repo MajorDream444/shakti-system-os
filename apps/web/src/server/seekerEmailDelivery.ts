@@ -22,6 +22,7 @@ import {
   buildSeekerWelcomeEmail,
 } from "./emailTemplates.js";
 import {
+  getAlertConfig,
   getResendConfig,
   sendViaResend,
   type ResendConfig,
@@ -166,10 +167,12 @@ export async function deliverSeekerWelcome(
     reason: result.reason,
   });
 
-  /* Best effort. If the alert itself cannot go out, the Airtable flag is still
-     set and the row is visible — the human path does not depend on this email. */
+  /* Sent on the PINNED alert config, never the customer one. If the customer
+     send failed because of a sender or domain fault, that fault must not also
+     silence the alert. Best effort regardless: the Airtable review flag is
+     already set, so the row is visible even if no email ever arrives. */
   await sendViaResend(
-    config,
+    deps.resendConfigOverride !== undefined ? deps.resendConfigOverride : getAlertConfig(deps.env),
     {
       to: deps.alertAddress ?? DEFAULT_ALERT_ADDRESS,
       subject: alert.subject,
