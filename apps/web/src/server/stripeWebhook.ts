@@ -58,6 +58,34 @@ export type WebhookResult = {
   body: { status: string; message: string };
 };
 
+/* Accepts SEVERAL signing secrets, comma or whitespace separated.
+
+   Stripe issues a different signing secret per endpoint, and this project has
+   two — production and preview — pointing at the same code. One variable
+   holding one value could only ever satisfy one of them; the other would
+   reject every event with a bad signature, which looks exactly like a broken
+   webhook and wastes an afternoon proving otherwise.
+
+   This is also what Stripe's own rotation guidance requires: during a rotation
+   both the old and new secret are live, and an endpoint that understands only
+   one of them drops events in the window between.
+
+   Every candidate is compared in constant time and the result is a plain
+   boolean, so nothing about which secret matched, or how nearly, is leaked. */
+export function parseSigningSecrets(raw: string | undefined): string[] {
+  return (raw ?? "")
+    .split(/[,\s]+/)
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+function verifySignatureWithAny(rawBody: string, header: string, secrets: string[]): boolean {
+  /* `some` short-circuits, but each individual comparison is still
+     timing-safe; the only thing observable is total work, which varies with
+     the number of configured secrets rather than with any attacker input. */
+  return secrets.some((secret) => verifySignature(rawBody, header, secret));
+}
+
 function verifySignature(rawBody: string, header: string, secret: string): boolean {
   const parts = header.split(",").reduce<Record<string, string[]>>((acc, part) => {
     const [key, value] = part.split("=");
@@ -138,17 +166,17 @@ export async function handleStripeWebhook(
   signatureHeader: string,
   env: Record<string, string | undefined>,
 ): Promise<WebhookResult> {
-  const secret = env.STRIPE_WEBHOOK_SECRET;
+  const secrets = parseSigningSecrets(env.STRIPE_WEBHOOK_SECRET);
   const token = env.AIRTABLE_PERSONAL_ACCESS_TOKEN || env.AIRTABLE_TOKEN;
   const baseId = env.AIRTABLE_BASE_ID || "appj3hDhI0HoulNrf";
 
-  if (!secret || !token) {
+  if (secrets.length === 0 || !token) {
     /* Deliberately vague to the caller, and deliberately NOT a 2xx: Stripe
        will retry, so nothing is lost once the secrets are configured. */
     return { statusCode: 503, body: { status: "unconfigured", message: "Not configured." } };
   }
 
-  if (!signatureHeader || !verifySignature(rawBody, signatureHeader, secret)) {
+  if (!signatureHeader || !verifySignatureWithAny(rawBody, signatureHeader, secrets)) {
     return { statusCode: 400, body: { status: "invalid", message: "Bad signature." } };
   }
 
