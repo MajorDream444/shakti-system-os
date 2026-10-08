@@ -12,12 +12,17 @@ import {
   parseBeginCompleteRequest,
   parseRequestSignalRequest,
 } from "./writeBoundaryValidation.js";
+import { deliverSeekerWelcome } from "./seekerEmailDelivery.js";
 
 type HandlerDeps = {
   config: WriteBoundaryConfig;
   repository: BeginWriteRepository;
   now?: () => Date;
   logger?: Pick<Console, "info" | "warn" | "error">;
+  /* Server environment, for RESEND_API_KEY. Defaults to process.env at the
+     adapter boundary; injected in tests so no key is ever needed to run them. */
+  env?: Record<string, string | undefined>;
+  fetchImpl?: typeof fetch;
 };
 
 function quietLogger(logger?: HandlerDeps["logger"]) {
@@ -153,6 +158,35 @@ export async function handleBeginComplete(
       rulesVersion: assignment.rulesVersion,
     });
 
+    /* Deliver the Shakti Waterfall now, not in three days.
+
+       Ordering matters and is deliberate. The records are already written, so
+       a delivery problem can never cost us the seeker — the worst case is a
+       saved woman who is owed an email, which is visible and recoverable. The
+       inverse (emailing someone we failed to record) is not.
+
+       deliverSeekerWelcome never throws: it advances the sequence only on an
+       accepted send, flags the row and alerts Sheetal on failure, and does
+       nothing at all when there is no email, which is Hold Privately. */
+    const delivery = await deliverSeekerWelcome(
+      {
+        seekerRecordId: seeker.id,
+        email: request.email,
+        firstName: request.firstName,
+        idempotencyKey: request.idempotencyKey,
+      },
+      {
+        env: deps.env ?? {},
+        writer: deps.repository,
+        fetchImpl: deps.fetchImpl,
+        now: deps.now,
+        logger: {
+          info: (event, detail) => logger.info(event, detail),
+          error: (event, detail) => logger.error(event, detail),
+        },
+      },
+    );
+
     return {
       statusCode: 200,
       body: {
@@ -163,6 +197,17 @@ export async function handleBeginComplete(
         seekerRecordId: seeker.id,
         intakeRecordIds: intakeRecords.map((record) => record.id),
         progressRecordId: progress.id,
+        /* Lets the confirmation screen promise the practice only when it is
+           actually on its way, rather than inferring it from "saved". */
+        waterfallDelivered: delivery.result.outcome === "accepted",
+        waterfallDeliveryStatus:
+          delivery.result.outcome === "accepted"
+            ? "sent"
+            : delivery.result.outcome === "failed"
+              ? "failed"
+              : request.email?.trim()
+                ? "skipped"
+                : "private",
         consistencyWarning:
           request.clientAssignedPathway && request.clientAssignedPathway !== assignment.assignedPathway
             ? "Client pathway did not match server-derived pathway."

@@ -151,6 +151,25 @@ class MockRepository implements BeginWriteRepository {
     this.signalByIdempotency.set(input.request.idempotencyKey, "rec-signal-1");
     return { id: "rec-signal-1" };
   }
+
+  /* Email sequence state, recorded so assertions can check that a seeker is
+     advanced only on an accepted send and never on a failed one. */
+  waterfallDelivered: Array<{ seekerRecordId: string; messageId: string }> = [];
+  deliveryFailures: Array<{ seekerRecordId: string; reason: string }> = [];
+
+  async markWaterfallDelivered(input: Parameters<BeginWriteRepository["markWaterfallDelivered"]>[0]) {
+    this.waterfallDelivered.push({
+      seekerRecordId: input.seekerRecordId,
+      messageId: input.messageId,
+    });
+  }
+
+  async recordDeliveryFailure(input: Parameters<BeginWriteRepository["recordDeliveryFailure"]>[0]) {
+    this.deliveryFailures.push({
+      seekerRecordId: input.seekerRecordId,
+      reason: input.reason,
+    });
+  }
 }
 
 class FailingRepository extends MockRepository {

@@ -18,6 +18,7 @@ import { SeasonalOffering } from "./components/SeasonalOffering";
 import { LegalPage } from "./components/LegalPage";
 import { TestimonialsPage } from "./components/TestimonialsPage";
 import { TransitionQuote } from "./components/TransitionQuote";
+import { WaterfallInvitation } from "./components/WaterfallInvitation";
 
 const BeginApp = lazy(() => import("./begin/BeginApp"));
 const ShalaApp = lazy(() => import("./shala/ShalaApp"));
@@ -43,6 +44,10 @@ function PortalApp() {
             back with a single line. */}
         <GodRays />
         <Hero />
+        {/* The free-practice invitation, 2026-10-06. It takes the first
+            position after the fold rather than a slot inside the hero, which
+            is founder-locked to five elements. See WaterfallInvitation.tsx. */}
+        <WaterfallInvitation />
         {/* The founder-selected frames used to be the largest block inside the
             hero. They keep their place on the page, just below the first
             screen rather than in front of it. */}

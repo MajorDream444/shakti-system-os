@@ -9,7 +9,7 @@
   "packageManager": "npm@11.6.2",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b tsconfig.app.json && vite build && npm run smoke",
+    "build": "tsc -b tsconfig.app.json && vite build && npm run check:resend && npm run smoke",
     "check:backend": "tsx src/checks/backendReadChecks.ts",
     "check:begin-write": "tsx src/checks/beginWriteChecks.ts",
     "check:airtable-preview": "tsx scripts/airtablePreviewQa.ts",
@@ -19,7 +19,8 @@
     "test:visual-review": "playwright test e2e/sprint12a-visual-review.spec.ts --reporter=line",
     "lint": "eslint .",
     "preview": "vite preview",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "check:resend": "tsx src/checks/resendDeliveryChecks.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",

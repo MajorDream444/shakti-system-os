@@ -23,6 +23,16 @@ const PAYMENTS_TABLE = "tblf2kC6qHsgJMjUm";
 const SEEKERS_TABLE = "tblKLBelhnhTaoS6o";
 const AIRTABLE_API_ROOT = "https://api.airtable.com/v0";
 
+/* Added 7 October for the Resend buyer welcome. Welcome Sent already existed
+   and keeps its meaning: Resend accepted the message. The rest are evidence. */
+const WELCOME_FIELDS = {
+  welcomeSent: "fldmHbXKWG4MkymZU",
+  welcomeStatus: "fldUDgF4LscobY2So",
+  welcomeMessageId: "fldI6bs7N6hEfhAVJ",
+  welcomeAttemptedAt: "fldZSuGC8Ry3yKMzF",
+  welcomeFailureReason: "fld3n2o6bbFBDVsPM",
+} as const;
+
 const PAYMENT_FIELDS = {
   paymentId: "fld5lacVScpsXtyQT",
   sessionId: "fldZ21ADta2Y3AVkR",
@@ -192,7 +202,7 @@ export async function handleStripeWebhook(
     const currency = String(session.currency ?? "usd");
     const amountTotal = Number(session.amount_total ?? 0);
 
-    await airtable(`${baseId}/${PAYMENTS_TABLE}`, token, {
+    const created = (await airtable(`${baseId}/${PAYMENTS_TABLE}`, token, {
       method: "POST",
       body: JSON.stringify({
         fields: {
@@ -213,8 +223,59 @@ export async function handleStripeWebhook(
         },
         typecast: true,
       }),
-    });
+    })) as { id?: string };
 
+    const paymentRecordId = created.id ?? "";
+
+    /* The payment is now safely recorded. ONLY NOW do we try to email.
+
+       Ordering is the whole design. A send that fails cannot cost us the row,
+       because the row already exists and is never rolled back. The outcome is
+       written back onto that row so a buyer who did not hear from Sheetal is
+       visible in the table rather than indistinguishable from one who did. */
+    const offering = offeringFromSession(session);
+    const { deliverBuyerWelcome } = await import("./buyerEmailDelivery.js");
+    const { state } = await deliverBuyerWelcome(
+      {
+        paymentRecordId,
+        sessionId,
+        buyerEmail: email,
+        buyerName: details.name ?? "",
+        offering,
+      },
+      { env },
+    );
+
+    if (paymentRecordId) {
+      /* Best effort, and deliberately separate from the send. If this write
+         fails the buyer still HAS her welcome; the cost is a row that
+         understates what happened, which is recoverable. Wrapped so it can
+         never turn a successful payment into a 500 and a Stripe retry. */
+      try {
+        await airtable(`${baseId}/${PAYMENTS_TABLE}/${paymentRecordId}`, token, {
+          method: "PATCH",
+          body: JSON.stringify({
+            fields: {
+              [WELCOME_FIELDS.welcomeSent]: state.welcomeSent,
+              [WELCOME_FIELDS.welcomeStatus]: state.status,
+              [WELCOME_FIELDS.welcomeAttemptedAt]: state.attemptedAt,
+              ...(state.messageId ? { [WELCOME_FIELDS.welcomeMessageId]: state.messageId } : {}),
+              ...(state.failureReason
+                ? { [WELCOME_FIELDS.welcomeFailureReason]: state.failureReason }
+                : {}),
+            },
+            typecast: true,
+          }),
+        });
+      } catch {
+        /* Swallowed on purpose. See the comment above. */
+      }
+    }
+
+    /* 200 regardless of the email outcome. The payment IS recorded, and a
+       non-2xx would make Stripe retry a webhook whose only remaining work is
+       an email — which the duplicate guard would then skip anyway, leaving
+       Stripe retrying forever against a row that already exists. */
     return { statusCode: 200, body: { status: "recorded", message: "Payment recorded." } };
   } catch (error) {
     /* 500 so Stripe retries. Never swallow this into a 200 — a lost payment

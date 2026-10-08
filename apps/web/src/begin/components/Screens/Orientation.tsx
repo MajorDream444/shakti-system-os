@@ -1,4 +1,10 @@
 import { motion } from 'motion/react';
+import {
+  WATERFALL_LABEL,
+  WATERFALL_TITLE,
+  waterfallDeliveryWindow,
+  waterfallPathShape,
+} from '../../../data/waterfallCopy';
 
 export default function Orientation({ onNext }: { onNext: () => void }) {
   return (
@@ -51,10 +57,44 @@ export default function Orientation({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1.2 }}
-        className="text-base text-ash/45 mb-12 italic text-left"
+        className="text-base text-ash/45 mb-8 italic text-left"
       >
         There are no right answers. Only a clearer doorway.
       </motion.p>
+
+      {/* The exchange, stated BEFORE the first question rather than sprung at
+          the email field — SHAKTI-WATERFALL-LEAD-PATH-2026-10-06.md §4.
+
+          Deliberately a quiet panel, not a banner. The brief rules out pop-ups,
+          forced modals, countdowns and scarcity language, and the whole point
+          of the practice is that it is a magnet rather than a funnel.
+
+          The shape of the path and the delivery window are both named here so
+          nobody discovers either one late. */}
+      <motion.aside
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.95, duration: 1.2 }}
+        className="w-full max-w-xl mb-12 p-5 rounded-sm border border-[#E9C77E]/25 bg-[#2A1216]/55 text-left"
+        aria-label="What you receive for completing this path"
+      >
+        <p className="text-base font-semibold uppercase tracking-[0.2em] text-[#E9C77E] mb-2">
+          {WATERFALL_LABEL}
+        </p>
+        <p className="begin-heading serif italic text-2xl md:text-3xl font-light text-stone-100 mb-3">
+          {WATERFALL_TITLE}
+        </p>
+        <p className="text-base leading-relaxed text-ash/[0.88]">
+          Complete this short Guided Path and receive{' '}
+          <span className="text-[#F0C4D0]">Shakti Waterfall</span>, a free
+          Tantric somatic embodiment practice, by email.
+        </p>
+        {/* No question count, by decision — the experience can change without
+            making this line false. See waterfallCopy.ts. */}
+        <p className="text-base leading-relaxed text-ash/[0.62] mt-2">
+          {waterfallPathShape} {waterfallDeliveryWindow}
+        </p>
+      </motion.aside>
 
       <motion.button
         initial={{ opacity: 0 }}

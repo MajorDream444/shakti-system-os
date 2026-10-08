@@ -10,6 +10,12 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    /* Build tooling runs in Node, not the browser. Without this the smoke
+       test's console/process use reads as undefined globals. */
+    files: ["scripts/**/*.{js,mjs}"],
+    languageOptions: { globals: globals.node },
+  },
+  {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2022,
