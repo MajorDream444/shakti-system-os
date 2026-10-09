@@ -9,7 +9,7 @@
   "packageManager": "npm@11.6.2",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b tsconfig.app.json && vite build && npm run check:resend && npm run check:stripe-secret && npm run smoke",
+    "build": "tsc -b tsconfig.app.json && vite build && npm run check:resend && npm run check:stripe-secret && npm run check:sequence && npm run smoke",
     "check:backend": "tsx src/checks/backendReadChecks.ts",
     "check:begin-write": "tsx src/checks/beginWriteChecks.ts",
     "check:airtable-preview": "tsx scripts/airtablePreviewQa.ts",
@@ -21,7 +21,8 @@
     "preview": "vite preview",
     "smoke": "node scripts/smoke.mjs",
     "check:resend": "tsx src/checks/resendDeliveryChecks.ts",
-    "check:stripe-secret": "tsx src/checks/stripeSecretChecks.ts"
+    "check:stripe-secret": "tsx src/checks/stripeSecretChecks.ts",
+    "check:sequence": "tsx src/checks/seekerSequenceChecks.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",

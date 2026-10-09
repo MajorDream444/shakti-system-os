@@ -59,6 +59,29 @@ export type BeginWriteRepository = {
     reason: string;
     occurredAt: string;
   }): Promise<void>;
+  /* Seekers due the next note in the sequence. Mirrors the filter the retired
+     Airtable automations used, so the rhythm is unchanged by the move. */
+  findSeekersDueForStep(input: {
+    currentStep: number;
+    minDaysSinceLast: number;
+  }): Promise<SeekerDueForSequence[]>;
+  /* Called ONLY after Resend accepts. Same rule as the welcome: a seeker is
+     never advanced past an email she did not receive. */
+  advanceSequenceStep(input: {
+    seekerRecordId: string;
+    toStep: number;
+    occurredAt: string;
+  }): Promise<void>;
+};
+
+export type SeekerDueForSequence = {
+  id: string;
+  email: string;
+  firstName?: string;
+  /* Formula fields on the row that render her pathway into Sheetal's
+     sentence. Empty when no pathway was assigned. */
+  pathwayPhrase?: string;
+  pathwaySuffix?: string;
 };
 
 type AirtableListResponse = {
@@ -361,6 +384,53 @@ export class AirtableWriteRepository implements BeginWriteRepository {
                 `WATERFALL EMAIL DID NOT SEND at ${input.occurredAt}. Reason: ${input.reason}. ` +
                 `Her record is intact and her sequence has NOT advanced, so no later email assumes ` +
                 `she has the practice. Send her the Shakti Waterfall link directly.`,
+            },
+          },
+        ],
+      }),
+    });
+  }
+
+  async findSeekersDueForStep(input: { currentStep: number; minDaysSinceLast: number }) {
+    /* Same shape as the retired automation's filter: at the given step, not
+       paused, has an email, and last contacted at least N days ago. */
+    const formula =
+      `AND(` +
+      `{Sequence Step}=${input.currentStep},` +
+      `NOT({Sequence Paused}),` +
+      `{Email}!="",` +
+      `IS_BEFORE({Last Sequence At}, DATEADD(NOW(), -${input.minDaysSinceLast}, 'days'))` +
+      `)`;
+
+    const payload = await this.request<{
+      records?: Array<{ id: string; fields: Record<string, unknown> }>;
+    }>(LIVE_AIRTABLE_TABLE_IDS.seekers, {
+      query: { filterByFormula: formula, pageSize: "100" },
+    });
+
+    return (payload.records ?? []).map((record) => ({
+      id: record.id,
+      email: String(record.fields["Email"] ?? ""),
+      firstName: record.fields["Full Name"] ? String(record.fields["Full Name"]) : undefined,
+      pathwayPhrase: record.fields["Pathway Phrase"]
+        ? String(record.fields["Pathway Phrase"])
+        : undefined,
+      pathwaySuffix: record.fields["Pathway Suffix"]
+        ? String(record.fields["Pathway Suffix"])
+        : undefined,
+    })).filter((seeker) => seeker.email);
+  }
+
+  async advanceSequenceStep(input: { seekerRecordId: string; toStep: number; occurredAt: string }) {
+    await this.request(LIVE_AIRTABLE_TABLE_IDS.seekers, {
+      method: "PATCH",
+      body: JSON.stringify({
+        records: [
+          {
+            id: input.seekerRecordId,
+            fields: {
+              [LIVE_AIRTABLE_FIELDS.seekers.sequenceStep]: input.toStep,
+              [LIVE_AIRTABLE_FIELDS.seekers.lastSequenceAt]: input.occurredAt,
             },
           },
         ],

@@ -170,6 +170,16 @@ class MockRepository implements BeginWriteRepository {
       reason: input.reason,
     });
   }
+
+  /* Sequence follow-ups. Empty by default: these checks cover the Begin write
+     boundary, and the runner has its own suite in seekerSequenceChecks.ts. */
+  async findSeekersDueForStep() {
+    return [];
+  }
+
+  async advanceSequenceStep() {
+    /* no-op */
+  }
 }
 
 class FailingRepository extends MockRepository {

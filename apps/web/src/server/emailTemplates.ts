@@ -293,3 +293,116 @@ Watch here: ${WATERFALL_VIMEO_URL}
 Password: ${WATERFALL_VIMEO_PASSWORD}`,
   };
 }
+
+
+/* ── The follow-on notes ────────────────────────────────────────────────────
+   Day three and day seven, Sheetal's own copy, carried by the cron runner.
+
+   These were in Airtable until 9 October, where they could not reach a
+   non-collaborator and so never sent once. Retiring them without rebuilding
+   would have left every seeker with a welcome and then silence, which is
+   worse than the old broken state because it looks finished.
+
+   NEITHER CARRIES THE WATERFALL LINK. The practice is delivered by the
+   welcome, immediately. Day three refers back to it; day seven assumes she
+   has it. Putting the link here would send it twice. */
+
+export type DayThreeInput = {
+  /* From the Seekers row's formula fields: the pathway phrase and, for
+     CIRCLE only, the trailing clause about the fortnightly rhythm. */
+  pathwayPhrase?: string;
+  pathwaySuffix?: string;
+};
+
+export function buildDayThreeEmail(input: DayThreeInput) {
+  const doorway = input.pathwayPhrase?.trim();
+
+  /* If the pathway formula is empty the sentence would read "the doorway
+     that feels closest to you right now is ." — so that paragraph is dropped
+     rather than sent broken. The rest of her letter stands on its own. */
+  const doorwayParagraph = doorway
+    ? `And based on your responses, the doorway that feels closest to where you are right now is ${doorway}${input.pathwaySuffix ?? ""}.
+
+But this is an offering, not a verdict.
+An invitation, not a compulsion.
+
+You are your own Guru, and you are sovereign to feel into what is right for you.
+
+So take your time. There is nothing you need to decide immediately.
+
+`
+    : "";
+
+  return {
+    subject: "The doorway closest to where you are",
+    text: `Devi G,
+
+Thank you so much for taking the initiative and the time to move through the beginning of this journey with me. I read each and every one of these personally, and I'm grateful for what you shared.
+
+A few days ago I sent you your Shakti Waterfall practice, in my welcome note.
+
+If you have already practised with it, you might take a moment to notice what softened. And if you have not yet found the time, it is still there waiting for you in that first email — give yourself a few quiet minutes, press play, and let your body lead.
+
+${doorwayParagraph}I'll come back to you with more information and the next steps. And if, in the meantime, something has shifted, or you simply want to tell me more about where you are, just reply to this email. Everything comes directly to me.
+
+${OPT_OUT_LINE}
+
+Jai Ma.
+
+In devotion,
+Sheetal`,
+  };
+}
+
+export function buildDaySevenEmail() {
+  return {
+    subject: "What is your body saying?",
+    text: `Devi G,
+
+A few days ago, you walked through the portal and received your free Shakti Waterfall Embodiment Practice.
+
+I wanted to give you a little space before reaching out again.
+
+If you've begun weaving the practice into your days, take a moment to notice:
+
+What is changing in your relationship with your body?
+
+Where do you feel more connected, more spacious, more alive?
+
+What sensations, emotions, desires, or boundaries are becoming easier to notice?
+
+And perhaps most importantly:
+
+What happens when you slow down enough to listen?
+
+You don't need to send me an answer.
+
+You might journal about it, move with it, speak it aloud, create something from it, or simply let the question live in your body for a while.
+
+This is the beginning of the practice: learning to listen to the wisdom already moving through you.
+
+And if you feel called to continue walking this path with me, there are deeper doorways available through Sri Shakti Shala, including our circles, 1:1 work, and upcoming retreats and immersions.
+
+You don't need to know which one is right for you yet.
+
+Simply notice what your body says when you imagine going deeper.
+
+If something is calling you, reply to this email and tell me what you're feeling drawn toward. I read these personally.
+
+Until then, keep listening.
+
+Keep feeling.
+
+Keep returning to the body.
+
+Shakti is not something you need to find.
+It is something you learn to receive.
+
+${OPT_OUT_LINE}
+
+Jai Ma
+
+In devotion,
+Sheetal`,
+  };
+}
