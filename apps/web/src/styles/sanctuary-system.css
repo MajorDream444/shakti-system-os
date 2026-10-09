@@ -531,12 +531,23 @@
   border-radius: 999px 999px 18px 18px;
 }
 
+/* ALTERNATING ARCHES, founder direction 9 October.
+
+   The four frames read left to right as arch, inverted arch, arch, inverted
+   arch. Sheetal asked for this: the first and last were already an arch and
+   an inverted arch, but the middle two were a side-rounded oval and a leaf,
+   which broke the rhythm. Alternating gives the band a symmetry that reads as
+   temple architecture rather than four unrelated cut-outs.
+
+   Only two values exist here on purpose. Any new frame takes one of them, by
+   position: odd frames arch, even frames invert. Do not introduce a third
+   shape without her — the point is the rhythm, and one exception destroys it. */
 #root .portal-gallery-frame:nth-child(2) .portal-gallery-media {
-  border-radius: 22px 999px 999px 22px;
+  border-radius: 18px 18px 999px 999px;
 }
 
 #root .portal-gallery-frame:nth-child(3) .portal-gallery-media {
-  border-radius: 999px 22px 999px 22px;
+  border-radius: 999px 999px 18px 18px;
 }
 
 #root .portal-gallery-frame:nth-child(4) .portal-gallery-media {
