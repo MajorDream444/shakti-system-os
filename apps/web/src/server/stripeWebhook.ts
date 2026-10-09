@@ -79,6 +79,29 @@ export function parseSigningSecrets(raw: string | undefined): string[] {
     .filter(Boolean);
 }
 
+/* Collects signing secrets from EVERY environment variable whose name starts
+   with STRIPE_WEBHOOK_SECRET.
+
+   Why scan rather than read one fixed name: endpoints get added under
+   whatever name makes sense at the time — STRIPE_WEBHOOK_SECRET_SRI_SHAKTI
+   was added on 9 October for Sheetal's replacement endpoint — and a secret
+   sitting in a variable the code does not read is indistinguishable from a
+   broken webhook. It fails as 400 Bad signature, which sends you hunting in
+   Stripe for a fault that is really a name mismatch. Two days before Navratri
+   that is not a trade worth making.
+
+   So the rule is: put a signing secret in any STRIPE_WEBHOOK_SECRET* variable
+   and it will be honoured. Each is still verified in constant time, and a
+   signature matching none of them is still rejected. */
+export function collectSigningSecrets(env: Record<string, string | undefined>): string[] {
+  const seen = new Set<string>();
+  for (const [key, value] of Object.entries(env)) {
+    if (!key.startsWith("STRIPE_WEBHOOK_SECRET")) continue;
+    for (const secret of parseSigningSecrets(value)) seen.add(secret);
+  }
+  return [...seen];
+}
+
 function verifySignatureWithAny(rawBody: string, header: string, secrets: string[]): boolean {
   /* `some` short-circuits, but each individual comparison is still
      timing-safe; the only thing observable is total work, which varies with
@@ -166,7 +189,7 @@ export async function handleStripeWebhook(
   signatureHeader: string,
   env: Record<string, string | undefined>,
 ): Promise<WebhookResult> {
-  const secrets = parseSigningSecrets(env.STRIPE_WEBHOOK_SECRET);
+  const secrets = collectSigningSecrets(env);
   const token = env.AIRTABLE_PERSONAL_ACCESS_TOKEN || env.AIRTABLE_TOKEN;
   const baseId = env.AIRTABLE_BASE_ID || "appj3hDhI0HoulNrf";
 

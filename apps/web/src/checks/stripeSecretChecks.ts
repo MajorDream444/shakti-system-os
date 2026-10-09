@@ -6,7 +6,7 @@
    is not, and that a real signature still verifies end to end. */
 
 import { createHmac } from "node:crypto";
-import { parseSigningSecrets } from "../server/stripeWebhook.js";
+import { collectSigningSecrets, parseSigningSecrets } from "../server/stripeWebhook.js";
 import { handleStripeWebhook } from "../server/stripeWebhook.js";
 
 const results: Array<{ name: string; pass: boolean; detail?: string }> = [];
@@ -78,6 +78,36 @@ async function main() {
   check("verify: single secret still works", singleRes.body.status === "ignored");
 
   void okFetch;
+
+  /* Secrets added under a DIFFERENT variable name must still be honoured.
+     STRIPE_WEBHOOK_SECRET_SRI_SHAKTI was added on 9 October for Sheetal's
+     replacement endpoint; a secret the code does not read fails as a bad
+     signature and sends you hunting in Stripe for a fault that is not there. */
+  {
+    const SRI = "whsec_sri_shakti_endpoint";
+    const multiEnv = {
+      STRIPE_WEBHOOK_SECRET: PROD,
+      STRIPE_WEBHOOK_SECRET_SRI_SHAKTI: SRI,
+      AIRTABLE_PERSONAL_ACCESS_TOKEN: "pat_test",
+      AIRTABLE_BASE_ID: "appTEST",
+    };
+    const collected = collectSigningSecrets(multiEnv);
+    check("collect: finds both variable names", collected.length === 2, collected.length + " found");
+    check("collect: ignores unrelated variables", !collected.includes("pat_test"));
+    check(
+      "collect: de-duplicates the same secret in two variables",
+      collectSigningSecrets({ STRIPE_WEBHOOK_SECRET: PROD, STRIPE_WEBHOOK_SECRET_COPY: PROD }).length === 1,
+    );
+
+    const sriRes = await handleStripeWebhook(body, sign(body, SRI), multiEnv);
+    check("verify: SRI_SHAKTI-named secret accepted", sriRes.body.status === "ignored", JSON.stringify(sriRes.body));
+
+    const stillProd = await handleStripeWebhook(body, sign(body, PROD), multiEnv);
+    check("verify: original secret still accepted alongside it", stillProd.body.status === "ignored");
+
+    const stillWrong = await handleStripeWebhook(body, sign(body, "whsec_nope"), multiEnv);
+    check("verify: an unknown secret is still REJECTED", stillWrong.statusCode === 400);
+  }
 
   const failed = results.filter((r) => !r.pass);
   for (const r of results) {
