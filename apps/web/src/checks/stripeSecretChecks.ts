@@ -6,7 +6,7 @@
    is not, and that a real signature still verifies end to end. */
 
 import { createHmac } from "node:crypto";
-import { collectSigningSecrets, parseSigningSecrets } from "../server/stripeWebhook.js";
+import { collectSigningSecrets, offeringFromSession, parseSigningSecrets } from "../server/stripeWebhook.js";
 import { handleStripeWebhook } from "../server/stripeWebhook.js";
 
 const results: Array<{ name: string; pass: boolean; detail?: string }> = [];
@@ -107,6 +107,65 @@ async function main() {
 
     const stillWrong = await handleStripeWebhook(body, sign(body, "whsec_nope"), multiEnv);
     check("verify: an unknown secret is still REJECTED", stillWrong.statusCode === 400);
+  }
+
+  /* OFFERING DETECTION — the fault that cost Rachel Tisdall her first night.
+
+     She paid $150 on 11 October, the day Dancing with Durga opened. The
+     webhook worked and wrote the row, but the offering came out as "Other",
+     so no welcome matched and nothing was sent. A Stripe PAYMENT LINK carries
+     no metadata.offering, no client_reference_id, and an opaque plink_ id, so
+     every real Payment Link purchase fell through the name matching.
+
+     These assert the amount fallback, using her actual session shape. */
+  {
+    /* Exactly what Stripe sent for Rachel: USD 15000, no usable name. */
+    const rachel = { currency: "usd", amount_total: 15000, payment_link: "plink_1ABCdef" };
+    check(
+      "offering: Rachel's real session resolves to Durga",
+      offeringFromSession(rachel) === "Dancing with Durga",
+      offeringFromSession(rachel),
+    );
+
+    check(
+      "offering: Indian Durga price resolves",
+      offeringFromSession({ currency: "inr", amount_total: 999900 }) === "Dancing with Durga",
+    );
+    check(
+      "offering: 1:1 single session resolves",
+      offeringFromSession({ currency: "usd", amount_total: 17500 }) === "Shakti Embodiment",
+    );
+    check(
+      "offering: 1:1 six-session resolves",
+      offeringFromSession({ currency: "usd", amount_total: 90000 }) === "Shakti Embodiment",
+    );
+    check(
+      "offering: Shala membership resolves",
+      offeringFromSession({ currency: "usd", amount_total: 11100 }) === "Shala Membership",
+    );
+
+    /* An explicit name must still win over the amount. */
+    check(
+      "offering: metadata beats the amount",
+      offeringFromSession({
+        currency: "usd",
+        amount_total: 15000,
+        metadata: { offering: "shala membership" },
+      }) === "Shala Membership",
+    );
+
+    /* An unknown amount must still fall to Other rather than guess — the
+       webhook then flags the row for a human instead of sending the wrong
+       welcome, which is worse than sending none. */
+    check(
+      "offering: unknown amount is still Other",
+      offeringFromSession({ currency: "usd", amount_total: 4200 }) === "Other",
+    );
+    check("offering: empty session is Other", offeringFromSession({}) === "Other");
+    check(
+      "offering: zero amount is Other",
+      offeringFromSession({ currency: "usd", amount_total: 0 }) === "Other",
+    );
   }
 
   const failed = results.filter((r) => !r.pass);

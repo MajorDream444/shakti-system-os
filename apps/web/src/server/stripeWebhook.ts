@@ -149,7 +149,37 @@ function toMajorUnits(amount: number, currency: string): number {
   return ZERO_DECIMAL.has(currency.toLowerCase()) ? amount : amount / 100;
 }
 
-function offeringFromSession(session: Record<string, unknown>): string {
+/* Price, in minor units, to the offering it can only be.
+
+   WHY THIS EXISTS. On 11 October the first real purchase reached this webhook
+   and was classified as "Other", so no welcome matched and Rachel Tisdall
+   received nothing on the day Dancing with Durga opened. The name matching
+   below is sound but had nothing to read: a Stripe PAYMENT LINK carries no
+   metadata.offering, no client_reference_id, and a payment_link field that is
+   an opaque plink_ id. Every real Payment Link purchase fell through.
+
+   The amount does not lie. These are the published prices in
+   apps/web/src/data/commerce.ts, and they are distinct enough to identify the
+   offering on their own.
+
+   KEEP THIS IN STEP WITH commerce.ts. If a price changes there and not here,
+   a buyer silently gets no welcome — which is exactly what happened. The
+   check in stripeSecretChecks.ts asserts the Durga prices still match. */
+const OFFERING_BY_AMOUNT: Record<string, string> = {
+  /* Dancing with Durga Devi */
+  "usd:15000": "Dancing with Durga",
+  "inr:999900": "Dancing with Durga",
+  /* 1:1 Shakti Embodiment — single, three-session, six-session */
+  "usd:17500": "Shakti Embodiment",
+  "usd:50000": "Shakti Embodiment",
+  "usd:90000": "Shakti Embodiment",
+  /* Shala membership */
+  "usd:11100": "Shala Membership",
+};
+
+export function offeringFromSession(session: Record<string, unknown>): string {
+  /* Explicit signals first: if the link or session ever does carry a name,
+     that beats inferring from a number. */
   const haystack = [
     (session.metadata as Record<string, string> | undefined)?.offering,
     session.client_reference_id,
@@ -162,6 +192,15 @@ function offeringFromSession(session: Record<string, unknown>): string {
   if (haystack.includes("durga")) return "Dancing with Durga";
   if (haystack.includes("embodiment")) return "Shakti Embodiment";
   if (haystack.includes("membership") || haystack.includes("shala")) return "Shala Membership";
+
+  /* Then the amount, which a Payment Link always carries. */
+  const currency = String(session.currency ?? "").toLowerCase();
+  const amount = Number(session.amount_total ?? 0);
+  if (currency && Number.isFinite(amount) && amount > 0) {
+    const matched = OFFERING_BY_AMOUNT[`${currency}:${amount}`];
+    if (matched) return matched;
+  }
+
   return "Other";
 }
 
