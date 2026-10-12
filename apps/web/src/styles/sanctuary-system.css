@@ -1990,3 +1990,33 @@
 #root .footer-legal span {
   color: rgba(246, 236, 216, 0.62);
 }
+
+/* The atmosphere frames are links now — Sheetal's instruction, 9 October.
+   The anchor wraps the image AND the caption so the whole card is one target,
+   rather than a clickable picture with dead text beneath it. */
+#root .portal-gallery-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+  transition: transform 420ms ease, opacity 420ms ease;
+}
+
+#root .portal-gallery-link:hover,
+#root .portal-gallery-link:focus-visible {
+  transform: translateY(-3px);
+  opacity: 0.94;
+}
+
+/* Keyboard users need to see where they are; the frames sit on photography,
+   so the ring states its own colour rather than inheriting. */
+#root .portal-gallery-link:focus-visible {
+  outline: 2px solid #e9c77e;
+  outline-offset: 6px;
+}
+
+#root .portal-gallery-link:hover .portal-gallery-media {
+  border-color: rgba(233, 199, 126, 0.5);
+}

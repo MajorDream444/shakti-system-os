@@ -1,3 +1,9 @@
+import {
+  ABOUT_SHEETAL_PATH,
+  BEGIN_PATH,
+  OFFERINGS_PATH,
+  SHALA_PATH,
+} from "../constants/navigation";
 import gatesImage from "../shala/assets/images/temple_gates_1783418503682.jpg";
 import valleyImage from "../shala/assets/images/stillness_valley_1783418518708.jpg";
 import libraryImage from "../shala/assets/images/temple_library_1783418534244.jpg";
@@ -45,6 +51,18 @@ export const portalImages = {
 } as const;
 
 export function PortalImageGallery() {
+  /* Each frame now links somewhere, on Sheetal's instruction from the
+     9 October call: "if I click on Sheetal Kandola, it leads to my bio page.
+     If I click on Shakti Waterfall, leads to that."
+
+     Her two examples are exact. The other two are inferred from the captions
+     and are the ones to change if she disagrees:
+       Stillness, "the valley before the climb"  -> the paths themselves
+       Temple threshold, "practice before deeper access" -> the Shala
+
+     The whole frame is the link, image and caption together, because a
+     clickable image with a non-clickable label under it is a smaller target
+     and reads as two separate things. */
   const images = [
     /* The holy spring is the hero image. Repeating it as the first frame of
        the band directly beneath put the same photograph on screen twice, and
@@ -55,22 +73,26 @@ export function PortalImageGallery() {
       label: "Stillness",
       caption: "the valley before the climb",
       alt: "A still mountain valley under low cloud",
+      href: OFFERINGS_PATH,
     },
     {
       src: portalImages.founderWelcome,
       label: "Sheetal Kandola",
       caption: "founder, practitioner, and guide",
       alt: "Sheetal Kandola smiling in a red veil with her hands together in greeting",
+      href: ABOUT_SHEETAL_PATH,
     },
     {
       src: portalImages.waterfallNature,
       label: "Shakti Waterfall",
       caption: "energy, flow, and direction",
+      href: BEGIN_PATH,
     },
     {
       src: portalImages.gates,
       label: "Temple threshold",
       caption: "practice before deeper access",
+      href: SHALA_PATH,
     },
   ];
 
@@ -83,13 +105,15 @@ export function PortalImageGallery() {
            practitioner" with the rest gone. The image now has its own
            clipped element and the caption sits below it, outside the shape. */
         <figure key={image.label} className="portal-gallery-frame">
-          <div className="portal-gallery-media">
-            <img src={image.src} alt={"alt" in image ? image.alt : ""} loading="eager" />
-          </div>
-          <figcaption>
-            <span>{image.label}</span>
-            <small>{image.caption}</small>
-          </figcaption>
+          <a className="portal-gallery-link" href={image.href}>
+            <div className="portal-gallery-media">
+              <img src={image.src} alt={"alt" in image ? image.alt : ""} loading="eager" />
+            </div>
+            <figcaption>
+              <span>{image.label}</span>
+              <small>{image.caption}</small>
+            </figcaption>
+          </a>
         </figure>
       ))}
     </div>
