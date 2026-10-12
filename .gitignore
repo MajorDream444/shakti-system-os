@@ -75,3 +75,11 @@ apps/web/qa-artifacts/
 apps/web/test-results/
 apps/web/playwright-report/
 apps/web/dist-preview/
+
+# The Navratri Companion Guide is served from the site, not attached to
+# emails: a 5MB attachment on every send is wasteful, and the same file is
+# what the $9 product will deliver. *.pdf is ignored by extension above, so
+# this allow-list is required or `git add -A` skips it IN SILENCE — which is
+# exactly how the Durga image once reached production missing while the local
+# build looked perfect. Verify with `git cat-file -e origin/main:<path>`.
+!apps/web/public/guide/*.pdf
