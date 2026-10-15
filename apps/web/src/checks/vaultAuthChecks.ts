@@ -644,6 +644,56 @@ async function main() {
     !noSource.ok && noSource.reason.startsWith("source_"),
   );
 
+  /* ──────────────── Timing disclosure (Codex P1 on PR #39) ──────────── */
+
+  /* A known address goes on to mint a token and wait on Resend; an unknown
+     one returns at the lookup. Without padding, that difference is a
+     reliable oracle for "is this woman one of Sheetal's". These checks
+     assert that both paths are held to the same floor. */
+  const waits: number[] = [];
+  const recordingSleep = async (ms: number) => {
+    waits.push(ms);
+  };
+
+  const timedDeps = (known: boolean, fetchImpl: typeof fetch) => ({
+    env: ENV,
+    store: freshStore(),
+    repository: fakeRepository({ isKnownSeeker: async () => known }),
+    fetchImpl,
+    now: NOW,
+    sleep: recordingSleep,
+  });
+
+  waits.length = 0;
+  await requestSignInLink({ email: "stranger@example.com", sourceKey: "7.7.7.1" }, timedDeps(false, acceptingFetch));
+  const unknownPad = waits.at(-1) ?? -1;
+
+  waits.length = 0;
+  await requestSignInLink({ email: "her@example.com", sourceKey: "7.7.7.2" }, timedDeps(true, acceptingFetch));
+  const knownPad = waits.at(-1) ?? -1;
+
+  check("timing: the unknown-address path is padded, not returned early", unknownPad > 0);
+  check("timing: the known-address path is padded too", knownPad > 0);
+  check(
+    "timing: both paths are held to the same floor, so the pad closes the gap",
+    unknownPad > 0 && knownPad > 0 && Math.abs(unknownPad - knownPad) < 200,
+    `unknown ${unknownPad}ms vs known ${knownPad}ms`,
+  );
+
+  waits.length = 0;
+  await requestSignInLink({ email: "her@example.com", sourceKey: "7.7.7.3" }, timedDeps(true, refusingFetch));
+  check("timing: a failed send is padded as well", (waits.at(-1) ?? -1) > 0);
+
+  waits.length = 0;
+  const limited = freshStore();
+  for (let i = 0; i < 6; i += 1) {
+    await requestSignInLink(
+      { email: "her@example.com", sourceKey: "7.7.7.4" },
+      { ...timedDeps(true, acceptingFetch), store: limited },
+    );
+  }
+  check("timing: a rate-limited refusal is padded, so the limit is not observable", (waits.at(-1) ?? -1) > 0);
+
   /* ───────────────────────── Logging ────────────────────────────────── */
 
   const described = describeViewer("Her.Name@Example.com", ENV.VAULT_SESSION_SECRET);

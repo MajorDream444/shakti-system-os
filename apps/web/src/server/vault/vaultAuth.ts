@@ -39,6 +39,8 @@ export type VaultAuthDeps = {
   fetchImpl?: typeof fetch;
   now?: () => Date;
   logger?: { info: (event: string, data?: unknown) => void; error: (event: string, data?: unknown) => void };
+  /* Injectable so the checks can assert the padding without waiting on it. */
+  sleep?: (ms: number) => Promise<void>;
 };
 
 /* What the endpoint returns. `acknowledged` is returned for every outcome a
@@ -56,6 +58,36 @@ export type RequestLinkResult = {
     | "not_configured"
     | "malformed_address";
 };
+
+/* The floor every acknowledged answer is padded to.
+
+   WHY. An identical 202 body is not enough. For an address Sheetal has no
+   record of, the handler returns straight after the Airtable lookup; for one
+   she does, it goes on to mint a token and wait on a Resend request. That is
+   a difference of hundreds of milliseconds, repeatable, and measurable from
+   anywhere — so the timing discloses exactly the membership fact the uniform
+   body exists to conceal. Found by Codex's review of PR #39.
+
+   The fix is to make the observable completion time independent of the path
+   taken: every acknowledged answer is held until the same floor has elapsed.
+   The floor is above a normal Resend round trip, so the slow path usually
+   does not exceed it. When it does — a genuinely slow send — the answer is
+   simply late; it still carries no information an attacker can separate from
+   ordinary network noise.
+
+   This is mitigation, not a proof. A determined attacker with enough samples
+   can still see the tail of a very slow send. The complete fix is to move
+   delivery off the request path onto a queue, so nothing downstream of the
+   lookup is in the response at all. That is recorded as a follow-up. */
+const ACKNOWLEDGE_FLOOR_MS = 1200;
+
+const defaultSleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+async function padToFloor<T>(startedAt: number, value: T, sleep = defaultSleep): Promise<T> {
+  const elapsed = Date.now() - startedAt;
+  if (elapsed < ACKNOWLEDGE_FLOOR_MS) await sleep(ACKNOWLEDGE_FLOOR_MS - elapsed);
+  return value;
+}
 
 /* Enough to reject obvious nonsense without pretending to validate email
    addresses, which cannot be done with a regular expression and should not
@@ -76,6 +108,10 @@ export async function requestSignInLink(
   const logger = deps.logger ?? { info: () => {}, error: () => {} };
   const now = deps.now ?? (() => new Date());
   const nowUnix = Math.floor(now().getTime() / 1000);
+  /* Wall clock, not the injected clock: this measures real elapsed time, and
+     a test that freezes `now` must not thereby disable the padding. */
+  const startedAt = Date.now();
+  const ack = (result: RequestLinkResult) => padToFloor(startedAt, result, deps.sleep ?? defaultSleep);
 
   const readiness = getVaultReadiness(deps.env);
   if (!readiness.ready) {
@@ -104,7 +140,7 @@ export async function requestSignInLink(
   );
   if (!bySource.allowed) {
     logger.error("vault_signin_rate_limited", { scope: "source" });
-    return { status: "acknowledged", internal: "rate_limited_source" };
+    return ack({ status: "acknowledged", internal: "rate_limited_source" });
   }
 
   const byEmail = await deps.store.countAttempt(
@@ -117,7 +153,7 @@ export async function requestSignInLink(
     /* Her inbox is also a thing to protect. Someone typing an address into
        the form repeatedly should not be able to bury her in letters. */
     logger.error("vault_signin_rate_limited", { scope: "email" });
-    return { status: "acknowledged", internal: "rate_limited_email" };
+    return ack({ status: "acknowledged", internal: "rate_limited_email" });
   }
 
   let known = false;
@@ -135,7 +171,7 @@ export async function requestSignInLink(
        only hygiene: it stops the endpoint being used to post mail, in her
        name and from her verified domain, to anyone at all. */
     logger.info("vault_signin_unknown_address");
-    return { status: "acknowledged", internal: "unknown_address" };
+    return ack({ status: "acknowledged", internal: "unknown_address" });
   }
 
   const minted = mintVaultToken(
@@ -173,14 +209,14 @@ export async function requestSignInLink(
   if (result.outcome !== "accepted") {
     /* The reason, never the address. */
     logger.error("vault_signin_send_failed", { outcome: result.outcome, reason: result.reason });
-    return {
+    return ack({
       status: "acknowledged",
       internal: result.outcome === "failed" ? "send_failed" : "send_skipped",
-    };
+    });
   }
 
   logger.info("vault_signin_sent", { messageId: result.messageId });
-  return { status: "acknowledged", internal: "sent" };
+  return ack({ status: "acknowledged", internal: "sent" });
 }
 
 export type CompleteSignInResult =
