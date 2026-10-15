@@ -221,6 +221,36 @@ other:
   error in this project was a stale note describing a system that had since
   changed, read back later as fact.
 
+---
+
+## 12. The Vault — added 15 October, not live
+
+A passwordless email sign-in, a server-side identity boundary, an entitlement
+service and protected asset delivery were built on branch
+`claude/epic-cray-ICKrI`. **Nothing is deployed and nothing is merged.**
+
+What anyone touching this must know before changing it:
+
+- **The Vault serves nothing today, and that is correct.** No Library Asset
+  has been approved for publication, so every asset is refused to everyone.
+  An empty Vault is the publication gate working.
+- **Membership is never inferred from a Dancing with Durga payment.** The
+  Payments table is not an input to the authorization decision at all.
+- **No code creates an Access Grant.** The Vault's repository has no write
+  method, on purpose.
+- Three new secrets are required and must all differ from each other and from
+  `GUIDE_LINK_SECRET`: `VAULT_MAGIC_SECRET`, `VAULT_SESSION_SECRET`,
+  `VAULT_ASSET_SECRET`. Section 4 above applies to them — redeploy after
+  setting them.
+- **The single-use, revocation and rate-limit store is in process memory**,
+  so those three guarantees are weaker than they read on Vercel. A durable
+  store is the first thing to fix. Signatures and expiries are unaffected.
+- No asset source is configured, so `/api/vault/asset` returns 503. No Drive
+  permission was changed.
+
+Full detail: `docs/canonical/VAULT-V1-SECURE-FOUNDATION-2026-10-15.md`.
+Endpoint contract for Codex: `docs/contracts/VAULT-API-CONTRACT-v1.md`.
+
 ### Known outstanding
 
 1. Redeploy production so the rotated `GUIDE_LINK_SECRET` is live, then mint
