@@ -64,9 +64,19 @@ export type LibraryAssetRecord = {
   moonPhase: string;
   practiceType: string;
   accessLevel: string;
+  contentEntitlement: "Free" | "Sri Shakti Shala" | "Purchased" | "Private" | "Internal" | "Needs Review" | "";
   publishingStatus: string;
   knowledgeMaturity: string;
   confidentiality: string;
+  usageRights: string;
+  rightsHolder: string;
+  rightsStatus: string;
+  provenanceSource: string;
+  provenanceReference: string;
+  publicationApprovedBy: string;
+  publicationApprovedAt: string;
+  applicationSafeReference: string;
+  deliveryStatus: string;
   notes: string;
 };
 

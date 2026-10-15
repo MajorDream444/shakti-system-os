@@ -2,7 +2,6 @@ import {
   LIVE_AIRTABLE_FIELDS,
   LIVE_AIRTABLE_TABLE_IDS,
 } from "../constants/liveAirtable";
-import { mockLibraryAssets } from "../data/mockBackend";
 import { AirtableReadOnlyClient } from "./AirtableReadOnlyClient";
 import { ContentApprovalService } from "./ContentApprovalService";
 import {
@@ -36,9 +35,19 @@ function mapLibraryAsset(record: AirtableApiRecord): LibraryAssetRecord {
     moonPhase: textValue(values[fields.moonPhase]),
     practiceType: selectName(values[fields.practiceType]),
     accessLevel: selectName(values[fields.accessLevel]),
+    contentEntitlement: "",
     publishingStatus: selectName(values[fields.publishingStatus]),
     knowledgeMaturity: selectName(values[fields.knowledgeMaturity]),
     confidentiality: selectName(values[fields.confidentiality]),
+    usageRights: "",
+    rightsHolder: "",
+    rightsStatus: "",
+    provenanceSource: "",
+    provenanceReference: "",
+    publicationApprovedBy: "",
+    publicationApprovedAt: "",
+    applicationSafeReference: textValue(values[fields.applicationSafeReference]),
+    deliveryStatus: selectName(values[fields.deliveryStatus]),
     notes: textValue(values[fields.notes]),
   };
 }
@@ -50,7 +59,7 @@ export const LibraryAssetReadAdapter = {
       libraryAssetFieldIds,
     );
 
-    const mappedRecords = records ? records.map(mapLibraryAsset) : mockLibraryAssets;
+    const mappedRecords = records ? records.map(mapLibraryAsset) : [];
     return ContentApprovalService.filterLibraryAssets(mappedRecords);
   },
 };

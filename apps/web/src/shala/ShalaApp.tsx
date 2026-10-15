@@ -73,7 +73,7 @@ export default function ShalaApp() {
   const [currentRoom, setCurrentRoom] = useState<RoomType>('GATES');
   const [isThresholdOpen, setIsThresholdOpen] = useState<boolean>(false);
   const [activePractice, setActivePractice] = useState<Practice | null>(null);
-  const libraryCollections = useLibraryCollections();
+  const library = useLibraryCollections();
 
   // Global Mountain environmental state
   const [timeOfDay, setTimeOfDay] = useState<TimeOfDay>('MORNING');
@@ -163,7 +163,7 @@ export default function ShalaApp() {
             key="library"
             onNavigate={handleNavigate}
             onSelectPractice={handleSelectPractice}
-            collections={libraryCollections}
+            library={library}
             seekerState={seekerState}
             onToggleLamp={handleToggleLamp}
           />
