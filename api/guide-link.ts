@@ -37,27 +37,55 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     return res.status(401).json({ status: "unauthorized", message: "Not authorized." });
   }
 
-  const emailRaw = req.query?.email;
-  const email = Array.isArray(emailRaw) ? emailRaw[0] : emailRaw;
-  if (!email?.includes("@")) {
-    return res.status(400).json({ status: "invalid", message: "Pass ?email=someone@example.com" });
+  /* Accepts one address or several, comma separated. Batch exists because
+     minting by hand is a chore and a chore gets skipped: four separate
+     requests is four chances to fumble a quote and conclude the endpoint is
+     broken. One paste, one answer. */
+  const emailRaw = req.query?.email ?? req.query?.emails;
+  const emailValue = Array.isArray(emailRaw) ? emailRaw.join(",") : emailRaw;
+  const recipients = (emailValue ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+
+  if (recipients.length === 0 || recipients.some((r) => !r.includes("@"))) {
+    return res.status(400).json({
+      status: "invalid",
+      message: "Pass ?email=a@b.com or ?emails=a@b.com,c@d.com",
+    });
   }
 
   const daysRaw = req.query?.days;
   const daysValue = Array.isArray(daysRaw) ? daysRaw[0] : daysRaw;
-  const days = Number(daysValue ?? 30);
+  const parsedDays = Number(daysValue ?? 60);
+  const days = Number.isFinite(parsedDays) && parsedDays > 0 ? parsedDays : 60;
 
   const { mintGuideToken } = await import("../apps/web/src/server/signedLinks.js");
-  const token = mintGuideToken(
-    { recipient: email, document: "navratri-companion", expiresInDays: Number.isFinite(days) ? days : 30 },
-    secret,
-  );
-
   const base = process.env.PUBLIC_SITE_URL || "https://www.srishaktishala.com";
+
+  const links = recipients.map((recipient) => ({
+    recipient,
+    url: `${base}/api/guide?t=${mintGuideToken(
+      { recipient, document: "navratri-companion", expiresInDays: days },
+      secret,
+    )}`,
+  }));
+
+  /* `plain` returns one "address <tab> url" per line instead of JSON, so the
+     output can be pasted straight back without reading around the quoting. */
+  const formatRaw = req.query?.format;
+  const format = Array.isArray(formatRaw) ? formatRaw[0] : formatRaw;
+  if (format === "plain") {
+    res.setHeader?.("Content-Type", "text/plain; charset=utf-8");
+    return res
+      .status(200)
+      .json(links.map((l) => `${l.recipient}\t${l.url}`).join("\n"));
+  }
+
   return res.status(200).json({
     status: "minted",
-    recipient: email,
-    expiresInDays: Number.isFinite(days) ? days : 30,
-    url: `${base}/api/guide?t=${token}`,
+    expiresInDays: days,
+    count: links.length,
+    links,
   });
 }
