@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { RoomType, Practice, SeekerState, Collection } from '../types';
-import { COLLECTIONS, SANCTUARY_LANDMARKS } from '../data';
-import { BookOpen, ArrowLeft, Play } from 'lucide-react';
+import { RoomType, Practice, SeekerState } from '../types';
+import { SANCTUARY_LANDMARKS } from '../data';
+import { BookOpen, ArrowLeft, LockKeyhole, Play } from 'lucide-react';
 import { PrayerLamp } from './PrayerLamp';
+import type { VaultLibraryViewState } from '../../contracts/vaultLibraryContract';
 
 interface LibraryRoomProps {
   onNavigate: (room: RoomType) => void;
   onSelectPractice: (practice: Practice) => void;
-  collections?: Collection[];
+  library: VaultLibraryViewState;
   seekerState?: SeekerState;
   onToggleLamp?: (roomId: string) => void;
 }
@@ -16,10 +17,30 @@ interface LibraryRoomProps {
 export const LibraryRoom: React.FC<LibraryRoomProps> = ({
   onNavigate,
   onSelectPractice,
-  collections = COLLECTIONS,
+  library,
   seekerState,
   onToggleLamp,
 }) => {
+  const selectAuthorizedPractice = (item: VaultLibraryViewState['collections'][number]['items'][number]) => {
+    onSelectPractice({
+      id: item.id,
+      title: item.title,
+      duration: item.durationLabel,
+      category: item.categoryLabel,
+      goddess: item.goddess,
+      description: item.description,
+      audioUrl: item.deliveryUrl,
+    });
+  };
+
+  const statusMessage = {
+    loading: 'Opening the approved catalog…',
+    empty: 'The approved catalog is currently empty.',
+    review_required: 'New library material is awaiting founder review.',
+    unavailable: 'The Temple Library is temporarily unavailable.',
+    ready: '',
+  }[library.status];
+
   return (
     <motion.div
       id="library-room"
@@ -82,7 +103,15 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
 
         {/* Collections Stack */}
         <div className="flex flex-col gap-8">
-          {collections.map((collection) => (
+          {library.status !== 'ready' && (
+            <div role="status" aria-live="polite" className="border-t border-[#D8C5B0]/10 pt-6">
+              <p className="font-serif text-xl text-[#F6EFE7]">{statusMessage}</p>
+              <p className="font-sans text-base text-[#c7b6a2] mt-2">
+                No unpublished or restricted details are shown here.
+              </p>
+            </div>
+          )}
+          {library.status === 'ready' && library.collections.map((collection) => (
             <div
               key={collection.id}
               className="border-t border-[#D8C5B0]/10 pt-6 flex flex-col md:flex-row gap-6 items-start"
@@ -97,11 +126,21 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
 
               {/* Practices in this collection */}
               <div className="md:w-2/3 w-full flex flex-col gap-2.5">
-                {collection.practices.map((practice) => (
+                {collection.access === 'membership_locked' ? (
+                  <div
+                    data-testid={`locked-collection-${collection.id}`}
+                    className="w-full flex items-center gap-4 p-4 rounded-xl border border-[#D8C5B0]/10 bg-white/[0.01]"
+                  >
+                    <div className="w-8 h-8 rounded-full border border-white/5 bg-white/[0.03] text-[#c7b6a2] flex items-center justify-center">
+                      <LockKeyhole className="w-3.5 h-3.5 text-[#E27A3F]" aria-hidden="true" />
+                    </div>
+                    <p className="font-sans text-base text-[#c7b6a2]">Sri Shakti Shala membership</p>
+                  </div>
+                ) : collection.items.map((practice) => (
                   <button
                     key={practice.id}
                     id={`lib-practice-${practice.id}`}
-                    onClick={() => onSelectPractice(practice)}
+                    onClick={() => selectAuthorizedPractice(practice)}
                     className="w-full flex items-center justify-between p-4 rounded-xl border border-[#D8C5B0]/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-[#E27A3F]/20 transition-all text-left group"
                   >
                     <div className="flex items-center gap-4">
@@ -111,7 +150,7 @@ export const LibraryRoom: React.FC<LibraryRoomProps> = ({
                       <div>
                         <div className="font-serif text-lg text-[#F6EFE7]">{practice.title}</div>
                         <div className="font-sans text-base text-[#c7b6a2] mt-0.5">
-                          {practice.duration} · {practice.category}
+                          {practice.durationLabel} · {practice.categoryLabel}
                         </div>
                       </div>
                     </div>
