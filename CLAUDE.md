@@ -9,8 +9,11 @@ This repository contains Sheetal Kandola's client-specific doctrine, operating t
 3. `CODEX.md`
 4. `docs/doctrine/SHEETAL-DIRECTION-2026-09-25.md`
 5. **`docs/canonical/SHAKTI-WATERFALL-LEAD-PATH-2026-10-06.md`** — current founder direction and launch-closure brief
-6. `docs/handoff/HANDOVER-2026-09-30-WEEK-IN-REVIEW.md`, including its October corrections
-7. `docs/canonical/SRI-SHAKTI-SHALA-OPERATIONAL-CHECKPOINT-2026-09-22.md`
+6. **`docs/handoff/LIVE-SYSTEM-STATE.md`** — what is live RIGHT NOW in email,
+   payments and automations, and the mistakes already made there. Read it
+   before changing anything that sends an email or takes money
+7. `docs/handoff/HANDOVER-2026-09-30-WEEK-IN-REVIEW.md`, including its October corrections
+8. `docs/canonical/SRI-SHAKTI-SHALA-OPERATIONAL-CHECKPOINT-2026-09-22.md`
 
 ## Current bounded priority
 
