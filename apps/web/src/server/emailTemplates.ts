@@ -406,3 +406,70 @@ In devotion,
 Sheetal`,
   };
 }
+
+
+/* The guide delivery email, carrying a signed expiring link.
+
+   Sent by /api/guide-link?send=true so the message leaves from
+   hello@srishaktishala.com rather than anyone's personal mailbox, and so
+   nobody has to copy a 64-character signature by hand — which is how a
+   working link becomes a 403 for a real person.
+
+   `participant` distinguishes someone who paid for the container, for whom
+   this is material they are owed, from someone being given it as a gift. The
+   second must not imply she has joined something she has not. */
+export function buildGuideDeliveryEmail(input: {
+  firstName?: string;
+  url: string;
+  participant: boolean;
+  expiresInDays: number;
+}) {
+  const greeting = input.firstName?.trim() ? `Dear ${input.firstName.trim()},` : "Dear Devi G,";
+
+  const opening = input.participant
+    ? `Sheetal has written a companion guide for these nine nights, and as a participant in Dancing with Durga Devi it is yours.`
+    : `Sheetal has written a Navratri Companion Guide, and she would like you to have it.`;
+
+  const closing = input.participant
+    ? `This is participant material, for you rather than for sharing.`
+    : `This is yours personally rather than for sharing.`;
+
+  return {
+    subject: "Your Navratri Companion Guide",
+    text: `${greeting}
+
+${opening}
+
+Download it here:
+${input.url}
+
+It is fourteen pages:
+
+  Why Navratri, and why these nine nights
+  The story of Ma Durga and Mahisasura, and what it means as inner work
+  How to create your altar, and the five elements
+  Nine ways to co-participate with Shakti
+  The Navadurga - all nine forms, each with a devotional focus and reflections
+  A daily sadhana template to journal with
+  A Sanskrit and devotional glossary
+
+The nine forms section is the heart of it. There is one for each night, with
+two questions to sit with.
+
+It is written for anyone, whether you have known Devi all your life or are
+meeting Her for the first time. And it is written for all four Navratris of
+the year, so it keeps.
+
+${closing} Your download link is personal to you and works for the next
+${input.expiresInDays} days. If it stops working, write to Sheetal and a new
+one will be sent.
+
+Any question at all, write to sheetalkandola@gmail.com. She reads every
+message personally.
+
+Jai Ma Durga.
+
+In devotion,
+Sheetal`,
+  };
+}
