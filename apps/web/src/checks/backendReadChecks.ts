@@ -36,8 +36,8 @@ async function checkRepositoryFallbacks() {
   const libraryAssets = await BackendRepository.listLibraryAssets();
   assert(libraryAssets.status === "miss", "Expected first library assets read to miss cache.");
   assert(
-    libraryAssets.value[0]?.assetId === mockLibraryAssets[0]?.assetId,
-    "Expected library assets read to use mock fallback when backend env is unavailable.",
+    libraryAssets.value.length === 0,
+    "Expected unavailable Library Assets reads to fail closed instead of using fixtures.",
   );
 }
 

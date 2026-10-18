@@ -1,31 +1,25 @@
 import { useEffect, useState } from "react";
-import { BackendRepository } from "../services/BackendRepository";
-import { buildLibraryCollections } from "../shala/libraryCollections";
-import { COLLECTIONS } from "../shala/data";
-import type { Collection } from "../shala/types";
+import { VAULT_LIBRARY_CONTRACT_VERSION, type VaultLibraryViewState } from "../contracts/vaultLibraryContract";
+import { fetchAuthorizedLibrary } from "../services/AuthorizedLibraryClient";
 
 export function useLibraryCollections() {
-  const [collections, setCollections] = useState<Collection[]>(COLLECTIONS);
+  const [library, setLibrary] = useState<VaultLibraryViewState>({
+    contractVersion: VAULT_LIBRARY_CONTRACT_VERSION,
+    status: "loading",
+    collections: [],
+  });
 
   useEffect(() => {
     let isMounted = true;
 
-    BackendRepository.listLibraryAssets()
-      .then((read) => {
-        if (isMounted) {
-          setCollections(buildLibraryCollections(read.value, COLLECTIONS));
-        }
-      })
-      .catch(() => {
-        if (isMounted) {
-          setCollections(COLLECTIONS);
-        }
-      });
+    fetchAuthorizedLibrary().then((response) => {
+      if (isMounted) setLibrary(response);
+    });
 
     return () => {
       isMounted = false;
     };
   }, []);
 
-  return collections;
+  return library;
 }
